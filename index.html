@@ -1981,6 +1981,10 @@
           <form class="form-card rv" id="auditForm">
             <div class="fh">Tell me about your project</div>
             <h3>Get honest first thoughts</h3>
+            <div class="field"><label for="a-name">Your name *</label><input id="a-name" name="name" required
+                placeholder="Your name"></div>
+            <div class="field"><label for="a-phone">Mobile number *</label><input id="a-phone" name="phone" type="tel" required
+                placeholder="Your phone number"></div>
             <div class="field"><label for="a-biz">Business name *</label><input id="a-biz" name="biz" required
                 placeholder="Acme Inc."></div>
             <div class="field"><label for="a-ind">Industry sector *</label><input id="a-ind" name="ind" required
@@ -2282,6 +2286,8 @@
     af.addEventListener('submit', function (e) {
       e.preventDefault();
       
+      var name = val(af, 'name');
+      var phone = val(af, 'phone');
       var business = val(af, 'biz');
       var industry = val(af, 'ind');
       var team = val(af, 'team');
@@ -2303,6 +2309,18 @@
               "sections": [
                 {
                   "widgets": [
+                    {
+                      "decoratedText": {
+                        "topLabel": "Lead Name",
+                        "text": name
+                      }
+                    },
+                    {
+                      "decoratedText": {
+                        "topLabel": "Mobile Number",
+                        "text": phone
+                      }
+                    },
                     {
                       "decoratedText": {
                         "topLabel": "Business Name",
@@ -2343,7 +2361,9 @@
 
       // 2. Fallback mailto Action
       var fallback = function() {
-        var body = 'New project enquiry%0D%0A%0D%0ABusiness: ' + encodeURIComponent(business)
+        var body = 'New project enquiry%0D%0A%0D%0AName: ' + encodeURIComponent(name)
+          + '%0D%0AMobile: ' + encodeURIComponent(phone)
+          + '%0D%0ABusiness: ' + encodeURIComponent(business)
           + '%0D%0AIndustry: ' + encodeURIComponent(industry)
           + '%0D%0ATeam size: ' + encodeURIComponent(team)
           + '%0D%0AWhat they want to build: ' + encodeURIComponent(bottle)
