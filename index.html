@@ -154,6 +154,47 @@
       max-width: 100%;
     }
 
+
+  /* ================= TOAST NOTIFICATION ================= */
+  .toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: var(--surface);
+    color: var(--ink);
+    border: 1px solid var(--line-strong);
+    border-radius: 12px;
+    padding: 16px 20px;
+    box-shadow: var(--shadow-lift);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 200;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+                opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+  .toast.show {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  .toast .icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--accent-tint);
+    color: var(--accent);
+    display: grid;
+    place-items: center;
+    font-size: 13px;
+    font-weight: bold;
+  }
+  .toast .msg {
+    font-size: 14.5px;
+    font-weight: 500;
+  }
+
     .eyebrow {
       font-family: "IBM Plex Mono", monospace;
       font-size: 12px;
@@ -2193,27 +2234,200 @@
       });
     })();
 
-    /* forms -> mailto compose */
+    /* toast notifier helper */
+    function showToast(message) {
+      var toast = document.createElement('div');
+      toast.className = 'toast';
+      toast.innerHTML = '<div class="icon">✓</div><div class="msg">' + message + '</div>';
+      document.body.appendChild(toast);
+      setTimeout(function() { toast.classList.add('show'); }, 10);
+      setTimeout(function() {
+        toast.classList.remove('show');
+        setTimeout(function() { toast.remove(); }, 400);
+      }, 4000);
+    }
+
+    /* Google Chat Webhook Integration */
+    var GOOGLE_CHAT_WEBHOOK_URL = 'https://chat.googleapis.com/v1/spaces/AAQAgcxp6nM/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=NYzpLArOTxnwEYuEzvw094eXwTbbpD_WZs2ugBGOH7U';
+
+    function sendToGoogleChat(payload, fallbackAction) {
+      if (!GOOGLE_CHAT_WEBHOOK_URL) {
+        console.warn('Google Chat Webhook URL is empty. Falling back to default mail client.');
+        fallbackAction();
+        return;
+      }
+
+      fetch(GOOGLE_CHAT_WEBHOOK_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      })
+      .then(function() {
+        showToast('Thank you! Your details have been submitted successfully.');
+      })
+      .catch(function(err) {
+        console.error('Webhook post error:', err);
+        showToast('Submission error. Opening your email client...');
+        setTimeout(fallbackAction, 1000);
+      });
+    }
+
+    /* forms submits */
     function val(f, n) { var el = f.querySelector('[name="' + n + '"]'); return el ? el.value.trim() : ''; }
+    
     var af = document.getElementById('auditForm');
     af.addEventListener('submit', function (e) {
       e.preventDefault();
-      var body = 'New project enquiry%0D%0A%0D%0ABusiness: ' + encodeURIComponent(val(af, 'biz'))
-        + '%0D%0AIndustry: ' + encodeURIComponent(val(af, 'ind'))
-        + '%0D%0ATeam size: ' + encodeURIComponent(val(af, 'team'))
-        + '%0D%0AWhat they want to build: ' + encodeURIComponent(val(af, 'bottle'))
-        + '%0D%0AEmail: ' + encodeURIComponent(val(af, 'email'));
-      window.location.href = 'mailto:mail@niharrout.com?subject=' + encodeURIComponent('Project enquiry — ' + val(af, 'biz')) + '&body=' + body;
+      
+      var business = val(af, 'biz');
+      var industry = val(af, 'ind');
+      var team = val(af, 'team');
+      var bottle = val(af, 'bottle');
+      var email = val(af, 'email');
+
+      // 1. Webhook Payload (Card Layout)
+      var payload = {
+        "cardsV2": [
+          {
+            "cardId": "auditFormSubmit",
+            "card": {
+              "header": {
+                "title": "New Project Enquiry — Founder Suite",
+                "subtitle": "Submitted via niharrout.com",
+                "imageUrl": "https://www.niharrout.com/assets/nihar.jpg",
+                "imageType": "CIRCLE"
+              },
+              "sections": [
+                {
+                  "widgets": [
+                    {
+                      "decoratedText": {
+                        "topLabel": "Business Name",
+                        "text": business
+                      }
+                    },
+                    {
+                      "decoratedText": {
+                        "topLabel": "Industry Sector",
+                        "text": industry
+                      }
+                    },
+                    {
+                      "decoratedText": {
+                        "topLabel": "Team Size",
+                        "text": team
+                      }
+                    },
+                    {
+                      "decoratedText": {
+                        "topLabel": "What they want to build",
+                        "text": bottle
+                      }
+                    },
+                    {
+                      "decoratedText": {
+                        "topLabel": "Work Email",
+                        "text": email
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      };
+
+      // 2. Fallback mailto Action
+      var fallback = function() {
+        var body = 'New project enquiry%0D%0A%0D%0ABusiness: ' + encodeURIComponent(business)
+          + '%0D%0AIndustry: ' + encodeURIComponent(industry)
+          + '%0D%0ATeam size: ' + encodeURIComponent(team)
+          + '%0D%0AWhat they want to build: ' + encodeURIComponent(bottle)
+          + '%0D%0AEmail: ' + encodeURIComponent(email);
+        window.location.href = 'mailto:mail@niharrout.com?subject=' + encodeURIComponent('Project enquiry — ' + business) + '&body=' + body;
+      };
+
+      sendToGoogleChat(payload, fallback);
     });
+
     var cf = document.getElementById('contactForm');
     cf.addEventListener('submit', function (e) {
       e.preventDefault();
-      var body = 'New project enquiry%0D%0A%0D%0AName: ' + encodeURIComponent(val(cf, 'name'))
-        + '%0D%0AEmail: ' + encodeURIComponent(val(cf, 'email'))
-        + '%0D%0ABudget: ' + encodeURIComponent(val(cf, 'budget'))
-        + '%0D%0AService: ' + encodeURIComponent(val(cf, 'help'))
-        + '%0D%0A%0D%0ADetails:%0D%0A' + encodeURIComponent(val(cf, 'details'));
-      window.location.href = 'mailto:mail@niharrout.com?subject=' + encodeURIComponent('Project enquiry — ' + val(cf, 'name')) + '&body=' + body;
+
+      var name = val(cf, 'name');
+      var email = val(cf, 'email');
+      var budget = val(cf, 'budget');
+      var help = val(cf, 'help');
+      var details = val(cf, 'details');
+
+      // 1. Webhook Payload (Card Layout)
+      var payload = {
+        "cardsV2": [
+          {
+            "cardId": "contactFormSubmit",
+            "card": {
+              "header": {
+                "title": "New General Enquiry — Contact Form",
+                "subtitle": "Submitted via niharrout.com",
+                "imageUrl": "https://www.niharrout.com/assets/nihar.jpg",
+                "imageType": "CIRCLE"
+              },
+              "sections": [
+                {
+                  "widgets": [
+                    {
+                      "decoratedText": {
+                        "topLabel": "Full Name",
+                        "text": name
+                      }
+                    },
+                    {
+                      "decoratedText": {
+                        "topLabel": "Email",
+                        "text": email
+                      }
+                    },
+                    {
+                      "decoratedText": {
+                        "topLabel": "Project Budget",
+                        "text": budget
+                      }
+                    },
+                    {
+                      "decoratedText": {
+                        "topLabel": "How I can help",
+                        "text": help
+                      }
+                    },
+                    {
+                      "decoratedText": {
+                        "topLabel": "Project Details",
+                        "text": details
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      };
+
+      // 2. Fallback mailto Action
+      var fallback = function() {
+        var body = 'New project enquiry%0D%0A%0D%0AName: ' + encodeURIComponent(name)
+          + '%0D%0AEmail: ' + encodeURIComponent(email)
+          + '%0D%0ABudget: ' + encodeURIComponent(budget)
+          + '%0D%0AService: ' + encodeURIComponent(help)
+          + '%0D%0A%0D%0ADetails:%0D%0A' + encodeURIComponent(details);
+        window.location.href = 'mailto:mail@niharrout.com?subject=' + encodeURIComponent('Project enquiry — ' + name) + '&body=' + body;
+      };
+
+      sendToGoogleChat(payload, fallback);
     });
 
     /* reveal */
