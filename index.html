@@ -137,6 +137,65 @@
   /* ================= HERO ================= */
   .hero{padding-top:clamp(46px,7vw,88px);padding-bottom:clamp(40px,6vw,72px);text-align:center;overflow:hidden}
   .hero > .wrap{position:relative;z-index:1}
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+    align-items: center;
+    text-align: center;
+  }
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero-image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+  }
+  .hero-image-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    border-radius: calc(var(--r) * 2);
+    padding: 8px;
+    background: linear-gradient(135deg, var(--line-strong) 0%, transparent 100%);
+    box-shadow: var(--shadow);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+  .hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: calc(var(--r) * 1.5);
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  }
+  .hero-image-wrapper:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: var(--shadow-lift);
+    background: linear-gradient(135deg, var(--accent) 0%, transparent 100%);
+  }
+  .hero-image-wrapper:hover .hero-image {
+    transform: scale(1.02);
+  }
+  .hero-image-container::before {
+    content: "";
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+    opacity: 0.08;
+    filter: blur(50px);
+    z-index: -1;
+    pointer-events: none;
+  }
   .badge{display:inline-flex;align-items:center;gap:9px;font-size:13px;font-weight:500;color:var(--ink-soft);background:var(--surface);border:1px solid var(--line);border-radius:100px;padding:8px 16px;box-shadow:var(--shadow)}
   .badge .pulse{width:8px;height:8px;border-radius:50%;background:var(--accent);position:relative}
   .badge .pulse::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:1px solid var(--accent);opacity:.5;animation:pulse 2.2s ease-out infinite}
@@ -155,6 +214,51 @@
   .hero-stats .v .u{color:var(--accent);font-family:"IBM Plex Mono",monospace;font-size:14px}
   .hero-stats .k{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);margin-top:7px}
   @media (max-width:620px){.hero-stats .st{flex-basis:50%;border-bottom:1px solid var(--line)}.hero-stats .st:nth-child(2){border-right:0}}
+
+  @media (min-width: 961px) {
+    .hero-grid {
+      grid-template-columns: 1.15fr 0.85fr;
+      text-align: left;
+      gap: clamp(40px, 6vw, 80px);
+    }
+    .hero-content {
+      align-items: flex-start;
+    }
+    .hero h1 {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .hero .role {
+      justify-content: flex-start;
+    }
+    .hero .pitch {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .hero-cta {
+      justify-content: flex-start;
+      margin-top: 36px;
+    }
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+      margin-top: 48px;
+    }
+    .hero-stats .st {
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .hero-stats .st:nth-child(2n) {
+      border-right: 0;
+    }
+    .hero-stats .st:nth-child(3),
+    .hero-stats .st:nth-child(4) {
+      border-bottom: 0;
+    }
+  }
 
   /* ================= TRUST STRIP ================= */
   .trust{padding:34px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-2)}
@@ -358,20 +462,27 @@
 <!-- ================= HERO ================= -->
 <section class="hero" id="hero">
   <div class="dots"></div>
-  <div class="wrap">
-    <span class="badge rv"><span class="pulse"></span> B2B product &amp; software development — product thinking first</span>
-    <h1 class="rv">Nihar Ranjan <span class="it">Rout.</span></h1>
-    <div class="role rv">Founder &amp; CEO, Creuto <span class="sep">•</span> Product Strategist <span class="sep">•</span> Business &amp; Technology</div>
-    <p class="pitch rv">I help businesses turn an idea into the right product — clarifying scope, shaping the PRD, and planning a build that fits your budget. My team at Creuto then engineers it to a standard we're proud of. Product thinking first; honest, dedicated delivery always.</p>
-    <div class="hero-cta rv">
-      <a href="#contact" class="btn btn-primary">Book a Strategy Call <span class="arw">→</span></a>
-      <a href="#capabilities" class="btn btn-ghost">Explore Services</a>
+  <div class="wrap hero-grid">
+    <div class="hero-content">
+      <span class="badge rv"><span class="pulse"></span> B2B product &amp; software development — product thinking first</span>
+      <h1 class="rv">Nihar Ranjan <span class="it">Rout.</span></h1>
+      <div class="role rv">Founder &amp; CEO, Creuto <span class="sep">•</span> Product Strategist <span class="sep">•</span> Business &amp; Technology</div>
+      <p class="pitch rv">I help businesses turn an idea into the right product — clarifying scope, shaping the PRD, and planning a build that fits your budget. My team at Creuto then engineers it to a standard we're proud of. Product thinking first; honest, dedicated delivery always.</p>
+      <div class="hero-cta rv">
+        <a href="#contact" class="btn btn-primary">Book a Strategy Call <span class="arw">→</span></a>
+        <a href="#capabilities" class="btn btn-ghost">Explore Services</a>
+      </div>
+      <div class="hero-stats rv">
+        <div class="st"><div class="v">8<span class="u">+ yrs</span></div><div class="k">In product management</div></div>
+        <div class="st"><div class="v">Multi-domain</div><div class="k">Across industries</div></div>
+        <div class="st"><div class="v">In-house</div><div class="k">Creuto tech team</div></div>
+        <div class="st"><div class="v">B2B</div><div class="k">Growth-standard builds</div></div>
+      </div>
     </div>
-    <div class="hero-stats rv">
-      <div class="st"><div class="v">8<span class="u">+ yrs</span></div><div class="k">In product management</div></div>
-      <div class="st"><div class="v">Multi-domain</div><div class="k">Across industries</div></div>
-      <div class="st"><div class="v">In-house</div><div class="k">Creuto tech team</div></div>
-      <div class="st"><div class="v">B2B</div><div class="k">Growth-standard builds</div></div>
+    <div class="hero-image-container rv">
+      <div class="hero-image-wrapper">
+        <img src="assets/nihar.jpg" alt="Nihar Ranjan Rout" class="hero-image">
+      </div>
     </div>
   </div>
 </section>
