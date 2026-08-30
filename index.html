@@ -1,1229 +1,2123 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script>
-  (function(){
-    var root = document.documentElement;
-    try {
-      var s = localStorage.getItem('nrr-theme');
-      if (s === 'dark' || s === 'light') {
-        root.setAttribute('data-theme', s);
-      } else {
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    (function () {
+      var root = document.documentElement;
+      try {
+        var s = localStorage.getItem('nrr-theme');
+        if (s === 'dark' || s === 'light') {
+          root.setAttribute('data-theme', s);
+        } else {
+          root.setAttribute('data-theme', 'light');
+        }
+      } catch (e) {
         root.setAttribute('data-theme', 'light');
       }
-    } catch(e) {
-      root.setAttribute('data-theme', 'light');
+    })();
+  </script>
+  <link rel="canonical" href="https://niharrout.com/">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="Nihar Ranjan Rout">
+  <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#09090B" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="assets/nihar.jpg" type="image/jpeg">
+  <link rel="apple-touch-icon" href="assets/nihar.jpg">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Nihar Ranjan Rout">
+  <meta property="og:url" content="https://niharrout.com/">
+  <meta property="og:title" content="Nihar Ranjan Rout — Founder & CEO, Creuto | B2B Software Development">
+  <meta property="og:description"
+    content="Nihar Ranjan Rout — Founder & CEO of Creuto, a B2B software development company. Product-first consulting, PRDs, and growth-standard software built within budget.">
+  <meta property="og:image" content="https://www.niharrout.com/assets/niharrout-og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Nihar Ranjan Rout — Founder & CEO, Creuto | B2B Software Development">
+  <meta name="twitter:description"
+    content="Nihar Ranjan Rout — Founder & CEO of Creuto, a B2B software development company. Product-first consulting, PRDs, and growth-standard software built within budget.">
+  <meta name="twitter:image" content="https://www.niharrout.com/assets/niharrout-og-image.png">
+  <title>Nihar Ranjan Rout — Founder & CEO, Creuto | B2B Software Development</title>
+  <meta name="description"
+    content="Nihar Ranjan Rout — Founder & CEO of Creuto, a B2B software development company. Product-first consulting, PRDs, and growth-standard software built within budget.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+  <style>
+    /* ================= TOKENS ================= */
+    :root {
+      --bg: #FFFFFF;
+      --bg-2: #F4F4F5;
+      --surface: #FFFFFF;
+      --ink: #09090B;
+      --ink-soft: #4B5563;
+      --ink-faint: #71717A;
+      --line: #E4E4E7;
+      --line-strong: #D4D4D8;
+      --accent: #E24A2A;
+      --accent-deep: #C2381B;
+      --accent-tint: #FEE2E2;
+      --on-accent: #FFFFFF;
+      --gold: #B45309;
+      --shadow: 0 1px 3px rgba(0, 0, 0, 0.02), 0 8px 24px rgba(0, 0, 0, 0.04);
+      --shadow-lift: 0 4px 12px rgba(0, 0, 0, 0.04), 0 20px 40px rgba(0, 0, 0, 0.08);
+      --maxw: 1160px;
+      --measure: 65ch;
+      --r: 12px;
+      --r-sm: 6px;
     }
-  })();
-</script>
-<link rel="canonical" href="https://niharrout.com/">
-<meta name="robots" content="index, follow, max-image-preview:large">
-<meta name="author" content="Nihar Ranjan Rout">
-<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#09090B" media="(prefers-color-scheme: dark)">
-<link rel="icon" href="assets/nihar.jpg" type="image/jpeg">
-<link rel="apple-touch-icon" href="assets/nihar.jpg">
-<!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Nihar Ranjan Rout">
-<meta property="og:url" content="https://niharrout.com/">
-<meta property="og:title" content="Nihar Ranjan Rout — Founder & CEO, Creuto | B2B Software Development">
-<meta property="og:description" content="Nihar Ranjan Rout — Founder & CEO of Creuto, a B2B software development company. Product-first consulting, PRDs, and growth-standard software built within budget.">
-<meta property="og:image" content="https://niharrout.com/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Nihar Ranjan Rout — Founder & CEO, Creuto | B2B Software Development">
-<meta name="twitter:description" content="Nihar Ranjan Rout — Founder & CEO of Creuto, a B2B software development company. Product-first consulting, PRDs, and growth-standard software built within budget.">
-<meta name="twitter:image" content="https://niharrout.com/og-image.png">
-<title>Nihar Ranjan Rout — Founder & CEO, Creuto | B2B Software Development</title>
-<meta name="description" content="Nihar Ranjan Rout — Founder & CEO of Creuto, a B2B software development company. Product-first consulting, PRDs, and growth-standard software built within budget.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:wght@400;500&display=swap">
 
-<style>
-  /* ================= TOKENS ================= */
-  :root {
-    --bg: #FFFFFF;
-    --bg-2: #F4F4F5;
-    --surface: #FFFFFF;
-    --ink: #09090B;
-    --ink-soft: #4B5563;
-    --ink-faint: #71717A;
-    --line: #E4E4E7;
-    --line-strong: #D4D4D8;
-    --accent: #E24A2A;
-    --accent-deep: #C2381B;
-    --accent-tint: #FEE2E2;
-    --on-accent: #FFFFFF;
-    --gold: #B45309;
-    --shadow: 0 1px 3px rgba(0,0,0,0.02), 0 8px 24px rgba(0,0,0,0.04);
-    --shadow-lift: 0 4px 12px rgba(0,0,0,0.04), 0 20px 40px rgba(0,0,0,0.08);
-    --maxw: 1160px;
-    --measure: 65ch;
-    --r: 12px;
-    --r-sm: 6px;
-  }
-  :root[data-theme="dark"] {
-    --bg: #09090B;
-    --bg-2: #18181B;
-    --surface: #18181B;
-    --ink: #FAFAFA;
-    --ink-soft: #A1A1AA;
-    --ink-faint: #52525B;
-    --line: #27272A;
-    --line-strong: #3F3F46;
-    --accent: #FF6A4D;
-    --accent-deep: #FF8368;
-    --accent-tint: #2D1612;
-    --on-accent: #09090B;
-    --gold: #F59E0B;
-    --shadow: 0 1px 2px rgba(0,0,0,0.5), 0 12px 36px rgba(0,0,0,0.6);
-    --shadow-lift: 0 4px 12px rgba(0,0,0,0.55), 0 24px 50px rgba(0,0,0,0.7);
-  }
+    :root[data-theme="dark"] {
+      --bg: #09090B;
+      --bg-2: #18181B;
+      --surface: #18181B;
+      --ink: #FAFAFA;
+      --ink-soft: #A1A1AA;
+      --ink-faint: #52525B;
+      --line: #27272A;
+      --line-strong: #3F3F46;
+      --accent: #FF6A4D;
+      --accent-deep: #FF8368;
+      --accent-tint: #2D1612;
+      --on-accent: #09090B;
+      --gold: #F59E0B;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.5), 0 12px 36px rgba(0, 0, 0, 0.6);
+      --shadow-lift: 0 4px 12px rgba(0, 0, 0, 0.55), 0 24px 50px rgba(0, 0, 0, 0.7);
+    }
 
-  /* ================= BASE ================= */
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--ink);
-    font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
-    font-size: 16.5px;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-    padding-top: 72px; /* Offset for fixed nav */
-  }
-  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 26px; }
-  section { padding: clamp(60px, 8.5vw, 120px) 0; position: relative; }
-  a { color: inherit; }
-  h1, h2, h3, h4 { font-family: "Playfair Display", Georgia, serif; font-weight: 600; margin: 0; text-wrap: balance; letter-spacing: -.01em; }
-  p { margin: 0; }
-  img { max-width: 100%; }
+    /* ================= BASE ================= */
+    * {
+      box-sizing: border-box;
+    }
 
-  .eyebrow {
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: .18em;
-    text-transform: uppercase;
-    color: var(--accent);
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .eyebrow::before { content: ""; width: 20px; height: 1px; background: var(--accent); }
-  .sub { color: var(--ink-soft); font-size: 18px; max-width: var(--measure); }
+    html {
+      scroll-behavior: smooth;
+    }
 
-  /* buttons */
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 9px;
-    font-family: inherit;
-    font-size: 15px;
-    font-weight: 600;
-    text-decoration: none;
-    border-radius: 100px;
-    padding: 12px 24px;
-    line-height: 1;
-    cursor: pointer;
-    border: 1px solid transparent;
-    transition: transform .2s cubic-bezier(0.165, 0.84, 0.44, 1), 
-                background .2s ease, border-color .2s ease, color .2s ease, box-shadow .2s ease;
-    white-space: nowrap;
-  }
-  .btn-primary {
-    background: var(--accent);
-    color: var(--on-accent);
-    box-shadow: 0 4px 14px rgba(226, 74, 42, 0.15);
-  }
-  .btn-primary:hover {
-    background: var(--accent-deep);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(226, 74, 42, 0.25);
-  }
-  .btn-ghost {
-    background: transparent;
-    color: var(--ink);
-    border-color: var(--line-strong);
-  }
-  .btn-ghost:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-    background: rgba(226, 74, 42, 0.04);
-    transform: translateY(-2px);
-  }
-  .btn .arw { transition: transform .2s ease; }
-  .btn:hover .arw { transform: translateX(3px); }
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
 
-  /* ================= NAV ================= */
-  header.nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 72px;
-    z-index: 100;
-    background: color-mix(in srgb, var(--bg) 85%, transparent);
-    backdrop-filter: blur(16px);
-    border-bottom: 1px solid var(--line);
-    transition: border-color 0.3s ease, background 0.3s ease;
-  }
-  .nav-inner {
-    max-width: var(--maxw);
-    margin: 0 auto;
-    padding: 0 26px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .brand {
-    font-family: "Plus Jakarta Sans", sans-serif;
-    font-weight: 800;
-    font-size: 21px;
-    letter-spacing: -.02em;
-    text-decoration: none;
-    color: var(--ink);
-  }
-  .brand .d { color: var(--accent); }
-  .nav-desktop {
-    display: flex;
-    align-items: center;
-    gap: 32px;
-  }
-  @media (max-width: 920px) {
-    .nav-desktop { display: none; }
-  }
-  .nav-desktop a.lnk {
-    font-size: 14.5px;
-    font-weight: 500;
-    color: var(--ink-soft);
-    text-decoration: none;
-    position: relative;
-    padding: 4px 0;
-    transition: color .2s;
-  }
-  .nav-desktop a.lnk:hover { color: var(--ink); }
-  .nav-desktop a.lnk::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -2px;
-    height: 1.5px;
-    width: 0;
-    background: var(--accent);
-    transition: width .2s ease;
-  }
-  .nav-desktop a.lnk:hover::after { width: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+      font-size: 16.5px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      padding-top: 72px;
+      /* Offset for fixed nav */
+    }
 
-  .nav-actions {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-  .btn-sm-desktop {
-    padding: 10px 18px;
-    font-size: 14px;
-  }
-  @media (max-width: 580px) {
-    .nav-actions .btn-primary { display: none; }
-  }
+    .wrap {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 26px;
+    }
 
-  .theme-toggle {
-    width: 36px;
-    height: 36px;
-    border-radius: 8px;
-    border: none;
-    background: transparent;
-    display: inline-grid;
-    place-items: center;
-    cursor: pointer;
-    color: var(--ink-soft);
-    transition: color .2s, background .2s;
-  }
-  .theme-toggle:hover {
-    color: var(--ink);
-    background: var(--bg-2);
-  }
-  .theme-toggle svg { width: 18px; height: 18px; }
-  .theme-toggle .moon { display: none; }
-  :root[data-theme="dark"] .theme-toggle .moon { display: block; }
-  :root[data-theme="dark"] .theme-toggle .sun { display: none; }
+    section {
+      padding: clamp(60px, 8.5vw, 120px) 0;
+      position: relative;
+    }
 
-  /* Mobile toggle button */
-  .nav-toggle {
-    display: none;
-    background: none;
-    border: none;
-    width: 32px;
-    height: 32px;
-    position: relative;
-    cursor: pointer;
-    padding: 0;
-    z-index: 110;
-  }
-  @media (max-width: 920px) {
+    a {
+      color: inherit;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-weight: 600;
+      margin: 0;
+      text-wrap: balance;
+      letter-spacing: -.01em;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    .eyebrow {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 20px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    .sub {
+      color: var(--ink-soft);
+      font-size: 18px;
+      max-width: var(--measure);
+    }
+
+    /* buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 100px;
+      padding: 12px 24px;
+      line-height: 1;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: transform .2s cubic-bezier(0.165, 0.84, 0.44, 1),
+        background .2s ease, border-color .2s ease, color .2s ease, box-shadow .2s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--on-accent);
+      box-shadow: 0 4px 14px rgba(226, 74, 42, 0.15);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-deep);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(226, 74, 42, 0.25);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--ink);
+      border-color: var(--line-strong);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(226, 74, 42, 0.04);
+      transform: translateY(-2px);
+    }
+
+    .btn .arw {
+      transition: transform .2s ease;
+    }
+
+    .btn:hover .arw {
+      transform: translateX(3px);
+    }
+
+    /* ================= NAV ================= */
+    header.nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 72px;
+      z-index: 100;
+      background: color-mix(in srgb, var(--bg) 85%, transparent);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+      transition: border-color 0.3s ease, background 0.3s ease;
+    }
+
+    .nav-inner {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 26px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-weight: 800;
+      font-size: 21px;
+      letter-spacing: -.02em;
+      text-decoration: none;
+      color: var(--ink);
+    }
+
+    .brand .d {
+      color: var(--accent);
+    }
+
+    .nav-desktop {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    @media (max-width: 920px) {
+      .nav-desktop {
+        display: none;
+      }
+    }
+
+    .nav-desktop a.lnk {
+      font-size: 14.5px;
+      font-weight: 500;
+      color: var(--ink-soft);
+      text-decoration: none;
+      position: relative;
+      padding: 4px 0;
+      transition: color .2s;
+    }
+
+    .nav-desktop a.lnk:hover {
+      color: var(--ink);
+    }
+
+    .nav-desktop a.lnk::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      height: 1.5px;
+      width: 0;
+      background: var(--accent);
+      transition: width .2s ease;
+    }
+
+    .nav-desktop a.lnk:hover::after {
+      width: 100%;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .btn-sm-desktop {
+      padding: 10px 18px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 580px) {
+      .nav-actions .btn-primary {
+        display: none;
+      }
+    }
+
+    .theme-toggle {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      border: none;
+      background: transparent;
+      display: inline-grid;
+      place-items: center;
+      cursor: pointer;
+      color: var(--ink-soft);
+      transition: color .2s, background .2s;
+    }
+
+    .theme-toggle:hover {
+      color: var(--ink);
+      background: var(--bg-2);
+    }
+
+    .theme-toggle svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .theme-toggle .moon {
+      display: none;
+    }
+
+    :root[data-theme="dark"] .theme-toggle .moon {
+      display: block;
+    }
+
+    :root[data-theme="dark"] .theme-toggle .sun {
+      display: none;
+    }
+
+    /* Mobile toggle button */
     .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      width: 32px;
+      height: 32px;
+      position: relative;
+      cursor: pointer;
+      padding: 0;
+      z-index: 110;
+    }
+
+    @media (max-width: 920px) {
+      .nav-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+      }
+    }
+
+    .nav-toggle .line {
+      width: 20px;
+      height: 2px;
+      background: var(--ink);
+      transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1),
+        opacity 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+      border-radius: 2px;
+    }
+
+    .nav-toggle.open .line-1 {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .nav-toggle.open .line-2 {
+      opacity: 0;
+    }
+
+    .nav-toggle.open .line-3 {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* Mobile menu drawer */
+    .mobile-drawer {
+      position: fixed;
+      top: 72px;
+      left: 0;
+      right: 0;
+      background: var(--bg);
+      border-bottom: 1px solid var(--line);
+      padding: 24px;
       display: flex;
       flex-direction: column;
+      gap: 16px;
+      opacity: 0;
+      transform: translateY(-12px);
+      pointer-events: none;
+      transition: opacity 0.3s cubic-bezier(0.165, 0.84, 0.44, 1),
+        transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+      z-index: 95;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    }
+
+    :root[data-theme="dark"] .mobile-drawer {
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .mobile-drawer.open {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .drawer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .drawer-lnk {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--ink);
+      text-decoration: none;
+      transition: color 0.2s;
+      padding: 4px 0;
+    }
+
+    .drawer-lnk:hover {
+      color: var(--accent);
+    }
+
+    .drawer-btn {
+      margin-top: 10px;
+      text-align: center;
+      justify-content: center;
+    }
+
+    /* ================= HERO ================= */
+    .hero {
+      position: relative;
+      padding-top: clamp(60px, 8vw, 100px);
+      padding-bottom: clamp(60px, 8vw, 90px);
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero>.wrap {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+    }
+
+    .hero-avatar-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+
+    .hero-avatar-wrapper {
+      position: relative;
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      padding: 4px;
+      background: var(--line);
+      box-shadow: var(--shadow);
+      transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    .hero-avatar {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--surface);
+      transition: transform 0.5s ease;
+    }
+
+    .hero-avatar-wrapper:hover {
+      transform: translateY(-4px);
+      background: var(--accent);
+    }
+
+    .hero-avatar-wrapper:hover .hero-avatar {
+      transform: scale(1.04);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .hero h1 {
+      font-size: clamp(48px, 8.5vw, 84px);
+      line-height: 1.05;
+      font-weight: 700;
+      margin: 16px auto 0;
+      max-width: 14ch;
+      letter-spacing: -0.03em;
+    }
+
+    .hero h1 .it {
+      font-style: italic;
+      font-weight: 500;
+      background: linear-gradient(135deg, var(--accent) 30%, var(--accent-deep) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero .role {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: clamp(12.5px, 1.5vw, 14.5px);
+      color: var(--ink-soft);
+      margin-top: 24px;
+      letter-spacing: 0.06em;
+      font-weight: 500;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 14px;
       justify-content: center;
       align-items: center;
-      gap: 5px;
+      text-transform: uppercase;
     }
-  }
-  .nav-toggle .line {
-    width: 20px;
-    height: 2px;
-    background: var(--ink);
-    transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), 
-                opacity 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-    border-radius: 2px;
-  }
-  .nav-toggle.open .line-1 { transform: translateY(7px) rotate(45deg); }
-  .nav-toggle.open .line-2 { opacity: 0; }
-  .nav-toggle.open .line-3 { transform: translateY(-7px) rotate(-45deg); }
 
-  /* Mobile menu drawer */
-  .mobile-drawer {
-    position: fixed;
-    top: 72px;
-    left: 0;
-    right: 0;
-    background: var(--bg);
-    border-bottom: 1px solid var(--line);
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    opacity: 0;
-    transform: translateY(-12px);
-    pointer-events: none;
-    transition: opacity 0.3s cubic-bezier(0.165, 0.84, 0.44, 1),
-                transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-    z-index: 95;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-  }
-  :root[data-theme="dark"] .mobile-drawer {
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-  }
-  .mobile-drawer.open {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-  }
-  .drawer-links {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  .drawer-lnk {
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--ink);
-    text-decoration: none;
-    transition: color 0.2s;
-    padding: 4px 0;
-  }
-  .drawer-lnk:hover { color: var(--accent); }
-  .drawer-btn { margin-top: 10px; text-align: center; justify-content: center; }
+    .hero .role .sep {
+      color: var(--accent);
+    }
 
-  /* ================= HERO ================= */
-  .hero {
-    position: relative;
-    padding-top: clamp(60px, 8vw, 100px);
-    padding-bottom: clamp(60px, 8vw, 90px);
-    text-align: center;
-    overflow: hidden;
-  }
-  .hero > .wrap {
-    position: relative;
-    z-index: 1;
-    max-width: 900px;
-  }
-  .hero-avatar-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 24px;
-  }
-  .hero-avatar-wrapper {
-    position: relative;
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    padding: 4px;
-    background: var(--line);
-    box-shadow: var(--shadow);
-    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-    cursor: pointer;
-    overflow: hidden;
-  }
-  .hero-avatar {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid var(--surface);
-    transition: transform 0.5s ease;
-  }
-  .hero-avatar-wrapper:hover {
-    transform: translateY(-4px);
-    background: var(--accent);
-  }
-  .hero-avatar-wrapper:hover .hero-avatar {
-    transform: scale(1.04);
-  }
-  
-  .badge {
-    display: inline-flex;
-    align-items: center;
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--accent);
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-  }
-  
-  .hero h1 { font-size: clamp(48px, 8.5vw, 84px); line-height: 1.05; font-weight: 700; margin: 16px auto 0; max-width: 14ch; letter-spacing: -0.03em; }
-  .hero h1 .it {
-    font-style: italic;
-    font-weight: 500;
-    background: linear-gradient(135deg, var(--accent) 30%, var(--accent-deep) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  .hero .role {
-    font-family: "IBM Plex Mono", monospace;
-    font-size: clamp(12.5px, 1.5vw, 14.5px);
-    color: var(--ink-soft);
-    margin-top: 24px;
-    letter-spacing: 0.06em;
-    font-weight: 500;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px 14px;
-    justify-content: center;
-    align-items: center;
-    text-transform: uppercase;
-  }
-  .hero .role .sep { color: var(--accent); }
-  .hero .pitch {
-    font-size: clamp(16.5px, 1.8vw, 19px);
-    color: var(--ink-soft);
-    max-width: 58ch;
-    margin: 24px auto 0;
-    line-height: 1.6;
-    letter-spacing: -0.01em;
-  }
-  .hero-cta { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-top: 40px; }
-  
-  /* stats list */
-  .hero-stats {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 28px;
-    margin-top: 64px;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  @media (max-width: 768px) {
-    .hero-stats { grid-template-columns: repeat(2, 1fr); gap: 24px; }
-  }
-  @media (max-width: 480px) {
-    .hero-stats { grid-template-columns: 1fr; gap: 20px; }
-  }
-  .hero-stats .st {
-    border-left: 1px solid var(--line);
-    padding-left: 20px;
-    text-align: left;
-  }
-  .hero-stats .v {
-    font-family: "Playfair Display", serif;
-    font-size: 30px;
-    font-weight: 600;
-    letter-spacing: -0.01em;
-    color: var(--ink);
-  }
-  .hero-stats .v .u { color: var(--accent); font-family: "IBM Plex Mono", monospace; font-size: 14px; }
-  .hero-stats .k { font-family: "IBM Plex Mono", monospace; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-faint); margin-top: 7px; }
+    .hero .pitch {
+      font-size: clamp(16.5px, 1.8vw, 19px);
+      color: var(--ink-soft);
+      max-width: 58ch;
+      margin: 24px auto 0;
+      line-height: 1.6;
+      letter-spacing: -0.01em;
+    }
 
-  /* ================= TRUST STRIP ================= */
-  .trust { padding: 34px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--bg-2); }
-  .trust .lab { font-family: "IBM Plex Mono", monospace; font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-faint); text-align: center; }
-  .trust .row { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 14px 34px; margin-top: 20px; }
-  .trust .row span { font-family: "Plus Jakarta Sans", sans-serif; font-weight: 700; font-size: 16px; color: var(--ink-soft); letter-spacing: -.01em; opacity: .85; transition: opacity .2s, color .2s; }
-  .trust .row span:hover { opacity: 1; color: var(--ink); }
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+      margin-top: 40px;
+    }
 
-  /* section head */
-  .shead { max-width: 800px; margin-bottom: 52px; }
-  .shead h2 { font-size: clamp(32px, 4.4vw, 46px); line-height: 1.1; margin-top: 16px; letter-spacing: -0.02em; }
-  .shead .sub { margin-top: 16px; font-size: clamp(16px, 1.8vw, 19px); line-height: 1.6; color: var(--ink-soft); }
-  .center { margin-left: auto; margin-right: auto; text-align: center; }
-  .center .eyebrow { justify-content: center; }
-  .center .sub { margin-left: auto; margin-right: auto; }
+    /* stats list */
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+      margin-top: 64px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
-  /* ================= ABOUT ================= */
-  .about-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(30px, 5vw, 74px); align-items: center; }
-  @media (max-width: 880px) { .about-grid { grid-template-columns: 1fr; gap: 32px; } }
-  .about-grid h2 { font-size: clamp(28px, 3.8vw, 40px); line-height: 1.1; }
-  .about-grid .lead { color: var(--ink-soft); margin-top: 20px; }
-  .about-grid .lead + .lead { margin-top: 1em; }
-  .sig { margin-top: 28px; padding-top: 22px; border-top: 1px solid var(--line); display: flex; align-items: center; gap: 14px; }
-  .sig .nm { font-family: "Playfair Display", serif; font-style: italic; font-size: 22px; font-weight: 500; }
-  .sig .rl { font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--ink-faint); letter-spacing: .04em; }
-  .about-media {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    background: var(--bg-2);
-    border: 1px solid var(--line);
-    border-radius: var(--r);
-    padding: 24px;
-  }
-  .about-image-wrapper {
-    position: relative;
-    border-radius: calc(var(--r) - 4px);
-    overflow: hidden;
-    aspect-ratio: 4 / 5;
-    border: 1px solid var(--line);
-    background: var(--bg);
-  }
-  .about-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-  }
-  .about-image-wrapper:hover .about-image {
-    transform: scale(1.03);
-  }
-  .about-quote-box {
-    border-top: 1px solid var(--line-strong);
-    padding-top: 18px;
-  }
-  .about-quote-box .quote {
-    font-family: "Playfair Display", serif;
-    font-size: clamp(18px, 2.2vw, 22px);
-    line-height: 1.4;
-    font-weight: 500;
-  }
-  .about-quote-box .quote b { color: var(--accent); font-weight: 600; }
-  .about-quote-box .mono {
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 12px;
-    color: var(--ink-faint);
-    margin-top: 16px;
-    letter-spacing: .03em;
-    line-height: 1.9;
-  }
-  .about-quote-box .mono span { color: var(--accent); }
+    @media (max-width: 768px) {
+      .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+    }
 
-  /* ================= WHY ================= */
-  .why { background: var(--bg-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-  .why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-  @media (max-width: 760px) { .why-grid { grid-template-columns: 1fr; } }
-  
-  /* Card Design */
-  .vcard, .cap, .step, .model {
-    background: var(--bg);
-    border: 1px solid var(--line);
-    border-radius: var(--r);
-    padding: 30px;
-    box-shadow: none;
-    transition: border-color .3s, background .3s;
-    position: relative;
-  }
-  .vcard:hover, .cap:hover, .step:hover, .model:hover {
-    border-color: var(--line-strong);
-    background: var(--bg-2);
-  }
-  .vcard .n { font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--accent); letter-spacing: .1em; }
-  .vcard h3 { font-size: 22px; margin-top: 14px; line-height: 1.15; }
-  .vcard p { color: var(--ink-soft); font-size: 15.5px; margin-top: 12px; }
+    @media (max-width: 480px) {
+      .hero-stats {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
 
-  /* anchors chips */
-  .anchors { margin-top: 44px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: center; }
-  .chip { font-family: "IBM Plex Mono", monospace; font-size: 13px; color: var(--ink-soft); border: 1px solid var(--line-strong); border-radius: 100px; padding: 9px 16px; background: var(--bg); transition: color .2s, border-color .2s; }
-  .chip:hover { color: var(--accent); border-color: var(--accent); }
-  .chip .x { color: var(--accent); margin-right: 7px; }
+    .hero-stats .st {
+      border-left: 1px solid var(--line);
+      padding-left: 20px;
+      text-align: left;
+    }
 
-  /* ================= CAPABILITIES ================= */
-  .tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 36px; border-bottom: 1px solid var(--line); padding-bottom: 0; }
-  .tab { font-family: "IBM Plex Mono", monospace; font-size: 13px; letter-spacing: .03em; color: var(--ink-soft); background: none; border: 0; border-bottom: 2px solid transparent; padding: 12px 4px; margin-bottom: -1px; cursor: pointer; transition: color .2s, border-color .2s; }
-  .tab[aria-selected="true"] { color: var(--accent); border-bottom-color: var(--accent); }
-  .tab:hover { color: var(--ink); }
-  .panel { display: none; }
-  .panel.active { display: block; animation: fade .4s ease; }
-  @keyframes fade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
-  @media (prefers-reduced-motion: reduce) { .panel.active { animation: none; } }
-  .cap-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-  @media (max-width: 860px) { .cap-grid { grid-template-columns: 1fr; } }
-  .cap h3 { font-size: 21px; line-height: 1.15; }
-  .cap .desc { color: var(--ink-soft); font-size: 15px; margin-top: 12px; }
-  .cap ul { list-style: none; padding: 0; margin: 20px 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
-  .cap ul li { font-family: "IBM Plex Mono", monospace; font-size: 11.5px; color: var(--ink-soft); border: 1px solid var(--line); border-radius: 6px; padding: 6px 10px; background: var(--bg-2); }
+    .hero-stats .v {
+      font-family: "Playfair Display", serif;
+      font-size: 30px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+    }
 
-  /* playbook */
-  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; counter-reset: s; }
-  @media (max-width: 860px) { .steps { grid-template-columns: 1fr 1fr; } }
-  @media (max-width: 520px) { .steps { grid-template-columns: 1fr; } }
-  .step .sn { font-family: "Playfair Display", serif; font-size: 38px; font-weight: 600; color: var(--accent); line-height: 1; }
-  .step h3 { font-size: 18px; margin-top: 16px; }
-  .step p { color: var(--ink-soft); font-size: 14.5px; margin-top: 10px; }
+    .hero-stats .v .u {
+      color: var(--accent);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 14px;
+    }
 
-  /* partnership models */
-  .models { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-  @media (max-width: 860px) { .models { grid-template-columns: 1fr; } }
-  .model { display: flex; flex-direction: column; }
-  .model.feat { border-color: var(--accent); background: var(--surface); }
-  .model .tag { font-family: "IBM Plex Mono", monospace; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-faint); }
-  .model.feat .tag { color: var(--accent); }
-  .model h3 { font-size: 22px; margin-top: 12px; }
-  .model .for { color: var(--ink-soft); font-size: 14.5px; margin-top: 10px; min-height: 44px; }
-  .model ul { list-style: none; padding: 0; margin: 20px 0 24px; display: flex; flex-direction: column; gap: 10px; }
-  .model ul li { font-size: 14.5px; color: var(--ink-soft); display: flex; gap: 10px; align-items: flex-start; }
-  .model ul li::before { content: "→"; color: var(--accent); font-weight: 700; }
-  .model .foot { margin-top: auto; }
+    .hero-stats .k {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin-top: 7px;
+    }
 
-  /* ================= FOUNDER SUITE ================= */
-  .suite { background: var(--ink); color: #F5F1EA; border-radius: 0; }
-  :root[data-theme="dark"] .suite { background: #0C0A09; }
-  .suite .eyebrow { color: var(--accent); }
-  .suite h2 { color: #FBF7F0; }
-  .suite .sub { color: #B8B0A2; }
-  .suite-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(28px, 4vw, 56px); align-items: start; margin-top: 8px; }
-  @media (max-width: 860px) { .suite-grid { grid-template-columns: 1fr; gap: 30px; } }
-  .suite-points { display: flex; flex-direction: column; gap: 18px; margin-top: 26px; }
-  .suite-points .pt { display: flex; gap: 14px; align-items: flex-start; }
-  .suite-points .pt .ic { flex: none; width: 32px; height: 32px; border-radius: 8px; background: rgba(232,73,44,.16); color: var(--accent); display: grid; place-items: center; font-family: "IBM Plex Mono", monospace; font-size: 14px; font-weight: 600; }
-  .suite-points .pt .tx { font-size: 15px; color: #CFC7B9; }
-  
-  .form-card { background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.1); border-radius: var(--r); padding: clamp(24px, 3vw, 34px); }
-  .form-card .fh { font-family: "IBM Plex Mono", monospace; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); }
-  .form-card h3 { color: #FBF7F0; font-size: 21px; margin-top: 10px; }
-  
-  .field { margin-top: 18px; }
-  .field label { display: block; font-size: 12.5px; font-weight: 600; color: #B8B0A2; margin-bottom: 7px; font-family: "IBM Plex Mono", monospace; letter-spacing: .03em; }
-  .field input, .field select, .field textarea {
-    width: 100%;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 8px;
-    padding: 14px 16px;
-    color: #F5F1EA;
-    font-family: inherit;
-    font-size: 15px;
-    transition: all 0.3s ease;
-  }
-  .field input::placeholder, .field textarea::placeholder { color: rgba(255, 255, 255, 0.35); }
-  .field input:focus, .field select:focus, .field textarea:focus {
-    outline: none;
-    border-color: var(--accent);
-    background: rgba(255, 255, 255, 0.06);
-    box-shadow: 0 0 0 4px rgba(226, 74, 42, 0.15);
-  }
-  .field select option { color: #181410; }
-  .form-card .btn-primary { width: 100%; justify-content: center; margin-top: 22px; }
-  .form-note { font-family: "IBM Plex Mono", monospace; font-size: 11px; color: #7C7466; margin-top: 14px; text-align: center; letter-spacing: .02em; }
+    /* ================= TRUST STRIP ================= */
+    .trust {
+      padding: 34px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: var(--bg-2);
+    }
 
-  /* ================= FAQ ================= */
-  .faq-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(28px, 4vw, 56px); align-items: start; }
-  @media (max-width: 820px) { .faq-grid { grid-template-columns: 1fr; gap: 24px; } }
-  details.q { border-bottom: 1px solid var(--line); }
-  details.q summary { list-style: none; cursor: pointer; padding: 22px 4px; display: flex; justify-content: space-between; gap: 20px; align-items: center; font-family: "Playfair Display", serif; font-size: 19px; font-weight: 500; color: var(--ink); }
-  details.q summary::-webkit-details-marker { display: none; }
-  details.q summary .ic { flex: none; width: 22px; height: 22px; position: relative; }
-  details.q summary .ic::before, details.q summary .ic::after { content: ""; position: absolute; background: var(--accent); border-radius: 2px; }
-  details.q summary .ic::before { left: 0; right: 0; top: 10px; height: 2px; }
-  details.q summary .ic::after { top: 0; bottom: 0; left: 10px; width: 2px; transition: opacity .25s; }
-  details.q[open] summary .ic::after { opacity: 0; }
-  details.q .ans { padding: 0 4px 22px; color: var(--ink-soft); font-size: 15.5px; max-width: 66ch; }
+    .trust .lab {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11.5px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      text-align: center;
+    }
 
-  /* ================= CONTACT ================= */
-  .contact { background: var(--bg-2); border-top: 1px solid var(--line); }
-  .contact-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(30px, 5vw, 64px); align-items: start; }
-  @media (max-width: 880px) { .contact-grid { grid-template-columns: 1fr; gap: 34px; } }
-  .promise { display: flex; flex-direction: column; gap: 16px; margin-top: 26px; }
-  .promise .pi { display: flex; gap: 13px; align-items: flex-start; }
-  .promise .pi .ck { flex: none; width: 26px; height: 26px; border-radius: 50%; background: var(--accent-tint); color: var(--accent); display: grid; place-items: center; font-size: 13px; font-weight: 700; }
-  .promise .pi .pt { font-size: 15px; color: var(--ink-soft); }
-  .promise .pi .pt b { color: var(--ink); font-weight: 600; }
-  
-  .cform { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: clamp(24px, 3vw, 36px); box-shadow: var(--shadow); }
-  .cform .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  @media (max-width: 520px) { .cform .row2 { grid-template-columns: 1fr; } }
-  .cform label { display: block; font-size: 12.5px; font-weight: 600; color: var(--ink-soft); margin-bottom: 7px; font-family: "IBM Plex Mono", monospace; letter-spacing: .02em; }
-  .cform input, .cform select, .cform textarea {
-    width: 100%;
-    background: var(--bg);
-    border: 1px solid var(--line-strong);
-    border-radius: 8px;
-    padding: 14px 16px;
-    color: var(--ink);
-    font-family: inherit;
-    font-size: 15px;
-    transition: all 0.3s ease;
-  }
-  .cform input:focus, .cform select:focus, .cform textarea:focus {
-    outline: none;
-    border-color: var(--accent);
-    background: var(--surface);
-    box-shadow: 0 0 0 4px rgba(226, 74, 42, 0.08);
-  }
-  .cform .field { margin-top: 16px; }
-  .cform .btn-primary { width: 100%; justify-content: center; margin-top: 22px; }
+    .trust .row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 14px 34px;
+      margin-top: 20px;
+    }
 
-  /* ================= FOOTER ================= */
-  footer.ft { background: var(--bg); border-top: 1px solid var(--line); padding: 60px 0 36px; }
-  .ft-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 32px; }
-  @media (max-width: 760px) { .ft-top { grid-template-columns: 1fr 1fr; gap: 28px; } }
-  @media (max-width: 460px) { .ft-top { grid-template-columns: 1fr; } }
-  .ft-brand .bn { font-family: "Plus Jakarta Sans", sans-serif; font-weight: 800; font-size: 24px; letter-spacing: -.02em; }
-  .ft-brand .bn .d { color: var(--accent); }
-  .ft-brand p { color: var(--ink-soft); font-size: 14.5px; margin-top: 12px; max-width: 34ch; }
-  .ft h4 { font-family: "IBM Plex Mono", monospace; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-faint); font-weight: 500; margin: 0 0 15px; }
-  .ft-col { display: flex; flex-direction: column; gap: 11px; }
-  .ft-col a { color: var(--ink-soft); text-decoration: none; font-size: 14px; transition: color .2s; width: fit-content; }
-  .ft-col a:hover { color: var(--accent); }
-  .ft-bottom { margin-top: 48px; padding-top: 22px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; align-items: center; }
-  .ft-bottom p { font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--ink-faint); }
-  .ft-bottom .tag { color: var(--accent); }
+    .trust .row span {
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--ink-soft);
+      letter-spacing: -.01em;
+      opacity: .85;
+      transition: opacity .2s, color .2s;
+    }
 
-  /* ================= CASE STUDIES & WORK ================= */
-  .work { background: var(--bg); border-top: 1px solid var(--line); }
-  .work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-  @media (max-width: 920px) { .work-grid { grid-template-columns: 1fr; } }
-  .work-card {
-    background: var(--bg-2);
-    border: 1px solid var(--line);
-    border-radius: var(--r);
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    transition: all 0.3s ease;
-  }
-  .work-card:hover {
-    background: var(--surface);
-    border-color: var(--line-strong);
-  }
-  .work-card .num { font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
-  .work-card h3 { font-size: 20px; margin-top: 14px; line-height: 1.25; }
-  .work-card .desc { color: var(--ink-soft); font-size: 15px; margin-top: 12px; line-height: 1.6; flex-grow: 1; }
-  .work-card .meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
-  .work-card .meta span { font-family: "IBM Plex Mono", monospace; font-size: 11px; color: var(--ink-soft); background: var(--bg); border: 1px solid var(--line); border-radius: 4px; padding: 4px 8px; }
+    .trust .row span:hover {
+      opacity: 1;
+      color: var(--ink);
+    }
 
-  /* ================= PROCESS ================= */
-  .process { background: var(--bg-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-  .process-flow { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
-  @media (max-width: 768px) { .process-flow { grid-template-columns: 1fr; } }
-  .p-step {
-    background: var(--bg);
-    border: 1px solid var(--line);
-    border-radius: var(--r);
-    padding: 32px;
-    display: flex;
-    gap: 24px;
-    align-items: flex-start;
-    transition: all 0.3s ease;
-  }
-  .p-step:hover {
-    border-color: var(--line-strong);
-    background: var(--surface);
-  }
-  .p-step .p-num {
-    flex: none;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: var(--accent-tint);
-    color: var(--accent);
-    display: grid;
-    place-items: center;
-    font-family: "Plus Jakarta Sans", sans-serif;
-    font-weight: 700;
-    font-size: 16px;
-  }
-  .p-step .p-body h3 { font-size: 19px; line-height: 1.2; }
-  .p-step .p-body p { color: var(--ink-soft); font-size: 14.5px; margin-top: 10px; line-height: 1.6; }
+    /* section head */
+    .shead {
+      max-width: 800px;
+      margin-bottom: 52px;
+    }
 
-  /* ================= WRITING & THOUGHTS ================= */
-  .writing { background: var(--bg); border-top: 1px solid var(--line); }
-  .articles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-  @media (max-width: 920px) { .articles-grid { grid-template-columns: 1fr; } }
-  .article-card {
-    background: var(--bg-2);
-    border: 1px solid var(--line);
-    border-radius: var(--r);
-    padding: 30px;
-    text-decoration: none;
-    display: block;
-    transition: all 0.3s ease;
-  }
-  .article-card:hover {
-    background: var(--surface);
-    border-color: var(--accent);
-    transform: translateY(-2px);
-  }
-  .article-card .date { font-family: "IBM Plex Mono", monospace; font-size: 11.5px; color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
-  .article-card h3 { font-size: 19px; margin-top: 14px; line-height: 1.25; color: var(--ink); }
-  .article-card p { color: var(--ink-soft); font-size: 14.5px; margin-top: 10px; line-height: 1.6; }
-  .article-card .lnk-arw { display: inline-block; transition: transform 0.2s ease; margin-left: 2px; }
-  .article-card:hover .lnk-arw { transform: translate(2px, -2px); color: var(--accent); }
-  .writing-footer { text-align: center; margin-top: 48px; font-size: 16px; color: var(--ink-soft); }
-  .writing-footer a { margin-left: 8px; vertical-align: middle; }
+    .shead h2 {
+      font-size: clamp(32px, 4.4vw, 46px);
+      line-height: 1.1;
+      margin-top: 16px;
+      letter-spacing: -0.02em;
+    }
 
-  /* animation classes */
-  .rv { opacity: 0; transform: translateY(12px); transition: opacity .5s cubic-bezier(.165, .84, .44, 1), transform .5s cubic-bezier(.165, .84, .44, 1); }
-  .rv.in { opacity: 1; transform: none; }
-  @media (prefers-reduced-motion: reduce) { .rv { opacity: 1; transform: none; transition: none; } }
-  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
-  ::selection { background: var(--accent-tint); color: var(--ink); }
-</style>
+    .shead .sub {
+      margin-top: 16px;
+      font-size: clamp(16px, 1.8vw, 19px);
+      line-height: 1.6;
+      color: var(--ink-soft);
+    }
+
+    .center {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    .center .eyebrow {
+      justify-content: center;
+    }
+
+    .center .sub {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ================= ABOUT ================= */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: clamp(30px, 5vw, 74px);
+      align-items: center;
+    }
+
+    @media (max-width: 880px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+
+    .about-grid h2 {
+      font-size: clamp(28px, 3.8vw, 40px);
+      line-height: 1.1;
+    }
+
+    .about-grid .lead {
+      color: var(--ink-soft);
+      margin-top: 20px;
+    }
+
+    .about-grid .lead+.lead {
+      margin-top: 1em;
+    }
+
+    .sig {
+      margin-top: 28px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .sig .nm {
+      font-family: "Playfair Display", serif;
+      font-style: italic;
+      font-size: 22px;
+      font-weight: 500;
+    }
+
+    .sig .rl {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+      color: var(--ink-faint);
+      letter-spacing: .04em;
+    }
+
+    .about-media {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      background: var(--bg-2);
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      padding: 24px;
+    }
+
+    .about-image-wrapper {
+      position: relative;
+      border-radius: calc(var(--r) - 4px);
+      overflow: hidden;
+      aspect-ratio: 4 / 5;
+      border: 1px solid var(--line);
+      background: var(--bg);
+    }
+
+    .about-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .about-image-wrapper:hover .about-image {
+      transform: scale(1.03);
+    }
+
+    .about-quote-box {
+      border-top: 1px solid var(--line-strong);
+      padding-top: 18px;
+    }
+
+    .about-quote-box .quote {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(18px, 2.2vw, 22px);
+      line-height: 1.4;
+      font-weight: 500;
+    }
+
+    .about-quote-box .quote b {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .about-quote-box .mono {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+      color: var(--ink-faint);
+      margin-top: 16px;
+      letter-spacing: .03em;
+      line-height: 1.9;
+    }
+
+    .about-quote-box .mono span {
+      color: var(--accent);
+    }
+
+    /* ================= WHY ================= */
+    .why {
+      background: var(--bg-2);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    @media (max-width: 760px) {
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Card Design */
+    .vcard,
+    .cap,
+    .step,
+    .model {
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      padding: 30px;
+      box-shadow: none;
+      transition: border-color .3s, background .3s;
+      position: relative;
+    }
+
+    .vcard:hover,
+    .cap:hover,
+    .step:hover,
+    .model:hover {
+      border-color: var(--line-strong);
+      background: var(--bg-2);
+    }
+
+    .vcard .n {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+      color: var(--accent);
+      letter-spacing: .1em;
+    }
+
+    .vcard h3 {
+      font-size: 22px;
+      margin-top: 14px;
+      line-height: 1.15;
+    }
+
+    .vcard p {
+      color: var(--ink-soft);
+      font-size: 15.5px;
+      margin-top: 12px;
+    }
+
+    /* anchors chips */
+    .anchors {
+      margin-top: 44px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .chip {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 13px;
+      color: var(--ink-soft);
+      border: 1px solid var(--line-strong);
+      border-radius: 100px;
+      padding: 9px 16px;
+      background: var(--bg);
+      transition: color .2s, border-color .2s;
+    }
+
+    .chip:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .chip .x {
+      color: var(--accent);
+      margin-right: 7px;
+    }
+
+    /* ================= CAPABILITIES ================= */
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 36px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 0;
+    }
+
+    .tab {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 13px;
+      letter-spacing: .03em;
+      color: var(--ink-soft);
+      background: none;
+      border: 0;
+      border-bottom: 2px solid transparent;
+      padding: 12px 4px;
+      margin-bottom: -1px;
+      cursor: pointer;
+      transition: color .2s, border-color .2s;
+    }
+
+    .tab[aria-selected="true"] {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    .tab:hover {
+      color: var(--ink);
+    }
+
+    .panel {
+      display: none;
+    }
+
+    .panel.active {
+      display: block;
+      animation: fade .4s ease;
+    }
+
+    @keyframes fade {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .panel.active {
+        animation: none;
+      }
+    }
+
+    .cap-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    @media (max-width: 860px) {
+      .cap-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .cap h3 {
+      font-size: 21px;
+      line-height: 1.15;
+    }
+
+    .cap .desc {
+      color: var(--ink-soft);
+      font-size: 15px;
+      margin-top: 12px;
+    }
+
+    .cap ul {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .cap ul li {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11.5px;
+      color: var(--ink-soft);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 6px 10px;
+      background: var(--bg-2);
+    }
+
+    /* playbook */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      counter-reset: s;
+    }
+
+    @media (max-width: 860px) {
+      .steps {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .steps {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .step .sn {
+      font-family: "Playfair Display", serif;
+      font-size: 38px;
+      font-weight: 600;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .step h3 {
+      font-size: 18px;
+      margin-top: 16px;
+    }
+
+    .step p {
+      color: var(--ink-soft);
+      font-size: 14.5px;
+      margin-top: 10px;
+    }
+
+    /* partnership models */
+    .models {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    @media (max-width: 860px) {
+      .models {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .model {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .model.feat {
+      border-color: var(--accent);
+      background: var(--surface);
+    }
+
+    .model .tag {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+    }
+
+    .model.feat .tag {
+      color: var(--accent);
+    }
+
+    .model h3 {
+      font-size: 22px;
+      margin-top: 12px;
+    }
+
+    .model .for {
+      color: var(--ink-soft);
+      font-size: 14.5px;
+      margin-top: 10px;
+      min-height: 44px;
+    }
+
+    .model ul {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .model ul li {
+      font-size: 14.5px;
+      color: var(--ink-soft);
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .model ul li::before {
+      content: "→";
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .model .foot {
+      margin-top: auto;
+    }
+
+    /* ================= FOUNDER SUITE ================= */
+    .suite {
+      background: var(--ink);
+      color: #F5F1EA;
+      border-radius: 0;
+    }
+
+    :root[data-theme="dark"] .suite {
+      background: #0C0A09;
+    }
+
+    .suite .eyebrow {
+      color: var(--accent);
+    }
+
+    .suite h2 {
+      color: #FBF7F0;
+    }
+
+    .suite .sub {
+      color: #B8B0A2;
+    }
+
+    .suite-grid {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: clamp(28px, 4vw, 56px);
+      align-items: start;
+      margin-top: 8px;
+    }
+
+    @media (max-width: 860px) {
+      .suite-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+    }
+
+    .suite-points {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin-top: 26px;
+    }
+
+    .suite-points .pt {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .suite-points .pt .ic {
+      flex: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: rgba(232, 73, 44, .16);
+      color: var(--accent);
+      display: grid;
+      place-items: center;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .suite-points .pt .tx {
+      font-size: 15px;
+      color: #CFC7B9;
+    }
+
+    .form-card {
+      background: rgba(255, 255, 255, .03);
+      border: 1px solid rgba(255, 255, 255, .1);
+      border-radius: var(--r);
+      padding: clamp(24px, 3vw, 34px);
+    }
+
+    .form-card .fh {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .form-card h3 {
+      color: #FBF7F0;
+      font-size: 21px;
+      margin-top: 10px;
+    }
+
+    .field {
+      margin-top: 18px;
+    }
+
+    .field label {
+      display: block;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #B8B0A2;
+      margin-bottom: 7px;
+      font-family: "IBM Plex Mono", monospace;
+      letter-spacing: .03em;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 8px;
+      padding: 14px 16px;
+      color: #F5F1EA;
+      font-family: inherit;
+      font-size: 15px;
+      transition: all 0.3s ease;
+    }
+
+    .field input::placeholder,
+    .field textarea::placeholder {
+      color: rgba(255, 255, 255, 0.35);
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      background: rgba(255, 255, 255, 0.06);
+      box-shadow: 0 0 0 4px rgba(226, 74, 42, 0.15);
+    }
+
+    .field select option {
+      color: #181410;
+    }
+
+    .form-card .btn-primary {
+      width: 100%;
+      justify-content: center;
+      margin-top: 22px;
+    }
+
+    .form-note {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      color: #7C7466;
+      margin-top: 14px;
+      text-align: center;
+      letter-spacing: .02em;
+    }
+
+    /* ================= FAQ ================= */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: clamp(28px, 4vw, 56px);
+      align-items: start;
+    }
+
+    @media (max-width: 820px) {
+      .faq-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+    }
+
+    details.q {
+      border-bottom: 1px solid var(--line);
+    }
+
+    details.q summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 22px 4px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+      font-family: "Playfair Display", serif;
+      font-size: 19px;
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    details.q summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details.q summary .ic {
+      flex: none;
+      width: 22px;
+      height: 22px;
+      position: relative;
+    }
+
+    details.q summary .ic::before,
+    details.q summary .ic::after {
+      content: "";
+      position: absolute;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    details.q summary .ic::before {
+      left: 0;
+      right: 0;
+      top: 10px;
+      height: 2px;
+    }
+
+    details.q summary .ic::after {
+      top: 0;
+      bottom: 0;
+      left: 10px;
+      width: 2px;
+      transition: opacity .25s;
+    }
+
+    details.q[open] summary .ic::after {
+      opacity: 0;
+    }
+
+    details.q .ans {
+      padding: 0 4px 22px;
+      color: var(--ink-soft);
+      font-size: 15.5px;
+      max-width: 66ch;
+    }
+
+    /* ================= CONTACT ================= */
+    .contact {
+      background: var(--bg-2);
+      border-top: 1px solid var(--line);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: clamp(30px, 5vw, 64px);
+      align-items: start;
+    }
+
+    @media (max-width: 880px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 34px;
+      }
+    }
+
+    .promise {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 26px;
+    }
+
+    .promise .pi {
+      display: flex;
+      gap: 13px;
+      align-items: flex-start;
+    }
+
+    .promise .pi .ck {
+      flex: none;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--accent-tint);
+      color: var(--accent);
+      display: grid;
+      place-items: center;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .promise .pi .pt {
+      font-size: 15px;
+      color: var(--ink-soft);
+    }
+
+    .promise .pi .pt b {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .cform {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      padding: clamp(24px, 3vw, 36px);
+      box-shadow: var(--shadow);
+    }
+
+    .cform .row2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    @media (max-width: 520px) {
+      .cform .row2 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .cform label {
+      display: block;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--ink-soft);
+      margin-bottom: 7px;
+      font-family: "IBM Plex Mono", monospace;
+      letter-spacing: .02em;
+    }
+
+    .cform input,
+    .cform select,
+    .cform textarea {
+      width: 100%;
+      background: var(--bg);
+      border: 1px solid var(--line-strong);
+      border-radius: 8px;
+      padding: 14px 16px;
+      color: var(--ink);
+      font-family: inherit;
+      font-size: 15px;
+      transition: all 0.3s ease;
+    }
+
+    .cform input:focus,
+    .cform select:focus,
+    .cform textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      background: var(--surface);
+      box-shadow: 0 0 0 4px rgba(226, 74, 42, 0.08);
+    }
+
+    .cform .field {
+      margin-top: 16px;
+    }
+
+    .cform .btn-primary {
+      width: 100%;
+      justify-content: center;
+      margin-top: 22px;
+    }
+
+    /* ================= FOOTER ================= */
+    footer.ft {
+      background: var(--bg);
+      border-top: 1px solid var(--line);
+      padding: 60px 0 36px;
+    }
+
+    .ft-top {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 32px;
+    }
+
+    @media (max-width: 760px) {
+      .ft-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+      }
+    }
+
+    @media (max-width: 460px) {
+      .ft-top {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .ft-brand .bn {
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-weight: 800;
+      font-size: 24px;
+      letter-spacing: -.02em;
+    }
+
+    .ft-brand .bn .d {
+      color: var(--accent);
+    }
+
+    .ft-brand p {
+      color: var(--ink-soft);
+      font-size: 14.5px;
+      margin-top: 12px;
+      max-width: 34ch;
+    }
+
+    .ft h4 {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      font-weight: 500;
+      margin: 0 0 15px;
+    }
+
+    .ft-col {
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+
+    .ft-col a {
+      color: var(--ink-soft);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color .2s;
+      width: fit-content;
+    }
+
+    .ft-col a:hover {
+      color: var(--accent);
+    }
+
+    .ft-bottom {
+      margin-top: 48px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .ft-bottom p {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+      color: var(--ink-faint);
+    }
+
+    .ft-bottom .tag {
+      color: var(--accent);
+    }
+
+    /* animation classes */
+    .rv {
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity .5s cubic-bezier(.165, .84, .44, 1), transform .5s cubic-bezier(.165, .84, .44, 1);
+    }
+
+    .rv.in {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .rv {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 3px;
+    }
+
+    ::selection {
+      background: var(--accent-tint);
+      color: var(--ink);
+    }
+  </style>
 </head>
+
 <body>
-<!-- ================= NAV ================= -->
-<header class="nav" id="nav">
-  <div class="nav-inner">
-    <a href="#top" class="brand">nihar<span class="d">.</span></a>
-    
-    <div class="nav-desktop">
-      <a href="#about" class="lnk">About</a>
-      <a href="#capabilities" class="lnk">Services</a>
-      <a href="#work" class="lnk">Work</a>
-      <a href="#process" class="lnk">Process</a>
-      <a href="#writing" class="lnk">Writing</a>
-      <a href="#suite" class="lnk">Founder Suite</a>
-      <a href="#faq" class="lnk">FAQ</a>
-    </div>
+  <!-- ================= NAV ================= -->
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#top" class="brand">nihar<span class="d">.</span></a>
 
-    <div class="nav-actions">
-      <a href="#contact" class="btn btn-primary btn-sm-desktop">Book a Call <span class="arw">→</span></a>
-      
-      <button class="theme-toggle" id="themeBtn" aria-label="Toggle theme" title="Toggle theme">
-        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.5M12 19v2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M2.5 12h2.5M19 12h2.5M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></svg>
-        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.2 6.2 0 0 0 10.5 10.5z"/></svg>
-      </button>
+      <div class="nav-desktop">
+        <a href="#about" class="lnk">About</a>
+        <a href="#capabilities" class="lnk">Services</a>
+        <a href="#suite" class="lnk">Founder Suite</a>
+        <a href="#faq" class="lnk">FAQ</a>
+      </div>
 
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mobileDrawer">
-        <span class="line line-1"></span>
-        <span class="line line-2"></span>
-        <span class="line line-3"></span>
-      </button>
-    </div>
-  </div>
+      <div class="nav-actions">
+        <a href="#contact" class="btn btn-primary btn-sm-desktop">Book a Call <span class="arw">→</span></a>
 
-  <div class="mobile-drawer" id="mobileDrawer">
-    <nav class="drawer-links">
-      <a href="#about" class="drawer-lnk">About</a>
-      <a href="#capabilities" class="drawer-lnk">Services</a>
-      <a href="#work" class="drawer-lnk">Work</a>
-      <a href="#process" class="drawer-lnk">Process</a>
-      <a href="#writing" class="drawer-lnk">Writing</a>
-      <a href="#suite" class="drawer-lnk">Founder Suite</a>
-      <a href="#faq" class="drawer-lnk">FAQ</a>
-      <a href="#contact" class="btn btn-primary drawer-btn">Book a Call <span class="arw">→</span></a>
-    </nav>
-  </div>
-</header>
+        <button class="theme-toggle" id="themeBtn" aria-label="Toggle theme" title="Toggle theme">
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+            stroke-linecap="round">
+            <circle cx="12" cy="12" r="4.2" />
+            <path
+              d="M12 2.5v2.5M12 19v2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M2.5 12h2.5M19 12h2.5M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8" />
+          </svg>
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 14.5A8 8 0 1 1 9.5 4a6.2 6.2 0 0 0 10.5 10.5z" />
+          </svg>
+        </button>
 
-<main id="top">
-
-<!-- ================= HERO ================= -->
-<section class="hero" id="hero">
-  <div class="wrap">
-    <div class="hero-avatar-container rv">
-      <div class="hero-avatar-wrapper">
-        <img src="assets/nihar.jpg" alt="Nihar Ranjan Rout" class="hero-avatar">
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+          <span class="line line-1"></span>
+          <span class="line line-2"></span>
+          <span class="line line-3"></span>
+        </button>
       </div>
     </div>
-    <span class="badge rv">B2B product &amp; software development — product thinking first</span>
-    <h1 class="rv">Nihar Ranjan <span class="it">Rout.</span></h1>
-    <div class="role rv">Founder &amp; CEO, Creuto <span class="sep">•</span> Product Strategist <span class="sep">•</span> Business &amp; Technology</div>
-    <p class="pitch rv">I help businesses turn an idea into the right product — clarifying scope, shaping the PRD, and planning a build that fits your budget. My team at Creuto then engineers it to a standard we're proud of. Product thinking first; honest, dedicated delivery always.</p>
-    <div class="hero-cta rv">
-      <a href="#contact" class="btn btn-primary">Book a Strategy Call <span class="arw">→</span></a>
-      <a href="#capabilities" class="btn btn-ghost">Explore Services</a>
-    </div>
-    <div class="hero-stats rv">
-      <div class="st"><div class="v">8<span class="u">+ yrs</span></div><div class="k">In product management</div></div>
-      <div class="st"><div class="v">Multi-domain</div><div class="k">Across industries</div></div>
-      <div class="st"><div class="v">In-house</div><div class="k">Creuto tech team</div></div>
-      <div class="st"><div class="v">B2B</div><div class="k">Growth-standard builds</div></div>
-    </div>
-  </div>
-</section>
 
-<!-- ================= TRUST STRIP ================= -->
-<div class="trust">
-  <div class="wrap">
-    <p class="lab">B2B product &amp; software delivery across industries</p>
-    <div class="row">
-      <span>Fintech</span><span>SaaS</span><span>Healthcare</span><span>E-commerce</span><span>Logistics</span><span>EdTech</span><span>Real Estate</span>
+    <div class="mobile-drawer" id="mobileDrawer">
+      <nav class="drawer-links">
+        <a href="#about" class="drawer-lnk">About</a>
+        <a href="#capabilities" class="drawer-lnk">Services</a>
+        <a href="#suite" class="drawer-lnk">Founder Suite</a>
+        <a href="#faq" class="drawer-lnk">FAQ</a>
+        <a href="#contact" class="btn btn-primary drawer-btn">Book a Call <span class="arw">→</span></a>
+      </nav>
     </div>
-  </div>
-</div>
+  </header>
 
-<!-- ================= ABOUT ================= -->
-<section id="about">
-  <div class="wrap about-grid">
-    <div class="rv">
-      <p class="eyebrow">About &amp; value</p>
-      <h2 style="margin-top:16px">Product thinking first. Then software built to a standard.</h2>
-      <p class="lead">Most software fails for a product reason, not a technical one — the wrong scope, unclear priorities, a budget spent on the wrong things. That's the part I'm best at. Eight years in product management across many business domains taught me to ask the right questions before a single line of code is written.</p>
-      <p class="lead">When you bring me an idea, I help you shape it — a clear PRD, honest scope, and a plan that fits your budget. My team at Creuto then engineers it into a genuinely good product. We work with honesty and dedication, and we stand behind what we ship for what we charge.</p>
-      <div class="sig">
+  <main id="top">
+
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="hero">
+      <div class="wrap">
+        <div class="hero-avatar-container rv">
+          <div class="hero-avatar-wrapper">
+            <img src="assets/nihar.jpg" alt="Nihar Ranjan Rout" class="hero-avatar">
+          </div>
+        </div>
+        <span class="badge rv">B2B product &amp; software development — product thinking first</span>
+        <h1 class="rv">Nihar Ranjan <span class="it">Rout.</span></h1>
+        <div class="role rv">Founder &amp; CEO, Creuto and Edverise <span class="sep">•</span> Product Strategist <span
+            class="sep">•</span> Business &amp; Technology</div>
+        <p class="pitch rv">I help businesses turn an idea into the right product — clarifying scope, shaping the PRD,
+          and planning a build that fits your budget. My team at Creuto then engineers it to a standard we're proud of.
+          Product thinking first; honest, dedicated delivery always.</p>
+        <div class="hero-cta rv">
+          <a href="#contact" class="btn btn-primary">Book a Strategy Call <span class="arw">→</span></a>
+          <a href="#capabilities" class="btn btn-ghost">Explore Services</a>
+        </div>
+        <div class="hero-stats rv">
+          <div class="st">
+            <div class="v">8<span class="u">+ yrs</span></div>
+            <div class="k">In product management</div>
+          </div>
+          <div class="st">
+            <div class="v">Multi-domain</div>
+            <div class="k">Across industries</div>
+          </div>
+          <div class="st">
+            <div class="v">In-house</div>
+            <div class="k">Creuto tech team</div>
+          </div>
+          <div class="st">
+            <div class="v">B2B</div>
+            <div class="k">Growth-standard builds</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TRUST STRIP ================= -->
+    <div class="trust">
+      <div class="wrap">
+        <p class="lab">B2B product &amp; software delivery across industries</p>
+        <div class="row">
+          <span>Fintech</span><span>SaaS</span><span>Healthcare</span><span>E-commerce</span><span>Logistics</span><span>EdTech</span><span>Real
+            Estate</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= ABOUT ================= -->
+    <section id="about">
+      <div class="wrap about-grid">
+        <div class="rv">
+          <p class="eyebrow">About &amp; value</p>
+          <h2 style="margin-top:16px">Product thinking first. Then software built to a standard.</h2>
+          <p class="lead">Most software fails for a product reason, not a technical one — the wrong scope, unclear
+            priorities, a budget spent on the wrong things. That's the part I'm best at. Eight years in product
+            management across many business domains taught me to ask the right questions before a single line of code is
+            written.</p>
+          <p class="lead">When you bring me an idea, I help you shape it — a clear PRD, honest scope, and a plan that
+            fits your budget. My team at Creuto then engineers it into a genuinely good product. We work with honesty
+            and dedication, and we stand behind what we ship for what we charge.</p>
+          <div class="sig">
+            <div>
+              <div class="nm">Nihar Ranjan Rout</div>
+              <div class="rl">FOUNDER, CREUTO & Edverise</div>
+            </div>
+          </div>
+        </div>
+        <div class="about-media rv">
+          <div class="about-image-wrapper">
+            <img src="assets/nihar-cafe.jpg" alt="Nihar Ranjan Rout" class="about-image">
+          </div>
+          <div class="about-quote-box">
+            <p class="quote">The right product, scoped honestly and built well — <b>within your budget</b>, not despite
+              it.</p>
+            <div class="mono">
+              <span>→</span> Product strategy &amp; PRD<br>
+              <span>→</span> Business &amp; domain analysis<br>
+              <span>→</span> Budget-fit build planning<br>
+              <span>→</span> In-house engineering at Creuto
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= WHY ================= -->
+    <section class="why" id="why">
+      <div class="wrap">
+        <div class="shead center rv">
+          <p class="eyebrow">Why work with us</p>
+          <h2>A B2B software partner that starts with product, not code.</h2>
+        </div>
+        <div class="why-grid">
+          <div class="vcard rv">
+            <div class="n">01</div>
+            <h3>Product thinking, first</h3>
+            <p>Before anyone writes code, we get the product right — the problem, the users, the scope, and a PRD that
+              keeps the whole build focused on what actually matters.</p>
+          </div>
+          <div class="vcard rv">
+            <div class="n">02</div>
+            <h3>Business &amp; domain understanding</h3>
+            <p>Eight years across many industries means I understand your business, not just a feature list — and
+              translate it into the right product decisions.</p>
+          </div>
+          <div class="vcard rv">
+            <div class="n">03</div>
+            <h3>Built within your budget</h3>
+            <p>We scope honestly and plan a build that fits what you can invest — then deliver a product that stands
+              well above what you paid for it.</p>
+          </div>
+          <div class="vcard rv">
+            <div class="n">04</div>
+            <h3>A strong in-house team</h3>
+            <p>Creuto's engineers build B2B, growth-standard software directly — real product delivery, not a middleman
+              handing your project to strangers.</p>
+          </div>
+        </div>
+        <div class="anchors rv">
+          <span class="chip"><span class="x">+</span>8 years in product management</span>
+          <span class="chip"><span class="x">+</span>PRD &amp; product strategy</span>
+          <span class="chip"><span class="x">+</span>Business &amp; domain analysis</span>
+          <span class="chip"><span class="x">+</span>B2B &amp; SaaS software</span>
+          <span class="chip"><span class="x">+</span>AI &amp; full-stack development</span>
+          <span class="chip"><span class="x">+</span>Founder &amp; CEO, Creuto</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CAPABILITIES (tabs) ================= -->
+    <section id="capabilities">
+      <div class="wrap">
+        <div class="shead rv">
+          <p class="eyebrow">Capabilities &amp; execution</p>
+          <h2>From product strategy to a shipped, growth-standard build.</h2>
+          <p class="sub">Explore our core capabilities, the product-first engagement playbook, and flexible ways to work
+            together.</p>
+        </div>
+
+        <div class="tabs rv" role="tablist" aria-label="Capabilities">
+          <button class="tab" role="tab" aria-selected="true" aria-controls="p-cap" id="t-cap">01 · Capabilities &amp;
+            tech</button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="p-play" id="t-play">02 · Execution
+            playbook</button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="p-model" id="t-model">03 · Partnership
+            models</button>
+        </div>
+
+        <div class="panel active" id="p-cap" role="tabpanel" aria-labelledby="t-cap">
+          <div class="cap-grid">
+            <article class="cap">
+              <h3>Product strategy &amp; consulting</h3>
+              <p class="desc">The part I lead personally — turning your idea into a clear, buildable product: scope,
+                priorities, and a PRD your team and ours can execute against.</p>
+              <ul>
+                <li>PRD &amp; documentation</li>
+                <li>Product &amp; business strategy</li>
+                <li>Scope &amp; roadmap</li>
+                <li>Budget-fit planning</li>
+                <li>Domain analysis</li>
+                <li>Feature prioritization</li>
+              </ul>
+            </article>
+            <article class="cap">
+              <h3>Software &amp; AI development</h3>
+              <p class="desc">Creuto's in-house team builds production-grade B2B products — web platforms, SaaS, and
+                custom AI features engineered to a growth standard.</p>
+              <ul>
+                <li>SaaS &amp; web platforms</li>
+                <li>Next.js &amp; React</li>
+                <li>Node.js &amp; Python</li>
+                <li>AI features &amp; agents</li>
+                <li>APIs &amp; integrations</li>
+                <li>Cloud architecture</li>
+              </ul>
+            </article>
+            <article class="cap">
+              <h3>Mobile &amp; ongoing delivery</h3>
+              <p class="desc">Cross-platform mobile apps and dedicated-team delivery — with the product discipline to
+                keep every sprint pointed at real outcomes.</p>
+              <ul>
+                <li>Mobile app development</li>
+                <li>Dedicated teams</li>
+                <li>QA &amp; maintenance</li>
+                <li>Workflow automation</li>
+                <li>Custom CRM</li>
+                <li>Scale &amp; support</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+
+        <div class="panel" id="p-play" role="tabpanel" aria-labelledby="t-play">
+          <div class="steps">
+            <div class="step">
+              <div class="sn">1</div>
+              <h3>Discovery &amp; PRD</h3>
+              <p>We map the problem, users, and business goals, and turn them into a clear PRD — the scope agreed before
+                anything is built.</p>
+            </div>
+            <div class="step">
+              <div class="sn">2</div>
+              <h3>Plan &amp; architecture</h3>
+              <p>The right approach for your budget — stack, structure, and a realistic plan, without over-engineering
+                or surprise costs.</p>
+            </div>
+            <div class="step">
+              <div class="sn">3</div>
+              <h3>Build &amp; QA</h3>
+              <p>Our in-house team ships in focused sprints with real demos and quality checks, so you always see honest
+                progress.</p>
+            </div>
+            <div class="step">
+              <div class="sn">4</div>
+              <h3>Launch &amp; grow</h3>
+              <p>We ship, measure, and refine — hardening the product so it holds up as your users and business grow.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel" id="p-model" role="tabpanel" aria-labelledby="t-model">
+          <div class="models">
+            <div class="model">
+              <div class="tag">Advisory</div>
+              <h3>Product consulting</h3>
+              <p class="for">You want clarity and a PRD before you invest.</p>
+              <ul>
+                <li>Product &amp; scope strategy</li>
+                <li>PRD &amp; roadmap</li>
+                <li>Budget &amp; build planning</li>
+              </ul>
+              <div class="foot"><a href="#contact" class="btn btn-ghost">Book a consultation</a></div>
+            </div>
+            <div class="model feat">
+              <div class="tag">Most popular</div>
+              <h3>End-to-end product build</h3>
+              <p class="for">Idea to launch, handled — product plus engineering.</p>
+              <ul>
+                <li>PRD &amp; product strategy</li>
+                <li>Design &amp; development</li>
+                <li>Launch, QA &amp; support</li>
+              </ul>
+              <div class="foot"><a href="#contact" class="btn btn-primary">Start your project <span
+                    class="arw">→</span></a></div>
+            </div>
+            <div class="model">
+              <div class="tag">Dedicated team</div>
+              <h3>Your product team</h3>
+              <p class="for">You need a reliable team to build and scale.</p>
+              <ul>
+                <li>In-house Creuto engineers</li>
+                <li>Product-led delivery</li>
+                <li>Ongoing sprints &amp; support</li>
+              </ul>
+              <div class="foot"><a href="#contact" class="btn btn-ghost">Build a team</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FOUNDER SUITE ================= -->
+    <section class="suite" id="suite">
+      <div class="wrap">
+        <div class="shead rv">
+          <p class="eyebrow">Start with product clarity</p>
+          <h2>Tell me your idea. Get a clear path forward.</h2>
+          <p class="sub">Share where you are and I'll come back with honest first thoughts — scope, a PRD starting
+            point, and a realistic sense of budget and approach.</p>
+        </div>
+        <div class="suite-grid">
+          <div class="rv">
+            <div class="suite-points">
+              <div class="pt"><span class="ic">→</span><span class="tx">A clear read on scope and what to build
+                  first.</span></div>
+              <div class="pt"><span class="ic">₹</span><span class="tx">An honest sense of budget and timeline — no
+                  inflated quotes.</span></div>
+              <div class="pt"><span class="ic">✓</span><span class="tx">A PRD starting point you can take anywhere, even
+                  if we don't work together.</span></div>
+            </div>
+          </div>
+          <form class="form-card rv" id="auditForm">
+            <div class="fh">Tell me about your project</div>
+            <h3>Get honest first thoughts</h3>
+            <div class="field"><label for="a-biz">Business name *</label><input id="a-biz" name="biz" required
+                placeholder="Acme Inc."></div>
+            <div class="field"><label for="a-ind">Industry sector *</label><input id="a-ind" name="ind" required
+                placeholder="Fintech, SaaS, healthcare…"></div>
+            <div class="field"><label for="a-team">Team size *</label>
+              <select id="a-team" name="team" required>
+                <option value="" disabled selected>Select…</option>
+                <option>Just me / founder</option>
+                <option>2–10</option>
+                <option>11–50</option>
+                <option>50+</option>
+              </select>
+            </div>
+            <div class="field"><label for="a-bottle">What do you want to build? *</label><textarea id="a-bottle"
+                name="bottle" rows="3" required
+                placeholder="Describe your product idea or the problem you're solving…"></textarea></div>
+            <div class="field"><label for="a-email">Your work email *</label><input id="a-email" name="email"
+                type="email" required placeholder="you@company.com"></div>
+            <button type="submit" class="btn btn-primary">Send &amp; get first thoughts <span
+                class="arw">→</span></button>
+            <p class="form-note">Opens your email client, addressed to me — no data stored here.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <section id="faq"
+      style="background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+      <div class="wrap faq-grid">
+        <div class="rv">
+          <p class="eyebrow">FAQ</p>
+          <h2 style="font-size:clamp(28px,3.6vw,40px);line-height:1.08;margin-top:16px">Frequently asked questions.</h2>
+          <p class="sub" style="margin-top:16px">Still need help? <a href="#contact"
+              style="color:var(--accent);text-decoration:none;font-weight:600">Let's book a call →</a></p>
+        </div>
+        <div class="rv">
+          <details class="q" open>
+            <summary>Do you help define the product, or only build it? <span class="ic"></span></summary>
+            <div class="ans">Both — and the product comes first. With eight years in product management, I help you
+              shape scope, priorities, and a clear PRD before any code is written. Once the product is right, my team at
+              Creuto engineers it. You can also engage us purely for product consulting if that's all you need.</div>
+          </details>
+          <details class="q">
+            <summary>How do you keep a project within budget? <span class="ic"></span></summary>
+            <div class="ans">By scoping honestly up front. A good PRD prevents the biggest cost driver in software —
+              building the wrong thing. We plan a build that fits what you can invest, prioritize what matters first,
+              and are transparent about trade-offs. No inflated quotes, no surprise costs.</div>
+          </details>
+          <details class="q">
+            <summary>What kinds of businesses and industries do you work with? <span class="ic"></span></summary>
+            <div class="ans">We work with B2B companies and founders across many domains — fintech, SaaS, healthcare,
+              e-commerce, logistics, edtech and more. My product background across industries means we understand your
+              business context, not just your feature list.</div>
+          </details>
+          <details class="q">
+            <summary>Do you have your own in-house development team? <span class="ic"></span></summary>
+            <div class="ans">Yes. Creuto has a dedicated in-house engineering team that builds B2B, growth-standard
+              software directly. Your project isn't handed off to unknown subcontractors — it's built by the team you're
+              speaking with.</div>
+          </details>
+          <details class="q">
+            <summary>How do we get started? <span class="ic"></span></summary>
+            <div class="ans">Start with a short consultation. Share your idea using the form above or book a call, and
+              I'll come back with honest first thoughts on scope, approach, and budget. From there we move into a PRD
+              and a plan. I respond within 24 hours.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section class="contact" id="contact">
+      <div class="wrap contact-grid">
+        <div class="rv">
+          <p class="eyebrow">Contact</p>
+          <h2 style="font-size:clamp(30px,4.2vw,46px);line-height:1.06;margin-top:16px">Have a project? Let's make it
+            happen.</h2>
+          <div class="promise">
+            <div class="pi"><span class="ck">✓</span><span class="pt"><b>Fast &amp; focused response.</b> I get back
+                within 24 hours so your idea doesn't lose momentum.</span></div>
+            <div class="pi"><span class="ck">✓</span><span class="pt"><b>Your idea, protected.</b> NDAs available on
+                request for full confidentiality.</span></div>
+            <div class="pi"><span class="ck">✓</span><span class="pt"><b>Product-first from day one.</b> Scope, PRD, and
+                roadmap shaped before we build — so your budget goes to the right things.</span></div>
+            <div class="pi"><span class="ck">✓</span><span class="pt"><b>End-to-end support.</b> Discovery, roadmap,
+                integration, and scaling — not just a hand-off.</span></div>
+          </div>
+          <div class="sig" style="border-color:var(--line-strong)">
+            <div>
+              <div class="nm">Nihar Ranjan Rout</div>
+              <div class="rl">FOUNDER, CREUTO · mail@niharrout.com</div>
+            </div>
+          </div>
+        </div>
+        <form class="cform rv" id="contactForm">
+          <div class="row2">
+            <div><label for="c-name">Full name *</label><input id="c-name" name="name" required placeholder="Your name">
+            </div>
+            <div><label for="c-email">Email *</label><input id="c-email" name="email" type="email" required
+                placeholder="you@company.com"></div>
+          </div>
+          <div class="field"><label for="c-budget">Project budget</label>
+            <select id="c-budget" name="budget">
+              <option value="" disabled selected>Select a range…</option>
+              <option>Under $5k</option>
+              <option>$5k – $15k</option>
+              <option>$15k – $50k</option>
+              <option>$50k+</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <div class="field"><label for="c-help">How can I help? *</label>
+            <select id="c-help" name="help" required>
+              <option value="" disabled selected>Select…</option>
+              <option>AI product development</option>
+              <option>Full-stack development</option>
+              <option>Custom software architecture</option>
+              <option>Software &amp; AI consulting</option>
+              <option>MVP scope planning</option>
+              <option>Mobile app development</option>
+            </select>
+          </div>
+          <div class="field"><label for="c-details">Project details *</label><textarea id="c-details" name="details"
+              rows="4" required placeholder="Tell me what you're building and where you are today."></textarea></div>
+          <button type="submit" class="btn btn-primary">Send message <span class="arw">→</span></button>
+          <p class="form-note" style="color:var(--ink-faint)">Opens your email client, addressed to me.</p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="ft">
+    <div class="wrap">
+      <div class="ft-top">
+        <div class="ft-brand">
+          <div class="bn">nihar<span class="d">.</span></div>
+          <p>Product-first B2B software development. Founder &amp; CEO of Creuto — where product strategy and a strong
+            in-house team turn ideas into growth-standard software.</p>
+        </div>
         <div>
-          <div class="nm">Nihar Ranjan Rout</div>
-          <div class="rl">FOUNDER, CREUTO</div>
+          <h4>Explore</h4>
+          <div class="ft-col"><a href="#about">About</a><a href="#capabilities">Services</a><a href="#suite">Founder
+              Suite</a><a href="#faq">FAQ</a></div>
+        </div>
+        <div>
+          <h4>Work with me</h4>
+          <div class="ft-col"><a href="#contact">Book a call</a><a href="https://creuto.com" target="_blank"
+              rel="noopener">Creuto ↗</a><a href="mailto:mail@niharrout.com">mail@niharrout.com</a></div>
+        </div>
+        <div>
+          <h4>Elsewhere</h4>
+          <div class="ft-col"><a href="https://www.linkedin.com/in/niharrout/" target="_blank" rel="noopener">LinkedIn
+              ↗</a><a href="https://x.com/iniharrout" target="_blank" rel="noopener">X ↗</a><a
+              href="https://github.com/iniharrout" target="_blank" rel="noopener">GitHub ↗</a><a
+              href="https://medium.com/@niharrout" target="_blank" rel="noopener">Medium ↗</a></div>
         </div>
       </div>
-    </div>
-    <div class="about-media rv">
-      <div class="about-image-wrapper">
-        <img src="assets/nihar-cafe.jpg" alt="Nihar Ranjan Rout" class="about-image">
-      </div>
-      <div class="about-quote-box">
-        <p class="quote">The right product, scoped honestly and built well — <b>within your budget</b>, not despite it.</p>
-        <div class="mono">
-          <span>→</span> Product strategy &amp; PRD<br>
-          <span>→</span> Business &amp; domain analysis<br>
-          <span>→</span> Budget-fit build planning<br>
-          <span>→</span> In-house engineering at Creuto
-        </div>
+      <div class="ft-bottom">
+        <p>© <span id="yr"></span> Nihar Ranjan Rout · <span class="tag">Product strategy · AI · Full-stack</span></p>
+        <p>niharrout.com</p>
       </div>
     </div>
-  </div>
-</section>
+  </footer>
 
-<!-- ================= WHY ================= -->
-<section class="why" id="why">
-  <div class="wrap">
-    <div class="shead center rv">
-      <p class="eyebrow">Why work with us</p>
-      <h2>A B2B software partner that starts with product, not code.</h2>
-    </div>
-    <div class="why-grid">
-      <div class="vcard rv"><div class="n">01</div><h3>Product thinking, first</h3><p>Before anyone writes code, we get the product right — the problem, the users, the scope, and a PRD that keeps the whole build focused on what actually matters.</p></div>
-      <div class="vcard rv"><div class="n">02</div><h3>Business &amp; domain understanding</h3><p>Eight years across many industries means I understand your business, not just a feature list — and translate it into the right product decisions.</p></div>
-      <div class="vcard rv"><div class="n">03</div><h3>Built within your budget</h3><p>We scope honestly and plan a build that fits what you can invest — then deliver a product that stands well above what you paid for it.</p></div>
-      <div class="vcard rv"><div class="n">04</div><h3>A strong in-house team</h3><p>Creuto's engineers build B2B, growth-standard software directly — real product delivery, not a middleman handing your project to strangers.</p></div>
-    </div>
-    <div class="anchors rv">
-      <span class="chip"><span class="x">+</span>8 years in product management</span>
-      <span class="chip"><span class="x">+</span>PRD &amp; product strategy</span>
-      <span class="chip"><span class="x">+</span>Business &amp; domain analysis</span>
-      <span class="chip"><span class="x">+</span>B2B &amp; SaaS software</span>
-      <span class="chip"><span class="x">+</span>AI &amp; full-stack development</span>
-      <span class="chip"><span class="x">+</span>Founder &amp; CEO, Creuto</span>
-    </div>
-  </div>
-</section>
-
-<!-- ================= CAPABILITIES (tabs) ================= -->
-<section id="capabilities">
-  <div class="wrap">
-    <div class="shead rv">
-      <p class="eyebrow">Capabilities &amp; execution</p>
-      <h2>From product strategy to a shipped, growth-standard build.</h2>
-      <p class="sub">Explore our core capabilities, the product-first engagement playbook, and flexible ways to work together.</p>
-    </div>
-
-    <div class="tabs rv" role="tablist" aria-label="Capabilities">
-      <button class="tab" role="tab" aria-selected="true" aria-controls="p-cap" id="t-cap">01 · Capabilities &amp; tech</button>
-      <button class="tab" role="tab" aria-selected="false" aria-controls="p-play" id="t-play">02 · Execution playbook</button>
-      <button class="tab" role="tab" aria-selected="false" aria-controls="p-model" id="t-model">03 · Partnership models</button>
-    </div>
-
-    <div class="panel active" id="p-cap" role="tabpanel" aria-labelledby="t-cap">
-      <div class="cap-grid">
-        <article class="cap"><h3>Product strategy &amp; consulting</h3><p class="desc">The part I lead personally — turning your idea into a clear, buildable product: scope, priorities, and a PRD your team and ours can execute against.</p><ul><li>PRD &amp; documentation</li><li>Product &amp; business strategy</li><li>Scope &amp; roadmap</li><li>Budget-fit planning</li><li>Domain analysis</li><li>Feature prioritization</li></ul></article>
-        <article class="cap"><h3>Software &amp; AI development</h3><p class="desc">Creuto's in-house team builds production-grade B2B products — web platforms, SaaS, and custom AI features engineered to a growth standard.</p><ul><li>SaaS &amp; web platforms</li><li>Next.js &amp; React</li><li>Node.js &amp; Python</li><li>AI features &amp; agents</li><li>APIs &amp; integrations</li><li>Cloud architecture</li></ul></article>
-        <article class="cap"><h3>Mobile &amp; ongoing delivery</h3><p class="desc">Cross-platform mobile apps and dedicated-team delivery — with the product discipline to keep every sprint pointed at real outcomes.</p><ul><li>Mobile app development</li><li>Dedicated teams</li><li>QA &amp; maintenance</li><li>Workflow automation</li><li>Custom CRM</li><li>Scale &amp; support</li></ul></article>
-      </div>
-    </div>
-
-    <div class="panel" id="p-play" role="tabpanel" aria-labelledby="t-play">
-      <div class="steps">
-        <div class="step"><div class="sn">1</div><h3>Discovery &amp; PRD</h3><p>We map the problem, users, and business goals, and turn them into a clear PRD — the scope agreed before anything is built.</p></div>
-        <div class="step"><div class="sn">2</div><h3>Plan &amp; architecture</h3><p>The right approach for your budget — stack, structure, and a realistic plan, without over-engineering or surprise costs.</p></div>
-        <div class="step"><div class="sn">3</div><h3>Build &amp; QA</h3><p>Our in-house team ships in focused sprints with real demos and quality checks, so you always see honest progress.</p></div>
-        <div class="step"><div class="sn">4</div><h3>Launch &amp; grow</h3><p>We ship, measure, and refine — hardening the product so it holds up as your users and business grow.</p></div>
-      </div>
-    </div>
-
-    <div class="panel" id="p-model" role="tabpanel" aria-labelledby="t-model">
-      <div class="models">
-        <div class="model"><div class="tag">Advisory</div><h3>Product consulting</h3><p class="for">You want clarity and a PRD before you invest.</p><ul><li>Product &amp; scope strategy</li><li>PRD &amp; roadmap</li><li>Budget &amp; build planning</li></ul><div class="foot"><a href="#contact" class="btn btn-ghost">Book a consultation</a></div></div>
-        <div class="model feat"><div class="tag">Most popular</div><h3>End-to-end product build</h3><p class="for">Idea to launch, handled — product plus engineering.</p><ul><li>PRD &amp; product strategy</li><li>Design &amp; development</li><li>Launch, QA &amp; support</li></ul><div class="foot"><a href="#contact" class="btn btn-primary">Start your project <span class="arw">→</span></a></div></div>
-        <div class="model"><div class="tag">Dedicated team</div><h3>Your product team</h3><p class="for">You need a reliable team to build and scale.</p><ul><li>In-house Creuto engineers</li><li>Product-led delivery</li><li>Ongoing sprints &amp; support</li></ul><div class="foot"><a href="#contact" class="btn btn-ghost">Build a team</a></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= CASE STUDIES & WORK ================= -->
-<section class="work" id="work">
-  <div class="wrap">
-    <div class="shead center rv">
-      <p class="eyebrow">Case Studies &amp; Work</p>
-      <h2>Proven outcomes. Software built with product discipline.</h2>
-      <p class="sub">Take a look at how we combine product strategy and robust engineering to deliver custom solutions for high-growth businesses.</p>
-    </div>
-    <div class="work-grid">
-      <article class="work-card rv">
-        <span class="num">01 / Fintech</span>
-        <h3>Custom Portfolio Wealth Dashboard</h3>
-        <p class="desc">A product-first build for wealth advisors to aggregate asset analytics. We clarified the data-mapping PRD, scoped an MVP for 3 months, and delivered an API-driven frontend dashboard that scaled advisory operations by 40%.</p>
-        <div class="meta"><span>Next.js</span><span>Node.js</span><span>Secure APIs</span></div>
-      </article>
-      <article class="work-card rv">
-        <span class="num">02 / B2B SaaS</span>
-        <h3>Logistics CRM &amp; Workflow Automation</h3>
-        <p class="desc">Designed and engineered for a logistics enterprise to replace legacy tracking software. Our team at Creuto built a custom, real-time dispatch dashboard, automating route planning and saving 18+ manual hours per week.</p>
-        <div class="meta"><span>React</span><span>Python</span><span>PostgreSQL</span></div>
-      </article>
-      <article class="work-card rv">
-        <span class="num">03 / AI &amp; LLMs</span>
-        <h3>AI-Powered Document Search Agent</h3>
-        <p class="desc">Built to streamline document audits. We integrated standard LLM models to parse thousands of PDF pages, extract product requirements, and compile automated compliance reports within seconds.</p>
-        <div class="meta"><span>Python</span><span>OpenAI API</span><span>Vector DB</span></div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ================= PROCESS ================= -->
-<section class="process" id="process">
-  <div class="wrap">
-    <div class="shead center rv">
-      <p class="eyebrow">Scoping Process</p>
-      <h2>How we partner. No guesswork, clear checkpoints.</h2>
-      <p class="sub">We reduce build risk by making the scoping and engineering process transparent, collaborative, and structured from day one.</p>
-    </div>
-    <div class="process-flow">
-      <div class="p-step rv">
-        <div class="p-num">1</div>
-        <div class="p-body">
-          <h3>Scoping &amp; PRD Drafting</h3>
-          <p>We work closely with you to write a detailed Product Requirement Document (PRD). We define user roles, core workflows, and map out exactly what will be built, aligning expectations before a developer is assigned.</p>
-        </div>
-      </div>
-      <div class="p-step rv">
-        <div class="p-num">2</div>
-        <div class="p-body">
-          <h3>Architecture &amp; Budget Fit</h3>
-          <p>We plan a software stack that fits your budget. We choose tools and databases that minimize maintenance overhead, ensuring you spend your resources on core product features, not over-engineered setups.</p>
-        </div>
-      </div>
-      <div class="p-step rv">
-        <div class="p-num">3</div>
-        <div class="p-body">
-          <h3>Focused Sprints &amp; Demos</h3>
-          <p>Our Creuto engineers execute the build in fortnightly sprints. You get a working demo environment to test incremental features, allowing us to incorporate feedback early and adapt the product dynamically.</p>
-        </div>
-      </div>
-      <div class="p-step rv">
-        <div class="p-num">4</div>
-        <div class="p-body">
-          <h3>QA, Hardening &amp; Launch</h3>
-          <p>Before launching, we put the software through rigorous testing. We resolve critical bugs, optimize database queries for speed, and set up secure production deployment so you can launch to users with complete confidence.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= FOUNDER SUITE ================= -->
-<section class="suite" id="suite">
-  <div class="wrap">
-    <div class="shead rv">
-      <p class="eyebrow">Start with product clarity</p>
-      <h2>Tell me your idea. Get a clear path forward.</h2>
-      <p class="sub">Share where you are and I'll come back with honest first thoughts — scope, a PRD starting point, and a realistic sense of budget and approach.</p>
-    </div>
-    <div class="suite-grid">
-      <div class="rv">
-        <div class="suite-points">
-          <div class="pt"><span class="ic">→</span><span class="tx">A clear read on scope and what to build first.</span></div>
-          <div class="pt"><span class="ic">₹</span><span class="tx">An honest sense of budget and timeline — no inflated quotes.</span></div>
-          <div class="pt"><span class="ic">✓</span><span class="tx">A PRD starting point you can take anywhere, even if we don't work together.</span></div>
-        </div>
-      </div>
-      <form class="form-card rv" id="auditForm">
-        <div class="fh">Tell me about your project</div>
-        <h3>Get honest first thoughts</h3>
-        <div class="field"><label for="a-biz">Business name *</label><input id="a-biz" name="biz" required placeholder="Acme Inc."></div>
-        <div class="field"><label for="a-ind">Industry sector *</label><input id="a-ind" name="ind" required placeholder="Fintech, SaaS, healthcare…"></div>
-        <div class="field"><label for="a-team">Team size *</label>
-          <select id="a-team" name="team" required><option value="" disabled selected>Select…</option><option>Just me / founder</option><option>2–10</option><option>11–50</option><option>50+</option></select>
-        </div>
-        <div class="field"><label for="a-bottle">What do you want to build? *</label><textarea id="a-bottle" name="bottle" rows="3" required placeholder="Describe your product idea or the problem you're solving…"></textarea></div>
-        <div class="field"><label for="a-email">Your work email *</label><input id="a-email" name="email" type="email" required placeholder="you@company.com"></div>
-        <button type="submit" class="btn btn-primary">Send &amp; get first thoughts <span class="arw">→</span></button>
-        <p class="form-note">Opens your email client, addressed to me — no data stored here.</p>
-      </form>
-    </div>
-  </div>
-</section>
-
-<!-- ================= WRITING & THOUGHTS ================= -->
-<section class="writing" id="writing">
-  <div class="wrap">
-    <div class="shead center rv">
-      <p class="eyebrow">Writing &amp; Newsletters</p>
-      <h2>Product thinking in print. Shareable insights.</h2>
-      <p class="sub">I write about product strategy, B2B software mistakes, and what it takes to launch products successfully. Here are some of my recent articles.</p>
-    </div>
-    <div class="articles-grid">
-      <a href="https://medium.com/@niharrout" target="_blank" rel="noopener" class="article-card rv">
-        <span class="date">Product Strategy</span>
-        <h3>Why 90% of MVPs Fail for Product Reasons</h3>
-        <p>An in-depth look at how wrong scoping, missing user validation, and bloated feature lists sink software products before they launch. <span class="lnk-arw">↗</span></p>
-      </a>
-      <a href="https://medium.com/@niharrout" target="_blank" rel="noopener" class="article-card rv">
-        <span class="date">Engineering Advice</span>
-        <h3>How to Align Your Software Build with Your Budget</h3>
-        <p>Practical rules for founders on feature prioritization, selecting the right stack, and scoping to avoid surprise dev bills. <span class="lnk-arw">↗</span></p>
-      </a>
-      <a href="https://medium.com/@niharrout" target="_blank" rel="noopener" class="article-card rv">
-        <span class="date">B2B SaaS</span>
-        <h3>The Product-First Scoping Playbook for B2B Teams</h3>
-        <p>A step-by-step guide to writing a high-impact PRD that keeps design, product, and engineering teams aligned. <span class="lnk-arw">↗</span></p>
-      </a>
-    </div>
-    <div class="writing-footer rv">
-      <p>Subscribe to my newsletter for product scoping insights. <a href="mailto:mail@niharrout.com?subject=Subscribe to Newsletter" class="btn btn-ghost btn-sm">Subscribe Via Email <span class="arw">→</span></a></p>
-    </div>
-  </div>
-</section>
-
-<!-- ================= FAQ ================= -->
-<section id="faq" style="background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
-  <div class="wrap faq-grid">
-    <div class="rv">
-      <p class="eyebrow">FAQ</p>
-      <h2 style="font-size:clamp(28px,3.6vw,40px);line-height:1.08;margin-top:16px">Frequently asked questions.</h2>
-      <p class="sub" style="margin-top:16px">Still need help? <a href="#contact" style="color:var(--accent);text-decoration:none;font-weight:600">Let's book a call →</a></p>
-    </div>
-    <div class="rv">
-      <details class="q" open><summary>Do you help define the product, or only build it? <span class="ic"></span></summary><div class="ans">Both — and the product comes first. With eight years in product management, I help you shape scope, priorities, and a clear PRD before any code is written. Once the product is right, my team at Creuto engineers it. You can also engage us purely for product consulting if that's all you need.</div></details>
-      <details class="q"><summary>How do you keep a project within budget? <span class="ic"></span></summary><div class="ans">By scoping honestly up front. A good PRD prevents the biggest cost driver in software — building the wrong thing. We plan a build that fits what you can invest, prioritize what matters first, and are transparent about trade-offs. No inflated quotes, no surprise costs.</div></details>
-      <details class="q"><summary>What kinds of businesses and industries do you work with? <span class="ic"></span></summary><div class="ans">We work with B2B companies and founders across many domains — fintech, SaaS, healthcare, e-commerce, logistics, edtech and more. My product background across industries means we understand your business context, not just your feature list.</div></details>
-      <details class="q"><summary>Do you have your own in-house development team? <span class="ic"></span></summary><div class="ans">Yes. Creuto has a dedicated in-house engineering team that builds B2B, growth-standard software directly. Your project isn't handed off to unknown subcontractors — it's built by the team you're speaking with.</div></details>
-      <details class="q"><summary>How do we get started? <span class="ic"></span></summary><div class="ans">Start with a short consultation. Share your idea using the form above or book a call, and I'll come back with honest first thoughts on scope, approach, and budget. From there we move into a PRD and a plan. I respond within 24 hours.</div></details>
-    </div>
-  </div>
-</section>
-
-<!-- ================= CONTACT ================= -->
-<section class="contact" id="contact">
-  <div class="wrap contact-grid">
-    <div class="rv">
-      <p class="eyebrow">Contact</p>
-      <h2 style="font-size:clamp(30px,4.2vw,46px);line-height:1.06;margin-top:16px">Have a project? Let's make it happen.</h2>
-      <div class="promise">
-        <div class="pi"><span class="ck">✓</span><span class="pt"><b>Fast &amp; focused response.</b> I get back within 24 hours so your idea doesn't lose momentum.</span></div>
-        <div class="pi"><span class="ck">✓</span><span class="pt"><b>Your idea, protected.</b> NDAs available on request for full confidentiality.</span></div>
-        <div class="pi"><span class="ck">✓</span><span class="pt"><b>Product-first from day one.</b> Scope, PRD, and roadmap shaped before we build — so your budget goes to the right things.</span></div>
-        <div class="pi"><span class="ck">✓</span><span class="pt"><b>End-to-end support.</b> Discovery, roadmap, integration, and scaling — not just a hand-off.</span></div>
-      </div>
-      <div class="sig" style="border-color:var(--line-strong)">
-        <div><div class="nm">Nihar Ranjan Rout</div><div class="rl">FOUNDER, CREUTO · mail@niharrout.com</div></div>
-      </div>
-    </div>
-    <form class="cform rv" id="contactForm">
-      <div class="row2">
-        <div><label for="c-name">Full name *</label><input id="c-name" name="name" required placeholder="Your name"></div>
-        <div><label for="c-email">Email *</label><input id="c-email" name="email" type="email" required placeholder="you@company.com"></div>
-      </div>
-      <div class="field"><label for="c-budget">Project budget</label>
-        <select id="c-budget" name="budget"><option value="" disabled selected>Select a range…</option><option>Under $5k</option><option>$5k – $15k</option><option>$15k – $50k</option><option>$50k+</option><option>Not sure yet</option></select>
-      </div>
-      <div class="field"><label for="c-help">How can I help? *</label>
-        <select id="c-help" name="help" required><option value="" disabled selected>Select…</option><option>AI product development</option><option>Full-stack development</option><option>Custom software architecture</option><option>Software &amp; AI consulting</option><option>MVP scope planning</option><option>Mobile app development</option></select>
-      </div>
-      <div class="field"><label for="c-details">Project details *</label><textarea id="c-details" name="details" rows="4" required placeholder="Tell me what you're building and where you are today."></textarea></div>
-      <button type="submit" class="btn btn-primary">Send message <span class="arw">→</span></button>
-      <p class="form-note" style="color:var(--ink-faint)">Opens your email client, addressed to me.</p>
-    </form>
-  </div>
-</section>
-
-</main>
-
-<!-- ================= FOOTER ================= -->
-<footer class="ft">
-  <div class="wrap">
-    <div class="ft-top">
-      <div class="ft-brand">
-        <div class="bn">nihar<span class="d">.</span></div>
-        <p>Product-first B2B software development. Founder &amp; CEO of Creuto — where product strategy and a strong in-house team turn ideas into growth-standard software.</p>
-      </div>
-      <div><h4>Explore</h4><div class="ft-col"><a href="#about">About</a><a href="#capabilities">Services</a><a href="#work">Work</a><a href="#process">Process</a><a href="#writing">Writing</a><a href="#suite">Founder Suite</a><a href="#faq">FAQ</a></div></div>
-      <div><h4>Work with me</h4><div class="ft-col"><a href="#contact">Book a call</a><a href="https://creuto.com" target="_blank" rel="noopener">Creuto ↗</a><a href="mailto:mail@niharrout.com">mail@niharrout.com</a></div></div>
-      <div><h4>Elsewhere</h4><div class="ft-col"><a href="https://www.linkedin.com/in/niharrout/" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://x.com/iniharrout" target="_blank" rel="noopener">X ↗</a><a href="https://github.com/iniharrout" target="_blank" rel="noopener">GitHub ↗</a><a href="https://medium.com/@niharrout" target="_blank" rel="noopener">Medium ↗</a></div></div>
-    </div>
-    <div class="ft-bottom">
-      <p>© <span id="yr"></span> Nihar Ranjan Rout · <span class="tag">Product strategy · AI · Full-stack</span></p>
-      <p>niharrout.com</p>
-    </div>
-  </div>
-</footer>
-
-<script type="application/ld+json">
-[
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "@id": "https://niharrout.com/#person",
-    "name": "Nihar Ranjan Rout",
-    "url": "https://niharrout.com",
-    "jobTitle": "Founder & CEO, Creuto — Product Strategist",
-    "email": "mail@niharrout.com",
-    "description": "Nihar Ranjan Rout is the founder & CEO of Creuto, a B2B software development company. With 8+ years in product management across many industries, he helps businesses shape their product, prepare a PRD, and build growth-standard software within budget.",
-    "worksFor": {
-      "@type": "Organization",
-      "@id": "https://creuto.com/#organization"
-    },
-    "knowsAbout": ["Product management","Product strategy","PRD","Software development","B2B SaaS","AI product development","Business analysis"],
-    "sameAs": [
-      "https://www.linkedin.com/in/niharrout/",
-      "https://x.com/iniharrout",
-      "https://github.com/iniharrout",
-      "https://medium.com/@niharrout",
-      "https://substack.com/@niharrout"
-    ]
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": "https://creuto.com/#organization",
-    "name": "Creuto",
-    "url": "https://creuto.com",
-    "logo": "https://www.niharrout.com/assets/niharrout-og-image.png",
-    "description": "B2B software development company specializing in product strategy, PRD writing, and custom software/AI integrations.",
-    "founder": {
-      "@type": "Person",
-      "@id": "https://niharrout.com/#person"
-    },
-    "sameAs": [
-      "https://www.linkedin.com/company/creuto/"
-    ]
-  }
-]
+  <script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Person","name":"Nihar Ranjan Rout","url":"https://niharrout.com",
+  "jobTitle":"Founder & CEO, Creuto — Product Strategist","email":"mail@niharrout.com",
+  "description":"Nihar Ranjan Rout is the founder & CEO of Creuto, a B2B software development company. With 8+ years in product management across many industries, he helps businesses shape their product, prepare a PRD, and build growth-standard software within budget.",
+  "worksFor":{"@type":"Organization","name":"Creuto","url":"https://creuto.com","description":"B2B software development company — product strategy, PRD, and growth-standard software development."},
+  "knowsAbout":["Product management","Product strategy","PRD","Software development","B2B SaaS","AI product development","Business analysis"],
+  "sameAs":["https://www.linkedin.com/in/niharrout/","https://x.com/iniharrout","https://github.com/iniharrout","https://medium.com/@niharrout","https://substack.com/@niharrout"]
+}
 </script>
-<script type="application/ld+json">
+  <script type="application/ld+json">
 {
   "@context":"https://schema.org","@type":"FAQPage","mainEntity":[
     {"@type":"Question","name":"Do you help define the product, or only build it?","acceptedAnswer":{"@type":"Answer","text":"Both, and the product comes first. With 8 years in product management, Nihar helps shape scope, priorities, and a clear PRD before code is written; Creuto's team then engineers it. Product consulting is also available on its own."}},
@@ -1235,97 +2129,101 @@
 }
 </script>
 
-<script>
-  document.getElementById('yr').textContent=new Date().getFullYear();
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
 
-  /* theme */
-  (function(){
-    var root=document.documentElement,btn=document.getElementById('themeBtn');
-    if(btn) {
-      btn.addEventListener('click',function(){
-        var cur=root.getAttribute('data-theme') || 'light';
-        var next=cur==='dark'?'light':'dark';
-        root.setAttribute('data-theme',next);
-        try{localStorage.setItem('nrr-theme',next);}catch(e){}
-      });
-    }
-  })();
+    /* theme */
+    (function () {
+      var root = document.documentElement, btn = document.getElementById('themeBtn');
+      if (btn) {
+        btn.addEventListener('click', function () {
+          var cur = root.getAttribute('data-theme') || 'light';
+          var next = cur === 'dark' ? 'light' : 'dark';
+          root.setAttribute('data-theme', next);
+          try { localStorage.setItem('nrr-theme', next); } catch (e) { }
+        });
+      }
+    })();
 
-  /* nav shadow */
-  var nav=document.getElementById('nav');
-  var os=function(){nav.classList.toggle('scrolled',window.scrollY>8);};os();
-  window.addEventListener('scroll',os,{passive:true});
+    /* nav shadow */
+    var nav = document.getElementById('nav');
+    var os = function () { nav.classList.toggle('scrolled', window.scrollY > 8); }; os();
+    window.addEventListener('scroll', os, { passive: true });
 
-  /* mobile drawer menu toggle */
-  (function(){
-    var toggle = document.getElementById('navToggle');
-    var drawer = document.getElementById('mobileDrawer');
-    if (toggle && drawer) {
-      toggle.addEventListener('click', function(e) {
-        e.stopPropagation();
-        var isOpen = toggle.classList.toggle('open');
-        drawer.classList.toggle('open', isOpen);
-        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      });
+    /* mobile drawer menu toggle */
+    (function () {
+      var toggle = document.getElementById('navToggle');
+      var drawer = document.getElementById('mobileDrawer');
+      if (toggle && drawer) {
+        toggle.addEventListener('click', function (e) {
+          e.stopPropagation();
+          var isOpen = toggle.classList.toggle('open');
+          drawer.classList.toggle('open', isOpen);
+        });
 
-      // Close drawer when clicking a link
-      var links = drawer.querySelectorAll('.drawer-lnk, .btn');
-      links.forEach(function(lnk) {
-        lnk.addEventListener('click', function() {
-          toggle.classList.remove('open');
-          drawer.classList.remove('open');
-          toggle.setAttribute('aria-expanded', 'false');
+        // Close drawer when clicking a link
+        var links = drawer.querySelectorAll('.drawer-lnk, .btn');
+        links.forEach(function (lnk) {
+          lnk.addEventListener('click', function () {
+            toggle.classList.remove('open');
+            drawer.classList.remove('open');
+          });
+        });
+
+        // Close drawer when clicking outside
+        document.addEventListener('click', function (e) {
+          if (!drawer.contains(e.target) && !toggle.contains(e.target)) {
+            toggle.classList.remove('open');
+            drawer.classList.remove('open');
+          }
+        });
+      }
+    })();
+
+    /* tabs */
+    (function () {
+      var tabs = document.querySelectorAll('.tab');
+      tabs.forEach(function (t) {
+        t.addEventListener('click', function () {
+          tabs.forEach(function (x) { x.setAttribute('aria-selected', 'false'); });
+          document.querySelectorAll('.panel').forEach(function (p) { p.classList.remove('active'); });
+          t.setAttribute('aria-selected', 'true');
+          document.getElementById(t.getAttribute('aria-controls')).classList.add('active');
         });
       });
+    })();
 
-      // Close drawer when clicking outside
-      document.addEventListener('click', function(e) {
-        if (!drawer.contains(e.target) && !toggle.contains(e.target)) {
-          toggle.classList.remove('open');
-          drawer.classList.remove('open');
-          toggle.setAttribute('aria-expanded', 'false');
-        }
-      });
-    }
-  })();
+    /* forms -> mailto compose */
+    function val(f, n) { var el = f.querySelector('[name="' + n + '"]'); return el ? el.value.trim() : ''; }
+    var af = document.getElementById('auditForm');
+    af.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var body = 'New project enquiry%0D%0A%0D%0ABusiness: ' + encodeURIComponent(val(af, 'biz'))
+        + '%0D%0AIndustry: ' + encodeURIComponent(val(af, 'ind'))
+        + '%0D%0ATeam size: ' + encodeURIComponent(val(af, 'team'))
+        + '%0D%0AWhat they want to build: ' + encodeURIComponent(val(af, 'bottle'))
+        + '%0D%0AEmail: ' + encodeURIComponent(val(af, 'email'));
+      window.location.href = 'mailto:mail@niharrout.com?subject=' + encodeURIComponent('Project enquiry — ' + val(af, 'biz')) + '&body=' + body;
+    });
+    var cf = document.getElementById('contactForm');
+    cf.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var body = 'New project enquiry%0D%0A%0D%0AName: ' + encodeURIComponent(val(cf, 'name'))
+        + '%0D%0AEmail: ' + encodeURIComponent(val(cf, 'email'))
+        + '%0D%0ABudget: ' + encodeURIComponent(val(cf, 'budget'))
+        + '%0D%0AService: ' + encodeURIComponent(val(cf, 'help'))
+        + '%0D%0A%0D%0ADetails:%0D%0A' + encodeURIComponent(val(cf, 'details'));
+      window.location.href = 'mailto:mail@niharrout.com?subject=' + encodeURIComponent('Project enquiry — ' + val(cf, 'name')) + '&body=' + body;
+    });
 
-  /* tabs */
-  (function(){var tabs=document.querySelectorAll('.tab');
-    tabs.forEach(function(t){t.addEventListener('click',function(){
-      tabs.forEach(function(x){x.setAttribute('aria-selected','false');});
-      document.querySelectorAll('.panel').forEach(function(p){p.classList.remove('active');});
-      t.setAttribute('aria-selected','true');
-      document.getElementById(t.getAttribute('aria-controls')).classList.add('active');
-    });});})();
-
-  /* forms -> mailto compose */
-  function val(f,n){var el=f.querySelector('[name="'+n+'"]');return el?el.value.trim():'';}
-  var af=document.getElementById('auditForm');
-  af.addEventListener('submit',function(e){e.preventDefault();
-    var body='New project enquiry%0D%0A%0D%0ABusiness: '+encodeURIComponent(val(af,'biz'))
-      +'%0D%0AIndustry: '+encodeURIComponent(val(af,'ind'))
-      +'%0D%0ATeam size: '+encodeURIComponent(val(af,'team'))
-      +'%0D%0AWhat they want to build: '+encodeURIComponent(val(af,'bottle'))
-      +'%0D%0AEmail: '+encodeURIComponent(val(af,'email'));
-    window.location.href='mailto:mail@niharrout.com?subject='+encodeURIComponent('Project enquiry — '+val(af,'biz'))+'&body='+body;
-  });
-  var cf=document.getElementById('contactForm');
-  cf.addEventListener('submit',function(e){e.preventDefault();
-    var body='New project enquiry%0D%0A%0D%0AName: '+encodeURIComponent(val(cf,'name'))
-      +'%0D%0AEmail: '+encodeURIComponent(val(cf,'email'))
-      +'%0D%0ABudget: '+encodeURIComponent(val(cf,'budget'))
-      +'%0D%0AService: '+encodeURIComponent(val(cf,'help'))
-      +'%0D%0A%0D%0ADetails:%0D%0A'+encodeURIComponent(val(cf,'details'));
-    window.location.href='mailto:mail@niharrout.com?subject='+encodeURIComponent('Project enquiry — '+val(cf,'name'))+'&body='+body;
-  });
-
-  /* reveal */
-  var rv=document.querySelectorAll('.rv');
-  if('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-    var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});},{threshold:.1,rootMargin:'0px 0px -6% 0px'});
-    rv.forEach(function(el,i){el.style.transitionDelay=Math.min(i%5*55,220)+'ms';io.observe(el);});
-  }else{rv.forEach(function(el){el.classList.add('in');});}
-</script>
+    /* reveal */
+    var rv = document.querySelectorAll('.rv');
+    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      var io = new IntersectionObserver(function (es) { es.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } }); }, { threshold: .1, rootMargin: '0px 0px -6% 0px' });
+      rv.forEach(function (el, i) { el.style.transitionDelay = Math.min(i % 5 * 55, 220) + 'ms'; io.observe(el); });
+    } else { rv.forEach(function (el) { el.classList.add('in'); }); }
+  </script>
 
 </body>
+
 </html>
