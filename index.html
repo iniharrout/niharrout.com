@@ -700,6 +700,89 @@
   .ft-bottom p { font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--ink-faint); }
   .ft-bottom .tag { color: var(--accent); }
 
+  /* ================= CASE STUDIES & WORK ================= */
+  .work { background: var(--bg); border-top: 1px solid var(--line); }
+  .work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  @media (max-width: 920px) { .work-grid { grid-template-columns: 1fr; } }
+  .work-card {
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+  }
+  .work-card:hover {
+    background: var(--surface);
+    border-color: var(--line-strong);
+  }
+  .work-card .num { font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+  .work-card h3 { font-size: 20px; margin-top: 14px; line-height: 1.25; }
+  .work-card .desc { color: var(--ink-soft); font-size: 15px; margin-top: 12px; line-height: 1.6; flex-grow: 1; }
+  .work-card .meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+  .work-card .meta span { font-family: "IBM Plex Mono", monospace; font-size: 11px; color: var(--ink-soft); background: var(--bg); border: 1px solid var(--line); border-radius: 4px; padding: 4px 8px; }
+
+  /* ================= PROCESS ================= */
+  .process { background: var(--bg-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .process-flow { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+  @media (max-width: 768px) { .process-flow { grid-template-columns: 1fr; } }
+  .p-step {
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+    padding: 32px;
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    transition: all 0.3s ease;
+  }
+  .p-step:hover {
+    border-color: var(--line-strong);
+    background: var(--surface);
+  }
+  .p-step .p-num {
+    flex: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--accent-tint);
+    color: var(--accent);
+    display: grid;
+    place-items: center;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+  }
+  .p-step .p-body h3 { font-size: 19px; line-height: 1.2; }
+  .p-step .p-body p { color: var(--ink-soft); font-size: 14.5px; margin-top: 10px; line-height: 1.6; }
+
+  /* ================= WRITING & THOUGHTS ================= */
+  .writing { background: var(--bg); border-top: 1px solid var(--line); }
+  .articles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  @media (max-width: 920px) { .articles-grid { grid-template-columns: 1fr; } }
+  .article-card {
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+    padding: 30px;
+    text-decoration: none;
+    display: block;
+    transition: all 0.3s ease;
+  }
+  .article-card:hover {
+    background: var(--surface);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+  .article-card .date { font-family: "IBM Plex Mono", monospace; font-size: 11.5px; color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+  .article-card h3 { font-size: 19px; margin-top: 14px; line-height: 1.25; color: var(--ink); }
+  .article-card p { color: var(--ink-soft); font-size: 14.5px; margin-top: 10px; line-height: 1.6; }
+  .article-card .lnk-arw { display: inline-block; transition: transform 0.2s ease; margin-left: 2px; }
+  .article-card:hover .lnk-arw { transform: translate(2px, -2px); color: var(--accent); }
+  .writing-footer { text-align: center; margin-top: 48px; font-size: 16px; color: var(--ink-soft); }
+  .writing-footer a { margin-left: 8px; vertical-align: middle; }
+
   /* animation classes */
   .rv { opacity: 0; transform: translateY(12px); transition: opacity .5s cubic-bezier(.165, .84, .44, 1), transform .5s cubic-bezier(.165, .84, .44, 1); }
   .rv.in { opacity: 1; transform: none; }
@@ -717,6 +800,9 @@
     <div class="nav-desktop">
       <a href="#about" class="lnk">About</a>
       <a href="#capabilities" class="lnk">Services</a>
+      <a href="#work" class="lnk">Work</a>
+      <a href="#process" class="lnk">Process</a>
+      <a href="#writing" class="lnk">Writing</a>
       <a href="#suite" class="lnk">Founder Suite</a>
       <a href="#faq" class="lnk">FAQ</a>
     </div>
@@ -729,7 +815,7 @@
         <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.2 6.2 0 0 0 10.5 10.5z"/></svg>
       </button>
 
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mobileDrawer">
         <span class="line line-1"></span>
         <span class="line line-2"></span>
         <span class="line line-3"></span>
@@ -741,6 +827,9 @@
     <nav class="drawer-links">
       <a href="#about" class="drawer-lnk">About</a>
       <a href="#capabilities" class="drawer-lnk">Services</a>
+      <a href="#work" class="drawer-lnk">Work</a>
+      <a href="#process" class="drawer-lnk">Process</a>
+      <a href="#writing" class="drawer-lnk">Writing</a>
       <a href="#suite" class="drawer-lnk">Founder Suite</a>
       <a href="#faq" class="drawer-lnk">FAQ</a>
       <a href="#contact" class="btn btn-primary drawer-btn">Book a Call <span class="arw">→</span></a>
@@ -883,6 +972,78 @@
   </div>
 </section>
 
+<!-- ================= CASE STUDIES & WORK ================= -->
+<section class="work" id="work">
+  <div class="wrap">
+    <div class="shead center rv">
+      <p class="eyebrow">Case Studies &amp; Work</p>
+      <h2>Proven outcomes. Software built with product discipline.</h2>
+      <p class="sub">Take a look at how we combine product strategy and robust engineering to deliver custom solutions for high-growth businesses.</p>
+    </div>
+    <div class="work-grid">
+      <article class="work-card rv">
+        <span class="num">01 / Fintech</span>
+        <h3>Custom Portfolio Wealth Dashboard</h3>
+        <p class="desc">A product-first build for wealth advisors to aggregate asset analytics. We clarified the data-mapping PRD, scoped an MVP for 3 months, and delivered an API-driven frontend dashboard that scaled advisory operations by 40%.</p>
+        <div class="meta"><span>Next.js</span><span>Node.js</span><span>Secure APIs</span></div>
+      </article>
+      <article class="work-card rv">
+        <span class="num">02 / B2B SaaS</span>
+        <h3>Logistics CRM &amp; Workflow Automation</h3>
+        <p class="desc">Designed and engineered for a logistics enterprise to replace legacy tracking software. Our team at Creuto built a custom, real-time dispatch dashboard, automating route planning and saving 18+ manual hours per week.</p>
+        <div class="meta"><span>React</span><span>Python</span><span>PostgreSQL</span></div>
+      </article>
+      <article class="work-card rv">
+        <span class="num">03 / AI &amp; LLMs</span>
+        <h3>AI-Powered Document Search Agent</h3>
+        <p class="desc">Built to streamline document audits. We integrated standard LLM models to parse thousands of PDF pages, extract product requirements, and compile automated compliance reports within seconds.</p>
+        <div class="meta"><span>Python</span><span>OpenAI API</span><span>Vector DB</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROCESS ================= -->
+<section class="process" id="process">
+  <div class="wrap">
+    <div class="shead center rv">
+      <p class="eyebrow">Scoping Process</p>
+      <h2>How we partner. No guesswork, clear checkpoints.</h2>
+      <p class="sub">We reduce build risk by making the scoping and engineering process transparent, collaborative, and structured from day one.</p>
+    </div>
+    <div class="process-flow">
+      <div class="p-step rv">
+        <div class="p-num">1</div>
+        <div class="p-body">
+          <h3>Scoping &amp; PRD Drafting</h3>
+          <p>We work closely with you to write a detailed Product Requirement Document (PRD). We define user roles, core workflows, and map out exactly what will be built, aligning expectations before a developer is assigned.</p>
+        </div>
+      </div>
+      <div class="p-step rv">
+        <div class="p-num">2</div>
+        <div class="p-body">
+          <h3>Architecture &amp; Budget Fit</h3>
+          <p>We plan a software stack that fits your budget. We choose tools and databases that minimize maintenance overhead, ensuring you spend your resources on core product features, not over-engineered setups.</p>
+        </div>
+      </div>
+      <div class="p-step rv">
+        <div class="p-num">3</div>
+        <div class="p-body">
+          <h3>Focused Sprints &amp; Demos</h3>
+          <p>Our Creuto engineers execute the build in fortnightly sprints. You get a working demo environment to test incremental features, allowing us to incorporate feedback early and adapt the product dynamically.</p>
+        </div>
+      </div>
+      <div class="p-step rv">
+        <div class="p-num">4</div>
+        <div class="p-body">
+          <h3>QA, Hardening &amp; Launch</h3>
+          <p>Before launching, we put the software through rigorous testing. We resolve critical bugs, optimize database queries for speed, and set up secure production deployment so you can launch to users with complete confidence.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ================= FOUNDER SUITE ================= -->
 <section class="suite" id="suite">
   <div class="wrap">
@@ -912,6 +1073,37 @@
         <button type="submit" class="btn btn-primary">Send &amp; get first thoughts <span class="arw">→</span></button>
         <p class="form-note">Opens your email client, addressed to me — no data stored here.</p>
       </form>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WRITING & THOUGHTS ================= -->
+<section class="writing" id="writing">
+  <div class="wrap">
+    <div class="shead center rv">
+      <p class="eyebrow">Writing &amp; Newsletters</p>
+      <h2>Product thinking in print. Shareable insights.</h2>
+      <p class="sub">I write about product strategy, B2B software mistakes, and what it takes to launch products successfully. Here are some of my recent articles.</p>
+    </div>
+    <div class="articles-grid">
+      <a href="https://medium.com/@niharrout" target="_blank" rel="noopener" class="article-card rv">
+        <span class="date">Product Strategy</span>
+        <h3>Why 90% of MVPs Fail for Product Reasons</h3>
+        <p>An in-depth look at how wrong scoping, missing user validation, and bloated feature lists sink software products before they launch. <span class="lnk-arw">↗</span></p>
+      </a>
+      <a href="https://medium.com/@niharrout" target="_blank" rel="noopener" class="article-card rv">
+        <span class="date">Engineering Advice</span>
+        <h3>How to Align Your Software Build with Your Budget</h3>
+        <p>Practical rules for founders on feature prioritization, selecting the right stack, and scoping to avoid surprise dev bills. <span class="lnk-arw">↗</span></p>
+      </a>
+      <a href="https://medium.com/@niharrout" target="_blank" rel="noopener" class="article-card rv">
+        <span class="date">B2B SaaS</span>
+        <h3>The Product-First Scoping Playbook for B2B Teams</h3>
+        <p>A step-by-step guide to writing a high-impact PRD that keeps design, product, and engineering teams aligned. <span class="lnk-arw">↗</span></p>
+      </a>
+    </div>
+    <div class="writing-footer rv">
+      <p>Subscribe to my newsletter for product scoping insights. <a href="mailto:mail@niharrout.com?subject=Subscribe to Newsletter" class="btn btn-ghost btn-sm">Subscribe Via Email <span class="arw">→</span></a></p>
     </div>
   </div>
 </section>
@@ -978,7 +1170,7 @@
         <div class="bn">nihar<span class="d">.</span></div>
         <p>Product-first B2B software development. Founder &amp; CEO of Creuto — where product strategy and a strong in-house team turn ideas into growth-standard software.</p>
       </div>
-      <div><h4>Explore</h4><div class="ft-col"><a href="#about">About</a><a href="#capabilities">Services</a><a href="#suite">Founder Suite</a><a href="#faq">FAQ</a></div></div>
+      <div><h4>Explore</h4><div class="ft-col"><a href="#about">About</a><a href="#capabilities">Services</a><a href="#work">Work</a><a href="#process">Process</a><a href="#writing">Writing</a><a href="#suite">Founder Suite</a><a href="#faq">FAQ</a></div></div>
       <div><h4>Work with me</h4><div class="ft-col"><a href="#contact">Book a call</a><a href="https://creuto.com" target="_blank" rel="noopener">Creuto ↗</a><a href="mailto:mail@niharrout.com">mail@niharrout.com</a></div></div>
       <div><h4>Elsewhere</h4><div class="ft-col"><a href="https://www.linkedin.com/in/niharrout/" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://x.com/iniharrout" target="_blank" rel="noopener">X ↗</a><a href="https://github.com/iniharrout" target="_blank" rel="noopener">GitHub ↗</a><a href="https://medium.com/@niharrout" target="_blank" rel="noopener">Medium ↗</a></div></div>
     </div>
@@ -990,14 +1182,46 @@
 </footer>
 
 <script type="application/ld+json">
-{
-  "@context":"https://schema.org","@type":"Person","name":"Nihar Ranjan Rout","url":"https://niharrout.com",
-  "jobTitle":"Founder & CEO, Creuto — Product Strategist","email":"mail@niharrout.com",
-  "description":"Nihar Ranjan Rout is the founder & CEO of Creuto, a B2B software development company. With 8+ years in product management across many industries, he helps businesses shape their product, prepare a PRD, and build growth-standard software within budget.",
-  "worksFor":{"@type":"Organization","name":"Creuto","url":"https://creuto.com","description":"B2B software development company — product strategy, PRD, and growth-standard software development."},
-  "knowsAbout":["Product management","Product strategy","PRD","Software development","B2B SaaS","AI product development","Business analysis"],
-  "sameAs":["https://www.linkedin.com/in/niharrout/","https://x.com/iniharrout","https://github.com/iniharrout","https://medium.com/@niharrout","https://substack.com/@niharrout"]
-}
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://niharrout.com/#person",
+    "name": "Nihar Ranjan Rout",
+    "url": "https://niharrout.com",
+    "jobTitle": "Founder & CEO, Creuto — Product Strategist",
+    "email": "mail@niharrout.com",
+    "description": "Nihar Ranjan Rout is the founder & CEO of Creuto, a B2B software development company. With 8+ years in product management across many industries, he helps businesses shape their product, prepare a PRD, and build growth-standard software within budget.",
+    "worksFor": {
+      "@type": "Organization",
+      "@id": "https://creuto.com/#organization"
+    },
+    "knowsAbout": ["Product management","Product strategy","PRD","Software development","B2B SaaS","AI product development","Business analysis"],
+    "sameAs": [
+      "https://www.linkedin.com/in/niharrout/",
+      "https://x.com/iniharrout",
+      "https://github.com/iniharrout",
+      "https://medium.com/@niharrout",
+      "https://substack.com/@niharrout"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://creuto.com/#organization",
+    "name": "Creuto",
+    "url": "https://creuto.com",
+    "logo": "https://www.niharrout.com/assets/niharrout-og-image.png",
+    "description": "B2B software development company specializing in product strategy, PRD writing, and custom software/AI integrations.",
+    "founder": {
+      "@type": "Person",
+      "@id": "https://niharrout.com/#person"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/creuto/"
+    ]
+  }
+]
 </script>
 <script type="application/ld+json">
 {
@@ -1041,6 +1265,7 @@
         e.stopPropagation();
         var isOpen = toggle.classList.toggle('open');
         drawer.classList.toggle('open', isOpen);
+        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       });
 
       // Close drawer when clicking a link
@@ -1049,6 +1274,7 @@
         lnk.addEventListener('click', function() {
           toggle.classList.remove('open');
           drawer.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
         });
       });
 
@@ -1057,6 +1283,7 @@
         if (!drawer.contains(e.target) && !toggle.contains(e.target)) {
           toggle.classList.remove('open');
           drawer.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
         }
       });
     }
