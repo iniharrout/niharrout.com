@@ -3,6 +3,9 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="geo.region" content="IN">
+  <meta name="geo.placename" content="India">
+  <link rel="me" href="https://www.linkedin.com/in/niharrout/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script>
     (function () {
@@ -155,45 +158,48 @@
     }
 
 
-  /* ================= TOAST NOTIFICATION ================= */
-  .toast {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    background: var(--surface);
-    color: var(--ink);
-    border: 1px solid var(--line-strong);
-    border-radius: 12px;
-    padding: 16px 20px;
-    box-shadow: var(--shadow-lift);
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    z-index: 200;
-    transform: translateY(100px);
-    opacity: 0;
-    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
-                opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-  }
-  .toast.show {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  .toast .icon {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    background: var(--accent-tint);
-    color: var(--accent);
-    display: grid;
-    place-items: center;
-    font-size: 13px;
-    font-weight: bold;
-  }
-  .toast .msg {
-    font-size: 14.5px;
-    font-weight: 500;
-  }
+    /* ================= TOAST NOTIFICATION ================= */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--surface);
+      color: var(--ink);
+      border: 1px solid var(--line-strong);
+      border-radius: 12px;
+      padding: 16px 20px;
+      box-shadow: var(--shadow-lift);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      z-index: 200;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+        opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .toast .icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--accent-tint);
+      color: var(--accent);
+      display: grid;
+      place-items: center;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .toast .msg {
+      font-size: 14.5px;
+      font-weight: 500;
+    }
 
     .eyebrow {
       font-family: "IBM Plex Mono", monospace;
@@ -1697,7 +1703,7 @@
       <div class="wrap">
         <div class="hero-avatar-container rv">
           <div class="hero-avatar-wrapper">
-            <img src="assets/nihar.jpg" alt="Nihar Ranjan Rout" class="hero-avatar">
+            <img src="assets/nihar.jpg" alt="Nihar Ranjan Rout, Founder and CEO of Creuto" class="hero-avatar">
           </div>
         </div>
         <span class="badge rv">B2B product &amp; software development — product thinking first</span>
@@ -1759,13 +1765,14 @@
           <div class="sig">
             <div>
               <div class="nm">Nihar Ranjan Rout</div>
-              <div class="rl">FOUNDER, CREUTO & Edverise</div>
+              <div class="rl">FOUNDER, CREUTO & EDVERISE</div>
             </div>
           </div>
         </div>
         <div class="about-media rv">
           <div class="about-image-wrapper">
-            <img src="assets/nihar-cafe.jpg" alt="Nihar Ranjan Rout" class="about-image">
+            <img src="assets/nihar-cafe.jpg" alt="Nihar Ranjan Rout, product strategist and founder of Creuto"
+              class="about-image">
           </div>
           <div class="about-quote-box">
             <p class="quote">The right product, scoped honestly and built well — <b>within your budget</b>, not despite
@@ -1983,8 +1990,8 @@
             <h3>Get honest first thoughts</h3>
             <div class="field"><label for="a-name">Your name *</label><input id="a-name" name="name" required
                 placeholder="Your name"></div>
-            <div class="field"><label for="a-phone">Mobile number *</label><input id="a-phone" name="phone" type="tel" required
-                placeholder="Your phone number"></div>
+            <div class="field"><label for="a-phone">Mobile number *</label><input id="a-phone" name="phone" type="tel"
+                required placeholder="Your phone number"></div>
             <div class="field"><label for="a-biz">Business name *</label><input id="a-biz" name="biz" required
                 placeholder="Acme Inc."></div>
             <div class="field"><label for="a-ind">Industry sector *</label><input id="a-ind" name="ind" required
@@ -2174,6 +2181,43 @@
 }
 </script>
 
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Creuto",
+  "url": "https://creuto.com",
+  "image": "https://niharrout.com/og-image.png",
+  "logo": "https://creuto.com/logo.png",
+  "description": "Creuto is a B2B software development company delivering product strategy, PRDs, and growth-standard AI, SaaS, and custom software — built within budget.",
+  "founder": {
+    "@type": "Person",
+    "name": "Nihar Ranjan Rout",
+    "url": "https://niharrout.com",
+    "jobTitle": "Founder & CEO"
+  },
+  "areaServed": "Worldwide",
+  "priceRange": "$$",
+  "knowsAbout": ["Product management", "PRD", "Software development", "AI products", "SaaS", "MVP development"],
+  "serviceType": [
+    "Product strategy & consulting",
+    "Software development",
+    "AI product development",
+    "SaaS development",
+    "MVP development",
+    "Mobile app development"
+  ],
+  "sameAs": [
+    "https://clutch.co/profile/creuto",
+    "https://www.goodfirms.co/company/creuto",
+    "https://techbehemoths.com/company/creuto",
+    "https://www.linkedin.com/in/niharrout/",
+    "https://x.com/iniharrout"
+  ]
+}
+</script>
+
+
   <script>
     document.getElementById('yr').textContent = new Date().getFullYear();
 
@@ -2244,10 +2288,10 @@
       toast.className = 'toast';
       toast.innerHTML = '<div class="icon">✓</div><div class="msg">' + message + '</div>';
       document.body.appendChild(toast);
-      setTimeout(function() { toast.classList.add('show'); }, 10);
-      setTimeout(function() {
+      setTimeout(function () { toast.classList.add('show'); }, 10);
+      setTimeout(function () {
         toast.classList.remove('show');
-        setTimeout(function() { toast.remove(); }, 400);
+        setTimeout(function () { toast.remove(); }, 400);
       }, 4000);
     }
 
@@ -2269,23 +2313,23 @@
         },
         body: JSON.stringify(payload)
       })
-      .then(function() {
-        showToast('Thank you! Your details have been submitted successfully.');
-      })
-      .catch(function(err) {
-        console.error('Webhook post error:', err);
-        showToast('Submission error. Opening your email client...');
-        setTimeout(fallbackAction, 1000);
-      });
+        .then(function () {
+          showToast('Thank you! Your details have been submitted successfully.');
+        })
+        .catch(function (err) {
+          console.error('Webhook post error:', err);
+          showToast('Submission error. Opening your email client...');
+          setTimeout(fallbackAction, 1000);
+        });
     }
 
     /* forms submits */
     function val(f, n) { var el = f.querySelector('[name="' + n + '"]'); return el ? el.value.trim() : ''; }
-    
+
     var af = document.getElementById('auditForm');
     af.addEventListener('submit', function (e) {
       e.preventDefault();
-      
+
       var name = val(af, 'name');
       var phone = val(af, 'phone');
       var business = val(af, 'biz');
@@ -2360,7 +2404,7 @@
       };
 
       // 2. Fallback mailto Action
-      var fallback = function() {
+      var fallback = function () {
         var body = 'New project enquiry%0D%0A%0D%0AName: ' + encodeURIComponent(name)
           + '%0D%0AMobile: ' + encodeURIComponent(phone)
           + '%0D%0ABusiness: ' + encodeURIComponent(business)
@@ -2438,7 +2482,7 @@
       };
 
       // 2. Fallback mailto Action
-      var fallback = function() {
+      var fallback = function () {
         var body = 'New project enquiry%0D%0A%0D%0AName: ' + encodeURIComponent(name)
           + '%0D%0AEmail: ' + encodeURIComponent(email)
           + '%0D%0ABudget: ' + encodeURIComponent(budget)
