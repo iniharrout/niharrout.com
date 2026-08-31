@@ -1173,6 +1173,30 @@
       margin-top: auto;
     }
 
+    /* ================= REVIEWS ================= */
+    .reviews {
+      background: var(--bg-2);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .reviews-container {
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      padding: clamp(24px, 4vw, 40px);
+      box-shadow: var(--shadow);
+      min-height: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .clutch-widget {
+      width: 100% !important;
+      margin: 0 auto;
+    }
+
     /* ================= FOUNDER SUITE ================= */
     .suite {
       background: var(--ink);
@@ -1657,6 +1681,7 @@
       <div class="nav-desktop">
         <a href="#about" class="lnk">About</a>
         <a href="#capabilities" class="lnk">Services</a>
+        <a href="#reviews" class="lnk">Reviews</a>
         <a href="#suite" class="lnk">Founder Suite</a>
         <a href="#faq" class="lnk">FAQ</a>
       </div>
@@ -1689,6 +1714,7 @@
       <nav class="drawer-links">
         <a href="#about" class="drawer-lnk">About</a>
         <a href="#capabilities" class="drawer-lnk">Services</a>
+        <a href="#reviews" class="drawer-lnk">Reviews</a>
         <a href="#suite" class="drawer-lnk">Founder Suite</a>
         <a href="#faq" class="drawer-lnk">FAQ</a>
         <a href="#contact" class="btn btn-primary drawer-btn">Book a Call <span class="arw">→</span></a>
@@ -1961,6 +1987,26 @@
               <div class="foot"><a href="#contact" class="btn btn-ghost">Build a team</a></div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= REVIEWS ================= -->
+    <section class="reviews" id="reviews">
+      <div class="wrap">
+        <div class="shead center rv">
+          <p class="eyebrow">Clutch Reviews</p>
+          <h2>Trusted by B2B founders and companies worldwide.</h2>
+          <p class="sub">Here is what clients say about our product strategy and custom software delivery.</p>
+        </div>
+        <div class="reviews-container rv">
+          <script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js"></script>
+          <div class="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="8" data-height="300" data-nofollow="false" data-expandifr="true" data-scale="100" data-reviews="384806,383518,383041,382633,382294,380065" data-clutchcompany-id="2118119"></div>
+        </div>
+        <div class="reviews-footer center rv" style="margin-top: 32px;">
+          <a href="https://clutch.co/profile/creuto" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
+            Read more reviews on Clutch <span class="arw">→</span>
+          </a>
         </div>
       </div>
     </section>
