@@ -41,74 +41,61 @@
     content="Architecting cutting-edge Generative AI, Multi-Agent Workflows, and Custom Machine Learning software in Bhubaneswar, Infocity, Patia, Odisha.">
   <meta name="twitter:image" content="https://www.niharrout.com/assets/niharrout-og-image.png">
 
-  <!-- Fonts -->
+  <!-- Fonts: Plus Jakarta Sans & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
-
-  <script>
-    (function () {
-      var root = document.documentElement;
-      try {
-        var s = localStorage.getItem('nrr-theme');
-        if (s === 'dark' || s === 'light') {
-          root.setAttribute('data-theme', s);
-        } else {
-          root.setAttribute('data-theme', 'light');
-        }
-      } catch (e) {
-        root.setAttribute('data-theme', 'light');
-      }
-    })();
-  </script>
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap">
 
   <style>
-    /* ================= TOKENS ================= */
+    /* ================= SLEEK & AIRY ZUTRIX DESIGN SYSTEM ================= */
     :root {
       --bg: #FFFFFF;
-      --bg-2: #F4F4F5;
+      --bg-alt: #F8FAFC;         /* slate-50 */
+      --bg-subtle: #F1F5F9;      /* slate-100 */
       --surface: #FFFFFF;
-      --ink: #09090B;
-      --ink-soft: #4B5563;
-      --ink-faint: #71717A;
-      --line: #E4E4E7;
-      --line-strong: #D4D4D8;
-      --accent: #E24A2A;
-      --accent-deep: #C2381B;
-      --accent-tint: #FEE2E2;
-      --on-accent: #FFFFFF;
-      --gold: #B45309;
-      --emerald: #059669;
-      --ai-glow: #8B5CF6;
-      --ai-glow-tint: #EDE9FE;
-      --shadow: 0 1px 3px rgba(0, 0, 0, 0.02), 0 8px 24px rgba(0, 0, 0, 0.04);
-      --shadow-lift: 0 4px 12px rgba(0, 0, 0, 0.04), 0 20px 40px rgba(0, 0, 0, 0.08);
-      --maxw: 1160px;
-      --measure: 65ch;
-      --r: 12px;
-      --r-sm: 6px;
-    }
-
-    :root[data-theme="dark"] {
-      --bg: #09090B;
-      --bg-2: #18181B;
-      --surface: #18181B;
-      --ink: #FAFAFA;
-      --ink-soft: #A1A1AA;
-      --ink-faint: #52525B;
-      --line: #27272A;
-      --line-strong: #3F3F46;
-      --accent: #FF6A4D;
-      --accent-deep: #FF8368;
-      --accent-tint: #2D1612;
-      --on-accent: #09090B;
-      --gold: #F59E0B;
+      
+      /* Typography Colors */
+      --ink: #0F172A;            /* slate-900 */
+      --ink-soft: #475569;       /* slate-600 */
+      --ink-faint: #64748B;      /* slate-500 */
+      --ink-muted: #94A3B8;      /* slate-400 */
+      
+      /* Refined Ultra-Subtle Borders */
+      --line: rgba(226, 232, 240, 0.8);
+      --line-subtle: rgba(241, 245, 249, 0.9);
+      --line-focus: #CBD5E1;
+      
+      /* Zutrix Brand Ember Accents */
+      --accent: #F0672A;
+      --accent-deep: #D9531E;
+      --accent-tint: #FFF7ED;    /* ember-50 */
+      --accent-tint-2: #FFEDD5;  /* ember-100 */
+      --accent-border: #FED7AA;  /* ember-200 */
+      
+      /* Semantic Accents */
       --emerald: #10B981;
-      --ai-glow: #A78BFA;
-      --ai-glow-tint: #2E1065;
-      --shadow: 0 1px 2px rgba(0, 0, 0, 0.5), 0 12px 36px rgba(0, 0, 0, 0.6);
-      --shadow-lift: 0 4px 12px rgba(0, 0, 0, 0.55), 0 24px 50px rgba(0, 0, 0, 0.7);
+      --emerald-dark: #059669;
+      --emerald-tint: #ECFDF5;
+      --emerald-border: #A7F3D0;
+      
+      --ocean: #2563EB;
+      --ocean-tint: #EFF6FF;
+      
+      --violet: #8B5CF6;
+      --violet-tint: #F5F3FF;
+      
+      /* Ultra-Soft Diffusion Shadows */
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.03);
+      --shadow-card: 0 10px 30px -10px rgba(15, 23, 42, 0.04), 0 2px 8px -2px rgba(15, 23, 42, 0.02);
+      --shadow-hover: 0 20px 40px -12px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(15, 23, 42, 0.03);
+      --shadow-hero: 0 25px 60px -15px rgba(15, 23, 42, 0.06);
+      
+      --maxw: 1160px;
+      --measure: 64ch;
+      --r-lg: 20px;
+      --r-md: 14px;
+      --r-pill: 9999px;
     }
 
     * {
@@ -117,15 +104,16 @@
 
     html {
       scroll-behavior: smooth;
+      background-color: var(--bg);
     }
 
     body {
       margin: 0;
       background: var(--bg);
-      color: var(--ink);
-      font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+      color: var(--ink-soft);
+      font-family: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       font-size: 16.5px;
-      line-height: 1.6;
+      line-height: 1.7;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
       padding-top: 72px;
@@ -134,11 +122,11 @@
     .wrap {
       max-width: var(--maxw);
       margin: 0 auto;
-      padding: 0 26px;
+      padding: 0 24px;
     }
 
     section {
-      padding: clamp(60px, 8vw, 110px) 0;
+      padding: clamp(72px, 9vw, 120px) 0;
       position: relative;
     }
 
@@ -146,96 +134,112 @@
       color: inherit;
     }
 
-    h1, h2, h3, h4 {
-      font-family: "Playfair Display", Georgia, serif;
-      font-weight: 600;
+    h1, h2, h3, h4, h5, h6 {
+      font-family: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-weight: 700;
+      color: var(--ink);
       margin: 0;
       text-wrap: balance;
-      letter-spacing: -.01em;
+      letter-spacing: -0.03em;
     }
 
     p {
       margin: 0;
     }
 
+    /* Zutrix Signature Highlight Underline */
+    .hl-wrap {
+      position: relative;
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    .hl-bar {
+      position: absolute;
+      bottom: 3px;
+      left: 0;
+      width: 100%;
+      height: 8px;
+      background: linear-gradient(120deg, rgba(254, 215, 170, 0.7) 0%, rgba(253, 186, 116, 0.5) 100%);
+      border-radius: 4px;
+      z-index: -1;
+    }
+
     /* ================= BUTTONS & PILLS ================= */
     .btn {
       display: inline-flex;
       align-items: center;
-      gap: 9px;
+      justify-content: center;
+      gap: 8px;
       font-family: inherit;
       font-size: 15px;
       font-weight: 600;
       text-decoration: none;
-      border-radius: 100px;
+      border-radius: 12px;
       padding: 12px 24px;
-      line-height: 1;
+      line-height: 1.2;
       cursor: pointer;
       border: 1px solid transparent;
-      transition: transform .2s cubic-bezier(0.165, 0.84, 0.44, 1),
-        background .2s ease, border-color .2s ease, color .2s ease, box-shadow .2s ease;
+      transition: all .25s cubic-bezier(0.165, 0.84, 0.44, 1);
       white-space: nowrap;
     }
 
     .btn-primary {
-      background: var(--accent);
-      color: var(--on-accent);
-      box-shadow: 0 4px 14px rgba(226, 74, 42, 0.15);
+      background: var(--ink);
+      color: #FFFFFF;
+      border-color: var(--ink);
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.12);
     }
 
     .btn-primary:hover {
-      background: var(--accent-deep);
+      background: #1E293B;
+      border-color: #1E293B;
+      color: #FFFFFF;
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(226, 74, 42, 0.25);
-    }
-
-    .btn-ghost {
-      background: transparent;
-      color: var(--ink);
-      border-color: var(--line-strong);
-    }
-
-    .btn-ghost:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      background: rgba(226, 74, 42, 0.04);
-      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.18);
     }
 
     .btn-whatsapp {
-      background: #25D366;
+      background: #10B981;
       color: #FFFFFF;
-      box-shadow: 0 4px 14px rgba(37, 211, 102, 0.2);
+      border-color: #10B981;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.25);
     }
 
     .btn-whatsapp:hover {
-      background: #20BA5A;
+      background: #059669;
+      border-color: #059669;
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+      box-shadow: 0 8px 20px rgba(16, 185, 129, 0.35);
     }
 
-    .eyebrow {
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: var(--accent);
+    .eyebrow-pill {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: var(--r-pill);
+      background: var(--accent-tint);
+      border: 1px solid var(--accent-border);
+      color: var(--accent-deep);
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      margin-bottom: 18px;
     }
 
-    .eyebrow::before {
-      content: "";
-      width: 20px;
-      height: 1px;
+    .eyebrow-pill .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
       background: var(--accent);
+      display: inline-block;
     }
 
     .sub {
       color: var(--ink-soft);
       font-size: 18px;
+      line-height: 1.65;
       max-width: var(--measure);
     }
 
@@ -247,49 +251,34 @@
       right: 0;
       height: 72px;
       z-index: 100;
-      background: color-mix(in srgb, var(--bg) 85%, transparent);
+      background: rgba(255, 255, 255, 0.85);
       backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--line);
-      transition: border-color 0.3s ease, background 0.3s ease;
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.7);
+      transition: all 0.3s ease;
     }
 
     .nav-inner {
       max-width: var(--maxw);
       margin: 0 auto;
-      padding: 0 26px;
+      padding: 0 24px;
       height: 100%;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
-    .brand-group {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-    }
-
     .brand {
       font-family: "Plus Jakarta Sans", sans-serif;
       font-weight: 800;
       font-size: 21px;
-      letter-spacing: -.02em;
+      letter-spacing: -.03em;
+      text-decoration: none;
       color: var(--ink);
     }
 
     .brand .d {
       color: var(--accent);
-    }
-
-    .brand-tag {
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 11px;
-      background: var(--bg-2);
-      border: 1px solid var(--line);
-      padding: 3px 8px;
-      border-radius: 4px;
-      color: var(--ink-faint);
     }
 
     .nav-desktop {
@@ -298,7 +287,7 @@
       gap: 28px;
     }
 
-    @media (max-width: 960px) {
+    @media (max-width: 920px) {
       .nav-desktop {
         display: none;
       }
@@ -309,8 +298,6 @@
       font-weight: 500;
       color: var(--ink-soft);
       text-decoration: none;
-      position: relative;
-      padding: 4px 0;
       transition: color .2s;
     }
 
@@ -318,75 +305,17 @@
       color: var(--ink);
     }
 
-    .nav-desktop a.lnk::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -2px;
-      height: 1.5px;
-      width: 0;
-      background: var(--accent);
-      transition: width .2s ease;
-    }
-
-    .nav-desktop a.lnk:hover::after {
-      width: 100%;
-    }
-
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .theme-toggle {
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
-      border: none;
-      background: transparent;
-      display: inline-grid;
-      place-items: center;
-      cursor: pointer;
-      color: var(--ink-soft);
-      transition: color .2s, background .2s;
-    }
-
-    .theme-toggle:hover {
-      color: var(--ink);
-      background: var(--bg-2);
-    }
-
-    .theme-toggle svg {
-      width: 18px;
-      height: 18px;
-    }
-
-    .theme-toggle .moon {
-      display: none;
-    }
-
-    :root[data-theme="dark"] .theme-toggle .moon {
-      display: block;
-    }
-
-    :root[data-theme="dark"] .theme-toggle .sun {
-      display: none;
-    }
-
     .nav-toggle {
       display: none;
       background: none;
       border: none;
-      width: 32px;
-      height: 32px;
-      position: relative;
+      width: 36px;
+      height: 36px;
       cursor: pointer;
       padding: 0;
-      z-index: 110;
     }
 
-    @media (max-width: 960px) {
+    @media (max-width: 920px) {
       .nav-toggle {
         display: flex;
         flex-direction: column;
@@ -400,18 +329,16 @@
       width: 20px;
       height: 2px;
       background: var(--ink);
-      transition: transform 0.3s ease, opacity 0.3s ease;
+      transition: all 0.3s ease;
       border-radius: 2px;
     }
 
     .nav-toggle.open .line-1 {
       transform: translateY(7px) rotate(45deg);
     }
-
     .nav-toggle.open .line-2 {
       opacity: 0;
     }
-
     .nav-toggle.open .line-3 {
       transform: translateY(-7px) rotate(-45deg);
     }
@@ -421,7 +348,7 @@
       top: 72px;
       left: 0;
       right: 0;
-      background: var(--bg);
+      background: #FFFFFF;
       border-bottom: 1px solid var(--line);
       padding: 24px;
       display: flex;
@@ -430,9 +357,9 @@
       opacity: 0;
       transform: translateY(-12px);
       pointer-events: none;
-      transition: opacity 0.3s ease, transform 0.3s ease;
+      transition: all 0.3s ease;
       z-index: 95;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
     }
 
     .mobile-drawer.open {
@@ -448,84 +375,57 @@
     }
 
     .drawer-lnk {
-      font-size: 17px;
+      font-size: 16px;
       font-weight: 600;
       color: var(--ink);
       text-decoration: none;
-      padding: 6px 0;
     }
 
     /* ================= HERO ================= */
     .hero {
-      padding-top: clamp(48px, 6vw, 84px);
-      padding-bottom: clamp(48px, 6vw, 76px);
+      position: relative;
+      padding-top: clamp(64px, 8vw, 100px);
+      padding-bottom: clamp(64px, 8vw, 96px);
       text-align: center;
-      background: radial-gradient(circle at 50% 10%, rgba(139, 92, 246, 0.08) 0%, rgba(226, 74, 42, 0.04) 40%, transparent 70%);
+      background: #FFFFFF;
+      overflow: hidden;
     }
 
-    .geo-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--bg-2);
-      border: 1px solid var(--line-strong);
-      padding: 7px 16px;
-      border-radius: 100px;
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--ink);
-      margin-bottom: 20px;
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1000px;
+      height: 600px;
+      background: radial-gradient(circle at 50% 25%, rgba(139, 92, 246, 0.06) 0%, rgba(240, 103, 42, 0.03) 40%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
     }
 
-    .geo-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--ai-glow);
-      box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.3);
+    .hero > .wrap {
+      position: relative;
+      z-index: 1;
+      max-width: 920px;
     }
 
     .hero h1 {
-      font-size: clamp(36px, 5.8vw, 68px);
-      line-height: 1.1;
-      font-weight: 700;
-      max-width: 22ch;
-      margin: 0 auto;
-      letter-spacing: -0.025em;
-    }
-
-    .hero h1 .it {
-      font-style: italic;
-      background: linear-gradient(135deg, var(--accent) 20%, #A855F7 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      font-size: clamp(38px, 5.8vw, 60px);
+      line-height: 1.12;
+      font-weight: 800;
+      margin: 14px auto 0;
+      max-width: 18ch;
+      letter-spacing: -0.035em;
+      color: var(--ink);
     }
 
     .hero .pitch {
-      font-size: clamp(16.5px, 1.8vw, 19.5px);
+      font-size: clamp(17px, 1.8vw, 19.5px);
       color: var(--ink-soft);
-      max-width: 62ch;
-      margin: 22px auto 0;
-      line-height: 1.6;
-    }
-
-    .hero-badges {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 24px;
-    }
-
-    .hub-badge {
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 11.5px;
-      padding: 5px 12px;
-      border-radius: 100px;
-      background: var(--surface);
-      border: 1px solid var(--line);
-      color: var(--ink-faint);
+      max-width: 60ch;
+      margin: 20px auto 0;
+      line-height: 1.65;
     }
 
     .hero-cta {
@@ -536,51 +436,63 @@
       margin-top: 36px;
     }
 
-    .hero-stats {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-      margin-top: 56px;
-      padding-top: 40px;
-      border-top: 1px solid var(--line);
+    /* Sleek Hero Ribbon */
+    .hero-stats-ribbon {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 32px 48px;
+      margin-top: 54px;
+      padding: 24px 32px;
+      background: var(--bg-alt);
+      border-radius: var(--r-lg);
+      border: 1px solid var(--line-subtle);
     }
 
-    @media (max-width: 768px) {
-      .hero-stats {
+    @media (max-width: 680px) {
+      .hero-stats-ribbon {
+        display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+        gap: 24px 20px;
+        padding: 20px;
+        text-align: left;
       }
     }
 
-    .st {
-      text-align: left;
-      border-left: 2px solid var(--accent);
-      padding-left: 16px;
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
     }
 
-    .st .v {
-      font-family: "Playfair Display", serif;
-      font-size: 28px;
-      font-weight: 700;
+    @media (max-width: 680px) {
+      .stat-item {
+        text-align: left;
+      }
+    }
+
+    .stat-item .v {
+      font-size: 24px;
+      font-weight: 800;
       color: var(--ink);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
     }
 
-    .st .v .u {
+    .stat-item .v .u {
       color: var(--accent);
-      font-size: 14px;
-      font-family: "IBM Plex Mono", monospace;
+      font-weight: 700;
     }
 
-    .st .k {
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 11.5px;
-      text-transform: uppercase;
-      letter-spacing: .06em;
+    .stat-item .k {
+      font-size: 13px;
+      font-weight: 500;
       color: var(--ink-faint);
       margin-top: 4px;
     }
 
-    /* ================= SECTION HEAD ================= */
+    /* ================= SECTION HEADINGS ================= */
     .shead {
       max-width: 780px;
       margin-bottom: 48px;
@@ -589,228 +501,201 @@
     .shead h2 {
       font-size: clamp(28px, 3.8vw, 42px);
       line-height: 1.15;
-      margin-top: 14px;
-      letter-spacing: -0.02em;
+      font-weight: 800;
+      margin-top: 12px;
+      letter-spacing: -0.03em;
+      color: var(--ink);
     }
 
     .shead .sub {
       margin-top: 14px;
-      font-size: clamp(15.5px, 1.6vw, 18px);
+      font-size: clamp(16px, 1.7vw, 18.5px);
+      line-height: 1.6;
       color: var(--ink-soft);
     }
 
     .center {
+      margin-left: auto;
+      margin-right: auto;
       text-align: center;
+    }
+
+    .center .eyebrow-pill {
+      justify-content: center;
+    }
+
+    .center .sub {
       margin-left: auto;
       margin-right: auto;
     }
 
-    .center .eyebrow {
-      justify-content: center;
-    }
-
-    /* ================= CARDS & SERVICES ================= */
+    /* ================= CARDS & GRIDS ================= */
     .grid-3 {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
     }
 
-    @media (max-width: 920px) {
+    @media (max-width: 960px) {
       .grid-3 {
         grid-template-columns: repeat(2, 1fr);
       }
     }
 
-    @media (max-width: 620px) {
+    @media (max-width: 640px) {
       .grid-3 {
         grid-template-columns: 1fr;
       }
     }
 
-    .card {
-      background: var(--surface);
+    .sleek-card {
+      background: #FFFFFF;
       border: 1px solid var(--line);
-      border-radius: var(--r);
+      border-radius: var(--r-lg);
       padding: 30px;
+      box-shadow: var(--shadow-card);
+      transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
       display: flex;
       flex-direction: column;
-      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-      position: relative;
     }
 
-    .card:hover {
+    .sleek-card:hover {
+      border-color: var(--line-focus);
       transform: translateY(-4px);
-      border-color: var(--line-strong);
-      box-shadow: var(--shadow-lift);
+      box-shadow: var(--shadow-hover);
     }
 
-    .card .ic {
-      width: 46px;
-      height: 46px;
-      border-radius: 10px;
-      background: var(--accent-tint);
-      color: var(--accent);
-      display: grid;
-      place-items: center;
-      font-size: 20px;
-      margin-bottom: 20px;
+    .sleek-card .ic {
+      font-size: 24px;
+      margin-bottom: 16px;
+      display: inline-block;
     }
 
-    .card h3 {
-      font-size: 21px;
-      line-height: 1.25;
+    .sleek-card h3 {
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.3;
+      margin-bottom: 10px;
     }
 
-    .card p {
+    .sleek-card p {
+      font-size: 14.5px;
       color: var(--ink-soft);
-      font-size: 15px;
-      margin-top: 12px;
       line-height: 1.6;
+      margin-bottom: 18px;
     }
 
-    .card .pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 7px;
-      margin-top: 20px;
+    .sleek-card .pills {
       list-style: none;
       padding: 0;
+      margin: auto 0 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
     }
 
-    .card .pills li {
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 11px;
+    .sleek-card .pills li {
+      font-size: 11.5px;
+      font-weight: 500;
       color: var(--ink-soft);
-      background: var(--bg-2);
+      background: var(--bg-alt);
       border: 1px solid var(--line);
       padding: 4px 9px;
-      border-radius: 4px;
+      border-radius: 6px;
     }
 
-    /* ================= LOCAL SPOTLIGHT ================= */
+    /* ================= LOCAL SECTION ================= */
     .local-section {
-      background: var(--bg-2);
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
+      background: var(--bg-alt);
     }
 
     .local-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: clamp(32px, 5vw, 64px);
       align-items: center;
     }
 
-    @media (max-width: 860px) {
+    @media (max-width: 880px) {
       .local-grid {
         grid-template-columns: 1fr;
       }
     }
 
     .local-box {
-      background: var(--surface);
+      background: #FFFFFF;
       border: 1px solid var(--line);
-      border-radius: var(--r);
-      padding: 32px;
-      box-shadow: var(--shadow);
+      border-radius: var(--r-lg);
+      padding: clamp(28px, 4vw, 36px);
+      box-shadow: var(--shadow-card);
     }
 
     .hub-list {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      margin-top: 24px;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    @media (max-width: 520px) {
+      .hub-list {
+        grid-template-columns: 1fr;
+      }
     }
 
     .hub-item {
       display: flex;
       align-items: center;
-      gap: 10px;
-      font-size: 14px;
+      gap: 8px;
+      font-size: 13.5px;
       font-weight: 600;
       color: var(--ink);
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      padding: 9px 12px;
+      border-radius: 8px;
     }
 
     .hub-item::before {
       content: "📍";
-      font-size: 14px;
+      font-size: 12px;
     }
 
-    /* ================= PROCESS ================= */
-    .steps-grid {
+    /* ================= TECH GRID ================= */
+    .tech-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 20px;
     }
 
-    @media (max-width: 920px) {
-      .steps-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 540px) {
-      .steps-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .step-card {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: var(--r);
-      padding: 26px;
-      position: relative;
-    }
-
-    .step-num {
-      font-family: "Playfair Display", serif;
-      font-size: 34px;
-      font-weight: 700;
-      color: var(--accent);
-      line-height: 1;
-      margin-bottom: 12px;
-    }
-
-    .step-card h3 {
-      font-size: 18px;
-    }
-
-    .step-card p {
-      color: var(--ink-soft);
-      font-size: 14px;
-      margin-top: 8px;
-    }
-
-    /* ================= TECH STACK ================= */
-    .tech-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-      margin-top: 32px;
-    }
-
-    @media (max-width: 860px) {
+    @media (max-width: 960px) {
       .tech-grid {
         grid-template-columns: repeat(2, 1fr);
       }
     }
 
+    @media (max-width: 480px) {
+      .tech-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     .tech-box {
-      background: var(--surface);
+      background: #FFFFFF;
       border: 1px solid var(--line);
-      border-radius: var(--r);
-      padding: 22px;
+      border-radius: var(--r-lg);
+      padding: 24px;
+      box-shadow: var(--shadow-card);
     }
 
     .tech-box h4 {
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 12px;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      color: var(--accent);
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--ink);
       margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--line);
     }
 
     .tech-list {
@@ -820,56 +705,110 @@
     }
 
     .tech-list span {
-      font-size: 14.5px;
-      font-weight: 500;
-      color: var(--ink);
+      font-size: 13px;
+      color: var(--ink-soft);
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
     }
 
     .tech-list span::before {
       content: "•";
       color: var(--accent);
-      font-weight: bold;
+      font-size: 16px;
+      line-height: 0;
+    }
+
+    /* ================= PROCESS STEPS ================= */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    @media (max-width: 860px) {
+      .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 520px) {
+      .steps-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .step-card {
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: var(--r-lg);
+      padding: 28px;
+      box-shadow: var(--shadow-card);
+      transition: all 0.3s ease;
+    }
+
+    .step-card:hover {
+      border-color: var(--line-focus);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .step-num {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--accent);
+      background: var(--accent-tint);
+      border: 1px solid var(--accent-border);
+      padding: 4px 10px;
+      border-radius: var(--r-pill);
+      display: inline-block;
+      margin-bottom: 14px;
+      font-family: "JetBrains Mono", monospace;
+    }
+
+    .step-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+
+    .step-card p {
+      font-size: 14px;
+      color: var(--ink-soft);
+      line-height: 1.55;
     }
 
     /* ================= FAQ ================= */
-    .faq-section {
-      background: var(--bg-2);
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
     .faq-grid {
       display: grid;
-      grid-template-columns: .85fr 1.15fr;
-      gap: 48px;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: clamp(28px, 4vw, 56px);
       align-items: start;
     }
 
-    @media (max-width: 840px) {
+    @media (max-width: 820px) {
       .faq-grid {
         grid-template-columns: 1fr;
-        gap: 30px;
       }
     }
 
     details.q {
-      border-bottom: 1px solid var(--line-strong);
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--line);
+      transition: all 0.2s ease;
     }
 
     details.q summary {
       list-style: none;
       cursor: pointer;
-      padding: 20px 0;
+      padding: 18px 0;
       display: flex;
       justify-content: space-between;
       gap: 16px;
       align-items: center;
-      font-family: "Playfair Display", serif;
-      font-size: 18.5px;
-      font-weight: 600;
+      font-size: 16.5px;
+      font-weight: 700;
       color: var(--ink);
     }
 
@@ -877,50 +816,35 @@
       display: none;
     }
 
-    details.q summary .ic {
-      font-family: "IBM Plex Mono", monospace;
-      color: var(--accent);
-      font-size: 20px;
-      font-weight: 700;
-    }
-
     details.q .ans {
-      padding-bottom: 20px;
+      padding: 0 0 20px;
       color: var(--ink-soft);
       font-size: 15px;
       line-height: 1.65;
     }
 
-    /* ================= FORM & CONTACT ================= */
+    /* ================= LEAD ESTIMATE / CONSULT BOX ================= */
+    .lead-section {
+      background: var(--bg-alt);
+    }
+
     .lead-box {
-      background: var(--ink);
-      color: #FFFFFF;
-      border-radius: var(--r);
-      padding: clamp(32px, 5vw, 56px);
-    }
-
-    :root[data-theme="dark"] .lead-box {
-      background: #111113;
+      background: #FFFFFF;
       border: 1px solid var(--line);
-    }
-
-    .lead-box h2 {
-      color: #FFFFFF;
-    }
-
-    .lead-box .sub {
-      color: #A1A1AA;
+      border-radius: var(--r-lg);
+      padding: clamp(32px, 5vw, 48px);
+      box-shadow: var(--shadow-card);
     }
 
     .lead-grid {
       display: grid;
-      grid-template-columns: 1fr 1.1fr;
-      gap: 44px;
-      align-items: center;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: clamp(32px, 5vw, 56px);
+      align-items: start;
       margin-top: 32px;
     }
 
-    @media (max-width: 860px) {
+    @media (max-width: 880px) {
       .lead-grid {
         grid-template-columns: 1fr;
       }
@@ -936,32 +860,40 @@
       display: flex;
       gap: 12px;
       align-items: flex-start;
-      font-size: 15px;
-      color: #D4D4D8;
+      font-size: 14.5px;
+      color: var(--ink-soft);
     }
 
     .perk-item .ck {
-      color: var(--accent);
-      font-weight: 700;
+      flex: none;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--emerald-tint);
+      color: var(--emerald-dark);
+      border: 1px solid var(--emerald-border);
+      display: grid;
+      place-items: center;
+      font-size: 11px;
+      font-weight: 800;
     }
 
     .cform-card {
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: var(--r);
-      padding: 28px;
+      background: var(--bg-alt);
+      border: 1px solid var(--line);
+      border-radius: var(--r-md);
+      padding: clamp(24px, 3vw, 32px);
     }
 
     .form-group {
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
     .form-group label {
       display: block;
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 11.5px;
-      letter-spacing: .04em;
-      color: #D4D4D8;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--ink);
       margin-bottom: 6px;
     }
 
@@ -969,18 +901,14 @@
     .form-group select,
     .form-group textarea {
       width: 100%;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 8px;
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: 10px;
       padding: 12px 14px;
-      color: #FFFFFF;
+      color: var(--ink);
       font-family: inherit;
       font-size: 14.5px;
-      transition: all 0.2s;
-    }
-
-    .form-group select option {
-      color: #000000;
+      transition: all 0.2s ease;
     }
 
     .form-group input:focus,
@@ -988,40 +916,14 @@
     .form-group textarea:focus {
       outline: none;
       border-color: var(--accent);
-      background: rgba(255, 255, 255, 0.1);
-      box-shadow: 0 0 0 3px rgba(226, 74, 42, 0.2);
-    }
-
-    /* Toast */
-    .toast {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      background: var(--surface);
-      color: var(--ink);
-      border: 1px solid var(--line-strong);
-      border-radius: 12px;
-      padding: 16px 20px;
-      box-shadow: var(--shadow-lift);
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      z-index: 200;
-      transform: translateY(100px);
-      opacity: 0;
-      transition: all 0.4s ease;
-    }
-
-    .toast.show {
-      transform: translateY(0);
-      opacity: 1;
+      box-shadow: 0 0 0 3px rgba(240, 103, 42, 0.1);
     }
 
     /* ================= FOOTER ================= */
     footer.ft {
-      background: var(--bg);
+      background: #FFFFFF;
       border-top: 1px solid var(--line);
-      padding: 60px 0 36px;
+      padding: 60px 0 32px;
     }
 
     .ft-grid {
@@ -1030,9 +932,10 @@
       gap: 36px;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 760px) {
       .ft-grid {
         grid-template-columns: 1fr;
+        gap: 28px;
       }
     }
 
@@ -1040,6 +943,8 @@
       font-family: "Plus Jakarta Sans", sans-serif;
       font-weight: 800;
       font-size: 22px;
+      letter-spacing: -.03em;
+      color: var(--ink);
     }
 
     .ft-brand .d {
@@ -1049,17 +954,18 @@
     .ft-desc {
       color: var(--ink-soft);
       font-size: 14px;
-      margin-top: 12px;
-      max-width: 40ch;
+      margin-top: 10px;
+      max-width: 36ch;
+      line-height: 1.6;
     }
 
     .ft h4 {
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 11px;
-      letter-spacing: .12em;
+      font-size: 12px;
+      letter-spacing: .06em;
       text-transform: uppercase;
-      color: var(--ink-faint);
-      margin-bottom: 14px;
+      color: var(--ink);
+      font-weight: 700;
+      margin: 0 0 14px;
     }
 
     .ft-links {
@@ -1070,9 +976,10 @@
 
     .ft-links a {
       color: var(--ink-soft);
-      font-size: 14px;
       text-decoration: none;
-      transition: color 0.2s;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color .2s;
     }
 
     .ft-links a:hover {
@@ -1080,15 +987,15 @@
     }
 
     .ft-bottom {
-      margin-top: 40px;
+      margin-top: 44px;
       padding-top: 20px;
-      border-top: 1px solid var(--line);
+      border-top: 1px solid var(--line-subtle);
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       gap: 12px;
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 12px;
+      align-items: center;
+      font-size: 13px;
       color: var(--ink-faint);
     }
   </style>
@@ -1098,38 +1005,18 @@
   <!-- ================= NAV ================= -->
   <header class="nav" id="nav">
     <div class="nav-inner">
-      <div class="brand-group">
-        <span class="brand">nihar<span class="d">.</span></span>
-        <span class="brand-tag">Bhubaneswar AI Lab</span>
-      </div>
+      <a href="index.html" class="brand">nihar<span class="d">.</span></a>
 
       <div class="nav-desktop">
-        <a href="#services" class="lnk">AI Capabilities</a>
-        <a href="#hubs" class="lnk">Bhubaneswar Ecosystem</a>
-        <a href="#models" class="lnk">Models &amp; Frameworks</a>
-        <a href="#process" class="lnk">AI Delivery Playbook</a>
+        <a href="#services" class="lnk">AI Services</a>
+        <a href="#hubs" class="lnk">Bhubaneswar Hubs</a>
+        <a href="#models" class="lnk">AI Stack</a>
+        <a href="#process" class="lnk">Playbook</a>
         <a href="#faq" class="lnk">FAQ</a>
       </div>
 
       <div class="nav-actions">
-        <a href="https://wa.me/919938883500?text=Hi%20Nihar,%20I'm%20looking%20for%20AI%20Product%20Development%20in%20Bhubaneswar."
-          target="_blank" rel="noopener" class="btn btn-whatsapp" title="Chat on WhatsApp">
-          <span>WhatsApp</span>
-        </a>
-        <a href="#ai-consult" class="btn btn-primary">Book AI Architecture Call →</a>
-
-        <button class="theme-toggle" id="themeBtn" aria-label="Toggle theme" title="Toggle theme">
-          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
-            stroke-linecap="round">
-            <circle cx="12" cy="12" r="4.2" />
-            <path
-              d="M12 2.5v2.5M12 19v2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M2.5 12h2.5M19 12h2.5M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8" />
-          </svg>
-          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
-            stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 14.5A8 8 0 1 1 9.5 4a6.2 6.2 0 0 0 10.5 10.5z" />
-          </svg>
-        </button>
+        <a href="#ai-consult" class="btn btn-primary" style="padding:9px 18px; font-size:13.5px;">Audit AI Project <span class="arw">→</span></a>
 
         <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
           <span class="line line-1"></span>
@@ -1141,65 +1028,58 @@
 
     <div class="mobile-drawer" id="mobileDrawer">
       <nav class="drawer-links">
-        <a href="#services" class="drawer-lnk">AI Capabilities</a>
-        <a href="#hubs" class="drawer-lnk">Bhubaneswar Ecosystem</a>
-        <a href="#models" class="drawer-lnk">Models &amp; Frameworks</a>
-        <a href="#process" class="drawer-lnk">AI Delivery Playbook</a>
+        <a href="index.html" class="drawer-lnk">← Back to Main Portfolio</a>
+        <a href="#services" class="drawer-lnk">AI Services</a>
+        <a href="#hubs" class="drawer-lnk">Bhubaneswar Hubs</a>
+        <a href="#models" class="drawer-lnk">AI Stack</a>
+        <a href="#process" class="drawer-lnk">Playbook</a>
         <a href="#faq" class="drawer-lnk">FAQ</a>
-        <a href="#ai-consult" class="btn btn-primary" style="justify-content:center;">Book AI Architecture Call →</a>
+        <a href="#ai-consult" class="btn btn-primary">Audit AI Project <span class="arw">→</span></a>
       </nav>
     </div>
   </header>
 
-  <main>
+  <main id="top">
+
     <!-- ================= HERO ================= -->
-    <section class="hero" id="top">
+    <section class="hero" id="hero">
       <div class="wrap">
-        <div class="geo-pill">
-          <span class="geo-dot"></span>
-          #1 AI Product Engineering &amp; LLM Studio in Bhubaneswar, Odisha
+        <div>
+          <span class="eyebrow-pill"><span class="dot"></span> AI Engineering &amp; Custom LLM Solutions · Infocity, Bhubaneswar</span>
         </div>
 
         <h1>
-          Top AI Product Development in <span class="it">Bhubaneswar.</span>
+          AI Product Development <span class="hl-wrap">Company in Bhubaneswar<span class="hl-bar"></span></span>
         </h1>
 
         <p class="pitch">
-          Led by Nihar Ranjan Rout &amp; Creuto. We turn foundational AI into revenue-generating software products — custom LLM apps, autonomous AI agents, enterprise RAG search engines, and intelligent SaaS systems with zero fluff.
+          We architect and deploy production-grade Generative AI software, custom LLM pipelines, autonomous multi-agent workflows, and enterprise RAG systems for ambitious startups and businesses in Bhubaneswar, Odisha and globally.
         </p>
 
-        <div class="hero-badges">
-          <span class="hub-badge">🧠 Custom LLMs &amp; Fine-Tuning</span>
-          <span class="hub-badge">🤖 Multi-Agent Workflows</span>
-          <span class="hub-badge">📚 Enterprise RAG &amp; Vector DBs</span>
-          <span class="hub-badge">🛡️ Enterprise Guardrails &amp; Privacy</span>
-        </div>
-
         <div class="hero-cta">
-          <a href="#ai-consult" class="btn btn-primary">Book Free AI Feasibility Session <span class="arw">→</span></a>
-          <a href="https://wa.me/919938883500?text=Hi%20Nihar,%20I%20want%20to%20discuss%20an%20AI%20Product%20in%20Bhubaneswar."
+          <a href="#ai-consult" class="btn btn-primary">Book Free AI Feasibility Audit <span class="arw">→</span></a>
+          <a href="https://wa.me/919938883500?text=Hi%20Nihar,%20I%20want%20to%20discuss%20an%20AI%20product%20development%20project."
             target="_blank" rel="noopener" class="btn btn-whatsapp">
             <span>Chat on WhatsApp</span>
           </a>
-          <a href="#services" class="btn btn-ghost">Explore AI Capabilities</a>
         </div>
 
-        <div class="hero-stats">
-          <div class="st">
-            <div class="v">&lt;450<span class="u">ms</span></div>
-            <div class="k">Sub-Second RAG Latency</div>
+        <div class="hero-stats-ribbon">
+          <div class="stat-item">
+            <div class="v">Custom<span class="u"> LLMs</span></div>
+            <div class="k">Fine-Tuned &amp; RAG</div>
           </div>
-          <div class="st">
-            <div class="v">99.4<span class="u">%</span></div>
-            <div class="k">Answer Accuracy Rate</div>
+          <div class="stat-item">
+            <div class="v">Autonomous<span class="u"> Agents</span></div>
+            <div class="k">LangGraph &amp; CrewAI</div>
           </div>
-          <div class="st">
-            <div class="v">0<span class="u">%</span></div>
-            <div class="k">Data Retention / Strict Privacy</div>
+          <div class="stat-item">
+            <div class="v">4-8<span class="u"> Wks</span></div>
+            <div class="k">Fast MVP Launch</div>
           </div>
-          <div class="st">
+          <div class="stat-item">
             <div class="v">100<span class="u">%</span></div>
-            <div class="k">Production-Ready Code</div>
+            <div class="k">Production-Ready &amp; Private</div>
           </div>
         </div>
       </div>
@@ -1209,17 +1089,16 @@
     <section id="services">
       <div class="wrap">
         <div class="shead center">
-          <span class="eyebrow">Production AI Engineering</span>
-          <h2>AI Product Development Services in Bhubaneswar</h2>
+          <span class="eyebrow-pill"><span class="dot"></span> Production AI Engineering</span>
+          <h2>AI Product Development Services in <span class="hl-wrap">Bhubaneswar<span class="hl-bar"></span></span></h2>
           <p class="sub">
             From problem framing and data engineering to model evaluation, guardrail orchestration, and scalable cloud deployment.
           </p>
         </div>
 
         <div class="grid-3">
-          <!-- Card 1 -->
-          <div class="card">
-            <div class="ic">🧠</div>
+          <div class="sleek-card">
+            <span class="ic">🧠</span>
             <h3>Custom LLM Application Development</h3>
             <p>
               Domain-specific conversational systems, summarization pipelines, and intelligent automated workflows powered by OpenAI GPT-4o, Anthropic Claude 3.5, and Meta Llama 3 with prompt caching and deterministic controls.
@@ -1233,9 +1112,8 @@
             </ul>
           </div>
 
-          <!-- Card 2 -->
-          <div class="card">
-            <div class="ic">🤖</div>
+          <div class="sleek-card">
+            <span class="ic">🤖</span>
             <h3>Autonomous AI Agents &amp; Tool Calling</h3>
             <p>
               Multi-agent systems that autonomously plan, research, query internal databases, execute API calls, and resolve complex multi-step workflows without constant human micro-management.
@@ -1249,9 +1127,8 @@
             </ul>
           </div>
 
-          <!-- Card 3 -->
-          <div class="card">
-            <div class="ic">📚</div>
+          <div class="sleek-card">
+            <span class="ic">📚</span>
             <h3>Enterprise Retrieval-Augmented Generation (RAG)</h3>
             <p>
               Grounded AI search engines that chat with your private knowledge bases (PDFs, Notion, SQL databases, Confluence, ERP). Hybrid keyword + vector semantic search with zero hallucination guarantee.
@@ -1265,9 +1142,8 @@
             </ul>
           </div>
 
-          <!-- Card 4 -->
-          <div class="card">
-            <div class="ic">⚙️</div>
+          <div class="sleek-card">
+            <span class="ic">⚙️</span>
             <h3>Model Fine-Tuning &amp; Quantization</h3>
             <p>
               Custom weights adaptation using LoRA, QLoRA, and supervised fine-tuning (SFT) on your proprietary datasets. Run self-hosted, lightweight open-weight models on your own AWS/GCP servers with vLLM.
@@ -1281,9 +1157,8 @@
             </ul>
           </div>
 
-          <!-- Card 5 -->
-          <div class="card">
-            <div class="ic">🚀</div>
+          <div class="sleek-card">
+            <span class="ic">🚀</span>
             <h3>AI MVP Development for Startups</h3>
             <p>
               Launch your AI SaaS product in 4 to 8 weeks. We provide end-to-end product architecture, UI/UX frontend in Next.js/React, token metering, Stripe billing, and scalable vector pipelines.
@@ -1297,9 +1172,8 @@
             </ul>
           </div>
 
-          <!-- Card 6 -->
-          <div class="card">
-            <div class="ic">🛡️</div>
+          <div class="sleek-card">
+            <span class="ic">🛡️</span>
             <h3>AI Security, Privacy &amp; Guardrails</h3>
             <p>
               Hardened AI applications with automated PII masking, prompt injection defense, hallucination detectors, content moderation filters, and full compliance with enterprise security policies.
@@ -1321,7 +1195,7 @@
       <div class="wrap">
         <div class="local-grid">
           <div>
-            <span class="eyebrow">Local AI Innovation Hub</span>
+            <span class="eyebrow-pill"><span class="dot"></span> Local AI Innovation Hub</span>
             <h2>Why Bhubaneswar Companies Partner with Nihar &amp; Creuto</h2>
             <p style="color:var(--ink-soft); margin-top:16px; font-size:16px;">
               Bhubaneswar's tech corridor (Infocity, Patia, O-Hub, and STPI) is becoming a center of deep-tech innovation. We cut through the AI hype: instead of selling wrapper toys, we build robust software that integrates with your core database, automates real team hours, and delivers measurable ROI.
@@ -1330,34 +1204,34 @@
             <div class="hub-list">
               <div class="hub-item">Infocity Tech Corridor</div>
               <div class="hub-item">Patia &amp; Chandrasekharpur</div>
-              <div class="hub-item">O-Hub &amp; Startup Odisha Hub</div>
+              <div class="hub-item">O-Hub &amp; Startup Odisha</div>
               <div class="hub-item">KIIT-TBI &amp; SOA Incubators</div>
               <div class="hub-item">Fortune Towers &amp; DLF Cybercity</div>
-              <div class="hub-item">Cuttack, Rourkela &amp; Global Delivery</div>
+              <div class="hub-item">Cuttack, Rourkela &amp; Global</div>
             </div>
 
             <div style="margin-top:28px;">
-              <a href="#ai-consult" class="btn btn-primary">Schedule In-Person / Virtual AI Audit →</a>
+              <a href="#ai-consult" class="btn btn-primary">Schedule In-Person / Virtual AI Audit <span class="arw">→</span></a>
             </div>
           </div>
 
           <div class="local-box">
-            <h3 style="font-size:22px; margin-bottom:14px;">The Product-First AI Methodology</h3>
-            <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:16px;">
-              <li style="display:flex; gap:12px; font-size:15px; color:var(--ink-soft);">
-                <span style="color:var(--accent); font-weight:bold;">✓</span>
+            <h3 style="font-size:20px; margin-bottom:14px; font-weight:700;">The Product-First AI Methodology</h3>
+            <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:14px;">
+              <li style="display:flex; gap:12px; font-size:14.5px; color:var(--ink-soft);">
+                <span style="color:var(--emerald-dark); font-weight:bold;">✓</span>
                 <span><strong>No AI for AI's Sake:</strong> We run a feasibility assessment to determine whether an LLM, traditional ML, or deterministic heuristic algorithm is the fastest, cheapest solution.</span>
               </li>
-              <li style="display:flex; gap:12px; font-size:15px; color:var(--ink-soft);">
-                <span style="color:var(--accent); font-weight:bold;">✓</span>
+              <li style="display:flex; gap:12px; font-size:14.5px; color:var(--ink-soft);">
+                <span style="color:var(--emerald-dark); font-weight:bold;">✓</span>
                 <span><strong>Zero Data Leakage / Full IP Ownership:</strong> Your internal knowledge bases and fine-tuned model artifacts remain your exclusive property.</span>
               </li>
-              <li style="display:flex; gap:12px; font-size:15px; color:var(--ink-soft);">
-                <span style="color:var(--accent); font-weight:bold;">✓</span>
+              <li style="display:flex; gap:12px; font-size:14.5px; color:var(--ink-soft);">
+                <span style="color:var(--emerald-dark); font-weight:bold;">✓</span>
                 <span><strong>Cost &amp; Token Architecture:</strong> Intelligent semantic caching and prompt distillation to prevent runaway API bills.</span>
               </li>
-              <li style="display:flex; gap:12px; font-size:15px; color:var(--ink-soft);">
-                <span style="color:var(--accent); font-weight:bold;">✓</span>
+              <li style="display:flex; gap:12px; font-size:14.5px; color:var(--ink-soft);">
+                <span style="color:var(--emerald-dark); font-weight:bold;">✓</span>
                 <span><strong>Production SLA &amp; Observability:</strong> Real-time latency tracking, token consumption logging, and LangSmith/Arize observability tracing.</span>
               </li>
             </ul>
@@ -1370,8 +1244,8 @@
     <section id="models">
       <div class="wrap">
         <div class="shead center">
-          <span class="eyebrow">AI Engineering Stack</span>
-          <h2>Models, Frameworks &amp; Vector Databases</h2>
+          <span class="eyebrow-pill"><span class="dot"></span> AI Engineering Stack</span>
+          <h2>Models, Frameworks &amp; <span class="hl-wrap">Vector Databases<span class="hl-bar"></span></span></h2>
           <p class="sub">
             Battle-tested AI tech stack chosen for enterprise latency, throughput, cost-efficiency, and resilience.
           </p>
@@ -1425,8 +1299,8 @@
     <section class="local-section" id="process">
       <div class="wrap">
         <div class="shead center">
-          <span class="eyebrow">Proven Execution</span>
-          <h2>Our 4-Step AI Product Engineering Playbook</h2>
+          <span class="eyebrow-pill"><span class="dot"></span> Proven Execution</span>
+          <h2>Our 4-Step AI Product Engineering <span class="hl-wrap">Playbook<span class="hl-bar"></span></span></h2>
           <p class="sub">
             How we take your AI concept from prompt experimentation to high-scale production reliability.
           </p>
@@ -1434,27 +1308,27 @@
 
         <div class="steps-grid">
           <div class="step-card">
-            <div class="step-num">01</div>
+            <span class="step-num">01</span>
             <h3>Feasibility Audit &amp; PRD</h3>
             <p>We analyze your proprietary data, evaluate benchmark accuracy goals, calculate expected inference cost per user, and write a crystal-clear technical PRD.</p>
           </div>
 
           <div class="step-card">
-            <div class="step-num">02</div>
-            <h3>Architecture &amp; RAG Prototype</h3>
+            <span class="step-num">02</span>
+            <h3>Architecture &amp; Prototype</h3>
             <p>We construct the data ingestion pipeline, implement vector chunking strategies, set up eval benchmarks, and demo a working MVP prototype within 2 weeks.</p>
           </div>
 
           <div class="step-card">
-            <div class="step-num">03</div>
-            <h3>Guardrails &amp; Accuracy Tuning</h3>
+            <span class="step-num">03</span>
+            <h3>Guardrails &amp; Accuracy</h3>
             <p>We test edge cases, optimize prompts, implement semantic caching, add injection guardrails, and fine-tune models to reach 99%+ accuracy.</p>
           </div>
 
           <div class="step-card">
-            <div class="step-num">04</div>
-            <h3>Production Deployment &amp; Observability</h3>
-            <p>We containerize your AI microservices, hook up token billing and latency observability, and deploy on resilient AWS/GCP/Cloudflare cloud architecture.</p>
+            <span class="step-num">04</span>
+            <h3>Production Deployment</h3>
+            <p>We containerize your AI microservices, hook up token billing and latency observability, and deploy on resilient AWS/GCP cloud architecture.</p>
           </div>
         </div>
       </div>
@@ -1464,41 +1338,41 @@
     <section>
       <div class="wrap">
         <div class="shead center">
-          <span class="eyebrow">Real-World Applications</span>
-          <h2>AI Product Solutions Tailored for High Impact</h2>
+          <span class="eyebrow-pill"><span class="dot"></span> Real-World Applications</span>
+          <h2>AI Product Solutions Tailored for <span class="hl-wrap">High Impact<span class="hl-bar"></span></span></h2>
           <p class="sub">
             Practical AI tools that automate manual operations and unlock net-new revenue streams.
           </p>
         </div>
 
         <div class="grid-3">
-          <div class="card">
-            <div class="ic">⚖️</div>
+          <div class="sleek-card">
+            <span class="ic">⚖️</span>
             <h3>LegalTech &amp; Contract Analysis</h3>
             <p>Autonomous clause extraction, multi-jurisdiction regulatory compliance checks, document redlining, and instant precedent cross-referencing.</p>
           </div>
-          <div class="card">
-            <div class="ic">🏥</div>
+          <div class="sleek-card">
+            <span class="ic">🏥</span>
             <h3>Healthcare Clinical AI Copilots</h3>
             <p>Patient intake summarization, medical transcript parsing, diagnostic query assistance, and HIPAA-compliant doctor notes generation.</p>
           </div>
-          <div class="card">
-            <div class="ic">📊</div>
+          <div class="sleek-card">
+            <span class="ic">📊</span>
             <h3>FinTech Intelligence &amp; Risk AI</h3>
             <p>Automated balance sheet auditing, transaction anomaly detection, conversational SQL query engines, and predictive credit assessment.</p>
           </div>
-          <div class="card">
-            <div class="ic">🎧</div>
+          <div class="sleek-card">
+            <span class="ic">🎧</span>
             <h3>Autonomous Customer Support Agents</h3>
             <p>Context-aware tier-1 &amp; tier-2 support agents that read order history, resolve tickets, process refunds, and escalate gracefully to humans.</p>
           </div>
-          <div class="card">
-            <div class="ic">🛒</div>
+          <div class="sleek-card">
+            <span class="ic">🛒</span>
             <h3>E-Commerce Semantic Search &amp; Recs</h3>
             <p>Natural language search bars that understand intent ("red evening dress under 3000 for a winter party"), personalized cross-sell engines.</p>
           </div>
-          <div class="card">
-            <div class="ic">🏗️</div>
+          <div class="sleek-card">
+            <span class="ic">🏗️</span>
             <h3>Industrial &amp; Supply Chain Analytics</h3>
             <p>Predictive equipment maintenance, automated vendor invoice matching, inventory demand forecasting, and logistics routing intelligence.</p>
           </div>
@@ -1507,11 +1381,11 @@
     </section>
 
     <!-- ================= FAQ ================= -->
-    <section class="faq-section" id="faq">
+    <section id="faq">
       <div class="wrap">
         <div class="faq-grid">
           <div>
-            <span class="eyebrow">Frequently Asked Questions</span>
+            <span class="eyebrow-pill"><span class="dot"></span> Frequently Asked Questions</span>
             <h2>Common Questions on AI Product Development</h2>
             <p style="color:var(--ink-soft); margin-top:14px; font-size:16px;">
               Learn how we protect data confidentiality, control API expenses, and bring AI products to life in Bhubaneswar.
@@ -1526,7 +1400,7 @@
             <details class="q" open>
               <summary>
                 <span>How much does it cost to build a custom AI product or MVP in Bhubaneswar?</span>
-                <span class="ic">+</span>
+                <span class="ic"></span>
               </summary>
               <div class="ans">
                 A production-ready AI MVP (such as an Enterprise RAG chatbot, custom document processing engine, or AI agent workflow) typically ranges between ₹2.5 Lakhs to ₹7 Lakhs ($3,000 - $8,500 USD). Large-scale enterprise AI software with custom fine-tuning, multi-agent pipelines, and multi-tenant billing ranges between ₹8 Lakhs to ₹20+ Lakhs. We offer fixed milestone pricing after an initial architecture review.
@@ -1536,7 +1410,7 @@
             <details class="q">
               <summary>
                 <span>How do you prevent hallucinations in generative AI systems?</span>
-                <span class="ic">+</span>
+                <span class="ic"></span>
               </summary>
               <div class="ans">
                 We implement multi-stage verification: strictly grounded Retrieval-Augmented Generation (RAG) with citation mapping, low-temperature prompt constraints, Guardrails (NeMo &amp; LlamaGuard), and self-reflection loops where the model audits its own response against the retrieved source passages before displaying it to the user.
@@ -1546,7 +1420,7 @@
             <details class="q">
               <summary>
                 <span>Is my proprietary company data safe from training public models?</span>
-                <span class="ic">+</span>
+                <span class="ic"></span>
               </summary>
               <div class="ans">
                 Yes. We strictly use enterprise API endpoints (OpenAI Enterprise, AWS Bedrock, Anthropic Claude Commercial) which legally guarantee that your data is never used to train foundational models. For highly sensitive requirements (banking, defense, healthcare), we deploy private, self-hosted open-weight models (Llama 3, Mistral) inside your own dedicated cloud VPC.
@@ -1556,7 +1430,7 @@
             <details class="q">
               <summary>
                 <span>How fast can we launch an AI MVP?</span>
-                <span class="ic">+</span>
+                <span class="ic"></span>
               </summary>
               <div class="ans">
                 Most AI MVPs are scoped, designed, built, benchmarked, and deployed in 4 to 8 weeks. We leverage modular backend accelerators (FastAPI, LangGraph, Vector DB adapters) so you don't spend months reinventing the wheel.
@@ -1566,7 +1440,7 @@
             <details class="q">
               <summary>
                 <span>Can we meet in Bhubaneswar for an in-person AI discovery session?</span>
-                <span class="ic">+</span>
+                <span class="ic"></span>
               </summary>
               <div class="ans">
                 Yes. We frequently meet founders, CTOs, and innovation heads across Bhubaneswar in Infocity, Patia, Chandrasekharpur, Jayadev Vihar, Saheed Nagar, and O-Hub. You can also book a virtual video session right away.
@@ -1578,12 +1452,12 @@
     </section>
 
     <!-- ================= LEAD ESTIMATE FORM ================= -->
-    <section id="ai-consult">
+    <section class="lead-section" id="ai-consult">
       <div class="wrap">
         <div class="lead-box">
           <div class="shead">
-            <span class="eyebrow" style="color:var(--accent);">Build Intelligent Software</span>
-            <h2 style="font-size:clamp(30px, 4.2vw, 44px); margin-top:12px;">Book a Free AI Feasibility &amp; Product Architecture Audit</h2>
+            <span class="eyebrow-pill"><span class="dot"></span> Build Intelligent Software</span>
+            <h2 style="font-size:clamp(28px, 3.8vw, 38px); margin-top:12px;">Book a Free AI Feasibility &amp; Architecture Audit</h2>
             <p class="sub" style="margin-top:10px;">
               Share what you want to automate or build. We evaluate technical feasibility, model selection, token economics, and provide a clear PRD roadmap within 24 hours.
             </p>
@@ -1608,10 +1482,10 @@
                 <div><strong>Bhubaneswar In-Person Leadership:</strong> Direct interaction with Nihar Ranjan Rout (AI Strategist &amp; Creuto Founder).</div>
               </div>
 
-              <div style="margin-top:24px; padding:18px; background:rgba(255,255,255,0.06); border-radius:8px; border:1px solid rgba(255,255,255,0.1);">
-                <p style="font-size:14px; color:#E4E4E7; margin:0;">
-                  <strong>Direct Founder Contact:</strong><br>
-                  📧 Email: <a href="mailto:mail@niharrout.com" style="color:var(--accent); text-decoration:none;">mail@niharrout.com</a><br>
+              <div style="margin-top:20px; padding:18px; background:#FFFFFF; border-radius:12px; border:1px solid var(--line);">
+                <p style="font-size:14px; color:var(--ink-soft); margin:0; line-height:1.6;">
+                  <strong style="color:var(--ink);">Direct Founder Contact:</strong><br>
+                  📧 Email: <a href="mailto:mail@niharrout.com" style="color:var(--accent); text-decoration:none; font-weight:600;">mail@niharrout.com</a><br>
                   📍 Location: Infocity &amp; Patia Tech Hub, Bhubaneswar, Odisha 751024
                 </p>
               </div>
@@ -1661,10 +1535,10 @@
                   <textarea id="aiDetails" name="details" rows="3" placeholder="What task should the AI solve? What data do you have (PDFs, SQL, APIs)? Any specific models you prefer?" required></textarea>
                 </div>
 
-                <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; padding:14px;">
-                  Submit For Free AI Feasibility &amp; Estimate →
+                <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; padding:13px;">
+                  Submit For Free AI Feasibility &amp; Estimate <span class="arw">→</span>
                 </button>
-                <div style="font-family:'IBM Plex Mono', monospace; font-size:11px; color:#A1A1AA; text-align:center; margin-top:10px;">
+                <div style="font-size:12px; color:var(--ink-faint); text-align:center; margin-top:12px;">
                   🔒 100% Confidentiality &amp; NDA Assured · Response in 24 Hours
                 </div>
               </form>
@@ -1684,7 +1558,7 @@
           <p class="ft-desc">
             Product strategist &amp; Founder of Creuto. Engineering growth-standard software, generative AI products, and enterprise applications built within budget.
           </p>
-          <div style="margin-top:14px; font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:var(--ink-soft);">
+          <div style="margin-top:12px; font-size:13px; color:var(--ink-faint);">
             📍 Bhubaneswar, Odisha, India · Global Delivery
           </div>
         </div>
@@ -1876,19 +1750,6 @@
   <script>
     document.getElementById('yr').textContent = new Date().getFullYear();
 
-    /* Theme toggle */
-    (function () {
-      var root = document.documentElement, btn = document.getElementById('themeBtn');
-      if (btn) {
-        btn.addEventListener('click', function () {
-          var cur = root.getAttribute('data-theme') || 'light';
-          var next = cur === 'dark' ? 'light' : 'dark';
-          root.setAttribute('data-theme', next);
-          try { localStorage.setItem('nrr-theme', next); } catch (e) { }
-        });
-      }
-    })();
-
     /* Mobile drawer toggle */
     (function () {
       var toggle = document.getElementById('navToggle');
@@ -1921,7 +1782,7 @@
     function showToast(message) {
       var toast = document.createElement('div');
       toast.className = 'toast';
-      toast.innerHTML = '<div style="width:22px;height:22px;border-radius:50%;background:var(--accent-tint);color:var(--accent);display:grid;place-items:center;font-weight:bold;font-size:12px;">✓</div><div style="font-size:14px;font-weight:500;">' + message + '</div>';
+      toast.innerHTML = '<div style="width:22px;height:22px;border-radius:50%;background:var(--emerald-tint);color:var(--emerald-dark);display:grid;place-items:center;font-weight:bold;font-size:12px;">✓</div><div style="font-size:14px;font-weight:600;color:var(--ink);">' + message + '</div>';
       document.body.appendChild(toast);
       setTimeout(function () { toast.classList.add('show'); }, 10);
       setTimeout(function () {

@@ -7,28 +7,13 @@
   <meta name="geo.placename" content="India">
   <link rel="me" href="https://www.linkedin.com/in/niharrout/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script>
-    (function () {
-      var root = document.documentElement;
-      try {
-        var s = localStorage.getItem('nrr-theme');
-        if (s === 'dark' || s === 'light') {
-          root.setAttribute('data-theme', s);
-        } else {
-          root.setAttribute('data-theme', 'light');
-        }
-      } catch (e) {
-        root.setAttribute('data-theme', 'light');
-      }
-    })();
-  </script>
   <link rel="canonical" href="https://niharrout.com/">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="author" content="Nihar Ranjan Rout">
-  <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#09090B" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#FFFFFF">
   <link rel="icon" href="assets/nihar.jpg" type="image/jpeg">
   <link rel="apple-touch-icon" href="assets/nihar.jpg">
+  
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Nihar Ranjan Rout">
@@ -39,98 +24,101 @@
   <meta property="og:image" content="https://www.niharrout.com/assets/niharrout-og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Nihar Ranjan Rout — Founder & CEO, Creuto | B2B Software Development">
   <meta name="twitter:description"
     content="Nihar Ranjan Rout — Founder & CEO of Creuto, a B2B software development company. Product-first consulting, PRDs, and growth-standard software built within budget.">
   <meta name="twitter:image" content="https://www.niharrout.com/assets/niharrout-og-image.png">
+  
   <title>Nihar Ranjan Rout — Founder & CEO, Creuto | B2B Software Development</title>
   <meta name="description"
     content="Nihar Ranjan Rout — Founder & CEO of Creuto, a B2B software development company. Product-first consulting, PRDs, and growth-standard software built within budget.">
+  
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap">
 
   <style>
-    /* ================= TOKENS ================= */
+    /* ================= SLEEK & AIRY ZUTRIX DESIGN SYSTEM ================= */
     :root {
       --bg: #FFFFFF;
-      --bg-2: #F4F4F5;
+      --bg-alt: #F8FAFC;         /* slate-50 */
+      --bg-subtle: #F1F5F9;      /* slate-100 */
       --surface: #FFFFFF;
-      --ink: #09090B;
-      --ink-soft: #4B5563;
-      --ink-faint: #71717A;
-      --line: #E4E4E7;
-      --line-strong: #D4D4D8;
-      --accent: #E24A2A;
-      --accent-deep: #C2381B;
-      --accent-tint: #FEE2E2;
-      --on-accent: #FFFFFF;
-      --gold: #B45309;
-      --shadow: 0 1px 3px rgba(0, 0, 0, 0.02), 0 8px 24px rgba(0, 0, 0, 0.04);
-      --shadow-lift: 0 4px 12px rgba(0, 0, 0, 0.04), 0 20px 40px rgba(0, 0, 0, 0.08);
+      
+      /* Typography Colors */
+      --ink: #0F172A;            /* slate-900 */
+      --ink-soft: #475569;       /* slate-600 */
+      --ink-faint: #64748B;      /* slate-500 */
+      --ink-muted: #94A3B8;      /* slate-400 */
+      
+      /* Refined Ultra-Subtle Borders */
+      --line: rgba(226, 232, 240, 0.8);
+      --line-subtle: rgba(241, 245, 249, 0.9);
+      --line-focus: #CBD5E1;
+      
+      /* Zutrix Brand Ember Accents */
+      --accent: #F0672A;
+      --accent-deep: #D9531E;
+      --accent-tint: #FFF7ED;    /* ember-50 */
+      --accent-tint-2: #FFEDD5;  /* ember-100 */
+      --accent-border: #FED7AA;  /* ember-200 */
+      
+      /* Semantic Accents */
+      --emerald: #10B981;
+      --emerald-dark: #059669;
+      --emerald-tint: #ECFDF5;
+      --emerald-border: #A7F3D0;
+      
+      --ocean: #2563EB;
+      --ocean-tint: #EFF6FF;
+      
+      /* Ultra-Soft Diffusion Shadows */
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.03);
+      --shadow-card: 0 10px 30px -10px rgba(15, 23, 42, 0.04), 0 2px 8px -2px rgba(15, 23, 42, 0.02);
+      --shadow-hover: 0 20px 40px -12px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(15, 23, 42, 0.03);
+      --shadow-hero: 0 25px 60px -15px rgba(15, 23, 42, 0.06);
+      
       --maxw: 1160px;
-      --measure: 65ch;
-      --r: 12px;
-      --r-sm: 6px;
+      --measure: 64ch;
+      --r-lg: 20px;
+      --r-md: 14px;
+      --r-pill: 9999px;
     }
 
-    :root[data-theme="dark"] {
-      --bg: #09090B;
-      --bg-2: #18181B;
-      --surface: #18181B;
-      --ink: #FAFAFA;
-      --ink-soft: #A1A1AA;
-      --ink-faint: #52525B;
-      --line: #27272A;
-      --line-strong: #3F3F46;
-      --accent: #FF6A4D;
-      --accent-deep: #FF8368;
-      --accent-tint: #2D1612;
-      --on-accent: #09090B;
-      --gold: #F59E0B;
-      --shadow: 0 1px 2px rgba(0, 0, 0, 0.5), 0 12px 36px rgba(0, 0, 0, 0.6);
-      --shadow-lift: 0 4px 12px rgba(0, 0, 0, 0.55), 0 24px 50px rgba(0, 0, 0, 0.7);
-    }
-
-    /* ================= BASE ================= */
     * {
       box-sizing: border-box;
     }
 
     html {
       scroll-behavior: smooth;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
+      background-color: var(--bg);
     }
 
     body {
       margin: 0;
       background: var(--bg);
-      color: var(--ink);
-      font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+      color: var(--ink-soft);
+      font-family: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       font-size: 16.5px;
-      line-height: 1.6;
+      line-height: 1.7;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
       padding-top: 72px;
-      /* Offset for fixed nav */
     }
 
     .wrap {
       max-width: var(--maxw);
       margin: 0 auto;
-      padding: 0 26px;
+      padding: 0 24px;
     }
 
     section {
-      padding: clamp(60px, 8.5vw, 120px) 0;
+      padding: clamp(72px, 9vw, 120px) 0;
       position: relative;
     }
 
@@ -138,15 +126,13 @@
       color: inherit;
     }
 
-    h1,
-    h2,
-    h3,
-    h4 {
-      font-family: "Playfair Display", Georgia, serif;
-      font-weight: 600;
+    h1, h2, h3, h4, h5, h6 {
+      font-family: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: var(--ink);
+      font-weight: 700;
       margin: 0;
       text-wrap: balance;
-      letter-spacing: -.01em;
+      letter-spacing: -0.03em;
     }
 
     p {
@@ -157,26 +143,42 @@
       max-width: 100%;
     }
 
+    /* Zutrix Signature Highlight Underline */
+    .hl-wrap {
+      position: relative;
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    .hl-bar {
+      position: absolute;
+      bottom: 3px;
+      left: 0;
+      width: 100%;
+      height: 8px;
+      background: linear-gradient(120deg, rgba(254, 215, 170, 0.7) 0%, rgba(253, 186, 116, 0.5) 100%);
+      border-radius: 4px;
+      z-index: -1;
+    }
 
     /* ================= TOAST NOTIFICATION ================= */
     .toast {
       position: fixed;
       bottom: 24px;
       right: 24px;
-      background: var(--surface);
+      background: #FFFFFF;
       color: var(--ink);
-      border: 1px solid var(--line-strong);
+      border: 1px solid var(--line);
       border-radius: 12px;
-      padding: 16px 20px;
-      box-shadow: var(--shadow-lift);
+      padding: 14px 20px;
+      box-shadow: var(--shadow-hover);
       display: flex;
       align-items: center;
       gap: 12px;
       z-index: 200;
       transform: translateY(100px);
       opacity: 0;
-      transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
-        opacity 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
 
     .toast.show {
@@ -185,100 +187,126 @@
     }
 
     .toast .icon {
-      width: 24px;
-      height: 24px;
+      width: 22px;
+      height: 22px;
       border-radius: 50%;
-      background: var(--accent-tint);
-      color: var(--accent);
+      background: var(--emerald-tint);
+      color: var(--emerald-dark);
       display: grid;
       place-items: center;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: bold;
     }
 
     .toast .msg {
-      font-size: 14.5px;
-      font-weight: 500;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink);
     }
 
-    .eyebrow {
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: var(--accent);
+    /* ================= PILL BADGES ================= */
+    .eyebrow-pill {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: var(--r-pill);
+      background: var(--accent-tint);
+      border: 1px solid var(--accent-border);
+      color: var(--accent-deep);
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      margin-bottom: 18px;
     }
 
-    .eyebrow::before {
-      content: "";
-      width: 20px;
-      height: 1px;
+    .eyebrow-pill .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
       background: var(--accent);
+      display: inline-block;
     }
 
     .sub {
       color: var(--ink-soft);
       font-size: 18px;
+      line-height: 1.65;
       max-width: var(--measure);
     }
 
-    /* buttons */
+    /* ================= BUTTONS ================= */
     .btn {
       display: inline-flex;
       align-items: center;
-      gap: 9px;
+      justify-content: center;
+      gap: 8px;
       font-family: inherit;
       font-size: 15px;
       font-weight: 600;
       text-decoration: none;
-      border-radius: 100px;
+      border-radius: 12px;
       padding: 12px 24px;
-      line-height: 1;
+      line-height: 1.2;
       cursor: pointer;
       border: 1px solid transparent;
-      transition: transform .2s cubic-bezier(0.165, 0.84, 0.44, 1),
-        background .2s ease, border-color .2s ease, color .2s ease, box-shadow .2s ease;
+      transition: all .25s cubic-bezier(0.165, 0.84, 0.44, 1);
       white-space: nowrap;
     }
 
     .btn-primary {
-      background: var(--accent);
-      color: var(--on-accent);
-      box-shadow: 0 4px 14px rgba(226, 74, 42, 0.15);
+      background: var(--ink);
+      color: #FFFFFF;
+      border-color: var(--ink);
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.12);
     }
 
     .btn-primary:hover {
-      background: var(--accent-deep);
+      background: #1E293B;
+      border-color: #1E293B;
+      color: #FFFFFF;
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(226, 74, 42, 0.25);
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.18);
+    }
+
+    .btn-ember {
+      background: var(--accent);
+      color: #FFFFFF;
+      border-color: var(--accent);
+      box-shadow: 0 4px 14px rgba(240, 103, 42, 0.25);
+    }
+
+    .btn-ember:hover {
+      background: var(--accent-deep);
+      border-color: var(--accent-deep);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(240, 103, 42, 0.35);
     }
 
     .btn-ghost {
-      background: transparent;
+      background: #FFFFFF;
       color: var(--ink);
-      border-color: var(--line-strong);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-sm);
     }
 
     .btn-ghost:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      background: rgba(226, 74, 42, 0.04);
+      border-color: var(--line-focus);
+      background: var(--bg-alt);
       transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
     }
 
     .btn .arw {
       transition: transform .2s ease;
+      display: inline-block;
     }
 
     .btn:hover .arw {
       transform: translateX(3px);
     }
 
-    /* ================= NAV ================= */
+    /* ================= HEADER / NAV ================= */
     header.nav {
       position: fixed;
       top: 0;
@@ -286,16 +314,22 @@
       right: 0;
       height: 72px;
       z-index: 100;
-      background: color-mix(in srgb, var(--bg) 85%, transparent);
+      background: rgba(255, 255, 255, 0.85);
       backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--line);
-      transition: border-color 0.3s ease, background 0.3s ease;
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.7);
+      transition: all 0.3s ease;
+    }
+
+    header.nav.scrolled {
+      box-shadow: 0 4px 20px rgba(15, 23, 42, 0.03);
+      background: rgba(255, 255, 255, 0.95);
     }
 
     .nav-inner {
       max-width: var(--maxw);
       margin: 0 auto;
-      padding: 0 26px;
+      padding: 0 24px;
       height: 100%;
       display: flex;
       align-items: center;
@@ -306,9 +340,12 @@
       font-family: "Plus Jakarta Sans", sans-serif;
       font-weight: 800;
       font-size: 21px;
-      letter-spacing: -.02em;
+      letter-spacing: -.03em;
       text-decoration: none;
       color: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: 2px;
     }
 
     .brand .d {
@@ -333,7 +370,7 @@
       color: var(--ink-soft);
       text-decoration: none;
       position: relative;
-      padding: 4px 0;
+      padding: 6px 0;
       transition: color .2s;
     }
 
@@ -346,9 +383,10 @@
       position: absolute;
       left: 0;
       bottom: -2px;
-      height: 1.5px;
+      height: 2px;
       width: 0;
       background: var(--accent);
+      border-radius: 2px;
       transition: width .2s ease;
     }
 
@@ -363,8 +401,9 @@
     }
 
     .btn-sm-desktop {
-      padding: 10px 18px;
-      font-size: 14px;
+      padding: 9px 18px;
+      font-size: 13.5px;
+      border-radius: 10px;
     }
 
     @media (max-width: 580px) {
@@ -373,52 +412,15 @@
       }
     }
 
-    .theme-toggle {
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
-      border: none;
-      background: transparent;
-      display: inline-grid;
-      place-items: center;
-      cursor: pointer;
-      color: var(--ink-soft);
-      transition: color .2s, background .2s;
-    }
-
-    .theme-toggle:hover {
-      color: var(--ink);
-      background: var(--bg-2);
-    }
-
-    .theme-toggle svg {
-      width: 18px;
-      height: 18px;
-    }
-
-    .theme-toggle .moon {
-      display: none;
-    }
-
-    :root[data-theme="dark"] .theme-toggle .moon {
-      display: block;
-    }
-
-    :root[data-theme="dark"] .theme-toggle .sun {
-      display: none;
-    }
-
-    /* Mobile toggle button */
     .nav-toggle {
       display: none;
       background: none;
       border: none;
-      width: 32px;
-      height: 32px;
+      width: 36px;
+      height: 36px;
       position: relative;
       cursor: pointer;
       padding: 0;
-      z-index: 110;
     }
 
     @media (max-width: 920px) {
@@ -435,30 +437,26 @@
       width: 20px;
       height: 2px;
       background: var(--ink);
-      transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1),
-        opacity 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+      transition: transform 0.3s ease, opacity 0.3s ease;
       border-radius: 2px;
     }
 
     .nav-toggle.open .line-1 {
       transform: translateY(7px) rotate(45deg);
     }
-
     .nav-toggle.open .line-2 {
       opacity: 0;
     }
-
     .nav-toggle.open .line-3 {
       transform: translateY(-7px) rotate(-45deg);
     }
 
-    /* Mobile menu drawer */
     .mobile-drawer {
       position: fixed;
       top: 72px;
       left: 0;
       right: 0;
-      background: var(--bg);
+      background: #FFFFFF;
       border-bottom: 1px solid var(--line);
       padding: 24px;
       display: flex;
@@ -467,14 +465,9 @@
       opacity: 0;
       transform: translateY(-12px);
       pointer-events: none;
-      transition: opacity 0.3s cubic-bezier(0.165, 0.84, 0.44, 1),
-        transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+      transition: all 0.3s ease;
       z-index: 95;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
-    }
-
-    :root[data-theme="dark"] .mobile-drawer {
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
     }
 
     .mobile-drawer.open {
@@ -486,60 +479,61 @@
     .drawer-links {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 16px;
     }
 
     .drawer-lnk {
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 600;
       color: var(--ink);
       text-decoration: none;
-      transition: color 0.2s;
-      padding: 4px 0;
-    }
-
-    .drawer-lnk:hover {
-      color: var(--accent);
-    }
-
-    .drawer-btn {
-      margin-top: 10px;
-      text-align: center;
-      justify-content: center;
     }
 
     /* ================= HERO ================= */
     .hero {
       position: relative;
-      padding-top: clamp(60px, 8vw, 100px);
-      padding-bottom: clamp(60px, 8vw, 90px);
+      padding-top: clamp(64px, 8vw, 100px);
+      padding-bottom: clamp(64px, 8vw, 96px);
       text-align: center;
+      background: #FFFFFF;
       overflow: hidden;
     }
 
-    .hero>.wrap {
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1000px;
+      height: 600px;
+      background: radial-gradient(circle at 50% 30%, rgba(240, 103, 42, 0.06) 0%, rgba(254, 215, 170, 0.03) 40%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero > .wrap {
       position: relative;
       z-index: 1;
-      max-width: 900px;
+      max-width: 880px;
     }
 
     .hero-avatar-container {
       display: flex;
       justify-content: center;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
 
     .hero-avatar-wrapper {
       position: relative;
-      width: 130px;
-      height: 130px;
+      width: 100px;
+      height: 100px;
       border-radius: 50%;
-      padding: 4px;
-      background: var(--line);
-      box-shadow: var(--shadow);
-      transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+      padding: 3px;
+      background: linear-gradient(135deg, rgba(240, 103, 42, 0.3) 0%, rgba(226, 232, 240, 0.8) 100%);
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+      transition: all 0.3s ease;
       cursor: pointer;
-      overflow: hidden;
     }
 
     .hero-avatar {
@@ -547,74 +541,47 @@
       height: 100%;
       border-radius: 50%;
       object-fit: cover;
-      border: 2px solid var(--surface);
-      transition: transform 0.5s ease;
+      border: 2px solid #FFFFFF;
     }
 
     .hero-avatar-wrapper:hover {
-      transform: translateY(-4px);
-      background: var(--accent);
-    }
-
-    .hero-avatar-wrapper:hover .hero-avatar {
-      transform: scale(1.04);
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--accent);
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      margin-bottom: 12px;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(240, 103, 42, 0.18);
     }
 
     .hero h1 {
-      font-size: clamp(48px, 8.5vw, 84px);
-      line-height: 1.05;
-      font-weight: 700;
-      margin: 16px auto 0;
-      max-width: 14ch;
-      letter-spacing: -0.03em;
-    }
-
-    .hero h1 .it {
-      font-style: italic;
-      font-weight: 500;
-      background: linear-gradient(135deg, var(--accent) 30%, var(--accent-deep) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      font-size: clamp(38px, 6.2vw, 64px);
+      line-height: 1.1;
+      font-weight: 800;
+      margin: 14px auto 0;
+      max-width: 15ch;
+      letter-spacing: -0.035em;
+      color: var(--ink);
     }
 
     .hero .role {
-      font-family: "IBM Plex Mono", monospace;
-      font-size: clamp(12.5px, 1.5vw, 14.5px);
-      color: var(--ink-soft);
-      margin-top: 24px;
-      letter-spacing: 0.06em;
+      font-size: 14px;
+      color: var(--ink-faint);
+      margin-top: 18px;
       font-weight: 500;
       display: flex;
       flex-wrap: wrap;
-      gap: 6px 14px;
+      gap: 8px 14px;
       justify-content: center;
       align-items: center;
-      text-transform: uppercase;
     }
 
     .hero .role .sep {
       color: var(--accent);
+      opacity: 0.7;
     }
 
     .hero .pitch {
-      font-size: clamp(16.5px, 1.8vw, 19px);
+      font-size: clamp(17px, 1.8vw, 19.5px);
       color: var(--ink-soft);
       max-width: 58ch;
-      margin: 24px auto 0;
-      line-height: 1.6;
-      letter-spacing: -0.01em;
+      margin: 22px auto 0;
+      line-height: 1.65;
     }
 
     .hero-cta {
@@ -622,78 +589,80 @@
       flex-wrap: wrap;
       gap: 14px;
       justify-content: center;
-      margin-top: 40px;
+      margin-top: 36px;
     }
 
-    /* stats list */
-    .hero-stats {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 28px;
-      margin-top: 64px;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
+    /* SLEEK BORDERLESS HERO STATS BAR */
+    .hero-stats-ribbon {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 32px 48px;
+      margin-top: 54px;
+      padding: 24px 32px;
+      background: var(--bg-alt);
+      border-radius: var(--r-lg);
+      border: 1px solid var(--line-subtle);
     }
 
-    @media (max-width: 768px) {
-      .hero-stats {
+    @media (max-width: 680px) {
+      .hero-stats-ribbon {
+        display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 24px;
+        gap: 24px 20px;
+        padding: 20px;
+        text-align: left;
       }
     }
 
-    @media (max-width: 480px) {
-      .hero-stats {
-        grid-template-columns: 1fr;
-        gap: 20px;
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    @media (max-width: 680px) {
+      .stat-item {
+        text-align: left;
       }
     }
 
-    .hero-stats .st {
-      border-left: 1px solid var(--line);
-      padding-left: 20px;
-      text-align: left;
-    }
-
-    .hero-stats .v {
-      font-family: "Playfair Display", serif;
-      font-size: 30px;
-      font-weight: 600;
-      letter-spacing: -0.01em;
+    .stat-item .v {
+      font-size: 24px;
+      font-weight: 800;
       color: var(--ink);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
     }
 
-    .hero-stats .v .u {
+    .stat-item .v .u {
       color: var(--accent);
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 14px;
+      font-weight: 700;
     }
 
-    .hero-stats .k {
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 11px;
-      letter-spacing: .08em;
-      text-transform: uppercase;
+    .stat-item .k {
+      font-size: 13px;
+      font-weight: 500;
       color: var(--ink-faint);
-      margin-top: 7px;
+      margin-top: 4px;
     }
 
     /* ================= TRUST STRIP ================= */
     .trust {
-      padding: 34px 0;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      background: var(--bg-2);
+      padding: 36px 0;
+      border-top: 1px solid var(--line-subtle);
+      border-bottom: 1px solid var(--line-subtle);
+      background: #FFFFFF;
     }
 
     .trust .lab {
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 11.5px;
-      letter-spacing: .14em;
+      font-size: 12px;
+      letter-spacing: .06em;
       text-transform: uppercase;
-      color: var(--ink-faint);
+      color: var(--ink-muted);
       text-align: center;
+      font-weight: 600;
     }
 
     .trust .row {
@@ -701,41 +670,41 @@
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
-      gap: 14px 34px;
-      margin-top: 20px;
+      gap: 12px 36px;
+      margin-top: 18px;
     }
 
     .trust .row span {
       font-family: "Plus Jakarta Sans", sans-serif;
       font-weight: 700;
-      font-size: 16px;
-      color: var(--ink-soft);
+      font-size: 15px;
+      color: var(--ink-faint);
       letter-spacing: -.01em;
-      opacity: .85;
-      transition: opacity .2s, color .2s;
+      transition: color .2s;
     }
 
     .trust .row span:hover {
-      opacity: 1;
       color: var(--ink);
     }
 
-    /* section head */
+    /* ================= SECTION HEADINGS ================= */
     .shead {
-      max-width: 800px;
-      margin-bottom: 52px;
+      max-width: 780px;
+      margin-bottom: 48px;
     }
 
     .shead h2 {
-      font-size: clamp(32px, 4.4vw, 46px);
-      line-height: 1.1;
-      margin-top: 16px;
-      letter-spacing: -0.02em;
+      font-size: clamp(28px, 3.8vw, 42px);
+      line-height: 1.15;
+      font-weight: 800;
+      margin-top: 12px;
+      letter-spacing: -0.03em;
+      color: var(--ink);
     }
 
     .shead .sub {
-      margin-top: 16px;
-      font-size: clamp(16px, 1.8vw, 19px);
+      margin-top: 14px;
+      font-size: clamp(16px, 1.7vw, 18.5px);
       line-height: 1.6;
       color: var(--ink-soft);
     }
@@ -746,7 +715,7 @@
       text-align: center;
     }
 
-    .center .eyebrow {
+    .center .eyebrow-pill {
       justify-content: center;
     }
 
@@ -756,37 +725,44 @@
     }
 
     /* ================= ABOUT ================= */
+    .about-section {
+      background: var(--bg-alt);
+    }
+
     .about-grid {
       display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: clamp(30px, 5vw, 74px);
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: clamp(36px, 6vw, 72px);
       align-items: center;
     }
 
     @media (max-width: 880px) {
       .about-grid {
         grid-template-columns: 1fr;
-        gap: 32px;
+        gap: 36px;
       }
     }
 
     .about-grid h2 {
-      font-size: clamp(28px, 3.8vw, 40px);
-      line-height: 1.1;
+      font-size: clamp(28px, 3.4vw, 38px);
+      line-height: 1.2;
+      font-weight: 800;
     }
 
     .about-grid .lead {
       color: var(--ink-soft);
-      margin-top: 20px;
+      margin-top: 18px;
+      font-size: 16.5px;
+      line-height: 1.65;
     }
 
-    .about-grid .lead+.lead {
+    .about-grid .lead + .lead {
       margin-top: 1em;
     }
 
     .sig {
-      margin-top: 28px;
-      padding-top: 22px;
+      margin-top: 24px;
+      padding-top: 20px;
       border-top: 1px solid var(--line);
       display: flex;
       align-items: center;
@@ -794,86 +770,67 @@
     }
 
     .sig .nm {
-      font-family: "Playfair Display", serif;
-      font-style: italic;
-      font-size: 22px;
-      font-weight: 500;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--ink);
     }
 
     .sig .rl {
-      font-family: "IBM Plex Mono", monospace;
       font-size: 12px;
       color: var(--ink-faint);
-      letter-spacing: .04em;
+      margin-top: 2px;
     }
 
-    .about-media {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      background: var(--bg-2);
-      border: 1px solid var(--line);
-      border-radius: var(--r);
-      padding: 24px;
-    }
-
-    .about-image-wrapper {
+    /* Clean Floating About Media */
+    .about-media-wrapper {
       position: relative;
-      border-radius: calc(var(--r) - 4px);
-      overflow: hidden;
-      aspect-ratio: 4 / 5;
-      border: 1px solid var(--line);
-      background: var(--bg);
     }
 
     .about-image {
       width: 100%;
-      height: 100%;
+      border-radius: var(--r-lg);
       object-fit: cover;
-      transition: transform 0.5s ease;
+      aspect-ratio: 4 / 5;
+      box-shadow: var(--shadow-card);
+      display: block;
     }
 
-    .about-image-wrapper:hover .about-image {
-      transform: scale(1.03);
+    .about-floating-card {
+      position: absolute;
+      bottom: -24px;
+      left: 20px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--line);
+      border-radius: var(--r-md);
+      padding: 18px 22px;
+      box-shadow: var(--shadow-hover);
     }
 
-    .about-quote-box {
-      border-top: 1px solid var(--line-strong);
-      padding-top: 18px;
+    @media (max-width: 540px) {
+      .about-floating-card {
+        position: relative;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin-top: 16px;
+      }
     }
 
-    .about-quote-box .quote {
-      font-family: "Playfair Display", serif;
-      font-size: clamp(18px, 2.2vw, 22px);
-      line-height: 1.4;
-      font-weight: 500;
-    }
-
-    .about-quote-box .quote b {
-      color: var(--accent);
+    .about-floating-card .quote {
+      font-size: 14.5px;
       font-weight: 600;
+      color: var(--ink);
+      line-height: 1.45;
     }
 
-    .about-quote-box .mono {
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 12px;
-      color: var(--ink-faint);
-      margin-top: 16px;
-      letter-spacing: .03em;
-      line-height: 1.9;
-    }
-
-    .about-quote-box .mono span {
+    .about-floating-card .quote b {
       color: var(--accent);
     }
 
-    /* ================= WHY ================= */
-    .why {
-      background: var(--bg-2);
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
+    /* ================= WHY WORK WITH US ================= */
     .why-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -886,48 +843,51 @@
       }
     }
 
-    /* Card Design */
-    .vcard,
-    .cap,
-    .step,
-    .model {
-      background: var(--bg);
+    /* Sleek Clean Cards */
+    .sleek-card {
+      background: #FFFFFF;
       border: 1px solid var(--line);
-      border-radius: var(--r);
-      padding: 30px;
-      box-shadow: none;
-      transition: border-color .3s, background .3s;
+      border-radius: var(--r-lg);
+      padding: 32px;
+      box-shadow: var(--shadow-card);
+      transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
       position: relative;
     }
 
-    .vcard:hover,
-    .cap:hover,
-    .step:hover,
-    .model:hover {
-      border-color: var(--line-strong);
-      background: var(--bg-2);
+    .sleek-card:hover {
+      border-color: var(--line-focus);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
     }
 
-    .vcard .n {
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 12px;
+    .sleek-card .num-watermark {
+      font-size: 13px;
+      font-weight: 700;
       color: var(--accent);
-      letter-spacing: .1em;
+      background: var(--accent-tint);
+      border: 1px solid var(--accent-border);
+      padding: 4px 10px;
+      border-radius: var(--r-pill);
+      display: inline-block;
+      margin-bottom: 16px;
+      font-family: "JetBrains Mono", monospace;
     }
 
-    .vcard h3 {
-      font-size: 22px;
-      margin-top: 14px;
-      line-height: 1.15;
+    .sleek-card h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.3;
     }
 
-    .vcard p {
+    .sleek-card p {
       color: var(--ink-soft);
-      font-size: 15.5px;
-      margin-top: 12px;
+      font-size: 15px;
+      margin-top: 10px;
+      line-height: 1.6;
     }
 
-    /* anchors chips */
+    /* Anchors pills */
     .anchors {
       margin-top: 44px;
       display: flex;
@@ -938,57 +898,80 @@
     }
 
     .chip {
-      font-family: "IBM Plex Mono", monospace;
       font-size: 13px;
+      font-weight: 500;
       color: var(--ink-soft);
-      border: 1px solid var(--line-strong);
-      border-radius: 100px;
-      padding: 9px 16px;
-      background: var(--bg);
-      transition: color .2s, border-color .2s;
+      border: 1px solid var(--line);
+      border-radius: var(--r-pill);
+      padding: 8px 16px;
+      background: #FFFFFF;
+      box-shadow: var(--shadow-sm);
+      transition: all .2s ease;
     }
 
     .chip:hover {
-      color: var(--accent);
-      border-color: var(--accent);
+      color: var(--accent-deep);
+      border-color: var(--accent-border);
+      background: var(--accent-tint);
+      transform: translateY(-1px);
     }
 
     .chip .x {
       color: var(--accent);
-      margin-right: 7px;
+      margin-right: 6px;
+      font-weight: 700;
     }
 
     /* ================= CAPABILITIES ================= */
-    .tabs {
+    .capabilities-section {
+      background: var(--bg-alt);
+    }
+
+    /* Modern Segmented Tab Control */
+    .segmented-tabs-wrapper {
       display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 36px;
-      border-bottom: 1px solid var(--line);
-      padding-bottom: 0;
+      justify-content: center;
+      margin-bottom: 40px;
     }
 
-    .tab {
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 13px;
-      letter-spacing: .03em;
-      color: var(--ink-soft);
-      background: none;
-      border: 0;
-      border-bottom: 2px solid transparent;
-      padding: 12px 4px;
-      margin-bottom: -1px;
+    .segmented-tabs {
+      display: inline-flex;
+      background: #E2E8F0;
+      padding: 4px;
+      border-radius: var(--r-pill);
+      gap: 4px;
+    }
+
+    @media (max-width: 640px) {
+      .segmented-tabs {
+        flex-direction: column;
+        border-radius: var(--r-md);
+        width: 100%;
+      }
+    }
+
+    .segmented-tab {
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink-faint);
+      background: transparent;
+      border: none;
+      padding: 10px 22px;
+      border-radius: var(--r-pill);
       cursor: pointer;
-      transition: color .2s, border-color .2s;
+      transition: all .2s ease;
+      white-space: nowrap;
     }
 
-    .tab[aria-selected="true"] {
-      color: var(--accent);
-      border-bottom-color: var(--accent);
-    }
-
-    .tab:hover {
+    .segmented-tab:hover {
       color: var(--ink);
+    }
+
+    .segmented-tab[aria-selected="true"] {
+      background: #FFFFFF;
+      color: var(--ink);
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
     }
 
     .panel {
@@ -997,24 +980,17 @@
 
     .panel.active {
       display: block;
-      animation: fade .4s ease;
+      animation: fade .35s ease;
     }
 
     @keyframes fade {
       from {
         opacity: 0;
-        transform: translateY(8px);
+        transform: translateY(6px);
       }
-
       to {
         opacity: 1;
         transform: none;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .panel.active {
-        animation: none;
       }
     }
 
@@ -1031,14 +1007,17 @@
     }
 
     .cap h3 {
-      font-size: 21px;
-      line-height: 1.15;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.3;
     }
 
     .cap .desc {
       color: var(--ink-soft);
-      font-size: 15px;
-      margin-top: 12px;
+      font-size: 14.5px;
+      margin-top: 10px;
+      line-height: 1.6;
     }
 
     .cap ul {
@@ -1047,25 +1026,24 @@
       margin: 20px 0 0;
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 6px;
     }
 
     .cap ul li {
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 11.5px;
+      font-size: 12px;
+      font-weight: 500;
       color: var(--ink-soft);
       border: 1px solid var(--line);
       border-radius: 6px;
-      padding: 6px 10px;
-      background: var(--bg-2);
+      padding: 5px 10px;
+      background: var(--bg-alt);
     }
 
-    /* playbook */
+    /* Playbook Steps */
     .steps {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 24px;
-      counter-reset: s;
     }
 
     @media (max-width: 860px) {
@@ -1081,25 +1059,32 @@
     }
 
     .step .sn {
-      font-family: "Playfair Display", serif;
-      font-size: 38px;
-      font-weight: 600;
+      font-size: 13px;
+      font-weight: 700;
       color: var(--accent);
-      line-height: 1;
+      background: var(--accent-tint);
+      border: 1px solid var(--accent-border);
+      padding: 4px 10px;
+      border-radius: var(--r-pill);
+      display: inline-block;
+      margin-bottom: 14px;
+      font-family: "JetBrains Mono", monospace;
     }
 
     .step h3 {
       font-size: 18px;
-      margin-top: 16px;
+      font-weight: 700;
+      color: var(--ink);
     }
 
     .step p {
       color: var(--ink-soft);
-      font-size: 14.5px;
-      margin-top: 10px;
+      font-size: 14px;
+      margin-top: 8px;
+      line-height: 1.55;
     }
 
-    /* partnership models */
+    /* Models */
     .models {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -1119,15 +1104,16 @@
 
     .model.feat {
       border-color: var(--accent);
-      background: var(--surface);
+      background: #FFFFFF;
+      box-shadow: 0 12px 30px -5px rgba(240, 103, 42, 0.1);
     }
 
     .model .tag {
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 11px;
-      letter-spacing: .1em;
+      font-size: 11.5px;
+      letter-spacing: .04em;
       text-transform: uppercase;
       color: var(--ink-faint);
+      font-weight: 600;
     }
 
     .model.feat .tag {
@@ -1135,28 +1121,30 @@
     }
 
     .model h3 {
-      font-size: 22px;
-      margin-top: 12px;
+      font-size: 21px;
+      font-weight: 700;
+      margin-top: 10px;
+      color: var(--ink);
     }
 
     .model .for {
       color: var(--ink-soft);
-      font-size: 14.5px;
-      margin-top: 10px;
-      min-height: 44px;
+      font-size: 14px;
+      margin-top: 8px;
+      min-height: 40px;
     }
 
     .model ul {
       list-style: none;
       padding: 0;
-      margin: 20px 0 24px;
+      margin: 18px 0 24px;
       display: flex;
       flex-direction: column;
       gap: 10px;
     }
 
     .model ul li {
-      font-size: 14.5px;
+      font-size: 14px;
       color: var(--ink-soft);
       display: flex;
       gap: 10px;
@@ -1164,9 +1152,9 @@
     }
 
     .model ul li::before {
-      content: "→";
-      color: var(--accent);
-      font-weight: 700;
+      content: "✓";
+      color: var(--emerald-dark);
+      font-weight: 800;
     }
 
     .model .foot {
@@ -1174,18 +1162,12 @@
     }
 
     /* ================= REVIEWS ================= */
-    .reviews {
-      background: var(--bg-2);
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
     .reviews-container {
-      background: #ffffff;
+      background: #FFFFFF;
       border: 1px solid var(--line);
-      border-radius: var(--r);
-      padding: clamp(24px, 4vw, 40px);
-      box-shadow: var(--shadow);
+      border-radius: var(--r-lg);
+      padding: clamp(24px, 4vw, 36px);
+      box-shadow: var(--shadow-card);
       min-height: 300px;
       display: flex;
       flex-direction: column;
@@ -1198,127 +1180,106 @@
     }
 
     /* ================= FOUNDER SUITE ================= */
-    .suite {
-      background: var(--ink);
-      color: #F5F1EA;
-      border-radius: 0;
-    }
-
-    :root[data-theme="dark"] .suite {
-      background: #0C0A09;
-    }
-
-    .suite .eyebrow {
-      color: var(--accent);
-    }
-
-    .suite h2 {
-      color: #FBF7F0;
-    }
-
-    .suite .sub {
-      color: #B8B0A2;
+    .suite-section {
+      background: var(--bg-alt);
     }
 
     .suite-grid {
       display: grid;
-      grid-template-columns: .85fr 1.15fr;
-      gap: clamp(28px, 4vw, 56px);
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: clamp(32px, 5vw, 60px);
       align-items: start;
-      margin-top: 8px;
     }
 
     @media (max-width: 860px) {
       .suite-grid {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 36px;
       }
     }
 
     .suite-points {
       display: flex;
       flex-direction: column;
-      gap: 18px;
-      margin-top: 26px;
+      gap: 16px;
+      margin-top: 24px;
     }
 
     .suite-points .pt {
       display: flex;
       gap: 14px;
       align-items: flex-start;
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: var(--r-md);
+      padding: 16px 18px;
+      box-shadow: var(--shadow-sm);
     }
 
     .suite-points .pt .ic {
       flex: none;
-      width: 32px;
-      height: 32px;
+      width: 28px;
+      height: 28px;
       border-radius: 8px;
-      background: rgba(232, 73, 44, .16);
+      background: var(--accent-tint);
       color: var(--accent);
       display: grid;
       place-items: center;
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 14px;
-      font-weight: 600;
+      font-size: 13px;
+      font-weight: 700;
     }
 
     .suite-points .pt .tx {
-      font-size: 15px;
-      color: #CFC7B9;
+      font-size: 14.5px;
+      color: var(--ink-soft);
+      line-height: 1.5;
     }
 
+    /* Form Container */
     .form-card {
-      background: rgba(255, 255, 255, .03);
-      border: 1px solid rgba(255, 255, 255, .1);
-      border-radius: var(--r);
-      padding: clamp(24px, 3vw, 34px);
-    }
-
-    .form-card .fh {
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 12px;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--accent);
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: var(--r-lg);
+      padding: clamp(28px, 4vw, 38px);
+      box-shadow: var(--shadow-card);
     }
 
     .form-card h3 {
-      color: #FBF7F0;
-      font-size: 21px;
-      margin-top: 10px;
+      color: var(--ink);
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
     }
 
     .field {
-      margin-top: 18px;
+      margin-top: 16px;
     }
 
     .field label {
       display: block;
       font-size: 12.5px;
       font-weight: 600;
-      color: #B8B0A2;
-      margin-bottom: 7px;
-      font-family: "IBM Plex Mono", monospace;
-      letter-spacing: .03em;
+      color: var(--ink);
+      margin-bottom: 6px;
     }
 
     .field input,
     .field select,
     .field textarea {
       width: 100%;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 8px;
-      padding: 14px 16px;
-      color: #F5F1EA;
+      background: var(--bg-alt);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 12px 14px;
+      color: var(--ink);
       font-family: inherit;
-      font-size: 15px;
-      transition: all 0.3s ease;
+      font-size: 14.5px;
+      transition: all 0.2s ease;
     }
 
     .field input::placeholder,
     .field textarea::placeholder {
-      color: rgba(255, 255, 255, 0.35);
+      color: var(--ink-muted);
     }
 
     .field input:focus,
@@ -1326,33 +1287,28 @@
     .field textarea:focus {
       outline: none;
       border-color: var(--accent);
-      background: rgba(255, 255, 255, 0.06);
-      box-shadow: 0 0 0 4px rgba(226, 74, 42, 0.15);
-    }
-
-    .field select option {
-      color: #181410;
+      background: #FFFFFF;
+      box-shadow: 0 0 0 3px rgba(240, 103, 42, 0.1);
     }
 
     .form-card .btn-primary {
       width: 100%;
       justify-content: center;
       margin-top: 22px;
+      padding: 13px 24px;
     }
 
     .form-note {
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 11px;
-      color: #7C7466;
-      margin-top: 14px;
+      font-size: 12px;
+      color: var(--ink-faint);
+      margin-top: 12px;
       text-align: center;
-      letter-spacing: .02em;
     }
 
-    /* ================= FAQ ================= */
+    /* ================= FAQ ACCORDION ================= */
     .faq-grid {
       display: grid;
-      grid-template-columns: .8fr 1.2fr;
+      grid-template-columns: 0.8fr 1.2fr;
       gap: clamp(28px, 4vw, 56px);
       align-items: start;
     }
@@ -1360,26 +1316,28 @@
     @media (max-width: 820px) {
       .faq-grid {
         grid-template-columns: 1fr;
-        gap: 24px;
+        gap: 28px;
       }
     }
 
     details.q {
+      background: #FFFFFF;
       border-bottom: 1px solid var(--line);
+      transition: all 0.2s ease;
     }
 
     details.q summary {
       list-style: none;
       cursor: pointer;
-      padding: 22px 4px;
+      padding: 18px 0;
       display: flex;
       justify-content: space-between;
-      gap: 20px;
+      gap: 16px;
       align-items: center;
-      font-family: "Playfair Display", serif;
-      font-size: 19px;
-      font-weight: 500;
+      font-size: 16.5px;
+      font-weight: 700;
       color: var(--ink);
+      letter-spacing: -0.01em;
     }
 
     details.q summary::-webkit-details-marker {
@@ -1388,8 +1346,8 @@
 
     details.q summary .ic {
       flex: none;
-      width: 22px;
-      height: 22px;
+      width: 20px;
+      height: 20px;
       position: relative;
     }
 
@@ -1404,16 +1362,16 @@
     details.q summary .ic::before {
       left: 0;
       right: 0;
-      top: 10px;
+      top: 9px;
       height: 2px;
     }
 
     details.q summary .ic::after {
       top: 0;
       bottom: 0;
-      left: 10px;
+      left: 9px;
       width: 2px;
-      transition: opacity .25s;
+      transition: opacity .2s;
     }
 
     details.q[open] summary .ic::after {
@@ -1421,80 +1379,81 @@
     }
 
     details.q .ans {
-      padding: 0 4px 22px;
+      padding: 0 0 20px;
       color: var(--ink-soft);
-      font-size: 15.5px;
-      max-width: 66ch;
+      font-size: 15px;
+      line-height: 1.65;
     }
 
     /* ================= CONTACT ================= */
-    .contact {
-      background: var(--bg-2);
-      border-top: 1px solid var(--line);
+    .contact-section {
+      background: var(--bg-alt);
     }
 
     .contact-grid {
       display: grid;
-      grid-template-columns: .9fr 1.1fr;
-      gap: clamp(30px, 5vw, 64px);
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: clamp(32px, 5vw, 64px);
       align-items: start;
     }
 
     @media (max-width: 880px) {
       .contact-grid {
         grid-template-columns: 1fr;
-        gap: 34px;
+        gap: 36px;
       }
     }
 
     .promise {
       display: flex;
       flex-direction: column;
-      gap: 16px;
-      margin-top: 26px;
+      gap: 14px;
+      margin-top: 24px;
     }
 
     .promise .pi {
       display: flex;
-      gap: 13px;
+      gap: 12px;
       align-items: flex-start;
     }
 
     .promise .pi .ck {
       flex: none;
-      width: 26px;
-      height: 26px;
+      width: 22px;
+      height: 22px;
       border-radius: 50%;
-      background: var(--accent-tint);
-      color: var(--accent);
+      background: var(--emerald-tint);
+      color: var(--emerald-dark);
+      border: 1px solid var(--emerald-border);
       display: grid;
       place-items: center;
-      font-size: 13px;
-      font-weight: 700;
+      font-size: 11px;
+      font-weight: 800;
     }
 
     .promise .pi .pt {
-      font-size: 15px;
+      font-size: 14.5px;
       color: var(--ink-soft);
+      line-height: 1.5;
     }
 
     .promise .pi .pt b {
       color: var(--ink);
-      font-weight: 600;
+      font-weight: 700;
     }
 
     .cform {
-      background: var(--surface);
+      background: #FFFFFF;
       border: 1px solid var(--line);
-      border-radius: var(--r);
-      padding: clamp(24px, 3vw, 36px);
-      box-shadow: var(--shadow);
+      border-radius: var(--r-lg);
+      padding: clamp(28px, 4vw, 38px);
+      box-shadow: var(--shadow-card);
     }
 
     .cform .row2 {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 16px;
+      gap: 14px;
     }
 
     @media (max-width: 520px) {
@@ -1507,24 +1466,27 @@
       display: block;
       font-size: 12.5px;
       font-weight: 600;
-      color: var(--ink-soft);
-      margin-bottom: 7px;
-      font-family: "IBM Plex Mono", monospace;
-      letter-spacing: .02em;
+      color: var(--ink);
+      margin-bottom: 6px;
     }
 
     .cform input,
     .cform select,
     .cform textarea {
       width: 100%;
-      background: var(--bg);
-      border: 1px solid var(--line-strong);
-      border-radius: 8px;
-      padding: 14px 16px;
+      background: var(--bg-alt);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 12px 14px;
       color: var(--ink);
       font-family: inherit;
-      font-size: 15px;
-      transition: all 0.3s ease;
+      font-size: 14.5px;
+      transition: all 0.2s ease;
+    }
+
+    .cform input::placeholder,
+    .cform textarea::placeholder {
+      color: var(--ink-muted);
     }
 
     .cform input:focus,
@@ -1532,8 +1494,8 @@
     .cform textarea:focus {
       outline: none;
       border-color: var(--accent);
-      background: var(--surface);
-      box-shadow: 0 0 0 4px rgba(226, 74, 42, 0.08);
+      background: #FFFFFF;
+      box-shadow: 0 0 0 3px rgba(240, 103, 42, 0.1);
     }
 
     .cform .field {
@@ -1544,19 +1506,20 @@
       width: 100%;
       justify-content: center;
       margin-top: 22px;
+      padding: 13px 24px;
     }
 
     /* ================= FOOTER ================= */
     footer.ft {
-      background: var(--bg);
+      background: #FFFFFF;
       border-top: 1px solid var(--line);
-      padding: 60px 0 36px;
+      padding: 60px 0 32px;
     }
 
     .ft-top {
       display: grid;
       grid-template-columns: 1.5fr 1fr 1fr 1fr;
-      gap: 32px;
+      gap: 36px;
     }
 
     @media (max-width: 760px) {
@@ -1575,8 +1538,9 @@
     .ft-brand .bn {
       font-family: "Plus Jakarta Sans", sans-serif;
       font-weight: 800;
-      font-size: 24px;
-      letter-spacing: -.02em;
+      font-size: 22px;
+      letter-spacing: -.03em;
+      color: var(--ink);
     }
 
     .ft-brand .bn .d {
@@ -1585,31 +1549,32 @@
 
     .ft-brand p {
       color: var(--ink-soft);
-      font-size: 14.5px;
-      margin-top: 12px;
+      font-size: 14px;
+      margin-top: 10px;
       max-width: 34ch;
+      line-height: 1.6;
     }
 
     .ft h4 {
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 11px;
-      letter-spacing: .12em;
+      font-size: 12px;
+      letter-spacing: .06em;
       text-transform: uppercase;
-      color: var(--ink-faint);
-      font-weight: 500;
-      margin: 0 0 15px;
+      color: var(--ink);
+      font-weight: 700;
+      margin: 0 0 14px;
     }
 
     .ft-col {
       display: flex;
       flex-direction: column;
-      gap: 11px;
+      gap: 10px;
     }
 
     .ft-col a {
       color: var(--ink-soft);
       text-decoration: none;
       font-size: 14px;
+      font-weight: 500;
       transition: color .2s;
       width: fit-content;
     }
@@ -1619,9 +1584,9 @@
     }
 
     .ft-bottom {
-      margin-top: 48px;
-      padding-top: 22px;
-      border-top: 1px solid var(--line);
+      margin-top: 44px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line-subtle);
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
@@ -1630,20 +1595,20 @@
     }
 
     .ft-bottom p {
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 12px;
+      font-size: 13px;
       color: var(--ink-faint);
     }
 
     .ft-bottom .tag {
-      color: var(--accent);
+      color: var(--accent-deep);
+      font-weight: 600;
     }
 
-    /* animation classes */
+    /* Scroll animations */
     .rv {
       opacity: 0;
-      transform: translateY(12px);
-      transition: opacity .5s cubic-bezier(.165, .84, .44, 1), transform .5s cubic-bezier(.165, .84, .44, 1);
+      transform: translateY(14px);
+      transition: opacity .45s cubic-bezier(.165, .84, .44, 1), transform .45s cubic-bezier(.165, .84, .44, 1);
     }
 
     .rv.in {
@@ -1662,11 +1627,11 @@
     :focus-visible {
       outline: 2px solid var(--accent);
       outline-offset: 3px;
-      border-radius: 3px;
+      border-radius: 4px;
     }
 
     ::selection {
-      background: var(--accent-tint);
+      background: var(--accent-tint-2);
       color: var(--ink);
     }
   </style>
@@ -1689,19 +1654,6 @@
       <div class="nav-actions">
         <a href="#contact" class="btn btn-primary btn-sm-desktop">Book a Call <span class="arw">→</span></a>
 
-        <button class="theme-toggle" id="themeBtn" aria-label="Toggle theme" title="Toggle theme">
-          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
-            stroke-linecap="round">
-            <circle cx="12" cy="12" r="4.2" />
-            <path
-              d="M12 2.5v2.5M12 19v2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M2.5 12h2.5M19 12h2.5M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8" />
-          </svg>
-          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
-            stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 14.5A8 8 0 1 1 9.5 4a6.2 6.2 0 0 0 10.5 10.5z" />
-          </svg>
-        </button>
-
         <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
           <span class="line line-1"></span>
           <span class="line line-2"></span>
@@ -1717,7 +1669,7 @@
         <a href="#reviews" class="drawer-lnk">Reviews</a>
         <a href="#suite" class="drawer-lnk">Founder Suite</a>
         <a href="#faq" class="drawer-lnk">FAQ</a>
-        <a href="#contact" class="btn btn-primary drawer-btn">Book a Call <span class="arw">→</span></a>
+        <a href="#contact" class="btn btn-primary" style="margin-top:8px; justify-content:center;">Book a Call <span class="arw">→</span></a>
       </nav>
     </div>
   </header>
@@ -1732,33 +1684,49 @@
             <img src="assets/nihar.jpg" alt="Nihar Ranjan Rout, Founder and CEO of Creuto" class="hero-avatar">
           </div>
         </div>
-        <span class="badge rv">B2B product &amp; software development — product thinking first</span>
-        <h1 class="rv">Nihar Ranjan <span class="it">Rout.</span></h1>
-        <div class="role rv">Founder &amp; CEO, Creuto and Edverise <span class="sep">•</span> Product Strategist <span
-            class="sep">•</span> Business &amp; Technology</div>
-        <p class="pitch rv">I help businesses turn an idea into the right product — clarifying scope, shaping the PRD,
-          and planning a build that fits your budget. My team at Creuto then engineers it to a standard we're proud of.
-          Product thinking first; honest, dedicated delivery always.</p>
+        
+        <div class="rv">
+          <span class="eyebrow-pill"><span class="dot"></span> Product Strategy &amp; B2B Software Engineering</span>
+        </div>
+
+        <h1 class="rv">
+          Nihar Ranjan <span class="hl-wrap">Rout<span class="hl-bar"></span></span>
+        </h1>
+
+        <div class="role rv">
+          <span>Founder &amp; CEO, Creuto</span>
+          <span class="sep">•</span>
+          <span>Product Strategist</span>
+          <span class="sep">•</span>
+          <span>Tech Architecture</span>
+        </div>
+
+        <p class="pitch rv">
+          I help businesses turn an idea into the right product — clarifying scope, shaping the PRD, and planning a build that fits your budget. My team at Creuto then engineers it to a standard we're proud of.
+        </p>
+
         <div class="hero-cta rv">
           <a href="#contact" class="btn btn-primary">Book a Strategy Call <span class="arw">→</span></a>
           <a href="#capabilities" class="btn btn-ghost">Explore Services</a>
         </div>
-        <div class="hero-stats rv">
-          <div class="st">
+
+        <!-- Sleek Borderless Hero Stats Ribbon -->
+        <div class="hero-stats-ribbon rv">
+          <div class="stat-item">
             <div class="v">8<span class="u">+ yrs</span></div>
-            <div class="k">In product management</div>
+            <div class="k">Product Management</div>
           </div>
-          <div class="st">
-            <div class="v">Multi-domain</div>
-            <div class="k">Across industries</div>
+          <div class="stat-item">
+            <div class="v">Multi<span class="u">-domain</span></div>
+            <div class="k">Across Industries</div>
           </div>
-          <div class="st">
+          <div class="stat-item">
             <div class="v">In-house</div>
-            <div class="k">Creuto tech team</div>
+            <div class="k">Creuto Tech Team</div>
           </div>
-          <div class="st">
+          <div class="stat-item">
             <div class="v">B2B</div>
-            <div class="k">Growth-standard builds</div>
+            <div class="k">Growth Builds</div>
           </div>
         </div>
       </div>
@@ -1769,82 +1737,68 @@
       <div class="wrap">
         <p class="lab">B2B product &amp; software delivery across industries</p>
         <div class="row">
-          <span>Fintech</span><span>SaaS</span><span>Healthcare</span><span>E-commerce</span><span>Logistics</span><span>EdTech</span><span>Real
-            Estate</span>
+          <span>Fintech</span>
+          <span>SaaS</span>
+          <span>Healthcare</span>
+          <span>E-commerce</span>
+          <span>Logistics</span>
+          <span>EdTech</span>
+          <span>Real Estate</span>
         </div>
       </div>
     </div>
 
     <!-- ================= ABOUT ================= -->
-    <section id="about">
+    <section class="about-section" id="about">
       <div class="wrap about-grid">
         <div class="rv">
-          <p class="eyebrow">About &amp; value</p>
-          <h2 style="margin-top:16px">Product thinking first. Then software built to a standard.</h2>
-          <p class="lead">Most software fails for a product reason, not a technical one — the wrong scope, unclear
-            priorities, a budget spent on the wrong things. That's the part I'm best at. Eight years in product
-            management across many business domains taught me to ask the right questions before a single line of code is
-            written.</p>
-          <p class="lead">When you bring me an idea, I help you shape it — a clear PRD, honest scope, and a plan that
-            fits your budget. My team at Creuto then engineers it into a genuinely good product. We work with honesty
-            and dedication, and we stand behind what we ship for what we charge.</p>
+          <span class="eyebrow-pill"><span class="dot"></span> About &amp; Value</span>
+          <h2>Product thinking first. Then <span class="hl-wrap">software built<span class="hl-bar"></span></span> to a standard.</h2>
+          <p class="lead">Most software fails for a product reason, not a technical one — the wrong scope, unclear priorities, a budget spent on the wrong things. That's the part I'm best at. Eight years in product management across many business domains taught me to ask the right questions before a single line of code is written.</p>
+          <p class="lead">When you bring me an idea, I help you shape it — a clear PRD, honest scope, and a plan that fits your budget. My team at Creuto then engineers it into a genuinely good product. We work with honesty and dedication, and we stand behind what we ship.</p>
           <div class="sig">
             <div>
               <div class="nm">Nihar Ranjan Rout</div>
-              <div class="rl">FOUNDER, CREUTO & EDVERISE</div>
+              <div class="rl">FOUNDER &amp; CEO, CREUTO</div>
             </div>
           </div>
         </div>
-        <div class="about-media rv">
-          <div class="about-image-wrapper">
-            <img src="assets/nihar-cafe.jpg" alt="Nihar Ranjan Rout, product strategist and founder of Creuto"
-              class="about-image">
-          </div>
-          <div class="about-quote-box">
-            <p class="quote">The right product, scoped honestly and built well — <b>within your budget</b>, not despite
-              it.</p>
-            <div class="mono">
-              <span>→</span> Product strategy &amp; PRD<br>
-              <span>→</span> Business &amp; domain analysis<br>
-              <span>→</span> Budget-fit build planning<br>
-              <span>→</span> In-house engineering at Creuto
-            </div>
+        <div class="about-media-wrapper rv">
+          <img src="assets/nihar-cafe.jpg" alt="Nihar Ranjan Rout, product strategist and founder of Creuto" class="about-image">
+          <div class="about-floating-card">
+            <p class="quote">The right product, scoped honestly and built well — <b>within your budget</b>, not despite it.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ================= WHY ================= -->
-    <section class="why" id="why">
+    <!-- ================= WHY WORK WITH US ================= -->
+    <section id="why">
       <div class="wrap">
         <div class="shead center rv">
-          <p class="eyebrow">Why work with us</p>
-          <h2>A B2B software partner that starts with product, not code.</h2>
+          <span class="eyebrow-pill"><span class="dot"></span> Why Work With Us</span>
+          <h2>A B2B software partner that starts with <span class="hl-wrap">product<span class="hl-bar"></span></span>, not code.</h2>
         </div>
         <div class="why-grid">
-          <div class="vcard rv">
-            <div class="n">01</div>
+          <div class="sleek-card rv">
+            <span class="num-watermark">01</span>
             <h3>Product thinking, first</h3>
-            <p>Before anyone writes code, we get the product right — the problem, the users, the scope, and a PRD that
-              keeps the whole build focused on what actually matters.</p>
+            <p>Before anyone writes code, we get the product right — the problem, the users, the scope, and a PRD that keeps the whole build focused on what actually matters.</p>
           </div>
-          <div class="vcard rv">
-            <div class="n">02</div>
+          <div class="sleek-card rv">
+            <span class="num-watermark">02</span>
             <h3>Business &amp; domain understanding</h3>
-            <p>Eight years across many industries means I understand your business, not just a feature list — and
-              translate it into the right product decisions.</p>
+            <p>Eight years across many industries means I understand your business, not just a feature list — and translate it into the right product decisions.</p>
           </div>
-          <div class="vcard rv">
-            <div class="n">03</div>
+          <div class="sleek-card rv">
+            <span class="num-watermark">03</span>
             <h3>Built within your budget</h3>
-            <p>We scope honestly and plan a build that fits what you can invest — then deliver a product that stands
-              well above what you paid for it.</p>
+            <p>We scope honestly and plan a build that fits what you can invest — then deliver a product that stands well above what you paid for it.</p>
           </div>
-          <div class="vcard rv">
-            <div class="n">04</div>
+          <div class="sleek-card rv">
+            <span class="num-watermark">04</span>
             <h3>A strong in-house team</h3>
-            <p>Creuto's engineers build B2B, growth-standard software directly — real product delivery, not a middleman
-              handing your project to strangers.</p>
+            <p>Creuto's engineers build B2B, growth-standard software directly — real product delivery, not a middleman handing your project to strangers.</p>
           </div>
         </div>
         <div class="anchors rv">
@@ -1858,44 +1812,40 @@
       </div>
     </section>
 
-    <!-- ================= CAPABILITIES (tabs) ================= -->
-    <section id="capabilities">
+    <!-- ================= CAPABILITIES (TABS) ================= -->
+    <section class="capabilities-section" id="capabilities">
       <div class="wrap">
-        <div class="shead rv">
-          <p class="eyebrow">Capabilities &amp; execution</p>
-          <h2>From product strategy to a shipped, growth-standard build.</h2>
-          <p class="sub">Explore our core capabilities, the product-first engagement playbook, and flexible ways to work
-            together.</p>
+        <div class="shead center rv">
+          <span class="eyebrow-pill"><span class="dot"></span> Capabilities &amp; Execution</span>
+          <h2>From product strategy to a <span class="hl-wrap">shipped build<span class="hl-bar"></span></span>.</h2>
+          <p class="sub">Explore our core capabilities, the product-first engagement playbook, and flexible ways to work together.</p>
         </div>
 
-        <div class="tabs rv" role="tablist" aria-label="Capabilities">
-          <button class="tab" role="tab" aria-selected="true" aria-controls="p-cap" id="t-cap">01 · Capabilities &amp;
-            tech</button>
-          <button class="tab" role="tab" aria-selected="false" aria-controls="p-play" id="t-play">02 · Execution
-            playbook</button>
-          <button class="tab" role="tab" aria-selected="false" aria-controls="p-model" id="t-model">03 · Partnership
-            models</button>
+        <div class="segmented-tabs-wrapper rv">
+          <div class="segmented-tabs" role="tablist" aria-label="Capabilities">
+            <button class="segmented-tab" role="tab" aria-selected="true" aria-controls="p-cap" id="t-cap">01 · Capabilities &amp; Tech</button>
+            <button class="segmented-tab" role="tab" aria-selected="false" aria-controls="p-play" id="t-play">02 · Execution Playbook</button>
+            <button class="segmented-tab" role="tab" aria-selected="false" aria-controls="p-model" id="t-model">03 · Partnership Models</button>
+          </div>
         </div>
 
         <div class="panel active" id="p-cap" role="tabpanel" aria-labelledby="t-cap">
           <div class="cap-grid">
-            <article class="cap">
-              <h3>Product strategy &amp; consulting</h3>
-              <p class="desc">The part I lead personally — turning your idea into a clear, buildable product: scope,
-                priorities, and a PRD your team and ours can execute against.</p>
+            <article class="sleek-card cap">
+              <h3>Product Strategy &amp; Consulting</h3>
+              <p class="desc">The part I lead personally — turning your idea into a clear, buildable product: scope, priorities, and a PRD your team and ours can execute against.</p>
               <ul>
                 <li>PRD &amp; documentation</li>
-                <li>Product &amp; business strategy</li>
+                <li>Product strategy</li>
                 <li>Scope &amp; roadmap</li>
                 <li>Budget-fit planning</li>
                 <li>Domain analysis</li>
                 <li>Feature prioritization</li>
               </ul>
             </article>
-            <article class="cap">
-              <h3>Software &amp; AI development</h3>
-              <p class="desc">Creuto's in-house team builds production-grade B2B products — web platforms, SaaS, and
-                custom AI features engineered to a growth standard.</p>
+            <article class="sleek-card cap">
+              <h3>Software &amp; AI Development</h3>
+              <p class="desc">Creuto's in-house team builds production-grade B2B products — web platforms, SaaS, and custom AI features engineered to a growth standard.</p>
               <ul>
                 <li>SaaS &amp; web platforms</li>
                 <li>Next.js &amp; React</li>
@@ -1905,10 +1855,9 @@
                 <li>Cloud architecture</li>
               </ul>
             </article>
-            <article class="cap">
-              <h3>Mobile &amp; ongoing delivery</h3>
-              <p class="desc">Cross-platform mobile apps and dedicated-team delivery — with the product discipline to
-                keep every sprint pointed at real outcomes.</p>
+            <article class="sleek-card cap">
+              <h3>Mobile &amp; Ongoing Delivery</h3>
+              <p class="desc">Cross-platform mobile apps and dedicated-team delivery — with the product discipline to keep every sprint pointed at real outcomes.</p>
               <ul>
                 <li>Mobile app development</li>
                 <li>Dedicated teams</li>
@@ -1923,38 +1872,34 @@
 
         <div class="panel" id="p-play" role="tabpanel" aria-labelledby="t-play">
           <div class="steps">
-            <div class="step">
-              <div class="sn">1</div>
+            <div class="sleek-card step">
+              <span class="sn">Phase 01</span>
               <h3>Discovery &amp; PRD</h3>
-              <p>We map the problem, users, and business goals, and turn them into a clear PRD — the scope agreed before
-                anything is built.</p>
+              <p>We map the problem, users, and business goals, and turn them into a clear PRD — the scope agreed before anything is built.</p>
             </div>
-            <div class="step">
-              <div class="sn">2</div>
-              <h3>Plan &amp; architecture</h3>
-              <p>The right approach for your budget — stack, structure, and a realistic plan, without over-engineering
-                or surprise costs.</p>
+            <div class="sleek-card step">
+              <span class="sn">Phase 02</span>
+              <h3>Plan &amp; Architecture</h3>
+              <p>The right approach for your budget — stack, structure, and a realistic plan, without over-engineering or surprise costs.</p>
             </div>
-            <div class="step">
-              <div class="sn">3</div>
+            <div class="sleek-card step">
+              <span class="sn">Phase 03</span>
               <h3>Build &amp; QA</h3>
-              <p>Our in-house team ships in focused sprints with real demos and quality checks, so you always see honest
-                progress.</p>
+              <p>Our in-house team ships in focused sprints with real demos and quality checks, so you always see honest progress.</p>
             </div>
-            <div class="step">
-              <div class="sn">4</div>
-              <h3>Launch &amp; grow</h3>
-              <p>We ship, measure, and refine — hardening the product so it holds up as your users and business grow.
-              </p>
+            <div class="sleek-card step">
+              <span class="sn">Phase 04</span>
+              <h3>Launch &amp; Grow</h3>
+              <p>We ship, measure, and refine — hardening the product so it holds up as your users and business grow.</p>
             </div>
           </div>
         </div>
 
         <div class="panel" id="p-model" role="tabpanel" aria-labelledby="t-model">
           <div class="models">
-            <div class="model">
+            <div class="sleek-card model">
               <div class="tag">Advisory</div>
-              <h3>Product consulting</h3>
+              <h3>Product Consulting</h3>
               <p class="for">You want clarity and a PRD before you invest.</p>
               <ul>
                 <li>Product &amp; scope strategy</li>
@@ -1963,21 +1908,20 @@
               </ul>
               <div class="foot"><a href="#contact" class="btn btn-ghost">Book a consultation</a></div>
             </div>
-            <div class="model feat">
-              <div class="tag">Most popular</div>
-              <h3>End-to-end product build</h3>
+            <div class="sleek-card model feat">
+              <div class="tag">Most Popular</div>
+              <h3>End-to-End Product Build</h3>
               <p class="for">Idea to launch, handled — product plus engineering.</p>
               <ul>
                 <li>PRD &amp; product strategy</li>
                 <li>Design &amp; development</li>
                 <li>Launch, QA &amp; support</li>
               </ul>
-              <div class="foot"><a href="#contact" class="btn btn-primary">Start your project <span
-                    class="arw">→</span></a></div>
+              <div class="foot"><a href="#contact" class="btn btn-ember">Start your project <span class="arw">→</span></a></div>
             </div>
-            <div class="model">
-              <div class="tag">Dedicated team</div>
-              <h3>Your product team</h3>
+            <div class="sleek-card model">
+              <div class="tag">Dedicated Team</div>
+              <h3>Your Product Team</h3>
               <p class="for">You need a reliable team to build and scale.</p>
               <ul>
                 <li>In-house Creuto engineers</li>
@@ -1992,10 +1936,10 @@
     </section>
 
     <!-- ================= REVIEWS ================= -->
-    <section class="reviews" id="reviews">
+    <section id="reviews">
       <div class="wrap">
         <div class="shead center rv">
-          <p class="eyebrow">Clutch Reviews</p>
+          <span class="eyebrow-pill"><span class="dot"></span> Clutch Reviews</span>
           <h2>Trusted by B2B founders and companies worldwide.</h2>
           <p class="sub">Here is what clients say about our product strategy and custom software delivery.</p>
         </div>
@@ -2003,7 +1947,7 @@
           <script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js"></script>
           <div class="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="8" data-height="300" data-nofollow="false" data-expandifr="true" data-scale="100" data-reviews="384806,383518,383041,382633,382294,380065" data-clutchcompany-id="2118119"></div>
         </div>
-        <div class="reviews-footer center rv" style="margin-top: 32px;">
+        <div class="reviews-footer center rv" style="margin-top: 28px;">
           <a href="https://clutch.co/profile/creuto" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
             Read more reviews on Clutch <span class="arw">→</span>
           </a>
@@ -2012,37 +1956,51 @@
     </section>
 
     <!-- ================= FOUNDER SUITE ================= -->
-    <section class="suite" id="suite">
+    <section class="suite-section" id="suite">
       <div class="wrap">
         <div class="shead rv">
-          <p class="eyebrow">Start with product clarity</p>
-          <h2>Tell me your idea. Get a clear path forward.</h2>
-          <p class="sub">Share where you are and I'll come back with honest first thoughts — scope, a PRD starting
-            point, and a realistic sense of budget and approach.</p>
+          <span class="eyebrow-pill"><span class="dot"></span> Start with Product Clarity</span>
+          <h2>Tell me your idea. <span class="hl-wrap">Get a clear path<span class="hl-bar"></span></span> forward.</h2>
+          <p class="sub">Share where you are and I'll come back with honest first thoughts — scope, a PRD starting point, and a realistic sense of budget and approach.</p>
         </div>
         <div class="suite-grid">
           <div class="rv">
             <div class="suite-points">
-              <div class="pt"><span class="ic">→</span><span class="tx">A clear read on scope and what to build
-                  first.</span></div>
-              <div class="pt"><span class="ic">₹</span><span class="tx">An honest sense of budget and timeline — no
-                  inflated quotes.</span></div>
-              <div class="pt"><span class="ic">✓</span><span class="tx">A PRD starting point you can take anywhere, even
-                  if we don't work together.</span></div>
+              <div class="pt">
+                <span class="ic">→</span>
+                <span class="tx"><b>A clear read on scope</b> and what to build first to validate traction.</span>
+              </div>
+              <div class="pt">
+                <span class="ic">₹</span>
+                <span class="tx"><b>An honest budget estimate</b> &amp; realistic timeline — no inflated agency quotes.</span>
+              </div>
+              <div class="pt">
+                <span class="ic">✓</span>
+                <span class="tx"><b>A PRD starting point</b> you can take anywhere, even if we don't work together.</span>
+              </div>
             </div>
           </div>
+          
           <form class="form-card rv" id="auditForm">
-            <div class="fh">Tell me about your project</div>
             <h3>Get honest first thoughts</h3>
-            <div class="field"><label for="a-name">Your name *</label><input id="a-name" name="name" required
-                placeholder="Your name"></div>
-            <div class="field"><label for="a-phone">Mobile number *</label><input id="a-phone" name="phone" type="tel"
-                required placeholder="Your phone number"></div>
-            <div class="field"><label for="a-biz">Business name *</label><input id="a-biz" name="biz" required
-                placeholder="Acme Inc."></div>
-            <div class="field"><label for="a-ind">Industry sector *</label><input id="a-ind" name="ind" required
-                placeholder="Fintech, SaaS, healthcare…"></div>
-            <div class="field"><label for="a-team">Team size *</label>
+            <div class="field">
+              <label for="a-name">Your name *</label>
+              <input id="a-name" name="name" required placeholder="Your name">
+            </div>
+            <div class="field">
+              <label for="a-phone">Mobile number *</label>
+              <input id="a-phone" name="phone" type="tel" required placeholder="Your phone number">
+            </div>
+            <div class="field">
+              <label for="a-biz">Business name *</label>
+              <input id="a-biz" name="biz" required placeholder="Acme Inc.">
+            </div>
+            <div class="field">
+              <label for="a-ind">Industry sector *</label>
+              <input id="a-ind" name="ind" required placeholder="Fintech, SaaS, healthcare…">
+            </div>
+            <div class="field">
+              <label for="a-team">Team size *</label>
               <select id="a-team" name="team" required>
                 <option value="" disabled selected>Select…</option>
                 <option>Just me / founder</option>
@@ -2051,96 +2009,99 @@
                 <option>50+</option>
               </select>
             </div>
-            <div class="field"><label for="a-bottle">What do you want to build? *</label><textarea id="a-bottle"
-                name="bottle" rows="3" required
-                placeholder="Describe your product idea or the problem you're solving…"></textarea></div>
-            <div class="field"><label for="a-email">Your work email *</label><input id="a-email" name="email"
-                type="email" required placeholder="you@company.com"></div>
-            <button type="submit" class="btn btn-primary">Send &amp; get first thoughts <span
-                class="arw">→</span></button>
-            <p class="form-note">Opens your email client, addressed to me — no data stored here.</p>
+            <div class="field">
+              <label for="a-bottle">What do you want to build? *</label>
+              <textarea id="a-bottle" name="bottle" rows="3" required placeholder="Describe your product idea or the problem you're solving…"></textarea>
+            </div>
+            <div class="field">
+              <label for="a-email">Your work email *</label>
+              <input id="a-email" name="email" type="email" required placeholder="you@company.com">
+            </div>
+            <button type="submit" class="btn btn-primary">Send &amp; get first thoughts <span class="arw">→</span></button>
+            <p class="form-note">I respect your privacy — direct response within 24 hours.</p>
           </form>
         </div>
       </div>
     </section>
 
     <!-- ================= FAQ ================= -->
-    <section id="faq"
-      style="background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <section id="faq">
       <div class="wrap faq-grid">
         <div class="rv">
-          <p class="eyebrow">FAQ</p>
-          <h2 style="font-size:clamp(28px,3.6vw,40px);line-height:1.08;margin-top:16px">Frequently asked questions.</h2>
-          <p class="sub" style="margin-top:16px">Still need help? <a href="#contact"
-              style="color:var(--accent);text-decoration:none;font-weight:600">Let's book a call →</a></p>
+          <span class="eyebrow-pill"><span class="dot"></span> FAQ</span>
+          <h2 style="font-size:clamp(28px,3.4vw,38px);line-height:1.2;margin-top:12px">Frequently asked questions.</h2>
+          <p class="sub" style="margin-top:14px">Still need help? <a href="#contact" style="color:var(--accent);text-decoration:none;font-weight:600">Let's book a call →</a></p>
         </div>
         <div class="rv">
           <details class="q" open>
             <summary>Do you help define the product, or only build it? <span class="ic"></span></summary>
-            <div class="ans">Both — and the product comes first. With eight years in product management, I help you
-              shape scope, priorities, and a clear PRD before any code is written. Once the product is right, my team at
-              Creuto engineers it. You can also engage us purely for product consulting if that's all you need.</div>
+            <div class="ans">Both — and the product comes first. With eight years in product management, I help you shape scope, priorities, and a clear PRD before any code is written. Once the product is right, my team at Creuto engineers it. You can also engage us purely for product consulting if that's all you need.</div>
           </details>
           <details class="q">
             <summary>How do you keep a project within budget? <span class="ic"></span></summary>
-            <div class="ans">By scoping honestly up front. A good PRD prevents the biggest cost driver in software —
-              building the wrong thing. We plan a build that fits what you can invest, prioritize what matters first,
-              and are transparent about trade-offs. No inflated quotes, no surprise costs.</div>
+            <div class="ans">By scoping honestly up front. A good PRD prevents the biggest cost driver in software — building the wrong thing. We plan a build that fits what you can invest, prioritize what matters first, and are transparent about trade-offs. No inflated quotes, no surprise costs.</div>
           </details>
           <details class="q">
             <summary>What kinds of businesses and industries do you work with? <span class="ic"></span></summary>
-            <div class="ans">We work with B2B companies and founders across many domains — fintech, SaaS, healthcare,
-              e-commerce, logistics, edtech and more. My product background across industries means we understand your
-              business context, not just your feature list.</div>
+            <div class="ans">We work with B2B companies and founders across many domains — fintech, SaaS, healthcare, e-commerce, logistics, edtech and more. My product background across industries means we understand your business context, not just your feature list.</div>
           </details>
           <details class="q">
             <summary>Do you have your own in-house development team? <span class="ic"></span></summary>
-            <div class="ans">Yes. Creuto has a dedicated in-house engineering team that builds B2B, growth-standard
-              software directly. Your project isn't handed off to unknown subcontractors — it's built by the team you're
-              speaking with.</div>
+            <div class="ans">Yes. Creuto has a dedicated in-house engineering team that builds B2B, growth-standard software directly. Your project isn't handed off to unknown subcontractors — it's built by the team you're speaking with.</div>
           </details>
           <details class="q">
             <summary>How do we get started? <span class="ic"></span></summary>
-            <div class="ans">Start with a short consultation. Share your idea using the form above or book a call, and
-              I'll come back with honest first thoughts on scope, approach, and budget. From there we move into a PRD
-              and a plan. I respond within 24 hours.</div>
+            <div class="ans">Start with a short consultation. Share your idea using the form above or book a call, and I'll come back with honest first thoughts on scope, approach, and budget. From there we move into a PRD and a plan. I respond within 24 hours.</div>
           </details>
         </div>
       </div>
     </section>
 
     <!-- ================= CONTACT ================= -->
-    <section class="contact" id="contact">
+    <section class="contact-section" id="contact">
       <div class="wrap contact-grid">
         <div class="rv">
-          <p class="eyebrow">Contact</p>
-          <h2 style="font-size:clamp(30px,4.2vw,46px);line-height:1.06;margin-top:16px">Have a project? Let's make it
-            happen.</h2>
+          <span class="eyebrow-pill"><span class="dot"></span> Contact</span>
+          <h2 style="font-size:clamp(30px,4vw,42px);line-height:1.15;margin-top:12px">Have a project? <span class="hl-wrap">Let's make it happen.<span class="hl-bar"></span></span></h2>
           <div class="promise">
-            <div class="pi"><span class="ck">✓</span><span class="pt"><b>Fast &amp; focused response.</b> I get back
-                within 24 hours so your idea doesn't lose momentum.</span></div>
-            <div class="pi"><span class="ck">✓</span><span class="pt"><b>Your idea, protected.</b> NDAs available on
-                request for full confidentiality.</span></div>
-            <div class="pi"><span class="ck">✓</span><span class="pt"><b>Product-first from day one.</b> Scope, PRD, and
-                roadmap shaped before we build — so your budget goes to the right things.</span></div>
-            <div class="pi"><span class="ck">✓</span><span class="pt"><b>End-to-end support.</b> Discovery, roadmap,
-                integration, and scaling — not just a hand-off.</span></div>
+            <div class="pi">
+              <span class="ck">✓</span>
+              <span class="pt"><b>Fast &amp; focused response.</b> I get back within 24 hours so your idea doesn't lose momentum.</span>
+            </div>
+            <div class="pi">
+              <span class="ck">✓</span>
+              <span class="pt"><b>Your idea, protected.</b> NDAs available on request for full confidentiality.</span>
+            </div>
+            <div class="pi">
+              <span class="ck">✓</span>
+              <span class="pt"><b>Product-first from day one.</b> Scope, PRD, and roadmap shaped before we build — so your budget goes to the right things.</span>
+            </div>
+            <div class="pi">
+              <span class="ck">✓</span>
+              <span class="pt"><b>End-to-end support.</b> Discovery, roadmap, integration, and scaling — not just a hand-off.</span>
+            </div>
           </div>
-          <div class="sig" style="border-color:var(--line-strong)">
+          <div class="sig" style="border-color:var(--line)">
             <div>
               <div class="nm">Nihar Ranjan Rout</div>
               <div class="rl">FOUNDER, CREUTO · mail@niharrout.com</div>
             </div>
           </div>
         </div>
+        
         <form class="cform rv" id="contactForm">
           <div class="row2">
-            <div><label for="c-name">Full name *</label><input id="c-name" name="name" required placeholder="Your name">
+            <div>
+              <label for="c-name">Full name *</label>
+              <input id="c-name" name="name" required placeholder="Your name">
             </div>
-            <div><label for="c-email">Email *</label><input id="c-email" name="email" type="email" required
-                placeholder="you@company.com"></div>
+            <div>
+              <label for="c-email">Email *</label>
+              <input id="c-email" name="email" type="email" required placeholder="you@company.com">
+            </div>
           </div>
-          <div class="field"><label for="c-budget">Project budget</label>
+          <div class="field">
+            <label for="c-budget">Project budget</label>
             <select id="c-budget" name="budget">
               <option value="" disabled selected>Select a range…</option>
               <option>Under $5k</option>
@@ -2150,7 +2111,8 @@
               <option>Not sure yet</option>
             </select>
           </div>
-          <div class="field"><label for="c-help">How can I help? *</label>
+          <div class="field">
+            <label for="c-help">How can I help? *</label>
             <select id="c-help" name="help" required>
               <option value="" disabled selected>Select…</option>
               <option>AI product development</option>
@@ -2161,10 +2123,12 @@
               <option>Mobile app development</option>
             </select>
           </div>
-          <div class="field"><label for="c-details">Project details *</label><textarea id="c-details" name="details"
-              rows="4" required placeholder="Tell me what you're building and where you are today."></textarea></div>
+          <div class="field">
+            <label for="c-details">Project details *</label>
+            <textarea id="c-details" name="details" rows="4" required placeholder="Tell me what you're building and where you are today."></textarea>
+          </div>
           <button type="submit" class="btn btn-primary">Send message <span class="arw">→</span></button>
-          <p class="form-note" style="color:var(--ink-faint)">Opens your email client, addressed to me.</p>
+          <p class="form-note">Direct response within 24 hours.</p>
         </form>
       </div>
     </section>
@@ -2177,25 +2141,33 @@
       <div class="ft-top">
         <div class="ft-brand">
           <div class="bn">nihar<span class="d">.</span></div>
-          <p>Product-first B2B software development. Founder &amp; CEO of Creuto — where product strategy and a strong
-            in-house team turn ideas into growth-standard software.</p>
+          <p>Product-first B2B software development. Founder &amp; CEO of Creuto — where product strategy and a strong in-house team turn ideas into growth-standard software.</p>
         </div>
         <div>
           <h4>Explore</h4>
-          <div class="ft-col"><a href="#about">About</a><a href="#capabilities">Services</a><a href="#suite">Founder
-              Suite</a><a href="#faq">FAQ</a></div>
+          <div class="ft-col">
+            <a href="#about">About</a>
+            <a href="#capabilities">Services</a>
+            <a href="#suite">Founder Suite</a>
+            <a href="#faq">FAQ</a>
+          </div>
         </div>
         <div>
           <h4>Work with me</h4>
-          <div class="ft-col"><a href="#contact">Book a call</a><a href="https://creuto.com" target="_blank"
-              rel="noopener">Creuto ↗</a><a href="mailto:mail@niharrout.com">mail@niharrout.com</a></div>
+          <div class="ft-col">
+            <a href="#contact">Book a call</a>
+            <a href="https://creuto.com" target="_blank" rel="noopener">Creuto ↗</a>
+            <a href="mailto:mail@niharrout.com">mail@niharrout.com</a>
+          </div>
         </div>
         <div>
           <h4>Elsewhere</h4>
-          <div class="ft-col"><a href="https://www.linkedin.com/in/niharrout/" target="_blank" rel="noopener">LinkedIn
-              ↗</a><a href="https://x.com/iniharrout" target="_blank" rel="noopener">X ↗</a><a
-              href="https://github.com/iniharrout" target="_blank" rel="noopener">GitHub ↗</a><a
-              href="https://medium.com/@niharrout" target="_blank" rel="noopener">Medium ↗</a></div>
+          <div class="ft-col">
+            <a href="https://www.linkedin.com/in/niharrout/" target="_blank" rel="noopener">LinkedIn ↗</a>
+            <a href="https://x.com/iniharrout" target="_blank" rel="noopener">X ↗</a>
+            <a href="https://github.com/iniharrout" target="_blank" rel="noopener">GitHub ↗</a>
+            <a href="https://medium.com/@niharrout" target="_blank" rel="noopener">Medium ↗</a>
+          </div>
         </div>
       </div>
       <div class="ft-bottom">
@@ -2263,22 +2235,8 @@
 }
 </script>
 
-
   <script>
     document.getElementById('yr').textContent = new Date().getFullYear();
-
-    /* theme */
-    (function () {
-      var root = document.documentElement, btn = document.getElementById('themeBtn');
-      if (btn) {
-        btn.addEventListener('click', function () {
-          var cur = root.getAttribute('data-theme') || 'light';
-          var next = cur === 'dark' ? 'light' : 'dark';
-          root.setAttribute('data-theme', next);
-          try { localStorage.setItem('nrr-theme', next); } catch (e) { }
-        });
-      }
-    })();
 
     /* nav shadow */
     var nav = document.getElementById('nav');
@@ -2296,7 +2254,6 @@
           drawer.classList.toggle('open', isOpen);
         });
 
-        // Close drawer when clicking a link
         var links = drawer.querySelectorAll('.drawer-lnk, .btn');
         links.forEach(function (lnk) {
           lnk.addEventListener('click', function () {
@@ -2305,7 +2262,6 @@
           });
         });
 
-        // Close drawer when clicking outside
         document.addEventListener('click', function (e) {
           if (!drawer.contains(e.target) && !toggle.contains(e.target)) {
             toggle.classList.remove('open');
@@ -2315,9 +2271,9 @@
       }
     })();
 
-    /* tabs */
+    /* Segmented tabs */
     (function () {
-      var tabs = document.querySelectorAll('.tab');
+      var tabs = document.querySelectorAll('.segmented-tab');
       tabs.forEach(function (t) {
         t.addEventListener('click', function () {
           tabs.forEach(function (x) { x.setAttribute('aria-selected', 'false'); });
@@ -2346,7 +2302,6 @@
 
     function sendToGoogleChat(payload, fallbackAction) {
       if (!GOOGLE_CHAT_WEBHOOK_URL) {
-        console.warn('Google Chat Webhook URL is empty. Falling back to default mail client.');
         fallbackAction();
         return;
       }
@@ -2373,178 +2328,118 @@
     function val(f, n) { var el = f.querySelector('[name="' + n + '"]'); return el ? el.value.trim() : ''; }
 
     var af = document.getElementById('auditForm');
-    af.addEventListener('submit', function (e) {
-      e.preventDefault();
+    if (af) {
+      af.addEventListener('submit', function (e) {
+        e.preventDefault();
 
-      var name = val(af, 'name');
-      var phone = val(af, 'phone');
-      var business = val(af, 'biz');
-      var industry = val(af, 'ind');
-      var team = val(af, 'team');
-      var bottle = val(af, 'bottle');
-      var email = val(af, 'email');
+        var name = val(af, 'name');
+        var phone = val(af, 'phone');
+        var business = val(af, 'biz');
+        var industry = val(af, 'ind');
+        var team = val(af, 'team');
+        var bottle = val(af, 'bottle');
+        var email = val(af, 'email');
 
-      // 1. Webhook Payload (Card Layout)
-      var payload = {
-        "cardsV2": [
-          {
-            "cardId": "auditFormSubmit",
-            "card": {
-              "header": {
-                "title": "New Project Enquiry — Founder Suite",
-                "subtitle": "Submitted via niharrout.com",
-                "imageUrl": "https://www.niharrout.com/assets/nihar.jpg",
-                "imageType": "CIRCLE"
-              },
-              "sections": [
-                {
-                  "widgets": [
-                    {
-                      "decoratedText": {
-                        "topLabel": "Lead Name",
-                        "text": name
-                      }
-                    },
-                    {
-                      "decoratedText": {
-                        "topLabel": "Mobile Number",
-                        "text": phone
-                      }
-                    },
-                    {
-                      "decoratedText": {
-                        "topLabel": "Business Name",
-                        "text": business
-                      }
-                    },
-                    {
-                      "decoratedText": {
-                        "topLabel": "Industry Sector",
-                        "text": industry
-                      }
-                    },
-                    {
-                      "decoratedText": {
-                        "topLabel": "Team Size",
-                        "text": team
-                      }
-                    },
-                    {
-                      "decoratedText": {
-                        "topLabel": "What they want to build",
-                        "text": bottle
-                      }
-                    },
-                    {
-                      "decoratedText": {
-                        "topLabel": "Work Email",
-                        "text": email
-                      }
-                    }
-                  ]
-                }
-              ]
+        var payload = {
+          "cardsV2": [
+            {
+              "cardId": "auditFormSubmit",
+              "card": {
+                "header": {
+                  "title": "New Project Enquiry — Founder Suite",
+                  "subtitle": "Submitted via niharrout.com",
+                  "imageUrl": "https://www.niharrout.com/assets/nihar.jpg",
+                  "imageType": "CIRCLE"
+                },
+                "sections": [
+                  {
+                    "widgets": [
+                      { "decoratedText": { "topLabel": "Lead Name", "text": name } },
+                      { "decoratedText": { "topLabel": "Mobile Number", "text": phone } },
+                      { "decoratedText": { "topLabel": "Business Name", "text": business } },
+                      { "decoratedText": { "topLabel": "Industry Sector", "text": industry } },
+                      { "decoratedText": { "topLabel": "Team Size", "text": team } },
+                      { "decoratedText": { "topLabel": "What they want to build", "text": bottle } },
+                      { "decoratedText": { "topLabel": "Work Email", "text": email } }
+                    ]
+                  }
+                ]
+              }
             }
-          }
-        ]
-      };
+          ]
+        };
 
-      // 2. Fallback mailto Action
-      var fallback = function () {
-        var body = 'New project enquiry%0D%0A%0D%0AName: ' + encodeURIComponent(name)
-          + '%0D%0AMobile: ' + encodeURIComponent(phone)
-          + '%0D%0ABusiness: ' + encodeURIComponent(business)
-          + '%0D%0AIndustry: ' + encodeURIComponent(industry)
-          + '%0D%0ATeam size: ' + encodeURIComponent(team)
-          + '%0D%0AWhat they want to build: ' + encodeURIComponent(bottle)
-          + '%0D%0AEmail: ' + encodeURIComponent(email);
-        window.location.href = 'mailto:mail@niharrout.com?subject=' + encodeURIComponent('Project enquiry — ' + business) + '&body=' + body;
-      };
+        var fallback = function () {
+          var body = 'New project enquiry%0D%0A%0D%0AName: ' + encodeURIComponent(name)
+            + '%0D%0AMobile: ' + encodeURIComponent(phone)
+            + '%0D%0ABusiness: ' + encodeURIComponent(business)
+            + '%0D%0AIndustry: ' + encodeURIComponent(industry)
+            + '%0D%0ATeam size: ' + encodeURIComponent(team)
+            + '%0D%0AWhat they want to build: ' + encodeURIComponent(bottle)
+            + '%0D%0AEmail: ' + encodeURIComponent(email);
+          window.location.href = 'mailto:mail@niharrout.com?subject=' + encodeURIComponent('Project enquiry — ' + business) + '&body=' + body;
+        };
 
-      sendToGoogleChat(payload, fallback);
-    });
+        sendToGoogleChat(payload, fallback);
+      });
+    }
 
     var cf = document.getElementById('contactForm');
-    cf.addEventListener('submit', function (e) {
-      e.preventDefault();
+    if (cf) {
+      cf.addEventListener('submit', function (e) {
+        e.preventDefault();
 
-      var name = val(cf, 'name');
-      var email = val(cf, 'email');
-      var budget = val(cf, 'budget');
-      var help = val(cf, 'help');
-      var details = val(cf, 'details');
+        var name = val(cf, 'name');
+        var email = val(cf, 'email');
+        var budget = val(cf, 'budget');
+        var help = val(cf, 'help');
+        var details = val(cf, 'details');
 
-      // 1. Webhook Payload (Card Layout)
-      var payload = {
-        "cardsV2": [
-          {
-            "cardId": "contactFormSubmit",
-            "card": {
-              "header": {
-                "title": "New General Enquiry — Contact Form",
-                "subtitle": "Submitted via niharrout.com",
-                "imageUrl": "https://www.niharrout.com/assets/nihar.jpg",
-                "imageType": "CIRCLE"
-              },
-              "sections": [
-                {
-                  "widgets": [
-                    {
-                      "decoratedText": {
-                        "topLabel": "Full Name",
-                        "text": name
-                      }
-                    },
-                    {
-                      "decoratedText": {
-                        "topLabel": "Email",
-                        "text": email
-                      }
-                    },
-                    {
-                      "decoratedText": {
-                        "topLabel": "Project Budget",
-                        "text": budget
-                      }
-                    },
-                    {
-                      "decoratedText": {
-                        "topLabel": "How I can help",
-                        "text": help
-                      }
-                    },
-                    {
-                      "decoratedText": {
-                        "topLabel": "Project Details",
-                        "text": details
-                      }
-                    }
-                  ]
-                }
-              ]
+        var payload = {
+          "cardsV2": [
+            {
+              "cardId": "contactFormSubmit",
+              "card": {
+                "header": {
+                  "title": "New General Enquiry — Contact Form",
+                  "subtitle": "Submitted via niharrout.com",
+                  "imageUrl": "https://www.niharrout.com/assets/nihar.jpg",
+                  "imageType": "CIRCLE"
+                },
+                "sections": [
+                  {
+                    "widgets": [
+                      { "decoratedText": { "topLabel": "Full Name", "text": name } },
+                      { "decoratedText": { "topLabel": "Email", "text": email } },
+                      { "decoratedText": { "topLabel": "Project Budget", "text": budget } },
+                      { "decoratedText": { "topLabel": "How I can help", "text": help } },
+                      { "decoratedText": { "topLabel": "Project Details", "text": details } }
+                    ]
+                  }
+                ]
+              }
             }
-          }
-        ]
-      };
+          ]
+        };
 
-      // 2. Fallback mailto Action
-      var fallback = function () {
-        var body = 'New project enquiry%0D%0A%0D%0AName: ' + encodeURIComponent(name)
-          + '%0D%0AEmail: ' + encodeURIComponent(email)
-          + '%0D%0ABudget: ' + encodeURIComponent(budget)
-          + '%0D%0AService: ' + encodeURIComponent(help)
-          + '%0D%0A%0D%0ADetails:%0D%0A' + encodeURIComponent(details);
-        window.location.href = 'mailto:mail@niharrout.com?subject=' + encodeURIComponent('Project enquiry — ' + name) + '&body=' + body;
-      };
+        var fallback = function () {
+          var body = 'New project enquiry%0D%0A%0D%0AName: ' + encodeURIComponent(name)
+            + '%0D%0AEmail: ' + encodeURIComponent(email)
+            + '%0D%0ABudget: ' + encodeURIComponent(budget)
+            + '%0D%0AService: ' + encodeURIComponent(help)
+            + '%0D%0A%0D%0ADetails:%0D%0A' + encodeURIComponent(details);
+          window.location.href = 'mailto:mail@niharrout.com?subject=' + encodeURIComponent('Project enquiry — ' + name) + '&body=' + body;
+        };
 
-      sendToGoogleChat(payload, fallback);
-    });
+        sendToGoogleChat(payload, fallback);
+      });
+    }
 
     /* reveal */
     var rv = document.querySelectorAll('.rv');
     if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      var io = new IntersectionObserver(function (es) { es.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } }); }, { threshold: .1, rootMargin: '0px 0px -6% 0px' });
-      rv.forEach(function (el, i) { el.style.transitionDelay = Math.min(i % 5 * 55, 220) + 'ms'; io.observe(el); });
+      var io = new IntersectionObserver(function (es) { es.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } }); }, { threshold: .08, rootMargin: '0px 0px -4% 0px' });
+      rv.forEach(function (el, i) { el.style.transitionDelay = Math.min(i % 4 * 40, 160) + 'ms'; io.observe(el); });
     } else { rv.forEach(function (el) { el.classList.add('in'); }); }
   </script>
 
