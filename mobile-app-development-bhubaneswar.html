@@ -48,54 +48,55 @@
     href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap">
 
   <style>
-    /* ================= ZUTRIX-INSPIRED DESIGN SYSTEM TOKENS ================= */
+    /* ================= MELLOW-INSPIRED DESIGN SYSTEM TOKENS ================= */
     :root {
-      --bg: #FFFFFF;
-      --bg-alt: #F8FAFC;         /* slate-50 */
-      --bg-subtle: #F1F5F9;      /* slate-100 */
+      --bg: #F6F4EE;             /* Mellow warm porcelain */
+      --bg-alt: #EFECE3;
+      --bg-card: #FFFFFF;
       --surface: #FFFFFF;
+      --surface-subtle: #F0EDE5;
       
       /* Typography Colors */
-      --ink: #0F172A;            /* slate-900 */
-      --ink-soft: #475569;       /* slate-600 */
-      --ink-faint: #64748B;      /* slate-500 */
-      --ink-muted: #94A3B8;      /* slate-400 */
+      --ink: #181716;            /* Deep obsidian / charcoal */
+      --ink-soft: #5A5853;       /* Warm neutral slate */
+      --ink-faint: #7C7973;      /* Muted secondary tone */
+      --ink-muted: #A3A099;
       
-      /* Borders */
-      --line: #E2E8F0;           /* slate-200 */
-      --line-subtle: #F1F5F9;    /* slate-100 */
-      --line-focus: #CBD5E1;     /* slate-300 */
+      /* Mellow Style Hairline Borders */
+      --line: rgba(24, 23, 22, 0.08);
+      --line-subtle: rgba(24, 23, 22, 0.04);
+      --line-focus: #181716;
       
-      /* Zutrix Brand Ember Accents */
-      --accent: #F0672A;         /* Ember */
-      --accent-deep: #D9531E;
-      --accent-dark: #C2410C;
-      --accent-tint: #FFF7ED;    /* ember-50 */
-      --accent-tint-2: #FFEDD5;  /* ember-100 */
-      --accent-border: #FED7AA;  /* ember-200 */
-      --on-accent: #FFFFFF;
+      /* Mellow Accents */
+      --accent-lime: #D6F75A;
+      --accent-lime-dark: #243004;
+      --accent: #181716;
+      --accent-deep: #302E2B;
+      --accent-tint: #FFFFFF;
+      --accent-border: rgba(24, 23, 22, 0.12);
       
       /* Semantic Accents */
-      --emerald: #10B981;
+      --emerald: #0DA868;
       --emerald-dark: #059669;
-      --emerald-tint: #ECFDF5;
-      --emerald-border: #A7F3D0;
+      --emerald-tint: #E7F8F0;
+      --emerald-border: #B3EBD3;
       
       --ocean: #2563EB;
       --ocean-tint: #EFF6FF;
-      --ocean-border: #BFDBFE;
       
-      /* Shadows */
-      --shadow-sm: 0 1px 2px 0 rgba(15, 23, 42, 0.04);
-      --shadow-card: 0 4px 20px -2px rgba(15, 23, 42, 0.04), 0 2px 6px -1px rgba(15, 23, 42, 0.02);
-      --shadow-hover: 0 20px 35px -10px rgba(15, 23, 42, 0.07), 0 1px 3px 0 rgba(15, 23, 42, 0.03);
-      --shadow-float: 0 12px 32px -8px rgba(15, 23, 42, 0.06);
+      /* Diffused Natural Shadows */
+      --shadow-sm: 0 1px 2px rgba(24, 23, 22, 0.04);
+      --shadow-card: 0 8px 24px -6px rgba(24, 23, 22, 0.04), 0 2px 6px rgba(24, 23, 22, 0.02);
+      --shadow-hover: 0 16px 36px -8px rgba(24, 23, 22, 0.08), 0 4px 12px rgba(24, 23, 22, 0.03);
+      --shadow-hero: 0 24px 48px -12px rgba(24, 23, 22, 0.08);
+      --shadow-float: 0 24px 48px -12px rgba(24, 23, 22, 0.1);
       
-      --maxw: 1160px;
-      --measure: 65ch;
-      --r-sm: 10px;
-      --r-md: 14px;
-      --r-lg: 20px;
+      --maxw: 1180px;
+      --measure: 64ch;
+      --r-xl: 24px;
+      --r-lg: 18px;
+      --r-md: 12px;
+      --r-sm: 8px;
       --r-pill: 9999px;
     }
 
@@ -123,11 +124,11 @@
     .wrap {
       max-width: var(--maxw);
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 28px;
     }
 
     section {
-      padding: clamp(72px, 9vw, 115px) 0;
+      padding: clamp(72px, 8.5vw, 115px) 0;
       position: relative;
     }
 
@@ -141,43 +142,27 @@
       color: var(--ink);
       margin: 0;
       text-wrap: balance;
-      letter-spacing: -0.028em;
+      letter-spacing: -0.03em;
     }
 
     p {
       margin: 0;
     }
 
-    /* Zutrix Signature Highlight Underline */
-    .hl-wrap {
-      position: relative;
-      display: inline-block;
-      white-space: nowrap;
-    }
 
-    .hl-bar {
-      position: absolute;
-      bottom: 4px;
-      left: 0;
-      width: 100%;
-      height: 9px;
-      background: linear-gradient(120deg, rgba(254, 215, 170, 0.75) 0%, rgba(253, 186, 116, 0.6) 100%);
-      border-radius: 4px;
-      z-index: -1;
-    }
 
     /* ================= BUTTONS & PILLS ================= */
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 9px;
+      gap: 8px;
       font-family: inherit;
       font-size: 15px;
       font-weight: 600;
       text-decoration: none;
-      border-radius: 12px;
-      padding: 13px 26px;
+      border-radius: var(--r-pill);
+      padding: 13px 28px;
       line-height: 1.2;
       cursor: pointer;
       border: 1px solid transparent;
@@ -189,29 +174,15 @@
       background: var(--ink);
       color: #FFFFFF;
       border-color: var(--ink);
-      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.12);
+      box-shadow: 0 4px 14px rgba(24, 23, 22, 0.12);
     }
 
     .btn-primary:hover {
-      background: #1E293B;
-      border-color: #1E293B;
+      background: #302E2B;
+      border-color: #302E2B;
       color: #FFFFFF;
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.18);
-    }
-
-    .btn-ember {
-      background: var(--accent);
-      color: #FFFFFF;
-      border-color: var(--accent);
-      box-shadow: 0 4px 16px rgba(240, 103, 42, 0.25);
-    }
-
-    .btn-ember:hover {
-      background: var(--accent-deep);
-      border-color: var(--accent-deep);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(240, 103, 42, 0.35);
+      box-shadow: 0 8px 20px rgba(24, 23, 22, 0.18);
     }
 
     .btn-ghost {
@@ -226,21 +197,7 @@
       background: var(--bg-alt);
       color: var(--ink);
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
-    }
-
-    .btn-whatsapp {
-      background: #10B981;
-      color: #FFFFFF;
-      border-color: #10B981;
-      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.22);
-    }
-
-    .btn-whatsapp:hover {
-      background: #059669;
-      border-color: #059669;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(16, 185, 129, 0.32);
+      box-shadow: 0 4px 12px rgba(24, 23, 22, 0.05);
     }
 
     .eyebrow-pill {
@@ -252,15 +209,15 @@
       background: var(--accent-tint);
       border: 1px solid var(--accent-border);
       color: var(--accent-deep);
-      font-size: 13px;
+      font-size: 12.5px;
       font-weight: 600;
       letter-spacing: 0.02em;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
     }
 
     .eyebrow-pill .dot {
-      width: 7px;
-      height: 7px;
+      width: 6px;
+      height: 6px;
       border-radius: 50%;
       background: var(--accent);
       display: inline-block;
@@ -281,17 +238,17 @@
       right: 0;
       height: 72px;
       z-index: 100;
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(246, 244, 238, 0.88);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+      border-bottom: 1px solid var(--line);
       transition: all 0.3s ease;
     }
 
     .nav-inner {
       max-width: var(--maxw);
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 28px;
       height: 100%;
       display: flex;
       align-items: center;
@@ -301,7 +258,7 @@
     .brand {
       font-family: "Plus Jakarta Sans", sans-serif;
       font-weight: 800;
-      font-size: 22px;
+      font-size: 21px;
       letter-spacing: -.03em;
       text-decoration: none;
       color: var(--ink);
@@ -378,7 +335,7 @@
       top: 72px;
       left: 0;
       right: 0;
-      background: #FFFFFF;
+      background: var(--bg-card);
       border-bottom: 1px solid var(--line);
       padding: 24px;
       display: flex;
@@ -389,7 +346,7 @@
       pointer-events: none;
       transition: all 0.3s ease;
       z-index: 95;
-      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      box-shadow: var(--shadow-float);
     }
 
     .mobile-drawer.open {
@@ -417,21 +374,8 @@
       padding-top: clamp(60px, 8vw, 96px);
       padding-bottom: clamp(54px, 7vw, 80px);
       text-align: center;
-      background: #FFFFFF;
+      background: var(--bg);
       overflow: hidden;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 1000px;
-      height: 550px;
-      background: radial-gradient(circle at 50% 15%, rgba(240, 103, 42, 0.07) 0%, rgba(37, 99, 235, 0.04) 45%, transparent 70%);
-      pointer-events: none;
-      z-index: 0;
     }
 
     .hero > .wrap {
@@ -475,9 +419,10 @@
       gap: 32px 48px;
       margin-top: 54px;
       padding: 24px 32px;
-      background: var(--bg-alt);
-      border-radius: var(--r-lg);
-      border: 1px solid var(--line-subtle);
+      background: var(--bg-card);
+      border-radius: var(--r-xl);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-card);
     }
 
     @media (max-width: 680px) {
@@ -511,7 +456,7 @@
     }
 
     .stat-item .v .u {
-      color: var(--accent);
+      color: var(--ink);
       font-weight: 700;
     }
 
@@ -579,9 +524,9 @@
     }
 
     .sleek-card {
-      background: #FFFFFF;
+      background: var(--bg-card);
       border: 1px solid var(--line);
-      border-radius: var(--r-lg);
+      border-radius: var(--r-xl);
       padding: 30px;
       box-shadow: var(--shadow-card);
       transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -631,7 +576,7 @@
       font-weight: 500;
       color: var(--ink-soft);
       background: var(--bg-alt);
-      border: 1px solid var(--line-subtle);
+      border: 1px solid var(--line);
       padding: 4px 9px;
       border-radius: 6px;
     }
@@ -655,9 +600,9 @@
     }
 
     .local-box {
-      background: #FFFFFF;
+      background: var(--bg-card);
       border: 1px solid var(--line);
-      border-radius: var(--r-lg);
+      border-radius: var(--r-xl);
       padding: clamp(28px, 4vw, 40px);
       box-shadow: var(--shadow-card);
     }
@@ -682,7 +627,7 @@
       font-size: 14px;
       font-weight: 600;
       color: var(--ink);
-      background: #FFFFFF;
+      background: var(--bg-card);
       border: 1px solid var(--line);
       padding: 10px 14px;
       border-radius: var(--r-sm);
@@ -713,9 +658,9 @@
     }
 
     .tech-box {
-      background: #FFFFFF;
+      background: var(--bg-card);
       border: 1px solid var(--line);
-      border-radius: var(--r-lg);
+      border-radius: var(--r-xl);
       padding: 24px;
       box-shadow: var(--shadow-card);
     }
@@ -726,7 +671,7 @@
       color: var(--ink);
       margin-bottom: 14px;
       padding-bottom: 8px;
-      border-bottom: 1px solid var(--line-subtle);
+      border-bottom: 1px solid var(--line);
     }
 
     .tech-list {
@@ -746,7 +691,7 @@
 
     .tech-list span::before {
       content: "•";
-      color: var(--accent);
+      color: var(--ink);
       font-size: 18px;
       line-height: 0;
     }
@@ -771,9 +716,9 @@
     }
 
     .step-card {
-      background: #FFFFFF;
+      background: var(--bg-card);
       border: 1px solid var(--line);
-      border-radius: var(--r-lg);
+      border-radius: var(--r-xl);
       padding: 28px;
       box-shadow: var(--shadow-card);
       transition: all 0.3s ease;
@@ -788,7 +733,7 @@
     .step-num {
       width: 40px;
       height: 40px;
-      border-radius: var(--r-sm);
+      border-radius: var(--r-pill);
       background: var(--ink);
       color: #FFFFFF;
       display: flex;
@@ -867,7 +812,7 @@
 
     details.q[open] summary::after {
       content: "−";
-      color: var(--accent);
+      color: var(--ink);
     }
 
     details.q .ans {
@@ -879,24 +824,12 @@
 
     /* ================= LEAD ESTIMATE / CONSULT BOX ================= */
     .lead-box {
-      background: #FFFFFF;
+      background: var(--bg-card);
       border: 1px solid var(--line);
-      border-radius: 24px;
+      border-radius: var(--r-xl);
       padding: clamp(32px, 5vw, 56px);
       box-shadow: var(--shadow-float);
       position: relative;
-    }
-
-    .lead-box::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle at 50% 10%, rgba(240, 103, 42, 0.04) 0%, transparent 60%);
-      pointer-events: none;
     }
 
     .lead-grid {
@@ -943,7 +876,7 @@
 
     .cform-card {
       background: var(--bg-alt);
-      border: 1px solid var(--line-subtle);
+      border: 1px solid var(--line);
       border-radius: var(--r-lg);
       padding: clamp(24px, 3vw, 36px);
     }
@@ -978,8 +911,8 @@
     .form-group select:focus,
     .form-group textarea:focus {
       outline: none;
-      border-color: var(--accent);
-      box-shadow: 0 0 0 4px rgba(240, 103, 42, 0.12);
+      border-color: var(--ink);
+      box-shadow: 0 0 0 4px rgba(24, 23, 22, 0.08);
     }
 
     /* ================= FOOTER ================= */
@@ -1047,7 +980,7 @@
     }
 
     .ft-links a:hover {
-      color: var(--accent);
+      color: var(--ink);
     }
 
     .ft-bottom {
@@ -1113,7 +1046,7 @@
         </div>
 
         <h1>
-          Mobile App Development <span class="hl-wrap">Company in Bhubaneswar<span class="hl-bar"></span></span>
+          Mobile App Development Company in Bhubaneswar
         </h1>
 
         <p class="pitch">
@@ -1122,10 +1055,7 @@
 
         <div class="hero-cta">
           <a href="#estimate" class="btn btn-primary">Get Free App Architecture &amp; Estimate <span class="arw">→</span></a>
-          <a href="https://wa.me/919938883500?text=Hi%20Nihar,%20I%20want%20to%20discuss%20a%20mobile%20app%20development%20project."
-            target="_blank" rel="noopener" class="btn btn-whatsapp">
-            <span>Chat on WhatsApp</span>
-          </a>
+          <a href="#services" class="btn btn-ghost">Explore Capabilities</a>
         </div>
 
         <div class="hero-stats-ribbon">
@@ -1154,7 +1084,7 @@
       <div class="wrap">
         <div class="shead center">
           <span class="eyebrow-pill"><span class="dot"></span> Complete Lifecycle Engineering</span>
-          <h2>Mobile App Development Services in <span class="hl-wrap">Bhubaneswar<span class="hl-bar"></span></span></h2>
+          <h2>Mobile App Development Services in Bhubaneswar</h2>
           <p class="sub">
             From PRD specification and UI/UX design to native performance, secure API backends, and App Store optimization.
           </p>
@@ -1286,8 +1216,8 @@
                 <span><strong>Detailed PRD &amp; Fixed Milestones:</strong> No scope creep or surprise bills. Every screen, API endpoint, and state is locked prior to sprint kick-off.</span>
               </li>
               <li style="display:flex; gap:12px; font-size:15px; color:var(--ink-soft);">
-                <span style="color:var(--emerald-dark); font-weight:bold;">✓</span>
-                <span><strong>Direct Access to Tech Leadership:</strong> You work directly with Nihar Ranjan Rout (Product Strategist &amp; Creuto Founder) and senior architects.</span>
+                <span style="color:var(--emerald); font-weight:bold;">✓</span>
+                <span><strong>Direct Access to Tech Leadership:</strong> You work directly with Nihar Ranjan Rout (Founder &amp; CEO of Creuto) and our in-house engineering team.</span>
               </li>
               <li style="display:flex; gap:12px; font-size:15px; color:var(--ink-soft);">
                 <span style="color:var(--emerald-dark); font-weight:bold;">✓</span>
@@ -1308,7 +1238,7 @@
       <div class="wrap">
         <div class="shead center">
           <span class="eyebrow-pill"><span class="dot"></span> Enterprise-Grade Stack</span>
-          <h2>Modern Technologies We <span class="hl-wrap">Build With<span class="hl-bar"></span></span></h2>
+          <h2>Modern Technologies We Build With</h2>
           <p class="sub">
             We pick the exact right tool for your specific latency, platform, security, and scalability requirements.
           </p>
@@ -1363,7 +1293,7 @@
       <div class="wrap">
         <div class="shead center">
           <span class="eyebrow-pill"><span class="dot"></span> Transparent Methodology</span>
-          <h2>Our 4-Phase App Development <span class="hl-wrap">Playbook<span class="hl-bar"></span></span></h2>
+          <h2>Our 4-Phase App Development Playbook</h2>
           <p class="sub">
             Proven execution framework designed to get you from concept to live app stores on time and within budget.
           </p>
@@ -1402,7 +1332,7 @@
       <div class="wrap">
         <div class="shead center">
           <span class="eyebrow-pill"><span class="dot"></span> Domain Expertise</span>
-          <h2>Mobile Solutions Built for <span class="hl-wrap">Diverse Sectors<span class="hl-bar"></span></span></h2>
+          <h2>Mobile Solutions Built for Diverse Sectors</h2>
           <p class="sub">
             We deliver tailored mobile experiences that solve complex operational hurdles across core industries.
           </p>
@@ -1451,11 +1381,10 @@
             <span class="eyebrow-pill"><span class="dot"></span> Frequently Asked Questions</span>
             <h2>Answers to Your Mobile App Questions</h2>
             <p style="color:var(--ink-soft); margin-top:14px; font-size:16px;">
-              Have questions about costs, timelines, or technologies? Check our answers below or message us directly on WhatsApp.
+              Have questions about costs, timelines, or technologies? Check our answers below or message us directly via the project form.
             </p>
             <div style="margin-top:24px;">
-              <a href="https://wa.me/919938883500?text=Hi%20Nihar,%20I%20have%20a%20question%20regarding%20mobile%20app%20development."
-                target="_blank" rel="noopener" class="btn btn-whatsapp">Ask on WhatsApp →</a>
+              <a href="#estimate" class="btn btn-ghost">Have a Custom App Query? Contact Us →</a>
             </div>
           </div>
 
@@ -1556,13 +1485,19 @@
 
             <div class="cform-card">
               <form id="appLeadForm">
+                <!-- Anti-spam honeypot field -->
+                <div style="display:none!important;visibility:hidden!important;opacity:0!important;position:absolute!important;left:-9999px!important;">
+                  <label for="app_hp_user">Leave this empty</label>
+                  <input type="text" id="app_hp_user" name="app_hp_user" tabindex="-1" autocomplete="off">
+                </div>
+
                 <div class="form-group">
                   <label for="appName">Your Name *</label>
                   <input type="text" id="appName" name="name" placeholder="e.g. Priyabrata Mohanty" required>
                 </div>
 
                 <div class="form-group">
-                  <label for="appPhone">Phone / WhatsApp Number *</label>
+                  <label for="appPhone">Phone Number *</label>
                   <input type="tel" id="appPhone" name="phone" placeholder="+91 98765 43210" required>
                 </div>
 
@@ -1638,7 +1573,7 @@
           <h4>Direct Connect</h4>
           <div class="ft-links">
             <a href="mailto:mail@niharrout.com">mail@niharrout.com</a>
-            <a href="https://wa.me/919938883500" target="_blank" rel="noopener">WhatsApp: +91 99388 83500</a>
+            <a href="#estimate">Start a Mobile Project</a>
             <a href="https://www.linkedin.com/in/niharrout/" target="_blank" rel="noopener">LinkedIn Profile</a>
             <a href="https://x.com/iniharrout" target="_blank" rel="noopener">X / Twitter</a>
           </div>
@@ -1662,7 +1597,6 @@
     "alternateName": "Creuto Mobile App Studio Bhubaneswar",
     "image": "https://www.niharrout.com/assets/niharrout-og-image.png",
     "url": "https://niharrout.com/mobile-app-development-bhubaneswar.html",
-    "telephone": "+919938883500",
     "email": "mail@niharrout.com",
     "priceRange": "₹₹",
     "address": {
@@ -1882,6 +1816,13 @@
     if (form) {
       form.addEventListener('submit', function (e) {
         e.preventDefault();
+        var hp = form.querySelector('[name="app_hp_user"]');
+        if (hp && hp.value.trim() !== '') {
+          console.warn('Spam filtered.');
+          showToast('Thank you! Your enquiry has been received.');
+          form.reset();
+          return;
+        }
         var name = form.querySelector('[name="name"]').value.trim();
         var phone = form.querySelector('[name="phone"]').value.trim();
         var email = form.querySelector('[name="email"]').value.trim();
@@ -1904,7 +1845,7 @@
                   {
                     "widgets": [
                       { "decoratedText": { "topLabel": "Lead Name", "text": name } },
-                      { "decoratedText": { "topLabel": "Phone / WhatsApp", "text": phone } },
+                      { "decoratedText": { "topLabel": "Phone", "text": phone } },
                       { "decoratedText": { "topLabel": "Work Email", "text": email } },
                       { "decoratedText": { "topLabel": "Platform Preference", "text": platform } },
                       { "decoratedText": { "topLabel": "Budget Range", "text": budget } },

@@ -48,53 +48,52 @@
     href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap">
 
   <style>
-    /* ================= SLEEK & AIRY ZUTRIX DESIGN SYSTEM ================= */
+    /* ================= MELLOW-INSPIRED DESIGN SYSTEM TOKENS ================= */
     :root {
-      --bg: #FFFFFF;
-      --bg-alt: #F8FAFC;         /* slate-50 */
-      --bg-subtle: #F1F5F9;      /* slate-100 */
+      --bg: #F6F4EE;             /* Mellow warm porcelain */
+      --bg-alt: #EFECE3;
+      --bg-card: #FFFFFF;
       --surface: #FFFFFF;
+      --surface-subtle: #F0EDE5;
       
       /* Typography Colors */
-      --ink: #0F172A;            /* slate-900 */
-      --ink-soft: #475569;       /* slate-600 */
-      --ink-faint: #64748B;      /* slate-500 */
-      --ink-muted: #94A3B8;      /* slate-400 */
+      --ink: #181716;            /* Deep obsidian / charcoal */
+      --ink-soft: #5A5853;       /* Warm neutral slate */
+      --ink-faint: #7C7973;      /* Muted secondary tone */
+      --ink-muted: #A3A099;
       
-      /* Refined Ultra-Subtle Borders */
-      --line: rgba(226, 232, 240, 0.8);
-      --line-subtle: rgba(241, 245, 249, 0.9);
-      --line-focus: #CBD5E1;
+      /* Mellow Style Hairline Borders */
+      --line: rgba(24, 23, 22, 0.08);
+      --line-subtle: rgba(24, 23, 22, 0.04);
+      --line-focus: #181716;
       
-      /* Zutrix Brand Ember Accents */
-      --accent: #F0672A;
-      --accent-deep: #D9531E;
-      --accent-tint: #FFF7ED;    /* ember-50 */
-      --accent-tint-2: #FFEDD5;  /* ember-100 */
-      --accent-border: #FED7AA;  /* ember-200 */
+      /* Mellow Accents */
+      --accent-lime: #D6F75A;
+      --accent-lime-dark: #243004;
+      --accent: #181716;
+      --accent-deep: #302E2B;
+      --accent-tint: #FFFFFF;
+      --accent-border: rgba(24, 23, 22, 0.12);
       
       /* Semantic Accents */
-      --emerald: #10B981;
+      --emerald: #0DA868;
       --emerald-dark: #059669;
-      --emerald-tint: #ECFDF5;
-      --emerald-border: #A7F3D0;
+      --emerald-tint: #E7F8F0;
+      --emerald-border: #B3EBD3;
       
       --ocean: #2563EB;
       --ocean-tint: #EFF6FF;
       
-      --violet: #8B5CF6;
-      --violet-tint: #F5F3FF;
+      /* Diffused Natural Shadows */
+      --shadow-sm: 0 1px 2px rgba(24, 23, 22, 0.04);
+      --shadow-card: 0 8px 24px -6px rgba(24, 23, 22, 0.04), 0 2px 6px rgba(24, 23, 22, 0.02);
+      --shadow-hover: 0 16px 36px -8px rgba(24, 23, 22, 0.08), 0 4px 12px rgba(24, 23, 22, 0.03);
+      --shadow-hero: 0 24px 48px -12px rgba(24, 23, 22, 0.08);
       
-      /* Ultra-Soft Diffusion Shadows */
-      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.03);
-      --shadow-card: 0 10px 30px -10px rgba(15, 23, 42, 0.04), 0 2px 8px -2px rgba(15, 23, 42, 0.02);
-      --shadow-hover: 0 20px 40px -12px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(15, 23, 42, 0.03);
-      --shadow-hero: 0 25px 60px -15px rgba(15, 23, 42, 0.06);
-      
-      --maxw: 1160px;
+      --maxw: 1180px;
       --measure: 64ch;
-      --r-lg: 20px;
-      --r-md: 14px;
+      --r-lg: 18px;
+      --r-md: 12px;
       --r-pill: 9999px;
     }
 
@@ -113,7 +112,7 @@
       color: var(--ink-soft);
       font-family: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       font-size: 16.5px;
-      line-height: 1.7;
+      line-height: 1.68;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
       padding-top: 72px;
@@ -122,11 +121,11 @@
     .wrap {
       max-width: var(--maxw);
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 28px;
     }
 
     section {
-      padding: clamp(72px, 9vw, 120px) 0;
+      padding: clamp(72px, 8.5vw, 115px) 0;
       position: relative;
     }
 
@@ -147,23 +146,7 @@
       margin: 0;
     }
 
-    /* Zutrix Signature Highlight Underline */
-    .hl-wrap {
-      position: relative;
-      display: inline-block;
-      white-space: nowrap;
-    }
 
-    .hl-bar {
-      position: absolute;
-      bottom: 3px;
-      left: 0;
-      width: 100%;
-      height: 8px;
-      background: linear-gradient(120deg, rgba(254, 215, 170, 0.7) 0%, rgba(253, 186, 116, 0.5) 100%);
-      border-radius: 4px;
-      z-index: -1;
-    }
 
     /* ================= BUTTONS & PILLS ================= */
     .btn {
@@ -175,8 +158,8 @@
       font-size: 15px;
       font-weight: 600;
       text-decoration: none;
-      border-radius: 12px;
-      padding: 12px 24px;
+      border-radius: var(--r-pill);
+      padding: 13px 28px;
       line-height: 1.2;
       cursor: pointer;
       border: 1px solid transparent;
@@ -188,29 +171,15 @@
       background: var(--ink);
       color: #FFFFFF;
       border-color: var(--ink);
-      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.12);
+      box-shadow: 0 4px 14px rgba(24, 23, 22, 0.12);
     }
 
     .btn-primary:hover {
-      background: #1E293B;
-      border-color: #1E293B;
+      background: #302E2B;
+      border-color: #302E2B;
       color: #FFFFFF;
       transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.18);
-    }
-
-    .btn-whatsapp {
-      background: #10B981;
-      color: #FFFFFF;
-      border-color: #10B981;
-      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.25);
-    }
-
-    .btn-whatsapp:hover {
-      background: #059669;
-      border-color: #059669;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(16, 185, 129, 0.35);
+      box-shadow: 0 8px 20px rgba(24, 23, 22, 0.18);
     }
 
     .eyebrow-pill {
@@ -1049,7 +1018,7 @@
         </div>
 
         <h1>
-          AI Product Development <span class="hl-wrap">Company in Bhubaneswar<span class="hl-bar"></span></span>
+          AI Product Development Company in Bhubaneswar
         </h1>
 
         <p class="pitch">
@@ -1058,10 +1027,7 @@
 
         <div class="hero-cta">
           <a href="#ai-consult" class="btn btn-primary">Book Free AI Feasibility Audit <span class="arw">→</span></a>
-          <a href="https://wa.me/919938883500?text=Hi%20Nihar,%20I%20want%20to%20discuss%20an%20AI%20product%20development%20project."
-            target="_blank" rel="noopener" class="btn btn-whatsapp">
-            <span>Chat on WhatsApp</span>
-          </a>
+          <a href="#solutions" class="btn btn-ghost">Explore Capabilities</a>
         </div>
 
         <div class="hero-stats-ribbon">
@@ -1090,7 +1056,7 @@
       <div class="wrap">
         <div class="shead center">
           <span class="eyebrow-pill"><span class="dot"></span> Production AI Engineering</span>
-          <h2>AI Product Development Services in <span class="hl-wrap">Bhubaneswar<span class="hl-bar"></span></span></h2>
+          <h2>AI Product Development Services in Bhubaneswar</h2>
           <p class="sub">
             From problem framing and data engineering to model evaluation, guardrail orchestration, and scalable cloud deployment.
           </p>
@@ -1245,7 +1211,7 @@
       <div class="wrap">
         <div class="shead center">
           <span class="eyebrow-pill"><span class="dot"></span> AI Engineering Stack</span>
-          <h2>Models, Frameworks &amp; <span class="hl-wrap">Vector Databases<span class="hl-bar"></span></span></h2>
+          <h2>Models, Frameworks &amp; Vector Databases</h2>
           <p class="sub">
             Battle-tested AI tech stack chosen for enterprise latency, throughput, cost-efficiency, and resilience.
           </p>
@@ -1300,7 +1266,7 @@
       <div class="wrap">
         <div class="shead center">
           <span class="eyebrow-pill"><span class="dot"></span> Proven Execution</span>
-          <h2>Our 4-Step AI Product Engineering <span class="hl-wrap">Playbook<span class="hl-bar"></span></span></h2>
+          <h2>Our 4-Step AI Product Engineering Playbook</h2>
           <p class="sub">
             How we take your AI concept from prompt experimentation to high-scale production reliability.
           </p>
@@ -1339,7 +1305,7 @@
       <div class="wrap">
         <div class="shead center">
           <span class="eyebrow-pill"><span class="dot"></span> Real-World Applications</span>
-          <h2>AI Product Solutions Tailored for <span class="hl-wrap">High Impact<span class="hl-bar"></span></span></h2>
+          <h2>AI Product Solutions Tailored for High Impact</h2>
           <p class="sub">
             Practical AI tools that automate manual operations and unlock net-new revenue streams.
           </p>
@@ -1391,8 +1357,7 @@
               Learn how we protect data confidentiality, control API expenses, and bring AI products to life in Bhubaneswar.
             </p>
             <div style="margin-top:24px;">
-              <a href="https://wa.me/919938883500?text=Hi%20Nihar,%20I%20have%20a%20question%20about%20AI%20product%20development."
-                target="_blank" rel="noopener" class="btn btn-whatsapp">Ask Directly on WhatsApp →</a>
+              <a href="#ai-consult" class="btn btn-ghost">Have a Custom AI Query? Contact Us →</a>
             </div>
           </div>
 
@@ -1493,13 +1458,19 @@
 
             <div class="cform-card">
               <form id="aiLeadForm">
+                <!-- Anti-spam honeypot field -->
+                <div style="display:none!important;visibility:hidden!important;opacity:0!important;position:absolute!important;left:-9999px!important;">
+                  <label for="ai_hp_user">Leave this empty</label>
+                  <input type="text" id="ai_hp_user" name="ai_hp_user" tabindex="-1" autocomplete="off">
+                </div>
+
                 <div class="form-group">
                   <label for="aiName">Your Name *</label>
                   <input type="text" id="aiName" name="name" placeholder="e.g. Soumya Ranjan" required>
                 </div>
 
                 <div class="form-group">
-                  <label for="aiPhone">Phone / WhatsApp Number *</label>
+                  <label for="aiPhone">Phone Number *</label>
                   <input type="tel" id="aiPhone" name="phone" placeholder="+91 98765 43210" required>
                 </div>
 
@@ -1576,7 +1547,7 @@
           <h4>Direct Connect</h4>
           <div class="ft-links">
             <a href="mailto:mail@niharrout.com">mail@niharrout.com</a>
-            <a href="https://wa.me/919938883500" target="_blank" rel="noopener">WhatsApp: +91 99388 83500</a>
+            <a href="#ai-consult">Start an AI Consultation</a>
             <a href="https://www.linkedin.com/in/niharrout/" target="_blank" rel="noopener">LinkedIn Profile</a>
             <a href="https://x.com/iniharrout" target="_blank" rel="noopener">X / Twitter</a>
           </div>
@@ -1600,7 +1571,6 @@
     "alternateName": "Creuto AI Development Lab Bhubaneswar",
     "image": "https://www.niharrout.com/assets/niharrout-og-image.png",
     "url": "https://niharrout.com/ai-product-development-bhubaneswar.html",
-    "telephone": "+919938883500",
     "email": "mail@niharrout.com",
     "priceRange": "₹₹",
     "address": {
@@ -1820,6 +1790,13 @@
     if (form) {
       form.addEventListener('submit', function (e) {
         e.preventDefault();
+        var hp = form.querySelector('[name="ai_hp_user"]');
+        if (hp && hp.value.trim() !== '') {
+          console.warn('Spam filtered.');
+          showToast('Thank you! Your enquiry has been received.');
+          form.reset();
+          return;
+        }
         var name = form.querySelector('[name="name"]').value.trim();
         var phone = form.querySelector('[name="phone"]').value.trim();
         var email = form.querySelector('[name="email"]').value.trim();
@@ -1842,7 +1819,7 @@
                   {
                     "widgets": [
                       { "decoratedText": { "topLabel": "Lead Name", "text": name } },
-                      { "decoratedText": { "topLabel": "Phone / WhatsApp", "text": phone } },
+                      { "decoratedText": { "topLabel": "Phone", "text": phone } },
                       { "decoratedText": { "topLabel": "Work Email", "text": email } },
                       { "decoratedText": { "topLabel": "AI Solution Type", "text": type } },
                       { "decoratedText": { "topLabel": "Budget Range", "text": budget } },
