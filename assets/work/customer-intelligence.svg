@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="ai-bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#181716"/>
+      <stop offset="100%" stop-color="#121110"/>
+    </linearGradient>
+    <linearGradient id="ai-card" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#242220"/>
+      <stop offset="100%" stop-color="#1A1918"/>
+    </linearGradient>
+    <linearGradient id="neon-accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#EE5A2A"/>
+      <stop offset="100%" stop-color="#D6F75A"/>
+    </linearGradient>
+    <filter id="ai-shadow" x="-5%" y="-5%" width="110%" height="115%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Background Dark Canvas -->
+  <rect width="800" height="500" fill="url(#ai-bg-grad)"/>
+
+  <!-- Tech Grid Lines -->
+  <pattern id="ai-grid" width="36" height="36" patternUnits="userSpaceOnUse">
+    <path d="M 36 0 L 0 0 0 36" fill="none" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.04"/>
+  </pattern>
+  <rect width="800" height="500" fill="url(#ai-grid)"/>
+
+  <!-- Radial Glow Behind Architecture -->
+  <circle cx="400" cy="250" r="220" fill="#EE5A2A" fill-opacity="0.08"/>
+  <circle cx="580" cy="220" r="140" fill="#D6F75A" fill-opacity="0.05"/>
+
+  <!-- Main AI Window -->
+  <g transform="translate(60, 45)" filter="url(#ai-shadow)">
+    <!-- App Container -->
+    <rect width="680" height="410" rx="16" fill="url(#ai-card)" stroke="#FFFFFF" stroke-opacity="0.1" stroke-width="1"/>
+
+    <!-- App Header -->
+    <rect width="680" height="46" rx="16" fill="#181716"/>
+    <path d="M 0 46 L 680 46" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="1"/>
+    
+    <circle cx="28" cy="23" r="5" fill="#EE5A2A"/>
+    <circle cx="44" cy="23" r="5" fill="#D6F75A"/>
+    <circle cx="60" cy="23" r="5" fill="#0DA868"/>
+
+    <!-- Query Bar -->
+    <rect x="90" y="11" width="380" height="24" rx="12" fill="#121110" stroke="#FFFFFF" stroke-opacity="0.1"/>
+    <circle cx="106" cy="23" r="4" fill="#0DA868"/>
+    <text x="120" y="27" font-family="'JetBrains Mono', monospace" font-size="10" fill="#D6F75A">query: hybrid_rag_embed(intent="b2b_contract_pricing")</text>
+
+    <!-- Header Badge -->
+    <rect x="520" y="12" width="136" height="22" rx="6" fill="#1E2B1E" stroke="#0DA868" stroke-opacity="0.5" stroke-width="1"/>
+    <text x="532" y="26" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="700" fill="#0DA868">✓ 99.4% FACTUAL ACCURACY</text>
+
+    <!-- Architecture Visual Flow -->
+    <!-- Node 1: Vector Query Intake -->
+    <g transform="translate(30, 80)">
+      <rect width="180" height="130" rx="12" fill="#1C1B1A" stroke="#FFFFFF" stroke-opacity="0.08"/>
+      <rect x="14" y="14" width="8" height="8" rx="2" fill="#EE5A2A"/>
+      <text x="30" y="22" font-family="-apple-system, sans-serif" font-size="11" font-weight="700" fill="#FAF8F5">Semantic Caching</text>
+      
+      <text x="14" y="50" font-family="'JetBrains Mono', monospace" font-size="9" fill="#A8A49D">Cache Hit Ratio</text>
+      <text x="14" y="72" font-family="'JetBrains Mono', monospace" font-size="20" font-weight="700" fill="#FAF8F5">82.4%</text>
+      
+      <rect x="14" y="90" width="150" height="24" rx="6" fill="#EE5A2A" fill-opacity="0.15"/>
+      <text x="24" y="106" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="600" fill="#EE5A2A">↓ 85% Token Cost</text>
+    </g>
+
+    <!-- Connector Line 1 -->
+    <path d="M 210 145 L 250 145" stroke="#EE5A2A" stroke-width="2" stroke-dasharray="4 3"/>
+    <circle cx="250" cy="145" r="3" fill="#EE5A2A"/>
+
+    <!-- Node 2: Hybrid RAG & Vector Search -->
+    <g transform="translate(250, 80)">
+      <rect width="200" height="130" rx="12" fill="#1C1B1A" stroke="#0DA868" stroke-opacity="0.3"/>
+      <rect x="14" y="14" width="8" height="8" rx="2" fill="#0DA868"/>
+      <text x="30" y="22" font-family="-apple-system, sans-serif" font-size="11" font-weight="700" fill="#FAF8F5">Vector RAG Engine</text>
+      
+      <text x="14" y="50" font-family="'JetBrains Mono', monospace" font-size="9" fill="#A8A49D">Index Size / Chunks</text>
+      <text x="14" y="72" font-family="'JetBrains Mono', monospace" font-size="20" font-weight="700" fill="#0DA868">4.8M Embeddings</text>
+      
+      <rect x="14" y="90" width="170" height="24" rx="6" fill="#0DA868" fill-opacity="0.15"/>
+      <text x="24" y="106" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="600" fill="#0DA868">Cosine Similarity: 0.984</text>
+    </g>
+
+    <!-- Connector Line 2 -->
+    <path d="M 450 145 L 490 145" stroke="#D6F75A" stroke-width="2" stroke-dasharray="4 3"/>
+    <circle cx="490" cy="145" r="3" fill="#D6F75A"/>
+
+    <!-- Node 3: Low-Latency Inference -->
+    <g transform="translate(490, 80)">
+      <rect width="160" height="130" rx="12" fill="#1C1B1A" stroke="#FFFFFF" stroke-opacity="0.08"/>
+      <rect x="14" y="14" width="8" height="8" rx="2" fill="#D6F75A"/>
+      <text x="30" y="22" font-family="-apple-system, sans-serif" font-size="11" font-weight="700" fill="#FAF8F5">Inference Layer</text>
+      
+      <text x="14" y="50" font-family="'JetBrains Mono', monospace" font-size="9" fill="#A8A49D">End-to-End Latency</text>
+      <text x="14" y="72" font-family="'JetBrains Mono', monospace" font-size="20" font-weight="700" fill="#D6F75A">&lt; 380ms</text>
+      
+      <rect x="14" y="90" width="130" height="24" rx="6" fill="#D6F75A" fill-opacity="0.15"/>
+      <text x="24" y="106" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="600" fill="#D6F75A">Sub-second Stream</text>
+    </g>
+
+    <!-- Bottom Terminal / Live Trace Output -->
+    <g transform="translate(30, 230)">
+      <rect width="620" height="155" rx="10" fill="#121110" stroke="#FFFFFF" stroke-opacity="0.06"/>
+      <rect width="620" height="26" rx="10" fill="#181716"/>
+      <text x="16" y="17" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="600" fill="#7E7A73">AI PIPELINE TRACE &amp; TELEMETRY LOG</text>
+      <circle cx="598" cy="13" r="3" fill="#0DA868"/>
+      <text x="562" y="17" font-family="'JetBrains Mono', monospace" font-size="9" fill="#0DA868">STREAMING</text>
+
+      <text x="16" y="48" font-family="'JetBrains Mono', monospace" font-size="10" fill="#A8A49D">[00.012s] incoming query parsed → embeddings generated with bge-large-en-v1.5</text>
+      <text x="16" y="70" font-family="'JetBrains Mono', monospace" font-size="10" fill="#D6F75A">[00.045s] semantic cache hit on similarity cluster #891 → retrieved high-confidence ground truth</text>
+      <text x="16" y="92" font-family="'JetBrains Mono', monospace" font-size="10" fill="#A8A49D">[00.180s] reranked top 5 context passages via cross-encoder (hallucination risk: 0.002)</text>
+      <text x="16" y="114" font-family="'JetBrains Mono', monospace" font-size="10" fill="#0DA868">[00.340s] structured response synthesized · TTFT: 140ms · total token cost: $0.0014</text>
+      <text x="16" y="136" font-family="'JetBrains Mono', monospace" font-size="10" fill="#FAF8F5">✓ Result delivered in 340ms · Verified accuracy: 99.4%</text>
+    </g>
+  </g>
+</svg>

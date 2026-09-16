@@ -1155,83 +1155,343 @@
       justify-content: center;
     }
 
-    /* ================= SECTION 6: CASE STUDIES ================= */
-    .case-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+    /* ================= SECTION 6: WORK & CASE STUDIES ================= */
+    .work-section {
+      padding: clamp(60px, 8vw, 100px) 0;
+      position: relative;
     }
 
-    @media (max-width: 960px) {
-      .case-grid {
+    .work-filters {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin: 28px auto 44px;
+      max-width: 800px;
+    }
+
+    .work-filter-btn {
+      appearance: none;
+      border: 1px solid var(--line-strong);
+      background: var(--surface);
+      color: var(--ink-soft);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      padding: 8px 18px;
+      border-radius: var(--r-pill);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      user-select: none;
+    }
+
+    .work-filter-btn .count {
+      font-size: 10.5px;
+      opacity: 0.65;
+      font-weight: 500;
+    }
+
+    .work-filter-btn:hover {
+      border-color: var(--ink);
+      color: var(--ink);
+      background: var(--surface);
+      transform: translateY(-1px);
+    }
+
+    .work-filter-btn.active {
+      background: var(--ink);
+      color: #FFFFFF;
+      border-color: var(--ink);
+      box-shadow: 0 4px 14px rgba(20, 19, 18, 0.16);
+    }
+
+    .work-filter-btn.active .count {
+      opacity: 0.85;
+      color: var(--lime);
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+      transition: opacity 0.25s ease;
+    }
+
+    @media (max-width: 860px) {
+      .work-grid {
         grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .work-filters {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 8px;
+        -webkit-overflow-scrolling: touch;
+        flex-wrap: nowrap;
+      }
+      .work-filter-btn {
+        flex-shrink: 0;
       }
     }
 
-    .case-card {
-      background: #FFFFFF;
+    .work-card {
+      background: var(--surface);
       border: 1px solid var(--line);
       border-radius: var(--r-xl);
-      padding: 32px;
+      overflow: hidden;
       box-shadow: var(--shadow-card);
       display: flex;
       flex-direction: column;
-      transition: all 0.3s ease;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.2s ease, opacity 0.3s ease;
+      position: relative;
     }
 
-    .case-card:hover {
+    .work-card:hover {
+      transform: translateY(-6px);
       border-color: var(--line-strong);
-      transform: translateY(-4px);
       box-shadow: var(--shadow-hover);
     }
 
-    .case-card .tag {
+    .work-media {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      background: var(--bg-alt);
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .work-thumb {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .work-card:hover .work-thumb {
+      transform: scale(1.03);
+    }
+
+    .work-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .work-card.has-video.video-playing .work-video {
+      opacity: 1;
+    }
+
+    .work-media-badge {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: rgba(20, 19, 18, 0.75);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: #FFFFFF;
       font-family: "JetBrains Mono", monospace;
-      font-size: 11.5px;
+      font-size: 10px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: var(--r-pill);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .work-media-badge .pulse-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--lime);
+    }
+
+    .work-body {
+      padding: clamp(22px, 3vw, 28px);
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .work-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .work-tag {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
       font-weight: 700;
       color: var(--ink);
       background: var(--bg);
       border: 1px solid var(--line-strong);
-      padding: 4px 10px;
+      padding: 3px 9px;
       border-radius: var(--r-pill);
-      align-self: flex-start;
-      margin-bottom: 16px;
     }
 
-    .case-card h3 {
-      font-size: 20px;
-      font-weight: 700;
+    .work-title-wrap {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 4px;
+    }
+
+    .work-title {
+      font-size: clamp(19px, 2vw, 22px);
+      font-weight: 800;
       color: var(--ink);
-      margin-bottom: 14px;
-      line-height: 1.3;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      margin: 0;
     }
 
-    .case-block {
-      margin-top: 14px;
-      font-size: 14.5px;
-      line-height: 1.6;
-    }
-
-    .case-block strong {
-      color: var(--ink);
-      display: block;
-      margin-bottom: 2px;
-    }
-
-    .case-block p {
-      color: var(--ink-soft);
-    }
-
-    .case-outcome {
-      margin-top: auto;
-      padding-top: 20px;
-      border-top: 1px solid var(--line);
-      font-size: 13.5px;
-      color: var(--emerald);
-      font-weight: 700;
+    .work-arrow {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--bg);
+      border: 1px solid var(--line);
       display: flex;
       align-items: center;
-      gap: 6px;
+      justify-content: center;
+      color: var(--ink);
+      font-size: 13px;
+      transition: all 0.25s ease;
+      margin-top: 2px;
+    }
+
+    .work-card:hover .work-arrow {
+      background: var(--ink);
+      color: #FFFFFF;
+      transform: translate(2px, -2px);
+    }
+
+    .work-client {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11.5px;
+      color: var(--ink-faint);
+      margin-bottom: 12px;
+    }
+
+    .work-desc {
+      font-size: 14.5px;
+      line-height: 1.55;
+      color: var(--ink-soft);
+      margin: 0 0 16px;
+    }
+
+    .work-metric {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--emerald);
+      background: var(--emerald-tint);
+      border: 1px solid var(--emerald-border);
+      padding: 8px 12px;
+      border-radius: var(--r-md);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: auto;
+      margin-bottom: 14px;
+    }
+
+    .work-metric .tick {
+      font-weight: 900;
+      font-size: 14px;
+    }
+
+    .work-expand-btn {
+      appearance: none;
+      background: transparent;
+      border: none;
+      border-top: 1px solid var(--line);
+      padding: 12px 0 0;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink);
+      cursor: pointer;
+      transition: color 0.2s ease;
+    }
+
+    .work-expand-btn:hover {
+      color: var(--accent);
+    }
+
+    .work-expand-btn .chevron {
+      font-size: 12px;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: inline-block;
+    }
+
+    .work-card.is-expanded .work-expand-btn .chevron {
+      transform: rotate(180deg);
+    }
+
+    .work-details {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+    }
+
+    .work-card.is-expanded .work-details {
+      max-height: 480px;
+      opacity: 1;
+    }
+
+    .work-details-inner {
+      padding-top: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .work-detail-block {
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: var(--r-md);
+      padding: 12px 14px;
+      font-size: 13.5px;
+      line-height: 1.55;
+    }
+
+    .work-detail-block strong {
+      display: block;
+      font-size: 11px;
+      font-family: "JetBrains Mono", monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+
+    .work-detail-block p {
+      margin: 0;
+      color: var(--ink-soft);
     }
 
     /* ================= SECTION 7: CLUTCH REVIEWS ================= */
@@ -1646,6 +1906,7 @@
         <a href="#about" class="lnk">About</a>
         <a href="#why" class="lnk">Why Me</a>
         <a href="#capabilities" class="lnk">Capabilities</a>
+        <a href="#work" class="lnk">Work</a>
         <a href="#suite" class="lnk">Founder Suite</a>
         <a href="#reviews" class="lnk">Reviews</a>
         <a href="#faq" class="lnk">FAQ</a>
@@ -1668,6 +1929,7 @@
         <a href="#about" class="drawer-lnk">About</a>
         <a href="#why" class="drawer-lnk">Why Me</a>
         <a href="#capabilities" class="drawer-lnk">Capabilities</a>
+        <a href="#work" class="drawer-lnk">Work</a>
         <a href="#suite" class="drawer-lnk">Founder Suite</a>
         <a href="#reviews" class="drawer-lnk">Reviews</a>
         <a href="#faq" class="drawer-lnk">FAQ</a>
@@ -1985,75 +2247,24 @@
       </div>
     </section>
 
-    <!-- ================= SECTION 6: CASE STUDIES ================= -->
-    <section id="case-studies">
+    <!-- ================= SECTION 6: WORK & CASE STUDIES ================= -->
+    <section class="work-section" id="work">
+      <!-- Alias anchor for legacy case-studies links -->
+      <span id="case-studies" style="position:relative; top:-90px; display:block; visibility:hidden;"></span>
       <div class="wrap">
         <div class="shead center rv">
-          <span class="badge-pill"><span class="dot"></span> Case Studies &amp; Work</span>
-          <h2>Proven outcomes. Software built with product discipline.</h2>
+          <span class="badge-pill"><span class="dot"></span> Selected Work</span>
+          <h2>Selected Work. Software built with product discipline.</h2>
           <p class="sub">
-            How strategic product judgment turned complex business challenges into high-performing software products.
+            Strategic product judgment, PRD clarity, and growth-standard engineering across AI, B2B SaaS, and mobile platforms.
           </p>
         </div>
 
-        <div class="case-grid">
-          <div class="case-card rv">
-            <span class="tag">B2B SaaS Platform</span>
-            <h3>Enterprise Operational Workflow Suite</h3>
-            
-            <div class="case-block">
-              <strong>The Challenge:</strong>
-              <p>Client had fragmented operations across 12+ manual spreadsheets, causing 30+ hours of weekly administrative bottlenecks.</p>
-            </div>
-            
-            <div class="case-block">
-              <strong>The Product Decision:</strong>
-              <p>Rather than building 14 separate tools, we unified core operations into a single modular workflow dashboard with automated status triggers.</p>
-            </div>
+        <!-- Filter Buttons (Rendered Client-Side from work-data.js) -->
+        <div class="work-filters rv" id="workFilters" role="tablist" aria-label="Filter work by category"></div>
 
-            <div class="case-outcome">
-              <span>✓ 70% operational latency reduction · Shipped in 8 weeks</span>
-            </div>
-          </div>
-
-          <div class="case-card rv">
-            <span class="tag">AI Product Engineering</span>
-            <h3>Customer Intelligence &amp; Search Engine</h3>
-            
-            <div class="case-block">
-              <strong>The Challenge:</strong>
-              <p>Founder wanted a custom LLM fine-tune that would have cost $40k+ to train and maintain with high latency.</p>
-            </div>
-            
-            <div class="case-block">
-              <strong>The Product Decision:</strong>
-              <p>Architected a hybrid Vector RAG pipeline with semantic caching, delivering 99.4% factual accuracy at 85% lower token cost.</p>
-            </div>
-
-            <div class="case-outcome">
-              <span>✓ Sub-second latency · MVP delivered in 4 weeks</span>
-            </div>
-          </div>
-
-          <div class="case-card rv">
-            <span class="tag">Cross-Platform Mobility</span>
-            <h3>Multi-Platform Consumer &amp; Fleet App</h3>
-            
-            <div class="case-block">
-              <strong>The Challenge:</strong>
-              <p>Startup needed native iOS and Android apps with real-time GPS tracking under a strict launch budget.</p>
-            </div>
-            
-            <div class="case-block">
-              <strong>The Product Decision:</strong>
-              <p>Engineered a unified Flutter codebase with Clean Architecture, cutting development and QA costs by 45%.</p>
-            </div>
-
-            <div class="case-outcome">
-              <span>✓ 4.9★ App Store rating · 25k+ active quarterly users</span>
-            </div>
-          </div>
-        </div>
+        <!-- Project Grid (2 columns desktop, 1 column mobile) -->
+        <div class="work-grid rv" id="workGrid"></div>
       </div>
     </section>
 
@@ -2391,6 +2602,7 @@
             <a href="#about">About</a>
             <a href="#why">Why Me</a>
             <a href="#capabilities">Capabilities</a>
+            <a href="#work">Work</a>
             <a href="#suite">Founder Suite</a>
             <a href="#faq">FAQ</a>
             <a href="ai-product-development-bhubaneswar.html">AI Development Bhubaneswar</a>
@@ -2440,6 +2652,9 @@
     ]
   }
   </script>
+
+  <!-- Portfolio Data -->
+  <script src="assets/work-data.js"></script>
 
   <!-- Interactive Logic -->
   <script>
@@ -2674,6 +2889,172 @@
         cf.reset();
       });
     }
+
+    /* ================= PORTFOLIO / WORK SECTION LOGIC ================= */
+    (function () {
+      var grid = document.getElementById('workGrid');
+      var filtersContainer = document.getElementById('workFilters');
+      var projects = window.portfolioProjects || [];
+
+      if (!grid || !filtersContainer || !projects.length) return;
+
+      var currentFilter = 'All';
+      var filterCategories = ['All', 'AI/SaaS', 'B2B', 'Mobile', 'Product Strategy', 'Web App'];
+
+      function matchesCategory(project, cat) {
+        if (cat === 'All') return true;
+        var lowerCat = cat.toLowerCase();
+        return project.tags.some(function (t) {
+          var lt = t.toLowerCase();
+          if (lowerCat === 'ai/saas') return lt.indexOf('ai') !== -1 || lt.indexOf('saas') !== -1;
+          if (lowerCat === 'b2b') return lt.indexOf('b2b') !== -1;
+          if (lowerCat === 'mobile') return lt.indexOf('mobile') !== -1 || lt.indexOf('mobility') !== -1;
+          if (lowerCat === 'product strategy') return lt.indexOf('strategy') !== -1 || lt.indexOf('prd') !== -1;
+          if (lowerCat === 'web app') return lt.indexOf('web') !== -1 || lt.indexOf('platform') !== -1;
+          return lt === lowerCat;
+        });
+      }
+
+      function getCategoryCount(cat) {
+        if (cat === 'All') return projects.length;
+        return projects.filter(function (p) { return matchesCategory(p, cat); }).length;
+      }
+
+      function renderFilters() {
+        filtersContainer.innerHTML = '';
+        filterCategories.forEach(function (cat) {
+          var count = getCategoryCount(cat);
+          if (count === 0 && cat !== 'All') return;
+
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'work-filter-btn' + (cat === currentFilter ? ' active' : '');
+          btn.setAttribute('data-filter', cat);
+          btn.setAttribute('role', 'tab');
+          btn.setAttribute('aria-selected', cat === currentFilter ? 'true' : 'false');
+          btn.innerHTML = cat + ' <span class="count">(' + count + ')</span>';
+
+          btn.addEventListener('click', function () {
+            if (currentFilter === cat) return;
+            currentFilter = cat;
+            renderFilters();
+            renderProjects();
+          });
+
+          filtersContainer.appendChild(btn);
+        });
+      }
+
+      function renderProjects() {
+        grid.style.opacity = '0';
+        setTimeout(function () {
+          grid.innerHTML = '';
+          var filtered = projects.filter(function (p) {
+            return matchesCategory(p, currentFilter);
+          });
+
+          filtered.forEach(function (p, idx) {
+            var card = document.createElement('div');
+            card.className = 'work-card rv in' + (p.video ? ' has-video' : '');
+            card.setAttribute('data-id', idx);
+
+            var tagsHtml = p.tags.map(function (t) {
+              return '<span class="work-tag">' + t + '</span>';
+            }).join('');
+
+            var metricHtml = p.result
+              ? '<div class="work-metric"><span class="tick">✓</span><span>' + p.result + '</span></div>'
+              : '';
+
+            var clientHtml = p.client
+              ? '<div class="work-client">' + p.client + '</div>'
+              : '';
+
+            var videoHtml = p.video
+              ? '<video class="work-video" muted loop playsinline preload="none" data-src="' + p.video + '"></video>'
+                + '<div class="work-media-badge"><span class="pulse-dot"></span> Hover Video</div>'
+              : '';
+
+            card.innerHTML =
+              '<div class="work-media" tabindex="0" role="button" aria-label="Toggle case details for ' + p.title + '">' +
+                '<img src="' + p.thumbnail + '" alt="' + p.title + '" class="work-thumb" loading="lazy">' +
+                videoHtml +
+              '</div>' +
+              '<div class="work-body">' +
+                '<div class="work-tags">' + tagsHtml + '</div>' +
+                '<div class="work-title-wrap">' +
+                  '<h3 class="work-title">' + p.title + '</h3>' +
+                  '<div class="work-arrow" aria-hidden="true">↗</div>' +
+                '</div>' +
+                clientHtml +
+                '<p class="work-desc">' + p.description + '</p>' +
+                metricHtml +
+                '<button type="button" class="work-expand-btn" aria-expanded="false">' +
+                  '<span>Case Breakdown</span>' +
+                  '<span class="chevron">▾</span>' +
+                '</button>' +
+                '<div class="work-details">' +
+                  '<div class="work-details-inner">' +
+                    '<div class="work-detail-block">' +
+                      '<strong>The Challenge</strong>' +
+                      '<p>' + p.challenge + '</p>' +
+                    '</div>' +
+                    '<div class="work-detail-block">' +
+                      '<strong>The Product Decision</strong>' +
+                      '<p>' + p.decision + '</p>' +
+                    '</div>' +
+                  '</div>' +
+                '</div>' +
+              '</div>';
+
+            var expandBtn = card.querySelector('.work-expand-btn');
+            var mediaArea = card.querySelector('.work-media');
+
+            function toggleExpand(e) {
+              e.stopPropagation();
+              var isExpanded = card.classList.toggle('is-expanded');
+              expandBtn.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+            }
+
+            expandBtn.addEventListener('click', toggleExpand);
+            mediaArea.addEventListener('click', toggleExpand);
+            mediaArea.addEventListener('keydown', function (e) {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleExpand(e);
+              }
+            });
+
+            if (p.video) {
+              var video = card.querySelector('.work-video');
+              card.addEventListener('mouseenter', function () {
+                if (!video.src && video.getAttribute('data-src')) {
+                  video.src = video.getAttribute('data-src');
+                }
+                card.classList.add('video-playing');
+                var playPromise = video.play();
+                if (playPromise !== undefined) {
+                  playPromise.catch(function () {});
+                }
+              });
+
+              card.addEventListener('mouseleave', function () {
+                card.classList.remove('video-playing');
+                video.pause();
+                video.currentTime = 0;
+              });
+            }
+
+            grid.appendChild(card);
+          });
+
+          grid.style.opacity = '1';
+        }, 120);
+      }
+
+      renderFilters();
+      renderProjects();
+    })();
 
     /* Scroll Reveal */
     var rv = document.querySelectorAll('.rv');

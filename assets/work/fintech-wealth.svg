@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="fin-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F4F1EA"/>
+      <stop offset="100%" stop-color="#E7E3D8"/>
+    </linearGradient>
+    <filter id="fin-shadow" x="-5%" y="-5%" width="110%" height="115%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#141312" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#fin-bg)"/>
+
+  <pattern id="fin-grid" width="32" height="32" patternUnits="userSpaceOnUse">
+    <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#141312" stroke-width="1" stroke-opacity="0.035"/>
+  </pattern>
+  <rect width="800" height="500" fill="url(#fin-grid)"/>
+
+  <g transform="translate(60, 45)" filter="url(#fin-shadow)">
+    <rect width="680" height="410" rx="16" fill="#FFFFFF" stroke="#141312" stroke-opacity="0.08" stroke-width="1.5"/>
+
+    <!-- Header -->
+    <rect width="680" height="46" rx="16" fill="#FFFFFF"/>
+    <path d="M 0 46 L 680 46" stroke="#141312" stroke-opacity="0.08" stroke-width="1"/>
+    <circle cx="28" cy="23" r="5" fill="#EE5A2A"/>
+    <circle cx="44" cy="23" r="5" fill="#D6F75A" stroke="#141312" stroke-opacity="0.2"/>
+    <circle cx="60" cy="23" r="5" fill="#0DA868"/>
+    
+    <text x="85" y="27" font-family="-apple-system, sans-serif" font-size="11" font-weight="700" fill="#141312">WealthTech Architecture &amp; Strategy PRD</text>
+
+    <rect x="520" y="12" width="134" height="22" rx="6" fill="#E7F8F0" stroke="#0DA868" stroke-opacity="0.4"/>
+    <text x="532" y="26" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="700" fill="#0DA868">✓ 0-TO-1 PRD SCOPE</text>
+
+    <!-- Strategy Blocks -->
+    <!-- Card 1: Asset Curve Chart -->
+    <g transform="translate(30, 70)">
+      <rect width="380" height="180" rx="12" fill="#FAF8F5" stroke="#141312" stroke-opacity="0.06"/>
+      <text x="20" y="30" font-family="-apple-system, sans-serif" font-size="11" font-weight="700" fill="#141312">Portfolio Yield &amp; Allocation Modeling</text>
+      <text x="20" y="48" font-family="'JetBrains Mono', monospace" font-size="22" font-weight="800" fill="#141312">$42.8M <tspan font-size="11" font-weight="600" fill="#0DA868">+18.4% ARR</tspan></text>
+
+      <!-- SVG Chart Line -->
+      <path d="M 20 140 C 80 135 140 120 200 80 S 300 60 360 40" fill="none" stroke="#EE5A2A" stroke-width="3"/>
+      <path d="M 20 140 C 80 135 140 120 200 80 S 300 60 360 40 L 360 160 L 20 160 Z" fill="#EE5A2A" fill-opacity="0.08"/>
+      
+      <circle cx="200" cy="80" r="5" fill="#EE5A2A"/>
+      <circle cx="360" cy="40" r="5" fill="#0DA868"/>
+    </g>
+
+    <!-- Card 2: Strategy PRD Roadmap -->
+    <g transform="translate(430, 70)">
+      <rect width="220" height="180" rx="12" fill="#FAF8F5" stroke="#141312" stroke-opacity="0.06"/>
+      <text x="16" y="28" font-family="-apple-system, sans-serif" font-size="11" font-weight="700" fill="#141312">PRD Roadmap Milestones</text>
+      
+      <rect x="16" y="44" width="188" height="34" rx="8" fill="#FFFFFF" stroke="#141312" stroke-opacity="0.06"/>
+      <text x="26" y="58" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" fill="#EE5A2A">M1: COMPLIANCE CORE</text>
+      <text x="26" y="70" font-family="-apple-system, sans-serif" font-size="9.5" fill="#4E4B46">KYC/AML + Multi-tenant ledger</text>
+
+      <rect x="16" y="86" width="188" height="34" rx="8" fill="#FFFFFF" stroke="#141312" stroke-opacity="0.06"/>
+      <text x="26" y="100" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" fill="#0DA868">M2: ASSET REBALANCING</text>
+      <text x="26" y="112" font-family="-apple-system, sans-serif" font-size="9.5" fill="#4E4B46">Automated tax-loss harvesting</text>
+
+      <rect x="16" y="128" width="188" height="34" rx="8" fill="#FFFFFF" stroke="#141312" stroke-opacity="0.06"/>
+      <text x="26" y="142" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" fill="#141312">M3: CLIENT APP</text>
+      <text x="26" y="154" font-family="-apple-system, sans-serif" font-size="9.5" fill="#4E4B46">iOS &amp; Web investor portal</text>
+    </g>
+
+    <!-- Bottom Row: Multi-currency Assets Table -->
+    <g transform="translate(30, 270)">
+      <rect width="620" height="115" rx="10" fill="#FAF8F5" stroke="#141312" stroke-opacity="0.06"/>
+      <rect width="620" height="28" rx="10" fill="#F0EDE5"/>
+      <text x="16" y="18" font-family="-apple-system, sans-serif" font-size="9.5" font-weight="700" fill="#4E4B46">ASSET CLASS</text>
+      <text x="180" y="18" font-family="-apple-system, sans-serif" font-size="9.5" font-weight="700" fill="#4E4B46">TARGET WEIGHT</text>
+      <text x="320" y="18" font-family="-apple-system, sans-serif" font-size="9.5" font-weight="700" fill="#4E4B46">REBALANCING RULE</text>
+      <text x="500" y="18" font-family="-apple-system, sans-serif" font-size="9.5" font-weight="700" fill="#4E4B46">COMPLIANCE</text>
+
+      <text x="16" y="52" font-family="-apple-system, sans-serif" font-size="10.5" font-weight="600" fill="#141312">Global High-Yield Fixed Income</text>
+      <text x="180" y="52" font-family="'JetBrains Mono', monospace" font-size="10" fill="#141312">35.0%</text>
+      <text x="320" y="52" font-family="'JetBrains Mono', monospace" font-size="10" fill="#7E7A73">Daily auto-drift &lt; 1.5%</text>
+      <text x="500" y="52" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#0DA868">PASSED</text>
+
+      <text x="16" y="85" font-family="-apple-system, sans-serif" font-size="10.5" font-weight="600" fill="#141312">Systematic Tech Growth Equity</text>
+      <text x="180" y="85" font-family="'JetBrains Mono', monospace" font-size="10" fill="#141312">45.0%</text>
+      <text x="320" y="85" font-family="'JetBrains Mono', monospace" font-size="10" fill="#7E7A73">Volatility trigger + trailing stop</text>
+      <text x="500" y="85" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#0DA868">PASSED</text>
+    </g>
+  </g>
+</svg>
