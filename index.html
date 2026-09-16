@@ -2899,18 +2899,19 @@
       if (!grid || !filtersContainer || !projects.length) return;
 
       var currentFilter = 'All';
-      var filterCategories = ['All', 'AI/SaaS', 'B2B', 'Mobile', 'Product Strategy', 'Web App'];
+      var filterCategories = ['All', 'B2B', 'Consumer', 'Marketplace', 'Mobile', 'Enterprise', 'SaaS'];
 
       function matchesCategory(project, cat) {
         if (cat === 'All') return true;
         var lowerCat = cat.toLowerCase();
         return project.tags.some(function (t) {
           var lt = t.toLowerCase();
-          if (lowerCat === 'ai/saas') return lt.indexOf('ai') !== -1 || lt.indexOf('saas') !== -1;
-          if (lowerCat === 'b2b') return lt.indexOf('b2b') !== -1;
-          if (lowerCat === 'mobile') return lt.indexOf('mobile') !== -1 || lt.indexOf('mobility') !== -1;
-          if (lowerCat === 'product strategy') return lt.indexOf('strategy') !== -1 || lt.indexOf('prd') !== -1;
-          if (lowerCat === 'web app') return lt.indexOf('web') !== -1 || lt.indexOf('platform') !== -1;
+          if (lowerCat === 'b2b') return lt === 'b2b' || lt.indexOf('enterprise') !== -1;
+          if (lowerCat === 'consumer') return lt === 'consumer';
+          if (lowerCat === 'marketplace') return lt === 'marketplace';
+          if (lowerCat === 'mobile') return lt === 'mobile';
+          if (lowerCat === 'enterprise') return lt === 'enterprise' || lt === 'erp';
+          if (lowerCat === 'saas') return lt === 'saas' || lt === 'b2b';
           return lt === lowerCat;
         });
       }
@@ -2975,24 +2976,33 @@
                 + '<div class="work-media-badge"><span class="pulse-dot"></span> Hover Video</div>'
               : '';
 
+            var caseStudyLink = p.link || '#';
+
             card.innerHTML =
-              '<div class="work-media" tabindex="0" role="button" aria-label="Toggle case details for ' + p.title + '">' +
+              '<a href="' + caseStudyLink + '" class="work-media" aria-label="Read full case study for ' + p.title + '">' +
                 '<img src="' + p.thumbnail + '" alt="' + p.title + '" class="work-thumb" loading="lazy">' +
                 videoHtml +
-              '</div>' +
+              '</a>' +
               '<div class="work-body">' +
                 '<div class="work-tags">' + tagsHtml + '</div>' +
-                '<div class="work-title-wrap">' +
-                  '<h3 class="work-title">' + p.title + '</h3>' +
-                  '<div class="work-arrow" aria-hidden="true">↗</div>' +
-                '</div>' +
+                '<a href="' + caseStudyLink + '" class="work-title-link" style="text-decoration:none; color:inherit;">' +
+                  '<div class="work-title-wrap">' +
+                    '<h3 class="work-title">' + p.title + '</h3>' +
+                    '<div class="work-arrow" aria-hidden="true">↗</div>' +
+                  '</div>' +
+                '</a>' +
                 clientHtml +
                 '<p class="work-desc">' + p.description + '</p>' +
                 metricHtml +
-                '<button type="button" class="work-expand-btn" aria-expanded="false">' +
-                  '<span>Case Breakdown</span>' +
-                  '<span class="chevron">▾</span>' +
-                '</button>' +
+                '<div style="display:flex; gap:10px; margin-top:auto; padding-top:6px;">' +
+                  '<a href="' + caseStudyLink + '" class="btn btn-dark" style="flex:1; justify-content:center; padding:10px 14px; font-size:13px; border-radius:10px;">' +
+                    'Read Full Case Study <span class="arw">→</span>' +
+                  '</a>' +
+                  '<button type="button" class="work-expand-btn" aria-expanded="false" style="width:auto; border-top:none; padding:10px 14px; background:var(--bg); border:1px solid var(--line); border-radius:10px; cursor:pointer;" title="Toggle quick breakdown">' +
+                    '<span>Overview</span>' +
+                    '<span class="chevron" style="margin-left:4px;">▾</span>' +
+                  '</button>' +
+                '</div>' +
                 '<div class="work-details">' +
                   '<div class="work-details-inner">' +
                     '<div class="work-detail-block">' +
@@ -3008,22 +3018,15 @@
               '</div>';
 
             var expandBtn = card.querySelector('.work-expand-btn');
-            var mediaArea = card.querySelector('.work-media');
 
             function toggleExpand(e) {
               e.stopPropagation();
+              e.preventDefault();
               var isExpanded = card.classList.toggle('is-expanded');
               expandBtn.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
             }
 
             expandBtn.addEventListener('click', toggleExpand);
-            mediaArea.addEventListener('click', toggleExpand);
-            mediaArea.addEventListener('keydown', function (e) {
-              if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                toggleExpand(e);
-              }
-            });
 
             if (p.video) {
               var video = card.querySelector('.work-video');
