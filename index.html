@@ -1237,14 +1237,25 @@
     }
 
     /* Capabilities 3-Card Grid */
+    /* Capabilities Asymmetric Grid */
     .caps-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: 1.15fr 1.85fr;
       gap: 24px;
+      align-items: stretch;
+    }
+
+    .caps-side-stack {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
     }
 
     @media (max-width: 960px) {
       .caps-grid {
+        grid-template-columns: 1fr;
+      }
+      .caps-side-stack {
         grid-template-columns: 1fr;
       }
     }
@@ -1256,6 +1267,15 @@
       padding: 28px;
       display: flex;
       flex-direction: column;
+    }
+
+    .cap-box.flagship-cap {
+      background: #FFFFFF;
+      border: 1px solid var(--line-strong);
+      border-left: 5px solid var(--accent);
+      padding: clamp(28px, 3.5vw, 36px);
+      box-shadow: var(--shadow-card);
+      justify-content: space-between;
     }
 
     .cap-box h3 {
@@ -2109,16 +2129,17 @@
 
     .perk-item .ck {
       flex: none;
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      background: var(--accent-tint);
+      width: 26px;
+      height: 26px;
+      border-radius: 6px;
+      background: var(--bg);
       color: var(--accent);
-      border: 1px solid var(--accent-border);
+      border: 1px solid var(--line-strong);
       display: grid;
       place-items: center;
-      font-size: 12px;
-      font-weight: 800;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      font-weight: 700;
     }
 
     .suite-form-card {
@@ -2566,7 +2587,7 @@
           <div class="hero-editorial-right rv">
             <div class="hero-portrait-card">
               <div class="hero-portrait-img-wrap">
-                <img src="assets/nihar-cafe.jpg" alt="Nihar Ranjan Rout — Founder &amp; CEO, Creuto" class="hero-portrait-img" loading="eager" fetchpriority="high">
+                <img src="assets/nihar-hero.jpg" alt="Nihar Ranjan Rout — Founder &amp; CEO, Creuto" class="hero-portrait-img" loading="eager" fetchpriority="high">
               </div>
               <div class="hero-portrait-meta">
                 <div style="display:flex; justify-content:space-between; align-items:flex-start;">
@@ -2611,12 +2632,12 @@
       <div class="wrap about-grid">
         <div class="rv">
           <span class="badge-pill"><span class="dot"></span> Product Judgment + In-House Delivery</span>
-          <h2>Most software fails for a product reason, not a technical one.</h2>
+          <h2>Eight years of turning complex business mechanics into software that works.</h2>
           <p style="color:var(--ink-soft); margin-top:18px; font-size:16.5px; line-height:1.68;">
-            The wrong scope, unclear priorities, a budget spent on features users never touch — that's the part I lead personally. Eight years in product management across diverse business domains taught me to ask the right questions before a single line of code is written.
+            I started in product management because I couldn't stand seeing months of engineering effort wasted on software nobody used. Before founding Creuto, I worked across B2B SaaS, fintech, logistics, and healthcare — learning that the hardest part of software isn't writing syntax, it's making the right scoping trade-offs under finite runway.
           </p>
           <p style="color:var(--ink-soft); margin-top:14px; font-size:16.5px; line-height:1.68;">
-            When you bring me an idea, I help you shape it — a clear PRD, honest scope, and a plan that fits your budget. My in-house engineering team at Creuto then engineers it into a genuinely good product. We build with honesty and dedication, and we stand behind what we ship for what we charge.
+            When you bring me an idea, I help you shape it — a clear PRD, honest scope, and an architectural plan that fits your budget. My full-time engineering squad at Creuto in Bhubaneswar then engineers it to a standard we're proud of. Product thinking first; honest, dedicated delivery always.
           </p>
 
           <div class="sig-block">
@@ -2727,43 +2748,51 @@
           <!-- Tab Panel 1: Capabilities & Tech -->
           <div class="tab-panel active" id="panel-caps" role="tabpanel" aria-labelledby="tab-caps">
             <div class="caps-grid">
-              <div class="cap-box">
-                <h3>Product strategy &amp; consulting</h3>
-                <p class="desc">The part I lead personally — turning your idea into a clear, buildable product: scope, priorities, and a PRD your team and ours can execute against.</p>
-                <ul>
-                  <li>PRD &amp; documentation</li>
-                  <li>Product &amp; business strategy</li>
-                  <li>Scope &amp; roadmap planning</li>
-                  <li>Budget-fit build roadmap</li>
-                  <li>Domain &amp; user analysis</li>
-                  <li>Feature prioritization</li>
+              <!-- Flagship Advisory Box (Personal Founder Oversight) -->
+              <div class="cap-box flagship-cap">
+                <div>
+                  <span style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent); text-transform:uppercase; letter-spacing:0.08em; display:inline-block; margin-bottom:12px;">Founder Advisory</span>
+                  <h3 style="font-size:24px; font-weight:800; letter-spacing:-0.02em; margin-bottom:12px; color:var(--ink);">Product Strategy &amp; Scoping</h3>
+                  <p class="desc" style="font-size:15px; line-height:1.65; color:var(--ink-soft); margin-bottom:18px;">
+                    The part I lead personally. Before anyone writes code, we question assumptions, clarify user flows, eliminate superfluous features, and craft a bulletproof PRD your team and ours can execute against.
+                  </p>
+                  <div style="font-family:'Playfair Display',Georgia,serif; font-style:italic; font-size:14.5px; color:var(--ink); padding:14px 16px; background:var(--bg); border-radius:var(--r-md); border-left:3px solid var(--ink); margin-bottom:20px; line-height:1.5;">
+                    "Code is the most expensive way to discover you were building the wrong thing. We validate before we engineer."
+                  </div>
+                </div>
+                <ul style="border-top:1px dashed var(--line); padding-top:16px;">
+                  <li><strong>PRD &amp; Documentation:</strong> Technical specs, acceptance criteria, edge cases</li>
+                  <li><strong>Scope &amp; Budget Optimization:</strong> Protecting your runway from day zero</li>
+                  <li><strong>Domain Mechanics:</strong> Unit economics, workflow bottlenecks, integrations</li>
+                  <li><strong>Feature Prioritization:</strong> Must-haves vs. post-launch backlog</li>
                 </ul>
               </div>
 
-              <div class="cap-box">
-                <h3>Software &amp; AI development</h3>
-                <p class="desc">Creuto's in-house team builds production-grade B2B products — web platforms, SaaS, and custom AI features engineered to a growth standard.</p>
-                <ul>
-                  <li>SaaS &amp; web platforms</li>
-                  <li>Next.js, React &amp; TypeScript</li>
-                  <li>Node.js &amp; Python backends</li>
-                  <li>Custom AI &amp; RAG pipelines</li>
-                  <li>APIs &amp; integrations</li>
-                  <li>Cloud architecture &amp; DevOps</li>
-                </ul>
-              </div>
+              <!-- Two Engineering Engine Cards -->
+              <div class="caps-side-stack">
+                <div class="cap-box" style="background:#FFFFFF; border:1px solid var(--line-strong);">
+                  <span style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--ink-faint); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:10px;">02 · Engineering</span>
+                  <h3 style="font-size:20px; font-weight:800; color:var(--ink); margin-bottom:10px;">Software &amp; AI Systems</h3>
+                  <p class="desc" style="margin-bottom:18px;">Creuto's in-house engineering team builds production-grade B2B platforms, scalable SaaS engines, and pragmatic AI pipelines.</p>
+                  <ul>
+                    <li>SaaS &amp; web platforms (Next.js, React, Node.js)</li>
+                    <li>Pragmatic AI &amp; custom RAG pipelines</li>
+                    <li>Robust PostgreSQL, Redis &amp; API architecture</li>
+                    <li>Containerized AWS deployments &amp; CI/CD</li>
+                  </ul>
+                </div>
 
-              <div class="cap-box">
-                <h3>Mobile &amp; ongoing delivery</h3>
-                <p class="desc">Cross-platform mobile apps and dedicated-team delivery — with the product discipline to keep every sprint pointed at real business outcomes.</p>
-                <ul>
-                  <li>Mobile app development (Flutter/React Native)</li>
-                  <li>Dedicated engineering sprints</li>
-                  <li>QA &amp; automated testing</li>
-                  <li>Workflow automation</li>
-                  <li>Database &amp; system architecture</li>
-                  <li>Long-term support &amp; scale</li>
-                </ul>
+                <div class="cap-box" style="background:#FFFFFF; border:1px solid var(--line-strong);">
+                  <span style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--ink-faint); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:10px;">03 · Mobile &amp; Scale</span>
+                  <h3 style="font-size:20px; font-weight:800; color:var(--ink); margin-bottom:10px;">Mobile &amp; Sprint Delivery</h3>
+                  <p class="desc" style="margin-bottom:18px;">High-performance cross-platform mobile apps and dedicated engineering sprints with continuous QA and direct milestone reviews.</p>
+                  <ul>
+                    <li>Mobile app development (Flutter &amp; React Native)</li>
+                    <li>Two-week milestone sprints with live demos</li>
+                    <li>Automated testing &amp; strict quality gates</li>
+                    <li>Direct senior engineer communication</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -3369,7 +3398,7 @@
           <div class="testimonial-card">
             <div class="testi-header">
               <div class="testi-stars" aria-label="5 out of 5 stars">★★★★★</div>
-              <span class="testi-badge">✓ Verified Client</span>
+              <span class="testi-badge" style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--emerald);">Clutch Verified Review</span>
             </div>
             <blockquote class="testi-quote">
               “Skyeone solved a problem every family planning a wedding faces — the endless back-and-forth across a dozen vendors with nothing written down. Creuto built a platform that finally makes event planning feel as simple as booking a flight.”
@@ -3386,7 +3415,7 @@
           <div class="testimonial-card">
             <div class="testi-header">
               <div class="testi-stars" aria-label="5 out of 5 stars">★★★★★</div>
-              <span class="testi-badge">✓ Verified Client</span>
+              <span class="testi-badge" style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--emerald);">Clutch Verified Review</span>
             </div>
             <blockquote class="testi-quote">
               “We had a complex vision: a marketplace that works seamlessly for customers, salon owners, and our internal team at the same time. Creuto understood that from day one. They did not just write code; they helped us think through the product logic, suggested features we had not considered, and delivered everything on schedule.”
@@ -3430,19 +3459,19 @@
           <div class="suite-grid">
             <div class="suite-perks">
               <div class="perk-item">
-                <span class="ck">→</span>
+                <span class="ck">01</span>
                 <div><strong>A clear read on scope:</strong> Exactly what must be built first to test demand, and what should wait.</div>
               </div>
               <div class="perk-item">
-                <span class="ck">₹</span>
+                <span class="ck">02</span>
                 <div><strong>An honest sense of budget:</strong> A realistic timeline and cost breakdown with zero inflated quotes.</div>
               </div>
               <div class="perk-item">
-                <span class="ck">✓</span>
+                <span class="ck">03</span>
                 <div><strong>A PRD starting point:</strong> Actionable documentation you can take anywhere, even if we don't work together.</div>
               </div>
               <div class="perk-item">
-                <span class="ck">🔒</span>
+                <span class="ck">04</span>
                 <div><strong>Your idea, protected:</strong> Full confidentiality and standard NDAs available upon request.</div>
               </div>
 
@@ -3625,19 +3654,19 @@
           
           <div style="display:flex; flex-direction:column; gap:16px; margin-top:24px;">
             <div style="display:flex; gap:12px; align-items:flex-start;">
-              <span style="color:var(--emerald); font-weight:800;">✓</span>
+              <span style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent); background:var(--bg); border:1px solid var(--line-strong); padding:2px 8px; border-radius:var(--r-sm); display:inline-block; margin-top:2px;">01</span>
               <span style="font-size:15px; color:var(--ink-soft);"><strong style="color:var(--ink);">Fast &amp; focused response:</strong> I get back within 24 hours so your idea doesn't lose momentum.</span>
             </div>
             <div style="display:flex; gap:12px; align-items:flex-start;">
-              <span style="color:var(--emerald); font-weight:800;">✓</span>
+              <span style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent); background:var(--bg); border:1px solid var(--line-strong); padding:2px 8px; border-radius:var(--r-sm); display:inline-block; margin-top:2px;">02</span>
               <span style="font-size:15px; color:var(--ink-soft);"><strong style="color:var(--ink);">Your idea, protected:</strong> NDAs available on request for full confidentiality.</span>
             </div>
             <div style="display:flex; gap:12px; align-items:flex-start;">
-              <span style="color:var(--emerald); font-weight:800;">✓</span>
+              <span style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent); background:var(--bg); border:1px solid var(--line-strong); padding:2px 8px; border-radius:var(--r-sm); display:inline-block; margin-top:2px;">03</span>
               <span style="font-size:15px; color:var(--ink-soft);"><strong style="color:var(--ink);">Product-first from day one:</strong> Scope, PRD, and roadmap shaped before we build — so your budget goes to the right things.</span>
             </div>
             <div style="display:flex; gap:12px; align-items:flex-start;">
-              <span style="color:var(--emerald); font-weight:800;">✓</span>
+              <span style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent); background:var(--bg); border:1px solid var(--line-strong); padding:2px 8px; border-radius:var(--r-sm); display:inline-block; margin-top:2px;">04</span>
               <span style="font-size:15px; color:var(--ink-soft);"><strong style="color:var(--ink);">End-to-end support:</strong> Discovery, roadmap, development, QA, and launch — not just a hand-off.</span>
             </div>
           </div>
