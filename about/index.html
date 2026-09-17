@@ -507,49 +507,50 @@
       font-style: normal;
     }
 
-    /* Grid 3 */
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-top: 32px;
+    /* Chapter 02 Editorial Pillars List */
+    .pillars-editorial-list {
+      display: flex;
+      flex-direction: column;
+      margin-top: 36px;
+      border-top: 1px solid var(--line);
     }
-    @media (max-width: 860px) {
-      .grid-3 { grid-template-columns: 1fr; }
+    .pillar-row-item {
+      display: flex;
+      align-items: flex-start;
+      gap: clamp(20px, 3.5vw, 36px);
+      padding: clamp(24px, 3.5vw, 36px) 0;
+      border-bottom: 1px solid var(--line);
+      transition: background 0.2s ease;
     }
-    .pillar-card {
-      background: var(--surface);
-      border: 1px solid var(--line-strong);
-      border-radius: var(--r-lg);
-      padding: clamp(26px, 3vw, 32px);
-      box-shadow: var(--shadow-sm);
-      transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease, border-color 0.28s ease;
-    }
-    .pillar-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-hover);
-      border-color: var(--ink);
-    }
-    section:nth-of-type(even) .pillar-card {
-      background: var(--bg);
-    }
-    .pillar-num {
+    .pillar-ghost-num {
       font-family: "JetBrains Mono", monospace;
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--accent);
-      text-transform: uppercase;
-      margin-bottom: 12px;
+      font-size: clamp(40px, 4.5vw, 60px);
+      font-weight: 800;
+      line-height: 0.95;
+      color: transparent;
+      -webkit-text-stroke: 1.5px rgba(20, 19, 18, 0.2);
+      min-width: 64px;
+      flex-shrink: 0;
+      user-select: none;
+      transition: all 0.28s ease;
+      margin-top: 4px;
     }
-    .pillar-card h3 {
-      font-size: 19px;
-      font-weight: 700;
+    .pillar-row-item:hover .pillar-ghost-num {
+      -webkit-text-stroke-color: var(--accent);
+      color: var(--accent-tint);
+      transform: translateX(4px);
+    }
+    .pillar-content {
+      flex: 1;
+    }
+    .pillar-content h3 {
+      font-size: clamp(19px, 2vw, 23px);
+      font-weight: 800;
       color: var(--ink);
-      margin: 0 0 10px;
-      line-height: 1.3;
+      margin: 0 0 8px;
     }
-    .pillar-card p {
-      font-size: 14.5px;
+    .pillar-content p {
+      font-size: 15.5px;
       line-height: 1.65;
       color: var(--ink-soft);
       margin: 0;
@@ -607,50 +608,56 @@
       margin: 0;
     }
 
-    /* Testimonials Strip (Corporate Dark Contrast) */
-    .testi-pair-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      margin-top: 36px;
+    /* Chapter 04 Spotlight Testimonial */
+    .about-testi-spotlight {
+      margin-top: 40px;
+      background: #FFFFFF;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--r-2xl);
+      padding: clamp(32px, 5vw, 56px);
+      box-shadow: 0 16px 40px -10px rgba(15, 23, 42, 0.08);
+      position: relative;
     }
-    @media (max-width: 800px) {
-      .testi-pair-grid { grid-template-columns: 1fr; }
+    .about-testi-quote {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(20px, 2.4vw, 28px);
+      line-height: 1.48;
+      color: var(--ink);
+      font-style: italic;
+      margin: 0 0 24px;
     }
-    .testi-box {
-      background: #191B20;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: var(--r-lg);
-      padding: 28px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 18px;
-      color: #FFFFFF;
-      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25);
-      transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease, border-color 0.28s ease;
-    }
-    .testi-box:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 18px 44px rgba(0, 0, 0, 0.4);
-      border-color: rgba(255, 255, 255, 0.25);
-    }
-    .testi-box p {
-      font-size: 15px;
-      line-height: 1.68;
-      color: rgba(255, 255, 255, 0.92);
-      margin: 0;
-    }
-    .testi-box footer {
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      padding-top: 14px;
-      font-size: 13px;
-      color: rgba(255, 255, 255, 0.6);
+    .about-testi-footer {
       display: flex;
       align-items: center;
-      gap: 12px;
+      justify-content: space-between;
+      border-top: 1px solid var(--line);
+      padding-top: 20px;
+      gap: 16px;
+      flex-wrap: wrap;
     }
-    .testi-box footer strong { color: #FFFFFF; display: block; font-size: 14px; }
+    .about-testi-author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .about-testi-author img {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    .about-testi-author strong {
+      display: block;
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--ink);
+    }
+    .about-testi-author span {
+      display: block;
+      font-size: 13px;
+      color: var(--ink-soft);
+    }
 
     /* CTA Section */
     .cta-section {
@@ -898,21 +905,27 @@
           I started <strong>Creuto</strong> as the antidote to that model: an in-house software engineering company led directly by product management.
         </p>
 
-        <div class="grid-3">
-          <div class="pillar-card">
-            <div class="pillar-num">Pillar 01</div>
-            <h3>100% In-House Team</h3>
-            <p>Every engineer, designer, and QA specialist working on your build is a permanent, full-time Creuto employee. Zero random subcontractors.</p>
+        <div class="pillars-editorial-list">
+          <div class="pillar-row-item rv" data-aos="fade-up" data-aos-delay="100">
+            <div class="pillar-ghost-num">01</div>
+            <div class="pillar-content">
+              <h3>100% In-House Team</h3>
+              <p>Every engineer, designer, and QA specialist working on your build is a permanent, full-time Creuto employee. Zero random subcontractors.</p>
+            </div>
           </div>
-          <div class="pillar-card">
-            <div class="pillar-num">Pillar 02</div>
-            <h3>Product Discipline First</h3>
-            <p>We craft a comprehensive PRD (Product Requirement Document) before writing code, locking scope and prioritizing high-impact features.</p>
+          <div class="pillar-row-item rv" data-aos="fade-up" data-aos-delay="200">
+            <div class="pillar-ghost-num">02</div>
+            <div class="pillar-content">
+              <h3>Product Discipline First</h3>
+              <p>We craft a comprehensive PRD (Product Requirement Document) before writing code, locking scope and prioritizing high-impact features.</p>
+            </div>
           </div>
-          <div class="pillar-card">
-            <div class="pillar-num">Pillar 03</div>
-            <h3>Milestone Pricing</h3>
-            <p>Predictable fixed-milestone pricing tied to approved deliverables. You never receive surprise invoices or runaway hourly bills.</p>
+          <div class="pillar-row-item rv" data-aos="fade-up" data-aos-delay="300">
+            <div class="pillar-ghost-num">03</div>
+            <div class="pillar-content">
+              <h3>Milestone Pricing</h3>
+              <p>Predictable fixed-milestone pricing tied to approved deliverables. You never receive surprise invoices or runaway hourly bills.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -981,27 +994,19 @@
           </div>
         </div>
 
-        <div class="testi-pair-grid">
-          <div class="testi-box" data-aos="fade-up" data-aos-delay="100">
-            <p>“Skyeone solved a problem every family planning a wedding faces — the endless back-and-forth across a dozen vendors with nothing written down. Creuto built a platform that finally makes event planning feel as simple as booking a flight.”</p>
-            <footer>
-              <img src="/assets/img/reviewer-rakesh.jpg" alt="Rakesh Sharma" style="width:42px; height:42px; border-radius:50%; object-fit:cover; border:2px solid rgba(255,255,255,0.2); flex-shrink:0;">
+        <div class="about-testi-spotlight rv" data-aos="fade-up">
+          <blockquote class="about-testi-quote">
+            “Skyeone solved a problem every family planning a wedding faces — the endless back-and-forth across a dozen vendors with nothing written down. Creuto built a platform that finally makes event planning feel as simple as booking a flight.”
+          </blockquote>
+          <div class="about-testi-footer">
+            <div class="about-testi-author">
+              <img src="/assets/img/reviewer-rakesh.jpg" alt="Rakesh Sharma — Skyeone Founding Team" loading="lazy">
               <div>
                 <strong>Rakesh Sharma</strong>
-                <span>Skyeone Founding Team · Event Tech &amp; Booking</span>
+                <span>Skyeone Founding Team · Event Tech &amp; Multi-Vendor Booking</span>
               </div>
-            </footer>
-          </div>
-
-          <div class="testi-box" data-aos="fade-up" data-aos-delay="200">
-            <p>“We had a complex vision: a marketplace that works seamlessly for customers, salon owners, and our internal team at the same time. Creuto understood that from day one. They did not just write code; they helped us think through the product logic, suggested features we had not considered, and delivered everything on schedule.”</p>
-            <footer>
-              <img src="/assets/img/reviewer-jeet.jpg" alt="Jeet Mohnani" style="width:42px; height:42px; border-radius:50%; object-fit:cover; border:2px solid rgba(255,255,255,0.2); flex-shrink:0;">
-              <div>
-                <strong>Jeet Mohnani</strong>
-                <span>Co-Founder &amp; CEO, Make My Look · Beauty &amp; Wellness</span>
-              </div>
-            </footer>
+            </div>
+            <a href="/work/sky1-event-booking" class="testi-case-link">View Case Study ↗</a>
           </div>
         </div>
       </div>

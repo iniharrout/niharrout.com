@@ -1088,119 +1088,191 @@
       margin-top: 2px;
     }
 
-    /* ================= SECTION 4: WHY WORK WITH US ================= */
+    /* ================= SECTION 4: WHY WORK WITH US (ASYMMETRIC EDITORIAL SPLIT) ================= */
     .why-section {
       background-color: var(--bg);
       background-image: linear-gradient(to right, rgba(20, 19, 18, 0.035) 1px, transparent 1px), linear-gradient(to bottom, rgba(20, 19, 18, 0.035) 1px, transparent 1px);
       background-size: 36px 36px;
+      padding: clamp(64px, 8vw, 108px) 0;
     }
 
-    .why-grid {
+    .why-editorial-split {
       display: grid;
-      grid-template-columns: 1.12fr 0.88fr;
-      gap: 24px;
-      align-items: stretch;
+      grid-template-columns: 0.95fr 1.35fr;
+      gap: clamp(36px, 6vw, 72px);
+      align-items: flex-start;
     }
 
-    @media (max-width: 900px) {
-      .why-grid {
+    @media (max-width: 960px) {
+      .why-editorial-split {
         grid-template-columns: 1fr;
+        gap: 40px;
       }
     }
 
-    .why-card {
+    .why-editorial-left {
+      position: sticky;
+      top: 100px;
+    }
+
+    @media (max-width: 960px) {
+      .why-editorial-left {
+        position: static;
+      }
+    }
+
+    .why-editorial-title {
+      font-size: clamp(30px, 3.8vw, 44px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.18;
+      margin: 16px 0 18px;
+      color: var(--ink);
+    }
+
+    .why-editorial-sub {
+      font-size: 16.5px;
+      line-height: 1.62;
+      color: var(--ink-soft);
+      margin: 0 0 28px;
+    }
+
+    .why-philosophy-card {
       background: #FFFFFF;
       border: 1px solid var(--line-strong);
-      border-radius: var(--r-xl);
-      padding: 36px 32px;
-      box-shadow: var(--shadow-card);
-      transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease, border-color 0.28s ease;
-      display: flex;
-      flex-direction: column;
+      border-left: 4px solid var(--accent);
+      border-radius: var(--r-lg);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 24px;
     }
 
-    .why-card:hover {
-      border-color: var(--ink);
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-hover);
+    .why-philosophy-lead {
+      font-size: 14.5px;
+      line-height: 1.65;
+      color: var(--ink-soft);
+      margin: 0 0 16px;
     }
 
-    .why-card.flagship {
-      background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(10px);
-      border: 1px solid var(--line-strong);
-      border-left: 5px solid var(--accent);
-      padding: clamp(36px, 4.5vw, 48px);
-      justify-content: space-between;
-    }
-
-    .why-card.flagship h3 {
-      font-size: clamp(24px, 2.4vw, 30px);
-      letter-spacing: -0.025em;
-      line-height: 1.25;
+    .why-philosophy-quote {
+      font-family: "Playfair Display", Georgia, serif;
+      font-style: italic;
+      font-size: 14.5px;
+      color: var(--ink);
+      line-height: 1.55;
+      padding: 12px 14px;
+      background: var(--bg);
+      border-radius: var(--r-md);
       margin-bottom: 16px;
     }
 
-    .why-card.flagship .lead-quote {
-      font-family: "Playfair Display", Georgia, serif;
-      font-style: italic;
-      font-size: 15.5px;
-      color: var(--ink);
-      line-height: 1.55;
-      margin: 20px 0;
-      padding: 16px 20px;
-      background: var(--bg);
-      border-radius: var(--r-md);
-      border-left: 3px solid var(--ink);
+    .why-commitment {
+      border-top: 1px dashed var(--line);
+      padding-top: 14px;
     }
 
-    .why-side-stack {
+    .why-commitment-tag {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10.5px;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .why-commitment p {
+      font-size: 13px;
+      color: var(--ink);
+      font-weight: 600;
+      line-height: 1.45;
+      margin: 0;
+    }
+
+    .credential-chips-left {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* Right column: Vertical divider-separated list */
+    .why-points-list {
       display: flex;
       flex-direction: column;
-      gap: 16px;
     }
 
-    .why-subcard {
-      background: rgba(255, 255, 255, 0.82);
-      backdrop-filter: blur(8px);
-      border: 1px solid var(--line-strong);
-      border-radius: var(--r-lg);
-      padding: 24px 28px;
-      box-shadow: var(--shadow-sm);
-      transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease, border-color 0.28s ease;
+    .why-point-item {
+      display: flex;
+      gap: clamp(16px, 3vw, 28px);
+      align-items: flex-start;
+      padding: clamp(24px, 3.5vw, 36px) 0;
+      border-bottom: 1px solid var(--line);
+      transition: background 0.2s ease;
     }
 
-    .why-subcard:hover {
-      border-color: var(--ink);
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-hover);
+    .why-point-item:first-child {
+      padding-top: 0;
     }
 
-    .why-subcard .num-badge {
+    .why-point-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .why-ghost-num {
+      font-family: "JetBrains Mono", monospace;
+      font-size: clamp(44px, 4.5vw, 64px);
+      font-weight: 800;
+      line-height: 0.95;
+      color: transparent;
+      -webkit-text-stroke: 1.5px rgba(20, 19, 18, 0.22);
+      flex-shrink: 0;
+      min-width: 68px;
+      letter-spacing: -0.04em;
+      user-select: none;
+      transition: all 0.3s ease;
+      margin-top: 4px;
+    }
+
+    .why-point-item:hover .why-ghost-num {
+      -webkit-text-stroke-color: var(--accent);
+      color: var(--accent-tint);
+      transform: translateX(3px);
+    }
+
+    .why-point-content {
+      flex: 1;
+    }
+
+    .why-point-tag {
       font-family: "JetBrains Mono", monospace;
       font-size: 11px;
       font-weight: 700;
       color: var(--accent);
       background: var(--accent-tint);
       border: 1px solid var(--accent-border);
-      padding: 3px 10px;
+      padding: 3px 9px;
       border-radius: var(--r-pill);
       display: inline-block;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
 
-    .why-subcard h3 {
-      font-size: 18px;
+    .why-point-content h3 {
+      font-size: clamp(19px, 2vw, 22px);
       font-weight: 800;
       color: var(--ink);
-      margin: 0 0 8px;
+      line-height: 1.3;
+      margin: 0 0 10px;
       letter-spacing: -0.015em;
     }
 
-    .why-subcard p {
-      font-size: 14px;
+    .why-point-content p {
+      font-size: 15px;
       color: var(--ink-soft);
-      line-height: 1.6;
+      line-height: 1.65;
       margin: 0;
     }
 
@@ -1229,7 +1301,20 @@
       font-weight: 700;
     }
 
-    /* ================= SECTION 5: CAPABILITIES & EXECUTION (TABS) ================= */
+    /* ================= SECTION 5: CAPABILITIES & EXECUTION (BENTO-GRID) ================= */
+    .caps-header-split {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 32px;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+    .caps-header-split .sub {
+      max-width: 48ch;
+      margin: 0;
+    }
+
     .tabs-wrapper {
       background: #FFFFFF;
       border: 1px solid var(--line);
@@ -1289,35 +1374,24 @@
       to { opacity: 1; transform: none; }
     }
 
-    /* Capabilities 3-Card Grid */
-    /* Capabilities Asymmetric Grid */
-    .caps-grid {
+    /* Bento Grid for Capabilities */
+    .bento-caps-layout {
       display: grid;
-      grid-template-columns: 1.15fr 1.85fr;
+      grid-template-columns: 1.42fr 1fr;
       gap: 24px;
       align-items: stretch;
     }
 
-    .caps-side-stack {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-
     @media (max-width: 960px) {
-      .caps-grid {
-        grid-template-columns: 1fr;
-      }
-      .caps-side-stack {
+      .bento-caps-layout {
         grid-template-columns: 1fr;
       }
     }
 
-    .cap-box {
+    .bento-panel {
       background: #FFFFFF;
       border: 1px solid var(--line-strong);
-      border-radius: var(--r-lg);
-      padding: 0;
+      border-radius: var(--r-xl);
       overflow: hidden;
       display: flex;
       flex-direction: column;
@@ -1325,79 +1399,189 @@
       transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease, border-color 0.28s ease;
     }
 
-    .cap-box:hover {
+    .bento-panel:hover {
       transform: translateY(-4px);
       box-shadow: var(--shadow-hover);
       border-color: var(--ink);
     }
 
-    .cap-box.flagship-cap {
-      background: #FFFFFF;
-      border: 1px solid var(--line-strong);
+    .bento-featured {
       border-top: 4px solid var(--accent);
-      border-left: 1px solid var(--line-strong);
-      box-shadow: var(--shadow-card);
       justify-content: space-between;
     }
 
-    .cap-box-media {
+    .bento-media-hero {
       width: 100%;
-      height: 160px;
+      height: 220px;
       overflow: hidden;
-      border-bottom: 1px solid var(--line);
       position: relative;
+      border-bottom: 1px solid var(--line);
     }
 
-    .cap-box-media .corporate-img {
+    .bento-media-hero .corporate-img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      transition: transform 0.5s ease;
     }
 
-    .cap-box:hover .cap-box-media .corporate-img {
+    .bento-featured:hover .bento-media-hero .corporate-img {
       transform: scale(1.03);
     }
 
-    .cap-box-body {
-      padding: clamp(22px, 3vw, 28px);
+    .bento-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(15, 23, 42, 0.88);
+      backdrop-filter: blur(8px);
+      color: #FFFFFF;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 5px 12px;
+      border-radius: var(--r-pill);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .bento-content {
+      padding: clamp(24px, 3.5vw, 36px);
       display: flex;
       flex-direction: column;
       flex: 1;
       justify-content: space-between;
     }
 
-    .cap-box h3 {
-      font-size: 19px;
+    .bento-kicker {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
       font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+
+    .bento-content h3 {
+      font-size: clamp(22px, 2.5vw, 28px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
       color: var(--ink);
-      margin-bottom: 10px;
+      margin: 0 0 12px;
     }
 
-    .cap-box p.desc {
-      font-size: 14.5px;
+    .bento-desc {
+      font-size: 15px;
+      line-height: 1.65;
       color: var(--ink-soft);
-      line-height: 1.6;
-      margin-bottom: 20px;
+      margin: 0 0 20px;
     }
 
-    .cap-box ul {
+    .bento-quote {
+      font-family: "Playfair Display", Georgia, serif;
+      font-style: italic;
+      font-size: 14.5px;
+      color: var(--ink);
+      padding: 14px 18px;
+      background: var(--bg);
+      border-radius: var(--r-md);
+      border-left: 3px solid var(--ink);
+      margin-bottom: 22px;
+      line-height: 1.5;
+    }
+
+    .bento-bullets {
       list-style: none;
-      padding: 0;
-      margin: auto 0 0;
+      padding: 18px 0 0;
+      margin: 0;
+      border-top: 1px dashed var(--line);
       display: flex;
       flex-direction: column;
-      gap: 9px;
+      gap: 10px;
     }
 
-    .cap-box ul li {
-      font-size: 14px;
+    .bento-bullets li {
+      font-size: 14.5px;
       color: var(--ink);
       display: flex;
       align-items: center;
       gap: 8px;
     }
 
-    .cap-box ul li::before {
+    .bento-bullets li::before {
+      content: "→";
+      color: var(--accent);
+      font-weight: 700;
+      font-family: "JetBrains Mono", monospace;
+    }
+
+    /* Secondary column with 2 stacked bento cards */
+    .bento-secondary-col {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .bento-compact {
+      flex: 1;
+    }
+
+    .bento-compact-media {
+      width: 100%;
+      height: 120px;
+      overflow: hidden;
+      position: relative;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .bento-compact-media .corporate-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .bento-compact:hover .bento-compact-media .corporate-img {
+      transform: scale(1.03);
+    }
+
+    .bento-compact-body {
+      padding: 22px 24px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: space-between;
+    }
+
+    .bento-compact-body h3 {
+      font-size: 19px;
+      font-weight: 800;
+      color: var(--ink);
+      margin: 0 0 8px;
+    }
+
+    .bento-bullets-compact {
+      list-style: none;
+      padding: 12px 0 0;
+      margin: auto 0 0;
+      border-top: 1px dashed var(--line);
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .bento-bullets-compact li {
+      font-size: 13.5px;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .bento-bullets-compact li::before {
       content: "→";
       color: var(--accent);
       font-weight: 700;
@@ -1554,18 +1738,46 @@
       justify-content: center;
     }
 
-    /* ================= SECTION 5.5: TECHNOLOGIES WE WORK WITH ================= */
+    /* ================= SECTION 5.5: TECHNOLOGIES WE WORK WITH (FULL CORPORATE DARK) ================= */
     .tech-section {
-      padding: clamp(64px, 8vw, 100px) 0;
-      background: var(--bg);
-      border-bottom: 1px solid var(--line);
+      padding: clamp(68px, 9vw, 110px) 0;
+      background-color: #0b0c10;
+      color: #FFFFFF;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      position: relative;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+
+    .tech-header-split {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 32px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .tech-header-sub {
+      color: rgba(255, 255, 255, 0.68);
+      font-size: 16px;
+      max-width: 48ch;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .dark-pill {
+      background: rgba(255, 255, 255, 0.08) !important;
+      border-color: rgba(255, 255, 255, 0.18) !important;
+      color: #FFFFFF !important;
     }
 
     .tech-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 24px;
-      margin-top: 40px;
+      margin-top: 0;
     }
 
     @media (max-width: 768px) {
@@ -1575,56 +1787,67 @@
     }
 
     .tech-card {
-      background: var(--surface);
-      border: 1px solid var(--line);
+      background: #14161f;
+      border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: var(--r-lg);
       padding: 28px;
       display: flex;
       flex-direction: column;
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-      box-shadow: var(--shadow-sm);
+      transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease, border-color 0.28s ease;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
     }
 
     .tech-card:hover {
-      border-color: var(--line-strong);
-      box-shadow: var(--shadow-hover);
-      transform: translateY(-2px);
+      border-color: rgba(56, 189, 248, 0.4);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 24px rgba(14, 116, 144, 0.15);
+      transform: translateY(-3px);
     }
 
     .tech-card.highlight {
-      border-color: var(--accent-border);
-      background: linear-gradient(180deg, var(--surface) 0%, var(--accent-tint) 100%);
+      border-color: rgba(168, 85, 247, 0.35);
+      background: linear-gradient(180deg, #191b2c 0%, #14161f 100%);
+    }
+
+    .tech-card.highlight:hover {
+      border-color: rgba(192, 132, 252, 0.6);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 24px rgba(168, 85, 247, 0.18);
     }
 
     .tech-card-head {
       margin-bottom: 18px;
       padding-bottom: 16px;
-      border-bottom: 1px solid var(--line);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .tech-cat-badge {
       font-family: "JetBrains Mono", monospace;
       font-size: 11px;
       font-weight: 700;
-      color: var(--accent);
+      color: #38BDF8;
+      background: rgba(14, 116, 144, 0.2);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      padding: 4px 10px;
+      border-radius: var(--r-pill);
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      display: block;
-      margin-bottom: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 10px;
     }
 
     .tech-card h3 {
       font-size: 22px;
       font-weight: 800;
-      color: var(--ink);
+      color: #FFFFFF;
       margin: 0 0 6px;
       letter-spacing: -0.02em;
     }
 
     .tech-card-desc {
       font-size: 14px;
-      color: var(--ink-soft);
-      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.68);
+      line-height: 1.55;
       margin: 0;
     }
 
@@ -1638,44 +1861,46 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      padding: 8px 12px;
+      padding: 9px 14px;
       border-radius: 10px;
-      background: var(--bg);
-      border: 1px solid var(--line);
+      background: #1b1e2b;
+      border: 1px solid rgba(255, 255, 255, 0.07);
       transition: all 0.2s ease;
     }
 
     .tech-pill:hover {
-      background: var(--surface);
-      border-color: var(--ink);
+      background: #242838;
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateX(2px);
     }
 
     .tech-icon-box {
-      width: 30px;
-      height: 30px;
+      width: 32px;
+      height: 32px;
       border-radius: 8px;
-      background: var(--surface);
-      border: 1px solid var(--line);
+      background: #222638;
+      border: 1px solid rgba(255, 255, 255, 0.12);
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      color: var(--ink);
+      color: #E2E8F0;
     }
 
     .tech-pill:hover .tech-icon-box {
-      border-color: var(--ink-muted);
-      color: var(--accent);
+      border-color: #38BDF8;
+      color: #38BDF8;
     }
 
     .tech-pill-name {
       font-size: 14px;
       font-weight: 600;
-      color: var(--ink);
+      color: #F1F5F9;
     }
 
     .tech-cta-box {
-      background: var(--ink);
+      background: #14161f;
+      border: 1px solid rgba(255, 255, 255, 0.12);
       color: #FFFFFF;
       border-radius: var(--r-xl);
       padding: 36px 40px;
@@ -1684,7 +1909,7 @@
       justify-content: space-between;
       gap: 28px;
       margin-top: 36px;
-      box-shadow: var(--shadow-card);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
     }
 
     @media (max-width: 800px) {
@@ -1698,18 +1923,32 @@
 
     /* ================= SECTION 6: WORK & CASE STUDIES ================= */
     .work-section {
-      padding: clamp(60px, 8vw, 100px) 0;
+      padding: clamp(64px, 8vw, 100px) 0;
       position: relative;
+    }
+
+    .work-header-split {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 32px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+
+    .work-header-split .sub {
+      max-width: 46ch;
+      margin: 0;
     }
 
     .work-filters {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       gap: 10px;
-      margin: 28px auto 44px;
-      max-width: 800px;
+      margin: 0 0 36px;
+      max-width: 100%;
     }
 
     .work-filter-btn {
@@ -2035,137 +2274,215 @@
       color: var(--ink-soft);
     }
 
-    /* ================= SECTION 7: CLIENT REVIEWS & TESTIMONIALS (CORPORATE DARK SYSTEM) ================= */
+    /* ================= SECTION 7: TESTIMONIALS (SPOTLIGHT STAGE) ================= */
     .reviews-section {
-      background-color: #111215;
-      color: #FFFFFF;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background-color: #FAF8F5;
+      color: var(--ink);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
       position: relative;
-      background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+      padding: clamp(68px, 9vw, 110px) 0;
+      background-image: radial-gradient(rgba(20, 19, 18, 0.035) 1px, transparent 1px);
       background-size: 24px 24px;
     }
 
-    .reviews-section .shead h2 {
-      color: #FFFFFF;
-    }
-
-    .reviews-section .shead .sub {
-      color: rgba(255, 255, 255, 0.65);
-    }
-
-    .reviews-section .badge-pill {
-      background: rgba(255, 255, 255, 0.06);
-      border-color: rgba(255, 255, 255, 0.14);
-      color: #FFFFFF;
-    }
-
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-      margin-bottom: 32px;
-    }
-
-    @media (max-width: 860px) {
-      .testimonials-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .testimonial-card {
-      background: #191B20;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: var(--r-lg);
-      padding: clamp(26px, 3.5vw, 34px);
+    .reviews-header-split {
       display: flex;
-      flex-direction: column;
       justify-content: space-between;
-      gap: 20px;
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
-      transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease, border-color 0.28s ease;
-    }
-
-    .testimonial-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.5);
-      border-color: rgba(255, 255, 255, 0.25);
-    }
-
-    .testi-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
+      align-items: flex-end;
+      gap: 28px;
+      margin-bottom: 40px;
       flex-wrap: wrap;
     }
 
-    .testi-stars {
+    .reviews-header-split h2 {
+      font-size: clamp(28px, 3.6vw, 42px);
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      color: var(--ink);
+      margin: 12px 0 0;
+      max-width: 24ch;
+      line-height: 1.2;
+    }
+
+    .reviews-header-rating {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 6px;
+    }
+
+    .stars-gold {
       color: #F59E0B;
-      font-size: 15px;
+      font-size: 18px;
       letter-spacing: 2px;
     }
 
-    .testi-badge {
+    .clutch-tag {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--ink-soft);
+    }
+
+    /* Single Large Spotlight Card */
+    .testi-spotlight-wrapper {
+      position: relative;
+      margin-bottom: 36px;
+    }
+
+    .testi-spotlight-card {
+      background: #FFFFFF;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--r-2xl);
+      padding: clamp(32px, 5vw, 56px);
+      box-shadow: 0 20px 48px -12px rgba(15, 23, 42, 0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .testi-spotlight-card::before {
+      content: "“";
+      position: absolute;
+      top: -16px;
+      right: 32px;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 140px;
+      line-height: 1;
+      color: rgba(20, 19, 18, 0.05);
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .testi-slide {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.35s ease, transform 0.35s ease;
+      transform: translateY(8px);
+    }
+
+    .testi-slide.active {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .testi-quote-large {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(20px, 2.4vw, 30px);
+      line-height: 1.48;
+      color: var(--ink);
+      font-style: italic;
+      margin: 0;
+      font-weight: 450;
+      max-width: 40ch;
+    }
+
+    .testi-spotlight-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--line);
+      padding-top: 24px;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .testi-author-lockup {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .testi-author-avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #FFFFFF;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      flex-shrink: 0;
+    }
+
+    .testi-author-meta strong {
+      font-size: 16.5px;
+      font-weight: 800;
+      color: var(--ink);
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .testi-author-meta span {
+      font-size: 13.5px;
+      color: var(--ink-soft);
+      display: block;
+    }
+
+    .testi-controls {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .testi-nav-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--bg);
+      border: 1px solid var(--line-strong);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ink);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .testi-nav-btn:hover {
+      background: var(--ink);
+      color: #FFFFFF;
+      border-color: var(--ink);
+      transform: scale(1.05);
+    }
+
+    .testi-dots {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .testi-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--line-strong);
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: all 0.25s ease;
+    }
+
+    .testi-dot.active {
+      width: 28px;
+      border-radius: 6px;
+      background: var(--ink);
+    }
+
+    .testi-badge-light {
       font-family: "JetBrains Mono", monospace;
       font-size: 11px;
       font-weight: 700;
-      color: #34D399;
-      background: rgba(16, 185, 129, 0.15);
-      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: var(--emerald);
+      background: var(--emerald-tint);
+      border: 1px solid var(--emerald-border);
       padding: 3px 9px;
       border-radius: var(--r-pill);
       display: inline-flex;
       align-items: center;
       gap: 5px;
-    }
-
-    .testi-quote {
-      font-size: 15.5px;
-      line-height: 1.68;
-      color: rgba(255, 255, 255, 0.92);
-      margin: 0;
-      font-weight: 450;
-      position: relative;
-    }
-
-    .testi-author {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      padding-top: 16px;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .testi-author-wrapper {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .testi-avatar {
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid rgba(255, 255, 255, 0.2);
-      flex-shrink: 0;
-    }
-
-    .testi-author-info strong {
-      display: block;
-      font-size: 14.5px;
-      color: #FFFFFF;
-      font-weight: 700;
-    }
-
-    .testi-author-info span {
-      display: block;
-      font-size: 13px;
-      color: rgba(255, 255, 255, 0.55);
-      margin-top: 2px;
+      margin-bottom: 12px;
     }
 
     .testi-case-link {
@@ -2178,8 +2495,8 @@
       align-items: center;
       gap: 4px;
       padding: 6px 12px;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: var(--bg);
+      border: 1px solid var(--line-strong);
       border-radius: var(--r-sm);
       transition: all 0.2s ease;
     }
@@ -2188,18 +2505,6 @@
       background: var(--accent);
       color: #FFFFFF;
       border-color: var(--accent);
-    }
-
-    .reviews-section .btn-outline {
-      background: rgba(255, 255, 255, 0.06);
-      color: #FFFFFF;
-      border-color: rgba(255, 255, 255, 0.2);
-    }
-
-    .reviews-section .btn-outline:hover {
-      background: #FFFFFF;
-      color: #111215;
-      border-color: #FFFFFF;
     }
 
     .reviews-container {
@@ -2340,13 +2645,27 @@
     }
 
     /* ================= SECTION 9: WRITING & INSIGHTS ================= */
+    .writing-header-split {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 32px;
+      margin-bottom: 36px;
+      flex-wrap: wrap;
+    }
+
+    .writing-header-split .sub {
+      max-width: 44ch;
+      margin: 0 0 10px;
+    }
+
     .articles-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: 1.28fr 1fr 1fr;
       gap: 24px;
     }
 
-    @media (max-width: 880px) {
+    @media (max-width: 960px) {
       .articles-grid {
         grid-template-columns: 1fr;
       }
@@ -2799,63 +3118,83 @@
       </div>
     </section>
 
-    <!-- ================= SECTION 4: WHY WORK WITH US ================= -->
+    <!-- ================= SECTION 4: THE FOUNDER ADVANTAGE (ASYMMETRIC EDITORIAL SPLIT) ================= -->
     <section class="why-section" id="why">
       <div class="wrap">
-        <div class="shead center rv">
-          <span class="badge-pill"><span class="dot"></span> The Founder Advantage</span>
-          <h2>A B2B software partner that starts with product, not code.</h2>
-          <p class="sub">
-            Why founders and tech teams choose to partner with Nihar and the Creuto engineering team.
-          </p>
-        </div>
-
-        <div class="why-grid">
-          <!-- Flagship Thesis Card -->
-          <div class="why-card flagship rv" data-aos="fade-up">
-            <div>
-              <span class="num-badge">Our Core Philosophy</span>
-              <h3>Most software fails before a line of code is written.</h3>
-              <p style="color:var(--ink-soft); font-size:16px; line-height:1.68; margin-top:14px;">
-                Traditional dev agencies sell billable hours and sprawling sprint cycles. We do the inverse: we protect your runway by questioning assumptions, locking down the PRD, and killing unnecessary features before engineers touch them.
+        <div class="why-editorial-split">
+          <!-- Left Column (40% width) -->
+          <div class="why-editorial-left rv" data-aos="fade-up">
+            <span class="badge-pill"><span class="dot"></span> The Founder Advantage</span>
+            <h2 class="why-editorial-title">A B2B software partner that starts with product, not code.</h2>
+            <p class="why-editorial-sub">
+              Why founders and tech teams choose to partner with Nihar and the Creuto engineering team.
+            </p>
+            
+            <div class="why-philosophy-card">
+              <p class="why-philosophy-lead">
+                Most software fails before a line of code is written. Traditional dev agencies sell billable hours and sprawling sprint cycles. We do the inverse: we protect your runway by questioning assumptions, locking down the PRD, and killing unnecessary features before engineers touch them.
               </p>
-              <div class="lead-quote">
+              <div class="why-philosophy-quote">
                 "If you build the wrong thing on time and within budget, you still failed. Product thinking means building the exact thing that validates or grows your business."
               </div>
+              <div class="why-commitment">
+                <span class="why-commitment-tag">The Founder Commitment</span>
+                <p>Direct founder access on every architecture and scoping milestone — no junior account managers.</p>
+              </div>
             </div>
-            <div style="margin-top:24px; padding-top:16px; border-top:1px solid var(--line);">
-              <span style="font-family:'JetBrains Mono',monospace; font-size:11.5px; font-weight:700; color:var(--ink-faint); text-transform:uppercase; letter-spacing:0.07em;">The Founder Commitment</span>
-              <p style="font-size:14px; color:var(--ink); font-weight:600; margin:6px 0 0; line-height:1.5;">Direct founder access on every architecture and scoping milestone — no junior account managers.</p>
+
+            <div class="credential-chips-left">
+              <span class="chip"><span class="dot-sym">+</span>8 years product management</span>
+              <span class="chip"><span class="dot-sym">+</span>PRD &amp; product strategy</span>
+              <span class="chip"><span class="dot-sym">+</span>B2B &amp; SaaS software</span>
+              <span class="chip"><span class="dot-sym">+</span>Founder &amp; CEO, Creuto</span>
             </div>
           </div>
 
-          <!-- Vertical Stack of 3 Specific Cards -->
-          <div class="why-side-stack">
-            <div class="why-subcard rv" data-aos="fade-up" data-aos-delay="100">
-              <span class="num-badge">01 · Domain Fluency</span>
-              <h3>Business mechanics, not just user stories</h3>
-              <p>Eight years across B2B SaaS, manufacturing, fintech, and marketplace operations means we speak unit economics, workflow bottlenecks, and compliance — translating business needs directly into technical specs.</p>
-            </div>
-            <div class="why-subcard rv" data-aos="fade-up" data-aos-delay="200">
-              <span class="num-badge">02 · Budget-Fit Scoping</span>
-              <h3>Pragmatic scope that respects your runway</h3>
-              <p>We scope honestly for real commercial outcomes. We specify where off-the-shelf primitives make sense and where custom code gives you an actual competitive moat, keeping your burn predictable.</p>
-            </div>
-            <div class="why-subcard rv" data-aos="fade-up" data-aos-delay="300">
-              <span class="num-badge">03 · In-House Engineering</span>
-              <h3>Creuto's dedicated team, zero outsourcing</h3>
-              <p>Every commit is written and reviewed by Creuto's full-time engineering squad in Bhubaneswar. High velocity, consistent architectural standards, and clean documentation you permanently own.</p>
+          <!-- Right Column (60% width): Vertical divider-separated list with large ghost numbers -->
+          <div class="why-editorial-right">
+            <div class="why-points-list">
+              <!-- Point 01 -->
+              <div class="why-point-item rv" data-aos="fade-up" data-aos-delay="100">
+                <div class="why-ghost-num">01</div>
+                <div class="why-point-content">
+                  <span class="why-point-tag">Domain Fluency</span>
+                  <h3>Business mechanics, not just user stories</h3>
+                  <p>Eight years across B2B SaaS, manufacturing, fintech, and marketplace operations means we speak unit economics, workflow bottlenecks, and compliance — translating business needs directly into technical specs.</p>
+                </div>
+              </div>
+
+              <!-- Point 02 -->
+              <div class="why-point-item rv" data-aos="fade-up" data-aos-delay="200">
+                <div class="why-ghost-num">02</div>
+                <div class="why-point-content">
+                  <span class="why-point-tag">Budget-Fit Scoping</span>
+                  <h3>Pragmatic scope that respects your runway</h3>
+                  <p>We scope honestly for real commercial outcomes. We specify where off-the-shelf primitives make sense and where custom code gives you an actual competitive moat, keeping your burn predictable.</p>
+                </div>
+              </div>
+
+              <!-- Point 03 -->
+              <div class="why-point-item rv" data-aos="fade-up" data-aos-delay="300">
+                <div class="why-ghost-num">03</div>
+                <div class="why-point-content">
+                  <span class="why-point-tag">In-House Engineering</span>
+                  <h3>Creuto's dedicated team, zero outsourcing</h3>
+                  <p>Every commit is written and reviewed by Creuto's full-time engineering squad in Bhubaneswar. High velocity, consistent architectural standards, and clean documentation you permanently own.</p>
+                </div>
+              </div>
+
+              <!-- Point 04 -->
+              <div class="why-point-item rv" data-aos="fade-up" data-aos-delay="400">
+                <div class="why-ghost-num">04</div>
+                <div class="why-point-content">
+                  <span class="why-point-tag">Direct Founder Accountability</span>
+                  <h3>Direct technical stewardship, no middlemen</h3>
+                  <p>Direct founder access on every architecture and scoping milestone — from PRD definition to final production deploy. No game of telephone through account managers or junior PMs.</p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-
-        <div class="credential-chips rv">
-          <span class="chip"><span class="dot-sym">+</span>8 years in product management</span>
-          <span class="chip"><span class="dot-sym">+</span>PRD &amp; product strategy</span>
-          <span class="chip"><span class="dot-sym">+</span>Business &amp; domain analysis</span>
-          <span class="chip"><span class="dot-sym">+</span>B2B &amp; SaaS software</span>
-          <span class="chip"><span class="dot-sym">+</span>AI &amp; full-stack engineering</span>
-          <span class="chip"><span class="dot-sym">+</span>Founder &amp; CEO, Creuto</span>
         </div>
       </div>
     </section>
@@ -2863,12 +3202,16 @@
     <!-- ================= SECTION 5: CAPABILITIES & EXECUTION ================= -->
     <section id="capabilities" style="background:#FFFFFF; border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
       <div class="wrap">
-        <div class="shead center rv">
-          <span class="badge-pill"><span class="dot"></span> Capabilities &amp; Execution</span>
-          <h2>From product strategy to a growth-standard build.</h2>
-          <p class="sub">
-            Explore our core capabilities, the execution playbook, and flexible ways to work together.
-          </p>
+        <div class="shead left rv">
+          <div class="caps-header-split">
+            <div>
+              <span class="badge-pill"><span class="dot"></span> Capabilities &amp; Execution</span>
+              <h2>From product strategy to a growth-standard build.</h2>
+            </div>
+            <p class="sub">
+              Explore our core capabilities, the execution playbook, and flexible ways to work together.
+            </p>
+          </div>
         </div>
 
         <div class="tabs-wrapper rv">
@@ -2878,26 +3221,27 @@
             <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-models" id="tab-models">03 · Partnership Models</button>
           </div>
 
-          <!-- Tab Panel 1: Capabilities & Tech -->
+          <!-- Tab Panel 1: Capabilities & Tech (Bento Grid) -->
           <div class="tab-panel active" id="panel-caps" role="tabpanel" aria-labelledby="tab-caps">
-            <div class="caps-grid">
-              <!-- Flagship Advisory Box (Personal Founder Oversight) -->
-              <div class="cap-box flagship-cap rv" data-aos="fade-up">
-                <div class="cap-box-media">
+            <div class="bento-caps-layout">
+              <!-- Featured Panel (Dominant Double-Sized Panel): Product Strategy & Scoping -->
+              <div class="bento-panel bento-featured rv" data-aos="fade-up">
+                <div class="bento-media-hero">
                   <img src="assets/img/cap-strategy.jpg" alt="Product Strategy &amp; Scoping Architecture" class="corporate-img" loading="lazy">
+                  <span class="bento-badge">Founder Lead · Personal Advisory</span>
                 </div>
-                <div class="cap-box-body">
+                <div class="bento-content">
                   <div>
-                    <span style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent); text-transform:uppercase; letter-spacing:0.08em; display:inline-block; margin-bottom:12px;">Founder Advisory</span>
-                    <h3 style="font-size:24px; font-weight:800; letter-spacing:-0.02em; margin-bottom:12px; color:var(--ink);">Product Strategy &amp; Scoping</h3>
-                    <p class="desc" style="font-size:15px; line-height:1.65; color:var(--ink-soft); margin-bottom:18px;">
+                    <span class="bento-kicker">01 · Founder Advisory</span>
+                    <h3>Product Strategy &amp; Scoping</h3>
+                    <p class="bento-desc">
                       The part I lead personally. Before anyone writes code, we question assumptions, clarify user flows, eliminate superfluous features, and craft a bulletproof PRD your team and ours can execute against.
                     </p>
-                    <div style="font-family:'Playfair Display',Georgia,serif; font-style:italic; font-size:14.5px; color:var(--ink); padding:14px 16px; background:var(--bg); border-radius:var(--r-md); border-left:3px solid var(--ink); margin-bottom:20px; line-height:1.5;">
+                    <div class="bento-quote">
                       "Code is the most expensive way to discover you were building the wrong thing. We validate before we engineer."
                     </div>
                   </div>
-                  <ul style="border-top:1px dashed var(--line); padding-top:16px;">
+                  <ul class="bento-bullets">
                     <li><strong>PRD &amp; Documentation:</strong> Technical specs, acceptance criteria, edge cases</li>
                     <li><strong>Scope &amp; Budget Optimization:</strong> Protecting your runway from day zero</li>
                     <li><strong>Domain Mechanics:</strong> Unit economics, workflow bottlenecks, integrations</li>
@@ -2906,17 +3250,19 @@
                 </div>
               </div>
 
-              <!-- Two Engineering Engine Cards -->
-              <div class="caps-side-stack">
-                <div class="cap-box rv" data-aos="fade-up" data-aos-delay="100">
-                  <div class="cap-box-media">
+              <!-- Secondary Column: 2 Stacked Compact Panels -->
+              <div class="bento-secondary-col">
+                <div class="bento-panel bento-compact rv" data-aos="fade-up" data-aos-delay="100">
+                  <div class="bento-compact-media">
                     <img src="assets/img/cap-software.jpg" alt="Software and AI Systems Engineering" class="corporate-img" loading="lazy">
                   </div>
-                  <div class="cap-box-body">
-                    <span style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--ink-faint); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:10px;">02 · Engineering</span>
-                    <h3 style="font-size:20px; font-weight:800; color:var(--ink); margin-bottom:10px;">Software &amp; AI Systems</h3>
-                    <p class="desc" style="margin-bottom:18px;">Creuto's in-house engineering team builds production-grade B2B platforms, scalable SaaS engines, and pragmatic AI pipelines.</p>
-                    <ul>
+                  <div class="bento-compact-body">
+                    <div>
+                      <span class="bento-kicker">02 · Engineering</span>
+                      <h3>Software &amp; AI Systems</h3>
+                      <p class="bento-desc">Creuto's in-house engineering team builds production-grade B2B platforms, scalable SaaS engines, and pragmatic AI pipelines.</p>
+                    </div>
+                    <ul class="bento-bullets-compact">
                       <li>SaaS &amp; web platforms (Next.js, React, Node.js)</li>
                       <li>Pragmatic AI &amp; custom RAG pipelines</li>
                       <li>Robust PostgreSQL, Redis &amp; API architecture</li>
@@ -2925,15 +3271,17 @@
                   </div>
                 </div>
 
-                <div class="cap-box rv" data-aos="fade-up" data-aos-delay="200">
-                  <div class="cap-box-media">
+                <div class="bento-panel bento-compact rv" data-aos="fade-up" data-aos-delay="200">
+                  <div class="bento-compact-media">
                     <img src="assets/img/cap-mobile.jpg" alt="Mobile App &amp; Sprint Delivery" class="corporate-img" loading="lazy">
                   </div>
-                  <div class="cap-box-body">
-                    <span style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--ink-faint); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:10px;">03 · Mobile &amp; Scale</span>
-                    <h3 style="font-size:20px; font-weight:800; color:var(--ink); margin-bottom:10px;">Mobile &amp; Sprint Delivery</h3>
-                    <p class="desc" style="margin-bottom:18px;">High-performance cross-platform mobile apps and dedicated engineering sprints with continuous QA and direct milestone reviews.</p>
-                    <ul>
+                  <div class="bento-compact-body">
+                    <div>
+                      <span class="bento-kicker">03 · Mobile &amp; Scale</span>
+                      <h3>Mobile &amp; Sprint Delivery</h3>
+                      <p class="bento-desc">High-performance cross-platform mobile apps and dedicated engineering sprints with continuous QA and direct milestone reviews.</p>
+                    </div>
+                    <ul class="bento-bullets-compact">
                       <li>Mobile app development (Flutter &amp; React Native)</li>
                       <li>Two-week milestone sprints with live demos</li>
                       <li>Automated testing &amp; strict quality gates</li>
@@ -3031,10 +3379,12 @@
     <!-- ================= SECTION 5.5: TECHNOLOGIES WE WORK WITH ================= -->
     <section class="tech-section" id="technology">
       <div class="wrap">
-        <div class="shead center rv">
-          <span class="badge-pill"><span class="dot"></span> Tech Stack</span>
-          <h2>Technologies We Work With</h2>
-          <p class="sub">
+        <div class="tech-header-split rv">
+          <div>
+            <span class="badge-pill dark-pill"><span class="dot"></span> Tech Stack</span>
+            <h2 style="color:#FFFFFF; font-size:clamp(30px, 3.8vw, 44px); letter-spacing:-0.03em; margin:12px 0 0;">Technologies We Work With</h2>
+          </div>
+          <p class="tech-header-sub">
             The tools behind every product we ship — chosen for the problem, not the résumé.
           </p>
         </div>
@@ -3320,12 +3670,16 @@
       <span id="case-studies" style="position:relative; top:-90px; display:block; visibility:hidden;"></span>
       <span id="outcomes" style="position:relative; top:-90px; display:block; visibility:hidden;"></span>
       <div class="wrap">
-        <div class="shead center rv">
-          <span class="badge-pill"><span class="dot"></span> Selected Work</span>
-          <h2>Selected Work. Software built with product discipline.</h2>
-          <p class="sub">
-            Strategic product judgment, PRD clarity, and growth-standard engineering across AI, B2B SaaS, and mobile platforms.
-          </p>
+        <div class="shead left rv">
+          <div class="work-header-split">
+            <div>
+              <span class="badge-pill"><span class="dot"></span> Selected Work</span>
+              <h2 style="font-size:clamp(30px, 3.8vw, 44px); letter-spacing:-0.03em; margin:12px 0 0;">Selected Work. Software built with product discipline.</h2>
+            </div>
+            <p class="sub">
+              Strategic product judgment, PRD clarity, and growth-standard engineering across AI, B2B SaaS, and mobile platforms.
+            </p>
+          </div>
         </div>
 
         <!-- Filter Buttons (Rendered / Hydrated by work-data.js) -->
@@ -3559,51 +3913,80 @@
     <!-- ================= SECTION 7: CLIENT REVIEWS & TESTIMONIALS ================= -->
     <section class="reviews-section" id="reviews">
       <div class="wrap">
-        <div class="shead center rv">
-          <span class="badge-pill"><span class="dot"></span> Verified Client Reviews</span>
-          <h2>What founders &amp; executives say about working with me.</h2>
-          <p class="sub">Verified feedback from leaders who trusted Creuto to scope, architect, and ship their software.</p>
-        </div>
-
-        <!-- Real Testimonial Quote Cards -->
-        <div class="testimonials-grid">
-          <div class="testimonial-card rv" data-aos="fade-up" data-aos-delay="100">
-            <div class="testi-header">
-              <div class="testi-stars" aria-label="5 out of 5 stars">★★★★★</div>
-              <span class="testi-badge" style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:#34D399;">Clutch Verified Review</span>
+        <div class="shead left rv">
+          <div class="reviews-header-split">
+            <div>
+              <span class="badge-pill"><span class="dot"></span> Verified Client Reviews</span>
+              <h2>What founders &amp; executives say about working with me.</h2>
             </div>
-            <blockquote class="testi-quote">
-              “Skyeone solved a problem every family planning a wedding faces — the endless back-and-forth across a dozen vendors with nothing written down. Creuto built a platform that finally makes event planning feel as simple as booking a flight.”
-            </blockquote>
-            <div class="testi-author">
-              <div class="testi-author-wrapper">
-                <img src="assets/img/reviewer-rakesh.jpg" alt="Rakesh Sharma — Skyeone Founding Team" class="testi-avatar" loading="lazy">
-                <div class="testi-author-info">
-                  <strong>Rakesh Sharma</strong>
-                  <span>Skyeone Founding Team · Event Tech &amp; Booking</span>
-                </div>
-              </div>
-              <a href="/work/sky1-event-booking" class="testi-case-link">View Case Study ↗</a>
+            <div class="reviews-header-rating">
+              <div class="stars-gold" aria-label="5 out of 5 stars">★★★★★</div>
+              <span class="clutch-tag">5.0 Clutch Rating · 100% Verified Reviews</span>
             </div>
           </div>
+        </div>
 
-          <div class="testimonial-card rv" data-aos="fade-up" data-aos-delay="200">
-            <div class="testi-header">
-              <div class="testi-stars" aria-label="5 out of 5 stars">★★★★★</div>
-              <span class="testi-badge" style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:#34D399;">Clutch Verified Review</span>
-            </div>
-            <blockquote class="testi-quote">
-              “We had a complex vision: a marketplace that works seamlessly for customers, salon owners, and our internal team at the same time. Creuto understood that from day one. They did not just write code; they helped us think through the product logic, suggested features we had not considered, and delivered everything on schedule.”
-            </blockquote>
-            <div class="testi-author">
-              <div class="testi-author-wrapper">
-                <img src="assets/img/reviewer-jeet.jpg" alt="Jeet Mohnani — Co-Founder &amp; CEO, Make My Look" class="testi-avatar" loading="lazy">
-                <div class="testi-author-info">
-                  <strong>Jeet Mohnani</strong>
-                  <span>Co-Founder &amp; CEO, Make My Look · Beauty &amp; Wellness</span>
+        <!-- Single Large Spotlight Testimonial Stage -->
+        <div class="testi-spotlight-wrapper rv" data-aos="fade-up">
+          <div class="testi-spotlight-card" id="testiSpotlight">
+            <!-- Slide 1: Rakesh Sharma / Skyeone -->
+            <div class="testi-slide active" data-slide="0">
+              <div>
+                <span class="testi-badge-light">★ Clutch Verified Review</span>
+                <blockquote class="testi-quote-large">
+                  “Skyeone solved a problem every family planning a wedding faces — the endless back-and-forth across a dozen vendors with nothing written down. Creuto built a platform that finally makes event planning feel as simple as booking a flight.”
+                </blockquote>
+              </div>
+              <div class="testi-spotlight-footer">
+                <div class="testi-author-lockup">
+                  <img src="assets/img/reviewer-rakesh.jpg" alt="Rakesh Sharma — Skyeone Founding Team" class="testi-author-avatar" loading="lazy">
+                  <div class="testi-author-meta">
+                    <strong>Rakesh Sharma</strong>
+                    <span>Skyeone Founding Team · Event Tech &amp; Multi-Vendor Booking</span>
+                  </div>
+                </div>
+                <div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
+                  <a href="/work/sky1-event-booking" class="testi-case-link">View Case Study ↗</a>
+                  <div class="testi-controls">
+                    <button class="testi-nav-btn" id="testiPrev" aria-label="Previous review">←</button>
+                    <div class="testi-dots" id="testiDots">
+                      <button class="testi-dot active" data-index="0" aria-label="Review 1"></button>
+                      <button class="testi-dot" data-index="1" aria-label="Review 2"></button>
+                    </div>
+                    <button class="testi-nav-btn" id="testiNext" aria-label="Next review">→</button>
+                  </div>
                 </div>
               </div>
-              <a href="/work/make-my-look" class="testi-case-link">View Case Study ↗</a>
+            </div>
+
+            <!-- Slide 2: Jeet Mohnani / Make My Look -->
+            <div class="testi-slide" data-slide="1">
+              <div>
+                <span class="testi-badge-light">★ Clutch Verified Review</span>
+                <blockquote class="testi-quote-large">
+                  “We had a complex vision: a marketplace that works seamlessly for customers, salon owners, and our internal team at the same time. Creuto understood that from day one. They did not just write code; they helped us think through the product logic, suggested features we had not considered, and delivered everything on schedule.”
+                </blockquote>
+              </div>
+              <div class="testi-spotlight-footer">
+                <div class="testi-author-lockup">
+                  <img src="assets/img/reviewer-jeet.jpg" alt="Jeet Mohnani — Co-Founder &amp; CEO, Make My Look" class="testi-author-avatar" loading="lazy">
+                  <div class="testi-author-meta">
+                    <strong>Jeet Mohnani</strong>
+                    <span>Co-Founder &amp; CEO, Make My Look · Beauty &amp; Wellness Marketplace</span>
+                  </div>
+                </div>
+                <div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
+                  <a href="/work/make-my-look" class="testi-case-link">View Case Study ↗</a>
+                  <div class="testi-controls">
+                    <button class="testi-nav-btn" id="testiPrev2" aria-label="Previous review">←</button>
+                    <div class="testi-dots">
+                      <button class="testi-dot" data-index="0" aria-label="Review 1"></button>
+                      <button class="testi-dot active" data-index="1" aria-label="Review 2"></button>
+                    </div>
+                    <button class="testi-nav-btn" id="testiNext2" aria-label="Next review">→</button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -3728,12 +4111,21 @@
     <!-- ================= SECTION 9: WRITING & INSIGHTS ================= -->
     <section class="writing-section" id="writing">
       <div class="wrap">
-        <div class="shead center rv">
-          <span class="badge-pill"><span class="dot"></span> Writing &amp; Thoughts</span>
-          <h2>Product thinking in print. Shareable insights.</h2>
-          <p class="sub">
-            I write about product strategy, B2B software mistakes, and what it takes to launch products successfully.
-          </p>
+        <div class="shead left rv">
+          <div class="writing-header-split">
+            <div>
+              <span class="badge-pill"><span class="dot"></span> Writing &amp; Thoughts</span>
+              <h2 style="font-size:clamp(30px, 3.8vw, 44px); letter-spacing:-0.03em; margin:12px 0 0;">Product thinking in print. Shareable insights.</h2>
+            </div>
+            <div>
+              <p class="sub">
+                I write about product strategy, B2B software mistakes, and what it takes to launch products successfully.
+              </p>
+              <a href="https://medium.com/@niharrout" target="_blank" rel="noopener" class="lnk-arw" style="font-family:'JetBrains Mono',monospace; font-size:12.5px; font-weight:700; color:var(--accent);">
+                All Articles on Medium ↗
+              </a>
+            </div>
+          </div>
         </div>
 
         <div class="articles-grid">

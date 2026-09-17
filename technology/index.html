@@ -445,6 +445,14 @@
     }
 
     /* Architectural Deep Dive Sections */
+    .tech-header-split {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 32px;
+      margin-bottom: 36px;
+      flex-wrap: wrap;
+    }
     .deep-dive-section {
       padding: 80px 0;
       background: #FFFFFF;
@@ -650,12 +658,16 @@
     <!-- Hero Section -->
     <section class="tech-hero">
       <div class="wrap">
-        <div class="shead center">
-          <span class="badge-pill"><span class="dot"></span> Architecture &amp; Tech Stack</span>
-          <h1>Technologies We Work With</h1>
-          <p class="sub">
-            The tools behind every product we ship — chosen for the problem, not the résumé.
-          </p>
+        <div class="shead left">
+          <div class="tech-header-split">
+            <div>
+              <span class="badge-pill"><span class="dot"></span> Architecture &amp; Tech Stack</span>
+              <h1 style="font-size:clamp(32px, 4vw, 48px); letter-spacing:-0.03em; margin:14px 0 0;">Technologies We Work With</h1>
+            </div>
+            <p class="sub" style="max-width:46ch; margin:0;">
+              The tools behind every product we ship — chosen for the problem, not the résumé.
+            </p>
+          </div>
         </div>
 
         <div class="tech-grid">
@@ -928,12 +940,16 @@
     <!-- Deep Dive Architectural Rationale -->
     <section class="deep-dive-section">
       <div class="wrap">
-        <div class="shead center">
-          <span class="badge-pill"><span class="dot"></span> Why These Technologies</span>
-          <h2>Engineered for Business Outcomes</h2>
-          <p class="sub">
-            Why leading founders choose Creuto as their React Native, Node.js, and AI development partner.
-          </p>
+        <div class="shead left">
+          <div class="tech-header-split">
+            <div>
+              <span class="badge-pill"><span class="dot"></span> Why These Technologies</span>
+              <h2 style="font-size:clamp(28px, 3.6vw, 42px); letter-spacing:-0.03em; margin:14px 0 0;">Engineered for Business Outcomes</h2>
+            </div>
+            <p class="sub" style="max-width:46ch; margin:0;">
+              Why leading founders choose Creuto as their React Native, Node.js, and AI development partner.
+            </p>
+          </div>
         </div>
 
         <div class="deep-grid">

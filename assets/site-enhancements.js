@@ -111,16 +111,75 @@
     }, { passive: true });
   }
 
+  // 4. Spotlight Testimonial Slider Controls
+  function initTestimonialSpotlight() {
+    var card = document.getElementById('testiSpotlight');
+    if (!card) return;
+
+    var slides = card.querySelectorAll('.testi-slide');
+    if (slides.length <= 1) return;
+
+    var currentIdx = 0;
+
+    function showSlide(idx) {
+      if (idx < 0) idx = slides.length - 1;
+      if (idx >= slides.length) idx = 0;
+      currentIdx = idx;
+
+      slides.forEach(function (slide, i) {
+        if (i === currentIdx) {
+          slide.classList.add('active');
+        } else {
+          slide.classList.remove('active');
+        }
+      });
+
+      // Update dots across all slide controls
+      var allDots = card.querySelectorAll('.testi-dot');
+      allDots.forEach(function (dot) {
+        var dotIdx = parseInt(dot.getAttribute('data-index'), 10);
+        if (dotIdx === currentIdx) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+    }
+
+    // Prev / Next button listeners
+    card.addEventListener('click', function (e) {
+      var prevBtn = e.target.closest('.testi-nav-btn[aria-label="Previous review"], #testiPrev, #testiPrev2');
+      var nextBtn = e.target.closest('.testi-nav-btn[aria-label="Next review"], #testiNext, #testiNext2');
+      var dot = e.target.closest('.testi-dot');
+
+      if (prevBtn) {
+        e.preventDefault();
+        showSlide(currentIdx - 1);
+      } else if (nextBtn) {
+        e.preventDefault();
+        showSlide(currentIdx + 1);
+      } else if (dot) {
+        e.preventDefault();
+        var targetIndex = parseInt(dot.getAttribute('data-index'), 10);
+        if (!isNaN(targetIndex)) {
+          showSlide(targetIndex);
+        }
+      }
+    });
+  }
+
   // Initialize on DOM ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function () {
       initAOS();
       initCounters();
       initHeroParallax();
+      initTestimonialSpotlight();
     });
   } else {
     initAOS();
     initCounters();
     initHeroParallax();
+    initTestimonialSpotlight();
   }
 })();
