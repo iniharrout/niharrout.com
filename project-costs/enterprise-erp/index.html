@@ -1,0 +1,788 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cost to Build an Enterprise ERP System | Software Cost Breakdown — Nihar Ranjan Rout</title>
+  <meta name="description" content="Detailed cost breakdown and timeline to build an end-to-end custom enterprise ERP system for manufacturing or operations. Based on real production case studies by Creuto.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://niharrout.com/project-costs/enterprise-erp">
+  <link rel="icon" href="/assets/nihar.jpg" type="image/jpeg">
+  <link rel="apple-touch-icon" href="/assets/nihar.jpg">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Nihar Ranjan Rout | Creuto">
+  <meta property="og:url" content="https://niharrout.com/project-costs/enterprise-erp">
+  <meta property="og:title" content="Cost to Build an Enterprise ERP System | Nihar Ranjan Rout">
+  <meta property="og:description" content="What drives the cost up or down when building custom ERP software: modules, RBAC, inventory, and finance reconciliation.">
+  <meta property="og:image" content="https://niharrout.com/work/erp-manufacturing-card.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cost to Build an Enterprise ERP System | Nihar Ranjan Rout">
+  <meta name="twitter:description" content="Realistic cost ranges and phase breakdown for enterprise ERP platforms built by Creuto.">
+  <meta name="twitter:image" content="https://niharrout.com/work/erp-manufacturing-card.jpg">
+
+  <!-- Structured Data: WebPage & Breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Cost to Build an Enterprise ERP System",
+    "description": "Comprehensive guide on investment parameters, phase allocations, and architectural cost drivers for custom ERP software.",
+    "url": "https://niharrout.com/project-costs/enterprise-erp",
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://niharrout.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Project Costs",
+          "item": "https://niharrout.com/project-costs"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Enterprise ERP",
+          "item": "https://niharrout.com/project-costs/enterprise-erp"
+        }
+      ]
+    }
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap">
+
+  <style>
+    /* ================= DESIGN SYSTEM ================= */
+    :root {
+      --bg: #F7F5F0;
+      --bg-alt: #EFECE3;
+      --surface: #FFFFFF;
+      --surface-subtle: #F3F0E8;
+      
+      --ink: #141312;
+      --ink-soft: #4E4B46;
+      --ink-faint: #7E7A73;
+      --ink-muted: #A8A49D;
+
+      --line: rgba(20, 19, 18, 0.08);
+      --line-strong: rgba(20, 19, 18, 0.14);
+      --line-focus: #141312;
+
+      --accent: #EE5A2A;
+      --accent-tint: #FDF0EB;
+      --accent-border: #F9CAB8;
+      --accent-dark: #C2381B;
+
+      --emerald: #0DA868;
+      --emerald-tint: #E7F8F0;
+      --emerald-border: #B3EBD3;
+
+      --shadow-sm: 0 1px 2px rgba(20, 19, 18, 0.04);
+      --shadow-card: 0 8px 24px -6px rgba(20, 19, 18, 0.04), 0 2px 6px rgba(20, 19, 18, 0.02);
+      --shadow-hover: 0 16px 36px -8px rgba(20, 19, 18, 0.08), 0 4px 12px rgba(20, 19, 18, 0.03);
+      --shadow-float: 0 24px 48px -12px rgba(20, 19, 18, 0.1);
+
+      --maxw: 1160px;
+      --r-xl: 24px;
+      --r-lg: 18px;
+      --r-md: 12px;
+      --r-sm: 8px;
+      --r-pill: 9999px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background-color: var(--bg); }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink-soft);
+      font-family: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 16px;
+      line-height: 1.68;
+      -webkit-font-smoothing: antialiased;
+      padding-top: 72px;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+    /* Navigation */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(247, 245, 240, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+      height: 72px;
+      display: flex;
+      align-items: center;
+    }
+    .nav-inner {
+      max-width: var(--maxw);
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: 2px;
+    }
+    .brand .dot { color: var(--accent); }
+    .nav-breadcrumbs {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--ink-faint);
+    }
+    .nav-breadcrumbs a:hover { color: var(--ink); }
+    .nav-breadcrumbs .sep { color: var(--ink-muted); }
+    .nav-breadcrumbs .current { color: var(--ink); font-weight: 700; }
+
+    /* Buttons & Badges */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: var(--r-pill);
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      border: 1px solid transparent;
+    }
+    .btn-dark { background: var(--ink); color: #FFFFFF; }
+    .btn-dark:hover { background: #000000; transform: translateY(-1px); }
+    .btn-outline { background: var(--surface); color: var(--ink); border-color: var(--line-strong); }
+    .btn-outline:hover { border-color: var(--ink); transform: translateY(-1px); }
+    .btn-light { background: #FFFFFF; color: var(--ink); }
+    .btn-light:hover { background: #F3F0E8; }
+    .btn-light-outline { background: transparent; color: #FFFFFF; border-color: rgba(255,255,255,0.3); }
+    .btn-light-outline:hover { border-color: #FFFFFF; }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--ink);
+      background: var(--surface);
+      border: 1px solid var(--line-strong);
+      padding: 6px 14px;
+      border-radius: var(--r-pill);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 16px;
+    }
+    .badge-pill .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+
+    /* Page Hero */
+    .breakdown-hero {
+      padding: 56px 0 40px;
+    }
+    .hero-header {
+      max-width: 860px;
+    }
+    .hero-title {
+      font-size: clamp(32px, 4.5vw, 50px);
+      line-height: 1.15;
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      color: var(--ink);
+      margin: 0 0 16px;
+    }
+    .hero-sub {
+      font-size: clamp(17px, 2vw, 19px);
+      color: var(--ink-soft);
+      line-height: 1.6;
+      margin: 0 0 32px;
+    }
+
+    /* Investment Summary Card */
+    .summary-card {
+      background: var(--surface);
+      border: 1px solid var(--line-strong);
+      border-radius: var(--r-xl);
+      padding: 32px;
+      box-shadow: var(--shadow-card);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+    .summary-item .lbl {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ink-faint);
+      margin-bottom: 6px;
+    }
+    .summary-item .val {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--ink);
+      line-height: 1.25;
+    }
+    .summary-item .sub {
+      font-size: 12px;
+      color: var(--ink-faint);
+      margin-top: 4px;
+    }
+
+    /* Narrative Card */
+    .narrative-box {
+      background: var(--surface);
+      border: 1px solid var(--line-strong);
+      border-radius: var(--r-lg);
+      padding: 36px;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 56px;
+    }
+    .narrative-box h2 {
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--ink);
+      letter-spacing: -0.025em;
+      margin: 0 0 16px;
+    }
+    .narrative-box p {
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--ink-soft);
+      margin: 0 0 18px;
+    }
+    .narrative-box p:last-child { margin-bottom: 0; }
+
+    /* Cost Drivers Section */
+    .drivers-section {
+      margin-bottom: 64px;
+    }
+    .drivers-section h2 {
+      font-size: clamp(26px, 3.5vw, 36px);
+      font-weight: 800;
+      color: var(--ink);
+      letter-spacing: -0.03em;
+      margin: 0 0 12px;
+    }
+    .drivers-sub {
+      font-size: 16.5px;
+      color: var(--ink-soft);
+      margin: 0 0 32px;
+      max-width: 780px;
+    }
+    .drivers-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    .driver-card {
+      background: var(--surface);
+      border: 1px solid var(--line-strong);
+      border-radius: var(--r-lg);
+      padding: 28px;
+      box-shadow: var(--shadow-sm);
+    }
+    .driver-card .icon {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .driver-card h3 {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--ink);
+      margin: 0 0 10px;
+    }
+    .driver-card p {
+      font-size: 14.5px;
+      line-height: 1.6;
+      color: var(--ink-soft);
+      margin: 0;
+    }
+
+    /* Phase Breakdown Table / Cards */
+    .phases-section {
+      margin-bottom: 64px;
+    }
+    .phases-section h2 {
+      font-size: clamp(26px, 3.5vw, 36px);
+      font-weight: 800;
+      color: var(--ink);
+      letter-spacing: -0.03em;
+      margin: 0 0 12px;
+    }
+    .phase-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .phase-item {
+      background: var(--surface);
+      border: 1px solid var(--line-strong);
+      border-radius: var(--r-lg);
+      padding: 24px 28px;
+      display: grid;
+      grid-template-columns: 140px 1fr 200px;
+      gap: 24px;
+      align-items: center;
+      box-shadow: var(--shadow-sm);
+    }
+    .phase-num {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink-faint);
+    }
+    .phase-detail h4 {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--ink);
+      margin: 0 0 6px;
+    }
+    .phase-detail p {
+      font-size: 14px;
+      line-height: 1.55;
+      color: var(--ink-soft);
+      margin: 0;
+    }
+    .phase-meta {
+      text-align: right;
+    }
+    .phase-meta .duration {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .phase-meta .cost-est {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 13px;
+      color: var(--ink-faint);
+      margin-top: 2px;
+    }
+
+    /* Case Study Highlight Banner */
+    .case-highlight {
+      background: var(--surface);
+      border: 1px solid var(--line-strong);
+      border-left: 4px solid var(--accent);
+      border-radius: var(--r-md);
+      padding: 24px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 56px;
+    }
+    .case-highlight-text h4 {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--ink);
+      margin: 0 0 4px;
+    }
+    .case-highlight-text p {
+      font-size: 14px;
+      color: var(--ink-soft);
+      margin: 0;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: var(--ink);
+      color: #FFFFFF;
+      border-radius: var(--r-xl);
+      padding: clamp(48px, 6vw, 68px) 32px;
+      text-align: center;
+      margin: 48px 0 80px;
+      box-shadow: var(--shadow-float);
+    }
+    .cta-section h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin: 0 0 14px;
+      color: #FFFFFF;
+    }
+    .cta-section p {
+      font-size: 16.5px;
+      line-height: 1.65;
+      max-width: 600px;
+      margin: 0 auto 28px;
+      color: rgba(255, 255, 255, 0.78);
+    }
+    .cta-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* Footer */
+    .ft {
+      border-top: 1px solid var(--line);
+      background: var(--surface);
+      padding: 56px 0 36px;
+      font-size: 14px;
+    }
+    .ft-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .ft-col h4 {
+      font-size: 12.5px;
+      font-family: "JetBrains Mono", monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ink);
+      margin: 0 0 16px;
+    }
+    .ft-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      color: var(--ink-faint);
+    }
+    .ft-links a:hover { color: var(--ink); }
+    .ft-bottom {
+      border-top: 1px solid var(--line);
+      padding-top: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 13px;
+      color: var(--ink-faint);
+    }
+
+    @media (max-width: 900px) {
+      .summary-card { grid-template-columns: repeat(2, 1fr); }
+      .drivers-grid { grid-template-columns: 1fr; }
+      .phase-item { grid-template-columns: 1fr; gap: 12px; }
+      .phase-meta { text-align: left; }
+      .case-highlight { flex-direction: column; align-items: flex-start; }
+      .ft-grid { grid-template-columns: 1fr; gap: 32px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ================= HEADER / NAV ================= -->
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <div style="display:flex; align-items:center; gap:16px;">
+        <a href="/" class="brand">nihar<span class="dot">.</span></a>
+        <div class="nav-breadcrumbs">
+          <span class="sep">/</span>
+          <a href="/project-costs">Project Costs</a>
+          <span class="sep">/</span>
+          <span class="current">Enterprise ERP</span>
+        </div>
+      </div>
+
+      <div style="display:flex; align-items:center; gap:12px;">
+        <a href="/project-costs" class="btn btn-outline" style="font-size:13px; padding:8px 16px;">← All Cost Guides</a>
+        <a href="/#contact" class="btn btn-dark" style="font-size:13px; padding:8px 18px;">Book a Call →</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <!-- ================= HERO ================= -->
+      <section class="breakdown-hero">
+        <div class="hero-header">
+          <span class="badge-pill"><span class="dot"></span> Software Cost Breakdown · Enterprise B2B</span>
+          <h1 class="hero-title">Cost to Build an Enterprise ERP System</h1>
+          <p class="hero-sub">
+            A comprehensive breakdown of investment parameters, phase allocations, and architectural cost drivers required to replace disconnected software with a unified operational system of record.
+          </p>
+        </div>
+
+        <!-- Investment & Timeline Summary Box -->
+        <!-- ILLUSTRATIVE — confirm with Nihar. -->
+        <div class="summary-card">
+          <div class="summary-item">
+            <div class="lbl">Investment Range</div>
+            <!-- ILLUSTRATIVE — confirm with Nihar. -->
+            <div class="val">$50k – $150k</div>
+            <div class="sub">Illustrative baseline (confirm with Nihar)</div>
+          </div>
+          <div class="summary-item">
+            <div class="lbl">Typical Timeline</div>
+            <!-- ILLUSTRATIVE — confirm with Nihar. -->
+            <div class="val">4 – 9 Mos</div>
+            <div class="sub">Two-week sprint iterations</div>
+          </div>
+          <div class="summary-item">
+            <div class="lbl">Architecture</div>
+            <div class="val">Modular Web</div>
+            <div class="sub">Role-based browser dashboards</div>
+          </div>
+          <div class="summary-item">
+            <div class="lbl">Proven Reference</div>
+            <div class="val">Manufacturing</div>
+            <div class="sub">Unified 4 siloed departments</div>
+          </div>
+        </div>
+
+        <!-- Case Study Link Highlight -->
+        <div class="case-highlight">
+          <div class="case-highlight-text">
+            <h4>Production Precedent: End-to-End Custom ERP for Manufacturing Operations</h4>
+            <p>Read how Creuto unified HR, sales pipeline, inventory, and finance into one shared data layer, cutting the monthly close to 1 day.</p>
+          </div>
+          <a href="/work/custom-erp-manufacturing" class="btn btn-outline">Read Case Study ↗</a>
+        </div>
+
+        <!-- Narrative: Custom Build vs Off-the-Shelf -->
+        <div class="narrative-box">
+          <h2>Why Build Custom When Off-the-Shelf ERPs Exist?</h2>
+          <p>
+            Off-the-shelf platforms like SAP, Oracle, or NetSuite charge exorbitant recurring license fees ($200–$500/user/month) and still require $100,000+ in rigid implementation consulting to adapt to non-standard manufacturing workflows. For growing industrial and manufacturing enterprises, licensing software that forces you to reshape your entire shop floor never pays off.
+          </p>
+          <p>
+            A tailored ERP scoped and built module-by-module belongs 100% to your enterprise — with zero per-seat licensing penalties, custom role permissions reflecting your actual hierarchy, and direct integrations with your factory floor and field teams.
+          </p>
+        </div>
+
+        <!-- ================= COST DRIVERS ================= -->
+        <section class="drivers-section">
+          <h2>What Drives the Cost Up or Down?</h2>
+          <p class="drivers-sub">
+            The final budget of an enterprise ERP is dictated by the depth of integration, departmental breadth, and security compliance required.
+          </p>
+
+          <div class="drivers-grid">
+            <div class="driver-card">
+              <div class="icon">01 / Departmental Breadth &amp; Modules</div>
+              <h3>Number of Connected Business Units</h3>
+              <p>
+                Unifying two core departments (e.g. Sales CRM + Inventory) requires fewer data entities and approvals. Expanding scope to include complete HR payroll synchronization and complex P&amp;L reconciliation adds sprint cycles for regulatory logic.
+              </p>
+            </div>
+
+            <div class="driver-card">
+              <div class="icon">02 / Permission &amp; Security Granularity</div>
+              <h3>Role-Based Access Controls (RBAC)</h3>
+              <p>
+                Multi-tier organizations require precise authorization boundaries — from plant supervisors checking raw materials to CFOs approving vendor purchase orders and executive leadership viewing consolidated EBITDA.
+              </p>
+            </div>
+
+            <div class="driver-card">
+              <div class="icon">03 / Hardware &amp; Floor Verification</div>
+              <h3>QR Check-in &amp; Geolocation</h3>
+              <p>
+                Integrating browser-based mobile camera scanning, QR token validation, and GPS geo-fencing for shift clock-ins ensures shift integrity across physical plant sites without requiring expensive biometric hardware.
+              </p>
+            </div>
+
+            <div class="driver-card">
+              <div class="icon">04 / Legacy Data Migration</div>
+              <h3>Spreadsheet Ingestion &amp; Sanitization</h3>
+              <p>
+                Legacy businesses often have years of disparate Excel sheets containing inconsistent customer names, SKU codes, and pricing tables. Automated data parsing, schema deduplication, and migration scripts influence initial timeline.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= PHASE BREAKDOWN ================= -->
+        <section class="phases-section">
+          <h2>Rough Breakdown by Module &amp; Phase</h2>
+          <p class="drivers-sub">
+            How a typical 4 to 9 month enterprise ERP engagement is staged in fixed two-week sprints.
+          </p>
+
+          <div class="phase-list">
+            <!-- Phase 1 -->
+            <div class="phase-item">
+              <div class="phase-num">Phase 01</div>
+              <div class="phase-detail">
+                <h4>Discovery, Data Schema &amp; PRD</h4>
+                <p>Cross-department stakeholder interviews, entity-relationship diagrams (ERDs), permission matrices, and detailed user flow specifications.</p>
+              </div>
+              <div class="phase-meta">
+                <div class="duration">2 – 3 weeks</div>
+                <!-- ILLUSTRATIVE — confirm with Nihar. -->
+                <div class="cost-est">Est. 10% – 15% budget</div>
+              </div>
+            </div>
+
+            <!-- Phase 2 -->
+            <div class="phase-item">
+              <div class="phase-num">Phase 02</div>
+              <div class="phase-detail">
+                <h4>HR Management &amp; Access Controls</h4>
+                <p>Attendance tracking, leave management, QR/mobile check-in, employee lifecycle workflows, and foundation role-based dashboards.</p>
+              </div>
+              <div class="phase-meta">
+                <div class="duration">4 – 6 weeks</div>
+                <!-- ILLUSTRATIVE — confirm with Nihar. -->
+                <div class="cost-est">Est. 20% budget</div>
+              </div>
+            </div>
+
+            <!-- Phase 3 -->
+            <div class="phase-item">
+              <div class="phase-num">Phase 03</div>
+              <div class="phase-detail">
+                <h4>CRM &amp; Commercial Pipeline</h4>
+                <p>Lead tracking, field visit logs, commercial quotation generation, automated discount approval hierarchies, and conversion metrics.</p>
+              </div>
+              <div class="phase-meta">
+                <div class="duration">4 – 6 weeks</div>
+                <!-- ILLUSTRATIVE — confirm with Nihar. -->
+                <div class="cost-est">Est. 20% budget</div>
+              </div>
+            </div>
+
+            <!-- Phase 4 -->
+            <div class="phase-item">
+              <div class="phase-num">Phase 04</div>
+              <div class="phase-detail">
+                <h4>Inventory &amp; Supply Chain Engine</h4>
+                <p>Multi-warehouse raw material tracking, minimum stock reorder triggers, automated Purchase Order (PO) creation, and vendor receipt logging.</p>
+              </div>
+              <div class="phase-meta">
+                <div class="duration">5 – 7 weeks</div>
+                <!-- ILLUSTRATIVE — confirm with Nihar. -->
+                <div class="cost-est">Est. 25% budget</div>
+              </div>
+            </div>
+
+            <!-- Phase 5 -->
+            <div class="phase-item">
+              <div class="phase-num">Phase 05</div>
+              <div class="phase-detail">
+                <h4>Finance, P&amp;L &amp; Month-End Close</h4>
+                <p>Centralized cash flows, vendor invoice reconciliation, department cost centers, and automated financial statements reducing monthly close to 1 day.</p>
+              </div>
+              <div class="phase-meta">
+                <div class="duration">4 – 6 weeks</div>
+                <!-- ILLUSTRATIVE — confirm with Nihar. -->
+                <div class="cost-est">Est. 15% – 20% budget</div>
+              </div>
+            </div>
+
+            <!-- Phase 6 -->
+            <div class="phase-item">
+              <div class="phase-num">Phase 06</div>
+              <div class="phase-detail">
+                <h4>Executive Cockpit, QA &amp; Plant Rollout</h4>
+                <p>Real-time cross-functional leadership dashboard, data validation, stress testing under concurrent load, user acceptance testing (UAT), and plant deployment.</p>
+              </div>
+              <div class="phase-meta">
+                <div class="duration">3 – 4 weeks</div>
+                <!-- ILLUSTRATIVE — confirm with Nihar. -->
+                <div class="cost-est">Est. 10% budget</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= CTA SECTION ================= -->
+        <section class="cta-section">
+          <h2>Ready to Scope Your Enterprise Platform?</h2>
+          <p>
+            Use our interactive scope calculator to model budget scenarios, or schedule an architecture review with Nihar to establish a fixed-milestone roadmap.
+          </p>
+          <div class="cta-actions">
+            <a href="/#estimator" class="btn btn-light">Calculate Project Scope ↓</a>
+            <a href="/#contact" class="btn btn-light-outline">Schedule Scoping Call →</a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="ft">
+    <div class="wrap">
+      <div class="ft-grid">
+        <div class="ft-col">
+          <div style="font-size:20px; font-weight:800; color:var(--ink); margin-bottom:12px;">nihar<span class="dot" style="color:var(--accent);">.</span></div>
+          <p style="margin:0; line-height:1.65; max-width:44ch;">
+            Product-first B2B software development. Founder &amp; CEO of Creuto — where product strategy and an in-house engineering team turn software ideas into growth-standard products.
+          </p>
+        </div>
+
+        <div class="ft-col">
+          <h4>Explore</h4>
+          <div class="ft-links">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/technology">Technology</a>
+            <a href="/project-costs">Project Costs</a>
+            <a href="/#capabilities">Capabilities</a>
+            <a href="/#work">Selected Work</a>
+            <a href="/b2b-software-development-for-startups.html">B2B Software for Startups</a>
+            <a href="/ai-product-development-bhubaneswar.html">AI Development Bhubaneswar</a>
+          </div>
+        </div>
+
+        <div class="ft-col">
+          <h4>Contact &amp; Legal</h4>
+          <div class="ft-links">
+            <a href="mailto:mail@niharrout.com">mail@niharrout.com</a>
+            <a href="https://creuto.com" target="_blank" rel="noopener">Creuto ↗</a>
+            <a href="/privacy-policy">Privacy Policy</a>
+            <a href="/terms">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="ft-bottom">
+        <div>© 2026 Nihar Ranjan Rout · Founder &amp; CEO, Creuto</div>
+        <div style="display:flex; gap:14px;">
+          <a href="/privacy-policy" style="color:inherit; text-decoration:none;">Privacy Policy</a>
+          <span>·</span>
+          <a href="/terms" style="color:inherit; text-decoration:none;">Terms of Service</a>
+          <span>·</span>
+          <span>niharrout.com</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
