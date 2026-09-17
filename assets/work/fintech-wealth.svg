@@ -22,7 +22,7 @@
     <!-- Header -->
     <rect width="680" height="46" rx="16" fill="#FFFFFF"/>
     <path d="M 0 46 L 680 46" stroke="#141312" stroke-opacity="0.08" stroke-width="1"/>
-    <circle cx="28" cy="23" r="5" fill="#EE5A2A"/>
+    <circle cx="28" cy="23" r="5" fill="#FF5F2D"/>
     <circle cx="44" cy="23" r="5" fill="#D6F75A" stroke="#141312" stroke-opacity="0.2"/>
     <circle cx="60" cy="23" r="5" fill="#0DA868"/>
     
@@ -39,10 +39,10 @@
       <text x="20" y="48" font-family="'JetBrains Mono', monospace" font-size="22" font-weight="800" fill="#141312">$42.8M <tspan font-size="11" font-weight="600" fill="#0DA868">+18.4% ARR</tspan></text>
 
       <!-- SVG Chart Line -->
-      <path d="M 20 140 C 80 135 140 120 200 80 S 300 60 360 40" fill="none" stroke="#EE5A2A" stroke-width="3"/>
-      <path d="M 20 140 C 80 135 140 120 200 80 S 300 60 360 40 L 360 160 L 20 160 Z" fill="#EE5A2A" fill-opacity="0.08"/>
+      <path d="M 20 140 C 80 135 140 120 200 80 S 300 60 360 40" fill="none" stroke="#FF5F2D" stroke-width="3"/>
+      <path d="M 20 140 C 80 135 140 120 200 80 S 300 60 360 40 L 360 160 L 20 160 Z" fill="#FF5F2D" fill-opacity="0.08"/>
       
-      <circle cx="200" cy="80" r="5" fill="#EE5A2A"/>
+      <circle cx="200" cy="80" r="5" fill="#FF5F2D"/>
       <circle cx="360" cy="40" r="5" fill="#0DA868"/>
     </g>
 
@@ -52,7 +52,7 @@
       <text x="16" y="28" font-family="-apple-system, sans-serif" font-size="11" font-weight="700" fill="#141312">PRD Roadmap Milestones</text>
       
       <rect x="16" y="44" width="188" height="34" rx="8" fill="#FFFFFF" stroke="#141312" stroke-opacity="0.06"/>
-      <text x="26" y="58" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" fill="#EE5A2A">M1: COMPLIANCE CORE</text>
+      <text x="26" y="58" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" fill="#FF5F2D">M1: COMPLIANCE CORE</text>
       <text x="26" y="70" font-family="-apple-system, sans-serif" font-size="9.5" fill="#4E4B46">KYC/AML + Multi-tenant ledger</text>
 
       <rect x="16" y="86" width="188" height="34" rx="8" fill="#FFFFFF" stroke="#141312" stroke-opacity="0.06"/>

@@ -24,7 +24,7 @@
     <rect width="680" height="46" rx="16" fill="#FAF8F5"/>
     <path d="M 0 46 L 680 46" stroke="#141312" stroke-opacity="0.08" stroke-width="1"/>
     
-    <circle cx="28" cy="23" r="5" fill="#EE5A2A"/>
+    <circle cx="28" cy="23" r="5" fill="#FF5F2D"/>
     <circle cx="44" cy="23" r="5" fill="#D6F75A" stroke="#141312" stroke-opacity="0.2"/>
     <circle cx="60" cy="23" r="5" fill="#0DA868"/>
     
@@ -41,9 +41,9 @@
       <text x="16" y="26" font-family="-apple-system, sans-serif" font-size="11" font-weight="700" fill="#141312">Color &amp; Type Tokens</text>
       
       <!-- Token 1 -->
-      <rect x="16" y="42" width="24" height="24" rx="6" fill="#EE5A2A"/>
+      <rect x="16" y="42" width="24" height="24" rx="6" fill="#FF5F2D"/>
       <text x="48" y="54" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="600" fill="#141312">brand-coral</text>
-      <text x="48" y="64" font-family="'JetBrains Mono', monospace" font-size="8.5" fill="#7E7A73">#EE5A2A · 100%</text>
+      <text x="48" y="64" font-family="'JetBrains Mono', monospace" font-size="8.5" fill="#7E7A73">#FF5F2D · 100%</text>
 
       <!-- Token 2 -->
       <rect x="16" y="76" width="24" height="24" rx="6" fill="#D6F75A" stroke="#141312" stroke-opacity="0.2"/>
@@ -58,12 +58,12 @@
       <!-- Typography scale -->
       <path d="M 16 150 L 164 150" stroke="#141312" stroke-opacity="0.06"/>
       <text x="16" y="174" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" fill="#7E7A73">TYPE SCALE</text>
-      <text x="16" y="196" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="800" fill="#141312">Heading H1</text>
-      <text x="16" y="218" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600" fill="#4E4B46">Body Regular / 15px</text>
+      <text x="16" y="196" font-family="'Manrope', sans-serif" font-size="14" font-weight="800" fill="#141312">Heading H1</text>
+      <text x="16" y="218" font-family="'Manrope', sans-serif" font-size="11" font-weight="600" fill="#4E4B46">Body Regular / 15px</text>
       <text x="16" y="238" font-family="'JetBrains Mono', monospace" font-size="10" fill="#7E7A73">mono-code-12</text>
 
       <rect x="16" y="260" width="148" height="42" rx="8" fill="#FDF0EB" stroke="#F9CAB8"/>
-      <text x="26" y="278" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" fill="#EE5A2A">GITHUB ACTIONS SYNC</text>
+      <text x="26" y="278" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" fill="#FF5F2D">GITHUB ACTIONS SYNC</text>
       <text x="26" y="292" font-family="-apple-system, sans-serif" font-size="9" fill="#4E4B46">Auto-PR on Token Change</text>
     </g>
 
@@ -85,7 +85,7 @@
         <text x="156" y="63" font-family="-apple-system, sans-serif" font-size="10" font-weight="600" fill="#141312">Secondary</text>
 
         <!-- Coral Accent Button -->
-        <rect x="256" y="42" width="116" height="34" rx="8" fill="#EE5A2A"/>
+        <rect x="256" y="42" width="116" height="34" rx="8" fill="#FF5F2D"/>
         <text x="274" y="63" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" fill="#FFFFFF">Start Project →</text>
 
         <!-- Badges Row -->
@@ -93,7 +93,7 @@
         <text x="26" y="104" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" fill="#0DA868">DEPLOYED</text>
 
         <rect x="96" y="90" width="60" height="20" rx="10" fill="#FDF0EB"/>
-        <text x="106" y="104" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" fill="#EE5A2A">STAGING</text>
+        <text x="106" y="104" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" fill="#FF5F2D">STAGING</text>
 
         <rect x="166" y="90" width="84" height="20" rx="10" fill="#F3F0E8"/>
         <text x="176" y="104" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" fill="#4E4B46">FIGMA SYNC</text>
@@ -103,14 +103,14 @@
       <g transform="translate(24, 175)">
         <rect width="388" height="125" rx="10" fill="#181716"/>
         <rect width="388" height="24" rx="10" fill="#121110"/>
-        <circle cx="16" cy="12" r="3" fill="#EE5A2A"/>
+        <circle cx="16" cy="12" r="3" fill="#FF5F2D"/>
         <circle cx="28" cy="12" r="3" fill="#D6F75A"/>
         <circle cx="40" cy="12" r="3" fill="#0DA868"/>
         <text x="56" y="15" font-family="'JetBrains Mono', monospace" font-size="9" fill="#7E7A73">Button.tokens.ts</text>
 
         <text x="16" y="45" font-family="'JetBrains Mono', monospace" font-size="9.5" fill="#D6F75A">export const buttonVariants = cva("rounded-lg px-4 font-semibold", {</text>
         <text x="16" y="65" font-family="'JetBrains Mono', monospace" font-size="9.5" fill="#FAF8F5">  variants: { tone: { primary: "bg-ink text-white", accent: "bg-coral" } },</text>
-        <text x="16" y="85" font-family="'JetBrains Mono', monospace" font-size="9.5" fill="#EE5A2A">  defaultVariants: { tone: "primary" }</text>
+        <text x="16" y="85" font-family="'JetBrains Mono', monospace" font-size="9.5" fill="#FF5F2D">  defaultVariants: { tone: "primary" }</text>
         <text x="16" y="105" font-family="'JetBrains Mono', monospace" font-size="9.5" fill="#7E7A73">}); // Auto-generated from token studio</text>
       </g>
     </g>

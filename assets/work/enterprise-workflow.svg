@@ -32,7 +32,7 @@
     <path d="M 0 46 L 680 46" stroke="#141312" stroke-opacity="0.08" stroke-width="1"/>
     
     <!-- Window Controls -->
-    <circle cx="28" cy="23" r="5" fill="#EE5A2A" fill-opacity="0.8"/>
+    <circle cx="28" cy="23" r="5" fill="#FF5F2D" fill-opacity="0.8"/>
     <circle cx="44" cy="23" r="5" fill="#D6F75A" stroke="#141312" stroke-opacity="0.2"/>
     <circle cx="60" cy="23" r="5" fill="#0DA868" fill-opacity="0.8"/>
 
@@ -42,14 +42,14 @@
     
     <!-- Header Right Badges -->
     <rect x="530" y="12" width="120" height="22" rx="6" fill="#FDF0EB" stroke="#F9CAB8" stroke-width="1"/>
-    <text x="548" y="27" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600" fill="#EE5A2A">70% LATENCY REDUCTION</text>
+    <text x="548" y="27" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600" fill="#FF5F2D">70% LATENCY REDUCTION</text>
 
     <!-- Sidebar -->
     <rect x="0" y="46" width="160" height="364" fill="#F7F5F0" fill-opacity="0.6"/>
     <path d="M 160 46 L 160 410" stroke="#141312" stroke-opacity="0.06"/>
 
     <rect x="18" y="66" width="124" height="28" rx="8" fill="#FFFFFF" stroke="#141312" stroke-opacity="0.06"/>
-    <rect x="28" y="76" width="8" height="8" rx="2" fill="#EE5A2A"/>
+    <rect x="28" y="76" width="8" height="8" rx="2" fill="#FF5F2D"/>
     <text x="44" y="84" font-family="-apple-system, sans-serif" font-size="11" font-weight="700" fill="#141312">Operations Hub</text>
 
     <rect x="18" y="104" width="124" height="24" rx="6" fill="transparent"/>
@@ -76,7 +76,7 @@
       <!-- KPI 2 -->
       <rect x="162" width="150" height="74" rx="10" fill="#FFFFFF" stroke="#141312" stroke-opacity="0.06"/>
       <text x="176" y="24" font-family="-apple-system, sans-serif" font-size="10" font-weight="600" fill="#7E7A73">HOURS SAVED / WK</text>
-      <text x="176" y="52" font-family="'JetBrains Mono', monospace" font-size="22" font-weight="700" fill="#EE5A2A">30+ hrs</text>
+      <text x="176" y="52" font-family="'JetBrains Mono', monospace" font-size="22" font-weight="700" fill="#FF5F2D">30+ hrs</text>
 
       <!-- KPI 3 -->
       <rect x="324" width="156" height="74" rx="10" fill="#FFFFFF" stroke="#141312" stroke-opacity="0.06"/>
@@ -118,7 +118,7 @@
       <path d="M 0 164 L 480 164" stroke="#141312" stroke-opacity="0.04"/>
       <text x="16" y="146" font-family="-apple-system, sans-serif" font-size="11" font-weight="600" fill="#141312">Finance Reconciliation Suite</text>
       <rect x="180" y="135" width="74" height="18" rx="9" fill="#FDF0EB"/>
-      <text x="190" y="148" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" fill="#EE5A2A">SYNCHED</text>
+      <text x="190" y="148" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" fill="#FF5F2D">SYNCHED</text>
       <text x="290" y="146" font-family="'JetBrains Mono', monospace" font-size="10" fill="#7E7A73">Ledger Diff Auto-Fix</text>
       <text x="420" y="146" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600" fill="#141312">&lt; 210ms</text>
 

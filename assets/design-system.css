@@ -1,29 +1,52 @@
 /**
- * NiharRout.com - Sitewide Visual Design System
- * Single font: Manrope (Google Fonts)
- * Colors: #F8F9FB base, #111827 text, #2B3FE0 single flat accent
- * Buttons: Sharp square primary (border-radius: 0) & Pill secondary with nested circular arrow
- * Generous whitespace & flat architectural layout patterns
+ * NiharRout.com - GlobalLogic-Inspired Design System
+ * Primary Accent: #FF5F2D (GlobalLogic Orange)
+ * Base Background: #F8F9FB (Off-White)
+ * Lifted Surfaces: #FFFFFF (Pure White)
+ * Text: #212529 (Body), #111111 (Headlines)
+ * Typography: Manrope (Google Fonts) Sitewide
+ * Buttons: 
+ *   1) Primary: Solid #FF5F2D, Sharp Square (border-radius: 0), White Text
+ *   2) Secondary: Pill Shape (#EDF0F5), Nested White Circle with Arrow (->)
+ * Motion: AOS Scroll Reveal, Hover Micro-interactions, Animated Stat Counters
+ * Responsive: Fluid Breakpoints, 2-col Tablet (~768px), 1-col Mobile (~390px)
  */
 
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
 
 :root {
   --font-main: 'Manrope', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  
+  /* Color Palette - GlobalLogic Exact Match */
+  --accent: #FF5F2D;
+  --accent-hover: #E04818;
+  --accent-bg: #FFF0EB;
+  --accent-border: rgba(255, 95, 45, 0.25);
+  
   --bg: #F8F9FB;
   --bg-card: #FFFFFF;
-  --ink: #111827;
+  --surface: #FFFFFF;
+  --surface-subtle: #F1F4F9;
+  
+  --ink: #111111;
+  --ink-body: #212529;
   --ink-soft: #4B5563;
   --ink-muted: #6B7280;
-  --accent: #2B3FE0;
-  --accent-hover: #2232B8;
-  --accent-bg: #EEF1FD;
+  
   --line: #E5E7EB;
+  --line-subtle: #F3F4F6;
   --line-strong: #D1D5DB;
+  
   --r-sharp: 0px;
   --r-pill: 9999px;
-  --shadow-subtle: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
-  --shadow-lift: 0 12px 32px -4px rgba(15, 23, 42, 0.08);
+  --r-card: 4px;
+  
+  --shadow-subtle: 0 4px 20px -2px rgba(17, 24, 39, 0.05);
+  --shadow-card: 0 4px 16px -2px rgba(17, 24, 39, 0.06), 0 2px 6px rgba(17, 24, 39, 0.03);
+  --shadow-hover: 0 16px 36px -6px rgba(17, 24, 39, 0.12), 0 4px 12px rgba(17, 24, 39, 0.04);
+  
+  --transition-fast: 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* ================= 1. GLOBAL TYPOGRAPHY OVERRIDE ================= */
@@ -43,48 +66,55 @@ time, mark, audio, video, input, button, textarea, select {
   font-family: var(--font-main) !important;
 }
 
+html {
+  background-color: var(--bg) !important;
+  color: var(--ink-body) !important;
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--bg) !important;
-  color: var(--ink) !important;
+  color: var(--ink-body) !important;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Headlines */
-h1, h2, h3, h4 {
-  color: var(--ink);
-  font-weight: 600;
-  letter-spacing: -0.035em;
-  line-height: 1.15;
+/* Headlines: Large, Bold (600), Tight Letter-Spacing (-0.035em), Short Punchy Phrases */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--ink) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.035em !important;
+  line-height: 1.14 !important;
 }
 
 h1 {
-  font-size: clamp(38px, 5.2vw, 64px);
-  margin-bottom: 20px;
+  font-size: clamp(34px, 5.2vw, 64px) !important;
+  margin-bottom: 20px !important;
 }
 
 h2 {
-  font-size: clamp(28px, 3.8vw, 46px);
-  margin-bottom: 16px;
+  font-size: clamp(26px, 3.8vw, 44px) !important;
+  margin-bottom: 16px !important;
 }
 
 h3 {
-  font-size: clamp(20px, 2.4vw, 28px);
-  margin-bottom: 12px;
+  font-size: clamp(20px, 2.4vw, 28px) !important;
+  margin-bottom: 12px !important;
 }
 
-/* Body Copy Constraint: 1-2 punchy sentences per block */
 p, .sub {
-  color: var(--ink-soft);
+  color: var(--ink-body) !important;
   font-size: 16px;
-  line-height: 1.65;
+  line-height: 1.68;
   letter-spacing: -0.01em;
 }
 
-/* Flat Accent Links */
+/* Accent Links */
 a {
   color: var(--accent);
-  transition: color 0.18s ease;
+  text-decoration: none;
+  transition: color var(--transition-fast);
 }
 
 a:hover {
@@ -93,7 +123,7 @@ a:hover {
 
 /* ================= 2. BUTTON SYSTEM (TWO STRICT STYLES) ================= */
 
-/* Style 1: Primary CTA Button (Sharp Square Corners, Solid Accent, Generous Padding) */
+/* Style 1: Primary CTA Button (Sharp Square Corners, Solid #FF5F2D, Normal Weight) */
 .btn-primary,
 .btn-dark,
 .btn-accent,
@@ -105,6 +135,7 @@ a.btn-primary,
   color: #FFFFFF !important;
   border-radius: 0px !important;
   padding: 14px 24px !important;
+  min-height: 46px !important;
   font-weight: 500 !important;
   font-size: 15px !important;
   line-height: 1 !important;
@@ -118,7 +149,7 @@ a.btn-primary,
   gap: 10px !important;
   text-decoration: none !important;
   cursor: pointer !important;
-  transition: background-color 0.18s ease, border-color 0.18s ease !important;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast) !important;
 }
 
 .btn-primary:hover,
@@ -134,38 +165,17 @@ a.btn-primary:hover,
   transform: none !important;
 }
 
-/* Primary white button variation for the closing accent band */
-.btn-cta-white {
-  background: #FFFFFF !important;
-  color: var(--accent) !important;
-  border-radius: 0px !important;
-  padding: 14px 28px !important;
-  font-weight: 600 !important;
-  font-size: 15px !important;
-  border: 1px solid #FFFFFF !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 10px !important;
-  text-decoration: none !important;
-  transition: background-color 0.18s ease, color 0.18s ease !important;
-}
-
-.btn-cta-white:hover {
-  background: #F3F4F6 !important;
-  color: var(--accent-hover) !important;
-}
-
-/* Style 2: Secondary CTA Button (Full Pill, Light Gray, Nested Circular Arrow) */
+/* Style 2: Secondary CTA Button (Full Pill #EDF0F5, Nested White Circle with Arrow) */
 .btn-secondary,
 .btn-outline,
 .btn-pill,
 a.btn-secondary,
 button.btn-secondary {
   background: #EDF0F5 !important;
-  color: var(--ink) !important;
+  color: var(--ink-body) !important;
   border-radius: 9999px !important;
   padding: 8px 8px 8px 20px !important;
+  min-height: 46px !important;
   font-weight: 500 !important;
   font-size: 14.5px !important;
   line-height: 1 !important;
@@ -179,7 +189,7 @@ button.btn-secondary {
   gap: 12px !important;
   text-decoration: none !important;
   cursor: pointer !important;
-  transition: background-color 0.18s ease, border-color 0.18s ease !important;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast) !important;
 }
 
 .btn-secondary:hover,
@@ -192,12 +202,12 @@ a.btn-secondary:hover {
   transform: none !important;
 }
 
-/* Nested Circular Arrow in Secondary Button */
+/* Nested Circular White Button in Secondary CTA */
 .btn-circle-arrow,
 .btn-secondary .arw,
 .btn-outline .arw {
-  width: 28px !important;
-  height: 28px !important;
+  width: 30px !important;
+  height: 30px !important;
   border-radius: 50% !important;
   background: #FFFFFF !important;
   color: var(--ink) !important;
@@ -207,60 +217,194 @@ a.btn-secondary:hover {
   font-size: 13px !important;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
   margin-left: 6px !important;
-  transition: transform 0.18s ease !important;
+  transition: transform var(--transition-fast) !important;
 }
 
 .btn-secondary:hover .btn-circle-arrow,
-.btn-secondary:hover .arw {
-  transform: translateX(2px) !important;
+.btn-secondary:hover .arw,
+.btn-outline:hover .arw {
+  transform: translateX(4px) !important;
 }
 
-/* ================= 3. ICONOGRAPHY & BRAND MONOGRAM ================= */
-.brand-monogram-wrap {
-  display: inline-flex;
+/* Inverted White Sharp Button for Closing Full-Bleed Accent Band */
+.btn-closing-cta,
+.btn-cta-white {
+  background: #FFFFFF !important;
+  color: var(--accent) !important;
+  border-radius: 0px !important;
+  padding: 14px 28px !important;
+  min-height: 48px !important;
+  font-weight: 600 !important;
+  font-size: 15px !important;
+  border: 1px solid #FFFFFF !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  transition: background-color var(--transition-fast), color var(--transition-fast) !important;
+}
+
+.btn-closing-cta:hover,
+.btn-cta-white:hover {
+  background: #F8F9FB !important;
+  color: var(--accent-hover) !important;
+}
+
+/* ================= 3. CARDS & ELEVATION PATTERNS ================= */
+
+/* Lightweight Services/Capabilities Cards: NOT heavy bordered boxes */
+.capability-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 48px;
+}
+
+.capability-feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.capability-feature-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 0;
+  background: var(--accent-bg);
+  display: flex;
   align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  color: var(--ink);
-  font-weight: 700;
-  font-size: 18px;
-  letter-spacing: -0.02em;
+  justify-content: center;
+  margin-bottom: 20px;
+  color: var(--accent);
 }
 
-.brand-monogram-icon {
-  width: 32px;
-  height: 32px;
-  flex-shrink: 0;
-}
-
-/* Thin-line SVG Stroke Icons */
-.stroke-icon {
+.capability-feature-icon svg {
   width: 24px;
   height: 24px;
   stroke: var(--accent);
   stroke-width: 1.75;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  fill: none;
 }
 
-/* ================= 4. SECTION PATTERNS (NO CENTERED TEMPLATES) ================= */
+.capability-feature-title {
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  margin: 0 0 10px;
+}
 
-/* Whitespace: Expanded vertical spacing sitewide */
+.capability-feature-desc {
+  font-size: 15px;
+  line-height: 1.62;
+  color: var(--ink-soft);
+  margin: 0 0 18px;
+}
+
+.capability-feature-link {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap var(--transition-fast), color var(--transition-fast);
+}
+
+.capability-feature-link:hover {
+  color: var(--accent-hover);
+  gap: 10px;
+}
+
+/* Portfolio / Case-Study Cards: Image on top, Title, 1-line outcome, Subtle hover elevation */
+.work-card,
+.case-card,
+.project-card {
+  background: #FFFFFF !important;
+  border: 1px solid var(--line) !important;
+  border-radius: var(--r-card) !important;
+  overflow: hidden;
+  box-shadow: var(--shadow-card) !important;
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth) !important;
+  display: flex;
+  flex-direction: column;
+}
+
+.work-card:hover,
+.case-card:hover,
+.project-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: var(--shadow-hover) !important;
+}
+
+.work-card-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  background: var(--surface-subtle);
+}
+
+.work-card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.work-card-title {
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0 0 8px;
+}
+
+.work-card-result {
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.55;
+  margin: 0 0 16px;
+}
+
+.work-card-link {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: auto;
+  transition: gap var(--transition-fast);
+}
+
+.work-card-link:hover {
+  gap: 10px;
+}
+
+/* ================= 4. LAYOUT PATTERNS ================= */
+
+/* Generous vertical spacing sitewide */
 section {
-  padding: 100px 0 !important;
+  padding: clamp(80px, 10vw, 130px) 0 !important;
   background-color: var(--bg);
   position: relative;
 }
 
-/* Hero Section: Punchy Headline + Single Clear Sharp CTA */
+/* a) Hero Section: One large, short, punchy headline + Single clear sharp CTA */
 .hero {
-  padding: clamp(100px, 12vw, 150px) 0 90px !important;
+  padding: clamp(90px, 12vw, 150px) 0 80px !important;
   background-color: var(--bg) !important;
 }
 
 .hero-headline {
-  font-size: clamp(40px, 5.8vw, 68px) !important;
+  font-size: clamp(38px, 5.6vw, 68px) !important;
   font-weight: 600 !important;
   letter-spacing: -0.038em !important;
   line-height: 1.08 !important;
@@ -272,7 +416,7 @@ section {
 .hero-lead {
   font-size: 18px !important;
   line-height: 1.62 !important;
-  color: var(--ink-soft) !important;
+  color: var(--ink-body) !important;
   max-width: 48ch !important;
   margin: 0 0 32px !important;
 }
@@ -284,7 +428,7 @@ section {
   flex-wrap: wrap;
 }
 
-/* Dedicated Stat-Counter Row */
+/* c) Dedicated Stat-Counter Row: Large bold numbers, short labels, animated count-up */
 .stat-counter-row {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -292,14 +436,7 @@ section {
   padding: 48px 0;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  margin: 40px 0;
-}
-
-@media (max-width: 768px) {
-  .stat-counter-row {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 28px;
-  }
+  margin: 48px 0;
 }
 
 .stat-counter-item {
@@ -309,7 +446,7 @@ section {
 }
 
 .stat-number {
-  font-size: clamp(36px, 4.4vw, 56px);
+  font-size: clamp(38px, 4.6vw, 58px);
   font-weight: 700;
   letter-spacing: -0.035em;
   line-height: 1;
@@ -324,74 +461,7 @@ section {
   color: var(--ink-muted);
 }
 
-/* Lightweight Capabilities / Features (Icon + 2-4 Word Title + 1-Line Desc + Learn More) */
-.capability-feature-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 48px;
-  margin-top: 48px;
-}
-
-@media (max-width: 860px) {
-  .capability-feature-grid {
-    grid-template-columns: 1fr;
-    gap: 36px;
-  }
-}
-
-.capability-feature-item {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0;
-  background: transparent;
-  border: none;
-}
-
-.capability-feature-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 0;
-  background: var(--accent-bg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 18px;
-  color: var(--accent);
-}
-
-.capability-feature-title {
-  font-size: 21px;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  color: var(--ink);
-  margin: 0 0 10px;
-}
-
-.capability-feature-desc {
-  font-size: 15px;
-  line-height: 1.6;
-  color: var(--ink-soft);
-  margin: 0 0 16px;
-}
-
-.capability-feature-link {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--accent);
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  transition: gap 0.18s ease;
-}
-
-.capability-feature-link:hover {
-  color: var(--accent-hover);
-  gap: 10px;
-}
-
-/* Category Horizontal Pill Tag Wraps */
+/* d) Category Lists: Horizontal wrap of pill-shaped tags */
 .category-tag-wrap {
   display: flex;
   flex-wrap: wrap;
@@ -408,9 +478,9 @@ section {
   border-radius: 9999px;
   font-size: 14px;
   font-weight: 500;
-  color: var(--ink);
+  color: var(--ink-body);
   text-decoration: none;
-  transition: all 0.18s ease;
+  transition: border-color var(--transition-fast), color var(--transition-fast);
 }
 
 .category-pill:hover {
@@ -425,7 +495,7 @@ section {
   border-color: var(--ink);
 }
 
-/* Big Statement Section: Typographic Breather */
+/* e) Big Statement Section: Short, bold, stacked 2-4 word phrase as visual breather */
 .big-statement-section {
   padding: clamp(100px, 14vw, 160px) 0 !important;
   background: var(--bg) !important;
@@ -445,13 +515,13 @@ section {
 
 .big-statement-sub {
   font-size: 18px;
-  line-height: 1.6;
+  line-height: 1.62;
   color: var(--ink-soft);
   max-width: 44ch;
   margin-top: 24px;
 }
 
-/* Closing / Final High-Contrast CTA Band (Full-Bleed Accent Background) */
+/* f) Closing CTA Band: Full-bleed #FF5F2D background on every page */
 .closing-cta-band {
   background: var(--accent) !important;
   color: #FFFFFF !important;
@@ -465,6 +535,9 @@ section {
   justify-content: space-between;
   gap: 40px;
   flex-wrap: wrap;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
 .closing-cta-text h2 {
@@ -475,22 +548,13 @@ section {
 }
 
 .closing-cta-text p {
-  color: rgba(255, 255, 255, 0.88) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
   font-size: 17px !important;
   max-width: 44ch !important;
   margin: 0 !important;
 }
 
-/* Clean White Card Lift */
-.lift-card {
-  background: #FFFFFF !important;
-  border: 1px solid var(--line) !important;
-  border-radius: 0px !important;
-  box-shadow: var(--shadow-subtle) !important;
-  padding: clamp(28px, 4vw, 44px) !important;
-}
-
-/* Ensure .cta-section and .cta-box sitewide match the high-contrast accent band */
+/* Legacy cta-section and cta-box overrides */
 .cta-section,
 .cta-box {
   background: var(--accent) !important;
@@ -508,7 +572,7 @@ section {
 
 .cta-section p,
 .cta-box p {
-  color: rgba(255, 255, 255, 0.9) !important;
+  color: rgba(255, 255, 255, 0.92) !important;
 }
 
 .cta-section .btn,
@@ -526,7 +590,136 @@ section {
 .cta-box .btn-outline {
   background: transparent !important;
   color: #FFFFFF !important;
-  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  border: 1px solid rgba(255, 255, 255, 0.6) !important;
   border-radius: 0px !important;
 }
 
+/* Lift Card Panel */
+.lift-card {
+  background: #FFFFFF !important;
+  border: 1px solid var(--line) !important;
+  border-radius: var(--r-card) !important;
+  box-shadow: var(--shadow-subtle) !important;
+  padding: clamp(28px, 4vw, 44px) !important;
+}
+
+/* Brand Monogram in Navigation */
+.brand-monogram-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+}
+
+.brand-monogram-icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+/* ================= 5. RESPONSIVE BREAKPOINTS (MATCHING GLOBALLOGIC) ================= */
+
+/* Tablet Breakpoint (~768px - 992px) */
+@media (max-width: 992px) {
+  .nav-links {
+    display: none !important;
+  }
+  
+  .nav-toggle {
+    display: flex !important;
+  }
+  
+  .capability-feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+  
+  .work-grid,
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 24px !important;
+  }
+  
+  .stat-counter-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+  
+  .closing-cta-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Mobile Breakpoint (~390px - 640px) */
+@media (max-width: 640px) {
+  section {
+    padding: 64px 0 !important;
+  }
+  
+  .hero {
+    padding: 72px 0 48px !important;
+  }
+  
+  .capability-feature-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  
+  .work-grid,
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+  
+  .stat-counter-row {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 36px 0;
+  }
+  
+  .hero-cta-wrap {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+  
+  .hero-cta-wrap .btn-primary,
+  .hero-cta-wrap .btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .btn-secondary {
+    padding: 10px 16px !important;
+  }
+  
+  .btn-closing-cta,
+  .btn-cta-white {
+    width: 100%;
+  }
+  
+  .big-statement-section {
+    padding: 72px 0 !important;
+  }
+}
+
+/* Respect OS Prefers Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

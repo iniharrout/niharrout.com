@@ -11,11 +11,12 @@
   // 1. Initialize AOS (Animate On Scroll) if loaded
   function initAOS() {
     if (typeof AOS !== 'undefined') {
+      var isMobile = window.innerWidth <= 640;
       AOS.init({
-        duration: 520,
+        duration: isMobile ? 480 : 600,
         easing: 'cubic-bezier(0.16, 1, 0.3, 1)',
         once: true,
-        offset: 50,
+        offset: isMobile ? 30 : 60,
         disable: isReducedMotion
       });
     }
@@ -25,7 +26,7 @@
   function initCounters() {
     if (isReducedMotion) return;
 
-    var statElements = document.querySelectorAll('.val, [data-counter]');
+    var statElements = document.querySelectorAll('.val, [data-counter], .stat-number');
     if (!statElements.length) return;
 
     var observer = new IntersectionObserver(function (entries, obs) {
@@ -48,7 +49,7 @@
 
         var isFloat = match[2].indexOf('.') !== -1;
         var decimals = isFloat ? (match[2].split('.')[1] || '').length : 0;
-        var duration = 1200;
+        var duration = 1500;
         var startTime = null;
 
         var hasSup = el.querySelector('.sup');
@@ -175,6 +176,7 @@
       initCounters();
       initHeroParallax();
       initTestimonialSpotlight();
+      initChatWidget();
     });
   } else {
     initAOS();
