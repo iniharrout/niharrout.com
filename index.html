@@ -592,6 +592,22 @@
       color: var(--ink);
     }
 
+    .hero-h1-kicker {
+      display: block;
+      font-family: "JetBrains Mono", monospace;
+      font-size: clamp(13px, 1.4vw, 15px);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .hero-h1-title {
+      display: block;
+    }
+
     .hero .role-sub {
       font-family: "JetBrains Mono", monospace;
       font-size: 13.5px;
@@ -1494,11 +1510,126 @@
       color: var(--ink-soft);
     }
 
-    /* ================= SECTION 7: CLUTCH REVIEWS ================= */
+    /* ================= SECTION 7: CLIENT REVIEWS & TESTIMONIALS ================= */
     .reviews-section {
       background: #FFFFFF;
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+
+    @media (max-width: 860px) {
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .testimonial-card {
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: var(--r-lg);
+      padding: clamp(26px, 3.5vw, 34px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 20px;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--line-strong);
+    }
+
+    .testi-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .testi-stars {
+      color: #E5A100;
+      font-size: 15px;
+      letter-spacing: 2px;
+    }
+
+    .testi-badge {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--emerald);
+      background: var(--emerald-tint);
+      border: 1px solid var(--emerald-border);
+      padding: 3px 9px;
+      border-radius: var(--r-pill);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .testi-quote {
+      font-size: 15.5px;
+      line-height: 1.68;
+      color: var(--ink);
+      margin: 0;
+      font-weight: 450;
+      position: relative;
+    }
+
+    .testi-author {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      border-top: 1px solid var(--line);
+      padding-top: 16px;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .testi-author-info strong {
+      display: block;
+      font-size: 14.5px;
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .testi-author-info span {
+      display: block;
+      font-size: 13px;
+      color: var(--ink-faint);
+      margin-top: 2px;
+    }
+
+    .testi-case-link {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 6px 12px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--r-sm);
+      transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .testi-case-link:hover {
+      background: var(--accent-tint);
+      border-color: var(--accent-border);
+      color: var(--accent-dark);
     }
 
     .reviews-container {
@@ -1515,6 +1646,171 @@
     .clutch-widget {
       width: 100% !important;
       margin: 0 auto;
+    }
+
+    /* ================= SECTION 7.5: SCOPE ESTIMATOR ================= */
+    .estimator-section {
+      background: var(--bg);
+      border-top: 1px solid var(--line);
+      padding: 90px 0 40px;
+    }
+
+    .estimator-card {
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: var(--r-xl);
+      padding: clamp(32px, 5vw, 48px);
+      box-shadow: var(--shadow-card);
+    }
+
+    .estimator-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: clamp(28px, 4vw, 48px);
+      align-items: stretch;
+      margin-top: 32px;
+    }
+
+    @media (max-width: 960px) {
+      .estimator-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .est-question-block {
+      margin-bottom: 24px;
+    }
+
+    .est-question-block:last-child {
+      margin-bottom: 0;
+    }
+
+    .est-q-title {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--ink);
+      font-family: "JetBrains Mono", monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .est-q-num {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--accent-tint);
+      color: var(--accent);
+      display: inline-grid;
+      place-items: center;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .est-options-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .est-opt-btn {
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: var(--r-md);
+      padding: 9px 14px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--ink-soft);
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.2s ease;
+      text-align: left;
+    }
+
+    .est-opt-btn:hover {
+      background: #FFFFFF;
+      border-color: var(--line-strong);
+      color: var(--ink);
+    }
+
+    .est-opt-btn.active {
+      background: var(--ink);
+      border-color: var(--ink);
+      color: #FFFFFF;
+      font-weight: 600;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .est-output-box {
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: var(--r-lg);
+      padding: clamp(24px, 3vw, 32px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: sticky;
+      top: 90px;
+    }
+
+    .est-out-label {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .est-price-val {
+      font-size: clamp(28px, 3.2vw, 38px);
+      font-weight: 800;
+      color: var(--ink);
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+
+    .est-time-val {
+      font-size: 14.5px;
+      color: var(--ink-soft);
+      font-weight: 600;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .est-summary-pill {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--r-md);
+      padding: 12px 14px;
+      font-size: 12px;
+      color: var(--ink-soft);
+      line-height: 1.55;
+      margin-bottom: 18px;
+      font-family: "JetBrains Mono", monospace;
+    }
+
+    .est-disclaimer {
+      font-size: 13px;
+      line-height: 1.55;
+      color: var(--ink-faint);
+      margin-bottom: 20px;
+    }
+
+    .est-cta-btn {
+      width: 100%;
+      justify-content: center;
+      padding: 14px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 700;
     }
 
     /* ================= SECTION 8: FOUNDER SUITE ================= */
@@ -1951,9 +2247,9 @@
           </div>
         </div>
 
-        <p class="hero-name-kicker rv">Nihar Ranjan Rout</p>
         <h1 class="rv">
-          Turning software ideas into products worth building.
+          <span class="hero-h1-kicker">Nihar Ranjan Rout —</span>
+          <span class="hero-h1-title">Turning software ideas into products worth building.</span>
         </h1>
 
         <div class="role-sub rv">
@@ -2249,8 +2545,9 @@
 
     <!-- ================= SECTION 6: WORK & CASE STUDIES ================= -->
     <section class="work-section" id="work">
-      <!-- Alias anchor for legacy case-studies links -->
+      <!-- Alias anchors for legacy links -->
       <span id="case-studies" style="position:relative; top:-90px; display:block; visibility:hidden;"></span>
+      <span id="outcomes" style="position:relative; top:-90px; display:block; visibility:hidden;"></span>
       <div class="wrap">
         <div class="shead center rv">
           <span class="badge-pill"><span class="dot"></span> Selected Work</span>
@@ -2260,22 +2557,281 @@
           </p>
         </div>
 
-        <!-- Filter Buttons (Rendered Client-Side from work-data.js) -->
+        <!-- Filter Buttons (Rendered / Hydrated by work-data.js) -->
         <div class="work-filters rv" id="workFilters" role="tablist" aria-label="Filter work by category"></div>
 
-        <!-- Project Grid (2 columns desktop, 1 column mobile) -->
-        <div class="work-grid rv" id="workGrid"></div>
+        <!-- Project Grid (5 Real Production Case Studies) -->
+        <div class="work-grid rv" id="workGrid">
+          <!-- Card 1: Custom ERP -->
+          <div class="work-card rv in" data-id="0">
+            <a href="/work/custom-erp-manufacturing" class="work-media" aria-label="Read full case study for End-to-End Custom ERP for Manufacturing Operations">
+              <img src="work/erp-manufacturing-card.jpg" alt="End-to-End Custom ERP for Manufacturing Operations" class="work-thumb" loading="lazy">
+            </a>
+            <div class="work-body">
+              <div class="work-tags">
+                <span class="work-tag">Enterprise</span>
+                <span class="work-tag">ERP</span>
+                <span class="work-tag">B2B</span>
+              </div>
+              <a href="/work/custom-erp-manufacturing" class="work-title-link" style="text-decoration:none; color:inherit;">
+                <div class="work-title-wrap">
+                  <h3 class="work-title">End-to-End Custom ERP for Manufacturing Operations</h3>
+                  <div class="work-arrow" aria-hidden="true">↗</div>
+                </div>
+              </a>
+              <div class="work-client">Large-scale manufacturing enterprise (name under NDA)</div>
+              <p class="work-desc">Replaced four disconnected departments with one real-time system of record.</p>
+              <div class="work-metric"><span class="tick">✓</span><span>4 departments unified · 0 data silos · Monthly close cut to 1 day</span></div>
+              <div style="display:flex; gap:10px; margin-top:auto; padding-top:6px;">
+                <a href="/work/custom-erp-manufacturing" class="btn btn-dark" style="flex:1; justify-content:center; padding:10px 14px; font-size:13px; border-radius:10px;">
+                  Read Full Case Study <span class="arw">→</span>
+                </a>
+                <button type="button" class="work-expand-btn" aria-expanded="false" style="width:auto; border-top:none; padding:10px 14px; background:var(--bg); border:1px solid var(--line); border-radius:10px; cursor:pointer;" title="Toggle quick breakdown">
+                  <span>Overview</span>
+                  <span class="chevron" style="margin-left:4px;">▾</span>
+                </button>
+              </div>
+              <div class="work-details">
+                <div class="work-details-inner">
+                  <div class="work-detail-block">
+                    <strong>The Challenge</strong>
+                    <p>HR, sales, inventory, and finance were each running on their own fragmented tools with no shared data layer — every cross-team task meant manual reconciliation. Attendance was tracked by hand with no payroll link. Sales kept separate lead files. Inventory ran on outdated spreadsheets. Finance compiled reports manually. There were no role-based permissions, so sensitive data was visible to everyone — and leadership had no real-time view of the business.</p>
+                  </div>
+                  <div class="work-detail-block">
+                    <strong>The Product Decision</strong>
+                    <p>Rather than patch each department's tool individually, we scoped a single PRD to unify HR, CRM/Sales, Inventory, and Finance on one platform with role-based dashboards from day one — then built it module by module in two-week sprints, with weekly touchpoints per department so nothing shipped that the actual users hadn't already validated.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Sky1 -->
+          <div class="work-card rv in" data-id="1">
+            <a href="/work/sky1-event-booking" class="work-media" aria-label="Read full case study for Sky1 — End-to-End Wedding &amp; Event Booking Platform">
+              <img src="work/sky1-card.jpg" alt="Sky1 — End-to-End Wedding &amp; Event Booking Platform" class="work-thumb" loading="lazy">
+            </a>
+            <div class="work-body">
+              <div class="work-tags">
+                <span class="work-tag">Consumer Marketplace</span>
+                <span class="work-tag">Events</span>
+                <span class="work-tag">Mobile</span>
+              </div>
+              <a href="/work/sky1-event-booking" class="work-title-link" style="text-decoration:none; color:inherit;">
+                <div class="work-title-wrap">
+                  <h3 class="work-title">Sky1 — End-to-End Wedding &amp; Event Booking Platform</h3>
+                  <div class="work-arrow" aria-hidden="true">↗</div>
+                </div>
+              </a>
+              <div class="work-client">Sky1</div>
+              <p class="work-desc">One app to book a venue and every vendor around it — no phone calls required.</p>
+              <div class="work-metric"><span class="tick">✓</span><span>8–12 vendors unified per event · 0 phone calls to book · 100% real-time availability</span></div>
+              <div style="display:flex; gap:10px; margin-top:auto; padding-top:6px;">
+                <a href="/work/sky1-event-booking" class="btn btn-dark" style="flex:1; justify-content:center; padding:10px 14px; font-size:13px; border-radius:10px;">
+                  Read Full Case Study <span class="arw">→</span>
+                </a>
+                <button type="button" class="work-expand-btn" aria-expanded="false" style="width:auto; border-top:none; padding:10px 14px; background:var(--bg); border:1px solid var(--line); border-radius:10px; cursor:pointer;" title="Toggle quick breakdown">
+                  <span>Overview</span>
+                  <span class="chevron" style="margin-left:4px;">▾</span>
+                </button>
+              </div>
+              <div class="work-details">
+                <div class="work-details-inner">
+                  <div class="work-detail-block">
+                    <strong>The Challenge</strong>
+                    <p>Planning a wedding meant hours spent across Instagram, Google, and word-of-mouth just to find vendors — with no way to compare pricing or availability without direct outreach. Every booking happened over phone calls or WhatsApp with verbal confirmations and no digital record; most vendors didn't publish rates at all, so hidden costs surfaced late. A single wedding could mean coordinating 8–12 separate vendors — venue, decorator, caterer, mehendi artist, makeup team, choreographer, photographer — and scheduling conflicts were often only discovered days before the event, because every change meant notifying every vendor individually.</p>
+                  </div>
+                  <div class="work-detail-block">
+                    <strong>The Product Decision</strong>
+                    <p>The obvious build here would have been "just another venue directory" — we scoped for something harder but more valuable: one booking flow spanning the venue and every vendor category around it, with a shared real-time calendar and automatic conflict detection, so a couple could build and confirm their entire event in one checkout instead of a dozen separate conversations.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Make My Look -->
+          <div class="work-card rv in" data-id="2">
+            <a href="/work/make-my-look" class="work-media" aria-label="Read full case study for Make My Look — On-Demand Beauty &amp; Salon Booking">
+              <img src="work/mml-card.jpg" alt="Make My Look — On-Demand Beauty &amp; Salon Booking" class="work-thumb" loading="lazy">
+            </a>
+            <div class="work-body">
+              <div class="work-tags">
+                <span class="work-tag">Consumer Marketplace</span>
+                <span class="work-tag">Mobile</span>
+              </div>
+              <a href="/work/make-my-look" class="work-title-link" style="text-decoration:none; color:inherit;">
+                <div class="work-title-wrap">
+                  <h3 class="work-title">Make My Look — On-Demand Beauty &amp; Salon Booking</h3>
+                  <div class="work-arrow" aria-hidden="true">↗</div>
+                </div>
+              </a>
+              <div class="work-client">Make My Look</div>
+              <p class="work-desc">Took an all-offline beauty industry online — for customers and salon owners alike.</p>
+              <div class="work-metric"><span class="tick">✓</span><span>200+ vendors onboarded at launch · 40% fewer booking drop-offs · Live in 16 weeks</span></div>
+              <div style="display:flex; gap:10px; margin-top:auto; padding-top:6px;">
+                <a href="/work/make-my-look" class="btn btn-dark" style="flex:1; justify-content:center; padding:10px 14px; font-size:13px; border-radius:10px;">
+                  Read Full Case Study <span class="arw">→</span>
+                </a>
+                <button type="button" class="work-expand-btn" aria-expanded="false" style="width:auto; border-top:none; padding:10px 14px; background:var(--bg); border:1px solid var(--line); border-radius:10px; cursor:pointer;" title="Toggle quick breakdown">
+                  <span>Overview</span>
+                  <span class="chevron" style="margin-left:4px;">▾</span>
+                </button>
+              </div>
+              <div class="work-details">
+                <div class="work-details-inner">
+                  <div class="work-detail-block">
+                    <strong>The Challenge</strong>
+                    <p>India's beauty industry was still running almost entirely offline. Customers had no centralized way to find salons, check real credentials, or confirm a booking — most transactions still happened over WhatsApp, phone calls, or walk-ins. Salon owners were in the same bind from the other side: bookings managed through WhatsApp groups, handwritten diaries, or whoever happened to be free to answer the phone — with no visibility into their own schedule and no digital presence to compete on.</p>
+                  </div>
+                  <div class="work-detail-block">
+                    <strong>The Product Decision</strong>
+                    <p>Rather than build "just another booking app," we scoped a true two-sided marketplace from day one — a consumer experience built for fast discovery and confirmed bookings, and a vendor dashboard simple enough for salon owners with zero technical background to run their whole business from, plus a super-admin layer so the platform itself could scale across cities without developer involvement on every operational decision.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: FlashNow -->
+          <div class="work-card rv in" data-id="3">
+            <a href="/work/flashnow" class="work-media" aria-label="Read full case study for FlashNow — Quick Commerce Built on Local Shops">
+              <img src="work/flashnow-card.jpg" alt="FlashNow — Quick Commerce Built on Local Shops" class="work-thumb" loading="lazy">
+            </a>
+            <div class="work-body">
+              <div class="work-tags">
+                <span class="work-tag">Consumer Marketplace</span>
+                <span class="work-tag">Mobile</span>
+                <span class="work-tag">Logistics</span>
+              </div>
+              <a href="/work/flashnow" class="work-title-link" style="text-decoration:none; color:inherit;">
+                <div class="work-title-wrap">
+                  <h3 class="work-title">FlashNow — Quick Commerce Built on Local Shops</h3>
+                  <div class="work-arrow" aria-hidden="true">↗</div>
+                </div>
+              </a>
+              <div class="work-client">FlashNow</div>
+              <p class="work-desc">10-15 minute delivery — powered by neighborhood stores instead of warehouses.</p>
+              <div class="work-metric"><span class="tick">✓</span><span>10-15 min delivery · 4-role platform, zero centralized warehouses · Sub-2-minute checkout</span></div>
+              <div style="display:flex; gap:10px; margin-top:auto; padding-top:6px;">
+                <a href="/work/flashnow" class="btn btn-dark" style="flex:1; justify-content:center; padding:10px 14px; font-size:13px; border-radius:10px;">
+                  Read Full Case Study <span class="arw">→</span>
+                </a>
+                <button type="button" class="work-expand-btn" aria-expanded="false" style="width:auto; border-top:none; padding:10px 14px; background:var(--bg); border:1px solid var(--line); border-radius:10px; cursor:pointer;" title="Toggle quick breakdown">
+                  <span>Overview</span>
+                  <span class="chevron" style="margin-left:4px;">▾</span>
+                </button>
+              </div>
+              <div class="work-details">
+                <div class="work-details-inner">
+                  <div class="work-detail-block">
+                    <strong>The Challenge</strong>
+                    <p>By the time FlashNow started, Indian quick commerce had consolidated around a handful of well-funded players — and neighborhood kirana stores were being systematically shut out of it. Their customers were already ordering online; none of those orders were reaching them. Neither shoppers nor vendors had real-time visibility into what was in stock or where an order stood — inventory was tracked manually, and orders were handled over phone or WhatsApp with no structured workflow. Last-mile delivery was entirely ad hoc, with no dispatch system, route optimization, or way to track a delivery partner in real time.</p>
+                  </div>
+                  <div class="work-detail-block">
+                    <strong>The Product Decision</strong>
+                    <p>Instead of building another centralized-warehouse quick-commerce app — the model the big players already owned — we scoped FlashNow around the opposite bet: give existing local shops the same real-time infrastructure the big players had, so demand could route through the neighborhood store that was already there instead of a new warehouse. Real-time was treated as a first-class engineering concern from day one, not a feature bolted on later — the goal was zero architecture rewrites after launch.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5: Skribe -->
+          <div class="work-card rv in" data-id="4">
+            <a href="/work/skribe" class="work-media" aria-label="Read full case study for Skribe — Team Chat That Meets You Where You Already Are">
+              <img src="work/skribe-card.jpg" alt="Skribe — Team Chat That Meets You Where You Already Are" class="work-thumb" loading="lazy">
+            </a>
+            <div class="work-body">
+              <div class="work-tags">
+                <span class="work-tag">Enterprise</span>
+                <span class="work-tag">B2B SaaS</span>
+                <span class="work-tag">Communication</span>
+              </div>
+              <a href="/work/skribe" class="work-title-link" style="text-decoration:none; color:inherit;">
+                <div class="work-title-wrap">
+                  <h3 class="work-title">Skribe — Team Chat That Meets You Where You Already Are</h3>
+                  <div class="work-arrow" aria-hidden="true">↗</div>
+                </div>
+              </a>
+              <div class="work-client">Skribe (skribe.app)</div>
+              <p class="work-desc">One chat layer for teams split across Slack-style channels, Google Chat, Google Workspace, and Microsoft 365.</p>
+              <div class="work-metric"><span class="tick">✓</span><span>Connects native chat, Google Chat, Google Workspace &amp; Microsoft 365 in one place</span></div>
+              <div style="display:flex; gap:10px; margin-top:auto; padding-top:6px;">
+                <a href="/work/skribe" class="btn btn-dark" style="flex:1; justify-content:center; padding:10px 14px; font-size:13px; border-radius:10px;">
+                  Read Full Case Study <span class="arw">→</span>
+                </a>
+                <button type="button" class="work-expand-btn" aria-expanded="false" style="width:auto; border-top:none; padding:10px 14px; background:var(--bg); border:1px solid var(--line); border-radius:10px; cursor:pointer;" title="Toggle quick breakdown">
+                  <span>Overview</span>
+                  <span class="chevron" style="margin-left:4px;">▾</span>
+                </button>
+              </div>
+              <div class="work-details">
+                <div class="work-details-inner">
+                  <div class="work-detail-block">
+                    <strong>The Challenge</strong>
+                    <p>Most companies aren't actually on one communication tool anymore — one team lives on Google Chat, another runs on Microsoft 365, and getting a message across the org means either forcing everyone onto the same platform or watching messages fall through the cracks between tools no one wants to give up.</p>
+                  </div>
+                  <div class="work-detail-block">
+                    <strong>The Product Decision</strong>
+                    <p>Rather than build another standalone team-chat app asking companies to migrate away from tools they'd already standardized on, Skribe was scoped as a connective layer: native team chat that also bridges into Google Chat, Google Workspace, and Microsoft 365 — so a message reaches people wherever they already are, instead of creating one more inbox for everyone to check. The product promise: "Reach with clarity. Know what worked."</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
 
-    <!-- ================= SECTION 7: CLUTCH REVIEWS ================= -->
+    <!-- ================= SECTION 7: CLIENT REVIEWS & TESTIMONIALS ================= -->
     <section class="reviews-section" id="reviews">
       <div class="wrap">
         <div class="shead center rv">
           <span class="badge-pill"><span class="dot"></span> Verified Client Reviews</span>
-          <h2>What clients say about our strategy &amp; delivery.</h2>
-          <p class="sub">Verified Clutch feedback from partners who built their products with Creuto.</p>
+          <h2>What founders &amp; executives say about working with me.</h2>
+          <p class="sub">Verified feedback from leaders who trusted Creuto to scope, architect, and ship their software.</p>
         </div>
+
+        <!-- Real Testimonial Quote Cards -->
+        <div class="testimonials-grid rv">
+          <div class="testimonial-card">
+            <div class="testi-header">
+              <div class="testi-stars" aria-label="5 out of 5 stars">★★★★★</div>
+              <span class="testi-badge">✓ Verified Client</span>
+            </div>
+            <blockquote class="testi-quote">
+              “Skyeone solved a problem every family planning a wedding faces — the endless back-and-forth across a dozen vendors with nothing written down. Creuto built a platform that finally makes event planning feel as simple as booking a flight.”
+            </blockquote>
+            <div class="testi-author">
+              <div class="testi-author-info">
+                <strong>Rakesh Sharma</strong>
+                <span>Skyeone Founding Team · Event Tech &amp; Booking</span>
+              </div>
+              <a href="/work/sky1-event-booking" class="testi-case-link">View Case Study ↗</a>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testi-header">
+              <div class="testi-stars" aria-label="5 out of 5 stars">★★★★★</div>
+              <span class="testi-badge">✓ Verified Client</span>
+            </div>
+            <blockquote class="testi-quote">
+              “We had a complex vision: a marketplace that works seamlessly for customers, salon owners, and our internal team at the same time. Creuto understood that from day one. They did not just write code; they helped us think through the product logic, suggested features we had not considered, and delivered everything on schedule.”
+            </blockquote>
+            <div class="testi-author">
+              <div class="testi-author-info">
+                <strong>Jeet Mohnani</strong>
+                <span>Co-Founder &amp; CEO, Make My Look · Beauty &amp; Wellness</span>
+              </div>
+              <a href="/work/make-my-look" class="testi-case-link">View Case Study ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Clutch Global Verified Widget -->
         <div class="reviews-container rv">
           <script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js"></script>
           <div class="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="8" data-height="280" data-nofollow="false" data-expandifr="true" data-scale="100" data-reviews="384806,383518,383041,382633,382294,380065" data-clutchcompany-id="2118119"></div>
@@ -2284,6 +2840,105 @@
           <a href="https://clutch.co/profile/creuto" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
             Read More Reviews on Clutch <span class="arw">→</span>
           </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 7.5: "WHAT WOULD THIS COST?" SCOPE ESTIMATOR ================= -->
+    <section class="estimator-section" id="estimator">
+      <div class="wrap">
+        <div class="estimator-card rv">
+          <div class="shead">
+            <span class="badge-pill"><span class="dot"></span> Instant Project Scoping</span>
+            <h2 style="font-size:clamp(26px, 3.8vw, 38px); margin-top:10px;">What would this cost to build?</h2>
+            <p class="sub" style="margin-top:8px;">
+              Answer 4 quick questions to get an immediate, realistic budget band and timeline range based on production projects we’ve delivered. No login required.
+            </p>
+          </div>
+
+          <div class="estimator-grid">
+            <!-- Questions Column -->
+            <div class="est-questions-col">
+              <!-- Q1 -->
+              <div class="est-question-block" data-q="type">
+                <div class="est-q-title">
+                  <span class="est-q-num">1</span>
+                  <span>What are you building?</span>
+                </div>
+                <div class="est-options-grid">
+                  <button type="button" class="est-opt-btn active" data-val="SaaS/Web Platform">SaaS / Web Platform</button>
+                  <button type="button" class="est-opt-btn" data-val="Mobile App">Mobile App</button>
+                  <button type="button" class="est-opt-btn" data-val="AI Product">AI Product</button>
+                  <button type="button" class="est-opt-btn" data-val="E-commerce/Marketplace">E-commerce / Marketplace</button>
+                  <button type="button" class="est-opt-btn" data-val="Enterprise/Internal Tool">Enterprise / Internal Tool</button>
+                  <button type="button" class="est-opt-btn" data-val="Not sure yet">Not sure yet</button>
+                </div>
+              </div>
+
+              <!-- Q2 -->
+              <div class="est-question-block" data-q="stage">
+                <div class="est-q-title">
+                  <span class="est-q-num">2</span>
+                  <span>Where are you starting from?</span>
+                </div>
+                <div class="est-options-grid">
+                  <button type="button" class="est-opt-btn active" data-val="Idea only">Idea only</button>
+                  <button type="button" class="est-opt-btn" data-val="I have a spec or wireframes">I have a spec or wireframes</button>
+                  <button type="button" class="est-opt-btn" data-val="I have an existing product to improve">I have an existing product to improve</button>
+                </div>
+              </div>
+
+              <!-- Q3 -->
+              <div class="est-question-block" data-q="scale">
+                <div class="est-q-title">
+                  <span class="est-q-num">3</span>
+                  <span>Roughly how big a build?</span>
+                </div>
+                <div class="est-options-grid">
+                  <button type="button" class="est-opt-btn" data-val="Simple MVP">Simple MVP</button>
+                  <button type="button" class="est-opt-btn active" data-val="Mid-size product">Mid-size product</button>
+                  <button type="button" class="est-opt-btn" data-val="Full platform, multiple modules">Full platform, multiple modules</button>
+                </div>
+              </div>
+
+              <!-- Q4 -->
+              <div class="est-question-block" data-q="timeline">
+                <div class="est-q-title">
+                  <span class="est-q-num">4</span>
+                  <span>Timeline?</span>
+                </div>
+                <div class="est-options-grid">
+                  <button type="button" class="est-opt-btn" data-val="ASAP (under 2 months)">ASAP (under 2 months)</button>
+                  <button type="button" class="est-opt-btn active" data-val="2-4 months">2–4 months</button>
+                  <button type="button" class="est-opt-btn" data-val="Flexible">Flexible</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Output Column -->
+            <div class="est-output-box">
+              <div>
+                <div class="est-out-label">Estimated Investment Band</div>
+                <div class="est-price-val" id="estPriceVal">₹5L – ₹11L</div>
+                <div class="est-time-val" id="estTimeVal">
+                  <span>⏱</span>
+                  <span id="estTimeText">Estimated timeline: 8–12 weeks</span>
+                </div>
+
+                <div class="est-summary-pill" id="estSummaryPill">
+                  SaaS/Web Platform · Idea only · Mid-size product · 2–4 months
+                </div>
+
+                <p class="est-disclaimer">
+                  This is a rough starting point, not a quote — share a few more details and I'll get back to you personally within 24 hours.
+                </p>
+              </div>
+
+              <button type="button" class="btn btn-dark est-cta-btn" id="estCtaBtn">
+                Pre-Fill Scope &amp; Discuss with Nihar <span class="arw">→</span>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -2605,6 +3260,7 @@
             <a href="#work">Work</a>
             <a href="#suite">Founder Suite</a>
             <a href="#faq">FAQ</a>
+            <a href="b2b-software-development-for-startups.html">B2B Software for Startups</a>
             <a href="ai-product-development-bhubaneswar.html">AI Development Bhubaneswar</a>
             <a href="mobile-app-development-bhubaneswar.html">Mobile App Development Bhubaneswar</a>
           </div>
@@ -2633,7 +3289,13 @@
 
       <div class="ft-bottom">
         <p>© <span id="yr"></span> Nihar Ranjan Rout · Founder &amp; CEO, Creuto · Product Strategy &amp; Software Delivery</p>
-        <p>niharrout.com</p>
+        <div style="display:flex; align-items:center; gap:14px; font-size:12.5px;">
+          <a href="privacy-policy.html" style="color:var(--ink-faint); text-decoration:none;">Privacy Policy</a>
+          <span style="color:var(--line-strong);">·</span>
+          <a href="terms.html" style="color:var(--ink-faint); text-decoration:none;">Terms of Service</a>
+          <span style="color:var(--line-strong);">·</span>
+          <span style="color:var(--ink-muted);">niharrout.com</span>
+        </div>
       </div>
     </div>
   </footer>
@@ -2899,20 +3561,21 @@
       if (!grid || !filtersContainer || !projects.length) return;
 
       var currentFilter = 'All';
-      var filterCategories = ['All', 'B2B', 'Consumer', 'Marketplace', 'Mobile', 'Enterprise', 'SaaS'];
+      var filterCategories = ['All', 'B2B', 'Consumer Marketplace', 'Enterprise', 'Mobile', 'SaaS'];
 
       function matchesCategory(project, cat) {
         if (cat === 'All') return true;
         var lowerCat = cat.toLowerCase();
         return project.tags.some(function (t) {
           var lt = t.toLowerCase();
-          if (lowerCat === 'b2b') return lt === 'b2b' || lt.indexOf('enterprise') !== -1;
-          if (lowerCat === 'consumer') return lt === 'consumer';
-          if (lowerCat === 'marketplace') return lt === 'marketplace';
-          if (lowerCat === 'mobile') return lt === 'mobile';
-          if (lowerCat === 'enterprise') return lt === 'enterprise' || lt === 'erp';
-          if (lowerCat === 'saas') return lt === 'saas' || lt === 'b2b';
-          return lt === lowerCat;
+          if (lowerCat === 'b2b') return lt.indexOf('b2b') !== -1 || lt.indexOf('enterprise') !== -1;
+          if (lowerCat === 'consumer marketplace' || lowerCat === 'consumer' || lowerCat === 'marketplace') {
+            return lt.indexOf('consumer') !== -1 || lt.indexOf('marketplace') !== -1;
+          }
+          if (lowerCat === 'mobile') return lt.indexOf('mobile') !== -1;
+          if (lowerCat === 'enterprise') return lt.indexOf('enterprise') !== -1 || lt.indexOf('erp') !== -1;
+          if (lowerCat === 'saas') return lt.indexOf('saas') !== -1 || lt.indexOf('b2b') !== -1;
+          return lt === lowerCat || lt.indexOf(lowerCat) !== -1;
         });
       }
 
@@ -3057,6 +3720,113 @@
 
       renderFilters();
       renderProjects();
+    })();
+
+    /* ================= WHAT WOULD THIS COST? SCOPE ESTIMATOR ================= */
+    (function () {
+      var estSection = document.getElementById('estimator');
+      if (!estSection) return;
+
+      var state = {
+        type: 'SaaS/Web Platform',
+        stage: 'Idea only',
+        scale: 'Mid-size product',
+        timeline: '2-4 months'
+      };
+
+      var priceEl = document.getElementById('estPriceVal');
+      var timeEl = document.getElementById('estTimeText');
+      var pillEl = document.getElementById('estSummaryPill');
+      var ctaBtn = document.getElementById('estCtaBtn');
+
+      var matrix = {
+        'Simple MVP': {
+          'SaaS/Web Platform': { price: '₹2.5L – ₹5L', usd: '$3k – $6k USD', weeks: '4–7 weeks' },
+          'Mobile App': { price: '₹2.5L – ₹5.5L', usd: '$3k – $7k USD', weeks: '5–8 weeks' },
+          'AI Product': { price: '₹3L – ₹7L', usd: '$3.8k – $8.5k USD', weeks: '5–8 weeks' },
+          'E-commerce/Marketplace': { price: '₹2.5L – ₹6L', usd: '$3k – $7.5k USD', weeks: '5–8 weeks' },
+          'Enterprise/Internal Tool': { price: '₹3L – ₹6.5L', usd: '$3.8k – $8k USD', weeks: '5–8 weeks' },
+          'Not sure yet': { price: '₹2L – ₹5L', usd: '$2.5k – $6k USD', weeks: '4–8 weeks' }
+        },
+        'Mid-size product': {
+          'SaaS/Web Platform': { price: '₹5L – ₹12L', usd: '$6k – $15k USD', weeks: '8–14 weeks' },
+          'Mobile App': { price: '₹5.5L – ₹13L', usd: '$6.8k – $16k USD', weeks: '8–14 weeks' },
+          'AI Product': { price: '₹6L – ₹15L', usd: '$7.5k – $18k USD', weeks: '8–14 weeks' },
+          'E-commerce/Marketplace': { price: '₹6L – ₹14L', usd: '$7.5k – $17k USD', weeks: '8–14 weeks' },
+          'Enterprise/Internal Tool': { price: '₹6L – ₹15L', usd: '$7.5k – $18k USD', weeks: '8–14 weeks' },
+          'Not sure yet': { price: '₹5L – ₹12L', usd: '$6k – $15k USD', weeks: '8–14 weeks' }
+        },
+        'Full platform, multiple modules': {
+          'SaaS/Web Platform': { price: '₹12L – ₹25L+', usd: '$15k – $30k+ USD', weeks: '3–5 months' },
+          'Mobile App': { price: '₹12L – ₹28L+', usd: '$15k – $35k+ USD', weeks: '3–6 months' },
+          'AI Product': { price: '₹15L – ₹30L+', usd: '$18k – $38k+ USD', weeks: '3–6 months' },
+          'E-commerce/Marketplace': { price: '₹14L – ₹28L+', usd: '$17k – $35k+ USD', weeks: '3–6 months' },
+          'Enterprise/Internal Tool': { price: '₹14L – ₹30L+', usd: '$17k – $38k+ USD', weeks: '3–6 months' },
+          'Not sure yet': { price: '₹12L – ₹25L+', usd: '$15k – $30k+ USD', weeks: '3–6 months' }
+        }
+      };
+
+      function updateCalculation() {
+        var scaleData = matrix[state.scale] || matrix['Mid-size product'];
+        var benchmark = scaleData[state.type] || scaleData['SaaS/Web Platform'];
+
+        var priceStr = benchmark.price + ' (' + benchmark.usd + ')';
+        var timeStr = 'Estimated timeline: ' + benchmark.weeks;
+
+        if (state.timeline === 'ASAP (under 2 months)') {
+          timeStr += ' · Priority Sprint Track';
+        } else if (state.stage === 'I have a spec or wireframes') {
+          timeStr += ' · Fast-tracked Discovery';
+        }
+
+        if (priceEl) priceEl.textContent = priceStr;
+        if (timeEl) timeEl.textContent = timeStr;
+        if (pillEl) {
+          pillEl.textContent = state.type + ' · ' + state.stage + ' · ' + state.scale + ' · ' + state.timeline;
+        }
+      }
+
+      var questionBlocks = estSection.querySelectorAll('.est-question-block');
+      questionBlocks.forEach(function (block) {
+        var qKey = block.getAttribute('data-q');
+        var buttons = block.querySelectorAll('.est-opt-btn');
+        buttons.forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            buttons.forEach(function (b) { b.classList.remove('active'); });
+            btn.classList.add('active');
+            state[qKey] = btn.getAttribute('data-val');
+            updateCalculation();
+          });
+        });
+      });
+
+      if (ctaBtn) {
+        ctaBtn.addEventListener('click', function () {
+          var summary = 'What I want to build: ' + state.type + ' (' + state.scale + ') | Starting from: ' + state.stage + ' | Target timeline: ' + state.timeline;
+          var textarea = document.getElementById('a-bottle');
+          var suiteSection = document.getElementById('suite');
+          var nameInput = document.getElementById('a-name');
+
+          if (textarea) {
+            textarea.value = summary;
+            textarea.style.borderColor = 'var(--accent)';
+            textarea.style.boxShadow = '0 0 0 3px var(--accent-tint)';
+            setTimeout(function () {
+              textarea.style.borderColor = '';
+              textarea.style.boxShadow = '';
+            }, 2500);
+          }
+
+          if (suiteSection) {
+            suiteSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            setTimeout(function () {
+              if (nameInput) nameInput.focus();
+            }, 600);
+          }
+        });
+      }
+
+      updateCalculation();
     })();
 
     /* Scroll Reveal */

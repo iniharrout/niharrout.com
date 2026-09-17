@@ -2,50 +2,68 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://niharrout.com/</loc>
-    <lastmod>2026-09-16</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://niharrout.com/b2b-software-development-for-startups</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://niharrout.com/ai-product-development-bhubaneswar.html</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://niharrout.com/mobile-app-development-bhubaneswar.html</loc>
-    <lastmod>2026-09-07</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://niharrout.com/work/custom-erp-manufacturing</loc>
-    <lastmod>2026-09-16</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://niharrout.com/work/sky1-event-booking</loc>
-    <lastmod>2026-09-16</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://niharrout.com/work/make-my-look</loc>
-    <lastmod>2026-09-16</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://niharrout.com/work/flashnow</loc>
-    <lastmod>2026-09-16</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://niharrout.com/work/skribe</loc>
-    <lastmod>2026-09-16</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://niharrout.com/privacy-policy</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://niharrout.com/terms</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>
