@@ -181,5 +181,16 @@
     initCounters();
     initHeroParallax();
     initTestimonialSpotlight();
+    initChatWidget();
+  }
+
+  // 5. Self-Contained Floating AI Chat Widget Loader
+  function initChatWidget() {
+    if (window.__NIHAR_CHAT_WIDGET_LOADED__ || document.querySelector('script[src*="chat-widget.js"]')) return;
+    var script = document.createElement('script');
+    script.src = '/assets/chat-widget.js';
+    script.defer = true;
+    document.body.appendChild(script);
   }
 })();
+
