@@ -385,7 +385,7 @@
     .nav-desktop {
       display: flex;
       align-items: center;
-      gap: 30px;
+      gap: 28px;
     }
 
     @media (max-width: 980px) {
@@ -394,14 +394,101 @@
       }
     }
 
-    .nav-desktop a.lnk {
+    .nav-desktop a.lnk,
+    .nav-dropdown-btn {
       font-size: 14.5px;
       font-weight: 600;
       color: var(--ink-soft);
       transition: color .2s;
     }
 
-    .nav-desktop a.lnk:hover {
+    .nav-desktop a.lnk:hover,
+    .nav-dropdown-btn:hover,
+    .nav-dropdown:hover .nav-dropdown-btn,
+    .nav-dropdown.open .nav-dropdown-btn {
+      color: var(--ink);
+    }
+
+    /* Desktop Navigation Dropdown */
+    .nav-dropdown {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .nav-dropdown-btn {
+      background: none;
+      border: none;
+      padding: 0;
+      font-family: inherit;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .nav-arrow {
+      font-size: 9px;
+      transition: transform 0.2s ease;
+      display: inline-block;
+      opacity: 0.7;
+    }
+
+    .nav-dropdown:hover .nav-arrow,
+    .nav-dropdown.open .nav-arrow {
+      transform: rotate(180deg);
+    }
+
+    .nav-dropdown-menu {
+      position: absolute;
+      top: calc(100% + 14px);
+      left: -12px;
+      background: #FFFFFF;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--r-md);
+      box-shadow: var(--shadow-hover);
+      padding: 8px;
+      min-width: 175px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(8px);
+      transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+      z-index: 120;
+    }
+
+    .nav-dropdown-menu::before {
+      content: '';
+      position: absolute;
+      top: -14px;
+      left: 0;
+      right: 0;
+      height: 14px;
+    }
+
+    .nav-dropdown:hover .nav-dropdown-menu,
+    .nav-dropdown:focus-within .nav-dropdown-menu,
+    .nav-dropdown.open .nav-dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .nav-dropdown-menu a {
+      padding: 8px 12px;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--ink-soft);
+      border-radius: var(--r-sm);
+      transition: background 0.15s ease, color 0.15s ease;
+      display: block;
+      text-decoration: none;
+    }
+
+    .nav-dropdown-menu a:hover {
+      background: var(--bg);
       color: var(--ink);
     }
 
@@ -467,16 +554,18 @@
       right: 0;
       background: #FFFFFF;
       border-bottom: 1px solid var(--line);
-      padding: 28px;
+      padding: 24px 28px;
       display: flex;
       flex-direction: column;
-      gap: 18px;
+      gap: 16px;
       opacity: 0;
       transform: translateY(-12px);
       pointer-events: none;
       transition: all 0.3s ease;
       z-index: 95;
       box-shadow: 0 12px 36px rgba(20, 19, 18, 0.08);
+      max-height: calc(100vh - 72px);
+      overflow-y: auto;
     }
 
     .mobile-drawer.open {
@@ -494,6 +583,62 @@
     .drawer-lnk {
       font-size: 16.5px;
       font-weight: 600;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    /* Mobile Accordion */
+    .drawer-accordion {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .drawer-accordion-btn {
+      background: none;
+      border: none;
+      padding: 0;
+      font-family: inherit;
+      font-size: 16.5px;
+      font-weight: 700;
+      color: var(--ink);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-align: left;
+      width: 100%;
+    }
+
+    .drawer-accordion-btn .acc-chevron {
+      font-size: 11px;
+      transition: transform 0.25s ease;
+    }
+
+    .drawer-accordion.open .drawer-accordion-btn .acc-chevron {
+      transform: rotate(180deg);
+    }
+
+    .drawer-sub-links {
+      display: none;
+      flex-direction: column;
+      gap: 12px;
+      padding: 12px 0 4px 14px;
+      border-left: 2px solid var(--accent);
+      margin: 8px 0 4px 4px;
+    }
+
+    .drawer-accordion.open .drawer-sub-links {
+      display: flex;
+    }
+
+    .drawer-sub-lnk {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--ink-soft);
+      text-decoration: none;
+    }
+
+    .drawer-sub-lnk:hover {
       color: var(--ink);
     }
 
@@ -537,16 +682,31 @@
     /* ================= SECTION 1: HERO ================= */
     .hero {
       position: relative;
-      padding-top: clamp(60px, 8vw, 96px);
-      padding-bottom: clamp(60px, 8vw, 96px);
-      text-align: center;
+      padding-top: clamp(48px, 6vw, 76px);
+      padding-bottom: clamp(56px, 7vw, 84px);
       background: var(--bg);
+      border-bottom: 1px solid var(--line);
     }
 
     .hero > .wrap {
       position: relative;
       z-index: 1;
-      max-width: 960px;
+      max-width: var(--maxw);
+    }
+
+    .hero-editorial-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: clamp(32px, 5vw, 64px);
+      align-items: center;
+      text-align: left;
+    }
+
+    @media (max-width: 900px) {
+      .hero-editorial-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
     }
 
     .hero-founder-badge {
@@ -556,53 +716,42 @@
       padding: 6px 16px;
       border-radius: var(--r-pill);
       background: #FFFFFF;
-      border: 1px solid var(--line);
+      border: 1px solid var(--line-strong);
       box-shadow: var(--shadow-sm);
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
 
-    .hero-founder-avatar {
-      width: 28px;
-      height: 28px;
+    .hero-founder-badge .dot {
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
-      object-fit: cover;
+      background: var(--emerald);
     }
 
     .hero-founder-text {
-      font-size: 13.5px;
-      font-weight: 600;
-      color: var(--ink);
-    }
-
-    .hero-name-kicker {
-      font-family: "JetBrains Mono", monospace;
       font-size: 13px;
       font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin: 0 0 8px;
+      color: var(--ink);
     }
 
     .hero h1 {
-      font-size: clamp(38px, 5.8vw, 64px);
-      line-height: 1.08;
+      font-size: clamp(34px, 4.3vw, 54px);
+      line-height: 1.1;
       font-weight: 800;
-      margin: 4px auto 0;
-      max-width: 17ch;
       letter-spacing: -0.035em;
       color: var(--ink);
+      margin: 0 0 16px;
     }
 
     .hero-h1-kicker {
       display: block;
       font-family: "JetBrains Mono", monospace;
-      font-size: clamp(13px, 1.4vw, 15px);
+      font-size: clamp(12px, 1.2vw, 13.5px);
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.1em;
       color: var(--accent);
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       line-height: 1.2;
     }
 
@@ -614,25 +763,97 @@
       font-family: "JetBrains Mono", monospace;
       font-size: 13.5px;
       font-weight: 600;
-      color: var(--accent);
-      margin-top: 14px;
-      letter-spacing: 0.02em;
+      color: var(--ink-faint);
+      margin-bottom: 18px;
+      letter-spacing: 0.01em;
     }
 
     .hero .pitch {
-      font-size: clamp(17.5px, 1.8vw, 20px);
+      font-size: clamp(16px, 1.6vw, 18px);
       color: var(--ink-soft);
-      max-width: 62ch;
-      margin: 20px auto 0;
-      line-height: 1.62;
+      max-width: 56ch;
+      margin: 0 0 28px;
+      line-height: 1.65;
     }
 
     .hero-cta {
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
-      justify-content: center;
-      margin-top: 36px;
+      margin-bottom: 8px;
+    }
+
+    /* Founder Portrait Card */
+    .hero-portrait-card {
+      background: #FFFFFF;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--r-xl);
+      padding: 16px;
+      box-shadow: var(--shadow-card);
+      position: relative;
+    }
+
+    .hero-portrait-img-wrap {
+      position: relative;
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      aspect-ratio: 4/3.8;
+      background: var(--bg-alt);
+    }
+
+    .hero-portrait-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 25%;
+      display: block;
+    }
+
+    .hero-portrait-meta {
+      padding: 16px 8px 6px;
+    }
+
+    .hero-portrait-name {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+    }
+
+    .hero-portrait-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink-faint);
+      margin-top: 2px;
+    }
+
+    .hero-portrait-quote {
+      font-family: "Playfair Display", Georgia, serif;
+      font-style: italic;
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--ink-soft);
+      margin: 12px 0 14px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--line);
+    }
+
+    .hero-portrait-badges {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .hero-portrait-pill {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--ink);
+      background: var(--bg);
+      border: 1px solid var(--line);
+      padding: 4px 10px;
+      border-radius: var(--r-pill);
     }
 
     /* Mellow Floating Stats Bar */
@@ -826,11 +1047,12 @@
     /* ================= SECTION 4: WHY WORK WITH US ================= */
     .why-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1.12fr 0.88fr;
       gap: 24px;
+      align-items: stretch;
     }
 
-    @media (max-width: 760px) {
+    @media (max-width: 900px) {
       .why-grid {
         grid-template-columns: 1fr;
       }
@@ -838,44 +1060,95 @@
 
     .why-card {
       background: #FFFFFF;
-      border: 1px solid var(--line);
+      border: 1px solid var(--line-strong);
       border-radius: var(--r-xl);
       padding: 36px 32px;
       box-shadow: var(--shadow-card);
       transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+      display: flex;
+      flex-direction: column;
     }
 
     .why-card:hover {
-      border-color: var(--line-strong);
-      transform: translateY(-3px);
+      border-color: rgba(20, 19, 18, 0.22);
+      transform: translateY(-2px);
       box-shadow: var(--shadow-hover);
     }
 
-    .why-card .num-badge {
+    .why-card.flagship {
+      background: #FFFFFF;
+      border: 1px solid var(--line-strong);
+      border-left: 5px solid var(--accent);
+      padding: clamp(36px, 4.5vw, 48px);
+      justify-content: space-between;
+    }
+
+    .why-card.flagship h3 {
+      font-size: clamp(24px, 2.4vw, 30px);
+      letter-spacing: -0.025em;
+      line-height: 1.25;
+      margin-bottom: 16px;
+    }
+
+    .why-card.flagship .lead-quote {
+      font-family: "Playfair Display", Georgia, serif;
+      font-style: italic;
+      font-size: 15.5px;
+      color: var(--ink);
+      line-height: 1.55;
+      margin: 20px 0;
+      padding: 16px 20px;
+      background: var(--bg);
+      border-radius: var(--r-md);
+      border-left: 3px solid var(--ink);
+    }
+
+    .why-side-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .why-subcard {
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: var(--r-lg);
+      padding: 24px 28px;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .why-subcard:hover {
+      border-color: var(--line-strong);
+      transform: translateY(-2px);
+    }
+
+    .why-subcard .num-badge {
       font-family: "JetBrains Mono", monospace;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 700;
       color: var(--accent);
       background: var(--accent-tint);
       border: 1px solid var(--accent-border);
-      padding: 4px 12px;
+      padding: 3px 10px;
       border-radius: var(--r-pill);
       display: inline-block;
-      margin-bottom: 18px;
+      margin-bottom: 12px;
     }
 
-    .why-card h3 {
-      font-size: 20px;
-      font-weight: 700;
+    .why-subcard h3 {
+      font-size: 18px;
+      font-weight: 800;
       color: var(--ink);
-      line-height: 1.3;
+      margin: 0 0 8px;
+      letter-spacing: -0.015em;
     }
 
-    .why-card p {
+    .why-subcard p {
+      font-size: 14px;
       color: var(--ink-soft);
-      font-size: 15px;
-      margin-top: 10px;
       line-height: 1.6;
+      margin: 0;
     }
 
     .credential-chips {
@@ -1182,18 +1455,12 @@
 
     .tech-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 24px;
       margin-top: 40px;
     }
 
-    @media (max-width: 1024px) {
-      .tech-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 640px) {
+    @media (max-width: 768px) {
       .tech-grid {
         grid-template-columns: 1fr;
       }
@@ -1228,27 +1495,26 @@
     }
 
     .tech-cat-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
       font-family: "JetBrains Mono", monospace;
-      font-size: 11.5px;
+      font-size: 11px;
       font-weight: 700;
       color: var(--accent);
       text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-bottom: 8px;
+      letter-spacing: 0.08em;
+      display: block;
+      margin-bottom: 6px;
     }
 
     .tech-card h3 {
-      font-size: 19px;
-      font-weight: 700;
+      font-size: 22px;
+      font-weight: 800;
       color: var(--ink);
       margin: 0 0 6px;
+      letter-spacing: -0.02em;
     }
 
     .tech-card-desc {
-      font-size: 13.5px;
+      font-size: 14px;
       color: var(--ink-soft);
       line-height: 1.5;
       margin: 0;
@@ -1258,24 +1524,22 @@
       display: flex;
       flex-direction: column;
       gap: 10px;
-      margin-top: auto;
     }
 
     .tech-pill {
       display: flex;
       align-items: center;
       gap: 12px;
-      padding: 10px 14px;
+      padding: 8px 12px;
+      border-radius: 10px;
       background: var(--bg);
       border: 1px solid var(--line);
-      border-radius: var(--r-md);
-      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: all 0.2s ease;
     }
 
     .tech-pill:hover {
       background: var(--surface);
       border-color: var(--ink);
-      transform: translateX(4px);
     }
 
     .tech-icon-box {
@@ -1305,24 +1569,21 @@
     .tech-cta-box {
       background: var(--ink);
       color: #FFFFFF;
-      border-radius: var(--r-lg);
-      padding: 32px;
+      border-radius: var(--r-xl);
+      padding: 36px 40px;
       display: flex;
-      flex-direction: column;
+      align-items: center;
       justify-content: space-between;
-      gap: 20px;
-      grid-column: span 2;
+      gap: 28px;
+      margin-top: 36px;
+      box-shadow: var(--shadow-card);
     }
 
-    @media (max-width: 1024px) {
+    @media (max-width: 800px) {
       .tech-cta-box {
-        grid-column: span 2;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .tech-cta-box {
-        grid-column: span 1;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 28px;
       }
     }
 
@@ -1804,170 +2065,6 @@
       margin: 0 auto;
     }
 
-    /* ================= SECTION 7.5: SCOPE ESTIMATOR ================= */
-    .estimator-section {
-      background: var(--bg);
-      border-top: 1px solid var(--line);
-      padding: 90px 0 40px;
-    }
-
-    .estimator-card {
-      background: #FFFFFF;
-      border: 1px solid var(--line);
-      border-radius: var(--r-xl);
-      padding: clamp(32px, 5vw, 48px);
-      box-shadow: var(--shadow-card);
-    }
-
-    .estimator-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: clamp(28px, 4vw, 48px);
-      align-items: stretch;
-      margin-top: 32px;
-    }
-
-    @media (max-width: 960px) {
-      .estimator-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .est-question-block {
-      margin-bottom: 24px;
-    }
-
-    .est-question-block:last-child {
-      margin-bottom: 0;
-    }
-
-    .est-q-title {
-      font-size: 13.5px;
-      font-weight: 700;
-      color: var(--ink);
-      font-family: "JetBrains Mono", monospace;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 10px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .est-q-num {
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background: var(--accent-tint);
-      color: var(--accent);
-      display: inline-grid;
-      place-items: center;
-      font-size: 11px;
-      font-weight: 700;
-    }
-
-    .est-options-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .est-opt-btn {
-      background: var(--bg);
-      border: 1px solid var(--line);
-      border-radius: var(--r-md);
-      padding: 9px 14px;
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--ink-soft);
-      cursor: pointer;
-      font-family: inherit;
-      transition: all 0.2s ease;
-      text-align: left;
-    }
-
-    .est-opt-btn:hover {
-      background: #FFFFFF;
-      border-color: var(--line-strong);
-      color: var(--ink);
-    }
-
-    .est-opt-btn.active {
-      background: var(--ink);
-      border-color: var(--ink);
-      color: #FFFFFF;
-      font-weight: 600;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .est-output-box {
-      background: var(--bg);
-      border: 1px solid var(--line);
-      border-radius: var(--r-lg);
-      padding: clamp(24px, 3vw, 32px);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      position: sticky;
-      top: 90px;
-    }
-
-    .est-out-label {
-      font-family: "JetBrains Mono", monospace;
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--accent);
-      margin-bottom: 6px;
-    }
-
-    .est-price-val {
-      font-size: clamp(28px, 3.2vw, 38px);
-      font-weight: 800;
-      color: var(--ink);
-      letter-spacing: -0.03em;
-      line-height: 1.1;
-      margin-bottom: 6px;
-    }
-
-    .est-time-val {
-      font-size: 14.5px;
-      color: var(--ink-soft);
-      font-weight: 600;
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .est-summary-pill {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: var(--r-md);
-      padding: 12px 14px;
-      font-size: 12px;
-      color: var(--ink-soft);
-      line-height: 1.55;
-      margin-bottom: 18px;
-      font-family: "JetBrains Mono", monospace;
-    }
-
-    .est-disclaimer {
-      font-size: 13px;
-      line-height: 1.55;
-      color: var(--ink-faint);
-      margin-bottom: 20px;
-    }
-
-    .est-cta-btn {
-      width: 100%;
-      justify-content: center;
-      padding: 14px;
-      border-radius: 12px;
-      font-size: 14px;
-      font-weight: 700;
-    }
 
     /* ================= SECTION 8: FOUNDER SUITE ================= */
     .suite-section {
@@ -2355,15 +2452,23 @@
       <a href="#top" class="brand">nihar<span class="dot">.</span></a>
 
       <div class="nav-desktop">
-        <a href="/about" class="lnk">About</a>
-        <a href="#why" class="lnk">Why Me</a>
-        <a href="#capabilities" class="lnk">Capabilities</a>
-        <a href="/technology" class="lnk">Technology</a>
+        <div class="nav-dropdown" id="companyDropdown">
+          <button type="button" class="nav-dropdown-btn" id="companyDropdownBtn" aria-expanded="false" aria-haspopup="true">
+            Company
+            <svg class="nav-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1l4 4 4-4"/></svg>
+          </button>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="/about" role="menuitem">About</a>
+            <a href="#why" role="menuitem">Why Me</a>
+            <a href="#capabilities" role="menuitem">Capabilities</a>
+            <a href="#reviews" role="menuitem">Reviews</a>
+            <a href="#faq" role="menuitem">FAQ</a>
+          </div>
+        </div>
         <a href="#work" class="lnk">Work</a>
+        <a href="/technology" class="lnk">Technology</a>
         <a href="/project-costs" class="lnk">Project Costs</a>
         <a href="#suite" class="lnk">Founder Suite</a>
-        <a href="#reviews" class="lnk">Reviews</a>
-        <a href="#faq" class="lnk">FAQ</a>
         <a href="https://creuto.com" target="_blank" rel="noopener" class="lnk">Creuto ↗</a>
       </div>
 
@@ -2380,15 +2485,23 @@
 
     <div class="mobile-drawer" id="mobileDrawer">
       <nav class="drawer-links">
-        <a href="/about" class="drawer-lnk">About</a>
-        <a href="#why" class="drawer-lnk">Why Me</a>
-        <a href="#capabilities" class="drawer-lnk">Capabilities</a>
-        <a href="/technology" class="drawer-lnk">Technology</a>
+        <div class="drawer-accordion" id="companyAccordion">
+          <button type="button" class="drawer-accordion-btn" id="companyAccordionBtn" aria-expanded="false">
+            <span>Company</span>
+            <svg class="acc-chevron" width="12" height="8" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1.5l5 5 5-5"/></svg>
+          </button>
+          <div class="drawer-sub-links" id="companySubLinks">
+            <a href="/about" class="drawer-lnk">About</a>
+            <a href="#why" class="drawer-lnk">Why Me</a>
+            <a href="#capabilities" class="drawer-lnk">Capabilities</a>
+            <a href="#reviews" class="drawer-lnk">Reviews</a>
+            <a href="#faq" class="drawer-lnk">FAQ</a>
+          </div>
+        </div>
         <a href="#work" class="drawer-lnk">Work</a>
+        <a href="/technology" class="drawer-lnk">Technology</a>
         <a href="/project-costs" class="drawer-lnk">Project Costs</a>
         <a href="#suite" class="drawer-lnk">Founder Suite</a>
-        <a href="#reviews" class="drawer-lnk">Reviews</a>
-        <a href="#faq" class="drawer-lnk">FAQ</a>
         <a href="https://creuto.com" target="_blank" rel="noopener" class="drawer-lnk">Creuto ↗</a>
         <a href="#contact" class="btn btn-dark" style="margin-top:8px; justify-content:center;">Book a Call <span class="arw">→</span></a>
       </nav>
@@ -2400,48 +2513,78 @@
     <!-- ================= SECTION 1: HERO ================= -->
     <section class="hero" id="hero">
       <div class="wrap">
-        <div class="rv">
-          <div class="hero-founder-badge">
-            <img src="assets/nihar.jpg" alt="Nihar Ranjan Rout — Founder &amp; CEO, Creuto" class="hero-founder-avatar">
-            <span class="hero-founder-text">Nihar Ranjan Rout · Founder &amp; CEO, Creuto</span>
+        <div class="hero-editorial-grid">
+          <!-- Left: Pitch, Positioning, CTAs, Floating Stats -->
+          <div class="hero-editorial-left">
+            <div class="rv">
+              <div class="hero-founder-badge">
+                <span class="dot"></span>
+                <span class="hero-founder-text">Nihar Ranjan Rout · Founder &amp; CEO, Creuto</span>
+              </div>
+            </div>
+
+            <h1 class="rv">
+              <span class="hero-h1-kicker">Product Strategy &amp; Software Delivery</span>
+              <span class="hero-h1-title">Turning software ideas into products worth building.</span>
+            </h1>
+
+            <div class="role-sub rv">
+              Product Strategist · Business &amp; Technology · In-House Engineering Team
+            </div>
+
+            <p class="pitch rv">
+              Most software builds fail for product reasons, not engineering ones — bloated scopes, miscalculated unit economics, or code written before anyone validated the problem. I work with founders to challenge assumptions, lock down the PRD, and design a build plan that protects their runway. Then my engineering team at Creuto builds and ships it.
+            </p>
+
+            <div class="hero-cta rv">
+              <a href="#contact" class="btn btn-dark">Book a Strategy Call <span class="arw">→</span></a>
+              <a href="/project-costs" class="btn btn-outline">Explore Project Costs ↓</a>
+            </div>
+
+            <!-- Floating Stats Bar -->
+            <div class="hero-stats-bar rv" style="margin-top: 32px;">
+              <div class="stat-item">
+                <div class="val">8<span class="sup">+ yrs</span></div>
+                <div class="lbl">In Product Management</div>
+              </div>
+              <div class="stat-item">
+                <div class="val">Multi-domain</div>
+                <div class="lbl">Fintech, SaaS, AI &amp; Health</div>
+              </div>
+              <div class="stat-item">
+                <div class="val">In-House</div>
+                <div class="lbl">Creuto Engineering Team</div>
+              </div>
+              <div class="stat-item">
+                <div class="val">5.0 <span class="sup">★</span></div>
+                <div class="lbl">Clutch Verified Rating</div>
+              </div>
+            </div>
           </div>
-        </div>
 
-        <h1 class="rv">
-          <span class="hero-h1-kicker">Nihar Ranjan Rout —</span>
-          <span class="hero-h1-title">Turning software ideas into products worth building.</span>
-        </h1>
-
-        <div class="role-sub rv">
-          Product Strategist · Business &amp; Technology · Founder &amp; CEO, Creuto
-        </div>
-
-        <p class="pitch rv">
-          I help founders and B2B businesses turn an idea into the right product — clarifying scope, shaping the PRD, and planning a build that fits your budget. My team at Creuto then engineers it to a standard we're proud of. Product thinking first; honest, dedicated delivery always.
-        </p>
-
-        <div class="hero-cta rv">
-          <a href="#contact" class="btn btn-dark">Book a Strategy Call <span class="arw">→</span></a>
-          <a href="#suite" class="btn btn-outline">Explore Founder Suite ↓</a>
-        </div>
-
-        <!-- Mellow Floating Stats Bar -->
-        <div class="hero-stats-bar rv">
-          <div class="stat-item">
-            <div class="val">8<span class="sup">+ yrs</span></div>
-            <div class="lbl">In Product Management</div>
-          </div>
-          <div class="stat-item">
-            <div class="val">Multi-domain</div>
-            <div class="lbl">Fintech, SaaS, AI &amp; Health</div>
-          </div>
-          <div class="stat-item">
-            <div class="val">In-House</div>
-            <div class="lbl">Creuto Engineering Team</div>
-          </div>
-          <div class="stat-item">
-            <div class="val">5.0 <span class="sup">★</span></div>
-            <div class="lbl">Clutch Verified Rating</div>
+          <!-- Right: Real Founder Portrait Card (Reduces AI-generated feel) -->
+          <div class="hero-editorial-right rv">
+            <div class="hero-portrait-card">
+              <div class="hero-portrait-img-wrap">
+                <img src="assets/nihar-cafe.jpg" alt="Nihar Ranjan Rout — Founder &amp; CEO, Creuto" class="hero-portrait-img" loading="eager" fetchpriority="high">
+              </div>
+              <div class="hero-portrait-meta">
+                <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+                  <div>
+                    <div class="hero-portrait-name">Nihar Ranjan Rout</div>
+                    <div class="hero-portrait-title">Founder &amp; CEO, Creuto · Product Strategist</div>
+                  </div>
+                  <span class="hero-portrait-pill">Bhubaneswar, IN</span>
+                </div>
+                <div class="hero-portrait-quote">
+                  "If you build the wrong feature set on time and under budget, you still lost. The discipline is knowing what NOT to build."
+                </div>
+                <div class="hero-portrait-badges">
+                  <span class="hero-portrait-pill">★ 5.0 Clutch Verified</span>
+                  <span class="hero-portrait-pill">Active Q3/Q4 Sprints</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -2514,36 +2657,41 @@
         </div>
 
         <div class="why-grid">
-          <div class="why-card rv">
-            <span class="num-badge">01</span>
-            <h3>Product thinking, first</h3>
-            <p>
-              Before anyone writes code, we get the product right — the problem, the users, the scope, and a PRD that keeps the whole build focused on what actually matters.
-            </p>
+          <!-- Flagship Thesis Card -->
+          <div class="why-card flagship rv">
+            <div>
+              <span class="num-badge">Our Core Philosophy</span>
+              <h3>Most software fails before a line of code is written.</h3>
+              <p style="color:var(--ink-soft); font-size:16px; line-height:1.68; margin-top:14px;">
+                Traditional dev agencies sell billable hours and sprawling sprint cycles. We do the inverse: we protect your runway by questioning assumptions, locking down the PRD, and killing unnecessary features before engineers touch them.
+              </p>
+              <div class="lead-quote">
+                "If you build the wrong thing on time and within budget, you still failed. Product thinking means building the exact thing that validates or grows your business."
+              </div>
+            </div>
+            <div style="margin-top:24px; padding-top:16px; border-top:1px solid var(--line);">
+              <span style="font-family:'JetBrains Mono',monospace; font-size:11.5px; font-weight:700; color:var(--ink-faint); text-transform:uppercase; letter-spacing:0.07em;">The Founder Commitment</span>
+              <p style="font-size:14px; color:var(--ink); font-weight:600; margin:6px 0 0; line-height:1.5;">Direct founder access on every architecture and scoping milestone — no junior account managers.</p>
+            </div>
           </div>
 
-          <div class="why-card rv">
-            <span class="num-badge">02</span>
-            <h3>Business &amp; domain understanding</h3>
-            <p>
-              Eight years across many industries means I understand your business mechanics, not just a feature list — translating business requirements into the right product decisions.
-            </p>
-          </div>
-
-          <div class="why-card rv">
-            <span class="num-badge">03</span>
-            <h3>Built within your budget</h3>
-            <p>
-              We scope honestly and plan a build that fits what you can invest — delivering a production-grade product that stands well above what you paid for it.
-            </p>
-          </div>
-
-          <div class="why-card rv">
-            <span class="num-badge">04</span>
-            <h3>A strong in-house team</h3>
-            <p>
-              Creuto's engineers build B2B, growth-standard software directly — real product delivery led by the founder, with zero middleman handoffs or outsourced subcontractors.
-            </p>
+          <!-- Vertical Stack of 3 Specific Cards -->
+          <div class="why-side-stack rv">
+            <div class="why-subcard">
+              <span class="num-badge">01 · Domain Fluency</span>
+              <h3>Business mechanics, not just user stories</h3>
+              <p>Eight years across B2B SaaS, manufacturing, fintech, and marketplace operations means we speak unit economics, workflow bottlenecks, and compliance — translating business needs directly into technical specs.</p>
+            </div>
+            <div class="why-subcard">
+              <span class="num-badge">02 · Budget-Fit Scoping</span>
+              <h3>Pragmatic scope that respects your runway</h3>
+              <p>We scope honestly for real commercial outcomes. We specify where off-the-shelf primitives make sense and where custom code gives you an actual competitive moat, keeping your burn predictable.</p>
+            </div>
+            <div class="why-subcard">
+              <span class="num-badge">03 · In-House Engineering</span>
+              <h3>Creuto's dedicated team, zero outsourcing</h3>
+              <p>Every commit is written and reviewed by Creuto's full-time engineering squad in Bhubaneswar. High velocity, consistent architectural standards, and clean documentation you permanently own.</p>
+            </div>
           </div>
         </div>
 
@@ -2918,19 +3066,48 @@
             </div>
           </div>
 
-          <!-- Explore More CTA Card -->
-          <div class="tech-cta-box">
-            <div>
-              <span class="tech-cat-badge" style="color:var(--accent-border);">Pragmatic Engineering</span>
-              <h3 style="font-size:24px; font-weight:800; color:#FFFFFF; margin:0 0 10px; line-height:1.25;">Need a specific stack or architecture guidance?</h3>
-              <p style="font-size:15px; color:rgba(255,255,255,0.8); line-height:1.6; margin:0;">
-                We select tools based on your roadmap, unit economics, and team capabilities — never for hype. Discover how our stack powers production systems.
-              </p>
+          <!-- 8. Strategy -->
+          <div class="tech-card">
+            <div class="tech-card-head">
+              <span class="tech-cat-badge">08 · Strategy</span>
+              <h3>Product-First Architecture</h3>
+              <p class="tech-card-desc">Pragmatic architectural choices that scale with revenue, not buzzwords.</p>
             </div>
-            <div style="display:flex; gap:12px; flex-wrap:wrap;">
-              <a href="/technology" class="btn btn-light">Explore Deep Stack Guide →</a>
-              <a href="#contact" class="btn btn-light-outline">Discuss Your Stack</a>
+            <div class="tech-pills-list">
+              <div class="tech-pill">
+                <div class="tech-icon-box">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                </div>
+                <span class="tech-pill-name">Monolith-first scaling</span>
+              </div>
+              <div class="tech-pill">
+                <div class="tech-icon-box">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <span class="tech-pill-name">Zero unnecessary deps</span>
+              </div>
+              <div class="tech-pill">
+                <div class="tech-icon-box">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
+                <span class="tech-pill-name">Deterministic over LLM-hype</span>
+              </div>
             </div>
+          </div>
+        </div>
+
+        <!-- Explore More CTA Ribbon -->
+        <div class="tech-cta-box rv">
+          <div>
+            <span class="tech-cat-badge" style="color:var(--accent-border);">Pragmatic Engineering</span>
+            <h3 style="font-size:24px; font-weight:800; color:#FFFFFF; margin:0 0 10px; line-height:1.25;">Need a specific stack or architecture guidance?</h3>
+            <p style="font-size:15px; color:rgba(255,255,255,0.8); line-height:1.6; margin:0;">
+              We select tools based on your roadmap, unit economics, and team capabilities — never for hype. Discover how our stack powers production systems.
+            </p>
+          </div>
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <a href="/technology" class="btn btn-light">Explore Deep Stack Guide →</a>
+            <a href="#contact" class="btn btn-light-outline">Discuss Your Stack</a>
           </div>
         </div>
       </div>
@@ -3237,104 +3414,6 @@
       </div>
     </section>
 
-    <!-- ================= SECTION 7.5: "WHAT WOULD THIS COST?" SCOPE ESTIMATOR ================= -->
-    <section class="estimator-section" id="estimator">
-      <div class="wrap">
-        <div class="estimator-card rv">
-          <div class="shead">
-            <span class="badge-pill"><span class="dot"></span> Instant Project Scoping</span>
-            <h2 style="font-size:clamp(26px, 3.8vw, 38px); margin-top:10px;">What would this cost to build?</h2>
-            <p class="sub" style="margin-top:8px;">
-              Answer 4 quick questions to get an immediate, realistic budget band and timeline range based on production projects we’ve delivered. No login required.
-            </p>
-          </div>
-
-          <div class="estimator-grid">
-            <!-- Questions Column -->
-            <div class="est-questions-col">
-              <!-- Q1 -->
-              <div class="est-question-block" data-q="type">
-                <div class="est-q-title">
-                  <span class="est-q-num">1</span>
-                  <span>What are you building?</span>
-                </div>
-                <div class="est-options-grid">
-                  <button type="button" class="est-opt-btn active" data-val="SaaS/Web Platform">SaaS / Web Platform</button>
-                  <button type="button" class="est-opt-btn" data-val="Mobile App">Mobile App</button>
-                  <button type="button" class="est-opt-btn" data-val="AI Product">AI Product</button>
-                  <button type="button" class="est-opt-btn" data-val="E-commerce/Marketplace">E-commerce / Marketplace</button>
-                  <button type="button" class="est-opt-btn" data-val="Enterprise/Internal Tool">Enterprise / Internal Tool</button>
-                  <button type="button" class="est-opt-btn" data-val="Not sure yet">Not sure yet</button>
-                </div>
-              </div>
-
-              <!-- Q2 -->
-              <div class="est-question-block" data-q="stage">
-                <div class="est-q-title">
-                  <span class="est-q-num">2</span>
-                  <span>Where are you starting from?</span>
-                </div>
-                <div class="est-options-grid">
-                  <button type="button" class="est-opt-btn active" data-val="Idea only">Idea only</button>
-                  <button type="button" class="est-opt-btn" data-val="I have a spec or wireframes">I have a spec or wireframes</button>
-                  <button type="button" class="est-opt-btn" data-val="I have an existing product to improve">I have an existing product to improve</button>
-                </div>
-              </div>
-
-              <!-- Q3 -->
-              <div class="est-question-block" data-q="scale">
-                <div class="est-q-title">
-                  <span class="est-q-num">3</span>
-                  <span>Roughly how big a build?</span>
-                </div>
-                <div class="est-options-grid">
-                  <button type="button" class="est-opt-btn" data-val="Simple MVP">Simple MVP</button>
-                  <button type="button" class="est-opt-btn active" data-val="Mid-size product">Mid-size product</button>
-                  <button type="button" class="est-opt-btn" data-val="Full platform, multiple modules">Full platform, multiple modules</button>
-                </div>
-              </div>
-
-              <!-- Q4 -->
-              <div class="est-question-block" data-q="timeline">
-                <div class="est-q-title">
-                  <span class="est-q-num">4</span>
-                  <span>Timeline?</span>
-                </div>
-                <div class="est-options-grid">
-                  <button type="button" class="est-opt-btn" data-val="ASAP (under 2 months)">ASAP (under 2 months)</button>
-                  <button type="button" class="est-opt-btn active" data-val="2-4 months">2–4 months</button>
-                  <button type="button" class="est-opt-btn" data-val="Flexible">Flexible</button>
-                </div>
-              </div>
-            </div>
-
-            <!-- Output Column -->
-            <div class="est-output-box">
-              <div>
-                <div class="est-out-label">Estimated Investment Band</div>
-                <div class="est-price-val" id="estPriceVal">₹5L – ₹11L</div>
-                <div class="est-time-val" id="estTimeVal">
-                  <span>⏱</span>
-                  <span id="estTimeText">Estimated timeline: 8–12 weeks</span>
-                </div>
-
-                <div class="est-summary-pill" id="estSummaryPill">
-                  SaaS/Web Platform · Idea only · Mid-size product · 2–4 months
-                </div>
-
-                <p class="est-disclaimer">
-                  This is a rough starting point, not a quote — share a few more details and I'll get back to you personally within 24 hours.
-                </p>
-              </div>
-
-              <button type="button" class="btn btn-dark est-cta-btn" id="estCtaBtn">
-                Pre-Fill Scope &amp; Discuss with Nihar <span class="arw">→</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- ================= SECTION 8: FOUNDER SUITE ================= -->
     <section class="suite-section" id="suite">
@@ -3723,10 +3802,41 @@
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
 
-    /* Mobile Drawer Toggle */
+    /* Desktop Dropdown Toggle */
+    (function () {
+      var dropdown = document.getElementById('companyDropdown');
+      var btn = document.getElementById('companyDropdownBtn');
+      if (dropdown && btn) {
+        btn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          var isOpen = dropdown.classList.toggle('open');
+          btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+        document.addEventListener('click', function (e) {
+          if (!dropdown.contains(e.target)) {
+            dropdown.classList.remove('open');
+            btn.setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
+    })();
+
+    /* Mobile Drawer & Accordion Toggle */
     (function () {
       var toggle = document.getElementById('navToggle');
       var drawer = document.getElementById('mobileDrawer');
+      var acc = document.getElementById('companyAccordion');
+      var accBtn = document.getElementById('companyAccordionBtn');
+
+      if (acc && accBtn) {
+        accBtn.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          var isOpen = acc.classList.toggle('open');
+          accBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+      }
+
       if (toggle && drawer) {
         toggle.addEventListener('click', function (e) {
           e.stopPropagation();
@@ -3748,6 +3858,26 @@
             drawer.classList.remove('open');
           }
         });
+      }
+    })();
+
+    /* Scope Query Pre-fill Handler */
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var scopeVal = params.get('scope');
+      if (scopeVal) {
+        var textarea = document.getElementById('a-bottle');
+        if (textarea) {
+          textarea.value = decodeURIComponent(scopeVal);
+          textarea.style.borderColor = 'var(--accent)';
+          textarea.style.boxShadow = '0 0 0 3px var(--accent-tint)';
+          var suite = document.getElementById('suite');
+          if (suite) {
+            setTimeout(function () {
+              suite.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 400);
+          }
+        }
       }
     })();
 
@@ -4117,112 +4247,7 @@
       renderProjects();
     })();
 
-    /* ================= WHAT WOULD THIS COST? SCOPE ESTIMATOR ================= */
-    (function () {
-      var estSection = document.getElementById('estimator');
-      if (!estSection) return;
 
-      var state = {
-        type: 'SaaS/Web Platform',
-        stage: 'Idea only',
-        scale: 'Mid-size product',
-        timeline: '2-4 months'
-      };
-
-      var priceEl = document.getElementById('estPriceVal');
-      var timeEl = document.getElementById('estTimeText');
-      var pillEl = document.getElementById('estSummaryPill');
-      var ctaBtn = document.getElementById('estCtaBtn');
-
-      var matrix = {
-        'Simple MVP': {
-          'SaaS/Web Platform': { price: '₹2.5L – ₹5L', usd: '$3k – $6k USD', weeks: '4–7 weeks' },
-          'Mobile App': { price: '₹2.5L – ₹5.5L', usd: '$3k – $7k USD', weeks: '5–8 weeks' },
-          'AI Product': { price: '₹3L – ₹7L', usd: '$3.8k – $8.5k USD', weeks: '5–8 weeks' },
-          'E-commerce/Marketplace': { price: '₹2.5L – ₹6L', usd: '$3k – $7.5k USD', weeks: '5–8 weeks' },
-          'Enterprise/Internal Tool': { price: '₹3L – ₹6.5L', usd: '$3.8k – $8k USD', weeks: '5–8 weeks' },
-          'Not sure yet': { price: '₹2L – ₹5L', usd: '$2.5k – $6k USD', weeks: '4–8 weeks' }
-        },
-        'Mid-size product': {
-          'SaaS/Web Platform': { price: '₹5L – ₹12L', usd: '$6k – $15k USD', weeks: '8–14 weeks' },
-          'Mobile App': { price: '₹5.5L – ₹13L', usd: '$6.8k – $16k USD', weeks: '8–14 weeks' },
-          'AI Product': { price: '₹6L – ₹15L', usd: '$7.5k – $18k USD', weeks: '8–14 weeks' },
-          'E-commerce/Marketplace': { price: '₹6L – ₹14L', usd: '$7.5k – $17k USD', weeks: '8–14 weeks' },
-          'Enterprise/Internal Tool': { price: '₹6L – ₹15L', usd: '$7.5k – $18k USD', weeks: '8–14 weeks' },
-          'Not sure yet': { price: '₹5L – ₹12L', usd: '$6k – $15k USD', weeks: '8–14 weeks' }
-        },
-        'Full platform, multiple modules': {
-          'SaaS/Web Platform': { price: '₹12L – ₹25L+', usd: '$15k – $30k+ USD', weeks: '3–5 months' },
-          'Mobile App': { price: '₹12L – ₹28L+', usd: '$15k – $35k+ USD', weeks: '3–6 months' },
-          'AI Product': { price: '₹15L – ₹30L+', usd: '$18k – $38k+ USD', weeks: '3–6 months' },
-          'E-commerce/Marketplace': { price: '₹14L – ₹28L+', usd: '$17k – $35k+ USD', weeks: '3–6 months' },
-          'Enterprise/Internal Tool': { price: '₹14L – ₹30L+', usd: '$17k – $38k+ USD', weeks: '3–6 months' },
-          'Not sure yet': { price: '₹12L – ₹25L+', usd: '$15k – $30k+ USD', weeks: '3–6 months' }
-        }
-      };
-
-      function updateCalculation() {
-        var scaleData = matrix[state.scale] || matrix['Mid-size product'];
-        var benchmark = scaleData[state.type] || scaleData['SaaS/Web Platform'];
-
-        var priceStr = benchmark.price + ' (' + benchmark.usd + ')';
-        var timeStr = 'Estimated timeline: ' + benchmark.weeks;
-
-        if (state.timeline === 'ASAP (under 2 months)') {
-          timeStr += ' · Priority Sprint Track';
-        } else if (state.stage === 'I have a spec or wireframes') {
-          timeStr += ' · Fast-tracked Discovery';
-        }
-
-        if (priceEl) priceEl.textContent = priceStr;
-        if (timeEl) timeEl.textContent = timeStr;
-        if (pillEl) {
-          pillEl.textContent = state.type + ' · ' + state.stage + ' · ' + state.scale + ' · ' + state.timeline;
-        }
-      }
-
-      var questionBlocks = estSection.querySelectorAll('.est-question-block');
-      questionBlocks.forEach(function (block) {
-        var qKey = block.getAttribute('data-q');
-        var buttons = block.querySelectorAll('.est-opt-btn');
-        buttons.forEach(function (btn) {
-          btn.addEventListener('click', function () {
-            buttons.forEach(function (b) { b.classList.remove('active'); });
-            btn.classList.add('active');
-            state[qKey] = btn.getAttribute('data-val');
-            updateCalculation();
-          });
-        });
-      });
-
-      if (ctaBtn) {
-        ctaBtn.addEventListener('click', function () {
-          var summary = 'What I want to build: ' + state.type + ' (' + state.scale + ') | Starting from: ' + state.stage + ' | Target timeline: ' + state.timeline;
-          var textarea = document.getElementById('a-bottle');
-          var suiteSection = document.getElementById('suite');
-          var nameInput = document.getElementById('a-name');
-
-          if (textarea) {
-            textarea.value = summary;
-            textarea.style.borderColor = 'var(--accent)';
-            textarea.style.boxShadow = '0 0 0 3px var(--accent-tint)';
-            setTimeout(function () {
-              textarea.style.borderColor = '';
-              textarea.style.boxShadow = '';
-            }, 2500);
-          }
-
-          if (suiteSection) {
-            suiteSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            setTimeout(function () {
-              if (nameInput) nameInput.focus();
-            }, 600);
-          }
-        });
-      }
-
-      updateCalculation();
-    })();
 
     /* Scroll Reveal */
     var rv = document.querySelectorAll('.rv');

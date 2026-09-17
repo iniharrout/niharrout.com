@@ -170,7 +170,7 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 24px;
+      gap: 22px;
       font-size: 14px;
       font-weight: 600;
       color: var(--ink-soft);
@@ -178,6 +178,8 @@
 
     .nav-lnk {
       transition: color 0.2s ease;
+      text-decoration: none;
+      color: var(--ink-soft);
     }
 
     .nav-lnk:hover,
@@ -188,6 +190,208 @@
     .nav-lnk.active {
       font-weight: 700;
     }
+
+    /* Dropdown Navigation */
+    .nav-dropdown {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .nav-dropdown-btn {
+      background: none;
+      border: none;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink-soft);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 6px 0;
+      transition: color 0.2s ease;
+    }
+
+    .nav-dropdown-btn:hover,
+    .nav-dropdown:hover .nav-dropdown-btn,
+    .nav-dropdown.open .nav-dropdown-btn {
+      color: var(--ink);
+    }
+
+    .nav-arrow {
+      transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      stroke: currentColor;
+    }
+
+    .nav-dropdown:hover .nav-arrow,
+    .nav-dropdown.open .nav-arrow {
+      transform: rotate(180deg);
+    }
+
+    .nav-dropdown-menu {
+      position: absolute;
+      top: calc(100% + 12px);
+      left: -12px;
+      background: #FFFFFF;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--r-md);
+      box-shadow: 0 16px 36px rgba(20, 19, 18, 0.12), 0 2px 8px rgba(20, 19, 18, 0.04);
+      padding: 8px 6px;
+      min-width: 190px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(8px);
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      z-index: 1000;
+    }
+
+    .nav-dropdown-menu::before {
+      content: "";
+      position: absolute;
+      top: -12px;
+      left: 0;
+      right: 0;
+      height: 12px;
+    }
+
+    .nav-dropdown:hover .nav-dropdown-menu,
+    .nav-dropdown:focus-within .nav-dropdown-menu,
+    .nav-dropdown.open .nav-dropdown-menu {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .nav-dropdown-menu a {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--ink-soft);
+      padding: 8px 12px;
+      border-radius: var(--r-sm);
+      transition: all 0.15s ease;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-dropdown-menu a:hover {
+      color: var(--ink);
+      background: var(--bg);
+    }
+
+    /* Mobile Drawer */
+    .mobile-drawer {
+      position: fixed;
+      top: 72px;
+      left: 0;
+      right: 0;
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--line);
+      padding: 24px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      opacity: 0;
+      transform: translateY(-12px);
+      pointer-events: none;
+      transition: all 0.3s ease;
+      z-index: 95;
+      box-shadow: 0 12px 36px rgba(20, 19, 18, 0.08);
+      max-height: calc(100vh - 72px);
+      overflow-y: auto;
+    }
+
+    .mobile-drawer.open {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .drawer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .drawer-lnk {
+      font-size: 16.5px;
+      font-weight: 600;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .drawer-accordion {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .drawer-accordion-btn {
+      background: none;
+      border: none;
+      padding: 0;
+      font-family: inherit;
+      font-size: 16.5px;
+      font-weight: 700;
+      color: var(--ink);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-align: left;
+      width: 100%;
+    }
+
+    .drawer-accordion-btn .acc-chevron {
+      transition: transform 0.25s ease;
+    }
+
+    .drawer-accordion.open .drawer-accordion-btn .acc-chevron {
+      transform: rotate(180deg);
+    }
+
+    .drawer-sub-links {
+      display: none;
+      flex-direction: column;
+      gap: 12px;
+      padding: 12px 0 4px 14px;
+      border-left: 2px solid var(--accent);
+      margin: 8px 0 4px 4px;
+    }
+
+    .drawer-accordion.open .drawer-sub-links {
+      display: flex;
+    }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 40px;
+      height: 40px;
+      padding: 8px;
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: var(--r-md);
+      cursor: pointer;
+    }
+
+    .nav-toggle .line {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: var(--ink);
+      transition: all 0.25s ease;
+    }
+
+    .nav-toggle.open .line-1 { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open .line-2 { opacity: 0; }
+    .nav-toggle.open .line-3 { transform: translateY(-7px) rotate(-45deg); }
 
     /* Buttons */
     .btn {
@@ -637,6 +841,171 @@
       color: var(--ink-faint);
     }
 
+    /* ================= SCOPE ESTIMATOR ================= */
+    .estimator-section {
+      padding: 0 0 64px;
+    }
+
+    .estimator-card {
+      background: #FFFFFF;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--r-xl);
+      padding: clamp(32px, 5vw, 48px);
+      box-shadow: var(--shadow-card);
+    }
+
+    .estimator-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: clamp(28px, 4vw, 48px);
+      align-items: stretch;
+      margin-top: 32px;
+    }
+
+    @media (max-width: 960px) {
+      .estimator-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .est-question-block {
+      margin-bottom: 24px;
+    }
+
+    .est-question-block:last-child {
+      margin-bottom: 0;
+    }
+
+    .est-q-title {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--ink);
+      font-family: "JetBrains Mono", monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .est-q-num {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--accent-tint);
+      color: var(--accent);
+      display: inline-grid;
+      place-items: center;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .est-options-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .est-opt-btn {
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: var(--r-md);
+      padding: 9px 14px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--ink-soft);
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.2s ease;
+      text-align: left;
+    }
+
+    .est-opt-btn:hover {
+      background: #FFFFFF;
+      border-color: var(--line-strong);
+      color: var(--ink);
+    }
+
+    .est-opt-btn.active {
+      background: var(--ink);
+      border-color: var(--ink);
+      color: #FFFFFF;
+      font-weight: 600;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .est-output-box {
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: var(--r-lg);
+      padding: clamp(24px, 3vw, 32px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: sticky;
+      top: 90px;
+    }
+
+    .est-out-label {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .est-price-val {
+      font-size: clamp(26px, 3vw, 36px);
+      font-weight: 800;
+      color: var(--ink);
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 6px;
+    }
+
+    .est-time-val {
+      font-size: 14.5px;
+      color: var(--ink-soft);
+      font-weight: 600;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .est-summary-pill {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--r-md);
+      padding: 12px 14px;
+      font-size: 12px;
+      color: var(--ink-soft);
+      line-height: 1.55;
+      margin-bottom: 18px;
+      font-family: "JetBrains Mono", monospace;
+    }
+
+    .est-disclaimer {
+      font-size: 13px;
+      line-height: 1.55;
+      color: var(--ink-faint);
+      margin-bottom: 20px;
+    }
+
+    .est-cta-btn {
+      width: 100%;
+      justify-content: center;
+      padding: 14px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+    }
+
     /* Mobile Responsive */
     @media (max-width: 900px) {
       .cost-card {
@@ -657,6 +1026,9 @@
       .nav-links {
         display: none;
       }
+      .nav-toggle {
+        display: flex;
+      }
     }
   </style>
 </head>
@@ -669,19 +1041,58 @@
       <a href="/" class="brand">nihar<span class="dot">.</span></a>
 
       <div class="nav-links">
-        <a href="/about" class="nav-lnk">About</a>
-        <a href="/#why" class="nav-lnk">Why Me</a>
-        <a href="/#capabilities" class="nav-lnk">Capabilities</a>
-        <a href="/technology" class="nav-lnk">Technology</a>
+        <div class="nav-dropdown" id="companyDropdown">
+          <button type="button" class="nav-dropdown-btn" id="companyDropdownBtn" aria-expanded="false" aria-haspopup="true">
+            Company
+            <svg class="nav-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1l4 4 4-4"/></svg>
+          </button>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="/about" role="menuitem">About</a>
+            <a href="/#why" role="menuitem">Why Me</a>
+            <a href="/#capabilities" role="menuitem">Capabilities</a>
+            <a href="/#reviews" role="menuitem">Reviews</a>
+            <a href="/#faq" role="menuitem">FAQ</a>
+          </div>
+        </div>
         <a href="/#work" class="nav-lnk">Work</a>
+        <a href="/technology" class="nav-lnk">Technology</a>
         <a href="/project-costs" class="nav-lnk active">Project Costs</a>
         <a href="/#suite" class="nav-lnk">Founder Suite</a>
-        <a href="/#reviews" class="nav-lnk">Reviews</a>
-        <a href="/#faq" class="nav-lnk">FAQ</a>
         <a href="https://creuto.com" target="_blank" rel="noopener" class="nav-lnk">Creuto ↗</a>
       </div>
 
-      <a href="/#contact" class="btn btn-dark">Book a Call →</a>
+      <div style="display:flex; align-items:center; gap:12px;">
+        <a href="/#contact" class="btn btn-dark">Book a Call →</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+          <span class="line line-1"></span>
+          <span class="line line-2"></span>
+          <span class="line line-3"></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-drawer" id="mobileDrawer">
+      <nav class="drawer-links">
+        <div class="drawer-accordion" id="companyAccordion">
+          <button type="button" class="drawer-accordion-btn" id="companyAccordionBtn" aria-expanded="false">
+            <span>Company</span>
+            <svg class="acc-chevron" width="12" height="8" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1.5l5 5 5-5"/></svg>
+          </button>
+          <div class="drawer-sub-links" id="companySubLinks">
+            <a href="/about" class="drawer-lnk">About</a>
+            <a href="/#why" class="drawer-lnk">Why Me</a>
+            <a href="/#capabilities" class="drawer-lnk">Capabilities</a>
+            <a href="/#reviews" class="drawer-lnk">Reviews</a>
+            <a href="/#faq" class="drawer-lnk">FAQ</a>
+          </div>
+        </div>
+        <a href="/#work" class="drawer-lnk">Work</a>
+        <a href="/technology" class="drawer-lnk">Technology</a>
+        <a href="/project-costs" class="drawer-lnk">Project Costs</a>
+        <a href="/#suite" class="drawer-lnk">Founder Suite</a>
+        <a href="https://creuto.com" target="_blank" rel="noopener" class="drawer-lnk">Creuto ↗</a>
+        <a href="/#contact" class="btn btn-dark" style="margin-top:8px; justify-content:center;">Book a Call <span class="arw">→</span></a>
+      </nav>
     </div>
   </header>
 
@@ -714,6 +1125,105 @@
           <div class="cred-item">
             <div class="val">Zero</div>
             <div class="lbl">Freelancer Subcontractors</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= INSTANT PROJECT SCOPING (ESTIMATOR) ================= -->
+    <section class="estimator-section" id="estimator">
+      <div class="wrap">
+        <div class="estimator-card">
+          <div class="shead">
+            <span class="badge-pill"><span class="dot"></span> Instant Project Scoping</span>
+            <h2 style="font-size:clamp(26px, 3.6vw, 36px); margin:12px 0 8px; letter-spacing:-0.025em; color:var(--ink);">What would your product cost to build?</h2>
+            <p class="sub" style="margin:0; color:var(--ink-soft); font-size:15.5px; line-height:1.6;">
+              Select 4 parameters to get an immediate, realistic investment range and timeline based on verified production builds we’ve delivered at Creuto.
+            </p>
+          </div>
+
+          <div class="estimator-grid">
+            <!-- Questions Column -->
+            <div class="est-questions-col">
+              <!-- Q1 -->
+              <div class="est-question-block" data-q="type">
+                <div class="est-q-title">
+                  <span class="est-q-num">1</span>
+                  <span>What are you building?</span>
+                </div>
+                <div class="est-options-grid">
+                  <button type="button" class="est-opt-btn active" data-val="SaaS/Web Platform">SaaS / Web Platform</button>
+                  <button type="button" class="est-opt-btn" data-val="Mobile App">Mobile App</button>
+                  <button type="button" class="est-opt-btn" data-val="AI Product">AI Product</button>
+                  <button type="button" class="est-opt-btn" data-val="E-commerce/Marketplace">E-commerce / Marketplace</button>
+                  <button type="button" class="est-opt-btn" data-val="Enterprise/Internal Tool">Enterprise / Internal Tool</button>
+                  <button type="button" class="est-opt-btn" data-val="Not sure yet">Not sure yet</button>
+                </div>
+              </div>
+
+              <!-- Q2 -->
+              <div class="est-question-block" data-q="stage">
+                <div class="est-q-title">
+                  <span class="est-q-num">2</span>
+                  <span>Where are you starting from?</span>
+                </div>
+                <div class="est-options-grid">
+                  <button type="button" class="est-opt-btn active" data-val="Idea only">Idea only</button>
+                  <button type="button" class="est-opt-btn" data-val="I have a spec or wireframes">I have a spec or wireframes</button>
+                  <button type="button" class="est-opt-btn" data-val="I have an existing product to improve">I have an existing product to improve</button>
+                </div>
+              </div>
+
+              <!-- Q3 -->
+              <div class="est-question-block" data-q="scale">
+                <div class="est-q-title">
+                  <span class="est-q-num">3</span>
+                  <span>Roughly how big a build?</span>
+                </div>
+                <div class="est-options-grid">
+                  <button type="button" class="est-opt-btn" data-val="Simple MVP">Simple MVP</button>
+                  <button type="button" class="est-opt-btn active" data-val="Mid-size product">Mid-size product</button>
+                  <button type="button" class="est-opt-btn" data-val="Full platform, multiple modules">Full platform, multiple modules</button>
+                </div>
+              </div>
+
+              <!-- Q4 -->
+              <div class="est-question-block" data-q="timeline">
+                <div class="est-q-title">
+                  <span class="est-q-num">4</span>
+                  <span>Timeline?</span>
+                </div>
+                <div class="est-options-grid">
+                  <button type="button" class="est-opt-btn" data-val="ASAP (under 2 months)">ASAP (under 2 months)</button>
+                  <button type="button" class="est-opt-btn active" data-val="2-4 months">2–4 months</button>
+                  <button type="button" class="est-opt-btn" data-val="Flexible">Flexible</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Output Column -->
+            <div class="est-output-box">
+              <div>
+                <div class="est-out-label">Estimated Investment Band</div>
+                <div class="est-price-val" id="estPriceVal">₹5L – ₹12L ($6k – $15k USD)</div>
+                <div class="est-time-val" id="estTimeVal">
+                  <span>⏱</span>
+                  <span id="estTimeText">Estimated timeline: 8–14 weeks</span>
+                </div>
+
+                <div class="est-summary-pill" id="estSummaryPill">
+                  SaaS/Web Platform · Idea only · Mid-size product · 2–4 months
+                </div>
+
+                <p class="est-disclaimer">
+                  This calculation provides an indicative benchmark based on delivered products. Connect directly with Nihar for an exact milestone and sprint plan.
+                </p>
+              </div>
+
+              <button type="button" class="btn btn-dark est-cta-btn" id="estCtaBtn">
+                Pre-Fill Scope &amp; Discuss with Nihar <span class="arw">→</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -961,7 +1471,7 @@
           Get an immediate estimate using our interactive scoping tool or schedule a direct architecture session with Nihar to review your PRD and budget.
         </p>
         <div class="cta-actions">
-          <a href="/#estimator" class="btn btn-light">Estimate Your Scope &amp; Budget ↓</a>
+          <a href="#estimator" class="btn btn-light">Estimate Your Scope &amp; Budget ↓</a>
           <a href="/#contact" class="btn btn-light-outline">Book a Founder Consultation →</a>
         </div>
       </div>
@@ -1017,5 +1527,150 @@
     </div>
   </footer>
 
+  <script>
+    /* ================= DROPDOWN & MOBILE ACCORDION ================= */
+    (function () {
+      var dropdown = document.getElementById('companyDropdown');
+      var btn = document.getElementById('companyDropdownBtn');
+      if (dropdown && btn) {
+        btn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          var isOpen = dropdown.classList.toggle('open');
+          btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+        document.addEventListener('click', function (e) {
+          if (!dropdown.contains(e.target)) {
+            dropdown.classList.remove('open');
+            btn.setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
+
+      var toggle = document.getElementById('navToggle');
+      var drawer = document.getElementById('mobileDrawer');
+      var acc = document.getElementById('companyAccordion');
+      var accBtn = document.getElementById('companyAccordionBtn');
+
+      if (acc && accBtn) {
+        accBtn.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          var isOpen = acc.classList.toggle('open');
+          accBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+      }
+
+      if (toggle && drawer) {
+        toggle.addEventListener('click', function (e) {
+          e.stopPropagation();
+          var isOpen = toggle.classList.toggle('open');
+          drawer.classList.toggle('open', isOpen);
+        });
+
+        var links = drawer.querySelectorAll('.drawer-lnk, .btn');
+        links.forEach(function (lnk) {
+          lnk.addEventListener('click', function () {
+            toggle.classList.remove('open');
+            drawer.classList.remove('open');
+          });
+        });
+
+        document.addEventListener('click', function (e) {
+          if (!drawer.contains(e.target) && !toggle.contains(e.target)) {
+            toggle.classList.remove('open');
+            drawer.classList.remove('open');
+          }
+        });
+      }
+    })();
+
+    /* ================= SCOPE ESTIMATOR SCRIPT ================= */
+    (function () {
+      var estSection = document.getElementById('estimator');
+      if (!estSection) return;
+
+      var state = {
+        type: 'SaaS/Web Platform',
+        stage: 'Idea only',
+        scale: 'Mid-size product',
+        timeline: '2-4 months'
+      };
+
+      var priceEl = document.getElementById('estPriceVal');
+      var timeEl = document.getElementById('estTimeText');
+      var pillEl = document.getElementById('estSummaryPill');
+      var ctaBtn = document.getElementById('estCtaBtn');
+
+      var matrix = {
+        'Simple MVP': {
+          'SaaS/Web Platform': { price: '₹2.5L – ₹5L', usd: '$3k – $6k USD', weeks: '4–7 weeks' },
+          'Mobile App': { price: '₹2.5L – ₹5.5L', usd: '$3k – $7k USD', weeks: '5–8 weeks' },
+          'AI Product': { price: '₹3L – ₹7L', usd: '$3.8k – $8.5k USD', weeks: '5–8 weeks' },
+          'E-commerce/Marketplace': { price: '₹2.5L – ₹6L', usd: '$3k – $7.5k USD', weeks: '5–8 weeks' },
+          'Enterprise/Internal Tool': { price: '₹3L – ₹6.5L', usd: '$3.8k – $8k USD', weeks: '5–8 weeks' },
+          'Not sure yet': { price: '₹2L – ₹5L', usd: '$2.5k – $6k USD', weeks: '4–8 weeks' }
+        },
+        'Mid-size product': {
+          'SaaS/Web Platform': { price: '₹5L – ₹12L', usd: '$6k – $15k USD', weeks: '8–14 weeks' },
+          'Mobile App': { price: '₹5.5L – ₹13L', usd: '$6.8k – $16k USD', weeks: '8–14 weeks' },
+          'AI Product': { price: '₹6L – ₹15L', usd: '$7.5k – $18k USD', weeks: '8–14 weeks' },
+          'E-commerce/Marketplace': { price: '₹6L – ₹14L', usd: '$7.5k – $17k USD', weeks: '8–14 weeks' },
+          'Enterprise/Internal Tool': { price: '₹6L – ₹15L', usd: '$7.5k – $18k USD', weeks: '8–14 weeks' },
+          'Not sure yet': { price: '₹5L – ₹12L', usd: '$6k – $15k USD', weeks: '8–14 weeks' }
+        },
+        'Full platform, multiple modules': {
+          'SaaS/Web Platform': { price: '₹12L – ₹25L+', usd: '$15k – $30k+ USD', weeks: '3–5 months' },
+          'Mobile App': { price: '₹12L – ₹28L+', usd: '$15k – $35k+ USD', weeks: '3–6 months' },
+          'AI Product': { price: '₹15L – ₹30L+', usd: '$18k – $38k+ USD', weeks: '3–6 months' },
+          'E-commerce/Marketplace': { price: '₹14L – ₹28L+', usd: '$17k – $35k+ USD', weeks: '3–6 months' },
+          'Enterprise/Internal Tool': { price: '₹14L – ₹30L+', usd: '$17k – $38k+ USD', weeks: '3–6 months' },
+          'Not sure yet': { price: '₹12L – ₹25L+', usd: '$15k – $30k+ USD', weeks: '3–6 months' }
+        }
+      };
+
+      function updateCalculation() {
+        var scaleData = matrix[state.scale] || matrix['Mid-size product'];
+        var benchmark = scaleData[state.type] || scaleData['SaaS/Web Platform'];
+
+        var priceStr = benchmark.price + ' (' + benchmark.usd + ')';
+        var timeStr = 'Estimated timeline: ' + benchmark.weeks;
+
+        if (state.timeline === 'ASAP (under 2 months)') {
+          timeStr += ' · Priority Sprint Track';
+        } else if (state.stage === 'I have a spec or wireframes') {
+          timeStr += ' · Fast-tracked Discovery';
+        }
+
+        if (priceEl) priceEl.textContent = priceStr;
+        if (timeEl) timeEl.textContent = timeStr;
+        if (pillEl) {
+          pillEl.textContent = state.type + ' · ' + state.stage + ' · ' + state.scale + ' · ' + state.timeline;
+        }
+      }
+
+      var questionBlocks = estSection.querySelectorAll('.est-question-block');
+      questionBlocks.forEach(function (block) {
+        var qKey = block.getAttribute('data-q');
+        var buttons = block.querySelectorAll('.est-opt-btn');
+        buttons.forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            buttons.forEach(function (b) { b.classList.remove('active'); });
+            btn.classList.add('active');
+            state[qKey] = btn.getAttribute('data-val');
+            updateCalculation();
+          });
+        });
+      });
+
+      if (ctaBtn) {
+        ctaBtn.addEventListener('click', function () {
+          var summary = 'What I want to build: ' + state.type + ' (' + state.scale + ') | Starting from: ' + state.stage + ' | Target timeline: ' + state.timeline;
+          window.location.href = '/?scope=' + encodeURIComponent(summary) + '#suite';
+        });
+      }
+
+      updateCalculation();
+    })();
+  </script>
 </body>
 </html>
