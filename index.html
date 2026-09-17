@@ -14,8 +14,8 @@
   <meta name="author" content="Nihar Ranjan Rout">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="https://niharrout.com/">
-  <link rel="icon" href="assets/nihar.jpg" type="image/jpeg">
-  <link rel="apple-touch-icon" href="assets/nihar.jpg">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/favicon.svg">
   <link rel="me" href="https://www.linkedin.com/in/niharrout/">
 
   <!-- Open Graph -->
@@ -62,38 +62,38 @@
   }
   </script>
 
-  <!-- Google Fonts: Plus Jakarta Sans, Playfair Display & JetBrains Mono -->
+  <!-- Google Fonts: Manrope -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
   <link rel="stylesheet" href="assets/aos.css">
+  <link rel="stylesheet" href="assets/design-system.css">
 
   <style>
-    /* ================= MELLOW-INSPIRED CLEAN DESIGN SYSTEM ================= */
+    /* ================= MANROPE & FLAT INDIGO DESIGN SYSTEM ================= */
     :root {
-      /* Warm Porcelain Background Palette */
-      --bg: #F7F5F0;             /* Mellow signature warm porcelain */
-      --bg-alt: #EFECE3;         /* Subtle warm contrast */
-      --surface: #FFFFFF;        /* Pure card white */
-      --surface-subtle: #F3F0E8;
+      /* Clean Light-Gray / Off-White Base */
+      --bg: #F8F9FB;
+      --bg-alt: #F1F3F7;
+      --surface: #FFFFFF;
+      --surface-subtle: #F8F9FB;
       
       /* Typography Colors */
-      --ink: #141312;            /* Deep obsidian / charcoal */
-      --ink-soft: #4E4B46;       /* Warm neutral slate body text */
-      --ink-faint: #7E7A73;      /* Muted secondary tone */
-      --ink-muted: #A8A49D;      /* Caption tone */
+      --ink: #111827;            /* Near black */
+      --ink-soft: #4B5563;       /* Balanced neutral slate body text */
+      --ink-faint: #6B7280;      /* Muted secondary tone */
+      --ink-muted: #9CA3AF;      /* Caption tone */
 
-      /* Mellow Style Hairline Borders */
-      --line: rgba(20, 19, 18, 0.08);
-      --line-strong: rgba(20, 19, 18, 0.14);
-      --line-focus: #141312;
+      /* Structural Hairline Borders */
+      --line: #E5E7EB;
+      --line-strong: #D1D5DB;
+      --line-focus: #111827;
 
-      /* Mellow Accent & Status Colors */
-      --accent: #EE5A2A;         /* Energetic warm coral/ember */
-      --accent-tint: #FDF0EB;
-      --accent-border: #F9CAB8;
-      --accent-dark: #C2381B;
+      /* Single Accent: Deep Indigo / Blue */
+      --accent: #2B3FE0;
+      --accent-tint: #EEF1FD;
+      --accent-border: #C7D2FE;
+      --accent-dark: #2232B8;
 
       --lime: #D6F75A;           /* Electric lime highlight */
       --lime-dark: #243004;
@@ -2987,51 +2987,23 @@
     <section class="hero" id="hero">
       <div class="wrap">
         <div class="hero-editorial-grid">
-          <!-- Left: Pitch, Positioning, CTAs, Floating Stats -->
+          <!-- Left: Pitch, Positioning, CTAs -->
           <div class="hero-editorial-left">
-            <div class="rv">
-              <div class="hero-founder-badge">
-                <span class="dot"></span>
-                <span class="hero-founder-text">Nihar Ranjan Rout · Founder &amp; CEO, Creuto</span>
-              </div>
-            </div>
-
-            <h1 class="rv">
-              <span class="hero-h1-kicker">Product Strategy &amp; Software Delivery</span>
-              <span class="hero-h1-title">Turning software ideas into products worth building.</span>
+            <h1 class="hero-headline rv">
+              Turning software ideas into products worth building.
             </h1>
 
-            <div class="role-sub rv">
-              Product Strategist · Business &amp; Technology · In-House Engineering Team
+            <div class="role-sub rv" style="color:var(--accent); font-weight:600; margin-bottom:14px; font-size:15px;">
+              Product Strategist · In-House Creuto Engineering
             </div>
 
-            <p class="pitch rv">
-              Most software builds fail for product reasons, not engineering ones — bloated scopes, miscalculated unit economics, or code written before anyone validated the problem. I work with founders to challenge assumptions, lock down the PRD, and design a build plan that protects their runway. Then my engineering team at Creuto builds and ships it.
+            <p class="hero-lead rv">
+              Most software builds fail for product reasons, not engineering ones. We challenge assumptions, lock down the PRD, and build what protects your runway.
             </p>
 
             <div class="hero-cta rv">
-              <a href="#contact" class="btn btn-dark">Book a Strategy Call <span class="arw">→</span></a>
-              <a href="/project-costs" class="btn btn-outline">Explore Project Costs ↓</a>
-            </div>
-
-            <!-- Floating Stats Bar -->
-            <div class="hero-stats-bar rv" style="margin-top: 32px;">
-              <div class="stat-item">
-                <div class="val">8<span class="sup">+ yrs</span></div>
-                <div class="lbl">In Product Management</div>
-              </div>
-              <div class="stat-item">
-                <div class="val">Multi-domain</div>
-                <div class="lbl">Fintech, SaaS, AI &amp; Health</div>
-              </div>
-              <div class="stat-item">
-                <div class="val">In-House</div>
-                <div class="lbl">Creuto Engineering Team</div>
-              </div>
-              <div class="stat-item">
-                <div class="val">5.0 <span class="sup">★</span></div>
-                <div class="lbl">Clutch Verified Rating</div>
-              </div>
+              <a href="#contact" class="btn btn-primary">Book a Strategy Call</a>
+              <a href="/project-costs" class="btn btn-secondary"><span>Explore Project Costs</span><span class="btn-circle-arrow">→</span></a>
             </div>
           </div>
 
@@ -3063,21 +3035,45 @@
       </div>
     </section>
 
-    <!-- ================= SECTION 2: TRUST STRIP ================= -->
-    <div class="trust-strip">
+    <!-- ================= DEDICATED STAT-COUNTER ROW ================= -->
+    <section class="stat-counter-section" style="padding: 44px 0 !important; background: var(--bg); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
       <div class="wrap">
-        <p class="lab">Product Strategy &amp; Software Delivery Across Industries</p>
-        <div class="row">
-          <span>Fintech &amp; Payments</span>
-          <span>B2B SaaS</span>
-          <span>AI Products &amp; Automation</span>
-          <span>Healthcare &amp; MedTech</span>
-          <span>Logistics &amp; Fleet</span>
-          <span>EdTech</span>
-          <span>E-Commerce</span>
+        <div class="stat-counter-row" style="margin:0; border:none; padding:0;">
+          <div class="stat-counter-item">
+            <div class="stat-number">8+</div>
+            <div class="stat-label">Years in Product Management</div>
+          </div>
+          <div class="stat-counter-item">
+            <div class="stat-number">5</div>
+            <div class="stat-label">Core Industry Domains</div>
+          </div>
+          <div class="stat-counter-item">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">In-House Creuto Engineering</div>
+          </div>
+          <div class="stat-counter-item">
+            <div class="stat-number">5.0★</div>
+            <div class="stat-label">Clutch Verified Rating</div>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
+
+    <!-- ================= SECTION 2: INDUSTRIES CATEGORY WRAP ================= -->
+    <section class="trust-strip" style="padding: 36px 0 !important; background: var(--bg); border-bottom: 1px solid var(--line);">
+      <div class="wrap">
+        <span style="font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-muted);">Industry Domains</span>
+        <div class="category-tag-wrap" style="margin-top: 14px;">
+          <span class="category-pill">Fintech &amp; Payments</span>
+          <span class="category-pill">B2B SaaS</span>
+          <span class="category-pill">AI Products &amp; Automation</span>
+          <span class="category-pill">Manufacturing ERP</span>
+          <span class="category-pill">On-Demand Marketplaces</span>
+          <span class="category-pill">Healthcare &amp; MedTech</span>
+          <span class="category-pill">Quick Commerce</span>
+        </div>
+      </div>
+    </section>
 
     <!-- ================= SECTION 3: ABOUT NIHAR & CREUTO ================= -->
     <section class="about-section" id="about">
@@ -3200,466 +3196,136 @@
     </section>
 
     <!-- ================= SECTION 5: CAPABILITIES & EXECUTION ================= -->
-    <section id="capabilities" style="background:#FFFFFF; border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+    <section id="capabilities" style="padding: 100px 0 !important; background: var(--bg); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
       <div class="wrap">
-        <div class="shead left rv">
-          <div class="caps-header-split">
-            <div>
-              <span class="badge-pill"><span class="dot"></span> Capabilities &amp; Execution</span>
-              <h2>From product strategy to a growth-standard build.</h2>
-            </div>
-            <p class="sub">
-              Explore our core capabilities, the execution playbook, and flexible ways to work together.
-            </p>
-          </div>
+        <div style="max-width: 680px; margin-bottom: 44px;" class="rv">
+          <h2>From product strategy to delivery.</h2>
+          <p class="sub" style="margin: 0;">
+            Three core execution pillars engineered for funded startups and scaling businesses.
+          </p>
         </div>
 
-        <div class="tabs-wrapper rv">
-          <div class="tabs-nav" role="tablist" aria-label="Capabilities Navigation">
-            <button class="tab-btn" role="tab" aria-selected="true" aria-controls="panel-caps" id="tab-caps">01 · Capabilities &amp; Tech</button>
-            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-playbook" id="tab-playbook">02 · Execution Playbook</button>
-            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-models" id="tab-models">03 · Partnership Models</button>
-          </div>
-
-          <!-- Tab Panel 1: Capabilities & Tech (Bento Grid) -->
-          <div class="tab-panel active" id="panel-caps" role="tabpanel" aria-labelledby="tab-caps">
-            <div class="bento-caps-layout">
-              <!-- Featured Panel (Dominant Double-Sized Panel): Product Strategy & Scoping -->
-              <div class="bento-panel bento-featured rv" data-aos="fade-up">
-                <div class="bento-media-hero">
-                  <img src="assets/img/cap-strategy.jpg" alt="Product Strategy &amp; Scoping Architecture" class="corporate-img" loading="lazy">
-                  <span class="bento-badge">Founder Lead · Personal Advisory</span>
-                </div>
-                <div class="bento-content">
-                  <div>
-                    <span class="bento-kicker">01 · Founder Advisory</span>
-                    <h3>Product Strategy &amp; Scoping</h3>
-                    <p class="bento-desc">
-                      The part I lead personally. Before anyone writes code, we question assumptions, clarify user flows, eliminate superfluous features, and craft a bulletproof PRD your team and ours can execute against.
-                    </p>
-                    <div class="bento-quote">
-                      "Code is the most expensive way to discover you were building the wrong thing. We validate before we engineer."
-                    </div>
-                  </div>
-                  <ul class="bento-bullets">
-                    <li><strong>PRD &amp; Documentation:</strong> Technical specs, acceptance criteria, edge cases</li>
-                    <li><strong>Scope &amp; Budget Optimization:</strong> Protecting your runway from day zero</li>
-                    <li><strong>Domain Mechanics:</strong> Unit economics, workflow bottlenecks, integrations</li>
-                    <li><strong>Feature Prioritization:</strong> Must-haves vs. post-launch backlog</li>
-                  </ul>
-                </div>
-              </div>
-
-              <!-- Secondary Column: 2 Stacked Compact Panels -->
-              <div class="bento-secondary-col">
-                <div class="bento-panel bento-compact rv" data-aos="fade-up" data-aos-delay="100">
-                  <div class="bento-compact-media">
-                    <img src="assets/img/cap-software.jpg" alt="Software and AI Systems Engineering" class="corporate-img" loading="lazy">
-                  </div>
-                  <div class="bento-compact-body">
-                    <div>
-                      <span class="bento-kicker">02 · Engineering</span>
-                      <h3>Software &amp; AI Systems</h3>
-                      <p class="bento-desc">Creuto's in-house engineering team builds production-grade B2B platforms, scalable SaaS engines, and pragmatic AI pipelines.</p>
-                    </div>
-                    <ul class="bento-bullets-compact">
-                      <li>SaaS &amp; web platforms (Next.js, React, Node.js)</li>
-                      <li>Pragmatic AI &amp; custom RAG pipelines</li>
-                      <li>Robust PostgreSQL, Redis &amp; API architecture</li>
-                      <li>Containerized AWS deployments &amp; CI/CD</li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div class="bento-panel bento-compact rv" data-aos="fade-up" data-aos-delay="200">
-                  <div class="bento-compact-media">
-                    <img src="assets/img/cap-mobile.jpg" alt="Mobile App &amp; Sprint Delivery" class="corporate-img" loading="lazy">
-                  </div>
-                  <div class="bento-compact-body">
-                    <div>
-                      <span class="bento-kicker">03 · Mobile &amp; Scale</span>
-                      <h3>Mobile &amp; Sprint Delivery</h3>
-                      <p class="bento-desc">High-performance cross-platform mobile apps and dedicated engineering sprints with continuous QA and direct milestone reviews.</p>
-                    </div>
-                    <ul class="bento-bullets-compact">
-                      <li>Mobile app development (Flutter &amp; React Native)</li>
-                      <li>Two-week milestone sprints with live demos</li>
-                      <li>Automated testing &amp; strict quality gates</li>
-                      <li>Direct senior engineer communication</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+        <div class="capability-feature-grid rv" data-aos="fade-up">
+          <div class="capability-feature-item">
+            <div class="capability-feature-icon">
+              <svg class="stroke-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
             </div>
+            <h3 class="capability-feature-title">Product Strategy &amp; Scoping</h3>
+            <p class="capability-feature-desc">Clarify user flows, eliminate superfluous features, and craft a bulletproof PRD before engineering begins.</p>
+            <a href="/about" class="capability-feature-link">Learn More <span>→</span></a>
           </div>
 
-          <!-- Tab Panel 2: Execution Playbook -->
-          <div class="tab-panel" id="panel-playbook" role="tabpanel" aria-labelledby="tab-playbook">
-            <div class="playbook-grid">
-              <div class="playbook-step">
-                <div class="sn">01</div>
-                <h3>Discovery &amp; PRD</h3>
-                <p>We map the problem, target users, and business goals into a comprehensive PRD — locking scope before anything is built.</p>
-              </div>
-
-              <div class="playbook-step">
-                <div class="sn">02</div>
-                <h3>Plan &amp; Architecture</h3>
-                <p>The right pragmatic stack for your budget — architecture, data structures, and a realistic plan without over-engineering.</p>
-              </div>
-
-              <div class="playbook-step">
-                <div class="sn">03</div>
-                <h3>Build &amp; QA</h3>
-                <p>Creuto's in-house engineers ship in focused 2-week sprints with live demos and quality checks, so you always see honest progress.</p>
-              </div>
-
-              <div class="playbook-step">
-                <div class="sn">04</div>
-                <h3>Launch &amp; Scale</h3>
-                <p>We ship, measure, and refine — hardening the product so it holds up seamlessly as your active users and revenue grow.</p>
-              </div>
+          <div class="capability-feature-item">
+            <div class="capability-feature-icon">
+              <svg class="stroke-icon" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
             </div>
+            <h3 class="capability-feature-title">Software &amp; AI Systems</h3>
+            <p class="capability-feature-desc">Production-grade B2B platforms, scalable SaaS engines, and pragmatic AI pipelines engineered in-house.</p>
+            <a href="/technology" class="capability-feature-link">Learn More <span>→</span></a>
           </div>
 
-          <!-- Tab Panel 3: Partnership Models -->
-          <div class="tab-panel" id="panel-models" role="tabpanel" aria-labelledby="tab-models">
-            <div class="models-grid">
-              <div class="model-box">
-                <span class="tag-badge">Advisory</span>
-                <h3>Product Consulting</h3>
-                <p class="for-who">You want product clarity and an actionable PRD before you invest in coding.</p>
-                <ul>
-                  <li>Product &amp; scope strategy</li>
-                  <li>PRD &amp; technical roadmap</li>
-                  <li>Budget &amp; build planning</li>
-                  <li>AI feasibility analysis</li>
-                </ul>
-                <div class="foot">
-                  <a href="#contact" class="btn btn-outline">Book a Consultation</a>
-                </div>
-              </div>
-
-              <div class="model-box featured">
-                <span class="tag-badge">Most Popular</span>
-                <h3>End-to-End Product Build</h3>
-                <p class="for-who">Idea to live launch, handled — founder product leadership plus Creuto engineering.</p>
-                <ul>
-                  <li>PRD &amp; product architecture</li>
-                  <li>UI/UX design &amp; prototyping</li>
-                  <li>In-house full-stack development</li>
-                  <li>Launch, QA &amp; 100% IP handover</li>
-                </ul>
-                <div class="foot">
-                  <a href="#contact" class="btn btn-dark">Start Your Project <span class="arw">→</span></a>
-                </div>
-              </div>
-
-              <div class="model-box">
-                <span class="tag-badge">Dedicated Team</span>
-                <h3>Your In-House Tech Team</h3>
-                <p class="for-who">You need a reliable, dedicated engineering team to build and scale your roadmap.</p>
-                <ul>
-                  <li>Dedicated Creuto engineers</li>
-                  <li>Product-led sprint delivery</li>
-                  <li>Direct access &amp; weekly demos</li>
-                  <li>Continuous scaling &amp; maintenance</li>
-                </ul>
-                <div class="foot">
-                  <a href="#contact" class="btn btn-outline">Build a Team</a>
-                </div>
-              </div>
+          <div class="capability-feature-item">
+            <div class="capability-feature-icon">
+              <svg class="stroke-icon" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
             </div>
+            <h3 class="capability-feature-title">Mobile &amp; Sprint Delivery</h3>
+            <p class="capability-feature-desc">Cross-platform iOS and Android apps delivered through two-week milestone sprints with continuous QA.</p>
+            <a href="/work" class="capability-feature-link">Learn More <span>→</span></a>
           </div>
-
         </div>
       </div>
     </section>
 
-    <!-- ================= SECTION 5.5: TECHNOLOGIES WE WORK WITH ================= -->
-    <section class="tech-section" id="technology">
+    <!-- ================= BIG STATEMENT TYPOGRAPHIC BREATHER ================= -->
+    <section class="big-statement-section">
       <div class="wrap">
-        <div class="tech-header-split rv">
-          <div>
-            <span class="badge-pill dark-pill"><span class="dot"></span> Tech Stack</span>
-            <h2 style="color:#FFFFFF; font-size:clamp(30px, 3.8vw, 44px); letter-spacing:-0.03em; margin:12px 0 0;">Technologies We Work With</h2>
-          </div>
-          <p class="tech-header-sub">
-            The tools behind every product we ship — chosen for the problem, not the résumé.
+        <h2 class="big-statement-text rv" data-aos="fade-up">
+          Product thinking first.<br>
+          Dedicated engineering always.
+        </h2>
+        <p class="big-statement-sub rv" data-aos="fade-up" data-aos-delay="100">
+          We eliminate unnecessary features before engineers touch them, protecting your runway and building what actually scales.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 5.5: TECHNOLOGIES WE WORK WITH ================= -->
+    <section class="tech-section" id="technology" style="padding: 100px 0 !important; background: var(--bg); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+      <div class="wrap">
+        <div style="max-width: 680px; margin-bottom: 40px;" class="rv">
+          <h2>Technologies We Work With</h2>
+          <p class="sub" style="margin:0;">
+            The tools behind every product we ship — chosen for long-term maintainability, not the résumé.
           </p>
         </div>
 
-        <div class="tech-grid">
-          <!-- 1. Frontend -->
-          <div class="tech-card rv" data-aos="fade-up" data-aos-delay="50">
-            <div class="tech-card-head">
-              <span class="tech-cat-badge">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" style="margin-right:2px;"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-                01 · Web
-              </span>
-              <h3>Frontend</h3>
-              <p class="tech-card-desc">Type-safe, fast client-side applications built for performance and maintainability.</p>
-            </div>
-            <div class="tech-pills-list">
-              <div class="tech-pill">
-                <div class="tech-icon-box">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="12" rx="10" ry="4.2"/><ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(120 12 12)"/><circle cx="12" cy="12" r="1.8" fill="currentColor"/></svg>
-                </div>
-                <span class="tech-pill-name">React</span>
-              </div>
-              <div class="tech-pill">
-                <div class="tech-icon-box">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 5.523 4.477 10 10 10s10-4.477 10-10c0-5.523-4.477-10-10-10zm3.3 14.5l-5.6-7.8v7.8H8V7.5h1.7l5.6 7.8V7.5h1.7v9h-1.7z"/></svg>
-                </div>
-                <span class="tech-pill-name">Next.js</span>
-              </div>
-              <div class="tech-pill">
-                <div class="tech-icon-box">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M5.5 8.5h6v1.8h-2v5.2h-2v-5.2h-2V8.5zm7 5.3c.5.8 1.4 1.4 2.6 1.4 1.3 0 2.1-.7 2.1-1.7 0-1.1-.8-1.5-2.2-2-1.8-.7-3-1.4-3-3.2 0-1.7 1.3-3 3.1-3 1.3 0 2.3.5 2.9 1.4l-1.4 1.1c-.4-.6-.9-.9-1.6-.9-.8 0-1.3.5-1.3 1.1 0 .8.6 1.2 2 1.7 2 .7 3.2 1.5 3.2 3.4 0 2-1.5 3.2-3.8 3.2-1.7 0-3-.7-3.7-1.8l1.7-1.5z"/></svg>
-                </div>
-                <span class="tech-pill-name">TypeScript</span>
-              </div>
-              <div class="tech-pill">
-                <div class="tech-icon-box">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.336 6.182 14.975 4.8 12.001 4.8zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.336 13.382 8.975 12 6.001 12z"/></svg>
-                </div>
-                <span class="tech-pill-name">Tailwind CSS</span>
-              </div>
+        <div style="display: flex; flex-direction: column; gap: 28px;" class="rv" data-aos="fade-up">
+          <div>
+            <div style="font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-muted); margin-bottom: 10px;">Frontend &amp; Web Platforms</div>
+            <div class="category-tag-wrap">
+              <span class="category-pill">React</span>
+              <span class="category-pill">Next.js</span>
+              <span class="category-pill">TypeScript</span>
+              <span class="category-pill">Vue.js</span>
+              <span class="category-pill">Tailwind CSS</span>
             </div>
           </div>
 
-          <!-- 2. Mobile -->
-          <div class="tech-card rv" data-aos="fade-up" data-aos-delay="100">
-            <div class="tech-card-head">
-              <span class="tech-cat-badge">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" style="margin-right:2px;"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18.01"/></svg>
-                02 · Mobile
-              </span>
-              <h3>Mobile</h3>
-              <p class="tech-card-desc">Cross-platform iOS and Android apps with 60fps native performance.</p>
-            </div>
-            <div class="tech-pills-list">
-              <div class="tech-pill">
-                <div class="tech-icon-box">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="7" y="2" width="10" height="20" rx="2"/><circle cx="12" cy="18" r="1" fill="currentColor"/><path d="M10 5h4"/></svg>
-                </div>
-                <span class="tech-pill-name">React Native</span>
-              </div>
-              <div class="tech-pill">
-                <div class="tech-icon-box">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M14.314 0L2.3 12 6.5 16.2 22.7 0h-8.386zM14.314 11.8L9.2 16.9l5.114 5.1H22.7l-7.257-7.2 7.257-4.8h-8.386z"/></svg>
-                </div>
-                <span class="tech-pill-name">Flutter</span>
-              </div>
-              <div class="tech-pill">
-                <div class="tech-icon-box">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M2.5 18.5L12 2.5l9.5 16H2.5zm9.5-12.8L5.5 16.5h13L12 5.7z"/></svg>
-                </div>
-                <span class="tech-pill-name">Expo</span>
-              </div>
+          <div>
+            <div style="font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-muted); margin-bottom: 10px;">Backend &amp; High-Throughput APIs</div>
+            <div class="category-tag-wrap">
+              <span class="category-pill">Node.js</span>
+              <span class="category-pill">Express</span>
+              <span class="category-pill">Python</span>
+              <span class="category-pill">FastAPI</span>
+              <span class="category-pill">Go</span>
+              <span class="category-pill">GraphQL</span>
+              <span class="category-pill">REST APIs</span>
             </div>
           </div>
 
-          <!-- 3. Backend -->
-          <div class="tech-card rv" data-aos="fade-up" data-aos-delay="150">
-            <div class="tech-card-head">
-              <span class="tech-cat-badge">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" style="margin-right:2px;"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
-                03 · API &amp; Server
-              </span>
-              <h3>Backend</h3>
-              <p class="tech-card-desc">High-throughput, asynchronous server engines and REST/GraphQL APIs.</p>
-            </div>
-            <div class="tech-pills-list">
-              <div class="tech-pill">
-                <div class="tech-icon-box">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l8.66 5v10L12 22l-8.66-5V7L12 2zm0 2.31L5.34 7.66v8.68L12 19.69l6.66-3.35V7.66L12 4.31z"/></svg>
-                </div>
-                <span class="tech-pill-name">Node.js</span>
-              </div>
-              <div class="tech-pill">
-                <div class="tech-icon-box">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M3 6h4.5l2.5 4 2.5-4H17l-4.5 7.2L17 20h-4.5l-2.5-4.2-2.5 4.2H3l4.5-6.8L3 6zm15 3h4v2h-4V9zm0 4h4v2h-4v-2z"/></svg>
-                </div>
-                <span class="tech-pill-name">Express</span>
-              </div>
+          <div>
+            <div style="font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-muted); margin-bottom: 10px;">Mobile Applications (iOS &amp; Android)</div>
+            <div class="category-tag-wrap">
+              <span class="category-pill">Flutter</span>
+              <span class="category-pill">React Native</span>
+              <span class="category-pill">iOS Swift</span>
+              <span class="category-pill">Android Kotlin</span>
+              <span class="category-pill">Expo</span>
             </div>
           </div>
 
-          <!-- 4. AI/ML -->
-          <div class="tech-card highlight rv" data-aos="fade-up" data-aos-delay="200">
-            <div class="tech-card-head">
-              <span class="tech-cat-badge">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" style="margin-right:2px;"><path d="M12 2v4m0 12v4M2 12h4m12 0h4m-3.5-6.5l-2.8 2.8m-7.4 7.4l-2.8 2.8m0-13l2.8 2.8m7.4 7.4l2.8 2.8"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg>
-                04 · Intelligence
-              </span>
-              <h3>AI / ML</h3>
-              <p class="tech-card-desc">Pragmatic AI pipelines engineered for enterprise reliability without hallucination.</p>
-            </div>
-            <div class="tech-pills-list">
-              <div class="tech-pill">
-                <div class="tech-icon-box">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v4m0 12v4M2 12h4m12 0h4m-3.5-6.5l-2.8 2.8m-7.4 7.4l-2.8 2.8m0-13l2.8 2.8m7.4 7.4l2.8 2.8"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg>
-                </div>
-                <span class="tech-pill-name">Custom LLM integration</span>
-              </div>
-              <div class="tech-pill">
-                <div class="tech-icon-box">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="8.5" y="14" width="7" height="7" rx="1.5"/><path d="M6.5 10v2a2 2 0 002 2h3.5m5.5-4v2a2 2 0 01-2 2H12"/></svg>
-                </div>
-                <span class="tech-pill-name">RAG pipelines</span>
-              </div>
-              <div class="tech-pill">
-                <div class="tech-icon-box">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><path d="M3.27 6.96L12 12.01l8.73-5.05M12 22.08V12"/></svg>
-                </div>
-                <span class="tech-pill-name">Vector databases</span>
-              </div>
+          <div>
+            <div style="font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-muted); margin-bottom: 10px;">Pragmatic AI &amp; Machine Learning</div>
+            <div class="category-tag-wrap">
+              <span class="category-pill">OpenAI GPT-4</span>
+              <span class="category-pill">Google Gemini</span>
+              <span class="category-pill">LangChain</span>
+              <span class="category-pill">LlamaIndex</span>
+              <span class="category-pill">RAG Pipelines</span>
+              <span class="category-pill">Vector Databases</span>
             </div>
           </div>
 
-          <!-- 5. Database -->
-          <div class="tech-card rv" data-aos="fade-up" data-aos-delay="250">
-            <div class="tech-card-head">
-              <span class="tech-cat-badge">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" style="margin-right:2px;"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
-                05 · Storage
-              </span>
-              <h3>Database</h3>
-              <p class="tech-card-desc">ACID transactions, flexible document models, and microsecond caching.</p>
-            </div>
-            <div class="tech-pills-list">
-              <div class="tech-pill">
-                <div class="tech-icon-box">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/><path d="M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3"/></svg>
-                </div>
-                <span class="tech-pill-name">PostgreSQL</span>
-              </div>
-              <div class="tech-pill">
-                <div class="tech-icon-box">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C11.5 4.5 9 8 9 12c0 3.5 2.5 7 3 8 .5-1 3-4.5 3-8 0-4-2.5-7.5-3-10z"/><path d="M11.9 2v18c-.1-.1-.3-.3-.4-.5-1.8-2.6-2.5-5.2-2.5-7.5 0-3.3 1.9-6.4 2.9-10z" opacity="0.3"/></svg>
-                </div>
-                <span class="tech-pill-name">MongoDB</span>
-              </div>
-              <div class="tech-pill">
-                <div class="tech-icon-box">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3L2 8l10 5 10-5-10-5zm0 8L2 16l10 5 10-5-10-5z"/></svg>
-                </div>
-                <span class="tech-pill-name">Redis</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- 6. Cloud & DevOps -->
-          <div class="tech-card rv" data-aos="fade-up" data-aos-delay="300">
-            <div class="tech-card-head">
-              <span class="tech-cat-badge">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" style="margin-right:2px;"><path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/></svg>
-                06 · Infrastructure
-              </span>
-              <h3>Cloud &amp; DevOps</h3>
-              <p class="tech-card-desc">Containerized architectures with automated testing and zero-downtime rollouts.</p>
-            </div>
-            <div class="tech-pills-list">
-              <div class="tech-pill">
-                <div class="tech-icon-box">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 16.5C3.8 16.5 2 14.7 2 12.5S3.8 8.5 6 8.5c.3 0 .7.05 1 .15A6.5 6.5 0 0118.5 9c1.9.4 3.5 2 3.5 4 0 2.2-1.8 4-4 4H6z"/><path d="M7 19c3.5 2 7 2 10.5 0" stroke-linecap="round"/></svg>
-                </div>
-                <span class="tech-pill-name">AWS</span>
-              </div>
-              <div class="tech-pill">
-                <div class="tech-icon-box">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="10" width="3" height="3" rx="0.5"/><rect x="7" y="10" width="3" height="3" rx="0.5"/><rect x="11" y="10" width="3" height="3" rx="0.5"/><rect x="7" y="6" width="3" height="3" rx="0.5"/><rect x="11" y="6" width="3" height="3" rx="0.5"/><path d="M1.5 13.5c1 3.5 4.5 6.5 10.5 6.5s9.5-3 10.5-6.5c-2.5 0-4.5 1-6 0-1.5-1-4-1-6 0-1.5 1-3.5 0-6.5 0h-3z"/></svg>
-                </div>
-                <span class="tech-pill-name">Docker</span>
-              </div>
-              <div class="tech-pill">
-                <div class="tech-icon-box">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="12" r="3"/><path d="M6 9v6M9 6h4a4 4 0 014 4"/></svg>
-                </div>
-                <span class="tech-pill-name">CI/CD</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- 7. Payments -->
-          <div class="tech-card rv" data-aos="fade-up" data-aos-delay="350">
-            <div class="tech-card-head">
-              <span class="tech-cat-badge">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" style="margin-right:2px;"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-                07 · Monetization
-              </span>
-              <h3>Payments</h3>
-              <p class="tech-card-desc">Friction-free global card billing, subscriptions, and instant domestic UPI payouts.</p>
-            </div>
-            <div class="tech-pills-list">
-              <div class="tech-pill">
-                <div class="tech-icon-box">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M14.5 2L6 22h5l2.5-6.5h3.5a5 5 0 005-5V2h-7.5zm3.5 6.5a2 2 0 01-2 2h-2.5L15 5h3v3.5z"/></svg>
-                </div>
-                <span class="tech-pill-name">Razorpay</span>
-              </div>
-              <div class="tech-pill">
-                <div class="tech-icon-box">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.5 9.5c0-3.3-2.4-4.5-5.5-4.5-4 0-6.5 2-6.5 5 0 4 5 4.2 5 6.2 0 .8-.8 1.3-1.8 1.3-1.6 0-3.5-.8-4.5-1.6l-1 3.3c1.2.8 3.2 1.3 5.3 1.3 4.3 0 6.8-2 6.8-5.2 0-4.2-5-4.4-5-6.2 0-.7.7-1.1 1.6-1.1 1.4 0 3 .6 3.8 1.2l1.8-3.9z"/></svg>
-                </div>
-                <span class="tech-pill-name">Stripe</span>
-              </div>
-              <div class="tech-pill">
-                <div class="tech-icon-box">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M3 4l6 16 3-8-6-8H3zm9 0l3 8 6-8h-3l-3 4-3-4h-3z"/></svg>
-                </div>
-                <span class="tech-pill-name">UPI</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- 8. Strategy -->
-          <div class="tech-card rv" data-aos="fade-up" data-aos-delay="400">
-            <div class="tech-card-head">
-              <span class="tech-cat-badge">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" style="margin-right:2px;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                08 · Strategy
-              </span>
-              <h3>Product-First Architecture</h3>
-              <p class="tech-card-desc">Pragmatic architectural choices that scale with revenue, not buzzwords.</p>
-            </div>
-            <div class="tech-pills-list">
-              <div class="tech-pill">
-                <div class="tech-icon-box">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
-                </div>
-                <span class="tech-pill-name">Monolith-first scaling</span>
-              </div>
-              <div class="tech-pill">
-                <div class="tech-icon-box">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                </div>
-                <span class="tech-pill-name">Zero unnecessary deps</span>
-              </div>
-              <div class="tech-pill">
-                <div class="tech-icon-box">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                </div>
-                <span class="tech-pill-name">Deterministic over LLM-hype</span>
-              </div>
+          <div>
+            <div style="font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-muted); margin-bottom: 10px;">Databases &amp; Cloud Infrastructure</div>
+            <div class="category-tag-wrap">
+              <span class="category-pill">PostgreSQL</span>
+              <span class="category-pill">Redis</span>
+              <span class="category-pill">MongoDB</span>
+              <span class="category-pill">AWS</span>
+              <span class="category-pill">Google Cloud</span>
+              <span class="category-pill">Docker</span>
+              <span class="category-pill">CI/CD Pipelines</span>
             </div>
           </div>
         </div>
 
-        <!-- Explore More CTA Ribbon -->
-        <div class="tech-cta-box rv">
-          <div>
-            <span class="tech-cat-badge" style="color:var(--accent-border);">Pragmatic Engineering</span>
-            <h3 style="font-size:24px; font-weight:800; color:#FFFFFF; margin:0 0 10px; line-height:1.25;">Need a specific stack or architecture guidance?</h3>
-            <p style="font-size:15px; color:rgba(255,255,255,0.8); line-height:1.6; margin:0;">
-              We select tools based on your roadmap, unit economics, and team capabilities — never for hype. Discover how our stack powers production systems.
-            </p>
-          </div>
-          <div style="display:flex; gap:12px; flex-wrap:wrap;">
-            <a href="/technology" class="btn btn-light">Explore Deep Stack Guide →</a>
-            <a href="#contact" class="btn btn-light-outline">Discuss Your Stack</a>
-          </div>
+        <div style="margin-top: 40px;" class="rv">
+          <a href="/technology" class="btn btn-secondary">
+            <span>Explore Complete Tech Rationale</span>
+            <span class="btn-circle-arrow">→</span>
+          </a>
         </div>
       </div>
     </section>
@@ -4298,13 +3964,28 @@
               <textarea id="c-details" name="details" rows="4" required placeholder="Tell me what you're building and where you are today."></textarea>
             </div>
 
-            <button type="submit" class="btn btn-dark" style="width:100%; justify-content:center; padding:15px; border-radius:12px;">
-              Send Message <span class="arw">→</span>
+            <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; padding:15px; border-radius:0;">
+              Send Message
             </button>
-            <p style="font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--ink-faint); margin-top:12px; text-align:center;">
+            <p style="font-size:12px; color:var(--ink-muted); margin-top:12px; text-align:center;">
               Direct submission to Nihar · Responds within 24 hours
             </p>
           </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CLOSING HIGH-CONTRAST ACCENT CTA BAND ================= -->
+    <section class="closing-cta-band">
+      <div class="wrap">
+        <div class="closing-cta-inner rv" data-aos="fade-up">
+          <div class="closing-cta-text">
+            <h2>Let's build something worth shipping.</h2>
+            <p>Direct founder access on every architecture and scoping milestone — no junior account managers.</p>
+          </div>
+          <div>
+            <a href="#contact" class="btn-cta-white">Book a Strategy Call →</a>
+          </div>
         </div>
       </div>
     </section>

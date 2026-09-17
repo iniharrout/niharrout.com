@@ -1,0 +1,532 @@
+/**
+ * NiharRout.com - Sitewide Visual Design System
+ * Single font: Manrope (Google Fonts)
+ * Colors: #F8F9FB base, #111827 text, #2B3FE0 single flat accent
+ * Buttons: Sharp square primary (border-radius: 0) & Pill secondary with nested circular arrow
+ * Generous whitespace & flat architectural layout patterns
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --font-main: 'Manrope', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --bg: #F8F9FB;
+  --bg-card: #FFFFFF;
+  --ink: #111827;
+  --ink-soft: #4B5563;
+  --ink-muted: #6B7280;
+  --accent: #2B3FE0;
+  --accent-hover: #2232B8;
+  --accent-bg: #EEF1FD;
+  --line: #E5E7EB;
+  --line-strong: #D1D5DB;
+  --r-sharp: 0px;
+  --r-pill: 9999px;
+  --shadow-subtle: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
+  --shadow-lift: 0 12px 32px -4px rgba(15, 23, 42, 0.08);
+}
+
+/* ================= 1. GLOBAL TYPOGRAPHY OVERRIDE ================= */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, input, button, textarea, select {
+  font-family: var(--font-main) !important;
+}
+
+body {
+  background-color: var(--bg) !important;
+  color: var(--ink) !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headlines */
+h1, h2, h3, h4 {
+  color: var(--ink);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+}
+
+h1 {
+  font-size: clamp(38px, 5.2vw, 64px);
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: clamp(28px, 3.8vw, 46px);
+  margin-bottom: 16px;
+}
+
+h3 {
+  font-size: clamp(20px, 2.4vw, 28px);
+  margin-bottom: 12px;
+}
+
+/* Body Copy Constraint: 1-2 punchy sentences per block */
+p, .sub {
+  color: var(--ink-soft);
+  font-size: 16px;
+  line-height: 1.65;
+  letter-spacing: -0.01em;
+}
+
+/* Flat Accent Links */
+a {
+  color: var(--accent);
+  transition: color 0.18s ease;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+/* ================= 2. BUTTON SYSTEM (TWO STRICT STYLES) ================= */
+
+/* Style 1: Primary CTA Button (Sharp Square Corners, Solid Accent, Generous Padding) */
+.btn-primary,
+.btn-dark,
+.btn-accent,
+.cform-btn,
+button.btn-primary,
+a.btn-primary,
+.nav-actions .btn-dark {
+  background: var(--accent) !important;
+  color: #FFFFFF !important;
+  border-radius: 0px !important;
+  padding: 14px 24px !important;
+  font-weight: 500 !important;
+  font-size: 15px !important;
+  line-height: 1 !important;
+  text-transform: none !important;
+  letter-spacing: -0.01em !important;
+  border: 1px solid var(--accent) !important;
+  box-shadow: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  transition: background-color 0.18s ease, border-color 0.18s ease !important;
+}
+
+.btn-primary:hover,
+.btn-dark:hover,
+.btn-accent:hover,
+.cform-btn:hover,
+button.btn-primary:hover,
+a.btn-primary:hover,
+.nav-actions .btn-dark:hover {
+  background: var(--accent-hover) !important;
+  border-color: var(--accent-hover) !important;
+  color: #FFFFFF !important;
+  transform: none !important;
+}
+
+/* Primary white button variation for the closing accent band */
+.btn-cta-white {
+  background: #FFFFFF !important;
+  color: var(--accent) !important;
+  border-radius: 0px !important;
+  padding: 14px 28px !important;
+  font-weight: 600 !important;
+  font-size: 15px !important;
+  border: 1px solid #FFFFFF !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  text-decoration: none !important;
+  transition: background-color 0.18s ease, color 0.18s ease !important;
+}
+
+.btn-cta-white:hover {
+  background: #F3F4F6 !important;
+  color: var(--accent-hover) !important;
+}
+
+/* Style 2: Secondary CTA Button (Full Pill, Light Gray, Nested Circular Arrow) */
+.btn-secondary,
+.btn-outline,
+.btn-pill,
+a.btn-secondary,
+button.btn-secondary {
+  background: #EDF0F5 !important;
+  color: var(--ink) !important;
+  border-radius: 9999px !important;
+  padding: 8px 8px 8px 20px !important;
+  font-weight: 500 !important;
+  font-size: 14.5px !important;
+  line-height: 1 !important;
+  text-transform: none !important;
+  letter-spacing: -0.01em !important;
+  border: 1px solid #E2E8F0 !important;
+  box-shadow: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  transition: background-color 0.18s ease, border-color 0.18s ease !important;
+}
+
+.btn-secondary:hover,
+.btn-outline:hover,
+.btn-pill:hover,
+a.btn-secondary:hover {
+  background: #E2E8F0 !important;
+  border-color: #CBD5E1 !important;
+  color: var(--ink) !important;
+  transform: none !important;
+}
+
+/* Nested Circular Arrow in Secondary Button */
+.btn-circle-arrow,
+.btn-secondary .arw,
+.btn-outline .arw {
+  width: 28px !important;
+  height: 28px !important;
+  border-radius: 50% !important;
+  background: #FFFFFF !important;
+  color: var(--ink) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 13px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
+  margin-left: 6px !important;
+  transition: transform 0.18s ease !important;
+}
+
+.btn-secondary:hover .btn-circle-arrow,
+.btn-secondary:hover .arw {
+  transform: translateX(2px) !important;
+}
+
+/* ================= 3. ICONOGRAPHY & BRAND MONOGRAM ================= */
+.brand-monogram-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+}
+
+.brand-monogram-icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+/* Thin-line SVG Stroke Icons */
+.stroke-icon {
+  width: 24px;
+  height: 24px;
+  stroke: var(--accent);
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+/* ================= 4. SECTION PATTERNS (NO CENTERED TEMPLATES) ================= */
+
+/* Whitespace: Expanded vertical spacing sitewide */
+section {
+  padding: 100px 0 !important;
+  background-color: var(--bg);
+  position: relative;
+}
+
+/* Hero Section: Punchy Headline + Single Clear Sharp CTA */
+.hero {
+  padding: clamp(100px, 12vw, 150px) 0 90px !important;
+  background-color: var(--bg) !important;
+}
+
+.hero-headline {
+  font-size: clamp(40px, 5.8vw, 68px) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.038em !important;
+  line-height: 1.08 !important;
+  color: var(--ink) !important;
+  margin: 0 0 20px !important;
+  max-width: 18ch !important;
+}
+
+.hero-lead {
+  font-size: 18px !important;
+  line-height: 1.62 !important;
+  color: var(--ink-soft) !important;
+  max-width: 48ch !important;
+  margin: 0 0 32px !important;
+}
+
+.hero-cta-wrap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Dedicated Stat-Counter Row */
+.stat-counter-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  padding: 48px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  margin: 40px 0;
+}
+
+@media (max-width: 768px) {
+  .stat-counter-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+}
+
+.stat-counter-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.stat-number {
+  font-size: clamp(36px, 4.4vw, 56px);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1;
+  color: var(--ink);
+}
+
+.stat-label {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-muted);
+}
+
+/* Lightweight Capabilities / Features (Icon + 2-4 Word Title + 1-Line Desc + Learn More) */
+.capability-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+  margin-top: 48px;
+}
+
+@media (max-width: 860px) {
+  .capability-feature-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+.capability-feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  background: transparent;
+  border: none;
+}
+
+.capability-feature-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 0;
+  background: var(--accent-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  color: var(--accent);
+}
+
+.capability-feature-title {
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0 0 10px;
+}
+
+.capability-feature-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin: 0 0 16px;
+}
+
+.capability-feature-link {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap 0.18s ease;
+}
+
+.capability-feature-link:hover {
+  color: var(--accent-hover);
+  gap: 10px;
+}
+
+/* Category Horizontal Pill Tag Wraps */
+.category-tag-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.category-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 18px;
+  background: #FFFFFF;
+  border: 1px solid var(--line);
+  border-radius: 9999px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+  transition: all 0.18s ease;
+}
+
+.category-pill:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: #FFFFFF;
+}
+
+.category-pill.active {
+  background: var(--ink);
+  color: #FFFFFF;
+  border-color: var(--ink);
+}
+
+/* Big Statement Section: Typographic Breather */
+.big-statement-section {
+  padding: clamp(100px, 14vw, 160px) 0 !important;
+  background: var(--bg) !important;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.big-statement-text {
+  font-size: clamp(38px, 5.8vw, 76px);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.12;
+  color: var(--ink);
+  max-width: 18ch;
+  margin: 0;
+}
+
+.big-statement-sub {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  max-width: 44ch;
+  margin-top: 24px;
+}
+
+/* Closing / Final High-Contrast CTA Band (Full-Bleed Accent Background) */
+.closing-cta-band {
+  background: var(--accent) !important;
+  color: #FFFFFF !important;
+  padding: clamp(80px, 10vw, 120px) 0 !important;
+  border-top: none !important;
+}
+
+.closing-cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.closing-cta-text h2 {
+  color: #FFFFFF !important;
+  font-size: clamp(32px, 4.4vw, 52px) !important;
+  letter-spacing: -0.035em !important;
+  margin: 0 0 12px !important;
+}
+
+.closing-cta-text p {
+  color: rgba(255, 255, 255, 0.88) !important;
+  font-size: 17px !important;
+  max-width: 44ch !important;
+  margin: 0 !important;
+}
+
+/* Clean White Card Lift */
+.lift-card {
+  background: #FFFFFF !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 0px !important;
+  box-shadow: var(--shadow-subtle) !important;
+  padding: clamp(28px, 4vw, 44px) !important;
+}
+
+/* Ensure .cta-section and .cta-box sitewide match the high-contrast accent band */
+.cta-section,
+.cta-box {
+  background: var(--accent) !important;
+  color: #FFFFFF !important;
+  border-radius: 0px !important;
+  box-shadow: none !important;
+  border: none !important;
+  padding: clamp(56px, 8vw, 84px) 32px !important;
+}
+
+.cta-section h2,
+.cta-box h2 {
+  color: #FFFFFF !important;
+}
+
+.cta-section p,
+.cta-box p {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.cta-section .btn,
+.cta-box .btn-dark,
+.cta-box .btn-primary,
+.cta-section .btn-light {
+  background: #FFFFFF !important;
+  color: var(--accent) !important;
+  border: 1px solid #FFFFFF !important;
+  border-radius: 0px !important;
+  font-weight: 600 !important;
+}
+
+.cta-section .btn-light-outline,
+.cta-box .btn-outline {
+  background: transparent !important;
+  color: #FFFFFF !important;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  border-radius: 0px !important;
+}
+
