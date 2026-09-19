@@ -4,6 +4,7 @@
  *   /locations/                          index of all locations
  *   /locations/<city>/                   city hub (links to the three service pages)
  *   /locations/<city>/<service>/         city x service landing page
+ *   /location/                           internal link reference (noindex, not in the sitemap)
  * and refreshes the locations block in sitemap.xml.
  *
  * Usage: node scripts/build-locations.js
@@ -41,7 +42,7 @@ const pageUrl = (c, key) => `/locations/${c.slug}/${services[key].slug}/`;
 
 /* ---------- Shared page chrome ---------- */
 
-function head({ title, description, path: urlPath, ogType = 'website', graph }) {
+function head({ title, description, path: urlPath, ogType = 'website', graph, noindex = false }) {
   if (title.length > 65) warnings.push(`title >65 chars (${title.length}): ${title}`);
   if (description.length > 165) warnings.push(`description >165 chars (${description.length}): ${urlPath}`);
   const canonical = SITE + urlPath;
@@ -54,7 +55,7 @@ function head({ title, description, path: urlPath, ogType = 'website', graph }) 
   <title>${esc(title)}</title>
   <meta name="description" content="${esc(description)}">
   <meta name="author" content="Nihar Ranjan Rout">
-  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="robots" content="${noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large'}">
   <link rel="canonical" href="${canonical}">
   <link rel="icon" href="/assets/nihar.jpg" type="image/jpeg">
 
@@ -69,7 +70,7 @@ function head({ title, description, path: urlPath, ogType = 'website', graph }) 
   <meta name="twitter:description" content="${esc(description)}">
   <meta name="twitter:image" content="${SITE}/assets/niharrout-og-image.png">
 
-  ${jsonLd({ '@context': 'https://schema.org', '@graph': graph })}
+  ${graph ? jsonLd({ '@context': 'https://schema.org', '@graph': graph }) : ''}
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -767,6 +768,110 @@ ${ctaBand('Not sure which page fits?', 'Tell us what you are building and where 
   return head({ title, description, path: urlPath, graph }) + body + footer(null);
 }
 
+/* ---------- Page: internal reference (noindex, unlinked) ---------- */
+
+function buildReference() {
+  const urlPath = '/location/';
+  const abs = (p) => (p.startsWith('http') ? p : SITE + p);
+  const link = (label, href, city, type) => `<div class="ref-link"><a href="${href}" data-city="${esc(city)}" data-type="${esc(type)}">${esc(label)}</a><button type="button" class="ref-copy" data-copy="${esc(abs(href))}">Copy</button></div>`;
+
+  const rows = cities.map((c) => `
+            <tr data-search="${esc((c.name + ' ' + c.state + ' ' + c.region).toLowerCase())}">
+              <th scope="row"><strong>${esc(c.name)}</strong><span>${esc(c.state)}</span></th>
+              <td>${link(cityUrl(c), cityUrl(c), c.name, 'hub')}</td>
+              ${SERVICE_KEYS.map((k) => `<td>${link(pageUrl(c, k), pageUrl(c, k), c.name, services[k].slug)}</td>`).join('\n              ')}
+            </tr>`).join('');
+
+  const bhubaneswar = `
+            <tr data-search="bhubaneswar odisha">
+              <th scope="row"><strong>Bhubaneswar</strong><span>Odisha · existing pages</span></th>
+              <td><span class="ref-muted">none</span></td>
+              ${SERVICE_KEYS.map((k) => `<td>${link(services[k].bhubaneswarPage, services[k].bhubaneswarPage, 'Bhubaneswar', services[k].slug)}</td>`).join('\n              ')}
+            </tr>`;
+
+  const allUrls = [
+    '/locations/',
+    ...cities.flatMap((c) => [cityUrl(c), ...SERVICE_KEYS.map((k) => pageUrl(c, k))])
+  ].map(abs);
+
+  const html = head({
+    title: 'Location pages: link reference | Creuto',
+    description: 'Internal reference listing every location landing page URL.',
+    path: urlPath,
+    noindex: true
+  }) + `${header()}
+  <main id="top">
+    <section class="loc-hero" style="padding-bottom:32px;">
+      <div class="wrap">
+        <div class="hs-eyebrow"><span class="dot"></span>Internal reference</div>
+        <h1>Location pages: every link in one place</h1>
+        <p class="hero-sub" style="max-width:70ch; margin-bottom:8px;">${allUrls.length} generated URLs across ${cities.length} locations, plus the existing Bhubaneswar pages. This page is not linked from the site, is set to noindex and is not in the sitemap. Regenerate it with <code>node scripts/build-locations.js</code>.</p>
+      </div>
+    </section>
+
+    <section class="loc-section" style="padding-top:8px;">
+      <div class="wrap">
+        <div class="ref-toolbar">
+          <input class="form-input" id="ref-filter" type="search" placeholder="Filter by city or state…" aria-label="Filter locations">
+          <button type="button" class="cl-button -secondary -small" id="ref-copy-all">Copy all URLs</button>
+          <button type="button" class="cl-button -secondary -small" id="ref-csv">Download CSV</button>
+          <span class="ref-flash" id="ref-flash" role="status" aria-live="polite"></span>
+        </div>
+
+        <div class="ref-table-wrap">
+          <table class="ref-table">
+            <thead>
+              <tr><th scope="col">Location</th><th scope="col">City hub</th>${SERVICE_KEYS.map((k) => `<th scope="col">${esc(services[k].name)}</th>`).join('')}</tr>
+            </thead>
+            <tbody id="ref-body">${rows}${bhubaneswar}
+            </tbody>
+          </table>
+        </div>
+
+        <div class="loc-subhead" style="margin-top:36px;">Index page</div>
+        <div class="ref-link" style="max-width:420px;">${link('/locations/', '/locations/', 'All', 'index').replace('class="ref-link"', '')}</div>
+
+        <div class="loc-subhead" style="margin-top:36px;">All URLs (one per line)</div>
+        <textarea class="form-textarea ref-all" id="ref-all" readonly rows="10" aria-label="All URLs">${esc(allUrls.join('\n'))}</textarea>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      var flash = document.getElementById('ref-flash');
+      function say(msg) { flash.textContent = msg; clearTimeout(say.t); say.t = setTimeout(function () { flash.textContent = ''; }, 1800); }
+      function copy(text, msg) {
+        var done = function () { say(msg || 'Copied'); };
+        if (navigator.clipboard && window.isSecureContext) { navigator.clipboard.writeText(text).then(done, fallback); } else { fallback(); }
+        function fallback() {
+          var t = document.createElement('textarea'); t.value = text; t.style.position = 'fixed'; t.style.opacity = '0';
+          document.body.appendChild(t); t.select(); try { document.execCommand('copy'); done(); } catch (e) { say('Copy failed'); } t.remove();
+        }
+      }
+      document.addEventListener('click', function (e) {
+        var b = e.target.closest('.ref-copy'); if (b) copy(b.getAttribute('data-copy'));
+      });
+      document.getElementById('ref-copy-all').addEventListener('click', function () { copy(document.getElementById('ref-all').value, 'Copied all URLs'); });
+      document.getElementById('ref-filter').addEventListener('input', function (e) {
+        var q = e.target.value.trim().toLowerCase();
+        document.querySelectorAll('#ref-body tr').forEach(function (tr) { tr.hidden = q && tr.getAttribute('data-search').indexOf(q) === -1; });
+      });
+      document.getElementById('ref-csv').addEventListener('click', function () {
+        var rows = [['location', 'page_type', 'url']];
+        document.querySelectorAll('.ref-link a').forEach(function (a) { rows.push([a.dataset.city, a.dataset.type, a.href.replace(location.origin, ${JSON.stringify(SITE)})]); });
+        var csv = rows.map(function (r) { return r.map(function (v) { return '"' + String(v).replace(/"/g, '""') + '"'; }).join(','); }).join('\\n');
+        var link = document.createElement('a'); link.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv' })); link.download = 'location-pages.csv';
+        document.body.appendChild(link); link.click(); link.remove(); say('CSV downloaded');
+      });
+    })();
+  </script>
+</body>
+</html>
+`;
+  return html;
+}
+
 /* ---------- Output ---------- */
 
 function write(relPath, html) {
@@ -791,6 +896,7 @@ function updateSitemap(urls) {
 
 function main() {
   const urls = [];
+  write('location/index.html', buildReference());
   write('locations/index.html', buildIndex());
   urls.push({ loc: '/locations/', priority: '0.8', changefreq: 'monthly' });
 
