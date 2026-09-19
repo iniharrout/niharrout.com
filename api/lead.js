@@ -106,7 +106,8 @@ async function handler(req, res) {
     return send(res, 400, { ok: false, error: 'Please provide your name and a valid email address.' });
   }
 
-  const webhook = process.env.LEAD_WEBHOOK_URL;
+  const DEFAULT_WEBHOOK_URL = 'https://chat.googleapis.com/v1/spaces/AAQAgcxp6nM/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=NYzpLArOTxnwEYuEzvw094eXwTbbpD_WZs2ugBGOH7U';
+  const webhook = process.env.LEAD_WEBHOOK_URL || DEFAULT_WEBHOOK_URL;
   if (!webhook) {
     console.warn('[Lead API] LEAD_WEBHOOK_URL is not set; lead not delivered.');
     return send(res, 503, { ok: false, fallback: true });

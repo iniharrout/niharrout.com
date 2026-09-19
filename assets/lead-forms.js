@@ -7,7 +7,8 @@
 (function () {
   'use strict';
 
-  var forms = document.querySelectorAll('form[action*="formspree.io"], form#startupLeadForm, form[data-loc-form]');
+function initLeadForms() {
+  var forms = document.querySelectorAll('form[action*="formspree.io"], form[action*="/api/lead"], form#startupLeadForm, form#homeLeadForm, form[data-loc-form], .contact-card-box form');
   if (!forms.length) return;
 
   var CORE = { name: 1, email: 1, phone: 1, budget: 1, details: 1, message: 1, service: 1, service_interest: 1, project_type: 1, city: 1 };
@@ -133,4 +134,11 @@
       });
     });
   });
+}
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLeadForms);
+  } else {
+    initLeadForms();
+  }
 })();
