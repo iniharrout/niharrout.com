@@ -325,12 +325,22 @@ p {
 .brand-link {
   display: flex;
   align-items: center;
+  gap: 10px;
   text-decoration: none;
   transition: opacity var(--hs-transition);
 }
 
 .brand-link:hover {
   opacity: 0.88;
+}
+
+.brand-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid var(--hs-brand);
+  display: block;
 }
 
 .brand-monogram {
