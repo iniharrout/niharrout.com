@@ -10,6 +10,17 @@ const path = require('path');
 const chatHandler = require('./api/chat.js');
 const leadHandler = require('./api/lead.js');
 
+// Load .env (gitignored) so local runs pick up LEAD_WEBHOOK_URL and GEMINI_API_KEY like the host does.
+(function loadEnvFile() {
+  try {
+    const lines = fs.readFileSync(path.join(__dirname, '.env'), 'utf8').split('\n');
+    for (const line of lines) {
+      const m = line.match(/^\s*([A-Za-z0-9_]+)\s*=\s*(.*?)\s*$/);
+      if (m && !process.env[m[1]]) process.env[m[1]] = m[2].replace(/^['"]|['"]$/g, '');
+    }
+  } catch (e) { /* no .env file: fine */ }
+})();
+
 const PORT = process.env.PORT || 8085;
 const PUBLIC_DIR = __dirname;
 

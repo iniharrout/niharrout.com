@@ -5,6 +5,7 @@
  *   /locations/<city>/                   city hub (links to the three service pages)
  *   /locations/<city>/<service>/         city x service landing page
  *   /location/                           internal link reference (noindex, not in the sitemap)
+ *   /thank-you/                          shown after any enquiry form (noindex, not in the sitemap)
  * and refreshes the locations block in sitemap.xml.
  *
  * Usage: node scripts/build-locations.js
@@ -161,7 +162,7 @@ function footer(city) {
   </footer>
 
   <script src="/assets/site-enhancements.js?v=hs2026_5"></script>
-  <script src="/assets/location-form.js?v=loc1"></script>
+  <script src="/assets/lead-forms.js?v=2"></script>
 </body>
 </html>
 `;
@@ -872,6 +873,79 @@ function buildReference() {
   return html;
 }
 
+/* ---------- Page: thank you (noindex, shown after any form submit) ---------- */
+
+function buildThankYou() {
+  const cards = ['make-my-look', 'flashnow', 'custom-erp-manufacturing'].map((slug) => portfolio[slug]).filter(Boolean).map((p) => `
+          <a class="loc-card loc-case" href="${esc(p.link)}">
+            <img src="/${esc(p.thumbnail)}" alt="${esc(p.title)}" loading="lazy" width="640" height="400">
+            <div class="loc-case-body">
+              <div class="loc-case-tag">${esc(p.industry)}</div>
+              <h3>${esc(p.title)}</h3>
+              <div class="loc-case-result">${esc(p.result)}</div>
+              <div class="loc-more">Read the case study →</div>
+            </div>
+          </a>`).join('');
+
+  return head({
+    title: 'Thank you | Creuto',
+    description: 'Your enquiry has been received. Nihar’s team will reply within one working day.',
+    path: '/thank-you/',
+    noindex: true
+  }) + `${header()}
+  <main id="top">
+    <section class="ty-hero">
+      <div class="wrap">
+        <div class="ty-icon" aria-hidden="true">
+          <svg viewBox="0 0 52 52" width="52" height="52"><circle cx="26" cy="26" r="25" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15 27l8 8 15-17" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h1 id="ty-title">Thank you</h1>
+        <p class="hero-sub" id="ty-sub">We have received your enquiry. Nihar’s team will reply within one working day.</p>
+        <div class="hero-ctas" style="justify-content:center;">
+          <a href="https://calendly.com/creuto/meet" data-calendly="true" class="cl-button -primary btn-book-call">Book a call now <span>→</span></a>
+          <a href="/" class="cl-button -secondary">Back to home</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="loc-section -alt">
+      <div class="wrap">
+        ${sectionHeader('What happens next', 'Here is how the next few days will go', 'No sales sequence. A person reads your brief and replies.')}
+        <div class="loc-steps">
+          <div><h3>We read your brief</h3><p>Nihar or a senior team member reviews your goals, users and constraints the same working day.</p></div>
+          <div><h3>You get a reply within one working day</h3><p>Expect a few sharp questions and suggested times for a 30-minute discovery call.</p></div>
+          <div><h3>Scoped estimate after the call</h3><p>You receive a fixed-scope estimate and a short plan. An NDA is signed before anything sensitive is shared.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="loc-section">
+      <div class="wrap">
+        ${sectionHeader('While you wait', 'Platforms we have shipped', 'A quick look at how we approach real projects.')}
+        <div class="loc-grid c3">${cards}
+        </div>
+        <p class="loc-note">Planning your budget? Read the <a href="/project-costs" style="color:var(--hs-brand); font-weight:600;">2026 project cost guide</a> or the <a href="/blog/cost-to-build-mvp-2026/" style="color:var(--hs-brand); font-weight:600;">MVP cost breakdown</a>.</p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      try {
+        var raw = sessionStorage.getItem('leadThanks');
+        if (!raw) return;
+        var lead = JSON.parse(raw) || {};
+        var first = String(lead.name || '').trim().split(/\\s+/)[0];
+        if (first) document.getElementById('ty-title').textContent = 'Thank you, ' + first;
+        var topic = lead.service ? lead.service + ' ' : '';
+        var where = lead.city ? ' in ' + lead.city : '';
+        document.getElementById('ty-sub').textContent = 'We have received your ' + topic + 'enquiry' + where + '. Nihar’s team will reply within one working day.';
+      } catch (e) { /* generic message stays */ }
+    })();
+  </script>
+` + footer(null).replace(/^\n  <footer/, '\n  <footer');
+}
+
 /* ---------- Output ---------- */
 
 function write(relPath, html) {
@@ -897,6 +971,7 @@ function updateSitemap(urls) {
 function main() {
   const urls = [];
   write('location/index.html', buildReference());
+  write('thank-you/index.html', buildThankYou());
   write('locations/index.html', buildIndex());
   urls.push({ loc: '/locations/', priority: '0.8', changefreq: 'monthly' });
 
