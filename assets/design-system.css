@@ -1,354 +1,980 @@
 /**
- * NiharRout.com - GlobalLogic-Inspired Design System
- * Primary Accent: #FF5F2D (GlobalLogic Orange)
- * Base Background: #F8F9FB (Off-White)
- * Lifted Surfaces: #FFFFFF (Pure White)
- * Text: #212529 (Body), #111111 (Headlines)
- * Typography: Manrope (Google Fonts) Sitewide
- * Buttons: 
- *   1) Primary: Solid #FF5F2D, Sharp Square (border-radius: 0), White Text
- *   2) Secondary: Pill Shape (#EDF0F5), Nested White Circle with Arrow (->)
- * Motion: AOS Scroll Reveal, Hover Micro-interactions, Animated Stat Counters
- * Responsive: Fluid Breakpoints, 2-col Tablet (~768px), 1-col Mobile (~390px)
+ * NiharRout.com - Official HubSpot Design System Architecture
+ * Brand: HubSpot 2025/2026 Component Framework
+ * Typography: HubSpot Serif (Display) + HubSpot Sans (Interface & Body)
+ * Palette: HubSpot Brand Coral (#ff4800), Warm Porcelain (#fcfcfa), Warm Alabaster (#f8f5ee),
+ *          Pure White (#ffffff), Deep Charcoal (#1f1f1f), Secondary Slate (rgba(0,0,0,0.68))
+ * Accents: Coral Tint (#fcece6), Mint (#00823a / #e2f5e8), Purple (#7d53e9 / #e5e1fa), Teal (#2f7579 / #ccf4f5)
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
-
-:root {
-  --font-main: 'Manrope', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  
-  /* Color Palette - GlobalLogic Exact Match */
-  --accent: #FF5F2D;
-  --accent-hover: #E04818;
-  --accent-bg: #FFF0EB;
-  --accent-border: rgba(255, 95, 45, 0.25);
-  
-  --bg: #F8F9FB;
-  --bg-card: #FFFFFF;
-  --surface: #FFFFFF;
-  --surface-subtle: #F1F4F9;
-  
-  --ink: #111111;
-  --ink-body: #212529;
-  --ink-soft: #4B5563;
-  --ink-muted: #6B7280;
-  
-  --line: #E5E7EB;
-  --line-subtle: #F3F4F6;
-  --line-strong: #D1D5DB;
-  
-  --r-sharp: 0px;
-  --r-pill: 9999px;
-  --r-card: 4px;
-  
-  --shadow-subtle: 0 4px 20px -2px rgba(17, 24, 39, 0.05);
-  --shadow-card: 0 4px 16px -2px rgba(17, 24, 39, 0.06), 0 2px 6px rgba(17, 24, 39, 0.03);
-  --shadow-hover: 0 16px 36px -6px rgba(17, 24, 39, 0.12), 0 4px 12px rgba(17, 24, 39, 0.04);
-  
-  --transition-fast: 0.22s cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+/* ================= 1. FONTS & HUBSPOT TYPOGRAPHY ================= */
+@font-face {
+  font-family: "HubSpot Sans";
+  font-weight: 300 400;
+  font-display: swap;
+  src: url("https://www.hubspot.com/hubfs/assets/hs-components/v4/fonts/hubspot-2025/HubSpotSans-Book.woff2") format("woff2");
 }
 
-/* ================= 1. GLOBAL TYPOGRAPHY OVERRIDE ================= */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video, input, button, textarea, select {
-  font-family: var(--font-main) !important;
+@font-face {
+  font-family: "HubSpot Sans";
+  font-weight: 500 600;
+  font-display: swap;
+  src: url("https://www.hubspot.com/hubfs/assets/hs-components/v4/fonts/hubspot-2025/HubSpotSans-Medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "HubSpot Serif";
+  font-weight: 300 400;
+  font-display: swap;
+  src: url("https://www.hubspot.com/hubfs/assets/hs-components/v4/fonts/hubspot-2025/HubSpotSerif-Book.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "HubSpot Serif";
+  font-weight: 500 600 700;
+  font-display: swap;
+  src: url("https://www.hubspot.com/hubfs/assets/hs-components/v4/fonts/hubspot-2025/HubSpotSerif-Medium.woff2") format("woff2");
+}
+
+/* Google Fonts Fallback */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ================= 2. HUBSPOT DESIGN SYSTEM TOKENS ================= */
+:root {
+  /* Typography Stacks */
+  --font-display: 'HubSpot Serif', 'Fraunces', 'Playfair Display', Georgia, serif;
+  --font-body: 'HubSpot Sans', 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* HubSpot Core Brand Palette */
+  --hs-brand: #ff4800;
+  --hs-brand-hover: #c93700;
+  --hs-brand-pressed: #9f2800;
+  --hs-brand-tint: #fcece6;
+  --hs-brand-tint-2: #fef4f0;
+  --hs-brand-glow: rgba(255, 72, 0, 0.25);
+
+  /* Backgrounds & Surfaces */
+  --hs-bg-01: #fcfcfa;          /* HubSpot signature warm porcelain background */
+  --hs-bg-02: #f8f5ee;          /* HubSpot warm alabaster section contrast */
+  --hs-bg-03: #f1ede4;          /* Warm neutral border / divider fill */
+  --hs-container: #ffffff;       /* Pure crisp white card background */
+  --hs-container-hover: #ffffff;
+  --hs-container-dark: #1f1f1f;  /* HubSpot signature dark footer & contrast */
+  --hs-container-dark-card: #292929;
+
+  /* Text & Inks */
+  --hs-text-01: #1f1f1f;        /* Deep charcoal (high legibility, authoritative) */
+  --hs-text-02: rgba(0, 0, 0, 0.68); /* Slate body description */
+  --hs-text-muted: rgba(0, 0, 0, 0.48);
+  --hs-text-faint: rgba(0, 0, 0, 0.32);
+  --hs-text-on-dark: #ffffff;
+  --hs-text-on-dark-muted: rgba(255, 255, 255, 0.7);
+
+  /* Borders & Dividers */
+  --hs-border-01: #1f1f1f;
+  --hs-border-02: rgba(0, 0, 0, 0.16);
+  --hs-border-03: rgba(0, 0, 0, 0.08);
+  --hs-border-active: #ff4800;
+
+  /* Accent Tints & Badge Colors */
+  --hs-coral: #ff4800;
+  --hs-coral-bg: #fcece6;
+  --hs-mint: #00823a;
+  --hs-mint-bg: #e2f5e8;
+  --hs-purple: #7d53e9;
+  --hs-purple-bg: #e5e1fa;
+  --hs-teal: #2f7579;
+  --hs-teal-bg: #ccf4f5;
+  --hs-amber: #d39913;
+  --hs-amber-bg: #fbeece;
+
+  /* Radii */
+  --hs-radius-xs: 4px;
+  --hs-radius-sm: 8px;
+  --hs-radius-md: 16px;
+  --hs-radius-lg: 24px;
+  --hs-radius-pill: 9999px;
+
+  /* Shadows */
+  --hs-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --hs-shadow-md: 0 4px 20px rgba(0, 0, 0, 0.06);
+  --hs-shadow-lg: 0 12px 36px rgba(0, 0, 0, 0.08);
+  --hs-shadow-coral: 0 4px 14px rgba(255, 72, 0, 0.28);
+
+  /* Layout */
+  --maxw: 1200px;
+  --maxw-wide: 1280px;
+
+  /* Sitewide Backward Compatibility Aliases */
+  --bg: var(--hs-bg-01);
+  --bg-alt: var(--hs-bg-02);
+  --bg-base: var(--hs-bg-01);
+  --bg-deep: var(--hs-bg-01);
+  --bg-surface: var(--hs-container);
+  --bg-card: var(--hs-container);
+  --bg-card-hover: var(--hs-container);
+  --surface: var(--hs-container);
+  --surface-subtle: var(--hs-bg-02);
+  --ink: var(--hs-text-01);
+  --ink-body: var(--hs-text-02);
+  --ink-soft: var(--hs-text-02);
+  --ink-muted: var(--hs-text-muted);
+  --ink-faint: var(--hs-text-faint);
+  --text-primary: var(--hs-text-01);
+  --text-secondary: var(--hs-text-02);
+  --text-muted: var(--hs-text-muted);
+  --line: var(--hs-border-03);
+  --line-subtle: var(--hs-border-03);
+  --line-strong: var(--hs-border-02);
+  --border-subtle: var(--hs-border-03);
+  --border-medium: var(--hs-border-02);
+  --border-active: var(--hs-brand);
+  --accent: var(--hs-brand);
+  --accent-hover: var(--hs-brand-hover);
+  --accent-bg: var(--hs-brand-tint);
+  --accent-tint: var(--hs-brand-tint);
+  --accent-border: rgba(255, 72, 0, 0.3);
+  --accent-dark: #c93700;
+  --cyan: var(--hs-brand);
+  --indigo: var(--hs-purple);
+  --violet: var(--hs-purple);
+  --emerald: var(--hs-mint);
+  --radius-md: var(--hs-radius-md);
+  --radius-lg: var(--hs-radius-lg);
+  --radius-pill: var(--hs-radius-pill);
+}
+
+/* ================= 3. GLOBAL BASE & RESET ================= */
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
 html {
-  background-color: var(--bg) !important;
-  color: var(--ink-body) !important;
+  background-color: var(--hs-bg-01) !important;
+  color: var(--hs-text-01);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  background-color: var(--bg) !important;
-  color: var(--ink-body) !important;
+  background-color: var(--hs-bg-01) !important;
+  color: var(--hs-text-01) !important;
+  font-family: var(--font-body);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Remove dark obsidian ambient cursor spotlight */
+#cursor-spotlight {
+  display: none !important;
+}
+
+/* Container Wrapper */
+.wrap {
+  width: 100%;
+  max-width: var(--maxw);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* Section Spacing */
+.section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  position: relative;
+}
+
+.section-alt {
+  background-color: var(--hs-bg-02);
+}
+
+/* ================= 4. HUBSPOT TYPOGRAPHY ================= */
+h1, h2, h3, h4, h5, h6,
+.cl-h1, .cl-h2, .cl-h3, .cl-h4,
+.hero-title, .case-title, .section-title {
+  font-family: var(--font-display);
+  color: var(--hs-text-01);
+  font-weight: 500;
+  line-height: 1.15;
+  margin-top: 0;
+  letter-spacing: -0.015em;
+}
+
+h1, .cl-h1, .hero-title {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+h2, .cl-h2, .section-title {
+  font-size: clamp(1.85rem, 3.5vw, 2.75rem);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+h3, .cl-h3 {
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+p, .cl-p {
+  font-family: var(--font-body);
+  color: var(--hs-text-02);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+}
+
+p.-large, .p-large, .hero-sub {
+  font-size: clamp(1.125rem, 2vw, 1.25rem);
   line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  color: var(--hs-text-02);
 }
 
-/* Headlines: Large, Bold (600), Tight Letter-Spacing (-0.035em), Short Punchy Phrases */
-h1, h2, h3, h4, h5, h6 {
-  color: var(--ink) !important;
-  font-weight: 600 !important;
-  letter-spacing: -0.035em !important;
-  line-height: 1.14 !important;
+/* HubSpot Microheading Eyebrow */
+.hs-eyebrow, .badge-pill, .hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: var(--hs-radius-pill);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background-color: var(--hs-brand-tint);
+  color: var(--hs-brand);
+  border: 1px solid rgba(255, 72, 0, 0.25);
+  margin-bottom: 20px;
 }
 
-h1 {
-  font-size: clamp(34px, 5.2vw, 64px) !important;
-  margin-bottom: 20px !important;
+.hs-eyebrow .dot, .badge-pill .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--hs-brand);
+  display: inline-block;
 }
 
-h2 {
-  font-size: clamp(26px, 3.8vw, 44px) !important;
-  margin-bottom: 16px !important;
-}
-
-h3 {
-  font-size: clamp(20px, 2.4vw, 28px) !important;
-  margin-bottom: 12px !important;
-}
-
-p, .sub {
-  color: var(--ink-body) !important;
-  font-size: 16px;
-  line-height: 1.68;
-  letter-spacing: -0.01em;
-}
-
-/* Accent Links */
-a {
-  color: var(--accent);
+/* ================= 5. HUBSPOT BUTTON SYSTEM ================= */
+.cl-button, .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 26px;
+  border-radius: var(--hs-radius-sm);
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
   text-decoration: none;
-  transition: color var(--transition-fast);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid transparent;
+  line-height: 1.25;
+  white-space: nowrap;
 }
 
-a:hover {
-  color: var(--accent-hover);
+/* Primary Button: HubSpot Signature Coral */
+.cl-button.-primary, .btn-primary, .btn-dark, .btn-glow {
+  background-color: var(--hs-brand) !important;
+  color: #ffffff !important;
+  border-color: var(--hs-brand) !important;
+  box-shadow: var(--hs-shadow-coral) !important;
 }
 
-/* ================= 2. BUTTON SYSTEM (TWO STRICT STYLES) ================= */
-
-/* Style 1: Primary CTA Button (Sharp Square Corners, Solid #FF5F2D, Normal Weight) */
-.btn-primary,
-.btn-dark,
-.btn-accent,
-.cform-btn,
-button.btn-primary,
-a.btn-primary,
-.nav-actions .btn-dark {
-  background: var(--accent) !important;
-  color: #FFFFFF !important;
-  border-radius: 0px !important;
-  padding: 14px 24px !important;
-  min-height: 46px !important;
-  font-weight: 500 !important;
-  font-size: 15px !important;
-  line-height: 1 !important;
-  text-transform: none !important;
-  letter-spacing: -0.01em !important;
-  border: 1px solid var(--accent) !important;
-  box-shadow: none !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 10px !important;
-  text-decoration: none !important;
-  cursor: pointer !important;
-  transition: background-color var(--transition-fast), border-color var(--transition-fast) !important;
+.cl-button.-primary:hover, .btn-primary:hover, .btn-dark:hover, .btn-glow:hover {
+  background-color: var(--hs-brand-hover) !important;
+  border-color: var(--hs-brand-hover) !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(255, 72, 0, 0.35) !important;
 }
 
-.btn-primary:hover,
-.btn-dark:hover,
-.btn-accent:hover,
-.cform-btn:hover,
-button.btn-primary:hover,
-a.btn-primary:hover,
-.nav-actions .btn-dark:hover {
-  background: var(--accent-hover) !important;
-  border-color: var(--accent-hover) !important;
-  color: #FFFFFF !important;
-  transform: none !important;
+.cl-button.-primary:active, .btn-primary:active, .btn-dark:active {
+  background-color: var(--hs-brand-pressed) !important;
+  transform: translateY(0);
 }
 
-/* Style 2: Secondary CTA Button (Full Pill #EDF0F5, Nested White Circle with Arrow) */
-.btn-secondary,
-.btn-outline,
-.btn-pill,
-a.btn-secondary,
-button.btn-secondary {
-  background: #EDF0F5 !important;
-  color: var(--ink-body) !important;
-  border-radius: 9999px !important;
-  padding: 8px 8px 8px 20px !important;
-  min-height: 46px !important;
-  font-weight: 500 !important;
-  font-size: 14.5px !important;
-  line-height: 1 !important;
-  text-transform: none !important;
-  letter-spacing: -0.01em !important;
-  border: 1px solid #E2E8F0 !important;
-  box-shadow: none !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  gap: 12px !important;
-  text-decoration: none !important;
-  cursor: pointer !important;
-  transition: background-color var(--transition-fast), border-color var(--transition-fast) !important;
+/* Secondary Button: Clean Pure White Outline */
+.cl-button.-secondary, .btn-outline, .btn-secondary, .btn-ghost {
+  background-color: #ffffff !important;
+  color: var(--hs-text-01) !important;
+  border: 1.5px solid var(--hs-text-01) !important;
 }
 
-.btn-secondary:hover,
-.btn-outline:hover,
-.btn-pill:hover,
-a.btn-secondary:hover {
-  background: #E2E8F0 !important;
-  border-color: #CBD5E1 !important;
-  color: var(--ink) !important;
-  transform: none !important;
+.cl-button.-secondary:hover, .btn-outline:hover, .btn-secondary:hover, .btn-ghost:hover {
+  background-color: var(--hs-bg-02) !important;
+  color: var(--hs-brand) !important;
+  border-color: var(--hs-brand) !important;
+  transform: translateY(-2px);
 }
 
-/* Nested Circular White Button in Secondary CTA */
-.btn-circle-arrow,
-.btn-secondary .arw,
-.btn-outline .arw {
-  width: 30px !important;
-  height: 30px !important;
-  border-radius: 50% !important;
-  background: #FFFFFF !important;
-  color: var(--ink) !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  font-size: 13px !important;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
-  margin-left: 6px !important;
-  transition: transform var(--transition-fast) !important;
+/* Small Button Variant */
+.cl-button.-small, .btn-sm {
+  padding: 8px 16px;
+  font-size: 13px;
+  border-radius: var(--hs-radius-sm);
 }
 
-.btn-secondary:hover .btn-circle-arrow,
-.btn-secondary:hover .arw,
-.btn-outline:hover .arw {
-  transform: translateX(4px) !important;
+/* Pill CTA Variant */
+.cl-button.-pill, .btn-pill {
+  border-radius: var(--hs-radius-pill);
 }
 
-/* Inverted White Sharp Button for Closing Full-Bleed Accent Band */
-.btn-closing-cta,
-.btn-cta-white {
-  background: #FFFFFF !important;
-  color: var(--accent) !important;
-  border-radius: 0px !important;
-  padding: 14px 28px !important;
-  min-height: 48px !important;
-  font-weight: 600 !important;
-  font-size: 15px !important;
-  border: 1px solid #FFFFFF !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 10px !important;
-  text-decoration: none !important;
-  cursor: pointer !important;
-  transition: background-color var(--transition-fast), color var(--transition-fast) !important;
+/* ================= 6. HUBSPOT CARDS & CONTAINERS ================= */
+.cl-card, .card, .bento-card, .narrative-card, .feature-card, .gallery-card {
+  background-color: var(--hs-container) !important;
+  border: 1px solid var(--hs-border-03) !important;
+  border-radius: var(--hs-radius-md) !important;
+  box-shadow: var(--hs-shadow-md) !important;
+  padding: 32px;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.btn-closing-cta:hover,
-.btn-cta-white:hover {
-  background: #F8F9FB !important;
-  color: var(--accent-hover) !important;
+.cl-card:hover, .card:hover, .bento-card:hover, .narrative-card:hover, .feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--hs-shadow-lg) !important;
+  border-color: rgba(0, 0, 0, 0.14) !important;
 }
 
-/* ================= 3. CARDS & ELEVATION PATTERNS ================= */
-
-/* Lightweight Services/Capabilities Cards: NOT heavy bordered boxes */
-.capability-feature-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  margin-top: 48px;
+/* ================= 7. HUBSPOT NAVIGATION HEADER ================= */
+.site-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--hs-border-03);
+  transition: box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
-.capability-feature-item {
+.site-header.scrolled {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.nav-inner {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0 !important;
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
+  align-items: center;
+  justify-content: space-between;
+  height: 76px;
 }
 
-.capability-feature-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 0;
-  background: var(--accent-bg);
+.brand-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--hs-text-01);
+}
+
+.brand-monogram {
+  width: 40px;
+  height: 40px;
+  background: var(--hs-brand);
+  color: #ffffff;
+  border-radius: var(--hs-radius-sm);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
-  color: var(--accent);
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: -0.5px;
+  box-shadow: 0 2px 8px rgba(255, 72, 0, 0.25);
 }
 
-.capability-feature-icon svg {
-  width: 24px;
-  height: 24px;
-  stroke: var(--accent);
-  stroke-width: 1.75;
-}
-
-.capability-feature-title {
-  font-size: 21px;
+.brand-text {
+  font-family: var(--font-display);
+  font-size: 19px;
   font-weight: 600;
-  letter-spacing: -0.025em;
-  color: var(--ink);
-  margin: 0 0 10px;
+  color: var(--hs-text-01);
+  letter-spacing: -0.01em;
 }
 
-.capability-feature-desc {
+.brand-text .dot {
+  color: var(--hs-brand);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  font-family: var(--font-body);
   font-size: 15px;
-  line-height: 1.62;
-  color: var(--ink-soft);
-  margin: 0 0 18px;
+  font-weight: 500;
+  color: var(--hs-text-01);
+  text-decoration: none;
+  transition: color 0.15s ease;
 }
 
-.capability-feature-link {
-  font-size: 14.5px;
+.nav-link:hover {
+  color: var(--hs-brand);
+}
+
+.nav-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 12px;
+  border-radius: var(--hs-radius-pill);
+  background-color: var(--hs-brand-tint);
+  border: 1px solid rgba(255, 72, 0, 0.2);
+  color: var(--hs-brand);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.status-ping {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--hs-brand);
+  animation: hsPing 2s infinite cubic-bezier(0, 0, 0.2, 1);
+}
+
+@keyframes hsPing {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.3); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+/* ================= 8. HOMEPAGE HERO SECTION ================= */
+.hero-section {
+  padding-top: 72px;
+  padding-bottom: 80px;
+  background-color: var(--hs-bg-01);
+  position: relative;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 660px;
+}
+
+.hero-title {
+  margin-bottom: 20px;
+}
+
+.hero-title .highlight {
+  color: var(--hs-brand);
+  font-style: italic;
+}
+
+.hero-sub {
+  margin-bottom: 32px;
+  color: var(--hs-text-02);
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.hero-ctas {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 36px;
+}
+
+.hero-guarantee {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 13px;
   font-weight: 600;
-  color: var(--accent);
-  text-decoration: none;
+  color: var(--hs-text-muted);
+}
+
+.hero-guarantee-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hero-guarantee-item .check {
+  color: var(--hs-mint);
+  font-weight: 800;
+}
+
+/* Hero Visual Card Showcase */
+.hero-showcase {
+  position: relative;
+}
+
+.hero-main-card {
+  background: #ffffff;
+  border: 1px solid var(--hs-border-03);
+  border-radius: var(--hs-radius-lg);
+  padding: 32px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.07);
+}
+
+.hero-founder-badge {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.hero-founder-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--hs-brand);
+}
+
+.hero-founder-info h3 {
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+  color: var(--hs-text-01);
+}
+
+.hero-founder-info p {
+  font-size: 13px;
+  color: var(--hs-text-muted);
+  margin: 0;
+  font-weight: 500;
+}
+
+.hero-proof-chips {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.hero-proof-chip {
+  background: var(--hs-bg-02);
+  border: 1px solid var(--hs-border-03);
+  border-radius: var(--hs-radius-sm);
+  padding: 12px 14px;
+}
+
+.hero-proof-chip-val {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--hs-brand);
+  margin-bottom: 2px;
+}
+
+.hero-proof-chip-lbl {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--hs-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+/* ================= 9. SOCIAL PROOF & METRICS BAND ================= */
+.proof-strip {
+  background-color: var(--hs-bg-02);
+  border-top: 1px solid var(--hs-border-03);
+  border-bottom: 1px solid var(--hs-border-03);
+  padding: 44px 0;
+}
+
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+.proof-item {
+  text-align: center;
+}
+
+.proof-num {
+  font-family: var(--font-display);
+  font-size: 3.25rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--hs-brand);
+  margin-bottom: 8px;
+}
+
+.proof-label {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--hs-text-01);
+  margin-bottom: 4px;
+}
+
+.proof-sub {
+  font-size: 13px;
+  color: var(--hs-text-muted);
+}
+
+/* ================= 10. THE VENTURE HUBS (HUBSPOT PRODUCT CARDS) ================= */
+.hubs-section {
+  padding: 96px 0;
+  background-color: var(--hs-bg-01);
+}
+
+.section-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 56px auto;
+}
+
+.hubs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.hub-card {
+  background: #ffffff;
+  border: 1px solid var(--hs-border-03);
+  border-radius: var(--hs-radius-md);
+  padding: 36px;
+  box-shadow: var(--hs-shadow-md);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hub-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--hs-shadow-lg);
+  border-color: rgba(0, 0, 0, 0.14);
+}
+
+.hub-badge {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  transition: gap var(--transition-fast), color var(--transition-fast);
+  padding: 4px 12px;
+  border-radius: var(--hs-radius-pill);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 16px;
 }
 
-.capability-feature-link:hover {
-  color: var(--accent-hover);
+.hub-badge.-coral { background-color: var(--hs-coral-bg); color: var(--hs-coral); }
+.hub-badge.-mint { background-color: var(--hs-mint-bg); color: var(--hs-mint); }
+.hub-badge.-purple { background-color: var(--hs-purple-bg); color: var(--hs-purple); }
+.hub-badge.-teal { background-color: var(--hs-teal-bg); color: var(--hs-teal); }
+
+.hub-title {
+  font-family: var(--font-display);
+  font-size: 1.65rem;
+  font-weight: 600;
+  color: var(--hs-text-01);
+  margin-bottom: 12px;
+}
+
+.hub-desc {
+  color: var(--hs-text-02);
+  font-size: 15px;
+  line-height: 1.65;
+  margin-bottom: 24px;
+}
+
+.hub-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px 0;
+}
+
+.hub-checklist li {
+  display: flex;
+  align-items: flex-start;
   gap: 10px;
+  font-size: 14px;
+  color: var(--hs-text-01);
+  font-weight: 500;
+  margin-bottom: 10px;
+  line-height: 1.5;
 }
 
-/* Portfolio / Case-Study Cards: Image on top, Title, 1-line outcome, Subtle hover elevation */
-.work-card,
-.case-card,
-.project-card {
-  background: #FFFFFF !important;
-  border: 1px solid var(--line) !important;
-  border-radius: var(--r-card) !important;
+.hub-check-icon {
+  color: var(--hs-brand);
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+.hub-footer-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--hs-brand);
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  transition: gap 0.2s ease;
+}
+
+.hub-footer-link:hover {
+  gap: 10px;
+  text-decoration: underline;
+}
+
+/* ================= 11. HUBSPOT VENTURE PRICING & SCOPE ESTIMATOR ================= */
+.estimator-section {
+  padding: 96px 0;
+  background-color: var(--hs-bg-02);
+  border-top: 1px solid var(--hs-border-03);
+  border-bottom: 1px solid var(--hs-border-03);
+}
+
+.calc-tabs-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.calc-tab-btn {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: #ffffff;
+  color: var(--hs-text-01);
+  border: 1.5px solid var(--hs-border-03);
+  border-radius: var(--hs-radius-pill);
+  padding: 10px 22px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: var(--hs-shadow-sm);
+}
+
+.calc-tab-btn:hover {
+  border-color: var(--hs-brand);
+  color: var(--hs-brand);
+  transform: translateY(-1px);
+}
+
+.calc-tab-btn.active {
+  background-color: var(--hs-brand);
+  color: #ffffff;
+  border-color: var(--hs-brand);
+  box-shadow: var(--hs-shadow-coral);
+}
+
+.calc-chassis {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 32px;
+  background-color: #ffffff;
+  border: 1px solid var(--hs-border-03);
+  border-radius: var(--hs-radius-lg);
+  padding: 40px;
+  box-shadow: var(--hs-shadow-md);
+}
+
+.calc-spec-column h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.calc-spec-desc {
+  font-size: 15px;
+  color: var(--hs-text-02);
+  margin-bottom: 24px;
+}
+
+.calc-deliverables-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.calc-deliverable-item {
+  background: var(--hs-bg-02);
+  border: 1px solid var(--hs-border-03);
+  border-radius: var(--hs-radius-sm);
+  padding: 14px 16px;
+}
+
+.calc-deliverable-item .tit {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--hs-text-01);
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.calc-deliverable-item .desc {
+  font-size: 12px;
+  color: var(--hs-text-muted);
+  line-height: 1.45;
+}
+
+.calc-summary-column {
+  background: var(--hs-bg-02);
+  border: 1px solid var(--hs-border-03);
+  border-radius: var(--hs-radius-md);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.calc-summary-heading {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--hs-text-muted);
+  margin-bottom: 8px;
+}
+
+.calc-investment-val {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--hs-brand);
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+.calc-stat-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--hs-border-03);
+  font-size: 14px;
+}
+
+.calc-stat-row:last-of-type {
+  border-bottom: none;
+  margin-bottom: 20px;
+}
+
+.calc-stat-lbl {
+  color: var(--hs-text-muted);
+}
+
+.calc-stat-data {
+  font-weight: 700;
+  color: var(--hs-text-01);
+}
+
+/* ================= 12. CASE STUDIES & PORTFOLIO ================= */
+.work-filters {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 44px;
+}
+
+.work-filter-btn {
+  appearance: none;
+  -webkit-appearance: none;
+  background: #ffffff;
+  color: var(--hs-text-01);
+  border: 1px solid var(--hs-border-03);
+  border-radius: var(--hs-radius-pill);
+  padding: 8px 18px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: var(--hs-shadow-sm);
+}
+
+.work-filter-btn:hover {
+  border-color: var(--hs-brand);
+  color: var(--hs-brand);
+}
+
+.work-filter-btn.active {
+  background-color: var(--hs-brand);
+  color: #ffffff;
+  border-color: var(--hs-brand);
+  box-shadow: var(--hs-shadow-coral);
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.work-card {
+  background: #ffffff;
+  border: 1px solid var(--hs-border-03);
+  border-radius: var(--hs-radius-md);
   overflow: hidden;
-  box-shadow: var(--shadow-card) !important;
-  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth) !important;
+  box-shadow: var(--hs-shadow-md);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
   display: flex;
   flex-direction: column;
 }
 
-.work-card:hover,
-.case-card:hover,
-.project-card:hover {
-  transform: translateY(-4px) !important;
-  box-shadow: var(--shadow-hover) !important;
+.work-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--hs-shadow-lg);
+  border-color: rgba(0, 0, 0, 0.14);
 }
 
-.work-card-img {
+.work-thumb-wrap {
   width: 100%;
-  height: 220px;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--hs-bg-02);
+  border-bottom: 1px solid var(--hs-border-03);
+}
+
+.work-thumb-img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  display: block;
-  background: var(--surface-subtle);
+  transition: transform 0.4s ease;
+}
+
+.work-card:hover .work-thumb-img {
+  transform: scale(1.04);
 }
 
 .work-card-body {
@@ -358,368 +984,239 @@ a.btn-secondary:hover {
   flex-grow: 1;
 }
 
-.work-card-title {
-  font-size: 19px;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  color: var(--ink);
-  margin: 0 0 8px;
+.work-card-category {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--hs-brand);
+  margin-bottom: 8px;
 }
 
-.work-card-result {
+.work-card-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--hs-text-01);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.work-card-desc {
   font-size: 14px;
-  color: var(--ink-soft);
+  color: var(--hs-text-02);
   line-height: 1.55;
-  margin: 0 0 16px;
+  margin-bottom: 20px;
+  flex-grow: 1;
 }
 
 .work-card-link {
   font-size: 14px;
-  font-weight: 600;
-  color: var(--accent);
+  font-weight: 700;
+  color: var(--hs-brand);
+  text-decoration: none;
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  margin-top: auto;
-  transition: gap var(--transition-fast);
 }
 
 .work-card-link:hover {
-  gap: 10px;
+  text-decoration: underline;
 }
 
-/* ================= 4. LAYOUT PATTERNS ================= */
+/* ================= 13. CLIENT TESTIMONIAL ================= */
+.testimonial-section {
+  padding: 96px 0;
+  background-color: var(--hs-bg-01);
+}
 
-/* Generous vertical spacing sitewide */
-section {
-  padding: clamp(80px, 10vw, 130px) 0 !important;
-  background-color: var(--bg);
+.testimonial-card {
+  max-width: 860px;
+  margin: 0 auto;
+  background: var(--hs-bg-02);
+  border: 1px solid var(--hs-border-03);
+  border-radius: var(--hs-radius-lg);
+  padding: 48px;
+  text-align: center;
   position: relative;
 }
 
-/* a) Hero Section: One large, short, punchy headline + Single clear sharp CTA */
-.hero {
-  padding: clamp(90px, 12vw, 150px) 0 80px !important;
-  background-color: var(--bg) !important;
+.testimonial-stars {
+  color: #ffb834;
+  font-size: 20px;
+  margin-bottom: 20px;
+  letter-spacing: 3px;
 }
 
-.hero-headline {
-  font-size: clamp(38px, 5.6vw, 68px) !important;
-  font-weight: 600 !important;
-  letter-spacing: -0.038em !important;
-  line-height: 1.08 !important;
-  color: var(--ink) !important;
-  margin: 0 0 20px !important;
-  max-width: 18ch !important;
+.testimonial-quote {
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.5vw, 1.85rem);
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--hs-text-01);
+  margin: 0 0 28px 0;
+  font-style: normal;
 }
 
-.hero-lead {
-  font-size: 18px !important;
-  line-height: 1.62 !important;
-  color: var(--ink-body) !important;
-  max-width: 48ch !important;
-  margin: 0 0 32px !important;
+.testimonial-meta strong {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--hs-text-01);
 }
 
-.hero-cta-wrap {
+.testimonial-meta span {
+  font-size: 13px;
+  color: var(--hs-text-muted);
+}
+
+/* ================= 14. CLOSING CTA BANNER ================= */
+.cta-section {
+  padding: 96px 0;
+  background-color: var(--hs-bg-02);
+}
+
+.cta-box {
+  background: #ffffff;
+  border: 1.5px solid var(--hs-border-03);
+  border-radius: var(--hs-radius-lg);
+  padding: 64px 48px;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+  box-shadow: var(--hs-shadow-lg);
+}
+
+.cta-box h2 {
+  margin-bottom: 16px;
+}
+
+.cta-box p {
+  max-width: 600px;
+  margin: 0 auto 32px auto;
+  font-size: 1.15rem;
+}
+
+.cta-actions {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 16px;
   flex-wrap: wrap;
 }
 
-/* c) Dedicated Stat-Counter Row: Large bold numbers, short labels, animated count-up */
-.stat-counter-row {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 32px;
-  padding: 48px 0;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  margin: 48px 0;
+/* ================= 15. HUBSPOT FOOTER ================= */
+.ft {
+  background-color: var(--hs-container-dark) !important;
+  color: #ffffff !important;
+  padding: 80px 0 40px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.stat-counter-item {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.stat-number {
-  font-size: clamp(38px, 4.6vw, 58px);
-  font-weight: 700;
-  letter-spacing: -0.035em;
-  line-height: 1;
-  color: var(--ink);
-}
-
-.stat-label {
-  font-size: 13px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--ink-muted);
-}
-
-/* d) Category Lists: Horizontal wrap of pill-shaped tags */
-.category-tag-wrap {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 24px;
-}
-
-.category-pill {
-  display: inline-flex;
-  align-items: center;
-  padding: 9px 18px;
-  background: #FFFFFF;
-  border: 1px solid var(--line);
-  border-radius: 9999px;
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--ink-body);
+.ft a {
+  color: var(--hs-text-on-dark-muted) !important;
   text-decoration: none;
-  transition: border-color var(--transition-fast), color var(--transition-fast);
+  font-size: 14px;
+  transition: color 0.15s ease;
 }
 
-.category-pill:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  background: #FFFFFF;
+.ft a:hover {
+  color: #ffffff !important;
+  text-decoration: underline;
 }
 
-.category-pill.active {
-  background: var(--ink);
-  color: #FFFFFF;
-  border-color: var(--ink);
+.ft-grid {
+  display: grid;
+  grid-template-columns: 1.5fr repeat(3, 1fr);
+  gap: 48px;
+  margin-bottom: 64px;
 }
 
-/* e) Big Statement Section: Short, bold, stacked 2-4 word phrase as visual breather */
-.big-statement-section {
-  padding: clamp(100px, 14vw, 160px) 0 !important;
-  background: var(--bg) !important;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+.ft-col h4 {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 20px;
 }
 
-.big-statement-text {
-  font-size: clamp(38px, 5.8vw, 76px);
-  font-weight: 600;
-  letter-spacing: -0.04em;
-  line-height: 1.12;
-  color: var(--ink);
-  max-width: 18ch;
+.ft-links-list {
+  list-style: none;
+  padding: 0;
   margin: 0;
 }
 
-.big-statement-sub {
-  font-size: 18px;
-  line-height: 1.62;
-  color: var(--ink-soft);
-  max-width: 44ch;
-  margin-top: 24px;
+.ft-links-list li {
+  margin-bottom: 12px;
 }
 
-/* f) Closing CTA Band: Full-bleed #FF5F2D background on every page */
-.closing-cta-band {
-  background: var(--accent) !important;
-  color: #FFFFFF !important;
-  padding: clamp(80px, 10vw, 120px) 0 !important;
-  border-top: none !important;
-}
-
-.closing-cta-inner {
+.ft-bottom {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 40px;
-  flex-wrap: wrap;
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 0 24px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 13px;
+  color: var(--hs-text-on-dark-muted);
 }
 
-.closing-cta-text h2 {
-  color: #FFFFFF !important;
-  font-size: clamp(32px, 4.4vw, 52px) !important;
-  letter-spacing: -0.035em !important;
-  margin: 0 0 12px !important;
-}
-
-.closing-cta-text p {
-  color: rgba(255, 255, 255, 0.9) !important;
-  font-size: 17px !important;
-  max-width: 44ch !important;
-  margin: 0 !important;
-}
-
-/* Legacy cta-section and cta-box overrides */
-.cta-section,
-.cta-box {
-  background: var(--accent) !important;
-  color: #FFFFFF !important;
-  border-radius: 0px !important;
-  box-shadow: none !important;
-  border: none !important;
-  padding: clamp(56px, 8vw, 84px) 32px !important;
-}
-
-.cta-section h2,
-.cta-box h2 {
-  color: #FFFFFF !important;
-}
-
-.cta-section p,
-.cta-box p {
-  color: rgba(255, 255, 255, 0.92) !important;
-}
-
-.cta-section .btn,
-.cta-box .btn-dark,
-.cta-box .btn-primary,
-.cta-section .btn-light {
-  background: #FFFFFF !important;
-  color: var(--accent) !important;
-  border: 1px solid #FFFFFF !important;
-  border-radius: 0px !important;
-  font-weight: 600 !important;
-}
-
-.cta-section .btn-light-outline,
-.cta-box .btn-outline {
-  background: transparent !important;
-  color: #FFFFFF !important;
-  border: 1px solid rgba(255, 255, 255, 0.6) !important;
-  border-radius: 0px !important;
-}
-
-/* Lift Card Panel */
-.lift-card {
-  background: #FFFFFF !important;
-  border: 1px solid var(--line) !important;
-  border-radius: var(--r-card) !important;
-  box-shadow: var(--shadow-subtle) !important;
-  padding: clamp(28px, 4vw, 44px) !important;
-}
-
-/* Brand Monogram in Navigation */
-.brand-monogram-wrap {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  color: var(--ink);
-  font-weight: 700;
-  font-size: 18px;
-  letter-spacing: -0.02em;
-}
-
-.brand-monogram-icon {
-  width: 32px;
-  height: 32px;
-  flex-shrink: 0;
-}
-
-/* ================= 5. RESPONSIVE BREAKPOINTS (MATCHING GLOBALLOGIC) ================= */
-
-/* Tablet Breakpoint (~768px - 992px) */
+/* ================= 16. RESPONSIVE BREAKPOINTS ================= */
 @media (max-width: 992px) {
-  .nav-links {
-    display: none !important;
-  }
-  
-  .nav-toggle {
-    display: flex !important;
-  }
-  
-  .capability-feature-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
-  }
-  
-  .work-grid,
-  .projects-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 24px !important;
-  }
-  
-  .stat-counter-row {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 28px;
-  }
-  
-  .closing-cta-inner {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-
-/* Mobile Breakpoint (~390px - 640px) */
-@media (max-width: 640px) {
-  section {
-    padding: 64px 0 !important;
-  }
-  
-  .hero {
-    padding: 72px 0 48px !important;
-  }
-  
-  .capability-feature-grid {
+  .hero-grid {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 40px;
   }
-  
-  .work-grid,
-  .projects-grid {
-    grid-template-columns: 1fr !important;
-    gap: 24px !important;
+  .hero-showcase {
+    max-width: 520px;
+    margin: 0 auto;
   }
-  
-  .stat-counter-row {
+  .hubs-grid {
     grid-template-columns: 1fr;
+  }
+  .calc-chassis {
+    grid-template-columns: 1fr;
+  }
+  .proof-grid {
+    grid-template-columns: repeat(2, 1fr);
     gap: 24px;
-    padding: 36px 0;
   }
-  
-  .hero-cta-wrap {
-    flex-direction: column;
-    align-items: stretch;
-    width: 100%;
+  .work-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  .hero-cta-wrap .btn-primary,
-  .hero-cta-wrap .btn-secondary {
-    width: 100%;
-    justify-content: center;
+  .ft-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  .btn-secondary {
-    padding: 10px 16px !important;
-  }
-  
-  .btn-closing-cta,
-  .btn-cta-white {
-    width: 100%;
-  }
-  
-  .big-statement-section {
-    padding: 72px 0 !important;
+  .nav-links {
+    display: none;
   }
 }
 
-/* Respect OS Prefers Reduced Motion */
-@media (prefers-reduced-motion: reduce) {
-  *, ::before, ::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+@media (max-width: 640px) {
+  .hero-section {
+    padding-top: 40px;
+    padding-bottom: 60px;
   }
-  
-  [data-aos] {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
+  .proof-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
+  .calc-deliverables-list {
+    grid-template-columns: 1fr;
+  }
+  .cta-box {
+    padding: 40px 24px;
+  }
+  .ft-grid {
+    grid-template-columns: 1fr;
+  }
+  .ft-bottom {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
   }
 }

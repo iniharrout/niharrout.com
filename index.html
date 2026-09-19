@@ -5,7 +5,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
   <title>Nihar Ranjan Rout — Founder &amp; CEO, Creuto | Product Strategist &amp; B2B Software</title>
   <meta name="description"
     content="Nihar Ranjan Rout is the Founder & CEO of Creuto. 8+ years in product management & strategy — helping founders shape PRDs, scope honestly, and build growth-standard AI & B2B software with his in-house team.">
@@ -62,2850 +61,24 @@
   }
   </script>
 
-  <!-- Google Fonts: Manrope -->
+  <!-- HubSpot Design System Stylesheet -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
-  <link rel="stylesheet" href="assets/aos.css">
-  <link rel="stylesheet" href="assets/design-system.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="/assets/aos.css">
+  <link rel="stylesheet" href="/assets/design-system.css?v=hs2026_1">
 
   <style>
-    /* ================= MANROPE & GLOBALLOGIC ORANGE DESIGN SYSTEM ================= */
-    :root {
-      /* Clean Light-Gray / Off-White Base */
-      --bg: #F8F9FB;
-      --bg-alt: #F1F3F7;
-      --surface: #FFFFFF;
-      --surface-subtle: #F8F9FB;
-      
-      /* Typography Colors */
-      --ink: #111111;            /* Deep black headlines */
-      --ink-body: #212529;       /* Charcoal body text */
-      --ink-soft: #4B5563;       /* Balanced neutral slate */
-      --ink-faint: #6B7280;      /* Muted secondary tone */
-      --ink-muted: #9CA3AF;      /* Caption tone */
-
-      /* Structural Hairline Borders */
-      --line: #E5E7EB;
-      --line-strong: #D1D5DB;
-      --line-focus: #111111;
-
-      /* Single Accent: #FF5F2D GlobalLogic Orange */
-      --accent: #FF5F2D;
-      --accent-tint: #FFF0EB;
-      --accent-border: rgba(255, 95, 45, 0.25);
-      --accent-dark: #E04818;
-
-      --emerald: #0DA868;        /* Verified checkmark green */
-      --emerald-tint: #E7F8F0;
-      --emerald-border: #B3EBD3;
-
-      /* Diffused Natural Shadows */
-      --shadow-sm: 0 1px 2px rgba(20, 19, 18, 0.04);
-      --shadow-card: 0 8px 24px -6px rgba(20, 19, 18, 0.04), 0 2px 6px rgba(20, 19, 18, 0.02);
-      --shadow-hover: 0 16px 36px -8px rgba(20, 19, 18, 0.08), 0 4px 12px rgba(20, 19, 18, 0.03);
-      --shadow-float: 0 24px 48px -12px rgba(20, 19, 18, 0.1);
-
-      --maxw: 1180px;
-      --measure: 64ch;
-      --r-xl: 24px;
-      --r-lg: 18px;
-      --r-md: 12px;
-      --r-sm: 8px;
-      --r-pill: 9999px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      background-color: var(--bg);
-    }
-
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--ink-soft);
-      font-family: "Manrope", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      font-size: 16.5px;
-      line-height: 1.68;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-      padding-top: 72px;
-    }
-
-    .wrap {
-      max-width: var(--maxw);
-      margin: 0 auto;
-      padding: 0 28px;
-    }
-
-    section {
-      padding: clamp(72px, 8.5vw, 115px) 0;
-      position: relative;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-      font-family: "Manrope", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      color: var(--ink);
-      font-weight: 700;
-      margin: 0;
-      text-wrap: balance;
-      letter-spacing: -0.03em;
-    }
-
-    .serif {
-      font-family: "Playfair Display", Georgia, serif;
-      font-weight: 500;
-      font-style: italic;
-    }
-
-    p {
-      margin: 0;
-    }
-
-    img {
-      max-width: 100%;
-    }
-
-    /* Accent Text Highlight */
-    .hl-accent {
-      color: var(--accent);
-    }
-
-    /* Toast Notification */
-    .toast {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      background: #FFFFFF;
-      color: var(--ink);
-      border: 1px solid var(--line-strong);
-      border-radius: 12px;
-      padding: 14px 20px;
-      box-shadow: var(--shadow-float);
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      z-index: 200;
-      transform: translateY(100px);
-      opacity: 0;
-      transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
-    }
-
-    .toast.show {
-      transform: translateY(0);
-      opacity: 1;
-    }
-
-    .toast .icon {
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      background: var(--emerald-tint);
-      color: var(--emerald);
-      display: grid;
-      place-items: center;
-      font-size: 12px;
-      font-weight: bold;
-    }
-
-    .toast .msg {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--ink);
-    }
-
-    /* Corporate Refined Kicker Badges */
-    .badge-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 5px 14px;
-      border-radius: var(--r-pill);
-      background: #FFFFFF;
-      border: 1px solid var(--line-strong);
-      color: var(--ink);
-      font-family: "JetBrains Mono", monospace;
-      font-size: 11.5px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      box-shadow: var(--shadow-sm);
-      margin-bottom: 20px;
-    }
-
-    .badge-pill .dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--accent);
-      display: inline-block;
-    }
-
-    /* Buttons */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      font-family: inherit;
-      font-size: 15px;
-      font-weight: 600;
-      border-radius: var(--r-pill);
-      padding: 13px 28px;
-      line-height: 1.2;
-      cursor: pointer;
-      border: 1px solid transparent;
-      transition: all .25s cubic-bezier(0.165, 0.84, 0.44, 1);
-      white-space: nowrap;
-    }
-
-    .btn-dark {
-      background: var(--ink);
-      color: #FFFFFF;
-      border-color: var(--ink);
-      box-shadow: 0 4px 14px rgba(20, 19, 18, 0.12);
-    }
-
-    .btn-dark:hover {
-      background: #2D2A27;
-      border-color: #2D2A27;
-      color: #FFFFFF;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(20, 19, 18, 0.18);
-    }
-
-    .btn-accent {
-      background: var(--accent);
-      color: #FFFFFF;
-      border-color: var(--accent);
-      box-shadow: 0 4px 14px rgba(238, 90, 42, 0.25);
-    }
-
-    .btn-accent:hover {
-      background: var(--accent-dark);
-      border-color: var(--accent-dark);
-      color: #FFFFFF;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 22px rgba(238, 90, 42, 0.35);
-    }
-
-    .btn-outline {
-      background: #FFFFFF;
-      color: var(--ink);
-      border: 1px solid var(--line-strong);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .btn-outline:hover {
-      border-color: var(--ink);
-      background: #FFFFFF;
-      color: var(--ink);
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-card);
-    }
-
-    .btn-ghost {
-      background: transparent;
-      color: var(--ink-soft);
-      border: 1px solid var(--line);
-    }
-
-    .btn-ghost:hover {
-      background: #FFFFFF;
-      color: var(--ink);
-      border-color: var(--line-strong);
-      transform: translateY(-2px);
-    }
-
-    .btn .arw {
-      transition: transform .2s ease;
-      display: inline-block;
-    }
-
-    .btn:hover .arw {
-      transform: translateX(3px);
-    }
-
-    /* ================= HEADER / NAV ================= */
-    header.nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 72px;
-      z-index: 100;
-      background: rgba(247, 245, 240, 0.92);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--line);
-      transition: all 0.3s ease;
-    }
-
-    header.nav.scrolled {
-      background: rgba(255, 255, 255, 0.96);
-      box-shadow: 0 4px 20px rgba(20, 19, 18, 0.04);
-    }
-
-    .nav-inner {
-      max-width: var(--maxw);
-      margin: 0 auto;
-      padding: 0 28px;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .brand {
-      font-family: "Manrope", sans-serif;
-      font-weight: 800;
-      font-size: 21px;
-      letter-spacing: -.03em;
-      color: var(--ink);
-      display: flex;
-      align-items: center;
-      gap: 2px;
-    }
-
-    .brand .dot {
-      color: var(--accent);
-      font-size: 24px;
-      line-height: 0;
-      margin-left: 1px;
-    }
-
-    .nav-desktop {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-    }
-
-    @media (max-width: 980px) {
-      .nav-desktop {
-        display: none;
-      }
-    }
-
-    .nav-desktop a.lnk,
-    .nav-dropdown-btn {
-      font-size: 14.5px;
-      font-weight: 600;
-      color: var(--ink-soft);
-      position: relative;
-      padding: 4px 0;
-      transition: color .25s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .nav-desktop a.lnk::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--ink);
-      border-radius: 2px;
-      transition: width 0.28s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .nav-desktop a.lnk:hover::after,
-    .nav-desktop a.lnk.active::after {
-      width: 100%;
-    }
-
-    .nav-desktop a.lnk:hover,
-    .nav-dropdown-btn:hover,
-    .nav-dropdown:hover .nav-dropdown-btn,
-    .nav-dropdown.open .nav-dropdown-btn {
-      color: var(--ink);
-    }
-
-    /* Desktop Navigation Dropdown */
-    .nav-dropdown {
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-    }
-
-    .nav-dropdown-btn {
-      background: none;
-      border: none;
-      padding: 0;
-      font-family: inherit;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    .nav-arrow {
-      font-size: 9px;
-      transition: transform 0.2s ease;
-      display: inline-block;
-      opacity: 0.7;
-    }
-
-    .nav-dropdown:hover .nav-arrow,
-    .nav-dropdown.open .nav-arrow {
-      transform: rotate(180deg);
-    }
-
-    .nav-dropdown-menu {
-      position: absolute;
-      top: calc(100% + 14px);
-      left: -12px;
-      background: #FFFFFF;
-      border: 1px solid var(--line-strong);
-      border-radius: var(--r-md);
-      box-shadow: var(--shadow-hover);
-      padding: 8px;
-      min-width: 175px;
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(8px);
-      transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
-      z-index: 120;
-    }
-
-    .nav-dropdown-menu::before {
-      content: '';
-      position: absolute;
-      top: -14px;
-      left: 0;
-      right: 0;
-      height: 14px;
-    }
-
-    .nav-dropdown:hover .nav-dropdown-menu,
-    .nav-dropdown:focus-within .nav-dropdown-menu,
-    .nav-dropdown.open .nav-dropdown-menu {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-    }
-
-    .nav-dropdown-menu a {
-      padding: 8px 12px;
-      font-size: 13.5px;
-      font-weight: 600;
-      color: var(--ink-soft);
-      border-radius: var(--r-sm);
-      transition: background 0.15s ease, color 0.15s ease;
-      display: block;
-      text-decoration: none;
-    }
-
-    .nav-dropdown-menu a:hover {
-      background: var(--bg);
-      color: var(--ink);
-    }
-
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .btn-sm-desktop {
-      padding: 9px 20px;
-      font-size: 14px;
-    }
-
-    @media (max-width: 580px) {
-      .nav-actions .btn-dark {
-        display: none;
-      }
-    }
-
-    .nav-toggle {
-      display: none;
-      background: none;
-      border: none;
-      width: 36px;
-      height: 36px;
-      cursor: pointer;
-      padding: 0;
-    }
-
-    @media (max-width: 980px) {
-      .nav-toggle {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 5px;
-      }
-    }
-
-    .nav-toggle .line {
-      width: 20px;
-      height: 2px;
-      background: var(--ink);
-      transition: transform 0.3s ease, opacity 0.3s ease;
-      border-radius: 2px;
-    }
-
-    .nav-toggle.open .line-1 {
-      transform: translateY(7px) rotate(45deg);
-    }
-    .nav-toggle.open .line-2 {
-      opacity: 0;
-    }
-    .nav-toggle.open .line-3 {
-      transform: translateY(-7px) rotate(-45deg);
-    }
-
-    .mobile-drawer {
-      position: fixed;
-      top: 72px;
-      left: 0;
-      right: 0;
-      background: #FFFFFF;
-      border-bottom: 1px solid var(--line);
-      padding: 24px 28px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      opacity: 0;
-      transform: translateY(-12px);
-      pointer-events: none;
-      transition: all 0.3s ease;
-      z-index: 95;
-      box-shadow: 0 12px 36px rgba(20, 19, 18, 0.08);
-      max-height: calc(100vh - 72px);
-      overflow-y: auto;
-    }
-
-    .mobile-drawer.open {
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: auto;
-    }
-
-    .drawer-links {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .drawer-lnk {
-      font-size: 16.5px;
-      font-weight: 600;
-      color: var(--ink);
-      text-decoration: none;
-    }
-
-    /* Mobile Accordion */
-    .drawer-accordion {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .drawer-accordion-btn {
-      background: none;
-      border: none;
-      padding: 0;
-      font-family: inherit;
-      font-size: 16.5px;
-      font-weight: 700;
-      color: var(--ink);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      text-align: left;
-      width: 100%;
-    }
-
-    .drawer-accordion-btn .acc-chevron {
-      font-size: 11px;
-      transition: transform 0.25s ease;
-    }
-
-    .drawer-accordion.open .drawer-accordion-btn .acc-chevron {
-      transform: rotate(180deg);
-    }
-
-    .drawer-sub-links {
-      display: none;
-      flex-direction: column;
-      gap: 12px;
-      padding: 12px 0 4px 14px;
-      border-left: 2px solid var(--accent);
-      margin: 8px 0 4px 4px;
-    }
-
-    .drawer-accordion.open .drawer-sub-links {
-      display: flex;
-    }
-
-    .drawer-sub-lnk {
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--ink-soft);
-      text-decoration: none;
-    }
-
-    .drawer-sub-lnk:hover {
-      color: var(--ink);
-    }
-
-    /* ================= SECTION HEADINGS ================= */
-    .shead {
-      max-width: 780px;
-      margin-bottom: 48px;
-    }
-
-    .shead h2 {
-      font-size: clamp(28px, 3.8vw, 42px);
-      line-height: 1.15;
-      font-weight: 800;
-      margin-top: 12px;
-      letter-spacing: -0.03em;
-      color: var(--ink);
-    }
-
-    .shead .sub {
-      margin-top: 14px;
-      font-size: clamp(16px, 1.7vw, 18.5px);
-      line-height: 1.6;
-      color: var(--ink-soft);
-    }
-
-    .center {
-      margin-left: auto;
-      margin-right: auto;
-      text-align: center;
-    }
-
-    .center .badge-pill {
-      justify-content: center;
-    }
-
-    .center .sub {
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* ================= SECTION 1: HERO ================= */
-    .hero {
-      position: relative;
-      padding-top: clamp(48px, 6vw, 76px);
-      padding-bottom: clamp(56px, 7vw, 84px);
-      background-color: var(--bg);
-      background-image: radial-gradient(rgba(20, 19, 18, 0.065) 1px, transparent 1px);
-      background-size: 28px 28px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .hero > .wrap {
-      position: relative;
-      z-index: 1;
-      max-width: var(--maxw);
-    }
-
-    .hero-editorial-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: clamp(32px, 5vw, 64px);
-      align-items: center;
-      text-align: left;
-    }
-
-    @media (max-width: 900px) {
-      .hero-editorial-grid {
-        grid-template-columns: 1fr;
-        gap: 36px;
-      }
-    }
-
-    .hero-founder-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 6px 16px;
-      border-radius: var(--r-pill);
-      background: #FFFFFF;
-      border: 1px solid var(--line-strong);
-      box-shadow: var(--shadow-sm);
-      margin-bottom: 20px;
-    }
-
-    .hero-founder-badge .dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--emerald);
-    }
-
-    .hero-founder-text {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--ink);
-    }
-
-    .hero h1 {
-      font-size: clamp(34px, 4.3vw, 54px);
-      line-height: 1.1;
-      font-weight: 800;
-      letter-spacing: -0.035em;
-      color: var(--ink);
-      margin: 0 0 16px;
-    }
-
-    .hero-h1-kicker {
-      display: block;
-      font-family: "JetBrains Mono", monospace;
-      font-size: clamp(12px, 1.2vw, 13.5px);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--accent);
-      margin-bottom: 10px;
-      line-height: 1.2;
-    }
-
-    .hero-h1-title {
-      display: block;
-    }
-
-    .hero .role-sub {
-      font-family: "JetBrains Mono", monospace;
-      font-size: 13.5px;
-      font-weight: 600;
-      color: var(--ink-faint);
-      margin-bottom: 18px;
-      letter-spacing: 0.01em;
-    }
-
-    .hero .pitch {
-      font-size: clamp(16px, 1.6vw, 18px);
-      color: var(--ink-soft);
-      max-width: 56ch;
-      margin: 0 0 28px;
-      line-height: 1.65;
-    }
-
-    .hero-cta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-bottom: 8px;
-    }
-
-    /* Founder Portrait Card */
-    .hero-portrait-card {
-      background: #FFFFFF;
-      border: 1px solid var(--line-strong);
-      border-radius: var(--r-xl);
-      padding: 16px;
-      box-shadow: var(--shadow-card);
-      position: relative;
-    }
-
-    .hero-portrait-img-wrap {
-      position: relative;
-      border-radius: var(--r-lg);
-      overflow: hidden;
-      aspect-ratio: 4/3.8;
-      background: var(--bg-alt);
-    }
-
-    .hero-portrait-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 25%;
-      display: block;
-    }
-
-    .hero-portrait-meta {
-      padding: 16px 8px 6px;
-    }
-
-    .hero-portrait-name {
-      font-size: 18px;
-      font-weight: 800;
-      color: var(--ink);
-      letter-spacing: -0.02em;
-    }
-
-    .hero-portrait-title {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--ink-faint);
-      margin-top: 2px;
-    }
-
-    .hero-portrait-quote {
-      font-family: "Playfair Display", Georgia, serif;
-      font-style: italic;
-      font-size: 14px;
-      line-height: 1.5;
-      color: var(--ink-soft);
-      margin: 12px 0 14px;
-      padding-top: 12px;
-      border-top: 1px dashed var(--line);
-    }
-
-    .hero-portrait-badges {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .hero-portrait-pill {
-      font-family: "JetBrains Mono", monospace;
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--ink);
-      background: var(--bg);
-      border: 1px solid var(--line);
-      padding: 4px 10px;
-      border-radius: var(--r-pill);
-    }
-
-    /* Mellow Floating Stats Bar */
-    .hero-stats-bar {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-      margin-top: 56px;
-      background: #FFFFFF;
-      border: 1px solid var(--line);
-      border-radius: var(--r-xl);
-      padding: 24px 32px;
-      box-shadow: var(--shadow-card);
-    }
-
-    @media (max-width: 768px) {
-      .hero-stats-bar {
-        grid-template-columns: repeat(2, 1fr);
-        padding: 20px;
-        gap: 20px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .hero-stats-bar {
-        grid-template-columns: 1fr;
-        text-align: left;
-      }
-    }
-
-    .stat-item {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .stat-item .val {
-      font-family: "Manrope", sans-serif;
-      font-size: 26px;
-      font-weight: 800;
-      color: var(--ink);
-      letter-spacing: -0.03em;
-      line-height: 1.15;
-    }
-
-    .stat-item .val .sup {
-      color: var(--accent);
-      font-size: 18px;
-    }
-
-    .stat-item .lbl {
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--ink-faint);
-      margin-top: 4px;
-    }
-
-    /* ================= SECTION 2: TRUST STRIP ================= */
-    .trust-strip {
-      padding: 34px 0;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      background: var(--bg);
-    }
-
-    .trust-strip .lab {
-      font-size: 12px;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      color: var(--ink-faint);
-      text-align: center;
-      font-weight: 700;
-    }
-
-    .trust-strip .row {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      gap: 14px 38px;
-      margin-top: 16px;
-    }
-
-    .trust-strip .row span {
-      font-family: "Manrope", sans-serif;
-      font-weight: 700;
-      font-size: 14px;
-      color: var(--ink);
-      letter-spacing: -.01em;
-      opacity: 0.75;
-      transition: opacity .2s;
-    }
-
-    .trust-strip .row span:hover {
-      opacity: 1;
-    }
-
-    /* ================= SECTION 3: ABOUT NIHAR & CREUTO ================= */
-    .about-section {
-      background: #FFFFFF;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
-      gap: clamp(36px, 6vw, 64px);
-      align-items: center;
-    }
-
-    .about-media-wrapper {
-      order: 1;
-      position: relative;
-    }
-
-    .about-content {
-      order: 2;
-    }
-
-    @media (max-width: 880px) {
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
-      .about-content {
-        order: 1;
-      }
-      .about-media-wrapper {
-        order: 2;
-      }
-    }
-
-    .corporate-img {
-      filter: contrast(1.04) saturate(0.92) brightness(0.98);
-      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
-    }
-
-    .corporate-img:hover {
-      filter: contrast(1.06) saturate(0.98) brightness(1);
-    }
-
-    .about-img {
-      width: 100%;
-      border-radius: var(--r-xl);
-      object-fit: cover;
-      aspect-ratio: 4/5;
-      box-shadow: var(--shadow-card);
-      border: 1px solid var(--line);
-    }
-
-    .about-quote-card {
-      position: absolute;
-      bottom: -20px;
-      left: 20px;
-      right: 20px;
-      background: #FFFFFF;
-      border: 1px solid var(--line);
-      border-radius: var(--r-lg);
-      padding: 18px 22px;
-      box-shadow: var(--shadow-hover);
-    }
-
-    .about-quote-card .quote-text {
-      font-size: 14.5px;
-      font-weight: 600;
-      color: var(--ink);
-      line-height: 1.45;
-      margin: 0;
-    }
-
-    .about-quote-card .quote-bullets {
-      margin-top: 10px;
-      padding-top: 10px;
-      border-top: 1px solid var(--line);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 6px;
-      font-family: "JetBrains Mono", monospace;
-      font-size: 11.5px;
-      color: var(--ink-soft);
-    }
-
-    .about-quote-card .quote-bullets span {
-      color: var(--accent);
-      font-weight: 700;
-      margin-right: 4px;
-    }
-
-    .sig-block {
-      margin-top: 32px;
-      padding-top: 24px;
-      border-top: 1px solid var(--line);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-
-    .sig-name {
-      font-size: 17px;
-      font-weight: 700;
-      color: var(--ink);
-    }
-
-    .sig-role {
-      font-family: "JetBrains Mono", monospace;
-      font-size: 12px;
-      color: var(--ink-faint);
-      margin-top: 2px;
-    }
-
-    /* ================= SECTION 4: WHY WORK WITH US (ASYMMETRIC EDITORIAL SPLIT) ================= */
-    .why-section {
-      background-color: var(--bg);
-      background-image: linear-gradient(to right, rgba(20, 19, 18, 0.035) 1px, transparent 1px), linear-gradient(to bottom, rgba(20, 19, 18, 0.035) 1px, transparent 1px);
-      background-size: 36px 36px;
-      padding: clamp(64px, 8vw, 108px) 0;
-    }
-
-    .why-editorial-split {
-      display: grid;
-      grid-template-columns: 0.95fr 1.35fr;
-      gap: clamp(36px, 6vw, 72px);
-      align-items: flex-start;
-    }
-
-    @media (max-width: 960px) {
-      .why-editorial-split {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-    }
-
-    .why-editorial-left {
-      position: sticky;
-      top: 100px;
-    }
-
-    @media (max-width: 960px) {
-      .why-editorial-left {
-        position: static;
-      }
-    }
-
-    .why-editorial-title {
-      font-size: clamp(30px, 3.8vw, 44px);
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      line-height: 1.18;
-      margin: 16px 0 18px;
-      color: var(--ink);
-    }
-
-    .why-editorial-sub {
-      font-size: 16.5px;
-      line-height: 1.62;
-      color: var(--ink-soft);
-      margin: 0 0 28px;
-    }
-
-    .why-philosophy-card {
-      background: #FFFFFF;
-      border: 1px solid var(--line-strong);
-      border-left: 4px solid var(--accent);
-      border-radius: var(--r-lg);
-      padding: 24px;
-      box-shadow: var(--shadow-sm);
-      margin-bottom: 24px;
-    }
-
-    .why-philosophy-lead {
-      font-size: 14.5px;
-      line-height: 1.65;
-      color: var(--ink-soft);
-      margin: 0 0 16px;
-    }
-
-    .why-philosophy-quote {
-      font-family: "Playfair Display", Georgia, serif;
-      font-style: italic;
-      font-size: 14.5px;
-      color: var(--ink);
-      line-height: 1.55;
-      padding: 12px 14px;
-      background: var(--bg);
-      border-radius: var(--r-md);
-      margin-bottom: 16px;
-    }
-
-    .why-commitment {
-      border-top: 1px dashed var(--line);
-      padding-top: 14px;
-    }
-
-    .why-commitment-tag {
-      font-family: "JetBrains Mono", monospace;
-      font-size: 10.5px;
-      font-weight: 700;
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      display: block;
-      margin-bottom: 4px;
-    }
-
-    .why-commitment p {
-      font-size: 13px;
-      color: var(--ink);
-      font-weight: 600;
-      line-height: 1.45;
-      margin: 0;
-    }
-
-    .credential-chips-left {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    /* Right column: Vertical divider-separated list */
-    .why-points-list {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .why-point-item {
-      display: flex;
-      gap: clamp(16px, 3vw, 28px);
-      align-items: flex-start;
-      padding: clamp(24px, 3.5vw, 36px) 0;
-      border-bottom: 1px solid var(--line);
-      transition: background 0.2s ease;
-    }
-
-    .why-point-item:first-child {
-      padding-top: 0;
-    }
-
-    .why-point-item:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
-
-    .why-ghost-num {
-      font-family: "JetBrains Mono", monospace;
-      font-size: clamp(44px, 4.5vw, 64px);
-      font-weight: 800;
-      line-height: 0.95;
-      color: transparent;
-      -webkit-text-stroke: 1.5px rgba(20, 19, 18, 0.22);
-      flex-shrink: 0;
-      min-width: 68px;
-      letter-spacing: -0.04em;
-      user-select: none;
-      transition: all 0.3s ease;
-      margin-top: 4px;
-    }
-
-    .why-point-item:hover .why-ghost-num {
-      -webkit-text-stroke-color: var(--accent);
-      color: var(--accent-tint);
-      transform: translateX(3px);
-    }
-
-    .why-point-content {
-      flex: 1;
-    }
-
-    .why-point-tag {
-      font-family: "JetBrains Mono", monospace;
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--accent);
-      background: var(--accent-tint);
-      border: 1px solid var(--accent-border);
-      padding: 3px 9px;
-      border-radius: var(--r-pill);
-      display: inline-block;
-      margin-bottom: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .why-point-content h3 {
-      font-size: clamp(19px, 2vw, 22px);
-      font-weight: 800;
-      color: var(--ink);
-      line-height: 1.3;
-      margin: 0 0 10px;
-      letter-spacing: -0.015em;
-    }
-
-    .why-point-content p {
-      font-size: 15px;
-      color: var(--ink-soft);
-      line-height: 1.65;
-      margin: 0;
-    }
-
-    .credential-chips {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 40px;
-    }
-
-    .chip {
-      font-family: "JetBrains Mono", monospace;
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--ink-soft);
-      background: rgba(20, 19, 18, 0.04);
-      border: 1px solid var(--line);
-      padding: 7px 16px;
-      border-radius: var(--r-pill);
-    }
-
-    .chip .dot-sym {
-      color: var(--accent);
-      margin-right: 6px;
-      font-weight: 700;
-    }
-
-    /* ================= SECTION 5: CAPABILITIES & EXECUTION (BENTO-GRID) ================= */
-    .caps-header-split {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 32px;
-      margin-bottom: 32px;
-      flex-wrap: wrap;
-    }
-    .caps-header-split .sub {
-      max-width: 48ch;
-      margin: 0;
-    }
-
-    .tabs-wrapper {
-      background: #FFFFFF;
-      border: 1px solid var(--line);
-      border-radius: var(--r-xl);
-      padding: clamp(24px, 4vw, 40px);
-      box-shadow: var(--shadow-card);
-    }
-
-    .tabs-nav {
-      display: flex;
-      gap: 12px;
-      border-bottom: 1px solid var(--line);
-      padding-bottom: 18px;
-      margin-bottom: 32px;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    .tab-btn {
-      font-family: "JetBrains Mono", monospace;
-      font-size: 13.5px;
-      font-weight: 600;
-      padding: 10px 20px;
-      border-radius: var(--r-pill);
-      border: 1px solid var(--line);
-      background: var(--bg);
-      color: var(--ink-soft);
-      cursor: pointer;
-      white-space: nowrap;
-      transition: all 0.25s ease;
-    }
-
-    .tab-btn:hover {
-      background: #FFFFFF;
-      color: var(--ink);
-      border-color: var(--line-strong);
-    }
-
-    .tab-btn[aria-selected="true"] {
-      background: var(--ink);
-      color: #FFFFFF;
-      border-color: var(--ink);
-      box-shadow: 0 4px 12px rgba(20, 19, 18, 0.15);
-    }
-
-    .tab-panel {
-      display: none;
-    }
-
-    .tab-panel.active {
-      display: block;
-      animation: fadeIn .3s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(6px); }
-      to { opacity: 1; transform: none; }
-    }
-
-    /* Bento Grid for Capabilities */
-    .bento-caps-layout {
-      display: grid;
-      grid-template-columns: 1.42fr 1fr;
-      gap: 24px;
-      align-items: stretch;
-    }
-
-    @media (max-width: 960px) {
-      .bento-caps-layout {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .bento-panel {
-      background: #FFFFFF;
-      border: 1px solid var(--line-strong);
-      border-radius: var(--r-xl);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      box-shadow: var(--shadow-sm);
-      transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease, border-color 0.28s ease;
-    }
-
-    .bento-panel:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-hover);
-      border-color: var(--ink);
-    }
-
-    .bento-featured {
-      border-top: 4px solid var(--accent);
-      justify-content: space-between;
-    }
-
-    .bento-media-hero {
-      width: 100%;
-      height: 220px;
-      overflow: hidden;
-      position: relative;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .bento-media-hero .corporate-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-
-    .bento-featured:hover .bento-media-hero .corporate-img {
-      transform: scale(1.03);
-    }
-
-    .bento-badge {
-      position: absolute;
-      top: 14px;
-      left: 14px;
-      background: rgba(15, 23, 42, 0.88);
-      backdrop-filter: blur(8px);
-      color: #FFFFFF;
-      font-family: "JetBrains Mono", monospace;
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      padding: 5px 12px;
-      border-radius: var(--r-pill);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    .bento-content {
-      padding: clamp(24px, 3.5vw, 36px);
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-      justify-content: space-between;
-    }
-
-    .bento-kicker {
-      font-family: "JetBrains Mono", monospace;
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      display: inline-block;
-      margin-bottom: 8px;
-    }
-
-    .bento-content h3 {
-      font-size: clamp(22px, 2.5vw, 28px);
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      color: var(--ink);
-      margin: 0 0 12px;
-    }
-
-    .bento-desc {
-      font-size: 15px;
-      line-height: 1.65;
-      color: var(--ink-soft);
-      margin: 0 0 20px;
-    }
-
-    .bento-quote {
-      font-family: "Playfair Display", Georgia, serif;
-      font-style: italic;
-      font-size: 14.5px;
-      color: var(--ink);
-      padding: 14px 18px;
-      background: var(--bg);
-      border-radius: var(--r-md);
-      border-left: 3px solid var(--ink);
-      margin-bottom: 22px;
-      line-height: 1.5;
-    }
-
-    .bento-bullets {
-      list-style: none;
-      padding: 18px 0 0;
-      margin: 0;
-      border-top: 1px dashed var(--line);
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .bento-bullets li {
-      font-size: 14.5px;
-      color: var(--ink);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .bento-bullets li::before {
-      content: "→";
-      color: var(--accent);
-      font-weight: 700;
-      font-family: "JetBrains Mono", monospace;
-    }
-
-    /* Secondary column with 2 stacked bento cards */
-    .bento-secondary-col {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
-
-    .bento-compact {
-      flex: 1;
-    }
-
-    .bento-compact-media {
-      width: 100%;
-      height: 120px;
-      overflow: hidden;
-      position: relative;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .bento-compact-media .corporate-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-
-    .bento-compact:hover .bento-compact-media .corporate-img {
-      transform: scale(1.03);
-    }
-
-    .bento-compact-body {
-      padding: 22px 24px;
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-      justify-content: space-between;
-    }
-
-    .bento-compact-body h3 {
-      font-size: 19px;
-      font-weight: 800;
-      color: var(--ink);
-      margin: 0 0 8px;
-    }
-
-    .bento-bullets-compact {
-      list-style: none;
-      padding: 12px 0 0;
-      margin: auto 0 0;
-      border-top: 1px dashed var(--line);
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
-    }
-
-    .bento-bullets-compact li {
-      font-size: 13.5px;
-      color: var(--ink);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .bento-bullets-compact li::before {
-      content: "→";
-      color: var(--accent);
-      font-weight: 700;
-      font-family: "JetBrains Mono", monospace;
-    }
-
-    /* Execution Playbook Steps */
-    .playbook-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-    }
-
-    @media (max-width: 880px) {
-      .playbook-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 520px) {
-      .playbook-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .playbook-step {
-      background: var(--bg);
-      border: 1px solid var(--line);
-      border-radius: var(--r-lg);
-      padding: 24px;
-    }
-
-    .playbook-step .sn {
-      width: 36px;
-      height: 36px;
-      border-radius: var(--r-pill);
-      background: var(--ink);
-      color: #FFFFFF;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: "JetBrains Mono", monospace;
-      font-size: 13px;
-      font-weight: 700;
-      margin-bottom: 16px;
-    }
-
-    .playbook-step h3 {
-      font-size: 17px;
-      font-weight: 700;
-      color: var(--ink);
-      margin-bottom: 8px;
-    }
-
-    .playbook-step p {
-      font-size: 14px;
-      color: var(--ink-soft);
-      line-height: 1.55;
-    }
-
-    /* Partnership Models Grid */
-    .models-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    @media (max-width: 960px) {
-      .models-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .model-box {
-      background: var(--bg);
-      border: 1px solid var(--line);
-      border-radius: var(--r-lg);
-      padding: 30px;
-      display: flex;
-      flex-direction: column;
-      position: relative;
-    }
-
-    .model-box.featured {
-      background: #FFFFFF;
-      border: 2px solid var(--ink);
-      box-shadow: var(--shadow-hover);
-    }
-
-    .model-box .tag-badge {
-      font-family: "JetBrains Mono", monospace;
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      padding: 4px 10px;
-      border-radius: var(--r-pill);
-      align-self: flex-start;
-      margin-bottom: 14px;
-      background: #FFFFFF;
-      border: 1px solid var(--line-strong);
-      color: var(--ink);
-    }
-
-    .model-box.featured .tag-badge {
-      background: var(--accent);
-      color: #FFFFFF;
-      border-color: var(--accent);
-    }
-
-    .model-box h3 {
-      font-size: 20px;
-      font-weight: 700;
-      color: var(--ink);
-      margin-bottom: 8px;
-    }
-
-    .model-box .for-who {
-      font-size: 14px;
-      color: var(--ink-faint);
-      margin-bottom: 20px;
-      min-height: 42px;
-    }
-
-    .model-box ul {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 28px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .model-box ul li {
-      font-size: 14.5px;
-      color: var(--ink);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .model-box ul li::before {
-      content: "✓";
-      color: var(--emerald);
-      font-weight: 800;
-    }
-
-    .model-box .foot {
-      margin-top: auto;
-    }
-
-    .model-box .foot .btn {
-      width: 100%;
-      justify-content: center;
-    }
-
-    /* ================= SECTION 5.5: TECHNOLOGIES WE WORK WITH (FULL CORPORATE DARK) ================= */
-    .tech-section {
-      padding: clamp(68px, 9vw, 110px) 0;
-      background-color: #0b0c10;
-      color: #FFFFFF;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      position: relative;
-      background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
-      background-size: 28px 28px;
-    }
-
-    .tech-header-split {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 32px;
-      margin-bottom: 40px;
-      flex-wrap: wrap;
-    }
-
-    .tech-header-sub {
-      color: rgba(255, 255, 255, 0.68);
-      font-size: 16px;
-      max-width: 48ch;
-      line-height: 1.6;
-      margin: 0;
-    }
-
-    .dark-pill {
-      background: rgba(255, 255, 255, 0.08) !important;
-      border-color: rgba(255, 255, 255, 0.18) !important;
-      color: #FFFFFF !important;
-    }
-
-    .tech-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-      margin-top: 0;
-    }
-
-    @media (max-width: 768px) {
-      .tech-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .tech-card {
-      background: #14161f;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: var(--r-lg);
-      padding: 28px;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease, border-color 0.28s ease;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-    }
-
-    .tech-card:hover {
-      border-color: rgba(56, 189, 248, 0.4);
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 24px rgba(14, 116, 144, 0.15);
-      transform: translateY(-3px);
-    }
-
-    .tech-card.highlight {
-      border-color: rgba(168, 85, 247, 0.35);
-      background: linear-gradient(180deg, #191b2c 0%, #14161f 100%);
-    }
-
-    .tech-card.highlight:hover {
-      border-color: rgba(192, 132, 252, 0.6);
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 24px rgba(168, 85, 247, 0.18);
-    }
-
-    .tech-card-head {
-      margin-bottom: 18px;
-      padding-bottom: 16px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .tech-cat-badge {
-      font-family: "JetBrains Mono", monospace;
-      font-size: 11px;
-      font-weight: 700;
-      color: #38BDF8;
-      background: rgba(14, 116, 144, 0.2);
-      border: 1px solid rgba(56, 189, 248, 0.25);
-      padding: 4px 10px;
-      border-radius: var(--r-pill);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      margin-bottom: 10px;
-    }
-
-    .tech-card h3 {
-      font-size: 22px;
-      font-weight: 800;
-      color: #FFFFFF;
-      margin: 0 0 6px;
-      letter-spacing: -0.02em;
-    }
-
-    .tech-card-desc {
-      font-size: 14px;
-      color: rgba(255, 255, 255, 0.68);
-      line-height: 1.55;
-      margin: 0;
-    }
-
-    .tech-pills-list {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .tech-pill {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 9px 14px;
-      border-radius: 10px;
-      background: #1b1e2b;
-      border: 1px solid rgba(255, 255, 255, 0.07);
-      transition: all 0.2s ease;
-    }
-
-    .tech-pill:hover {
-      background: #242838;
-      border-color: rgba(255, 255, 255, 0.2);
-      transform: translateX(2px);
-    }
-
-    .tech-icon-box {
-      width: 32px;
-      height: 32px;
-      border-radius: 8px;
-      background: #222638;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      color: #E2E8F0;
-    }
-
-    .tech-pill:hover .tech-icon-box {
-      border-color: #38BDF8;
-      color: #38BDF8;
-    }
-
-    .tech-pill-name {
-      font-size: 14px;
-      font-weight: 600;
-      color: #F1F5F9;
-    }
-
-    .tech-cta-box {
-      background: #14161f;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      color: #FFFFFF;
-      border-radius: var(--r-xl);
-      padding: 36px 40px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 28px;
-      margin-top: 36px;
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
-    }
-
-    @media (max-width: 800px) {
-      .tech-cta-box {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 28px;
-      }
-    }
-
-
-    /* ================= SECTION 6: WORK & CASE STUDIES ================= */
-    .work-section {
-      padding: clamp(64px, 8vw, 100px) 0;
-      position: relative;
-    }
-
-    .work-header-split {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 32px;
-      margin-bottom: 28px;
-      flex-wrap: wrap;
-    }
-
-    .work-header-split .sub {
-      max-width: 46ch;
-      margin: 0;
-    }
-
-    .work-filters {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: flex-start;
-      gap: 10px;
-      margin: 0 0 36px;
-      max-width: 100%;
-    }
-
-    .work-filter-btn {
-      appearance: none;
-      border: 1px solid var(--line-strong);
-      background: var(--surface);
-      color: var(--ink-soft);
-      font-family: "JetBrains Mono", monospace;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      padding: 8px 18px;
-      border-radius: var(--r-pill);
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-      user-select: none;
-    }
-
-    .work-filter-btn .count {
-      font-size: 10.5px;
-      opacity: 0.65;
-      font-weight: 500;
-    }
-
-    .work-filter-btn:hover {
-      border-color: var(--ink);
-      color: var(--ink);
-      background: var(--surface);
-      transform: translateY(-1px);
-    }
-
-    .work-filter-btn.active {
-      background: var(--ink);
-      color: #FFFFFF;
-      border-color: var(--ink);
-      box-shadow: 0 4px 14px rgba(20, 19, 18, 0.16);
-    }
-
-    .work-filter-btn.active .count {
-      opacity: 0.85;
-      color: var(--lime);
-    }
-
-    .work-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 32px;
-      transition: opacity 0.25s ease;
-    }
-
-    @media (max-width: 860px) {
-      .work-grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
-      .work-filters {
-        justify-content: flex-start;
-        overflow-x: auto;
-        padding-bottom: 8px;
-        -webkit-overflow-scrolling: touch;
-        flex-wrap: nowrap;
-      }
-      .work-filter-btn {
-        flex-shrink: 0;
-      }
-    }
-
-    .work-card {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: var(--r-xl);
-      overflow: hidden;
-      box-shadow: var(--shadow-card);
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.2s ease, opacity 0.3s ease;
-      position: relative;
-    }
-
-    .work-card:hover {
-      transform: translateY(-6px);
-      border-color: var(--line-strong);
-      box-shadow: var(--shadow-hover);
-    }
-
-    .work-media {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 16 / 10;
-      background: var(--bg-alt);
-      overflow: hidden;
-      cursor: pointer;
-    }
-
-    .work-thumb {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .work-card:hover .work-thumb {
-      transform: scale(1.03);
-    }
-
-    .work-video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
-    }
-
-    .work-card.has-video.video-playing .work-video {
-      opacity: 1;
-    }
-
-    .work-media-badge {
-      position: absolute;
-      top: 14px;
-      right: 14px;
-      background: rgba(20, 19, 18, 0.75);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      color: #FFFFFF;
-      font-family: "JetBrains Mono", monospace;
-      font-size: 10px;
-      font-weight: 600;
-      padding: 4px 10px;
-      border-radius: var(--r-pill);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      pointer-events: none;
-      z-index: 2;
-    }
-
-    .work-media-badge .pulse-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--lime);
-    }
-
-    .work-body {
-      padding: clamp(22px, 3vw, 28px);
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-    }
-
-    .work-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 12px;
-    }
-
-    .work-tag {
-      font-family: "JetBrains Mono", monospace;
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--ink);
-      background: var(--bg);
-      border: 1px solid var(--line-strong);
-      padding: 3px 9px;
-      border-radius: var(--r-pill);
-    }
-
-    .work-title-wrap {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 4px;
-    }
-
-    .work-title {
-      font-size: clamp(19px, 2vw, 22px);
-      font-weight: 800;
-      color: var(--ink);
-      line-height: 1.25;
-      letter-spacing: -0.02em;
-      margin: 0;
-    }
-
-    .work-arrow {
-      flex-shrink: 0;
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: var(--bg);
-      border: 1px solid var(--line);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--ink);
-      font-size: 13px;
-      transition: all 0.25s ease;
-      margin-top: 2px;
-    }
-
-    .work-card:hover .work-arrow {
-      background: var(--ink);
-      color: #FFFFFF;
-      transform: translate(2px, -2px);
-    }
-
-    .work-client {
-      font-family: "JetBrains Mono", monospace;
-      font-size: 11.5px;
-      color: var(--ink-faint);
-      margin-bottom: 12px;
-    }
-
-    .work-desc {
-      font-size: 14.5px;
-      line-height: 1.55;
-      color: var(--ink-soft);
-      margin: 0 0 16px;
-    }
-
-    .work-metric {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--emerald);
-      background: var(--emerald-tint);
-      border: 1px solid var(--emerald-border);
-      padding: 8px 12px;
-      border-radius: var(--r-md);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-top: auto;
-      margin-bottom: 14px;
-    }
-
-    .work-metric .tick {
-      font-weight: 900;
-      font-size: 14px;
-    }
-
-    .work-expand-btn {
-      appearance: none;
-      background: transparent;
-      border: none;
-      border-top: 1px solid var(--line);
-      padding: 12px 0 0;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--ink);
-      cursor: pointer;
-      transition: color 0.2s ease;
-    }
-
-    .work-expand-btn:hover {
-      color: var(--accent);
-    }
-
-    .work-expand-btn .chevron {
-      font-size: 12px;
-      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-      display: inline-block;
-    }
-
-    .work-card.is-expanded .work-expand-btn .chevron {
-      transform: rotate(180deg);
-    }
-
-    .work-details {
-      max-height: 0;
-      overflow: hidden;
-      opacity: 0;
-      transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
-    }
-
-    .work-card.is-expanded .work-details {
-      max-height: 480px;
-      opacity: 1;
-    }
-
-    .work-details-inner {
-      padding-top: 14px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .work-detail-block {
-      background: var(--bg);
-      border: 1px solid var(--line);
-      border-radius: var(--r-md);
-      padding: 12px 14px;
-      font-size: 13.5px;
-      line-height: 1.55;
-    }
-
-    .work-detail-block strong {
-      display: block;
-      font-size: 11px;
-      font-family: "JetBrains Mono", monospace;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      color: var(--ink);
-      margin-bottom: 4px;
-    }
-
-    .work-detail-block p {
-      margin: 0;
-      color: var(--ink-soft);
-    }
-
-    /* ================= SECTION 7: TESTIMONIALS (SPOTLIGHT STAGE) ================= */
-    .reviews-section {
-      background-color: #FAF8F5;
-      color: var(--ink);
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      position: relative;
-      padding: clamp(68px, 9vw, 110px) 0;
-      background-image: radial-gradient(rgba(20, 19, 18, 0.035) 1px, transparent 1px);
-      background-size: 24px 24px;
-    }
-
-    .reviews-header-split {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 28px;
-      margin-bottom: 40px;
-      flex-wrap: wrap;
-    }
-
-    .reviews-header-split h2 {
-      font-size: clamp(28px, 3.6vw, 42px);
-      font-weight: 800;
-      letter-spacing: -0.025em;
-      color: var(--ink);
-      margin: 12px 0 0;
-      max-width: 24ch;
-      line-height: 1.2;
-    }
-
-    .reviews-header-rating {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 6px;
-    }
-
-    .stars-gold {
-      color: #F59E0B;
-      font-size: 18px;
-      letter-spacing: 2px;
-    }
-
-    .clutch-tag {
-      font-family: "JetBrains Mono", monospace;
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--ink-soft);
-    }
-
-    /* Single Large Spotlight Card */
-    .testi-spotlight-wrapper {
-      position: relative;
-      margin-bottom: 36px;
-    }
-
-    .testi-spotlight-card {
-      background: #FFFFFF;
-      border: 1px solid var(--line-strong);
-      border-radius: var(--r-2xl);
-      padding: clamp(32px, 5vw, 56px);
-      box-shadow: 0 20px 48px -12px rgba(15, 23, 42, 0.08);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .testi-spotlight-card::before {
-      content: "“";
-      position: absolute;
-      top: -16px;
-      right: 32px;
-      font-family: "Playfair Display", Georgia, serif;
-      font-size: 140px;
-      line-height: 1;
-      color: rgba(20, 19, 18, 0.05);
-      user-select: none;
-      pointer-events: none;
-    }
-
-    .testi-slide {
-      display: none;
-      opacity: 0;
-      transition: opacity 0.35s ease, transform 0.35s ease;
-      transform: translateY(8px);
-    }
-
-    .testi-slide.active {
-      display: flex;
-      flex-direction: column;
-      gap: 28px;
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .testi-quote-large {
-      font-family: "Playfair Display", Georgia, serif;
-      font-size: clamp(20px, 2.4vw, 30px);
-      line-height: 1.48;
-      color: var(--ink);
-      font-style: italic;
-      margin: 0;
-      font-weight: 450;
-      max-width: 40ch;
-    }
-
-    .testi-spotlight-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-top: 1px solid var(--line);
-      padding-top: 24px;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .testi-author-lockup {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .testi-author-avatar {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid #FFFFFF;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      flex-shrink: 0;
-    }
-
-    .testi-author-meta strong {
-      font-size: 16.5px;
-      font-weight: 800;
-      color: var(--ink);
-      display: block;
-      margin-bottom: 3px;
-    }
-
-    .testi-author-meta span {
-      font-size: 13.5px;
-      color: var(--ink-soft);
-      display: block;
-    }
-
-    .testi-controls {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .testi-nav-btn {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: var(--bg);
-      border: 1px solid var(--line-strong);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--ink);
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    .testi-nav-btn:hover {
-      background: var(--ink);
-      color: #FFFFFF;
-      border-color: var(--ink);
-      transform: scale(1.05);
-    }
-
-    .testi-dots {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .testi-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--line-strong);
-      border: none;
-      cursor: pointer;
-      padding: 0;
-      transition: all 0.25s ease;
-    }
-
-    .testi-dot.active {
-      width: 28px;
-      border-radius: 6px;
-      background: var(--ink);
-    }
-
-    .testi-badge-light {
-      font-family: "JetBrains Mono", monospace;
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--emerald);
-      background: var(--emerald-tint);
-      border: 1px solid var(--emerald-border);
-      padding: 3px 9px;
-      border-radius: var(--r-pill);
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      margin-bottom: 12px;
-    }
-
-    .testi-case-link {
-      font-family: "JetBrains Mono", monospace;
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--accent);
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      padding: 6px 12px;
-      background: var(--bg);
-      border: 1px solid var(--line-strong);
-      border-radius: var(--r-sm);
-      transition: all 0.2s ease;
-    }
-
-    .testi-case-link:hover {
-      background: var(--accent);
-      color: #FFFFFF;
-      border-color: var(--accent);
-    }
-
-    .reviews-container {
-      background: var(--bg);
-      border: 1px solid var(--line);
-      border-radius: var(--r-xl);
-      padding: clamp(24px, 4vw, 36px);
-      min-height: 280px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .clutch-widget {
-      width: 100% !important;
-      margin: 0 auto;
-    }
-
-
-    /* ================= SECTION 8: FOUNDER SUITE ================= */
-    .suite-section {
-      background: var(--bg);
-    }
-
-    .suite-box {
-      background: #FFFFFF;
-      border: 1px solid var(--line);
-      border-radius: var(--r-xl);
-      padding: clamp(32px, 5vw, 56px);
-      box-shadow: var(--shadow-card);
-    }
-
-    .suite-grid {
-      display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
-      gap: clamp(32px, 5vw, 60px);
-      align-items: start;
-      margin-top: 36px;
-    }
-
-    @media (max-width: 880px) {
-      .suite-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .suite-perks {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
-
-    .perk-item {
-      display: flex;
-      gap: 14px;
-      align-items: flex-start;
-      font-size: 15px;
-      color: var(--ink-soft);
-    }
-
-    .perk-item .ck {
-      flex: none;
-      width: 26px;
-      height: 26px;
-      border-radius: 6px;
-      background: var(--bg);
-      color: var(--accent);
-      border: 1px solid var(--line-strong);
-      display: grid;
-      place-items: center;
-      font-family: "JetBrains Mono", monospace;
-      font-size: 11px;
-      font-weight: 700;
-    }
-
-    .suite-form-card {
-      background: var(--bg);
-      border: 1px solid var(--line);
-      border-radius: var(--r-lg);
-      padding: clamp(24px, 3vw, 36px);
-    }
-
-    .form-group {
-      margin-bottom: 16px;
-    }
-
-    .form-group label {
-      display: block;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--ink);
-      margin-bottom: 7px;
-      font-family: "JetBrains Mono", monospace;
-      letter-spacing: 0.01em;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%;
-      background: #FFFFFF;
-      border: 1px solid var(--line-strong);
-      border-radius: 10px;
-      padding: 13px 16px;
-      color: var(--ink);
-      font-family: inherit;
-      font-size: 15px;
-      transition: all 0.25s ease;
-    }
-
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: var(--ink);
-      box-shadow: 0 0 0 3px rgba(20, 19, 18, 0.08);
-    }
-
-    .row-2col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
-
-    @media (max-width: 520px) {
-      .row-2col {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* Honeypot field (hidden from real users, traps spam bots) */
-    .hp-field {
-      display: none !important;
-      visibility: hidden !important;
-      opacity: 0 !important;
-      position: absolute !important;
-      left: -9999px !important;
-    }
-
-    /* ================= SECTION 9: WRITING & INSIGHTS ================= */
-    .writing-header-split {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 32px;
-      margin-bottom: 36px;
-      flex-wrap: wrap;
-    }
-
-    .writing-header-split .sub {
-      max-width: 44ch;
-      margin: 0 0 10px;
-    }
-
-    .articles-grid {
-      display: grid;
-      grid-template-columns: 1.28fr 1fr 1fr;
-      gap: 24px;
-    }
-
-    @media (max-width: 960px) {
-      .articles-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .article-card {
-      background: #FFFFFF;
-      border: 1px solid var(--line);
-      border-radius: var(--r-xl);
-      padding: 30px;
-      display: flex;
-      flex-direction: column;
-      box-shadow: var(--shadow-card);
-      transition: all 0.3s ease;
-    }
-
-    .article-card:hover {
-      border-color: var(--line-strong);
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-hover);
-    }
-
-    .article-card .tag {
-      font-family: "JetBrains Mono", monospace;
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      margin-bottom: 12px;
-    }
-
-    .article-card h3 {
-      font-size: 19px;
-      font-weight: 700;
-      color: var(--ink);
-      line-height: 1.35;
-      margin-bottom: 10px;
-    }
-
-    .article-card p {
-      font-size: 14.5px;
-      color: var(--ink-soft);
-      line-height: 1.6;
-    }
-
-    .article-card .lnk-arw {
-      font-size: 13.5px;
-      font-weight: 700;
-      color: var(--ink);
-      margin-top: 16px;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    /* ================= SECTION 10: FAQ ================= */
-    .faq-grid {
-      display: grid;
-      grid-template-columns: 0.85fr 1.15fr;
-      gap: clamp(32px, 5vw, 64px);
-      align-items: start;
-    }
-
-    @media (max-width: 820px) {
-      .faq-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    details.q {
-      background: transparent;
-      border: none;
-      border-bottom: 1px solid var(--line);
-      padding: 8px 0;
-      transition: all 0.2s ease;
-    }
-
-    details.q summary {
-      list-style: none;
-      cursor: pointer;
-      padding: 16px 0;
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      align-items: center;
-      font-size: 17px;
-      font-weight: 700;
-      color: var(--ink);
-    }
-
-    details.q summary::-webkit-details-marker {
-      display: none;
-    }
-
-    details.q summary::after {
-      content: "+";
-      font-family: "Manrope", sans-serif;
-      font-size: 22px;
-      font-weight: 400;
-      color: var(--ink-faint);
-      transition: transform 0.2s ease;
-    }
-
-    details.q[open] summary::after {
-      content: "−";
-      color: var(--ink);
-    }
-
-    details.q .ans {
-      padding: 0 0 18px 0;
-      color: var(--ink-soft);
-      font-size: 15.5px;
-      line-height: 1.65;
-    }
-
-    /* ================= SECTION 11: CONTACT ================= */
-    .contact-section {
-      background: var(--bg);
-      border-top: 1px solid var(--line);
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: clamp(32px, 5vw, 64px);
-      align-items: start;
-    }
-
-    @media (max-width: 880px) {
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .cform-card {
-      background: #FFFFFF;
-      border: 1px solid var(--line);
-      border-radius: var(--r-xl);
-      padding: clamp(28px, 4vw, 40px);
-      box-shadow: var(--shadow-card);
-    }
-
-    /* ================= FOOTER ================= */
-    footer.ft {
-      background: #FFFFFF;
-      border-top: 1px solid var(--line);
-      padding: 64px 0 36px;
-    }
-
-    .ft-grid {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr 1fr;
-      gap: 36px;
-    }
-
-    @media (max-width: 840px) {
-      .ft-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 28px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .ft-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .ft-brand {
-      font-family: "Manrope", sans-serif;
-      font-weight: 800;
-      font-size: 24px;
-      letter-spacing: -.03em;
-      color: var(--ink);
-    }
-
-    .ft-brand .dot {
-      color: var(--accent);
-    }
-
-    .ft-desc {
-      color: var(--ink-soft);
-      font-size: 14.5px;
-      margin-top: 12px;
-      max-width: 36ch;
-      line-height: 1.6;
-    }
-
-    .ft h4 {
-      font-family: "JetBrains Mono", monospace;
-      font-size: 12px;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      color: var(--ink);
-      font-weight: 700;
-      margin: 0 0 16px;
-    }
-
-    .ft-links {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .ft-links a {
-      color: var(--ink-soft);
-      text-decoration: none;
-      font-size: 14.5px;
-      font-weight: 500;
-      transition: color .2s;
-    }
-
-    .ft-links a:hover {
-      color: var(--ink);
-    }
-
-    .ft-bottom {
-      margin-top: 48px;
-      padding-top: 24px;
-      border-top: 1px solid var(--line);
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 12px;
-      align-items: center;
-      font-size: 13px;
-      color: var(--ink-faint);
-    }
-
-    /* Scroll Reveal Animations */
+    /* Smooth Scroll & Content Reveal */
     .rv {
       opacity: 0;
-      transform: translateY(14px);
-      transition: opacity .45s cubic-bezier(.165, .84, .44, 1), transform .45s cubic-bezier(.165, .84, .44, 1);
+      transform: translateY(16px);
+      transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     }
-
     .rv.in {
       opacity: 1;
       transform: none;
     }
-
     @media (prefers-reduced-motion: reduce) {
       .rv {
         opacity: 1;
@@ -2916,115 +89,100 @@
   </style>
 </head>
 
-<body>
-  <!-- ================= HEADER / NAV ================= -->
-  <header class="nav" id="nav">
-    <div class="nav-inner">
-      <a href="#top" class="brand">nihar<span class="dot">.</span></a>
+<body data-cl-brand="hubspot-2025">
 
-      <div class="nav-desktop">
-        <div class="nav-dropdown" id="companyDropdown">
-          <button type="button" class="nav-dropdown-btn" id="companyDropdownBtn" aria-expanded="false" aria-haspopup="true">
-            Company
-            <svg class="nav-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1l4 4 4-4"/></svg>
-          </button>
-          <div class="nav-dropdown-menu" role="menu">
-            <a href="/about" role="menuitem">About</a>
-            <a href="#why" role="menuitem">Why Me</a>
-            <a href="#capabilities" role="menuitem">Capabilities</a>
-            <a href="#reviews" role="menuitem">Reviews</a>
-            <a href="#faq" role="menuitem">FAQ</a>
-          </div>
+  <!-- ================= HUBSPOT NAVIGATION HEADER ================= -->
+  <header class="site-header" id="nav">
+    <div class="wrap nav-inner">
+      <a href="#top" class="brand-link" aria-label="Nihar Ranjan Rout Homepage">
+        <div class="brand-monogram">NR</div>
+        <div class="brand-text">nihar<span class="dot">.</span></div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#hubs" class="nav-link">The Hubs</a></li>
+        <li><a href="#estimator" class="nav-link">Scope &amp; Pricing</a></li>
+        <li><a href="#work" class="nav-link">Selected Work</a></li>
+        <li><a href="/about" class="nav-link">About</a></li>
+        <li><a href="/technology" class="nav-link">Technology</a></li>
+        <li><a href="#reviews" class="nav-link">Reviews</a></li>
+        <li><a href="#faq" class="nav-link">FAQ</a></li>
+      </ul>
+
+      <div style="display:flex; align-items:center; gap:16px;">
+        <div class="nav-status-badge">
+          <span class="status-ping"></span>
+          2 SLOTS OPEN Q3/Q4
         </div>
-        <a href="#work" class="lnk">Work</a>
-        <a href="/technology" class="lnk">Technology</a>
-        <a href="/project-costs" class="lnk">Project Costs</a>
-        <a href="#suite" class="lnk">Founder Suite</a>
-        <a href="https://creuto.com" target="_blank" rel="noopener" class="lnk">Creuto ↗</a>
+        <a href="#contact" class="cl-button -primary -small">Book a Call <span style="margin-left:4px;">→</span></a>
       </div>
-
-      <div class="nav-actions">
-        <a href="#contact" class="btn btn-dark btn-sm-desktop">Book a Call <span class="arw">→</span></a>
-
-        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-          <span class="line line-1"></span>
-          <span class="line line-2"></span>
-          <span class="line line-3"></span>
-        </button>
-      </div>
-    </div>
-
-    <div class="mobile-drawer" id="mobileDrawer">
-      <nav class="drawer-links">
-        <div class="drawer-accordion" id="companyAccordion">
-          <button type="button" class="drawer-accordion-btn" id="companyAccordionBtn" aria-expanded="false">
-            <span>Company</span>
-            <svg class="acc-chevron" width="12" height="8" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1.5l5 5 5-5"/></svg>
-          </button>
-          <div class="drawer-sub-links" id="companySubLinks">
-            <a href="/about" class="drawer-lnk">About</a>
-            <a href="#why" class="drawer-lnk">Why Me</a>
-            <a href="#capabilities" class="drawer-lnk">Capabilities</a>
-            <a href="#reviews" class="drawer-lnk">Reviews</a>
-            <a href="#faq" class="drawer-lnk">FAQ</a>
-          </div>
-        </div>
-        <a href="#work" class="drawer-lnk">Work</a>
-        <a href="/technology" class="drawer-lnk">Technology</a>
-        <a href="/project-costs" class="drawer-lnk">Project Costs</a>
-        <a href="#suite" class="drawer-lnk">Founder Suite</a>
-        <a href="https://creuto.com" target="_blank" rel="noopener" class="drawer-lnk">Creuto ↗</a>
-        <a href="#contact" class="btn btn-dark" style="margin-top:8px; justify-content:center;">Book a Call <span class="arw">→</span></a>
-      </nav>
     </div>
   </header>
 
   <main id="top">
 
-    <!-- ================= SECTION 1: HERO ================= -->
-    <section class="hero" id="hero">
+    <!-- ================= SECTION 1: HOMEPAGE HERO ================= -->
+    <section class="hero-section" id="hero">
       <div class="wrap">
-        <div class="hero-editorial-grid">
+        <div class="hero-grid">
           <!-- Left: Pitch, Positioning, CTAs -->
-          <div class="hero-editorial-left">
-            <h1 class="hero-headline rv">
-              Turning software ideas into products worth building.
+          <div class="hero-content">
+            <div class="hs-eyebrow rv">
+              <span class="dot"></span>
+              FOUNDER &amp; CHIEF PRODUCT ARCHITECT · CREUTO
+            </div>
+
+            <h1 class="hero-title rv">
+              Build scalable software, launch faster, and <span class="highlight">grow your venture</span>.
             </h1>
 
-            <div class="role-sub rv" style="color:var(--accent); font-weight:600; margin-bottom:14px; font-size:15px;">
-              Product Strategist · In-House Creuto Engineering
-            </div>
-
-            <p class="hero-lead rv">
-              Most software builds fail for product reasons, not engineering ones. We challenge assumptions, lock down the PRD, and build what protects your runway.
+            <p class="hero-sub rv">
+              Most software builds fail for product reasons, not engineering ones. Backed by 8+ years across B2B SaaS, custom ERPs, and marketplace platforms, I challenge assumptions, lock down the PRD, and engineer systems that scale — delivered by my dedicated in-house team.
             </p>
 
-            <div class="hero-cta rv">
-              <a href="#contact" class="btn btn-primary">Book a Strategy Call</a>
-              <a href="/project-costs" class="btn btn-secondary"><span>Explore Project Costs</span><span class="btn-circle-arrow">→</span></a>
+            <div class="hero-ctas rv">
+              <a href="#contact" class="cl-button -primary">Book a Strategy Call <span style="margin-left:4px;">→</span></a>
+              <a href="#estimator" class="cl-button -secondary">Estimate Project Scope &amp; Pricing</a>
+            </div>
+
+            <div class="hero-guarantee rv">
+              <div class="hero-guarantee-item"><span class="check">✓</span> 100% In-House Squad</div>
+              <div class="hero-guarantee-item"><span class="check">✓</span> 5.0 Clutch Verified</div>
+              <div class="hero-guarantee-item"><span class="check">✓</span> Fixed-Scope Sprints</div>
             </div>
           </div>
 
-          <!-- Right: Real Founder Portrait Card (Reduces AI-generated feel) -->
-          <div class="hero-editorial-right rv">
-            <div class="hero-portrait-card">
-              <div class="hero-portrait-img-wrap">
-                <img src="assets/nihar-hero.jpg" alt="Nihar Ranjan Rout — Founder &amp; CEO, Creuto" class="hero-portrait-img" loading="eager" fetchpriority="high">
+          <!-- Right: Real Founder Showcase Card -->
+          <div class="hero-showcase rv">
+            <div class="hero-main-card">
+              <div class="hero-founder-badge">
+                <img src="assets/nihar-hero.jpg" alt="Nihar Ranjan Rout — Founder &amp; CEO, Creuto" class="hero-founder-avatar" loading="eager">
+                <div class="hero-founder-info">
+                  <h3>Nihar Ranjan Rout</h3>
+                  <p>Founder &amp; CEO, Creuto · Product Strategist</p>
+                </div>
               </div>
-              <div class="hero-portrait-meta">
-                <div style="display:flex; justify-content:space-between; align-items:flex-start;">
-                  <div>
-                    <div class="hero-portrait-name">Nihar Ranjan Rout</div>
-                    <div class="hero-portrait-title">Founder &amp; CEO, Creuto · Product Strategist</div>
-                  </div>
-                  <span class="hero-portrait-pill">Bhubaneswar, IN</span>
+
+              <blockquote style="font-family:var(--font-display); font-size:16px; line-height:1.55; color:var(--hs-text-01); margin:0 0 24px 0; font-style:italic; padding-left:14px; border-left:3px solid var(--hs-brand);">
+                "If you build the wrong feature set on time and under budget, you still lost. Real product discipline is knowing what NOT to build."
+              </blockquote>
+
+              <div class="hero-proof-chips">
+                <div class="hero-proof-chip">
+                  <div class="hero-proof-chip-val">8+ Years</div>
+                  <div class="hero-proof-chip-lbl">Industry Mastery</div>
                 </div>
-                <div class="hero-portrait-quote">
-                  "If you build the wrong feature set on time and under budget, you still lost. The discipline is knowing what NOT to build."
+                <div class="hero-proof-chip">
+                  <div class="hero-proof-chip-val">14+ Systems</div>
+                  <div class="hero-proof-chip-lbl">Shipped to Production</div>
                 </div>
-                <div class="hero-portrait-badges">
-                  <span class="hero-portrait-pill">★ 5.0 Clutch Verified</span>
-                  <span class="hero-portrait-pill">Active Q3/Q4 Sprints</span>
+                <div class="hero-proof-chip">
+                  <div class="hero-proof-chip-val">5.0 ★</div>
+                  <div class="hero-proof-chip-lbl">Clutch Verified Rating</div>
+                </div>
+                <div class="hero-proof-chip">
+                  <div class="hero-proof-chip-val">0 Middlemen</div>
+                  <div class="hero-proof-chip-lbl">Direct Founder Access</div>
                 </div>
               </div>
             </div>
@@ -3033,956 +191,554 @@
       </div>
     </section>
 
-    <!-- ================= DEDICATED STAT-COUNTER ROW ================= -->
-    <section class="stat-counter-section" style="padding: 44px 0 !important; background: var(--bg); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+    <!-- ================= SECTION 2: METRICS & PROOF STRIP ================= -->
+    <section class="proof-strip">
       <div class="wrap">
-        <div class="stat-counter-row" style="margin:0; border:none; padding:0;">
-          <div class="stat-counter-item">
-            <div class="stat-number">8+</div>
-            <div class="stat-label">Years in Product Management</div>
+        <div class="proof-grid">
+          <div class="proof-item rv">
+            <div class="proof-num">8+</div>
+            <div class="proof-label">Years Experience</div>
+            <div class="proof-sub">Product Management &amp; Strategy</div>
           </div>
-          <div class="stat-counter-item">
-            <div class="stat-number">5</div>
-            <div class="stat-label">Core Industry Domains</div>
+          <div class="proof-item rv">
+            <div class="proof-num">14+</div>
+            <div class="proof-label">Production Platforms</div>
+            <div class="proof-sub">Enterprise ERPs, SaaS &amp; Marketplaces</div>
           </div>
-          <div class="stat-counter-item">
-            <div class="stat-number">100%</div>
-            <div class="stat-label">In-House Creuto Engineering</div>
+          <div class="proof-item rv">
+            <div class="proof-num">100%</div>
+            <div class="proof-label">In-House Engineering</div>
+            <div class="proof-sub">Creuto Squad in Bhubaneswar</div>
           </div>
-          <div class="stat-counter-item">
-            <div class="stat-number">5.0★</div>
-            <div class="stat-label">Clutch Verified Rating</div>
+          <div class="proof-item rv">
+            <div class="proof-num">5.0★</div>
+            <div class="proof-label">Clutch Rating</div>
+            <div class="proof-sub">100% Verified Client Feedback</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ================= SECTION 2: INDUSTRIES CATEGORY WRAP ================= -->
-    <section class="trust-strip" style="padding: 36px 0 !important; background: var(--bg); border-bottom: 1px solid var(--line);">
+    <!-- ================= SECTION 3: THE VENTURE HUBS (HUBSPOT PRODUCT CARDS) ================= -->
+    <section class="hubs-section" id="hubs">
       <div class="wrap">
-        <span style="font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-muted);">Industry Domains</span>
-        <div class="category-tag-wrap" style="margin-top: 14px;">
-          <span class="category-pill">Fintech &amp; Payments</span>
-          <span class="category-pill">B2B SaaS</span>
-          <span class="category-pill">AI Products &amp; Automation</span>
-          <span class="category-pill">Manufacturing ERP</span>
-          <span class="category-pill">On-Demand Marketplaces</span>
-          <span class="category-pill">Healthcare &amp; MedTech</span>
-          <span class="category-pill">Quick Commerce</span>
+        <div class="section-header rv">
+          <div class="hs-eyebrow">
+            <span class="dot"></span>
+            THE VENTURE ENGINEERING HUBS
+          </div>
+          <h2 class="section-title">End-to-end disciplines for ambitious ventures.</h2>
+          <p class="section-sub">
+            From the first wireframe to multi-tenant production scale, we deliver complete software solutions through dedicated specialized hubs.
+          </p>
         </div>
-      </div>
-    </section>
 
-    <!-- ================= SECTION 3: ABOUT NIHAR & CREUTO ================= -->
-    <section class="about-section" id="about">
-      <div class="wrap about-grid">
-        <div class="about-content rv" data-aos="fade-up">
-          Product Judgment + In-House Delivery</span>
-          <h2>Eight years of turning complex business mechanics into software that works.</h2>
-          <p style="color:var(--ink-soft); margin-top:18px; font-size:16.5px; line-height:1.68;">
-            I started in product management because I couldn't stand seeing months of engineering effort wasted on software nobody used. Before founding Creuto, I worked across B2B SaaS, fintech, logistics, and healthcare — learning that the hardest part of software isn't writing syntax, it's making the right scoping trade-offs under finite runway.
-          </p>
-          <p style="color:var(--ink-soft); margin-top:14px; font-size:16.5px; line-height:1.68;">
-            When you bring me an idea, I help you shape it — a clear PRD, honest scope, and an architectural plan that fits your budget. My full-time engineering squad at Creuto in Bhubaneswar then engineers it to a standard we're proud of. Product thinking first; honest, dedicated delivery always.
-          </p>
-
-          <div class="sig-block">
+        <div class="hubs-grid">
+          <!-- Hub 1: Strategy & PRD -->
+          <div class="hub-card rv">
             <div>
-              <div class="sig-name">Nihar Ranjan Rout</div>
-              <div class="sig-role">FOUNDER &amp; CEO, CREUTO · mail@niharrout.com</div>
-            </div>
-            <a href="#contact" class="btn btn-dark btn-sm-desktop">Discuss Your Idea <span class="arw">→</span></a>
-          </div>
-        </div>
-
-        <div class="about-media-wrapper rv" data-aos="fade-up" data-aos-delay="150">
-          <img src="assets/img/modern-workshop.jpg" alt="Modern product strategy, scoping, and software engineering session" class="about-img corporate-img" loading="lazy">
-          <div class="about-quote-card">
-            <p class="quote-text">
-              "The right product, scoped honestly and built well — <strong>within your budget</strong>, not despite it."
-            </p>
-            <div class="quote-bullets">
-              <div><span>→</span> Product Strategy &amp; PRD</div>
-              <div><span>→</span> Domain Analysis</div>
-              <div><span>→</span> Budget-Fit Planning</div>
-              <div><span>→</span> In-House Creuto Build</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= SECTION 4: THE FOUNDER ADVANTAGE (ASYMMETRIC EDITORIAL SPLIT) ================= -->
-    <section class="why-section" id="why">
-      <div class="wrap">
-        <div class="why-editorial-split">
-          <!-- Left Column (40% width) -->
-          <div class="why-editorial-left rv" data-aos="fade-up">
-            The Founder Advantage</span>
-            <h2 class="why-editorial-title">A B2B software partner that starts with product, not code.</h2>
-            <p class="why-editorial-sub">
-              Why founders and tech teams choose to partner with Nihar and the Creuto engineering team.
-            </p>
-            
-            <div class="why-philosophy-card">
-              <p class="why-philosophy-lead">
-                Most software fails before a line of code is written. Traditional dev agencies sell billable hours and sprawling sprint cycles. We do the inverse: we protect your runway by questioning assumptions, locking down the PRD, and killing unnecessary features before engineers touch them.
+              <span class="hub-badge -coral">01. Strategy Hub</span>
+              <h3 class="hub-title">PRD &amp; Product Architecture</h3>
+              <p class="hub-desc">
+                Clarify business logic, eliminate costly feature bloat, and craft a bulletproof specification before writing a line of code.
               </p>
-              <div class="why-philosophy-quote">
-                "If you build the wrong thing on time and within budget, you still failed. Product thinking means building the exact thing that validates or grows your business."
-              </div>
-              <div class="why-commitment">
-                <span class="why-commitment-tag">The Founder Commitment</span>
-                <p>Direct founder access on every architecture and scoping milestone — no junior account managers.</p>
-              </div>
+              <ul class="hub-checklist">
+                <li><span class="hub-check-icon">✓</span> Exhaustive Functional PRD with edge-case mapping</li>
+                <li><span class="hub-check-icon">✓</span> Database schema modeling &amp; API contract design</li>
+                <li><span class="hub-check-icon">✓</span> Clickable Figma prototypes &amp; user flow validation</li>
+                <li><span class="hub-check-icon">✓</span> Finite runway allocation &amp; milestone planning</li>
+              </ul>
             </div>
-
-            <div class="credential-chips-left">
-              <span class="chip"><span class="dot-sym">+</span>8 years product management</span>
-              <span class="chip"><span class="dot-sym">+</span>PRD &amp; product strategy</span>
-              <span class="chip"><span class="dot-sym">+</span>B2B &amp; SaaS software</span>
-              <span class="chip"><span class="dot-sym">+</span>Founder &amp; CEO, Creuto</span>
-            </div>
-          </div>
-
-          <!-- Right Column (60% width): Vertical divider-separated list with large ghost numbers -->
-          <div class="why-editorial-right">
-            <div class="why-points-list">
-              <!-- Point 01 -->
-              <div class="why-point-item rv" data-aos="fade-up" data-aos-delay="100">
-                <div class="why-ghost-num">01</div>
-                <div class="why-point-content">
-                  <span class="why-point-tag">Domain Fluency</span>
-                  <h3>Business mechanics, not just user stories</h3>
-                  <p>Eight years across B2B SaaS, manufacturing, fintech, and marketplace operations means we speak unit economics, workflow bottlenecks, and compliance — translating business needs directly into technical specs.</p>
-                </div>
-              </div>
-
-              <!-- Point 02 -->
-              <div class="why-point-item rv" data-aos="fade-up" data-aos-delay="200">
-                <div class="why-ghost-num">02</div>
-                <div class="why-point-content">
-                  <span class="why-point-tag">Budget-Fit Scoping</span>
-                  <h3>Pragmatic scope that respects your runway</h3>
-                  <p>We scope honestly for real commercial outcomes. We specify where off-the-shelf primitives make sense and where custom code gives you an actual competitive moat, keeping your burn predictable.</p>
-                </div>
-              </div>
-
-              <!-- Point 03 -->
-              <div class="why-point-item rv" data-aos="fade-up" data-aos-delay="300">
-                <div class="why-ghost-num">03</div>
-                <div class="why-point-content">
-                  <span class="why-point-tag">In-House Engineering</span>
-                  <h3>Creuto's dedicated team, zero outsourcing</h3>
-                  <p>Every commit is written and reviewed by Creuto's full-time engineering squad in Bhubaneswar. High velocity, consistent architectural standards, and clean documentation you permanently own.</p>
-                </div>
-              </div>
-
-              <!-- Point 04 -->
-              <div class="why-point-item rv" data-aos="fade-up" data-aos-delay="400">
-                <div class="why-ghost-num">04</div>
-                <div class="why-point-content">
-                  <span class="why-point-tag">Direct Founder Accountability</span>
-                  <h3>Direct technical stewardship, no middlemen</h3>
-                  <p>Direct founder access on every architecture and scoping milestone — from PRD definition to final production deploy. No game of telephone through account managers or junior PMs.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= SECTION 5: CAPABILITIES & EXECUTION ================= -->
-    <section id="capabilities" style="padding: 100px 0 !important; background: var(--bg); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
-      <div class="wrap">
-        <div style="max-width: 680px; margin-bottom: 44px;" class="rv">
-          <h2>From product strategy to delivery.</h2>
-          <p class="sub" style="margin: 0;">
-            Three core execution pillars engineered for funded startups and scaling businesses.
-          </p>
-        </div>
-
-        <div class="capability-feature-grid rv" data-aos="fade-up">
-          <div class="capability-feature-item">
-            <div class="capability-feature-icon">
-              <svg class="stroke-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
-            </div>
-            <h3 class="capability-feature-title">Product Strategy &amp; Scoping</h3>
-            <p class="capability-feature-desc">Clarify user flows, eliminate superfluous features, and craft a bulletproof PRD before engineering begins.</p>
-            <a href="/about" class="capability-feature-link">Learn More <span>→</span></a>
-          </div>
-
-          <div class="capability-feature-item">
-            <div class="capability-feature-icon">
-              <svg class="stroke-icon" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-            </div>
-            <h3 class="capability-feature-title">Software &amp; AI Systems</h3>
-            <p class="capability-feature-desc">Production-grade B2B platforms, scalable SaaS engines, and pragmatic AI pipelines engineered in-house.</p>
-            <a href="/technology" class="capability-feature-link">Learn More <span>→</span></a>
-          </div>
-
-          <div class="capability-feature-item">
-            <div class="capability-feature-icon">
-              <svg class="stroke-icon" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-            </div>
-            <h3 class="capability-feature-title">Mobile &amp; Sprint Delivery</h3>
-            <p class="capability-feature-desc">Cross-platform iOS and Android apps delivered through two-week milestone sprints with continuous QA.</p>
-            <a href="/work" class="capability-feature-link">Learn More <span>→</span></a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= BIG STATEMENT TYPOGRAPHIC BREATHER ================= -->
-    <section class="big-statement-section">
-      <div class="wrap">
-        <h2 class="big-statement-text rv" data-aos="fade-up">
-          Product thinking first.<br>
-          Dedicated engineering always.
-        </h2>
-        <p class="big-statement-sub rv" data-aos="fade-up" data-aos-delay="100">
-          We eliminate unnecessary features before engineers touch them, protecting your runway and building what actually scales.
-        </p>
-      </div>
-    </section>
-
-    <!-- ================= SECTION 5.5: TECHNOLOGIES WE WORK WITH ================= -->
-    <section class="tech-section" id="technology" style="padding: 100px 0 !important; background: var(--bg); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
-      <div class="wrap">
-        <div style="max-width: 680px; margin-bottom: 40px;" class="rv">
-          <h2>Technologies We Work With</h2>
-          <p class="sub" style="margin:0;">
-            The tools behind every product we ship — chosen for long-term maintainability, not the résumé.
-          </p>
-        </div>
-
-        <div style="display: flex; flex-direction: column; gap: 28px;" class="rv" data-aos="fade-up">
-          <div>
-            <div style="font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-muted); margin-bottom: 10px;">Frontend &amp; Web Platforms</div>
-            <div class="category-tag-wrap">
-              <span class="category-pill">React</span>
-              <span class="category-pill">Next.js</span>
-              <span class="category-pill">TypeScript</span>
-              <span class="category-pill">Vue.js</span>
-              <span class="category-pill">Tailwind CSS</span>
-            </div>
-          </div>
-
-          <div>
-            <div style="font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-muted); margin-bottom: 10px;">Backend &amp; High-Throughput APIs</div>
-            <div class="category-tag-wrap">
-              <span class="category-pill">Node.js</span>
-              <span class="category-pill">Express</span>
-              <span class="category-pill">Python</span>
-              <span class="category-pill">FastAPI</span>
-              <span class="category-pill">Go</span>
-              <span class="category-pill">GraphQL</span>
-              <span class="category-pill">REST APIs</span>
-            </div>
-          </div>
-
-          <div>
-            <div style="font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-muted); margin-bottom: 10px;">Mobile Applications (iOS &amp; Android)</div>
-            <div class="category-tag-wrap">
-              <span class="category-pill">Flutter</span>
-              <span class="category-pill">React Native</span>
-              <span class="category-pill">iOS Swift</span>
-              <span class="category-pill">Android Kotlin</span>
-              <span class="category-pill">Expo</span>
-            </div>
-          </div>
-
-          <div>
-            <div style="font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-muted); margin-bottom: 10px;">Pragmatic AI &amp; Machine Learning</div>
-            <div class="category-tag-wrap">
-              <span class="category-pill">OpenAI GPT-4</span>
-              <span class="category-pill">Google Gemini</span>
-              <span class="category-pill">LangChain</span>
-              <span class="category-pill">LlamaIndex</span>
-              <span class="category-pill">RAG Pipelines</span>
-              <span class="category-pill">Vector Databases</span>
-            </div>
-          </div>
-
-          <div>
-            <div style="font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-muted); margin-bottom: 10px;">Databases &amp; Cloud Infrastructure</div>
-            <div class="category-tag-wrap">
-              <span class="category-pill">PostgreSQL</span>
-              <span class="category-pill">Redis</span>
-              <span class="category-pill">MongoDB</span>
-              <span class="category-pill">AWS</span>
-              <span class="category-pill">Google Cloud</span>
-              <span class="category-pill">Docker</span>
-              <span class="category-pill">CI/CD Pipelines</span>
-            </div>
-          </div>
-        </div>
-
-        <div style="margin-top: 40px;" class="rv">
-          <a href="/technology" class="btn btn-secondary">
-            <span>Explore Complete Tech Rationale</span>
-            <span class="btn-circle-arrow">→</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= SECTION 6: WORK & CASE STUDIES ================= -->
-    <section class="work-section" id="work">
-      <!-- Alias anchors for legacy links -->
-      <span id="case-studies" style="position:relative; top:-90px; display:block; visibility:hidden;"></span>
-      <span id="outcomes" style="position:relative; top:-90px; display:block; visibility:hidden;"></span>
-      <div class="wrap">
-        <div class="shead left rv">
-          <div class="work-header-split">
             <div>
-              Selected Work</span>
-              <h2 style="font-size:clamp(30px, 3.8vw, 44px); letter-spacing:-0.03em; margin:12px 0 0;">Selected Work. Software built with product discipline.</h2>
+              <a href="/about" class="hub-footer-link">Explore Strategy Hub <span>→</span></a>
             </div>
-            <p class="sub">
-              Strategic product judgment, PRD clarity, and growth-standard engineering across AI, B2B SaaS, and mobile platforms.
-            </p>
+          </div>
+
+          <!-- Hub 2: Custom Enterprise ERP -->
+          <div class="hub-card rv">
+            <div>
+              <span class="hub-badge -mint">02. ERP Hub</span>
+              <h3 class="hub-title">Custom Enterprise &amp; ERP Systems</h3>
+              <p class="hub-desc">
+                Replace fragmented legacy spreadsheets and disconnected software with a unified, real-time system of record.
+              </p>
+              <ul class="hub-checklist">
+                <li><span class="hub-check-icon">✓</span> Granular Role-Based Access Control (RBAC)</li>
+                <li><span class="hub-check-icon">✓</span> Live inventory, purchase order (PO) &amp; supply chain ledger</li>
+                <li><span class="hub-check-icon">✓</span> Attendance, QR check-in &amp; payroll reconciliation</li>
+                <li><span class="hub-check-icon">✓</span> Real-time cross-functional executive dashboards</li>
+              </ul>
+            </div>
+            <div>
+              <a href="/work/custom-erp-manufacturing" class="hub-footer-link">View ERP Case Study <span>→</span></a>
+            </div>
+          </div>
+
+          <!-- Hub 3: Two-Sided Marketplaces -->
+          <div class="hub-card rv">
+            <div>
+              <span class="hub-badge -purple">03. Marketplace Hub</span>
+              <h3 class="hub-title">Two-Sided Booking &amp; Platforms</h3>
+              <p class="hub-desc">
+                High-concurrency digital platforms balancing consumer discovery, service provider portals, and escrow payment splits.
+              </p>
+              <ul class="hub-checklist">
+                <li><span class="hub-check-icon">✓</span> Real-time booking calendar with zero double-booking</li>
+                <li><span class="hub-check-icon">✓</span> Stripe Connect automated commission payouts</li>
+                <li><span class="hub-check-icon">✓</span> Standalone vendor dashboards for merchant onboarding</li>
+                <li><span class="hub-check-icon">✓</span> Geolocation dispatch &amp; instant status notifications</li>
+              </ul>
+            </div>
+            <div>
+              <a href="/work/make-my-look" class="hub-footer-link">View Marketplace Case Study <span>→</span></a>
+            </div>
+          </div>
+
+          <!-- Hub 4: AI & Autonomous Systems -->
+          <div class="hub-card rv">
+            <div>
+              <span class="hub-badge -teal">04. AI Hub</span>
+              <h3 class="hub-title">AI Workflows &amp; Automation</h3>
+              <p class="hub-desc">
+                Pragmatic machine learning pipelines, custom RAG document search, and autonomous task agents directly tied to business ROI.
+              </p>
+              <ul class="hub-checklist">
+                <li><span class="hub-check-icon">✓</span> Domain-specific LLM fine-tuning &amp; vector search</li>
+                <li><span class="hub-check-icon">✓</span> Autonomous multi-step operational agent workflows</li>
+                <li><span class="hub-check-icon">✓</span> Enterprise privacy guardrails &amp; deterministic fallbacks</li>
+                <li><span class="hub-check-icon">✓</span> Real-time cost, token budgeting &amp; accuracy telemetry</li>
+              </ul>
+            </div>
+            <div>
+              <a href="/technology" class="hub-footer-link">Explore AI Capabilities <span>→</span></a>
+            </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Filter Buttons (Rendered / Hydrated by work-data.js) -->
-        <div class="work-filters rv" id="workFilters" role="tablist" aria-label="Filter work by category"></div>
+    <!-- ================= SECTION 4: HUBSPOT VENTURE PRICING & SCOPE ESTIMATOR ================= -->
+    <section class="estimator-section" id="estimator">
+      <div class="wrap">
+        <div class="section-header rv">
+          <div class="hs-eyebrow">
+            <span class="dot"></span>
+            TRANSPARENT SCOPE &amp; INVESTMENT ESTIMATOR
+          </div>
+          <h2 class="section-title">Estimate your project roadmap before we talk.</h2>
+          <p class="section-sub">
+            Choose your product tier to preview milestone timelines, team squad composition, technical deliverables, and investment ranges.
+          </p>
+        </div>
 
-        <!-- Project Grid (5 Real Production Case Studies) -->
-        <div class="work-grid rv" id="workGrid">
-          <!-- Card 1: Custom ERP -->
-          <div class="work-card rv in" data-id="0">
-            <a href="/work/custom-erp-manufacturing" class="work-media" aria-label="Read full case study for End-to-End Custom ERP for Manufacturing Operations">
-              <img src="work/erp-manufacturing-card.jpg" alt="End-to-End Custom ERP for Manufacturing Operations" class="work-thumb" loading="lazy">
-            </a>
-            <div class="work-body">
-              <div class="work-tags">
-                <span class="work-tag">Enterprise</span>
-                <span class="work-tag">ERP</span>
-                <span class="work-tag">B2B</span>
+        <!-- Calculator Tabs -->
+        <div class="calc-tabs-row rv">
+          <button type="button" class="calc-tab-btn active" data-calc-tab="mvp">01. 0-to-1 SaaS MVP</button>
+          <button type="button" class="calc-tab-btn" data-calc-tab="erp">02. Custom Enterprise ERP</button>
+          <button type="button" class="calc-tab-btn" data-calc-tab="marketplace">03. Two-Sided Marketplace</button>
+          <button type="button" class="calc-tab-btn" data-calc-tab="ai">04. AI Systems Fleet</button>
+        </div>
+
+        <!-- Calculator Chassis -->
+        <div class="calc-chassis rv">
+          <!-- Left Column: Scope & Deliverables -->
+          <div class="calc-spec-column">
+            <h3 id="calcSpecTitle">0-to-1 SaaS &amp; Venture MVP</h3>
+            <p class="calc-spec-desc" id="calcSpecDesc">
+              End-to-end product architecture and execution designed to launch your core offering to the first 10,000 users with zero technical debt.
+            </p>
+
+            <div style="font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.04em; color:var(--hs-text-01); margin-bottom:12px;">
+              Included Architecture Deliverables:
+            </div>
+            <div class="calc-deliverables-list" id="calcDeliverables">
+              <!-- Rendered via JS -->
+            </div>
+
+            <div style="margin-top:16px; font-size:13px; color:var(--hs-text-muted);">
+              <strong>Recommended Tech Primitives:</strong> <span id="calcStack" style="color:var(--hs-text-01);">Next.js 15, Node.js / Python, PostgreSQL, Stripe</span>
+            </div>
+          </div>
+
+          <!-- Right Column: Investment Summary Card -->
+          <div class="calc-summary-column">
+            <div>
+              <div class="calc-summary-heading">Estimated Investment</div>
+              <div class="calc-investment-val" id="calcInvestment">$8,000 – $15,000</div>
+
+              <div class="calc-stat-row">
+                <span class="calc-stat-lbl">Development Cadence:</span>
+                <span class="calc-stat-data" id="calcTimeline">6 to 8 Weeks</span>
               </div>
-              <a href="/work/custom-erp-manufacturing" class="work-title-link" style="text-decoration:none; color:inherit;">
-                <div class="work-title-wrap">
-                  <h3 class="work-title">End-to-End Custom ERP for Manufacturing Operations</h3>
-                  <div class="work-arrow" aria-hidden="true">↗</div>
-                </div>
+              <div class="calc-stat-row">
+                <span class="calc-stat-lbl">Milestone Cadence:</span>
+                <span class="calc-stat-data" id="calcSprints">3-4 Sprints</span>
+              </div>
+              <div class="calc-stat-row">
+                <span class="calc-stat-lbl">Dedicated Squad:</span>
+                <span class="calc-stat-data" id="calcTeam">1 Lead Architect + 2 Full-Stack Engineers</span>
+              </div>
+            </div>
+
+            <div>
+              <a href="#contact" class="cl-button -primary" style="width:100%; justify-content:center;">
+                Schedule Architecture Call <span style="margin-left:4px;">→</span>
               </a>
-              <div class="work-client">Large-scale manufacturing enterprise (name under NDA)</div>
-              <p class="work-desc">Replaced four disconnected departments with one real-time system of record.</p>
-              <div class="work-metric"><span class="tick">✓</span><span>4 departments unified · 0 data silos · Monthly close cut to 1 day</span></div>
-              <div style="display:flex; gap:10px; margin-top:auto; padding-top:6px;">
-                <a href="/work/custom-erp-manufacturing" class="btn btn-dark" style="flex:1; justify-content:center; padding:10px 14px; font-size:13px; border-radius:0px;">
-                  Read Full Case Study <span class="arw">→</span>
-                </a>
-                <button type="button" class="work-expand-btn" aria-expanded="false" style="width:auto; border-top:none; padding:10px 14px; background:var(--bg); border:1px solid var(--line); border-radius:0px; cursor:pointer;" title="Toggle quick breakdown">
-                  <span>Overview</span>
-                  <span class="chevron" style="margin-left:4px;">▾</span>
-                </button>
+              <div style="font-size:12px; color:var(--hs-text-muted); text-align:center; margin-top:10px;">
+                Direct consultation with Nihar · 24-hr response
               </div>
-              <div class="work-details">
-                <div class="work-details-inner">
-                  <div class="work-detail-block">
-                    <strong>The Challenge</strong>
-                    <p>HR, sales, inventory, and finance were each running on their own fragmented tools with no shared data layer — every cross-team task meant manual reconciliation. Attendance was tracked by hand with no payroll link. Sales kept separate lead files. Inventory ran on outdated spreadsheets. Finance compiled reports manually. There were no role-based permissions, so sensitive data was visible to everyone — and leadership had no real-time view of the business.</p>
-                  </div>
-                  <div class="work-detail-block">
-                    <strong>The Product Decision</strong>
-                    <p>Rather than patch each department's tool individually, we scoped a single PRD to unify HR, CRM/Sales, Inventory, and Finance on one platform with role-based dashboards from day one — then built it module by module in two-week sprints, with weekly touchpoints per department so nothing shipped that the actual users hadn't already validated.</p>
-                  </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 5: ABOUT NIHAR & CREUTO ================= -->
+    <section class="section" id="about">
+      <div class="wrap">
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:56px; align-items:center;">
+          <div class="rv">
+            <div class="hs-eyebrow">
+              <span class="dot"></span>
+              PRODUCT JUDGMENT + IN-HOUSE EXECUTION
+            </div>
+            <h2>Eight years of turning complex mechanics into software that works.</h2>
+            <p style="margin-top:20px; font-size:1.1rem; line-height:1.7;">
+              I started in product management because I couldn't stand seeing months of engineering effort wasted on software nobody used. Before founding Creuto, I worked across B2B SaaS, fintech, logistics, and healthcare — learning that the hardest part of software isn't writing syntax, it's making the right scoping trade-offs under finite runway.
+            </p>
+            <p style="font-size:1.1rem; line-height:1.7;">
+              When you bring me an idea, I help you shape it — an honest PRD, clear architecture, and a build plan that fits your budget. My full-time engineering squad at Creuto in Bhubaneswar then engineers it to a standard we're proud of. Product thinking first; dedicated delivery always.
+            </p>
+
+            <div style="display:flex; align-items:center; gap:24px; margin-top:32px;">
+              <div>
+                <strong style="display:block; font-size:17px; color:var(--hs-text-01);">Nihar Ranjan Rout</strong>
+                <span style="font-size:13px; color:var(--hs-text-muted);">Founder &amp; CEO, Creuto · mail@niharrout.com</span>
+              </div>
+              <a href="#contact" class="cl-button -secondary -small">Discuss Your Idea →</a>
+            </div>
+          </div>
+
+          <div class="rv">
+            <div class="cl-card" style="padding:0; overflow:hidden;">
+              <img src="assets/img/modern-workshop.jpg" alt="Modern product strategy, scoping, and software engineering session" style="width:100%; height:auto; display:block;" loading="lazy">
+              <div style="padding:32px; background:#ffffff;">
+                <blockquote style="font-family:var(--font-display); font-size:18px; line-height:1.45; color:var(--hs-text-01); margin:0 0 16px 0;">
+                  "The right product, scoped honestly and built well — <strong>within your budget</strong>, not despite it."
+                </blockquote>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; font-size:13px; font-weight:600; color:var(--hs-text-muted);">
+                  <div><span style="color:var(--hs-brand); font-weight:800;">✓</span> Product Strategy &amp; PRD</div>
+                  <div><span style="color:var(--hs-brand); font-weight:800;">✓</span> Domain Analysis</div>
+                  <div><span style="color:var(--hs-brand); font-weight:800;">✓</span> Budget-Fit Planning</div>
+                  <div><span style="color:var(--hs-brand); font-weight:800;">✓</span> In-House Creuto Build</div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
 
-          <!-- Card 2: Sky1 -->
-          <div class="work-card rv in" data-id="1">
-            <a href="/work/sky1-event-booking" class="work-media" aria-label="Read full case study for Sky1 — End-to-End Wedding &amp; Event Booking Platform">
-              <img src="work/sky1-card.jpg" alt="Sky1 — End-to-End Wedding &amp; Event Booking Platform" class="work-thumb" loading="lazy">
-            </a>
-            <div class="work-body">
-              <div class="work-tags">
-                <span class="work-tag">Consumer Marketplace</span>
-                <span class="work-tag">Events</span>
-                <span class="work-tag">Mobile</span>
+    <!-- ================= SECTION 6: SELECTED WORK & CASE STUDIES ================= -->
+    <section class="section section-alt" id="work">
+      <div class="wrap">
+        <div class="section-header rv">
+          <div class="hs-eyebrow">
+            <span class="dot"></span>
+            PROVEN TRACK RECORD
+          </div>
+          <h2 class="section-title">Selected Production Systems.</h2>
+          <p class="section-sub">
+            Real case studies of platforms engineered from 0-to-1 PRDs into live, scalable production software.
+          </p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="work-filters rv" role="tablist" aria-label="Filter case studies by category">
+          <button type="button" class="work-filter-btn active" data-filter="all">All Ventures</button>
+          <button type="button" class="work-filter-btn" data-filter="enterprise">Enterprise ERP</button>
+          <button type="button" class="work-filter-btn" data-filter="marketplace">Marketplaces</button>
+          <button type="button" class="work-filter-btn" data-filter="saas">B2B SaaS</button>
+          <button type="button" class="work-filter-btn" data-filter="mobile">Mobile Apps</button>
+        </div>
+
+        <!-- Case Studies Grid -->
+        <div class="work-grid rv">
+          <!-- Card 1: Custom ERP -->
+          <div class="work-card" data-category="enterprise saas">
+            <div class="work-thumb-wrap">
+              <img src="/work/erp-manufacturing-card.jpg" alt="End-to-End Custom ERP for Manufacturing Operations" class="work-thumb-img" loading="lazy">
+            </div>
+            <div class="work-card-body">
+              <span class="work-card-category">Enterprise Operations · ERP</span>
+              <h3 class="work-card-title">Custom ERP for Manufacturing Operations</h3>
+              <p class="work-card-desc">
+                Replaced four disconnected departments and fragmented spreadsheets with one unified, real-time system of record across HR, inventory, CRM, and accounting.
+              </p>
+              <div style="margin-bottom:16px; font-size:13px; font-weight:600; color:var(--hs-mint);">
+                ✓ 4 departments unified · 0 data silos · 1-day financial close
               </div>
-              <a href="/work/sky1-event-booking" class="work-title-link" style="text-decoration:none; color:inherit;">
-                <div class="work-title-wrap">
-                  <h3 class="work-title">Sky1 — End-to-End Wedding &amp; Event Booking Platform</h3>
-                  <div class="work-arrow" aria-hidden="true">↗</div>
-                </div>
-              </a>
-              <div class="work-client">Sky1</div>
-              <p class="work-desc">One app to book a venue and every vendor around it — no phone calls required.</p>
-              <div class="work-metric"><span class="tick">✓</span><span>8–12 vendors unified per event · 0 phone calls to book · 100% real-time availability</span></div>
-              <div style="display:flex; gap:10px; margin-top:auto; padding-top:6px;">
-                <a href="/work/sky1-event-booking" class="btn btn-dark" style="flex:1; justify-content:center; padding:10px 14px; font-size:13px; border-radius:0px;">
-                  Read Full Case Study <span class="arw">→</span>
-                </a>
-                <button type="button" class="work-expand-btn" aria-expanded="false" style="width:auto; border-top:none; padding:10px 14px; background:var(--bg); border:1px solid var(--line); border-radius:0px; cursor:pointer;" title="Toggle quick breakdown">
-                  <span>Overview</span>
-                  <span class="chevron" style="margin-left:4px;">▾</span>
-                </button>
+              <a href="/work/custom-erp-manufacturing" class="work-card-link">Read Full Case Study <span>→</span></a>
+            </div>
+          </div>
+
+          <!-- Card 2: Skyeone -->
+          <div class="work-card" data-category="marketplace mobile">
+            <div class="work-thumb-wrap">
+              <img src="work/skyeone-card.jpg" alt="Skyeone — Multi-Vendor Event &amp; Venue Booking" class="work-thumb-img" loading="lazy">
+            </div>
+            <div class="work-card-body">
+              <span class="work-card-category">Consumer Marketplace · Mobile</span>
+              <h3 class="work-card-title">Skyeone — Multi-Vendor Event &amp; Venue Booking</h3>
+              <p class="work-card-desc">
+                Designed and built a two-sided event marketplace coordinating venues, caterers, and decorators with automated booking calendars and payment splits.
+              </p>
+              <div style="margin-bottom:16px; font-size:13px; font-weight:600; color:var(--hs-mint);">
+                ✓ 300+ venues live · 35% faster booking · 0 double-bookings
               </div>
-              <div class="work-details">
-                <div class="work-details-inner">
-                  <div class="work-detail-block">
-                    <strong>The Challenge</strong>
-                    <p>Planning a wedding meant hours spent across Instagram, Google, and word-of-mouth just to find vendors — with no way to compare pricing or availability without direct outreach. Every booking happened over phone calls or WhatsApp with verbal confirmations and no digital record; most vendors didn't publish rates at all, so hidden costs surfaced late. A single wedding could mean coordinating 8–12 separate vendors — venue, decorator, caterer, mehendi artist, makeup team, choreographer, photographer — and scheduling conflicts were often only discovered days before the event, because every change meant notifying every vendor individually.</p>
-                  </div>
-                  <div class="work-detail-block">
-                    <strong>The Product Decision</strong>
-                    <p>The obvious build here would have been "just another venue directory" — we scoped for something harder but more valuable: one booking flow spanning the venue and every vendor category around it, with a shared real-time calendar and automatic conflict detection, so a couple could build and confirm their entire event in one checkout instead of a dozen separate conversations.</p>
-                  </div>
-                </div>
-              </div>
+              <a href="/work/sky1-event-booking" class="work-card-link">Read Full Case Study <span>→</span></a>
             </div>
           </div>
 
           <!-- Card 3: Make My Look -->
-          <div class="work-card rv in" data-id="2">
-            <a href="/work/make-my-look" class="work-media" aria-label="Read full case study for Make My Look — On-Demand Beauty &amp; Salon Booking">
-              <img src="work/mml-card.jpg" alt="Make My Look — On-Demand Beauty &amp; Salon Booking" class="work-thumb" loading="lazy">
-            </a>
-            <div class="work-body">
-              <div class="work-tags">
-                <span class="work-tag">Consumer Marketplace</span>
-                <span class="work-tag">Mobile</span>
+          <div class="work-card" data-category="marketplace mobile">
+            <div class="work-thumb-wrap">
+              <img src="work/mml-card.jpg" alt="Make My Look — On-Demand Beauty &amp; Salon Booking" class="work-thumb-img" loading="lazy">
+            </div>
+            <div class="work-card-body">
+              <span class="work-card-category">Consumer Marketplace · Mobile</span>
+              <h3 class="work-card-title">Make My Look — Beauty &amp; Salon Marketplace</h3>
+              <p class="work-card-desc">
+                Took an offline industry online — delivering consumer discovery and an intuitive vendor portal for salon owners to manage staff, slots, and revenue.
+              </p>
+              <div style="margin-bottom:16px; font-size:13px; font-weight:600; color:var(--hs-mint);">
+                ✓ 200+ vendors onboarded · 40% fewer drop-offs · Live in 16 weeks
               </div>
-              <a href="/work/make-my-look" class="work-title-link" style="text-decoration:none; color:inherit;">
-                <div class="work-title-wrap">
-                  <h3 class="work-title">Make My Look — On-Demand Beauty &amp; Salon Booking</h3>
-                  <div class="work-arrow" aria-hidden="true">↗</div>
-                </div>
-              </a>
-              <div class="work-client">Make My Look</div>
-              <p class="work-desc">Took an all-offline beauty industry online — for customers and salon owners alike.</p>
-              <div class="work-metric"><span class="tick">✓</span><span>200+ vendors onboarded at launch · 40% fewer booking drop-offs · Live in 16 weeks</span></div>
-              <div style="display:flex; gap:10px; margin-top:auto; padding-top:6px;">
-                <a href="/work/make-my-look" class="btn btn-dark" style="flex:1; justify-content:center; padding:10px 14px; font-size:13px; border-radius:0px;">
-                  Read Full Case Study <span class="arw">→</span>
-                </a>
-                <button type="button" class="work-expand-btn" aria-expanded="false" style="width:auto; border-top:none; padding:10px 14px; background:var(--bg); border:1px solid var(--line); border-radius:0px; cursor:pointer;" title="Toggle quick breakdown">
-                  <span>Overview</span>
-                  <span class="chevron" style="margin-left:4px;">▾</span>
-                </button>
-              </div>
-              <div class="work-details">
-                <div class="work-details-inner">
-                  <div class="work-detail-block">
-                    <strong>The Challenge</strong>
-                    <p>India's beauty industry was still running almost entirely offline. Customers had no centralized way to find salons, check real credentials, or confirm a booking — most transactions still happened over WhatsApp, phone calls, or walk-ins. Salon owners were in the same bind from the other side: bookings managed through WhatsApp groups, handwritten diaries, or whoever happened to be free to answer the phone — with no visibility into their own schedule and no digital presence to compete on.</p>
-                  </div>
-                  <div class="work-detail-block">
-                    <strong>The Product Decision</strong>
-                    <p>Rather than build "just another booking app," we scoped a true two-sided marketplace from day one — a consumer experience built for fast discovery and confirmed bookings, and a vendor dashboard simple enough for salon owners with zero technical background to run their whole business from, plus a super-admin layer so the platform itself could scale across cities without developer involvement on every operational decision.</p>
-                  </div>
-                </div>
-              </div>
+              <a href="/work/make-my-look" class="work-card-link">Read Full Case Study <span>→</span></a>
             </div>
           </div>
 
           <!-- Card 4: FlashNow -->
-          <div class="work-card rv in" data-id="3">
-            <a href="/work/flashnow" class="work-media" aria-label="Read full case study for FlashNow — Quick Commerce Built on Local Shops">
-              <img src="work/flashnow-card.jpg" alt="FlashNow — Quick Commerce Built on Local Shops" class="work-thumb" loading="lazy">
-            </a>
-            <div class="work-body">
-              <div class="work-tags">
-                <span class="work-tag">Consumer Marketplace</span>
-                <span class="work-tag">Mobile</span>
-                <span class="work-tag">Logistics</span>
+          <div class="work-card" data-category="marketplace mobile">
+            <div class="work-thumb-wrap">
+              <img src="work/flashnow-card.jpg" alt="FlashNow — Quick Commerce Built on Local Shops" class="work-thumb-img" loading="lazy">
+            </div>
+            <div class="work-card-body">
+              <span class="work-card-category">Quick Commerce · Logistics</span>
+              <h3 class="work-card-title">FlashNow — Quick Commerce on Local Stores</h3>
+              <p class="work-card-desc">
+                Hyperlocal grocery ordering with 10-15 minute delivery, powered by existing neighborhood kirana stores rather than expensive dark warehouses.
+              </p>
+              <div style="margin-bottom:16px; font-size:13px; font-weight:600; color:var(--hs-mint);">
+                ✓ 10-15 min delivery · 4-role real-time architecture · Sub-2-min checkout
               </div>
-              <a href="/work/flashnow" class="work-title-link" style="text-decoration:none; color:inherit;">
-                <div class="work-title-wrap">
-                  <h3 class="work-title">FlashNow — Quick Commerce Built on Local Shops</h3>
-                  <div class="work-arrow" aria-hidden="true">↗</div>
-                </div>
-              </a>
-              <div class="work-client">FlashNow</div>
-              <p class="work-desc">10-15 minute delivery — powered by neighborhood stores instead of warehouses.</p>
-              <div class="work-metric"><span class="tick">✓</span><span>10-15 min delivery · 4-role platform, zero centralized warehouses · Sub-2-minute checkout</span></div>
-              <div style="display:flex; gap:10px; margin-top:auto; padding-top:6px;">
-                <a href="/work/flashnow" class="btn btn-dark" style="flex:1; justify-content:center; padding:10px 14px; font-size:13px; border-radius:0px;">
-                  Read Full Case Study <span class="arw">→</span>
-                </a>
-                <button type="button" class="work-expand-btn" aria-expanded="false" style="width:auto; border-top:none; padding:10px 14px; background:var(--bg); border:1px solid var(--line); border-radius:0px; cursor:pointer;" title="Toggle quick breakdown">
-                  <span>Overview</span>
-                  <span class="chevron" style="margin-left:4px;">▾</span>
-                </button>
-              </div>
-              <div class="work-details">
-                <div class="work-details-inner">
-                  <div class="work-detail-block">
-                    <strong>The Challenge</strong>
-                    <p>By the time FlashNow started, Indian quick commerce had consolidated around a handful of well-funded players — and neighborhood kirana stores were being systematically shut out of it. Their customers were already ordering online; none of those orders were reaching them. Neither shoppers nor vendors had real-time visibility into what was in stock or where an order stood — inventory was tracked manually, and orders were handled over phone or WhatsApp with no structured workflow. Last-mile delivery was entirely ad hoc, with no dispatch system, route optimization, or way to track a delivery partner in real time.</p>
-                  </div>
-                  <div class="work-detail-block">
-                    <strong>The Product Decision</strong>
-                    <p>Instead of building another centralized-warehouse quick-commerce app — the model the big players already owned — we scoped FlashNow around the opposite bet: give existing local shops the same real-time infrastructure the big players had, so demand could route through the neighborhood store that was already there instead of a new warehouse. Real-time was treated as a first-class engineering concern from day one, not a feature bolted on later — the goal was zero architecture rewrites after launch.</p>
-                  </div>
-                </div>
-              </div>
+              <a href="/work/flashnow" class="work-card-link">Read Full Case Study <span>→</span></a>
             </div>
           </div>
 
           <!-- Card 5: Skribe -->
-          <div class="work-card rv in" data-id="4">
-            <a href="/work/skribe" class="work-media" aria-label="Read full case study for Skribe — Team Chat That Meets You Where You Already Are">
-              <img src="work/skribe-card.jpg" alt="Skribe — Team Chat That Meets You Where You Already Are" class="work-thumb" loading="lazy">
-            </a>
-            <div class="work-body">
-              <div class="work-tags">
-                <span class="work-tag">Enterprise</span>
-                <span class="work-tag">B2B SaaS</span>
-                <span class="work-tag">Communication</span>
+          <div class="work-card" data-category="saas enterprise">
+            <div class="work-thumb-wrap">
+              <img src="work/skribe-card.jpg" alt="Skribe — Team Chat That Meets You Where You Are" class="work-thumb-img" loading="lazy">
+            </div>
+            <div class="work-card-body">
+              <span class="work-card-category">B2B SaaS · Communication</span>
+              <h3 class="work-card-title">Skribe — Cross-Platform Team Communication</h3>
+              <p class="work-card-desc">
+                Unified messaging layer bridging native team channels, Google Chat, and Microsoft 365 so messages reach colleagues without switching tools.
+              </p>
+              <div style="margin-bottom:16px; font-size:13px; font-weight:600; color:var(--hs-mint);">
+                ✓ Connects Google Workspace &amp; MS 365 · Zero message drop
               </div>
-              <a href="/work/skribe" class="work-title-link" style="text-decoration:none; color:inherit;">
-                <div class="work-title-wrap">
-                  <h3 class="work-title">Skribe — Team Chat That Meets You Where You Already Are</h3>
-                  <div class="work-arrow" aria-hidden="true">↗</div>
-                </div>
-              </a>
-              <div class="work-client">Skribe (skribe.app)</div>
-              <p class="work-desc">One chat layer for teams split across Slack-style channels, Google Chat, Google Workspace, and Microsoft 365.</p>
-              <div class="work-metric"><span class="tick">✓</span><span>Connects native chat, Google Chat, Google Workspace &amp; Microsoft 365 in one place</span></div>
-              <div style="display:flex; gap:10px; margin-top:auto; padding-top:6px;">
-                <a href="/work/skribe" class="btn btn-dark" style="flex:1; justify-content:center; padding:10px 14px; font-size:13px; border-radius:0px;">
-                  Read Full Case Study <span class="arw">→</span>
-                </a>
-                <button type="button" class="work-expand-btn" aria-expanded="false" style="width:auto; border-top:none; padding:10px 14px; background:var(--bg); border:1px solid var(--line); border-radius:0px; cursor:pointer;" title="Toggle quick breakdown">
-                  <span>Overview</span>
-                  <span class="chevron" style="margin-left:4px;">▾</span>
-                </button>
-              </div>
-              <div class="work-details">
-                <div class="work-details-inner">
-                  <div class="work-detail-block">
-                    <strong>The Challenge</strong>
-                    <p>Most companies aren't actually on one communication tool anymore — one team lives on Google Chat, another runs on Microsoft 365, and getting a message across the org means either forcing everyone onto the same platform or watching messages fall through the cracks between tools no one wants to give up.</p>
-                  </div>
-                  <div class="work-detail-block">
-                    <strong>The Product Decision</strong>
-                    <p>Rather than build another standalone team-chat app asking companies to migrate away from tools they'd already standardized on, Skribe was scoped as a connective layer: native team chat that also bridges into Google Chat, Google Workspace, and Microsoft 365 — so a message reaches people wherever they already are, instead of creating one more inbox for everyone to check. The product promise: "Reach with clarity. Know what worked."</p>
-                  </div>
-                </div>
-              </div>
+              <a href="/work/skribe" class="work-card-link">Read Full Case Study <span>→</span></a>
             </div>
           </div>
-
         </div>
       </div>
     </section>
 
-    <!-- ================= SECTION 7: CLIENT REVIEWS & TESTIMONIALS ================= -->
-    <section class="reviews-section" id="reviews">
+    <!-- ================= SECTION 7: CLIENT TESTIMONIALS ================= -->
+    <section class="testimonial-section" id="reviews">
       <div class="wrap">
-        <div class="shead left rv">
-          <div class="reviews-header-split">
-            <div>
-              Verified Client Reviews</span>
-              <h2>What founders &amp; executives say about working with me.</h2>
-            </div>
-            <div class="reviews-header-rating">
-              <div class="stars-gold" aria-label="5 out of 5 stars">★★★★★</div>
-              <span class="clutch-tag">5.0 Clutch Rating · 100% Verified Reviews</span>
-            </div>
+        <div class="testimonial-card rv">
+          <div class="testimonial-stars">★★★★★</div>
+          <blockquote class="testimonial-quote">
+            “Creuto didn't just write code; they helped us think through the product logic, challenged assumptions we hadn't considered, and delivered everything on schedule. They operate like true product partners, not an agency billing hours.”
+          </blockquote>
+          <div class="testimonial-meta">
+            <strong>Jeet Mohnani</strong>
+            <span>Co-Founder &amp; CEO, Make My Look · 5.0 Clutch Verified Review</span>
           </div>
         </div>
 
-        <!-- Single Large Spotlight Testimonial Stage -->
-        <div class="testi-spotlight-wrapper rv" data-aos="fade-up">
-          <div class="testi-spotlight-card" id="testiSpotlight">
-            <!-- Slide 1: Rakesh Sharma / Skyeone -->
-            <div class="testi-slide active" data-slide="0">
-              <div>
-                <span class="testi-badge-light">★ Clutch Verified Review</span>
-                <blockquote class="testi-quote-large">
-                  “Skyeone solved a problem every family planning a wedding faces — the endless back-and-forth across a dozen vendors with nothing written down. Creuto built a platform that finally makes event planning feel as simple as booking a flight.”
-                </blockquote>
-              </div>
-              <div class="testi-spotlight-footer">
-                <div class="testi-author-lockup">
-                  <img src="assets/img/reviewer-rakesh.jpg" alt="Rakesh Sharma — Skyeone Founding Team" class="testi-author-avatar" loading="lazy">
-                  <div class="testi-author-meta">
-                    <strong>Rakesh Sharma</strong>
-                    <span>Skyeone Founding Team · Event Tech &amp; Multi-Vendor Booking</span>
-                  </div>
-                </div>
-                <div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
-                  <a href="/work/sky1-event-booking" class="testi-case-link">View Case Study ↗</a>
-                  <div class="testi-controls">
-                    <button class="testi-nav-btn" id="testiPrev" aria-label="Previous review">←</button>
-                    <div class="testi-dots" id="testiDots">
-                      <button class="testi-dot active" data-index="0" aria-label="Review 1"></button>
-                      <button class="testi-dot" data-index="1" aria-label="Review 2"></button>
-                    </div>
-                    <button class="testi-nav-btn" id="testiNext" aria-label="Next review">→</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Slide 2: Jeet Mohnani / Make My Look -->
-            <div class="testi-slide" data-slide="1">
-              <div>
-                <span class="testi-badge-light">★ Clutch Verified Review</span>
-                <blockquote class="testi-quote-large">
-                  “We had a complex vision: a marketplace that works seamlessly for customers, salon owners, and our internal team at the same time. Creuto understood that from day one. They did not just write code; they helped us think through the product logic, suggested features we had not considered, and delivered everything on schedule.”
-                </blockquote>
-              </div>
-              <div class="testi-spotlight-footer">
-                <div class="testi-author-lockup">
-                  <img src="assets/img/reviewer-jeet.jpg" alt="Jeet Mohnani — Co-Founder &amp; CEO, Make My Look" class="testi-author-avatar" loading="lazy">
-                  <div class="testi-author-meta">
-                    <strong>Jeet Mohnani</strong>
-                    <span>Co-Founder &amp; CEO, Make My Look · Beauty &amp; Wellness Marketplace</span>
-                  </div>
-                </div>
-                <div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
-                  <a href="/work/make-my-look" class="testi-case-link">View Case Study ↗</a>
-                  <div class="testi-controls">
-                    <button class="testi-nav-btn" id="testiPrev2" aria-label="Previous review">←</button>
-                    <div class="testi-dots">
-                      <button class="testi-dot" data-index="0" aria-label="Review 1"></button>
-                      <button class="testi-dot active" data-index="1" aria-label="Review 2"></button>
-                    </div>
-                    <button class="testi-nav-btn" id="testiNext2" aria-label="Next review">→</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Clutch Global Verified Widget -->
-        <div class="reviews-container rv">
+        <!-- Clutch Widget -->
+        <div style="max-width:640px; margin:40px auto 0 auto; text-align:center;" class="rv">
           <script type="text/javascript" src="https://widget.clutch.co/static/js/widget.js"></script>
           <div class="clutch-widget" data-url="https://widget.clutch.co" data-widget-type="8" data-height="280" data-nofollow="false" data-expandifr="true" data-scale="100" data-reviews="384806,383518,383041,382633,382294,380065" data-clutchcompany-id="2118119"></div>
         </div>
-        <div class="center rv" style="margin-top: 24px;">
-          <a href="https://clutch.co/profile/creuto" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
-            Read More Reviews on Clutch <span class="arw">→</span>
-          </a>
-        </div>
       </div>
     </section>
 
-
-    <!-- ================= SECTION 8: FOUNDER SUITE ================= -->
-    <section class="suite-section" id="suite">
+    <!-- ================= SECTION 8: FOUNDER SUITE / AUDIT FORM ================= -->
+    <section class="section section-alt" id="suite">
       <div class="wrap">
-        <div class="suite-box rv">
-          <div class="shead">
-            Start with Product Clarity</span>
-            <h2 style="font-size:clamp(28px, 4vw, 42px); margin-top:12px;">Tell me your idea. Get a clear path forward.</h2>
-            <p class="sub" style="margin-top:10px;">
-              Share where you are and I'll come back with honest first thoughts — scope, a PRD starting point, and a realistic sense of budget and approach.
-            </p>
+        <div class="section-header rv">
+          <div class="hs-eyebrow">
+            <span class="dot"></span>
+            START WITH PRODUCT CLARITY
           </div>
-
-          <div class="suite-grid">
-            <div class="suite-perks">
-              <div class="perk-item">
-                <span class="ck">01</span>
-                <div><strong>A clear read on scope:</strong> Exactly what must be built first to test demand, and what should wait.</div>
-              </div>
-              <div class="perk-item">
-                <span class="ck">02</span>
-                <div><strong>An honest sense of budget:</strong> A realistic timeline and cost breakdown with zero inflated quotes.</div>
-              </div>
-              <div class="perk-item">
-                <span class="ck">03</span>
-                <div><strong>A PRD starting point:</strong> Actionable documentation you can take anywhere, even if we don't work together.</div>
-              </div>
-              <div class="perk-item">
-                <span class="ck">04</span>
-                <div><strong>Your idea, protected:</strong> Full confidentiality and standard NDAs available upon request.</div>
-              </div>
-
-              <div style="margin-top:16px; padding:18px 20px; background:var(--bg); border-radius:var(--r-md); border:1px solid var(--line);">
-                <p style="font-size:13.5px; color:var(--ink-soft); line-height:1.55; margin:0;">
-                  <strong style="color:var(--ink);">Founder Guarantee:</strong> Direct personal review from Nihar. No sales spam, no pressure. You'll receive actionable thoughts within 24 hours.
-                </p>
-              </div>
-            </div>
-
-            <div class="suite-form-card">
-              <form id="auditForm">
-                <!-- Anti-spam honeypot field -->
-                <div class="hp-field">
-                  <label for="a_hp_user">Leave this field empty</label>
-                  <input type="text" id="a_hp_user" name="a_hp_user" tabindex="-1" autocomplete="off">
-                </div>
-
-                <div class="row-2col">
-                  <div class="form-group">
-                    <label for="a-name">Your name *</label>
-                    <input id="a-name" name="name" required placeholder="e.g. Rahul Sharma">
-                  </div>
-                  <div class="form-group">
-                    <label for="a-phone">Mobile number *</label>
-                    <input id="a-phone" name="phone" type="tel" required placeholder="e.g. +91 98765 43210">
-                  </div>
-                </div>
-
-                <div class="row-2col">
-                  <div class="form-group">
-                    <label for="a-biz">Business name *</label>
-                    <input id="a-biz" name="biz" required placeholder="Acme Inc.">
-                  </div>
-                  <div class="form-group">
-                    <label for="a-ind">Industry sector *</label>
-                    <input id="a-ind" name="ind" required placeholder="Fintech, SaaS, AI…">
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label for="a-team">Team size *</label>
-                  <select id="a-team" name="team" required>
-                    <option value="" disabled selected>Select…</option>
-                    <option>Just me / solo founder</option>
-                    <option>2–10</option>
-                    <option>11–50</option>
-                    <option>50+</option>
-                  </select>
-                </div>
-
-                <div class="form-group">
-                  <label for="a-bottle">What do you want to build? *</label>
-                  <textarea id="a-bottle" name="bottle" rows="3" required
-                    placeholder="Describe your product idea, target users, or the problem you're solving…"></textarea>
-                </div>
-
-                <div class="form-group">
-                  <label for="a-email">Your work email *</label>
-                  <input id="a-email" name="email" type="email" required placeholder="you@company.com">
-                </div>
-
-                <button type="submit" class="btn btn-dark" style="width:100%; justify-content:center; padding:15px; border-radius:12px;">
-                  Send &amp; Get First Thoughts <span class="arw">→</span>
-                </button>
-                <p style="font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--ink-faint); margin-top:12px; text-align:center;">
-                  Direct submission to Nihar · 24-hour response
-                </p>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= SECTION 9: WRITING & INSIGHTS ================= -->
-    <section class="writing-section" id="writing">
-      <div class="wrap">
-        <div class="shead left rv">
-          <div class="writing-header-split">
-            <div>
-              Writing &amp; Thoughts</span>
-              <h2 style="font-size:clamp(30px, 3.8vw, 44px); letter-spacing:-0.03em; margin:12px 0 0;">Product thinking in print. Shareable insights.</h2>
-            </div>
-            <div>
-              <p class="sub">
-                I write about product strategy, B2B software mistakes, and what it takes to launch products successfully.
-              </p>
-              <a href="https://medium.com/@niharrout" target="_blank" rel="noopener" class="lnk-arw" style="font-family:'JetBrains Mono',monospace; font-size:12.5px; font-weight:700; color:var(--accent);">
-                All Articles on Medium ↗
-              </a>
-            </div>
-          </div>
+          <h2 class="section-title">Tell me your idea. Get a clear path forward.</h2>
+          <p class="section-sub">
+            Share where you are and I'll come back within 24 hours with honest first thoughts — scope boundaries, a PRD starting point, and a realistic budget breakdown.
+          </p>
         </div>
 
-        <div class="articles-grid">
-          <a href="https://medium.com/@niharrout" target="_blank" rel="noopener" class="article-card rv">
-            <span class="tag">Product Strategy</span>
-            <h3>Why 90% of MVPs Fail for Product Reasons</h3>
-            <p>An in-depth look at how wrong scoping, missing user validation, and bloated feature lists sink software products before they launch.</p>
-            <span class="lnk-arw">Read on Medium ↗</span>
-          </a>
-
-          <a href="https://medium.com/@niharrout" target="_blank" rel="noopener" class="article-card rv">
-            <span class="tag">Engineering Advice</span>
-            <h3>How to Align Your Software Build with Your Budget</h3>
-            <p>Practical rules for founders on feature prioritization, selecting the right stack, and scoping to avoid surprise dev bills.</p>
-            <span class="lnk-arw">Read on Medium ↗</span>
-          </a>
-
-          <a href="https://medium.com/@niharrout" target="_blank" rel="noopener" class="article-card rv">
-            <span class="tag">B2B SaaS</span>
-            <h3>The Product-First Scoping Playbook for B2B Teams</h3>
-            <p>A step-by-step guide to writing a high-impact PRD that keeps design, product, and engineering teams aligned.</p>
-            <span class="lnk-arw">Read on Medium ↗</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= SECTION 10: FAQ ================= -->
-    <section id="faq" style="background:#FFFFFF; border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
-      <div class="wrap">
-        <div class="faq-grid">
-          <div class="rv">
-            FAQ</span>
-            <h2>Frequently Asked Questions</h2>
-            <p style="color:var(--ink-soft); margin-top:14px; font-size:16px;">
-              Have questions about how we work or how to get started? Here are answers to what founders ask most.
-            </p>
-            <div style="margin-top:24px;">
-              <a href="#contact" class="btn btn-dark">Let's Book a Call <span class="arw">→</span></a>
-            </div>
-          </div>
-
-          <div class="rv">
-            <details class="q" open>
-              <summary>Do you help define the product, or only build it?</summary>
-              <div class="ans">
-                Both — and the product comes first. With eight years in product management, I help you shape scope, priorities, and a clear PRD before any code is written. Once the product is right, my team at Creuto engineers it. You can also engage us purely for product consulting if that's all you need.
-              </div>
-            </details>
-
-            <details class="q">
-              <summary>How do you keep a project within budget?</summary>
-              <div class="ans">
-                By scoping honestly up front. A good PRD prevents the biggest cost driver in software — building the wrong thing. We plan a build that fits what you can invest, prioritize what matters first, and are transparent about trade-offs. No inflated quotes, no surprise costs.
-              </div>
-            </details>
-
-            <details class="q">
-              <summary>What is the relationship between Nihar and the Creuto team?</summary>
-              <div class="ans">
-                I am the Founder &amp; CEO of Creuto. Creuto is my company and dedicated in-house engineering team. I personally lead all product strategy, PRD definition, AI feasibility, and architecture. My in-house engineering team at Creuto then designs, builds, and deploys the production-grade software under my direct supervision.
-              </div>
-            </details>
-
-            <details class="q">
-              <summary>Do you have your own in-house development team?</summary>
-              <div class="ans">
-                Yes. Creuto has a dedicated in-house engineering team that builds B2B, growth-standard software directly. Your project isn't handed off to unknown subcontractors — it's built by the team you're speaking with.
-              </div>
-            </details>
-
-            <details class="q">
-              <summary>Who owns the source code and IP?</summary>
-              <div class="ans">
-                You do, 100%. Upon completion and handover, all source code, Figma design assets, databases, and IP belong entirely to your company with zero vendor lock-in.
-              </div>
-            </details>
-
-            <details class="q">
-              <summary>How do we get started?</summary>
-              <div class="ans">
-                Start with a short consultation. Share your idea using the Founder Suite form above or book a call, and I'll come back with honest first thoughts on scope, approach, and budget. From there we move into a PRD and a plan. I respond within 24 hours.
-              </div>
-            </details>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= SECTION 11: CONTACT ================= -->
-    <section class="contact-section" id="contact">
-      <div class="wrap contact-grid">
-        <div class="rv">
-          Contact</span>
-          <h2>Have a project? Let's make it happen.</h2>
-          
-          <div style="display:flex; flex-direction:column; gap:16px; margin-top:24px;">
-            <div style="display:flex; gap:12px; align-items:flex-start;">
-              <span style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent); background:var(--bg); border:1px solid var(--line-strong); padding:2px 8px; border-radius:var(--r-sm); display:inline-block; margin-top:2px;">01</span>
-              <span style="font-size:15px; color:var(--ink-soft);"><strong style="color:var(--ink);">Fast &amp; focused response:</strong> I get back within 24 hours so your idea doesn't lose momentum.</span>
-            </div>
-            <div style="display:flex; gap:12px; align-items:flex-start;">
-              <span style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent); background:var(--bg); border:1px solid var(--line-strong); padding:2px 8px; border-radius:var(--r-sm); display:inline-block; margin-top:2px;">02</span>
-              <span style="font-size:15px; color:var(--ink-soft);"><strong style="color:var(--ink);">Your idea, protected:</strong> NDAs available on request for full confidentiality.</span>
-            </div>
-            <div style="display:flex; gap:12px; align-items:flex-start;">
-              <span style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent); background:var(--bg); border:1px solid var(--line-strong); padding:2px 8px; border-radius:var(--r-sm); display:inline-block; margin-top:2px;">03</span>
-              <span style="font-size:15px; color:var(--ink-soft);"><strong style="color:var(--ink);">Product-first from day one:</strong> Scope, PRD, and roadmap shaped before we build — so your budget goes to the right things.</span>
-            </div>
-            <div style="display:flex; gap:12px; align-items:flex-start;">
-              <span style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent); background:var(--bg); border:1px solid var(--line-strong); padding:2px 8px; border-radius:var(--r-sm); display:inline-block; margin-top:2px;">04</span>
-              <span style="font-size:15px; color:var(--ink-soft);"><strong style="color:var(--ink);">End-to-end support:</strong> Discovery, roadmap, development, QA, and launch — not just a hand-off.</span>
-            </div>
-          </div>
-
-          <div style="margin-top:28px; padding-top:20px; border-top:1px solid var(--line-strong);">
-            <div style="font-size:17px; font-weight:700; color:var(--ink);">Nihar Ranjan Rout</div>
-            <div style="font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--ink-faint); margin-top:2px;">
-              FOUNDER &amp; CEO, CREUTO · <a href="mailto:mail@niharrout.com" style="color:var(--ink); font-weight:600;">mail@niharrout.com</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="cform-card rv">
-          <form id="contactForm">
-            <!-- Anti-spam honeypot field -->
-            <div class="hp-field">
-              <label for="c_hp_user">Leave this field empty</label>
-              <input type="text" id="c_hp_user" name="c_hp_user" tabindex="-1" autocomplete="off">
-            </div>
-
-            <div class="row-2col">
-              <div class="form-group">
-                <label for="c-name">Full name *</label>
-                <input id="c-name" name="name" required placeholder="Your name">
-              </div>
-              <div class="form-group">
-                <label for="c-email">Email *</label>
-                <input id="c-email" name="email" type="email" required placeholder="you@company.com">
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="c-budget">Project budget</label>
-              <select id="c-budget" name="budget">
-                <option value="" disabled selected>Select a range…</option>
-                <option>Under $5k (₹1.5L - ₹3.5L)</option>
-                <option>$5k – $15k (₹3.5L - ₹12L)</option>
-                <option>$15k – $50k (₹12L - ₹40L)</option>
-                <option>$50k+ (₹40L+)</option>
-                <option>Not sure yet / Advisory</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="c-help">How can I help? *</label>
-              <select id="c-help" name="help" required>
-                <option value="" disabled selected>Select…</option>
-                <option>Product strategy &amp; PRD scoping</option>
-                <option>End-to-end software build</option>
-                <option>AI product development</option>
-                <option>Custom SaaS &amp; web architecture</option>
-                <option>Mobile app development</option>
-                <option>Dedicated engineering team</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="c-details">Project details *</label>
-              <textarea id="c-details" name="details" rows="4" required placeholder="Tell me what you're building and where you are today."></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; padding:15px; border-radius:0;">
-              Send Message
-            </button>
-            <p style="font-size:12px; color:var(--ink-muted); margin-top:12px; text-align:center;">
-              Direct submission to Nihar · Responds within 24 hours
-            </p>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= CLOSING HIGH-CONTRAST ACCENT CTA BAND ================= -->
-    <section class="closing-cta-band">
-      <div class="wrap">
-        <div class="closing-cta-inner rv" data-aos="fade-up">
-          <div class="closing-cta-text">
-            <h2>Let's build something worth shipping.</h2>
-            <p>Direct founder access on every architecture and scoping milestone — no junior account managers.</p>
-          </div>
+        <div style="display:grid; grid-template-columns: 1fr 1.2fr; gap:48px; max-width:960px; margin:0 auto;" class="rv">
           <div>
-            <a href="#contact" class="btn-cta-white">Book a Strategy Call →</a>
+            <div style="display:flex; flex-direction:column; gap:20px;">
+              <div style="display:flex; gap:16px; align-items:flex-start;">
+                <div style="width:32px; height:32px; border-radius:50%; background:var(--hs-brand-tint); color:var(--hs-brand); display:flex; align-items:center; justify-content:center; font-weight:800; font-size:14px; flex-shrink:0;">1</div>
+                <div>
+                  <strong style="color:var(--hs-text-01); font-size:15px; display:block; margin-bottom:2px;">A clear read on scope:</strong>
+                  <span style="font-size:14px; color:var(--hs-text-02);">Exactly what must be built first to test demand, and what should wait.</span>
+                </div>
+              </div>
+
+              <div style="display:flex; gap:16px; align-items:flex-start;">
+                <div style="width:32px; height:32px; border-radius:50%; background:var(--hs-brand-tint); color:var(--hs-brand); display:flex; align-items:center; justify-content:center; font-weight:800; font-size:14px; flex-shrink:0;">2</div>
+                <div>
+                  <strong style="color:var(--hs-text-01); font-size:15px; display:block; margin-bottom:2px;">An honest sense of budget:</strong>
+                  <span style="font-size:14px; color:var(--hs-text-02);">A realistic timeline and cost breakdown with zero inflated quotes.</span>
+                </div>
+              </div>
+
+              <div style="display:flex; gap:16px; align-items:flex-start;">
+                <div style="width:32px; height:32px; border-radius:50%; background:var(--hs-brand-tint); color:var(--hs-brand); display:flex; align-items:center; justify-content:center; font-weight:800; font-size:14px; flex-shrink:0;">3</div>
+                <div>
+                  <strong style="color:var(--hs-text-01); font-size:15px; display:block; margin-bottom:2px;">A PRD starting point:</strong>
+                  <span style="font-size:14px; color:var(--hs-text-02);">Actionable documentation you can take anywhere, even if we don't work together.</span>
+                </div>
+              </div>
+
+              <div style="display:flex; gap:16px; align-items:flex-start;">
+                <div style="width:32px; height:32px; border-radius:50%; background:var(--hs-brand-tint); color:var(--hs-brand); display:flex; align-items:center; justify-content:center; font-weight:800; font-size:14px; flex-shrink:0;">4</div>
+                <div>
+                  <strong style="color:var(--hs-text-01); font-size:15px; display:block; margin-bottom:2px;">Your idea, protected:</strong>
+                  <span style="font-size:14px; color:var(--hs-text-02);">Full confidentiality and standard mutual NDAs available upon request.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Form Card -->
+          <div class="cl-card">
+            <form id="auditForm">
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;">
+                <div>
+                  <label for="a-name" style="font-size:13px; font-weight:600; color:var(--hs-text-01); display:block; margin-bottom:6px;">Your Name *</label>
+                  <input id="a-name" name="name" required placeholder="e.g. Rahul Sharma" style="width:100%; padding:10px 14px; border:1px solid var(--hs-border-02); border-radius:var(--hs-radius-xs); font-family:var(--font-body); font-size:14px;">
+                </div>
+                <div>
+                  <label for="a-phone" style="font-size:13px; font-weight:600; color:var(--hs-text-01); display:block; margin-bottom:6px;">Mobile Number *</label>
+                  <input id="a-phone" name="phone" type="tel" required placeholder="e.g. +91 98765 43210" style="width:100%; padding:10px 14px; border:1px solid var(--hs-border-02); border-radius:var(--hs-radius-xs); font-family:var(--font-body); font-size:14px;">
+                </div>
+              </div>
+
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;">
+                <div>
+                  <label for="a-biz" style="font-size:13px; font-weight:600; color:var(--hs-text-01); display:block; margin-bottom:6px;">Business Name *</label>
+                  <input id="a-biz" name="biz" required placeholder="Acme Inc." style="width:100%; padding:10px 14px; border:1px solid var(--hs-border-02); border-radius:var(--hs-radius-xs); font-family:var(--font-body); font-size:14px;">
+                </div>
+                <div>
+                  <label for="a-ind" style="font-size:13px; font-weight:600; color:var(--hs-text-01); display:block; margin-bottom:6px;">Industry Sector *</label>
+                  <input id="a-ind" name="ind" required placeholder="Fintech, SaaS, AI…" style="width:100%; padding:10px 14px; border:1px solid var(--hs-border-02); border-radius:var(--hs-radius-xs); font-family:var(--font-body); font-size:14px;">
+                </div>
+              </div>
+
+              <div style="margin-bottom:16px;">
+                <label for="a-email" style="font-size:13px; font-weight:600; color:var(--hs-text-01); display:block; margin-bottom:6px;">Work Email *</label>
+                <input id="a-email" name="email" type="email" required placeholder="you@company.com" style="width:100%; padding:10px 14px; border:1px solid var(--hs-border-02); border-radius:var(--hs-radius-xs); font-family:var(--font-body); font-size:14px;">
+              </div>
+
+              <div style="margin-bottom:20px;">
+                <label for="a-bottle" style="font-size:13px; font-weight:600; color:var(--hs-text-01); display:block; margin-bottom:6px;">What do you want to build? *</label>
+                <textarea id="a-bottle" name="bottle" rows="3" required placeholder="Describe your product idea, target users, or key features…" style="width:100%; padding:10px 14px; border:1px solid var(--hs-border-02); border-radius:var(--hs-radius-xs); font-family:var(--font-body); font-size:14px;"></textarea>
+              </div>
+
+              <button type="submit" class="cl-button -primary" style="width:100%; justify-content:center;">
+                Send &amp; Get First Thoughts <span style="margin-left:4px;">→</span>
+              </button>
+              <div style="font-size:12px; color:var(--hs-text-muted); text-align:center; margin-top:10px;">
+                Direct submission to Nihar · 24-hr response guarantee
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 9: FAQ ================= -->
+    <section class="section" id="faq">
+      <div class="wrap">
+        <div style="display:grid; grid-template-columns: 1fr 1.5fr; gap:56px;">
+          <div class="rv">
+            <div class="hs-eyebrow">
+              <span class="dot"></span>
+              FREQUENTLY ASKED QUESTIONS
+            </div>
+            <h2>Everything you need to know about working together.</h2>
+            <p style="margin-top:16px;">
+              Have questions about sprint cadences, intellectual property, or how we keep projects strictly within budget? Here are honest answers.
+            </p>
+            <div style="margin-top:28px;">
+              <a href="#contact" class="cl-button -secondary">Schedule a Call →</a>
+            </div>
+          </div>
+
+          <div class="rv">
+            <details style="margin-bottom:16px; background:#ffffff; border:1px solid var(--hs-border-03); border-radius:var(--hs-radius-sm); padding:20px;" open>
+              <summary style="font-size:17px; font-weight:600; color:var(--hs-text-01); cursor:pointer; font-family:var(--font-display);">Do you help define the product, or only build it?</summary>
+              <p style="margin:12px 0 0 0; font-size:15px; color:var(--hs-text-02); line-height:1.65;">
+                Both — and the product comes first. With eight years in product management, I help you shape scope, priorities, and a clear PRD before any code is written. Once the product is right, my team at Creuto engineers it. You can also engage us purely for product consulting if that's all you need.
+              </p>
+            </details>
+
+            <details style="margin-bottom:16px; background:#ffffff; border:1px solid var(--hs-border-03); border-radius:var(--hs-radius-sm); padding:20px;">
+              <summary style="font-size:17px; font-weight:600; color:var(--hs-text-01); cursor:pointer; font-family:var(--font-display);">How do you keep a project strictly within budget?</summary>
+              <p style="margin:12px 0 0 0; font-size:15px; color:var(--hs-text-02); line-height:1.65;">
+                By scoping honestly up front. A good PRD prevents the biggest cost driver in software — building the wrong thing. We plan a build that fits what you can invest, prioritize what matters first, and are transparent about trade-offs. No inflated quotes, no surprise costs.
+              </p>
+            </details>
+
+            <details style="margin-bottom:16px; background:#ffffff; border:1px solid var(--hs-border-03); border-radius:var(--hs-radius-sm); padding:20px;">
+              <summary style="font-size:17px; font-weight:600; color:var(--hs-text-01); cursor:pointer; font-family:var(--font-display);">What is the relationship between Nihar and Creuto?</summary>
+              <p style="margin:12px 0 0 0; font-size:15px; color:var(--hs-text-02); line-height:1.65;">
+                I am the Founder &amp; CEO of Creuto. Creuto is my company and dedicated in-house engineering team. I personally lead all product strategy, PRD definition, AI feasibility, and architecture. My in-house engineering team at Creuto then designs, builds, and deploys the production-grade software under my direct supervision.
+              </p>
+            </details>
+
+            <details style="margin-bottom:16px; background:#ffffff; border:1px solid var(--hs-border-03); border-radius:var(--hs-radius-sm); padding:20px;">
+              <summary style="font-size:17px; font-weight:600; color:var(--hs-text-01); cursor:pointer; font-family:var(--font-display);">Who owns the source code and IP?</summary>
+              <p style="margin:12px 0 0 0; font-size:15px; color:var(--hs-text-02); line-height:1.65;">
+                You do, 100%. Upon completion and handover, all source code, Figma design assets, databases, and IP belong entirely to your company with zero vendor lock-in.
+              </p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 10: CLOSING HIGH-CONVERSION CTA ================= -->
+    <section class="cta-section" id="contact">
+      <div class="wrap">
+        <div class="cta-box rv">
+          <h2>Ready to build something worth shipping?</h2>
+          <p>
+            Direct founder access on every architecture and scoping milestone — no junior account managers. Let's explore your product idea.
+          </p>
+          <div class="cta-actions">
+            <a href="mailto:mail@niharrout.com" class="cl-button -primary">Book a Strategy Call <span style="margin-left:4px;">→</span></a>
+            <a href="/project-costs" class="cl-button -secondary">Explore Project Cost Guides</a>
           </div>
         </div>
       </div>
@@ -3990,63 +746,61 @@
 
   </main>
 
-  <!-- ================= FOOTER ================= -->
+  <!-- ================= HUBSPOT DARK FOOTER ================= -->
   <footer class="ft">
     <div class="wrap">
       <div class="ft-grid">
-        <div class="ft-brand-col">
-          <span class="ft-brand">nihar<span class="dot">.</span></span>
-          <p class="ft-desc">
+        <div>
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px;">
+            <div class="brand-monogram" style="width:32px; height:32px; font-size:15px;">NR</div>
+            <span style="font-family:var(--font-display); font-size:20px; font-weight:600; color:#ffffff;">nihar<span style="color:var(--hs-brand);">.</span></span>
+          </div>
+          <p style="color:var(--hs-text-on-dark-muted); font-size:14px; line-height:1.65; max-width:320px;">
             Product-first B2B software development. Founder &amp; CEO of Creuto — where product strategy and a strong in-house team turn ideas into growth-standard software.
           </p>
         </div>
 
-        <div>
+        <div class="ft-col">
+          <h4>Venture Hubs</h4>
+          <ul class="ft-links-list">
+            <li><a href="#hubs">Strategy &amp; PRD Hub</a></li>
+            <li><a href="/work/custom-erp-manufacturing">Custom ERP Hub</a></li>
+            <li><a href="/work/make-my-look">Marketplace Hub</a></li>
+            <li><a href="/technology">AI Systems Hub</a></li>
+            <li><a href="#estimator">Pricing Estimator</a></li>
+          </ul>
+        </div>
+
+        <div class="ft-col">
           <h4>Explore</h4>
-          <div class="ft-links">
-            <a href="/about">About</a>
-            <a href="/technology">Technology</a>
-            <a href="/project-costs">Project Costs</a>
-            <a href="#why">Why Me</a>
-            <a href="#capabilities">Capabilities</a>
-            <a href="#work">Work</a>
-            <a href="#suite">Founder Suite</a>
-            <a href="#faq">FAQ</a>
-            <a href="b2b-software-development-for-startups.html">B2B Software for Startups</a>
-            <a href="ai-product-development-bhubaneswar.html">AI Development Bhubaneswar</a>
-            <a href="mobile-app-development-bhubaneswar.html">Mobile App Development Bhubaneswar</a>
-          </div>
+          <ul class="ft-links-list">
+            <li><a href="/about">About Nihar</a></li>
+            <li><a href="/technology">Tech Rationale</a></li>
+            <li><a href="/project-costs">Project Costs</a></li>
+            <li><a href="#reviews">Verified Reviews</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
         </div>
 
-        <div>
-          <h4>Work With Me</h4>
-          <div class="ft-links">
-            <a href="#contact">Book a Call</a>
-            <a href="https://creuto.com" target="_blank" rel="noopener">Creuto ↗</a>
-            <a href="mailto:mail@niharrout.com">mail@niharrout.com</a>
-          </div>
-        </div>
-
-        <div>
-          <h4>Elsewhere</h4>
-          <div class="ft-links">
-            <a href="https://www.linkedin.com/in/niharrout/" target="_blank" rel="noopener">LinkedIn ↗</a>
-            <a href="https://x.com/iniharrout" target="_blank" rel="noopener">X ↗</a>
-            <a href="https://github.com/iniharrout" target="_blank" rel="noopener">GitHub ↗</a>
-            <a href="https://medium.com/@niharrout" target="_blank" rel="noopener">Medium ↗</a>
-            <a href="https://substack.com/@niharrout" target="_blank" rel="noopener">Substack ↗</a>
-          </div>
+        <div class="ft-col">
+          <h4>Direct Connect</h4>
+          <ul class="ft-links-list">
+            <li><a href="mailto:mail@niharrout.com">mail@niharrout.com</a></li>
+            <li><a href="https://creuto.com" target="_blank" rel="noopener">Creuto ↗</a></li>
+            <li><a href="https://www.linkedin.com/in/niharrout/" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+            <li><a href="https://x.com/iniharrout" target="_blank" rel="noopener">X / Twitter ↗</a></li>
+            <li><a href="https://github.com/iniharrout" target="_blank" rel="noopener">GitHub ↗</a></li>
+          </ul>
         </div>
       </div>
 
       <div class="ft-bottom">
-        <p>© <span id="yr"></span> Nihar Ranjan Rout · Founder &amp; CEO, Creuto · Product Strategy &amp; Software Delivery</p>
-        <div style="display:flex; align-items:center; gap:14px; font-size:12.5px;">
-          <a href="privacy-policy.html" style="color:var(--ink-faint); text-decoration:none;">Privacy Policy</a>
-          <span style="color:var(--line-strong);">·</span>
-          <a href="terms.html" style="color:var(--ink-faint); text-decoration:none;">Terms of Service</a>
-          <span style="color:var(--line-strong);">·</span>
-          <span style="color:var(--ink-muted);">niharrout.com</span>
+        <div>
+          © <span class="copyright-year">2026</span> Nihar Ranjan Rout · Founder &amp; CEO, Creuto · niharrout.com
+        </div>
+        <div style="display:flex; gap:18px;">
+          <a href="/privacy-policy">Privacy Policy</a>
+          <a href="/terms">Terms of Service</a>
         </div>
       </div>
     </div>
@@ -4067,495 +821,10 @@
   }
   </script>
 
-  <!-- Portfolio Data -->
-  <script src="assets/work-data.js"></script>
-
-  <!-- Motion & Visual System Enhancements -->
-  <script src="assets/aos.js"></script>
-  <script src="assets/site-enhancements.js"></script>
+  <!-- HubSpot Design System Interactive Scripts -->
+  <script src="/assets/aos.js"></script>
+  <script src="/assets/site-enhancements.js?v=hs2026_1"></script>
   <!-- Floating AI Chat Widget -->
   <script src="/assets/chat-widget.js" defer></script>
-
-  <!-- Interactive Logic -->
-  <script>
-    document.getElementById('yr').textContent = new Date().getFullYear();
-
-    /* Nav Scroll Effect */
-    var nav = document.getElementById('nav');
-    var onScroll = function () { nav.classList.toggle('scrolled', window.scrollY > 12); };
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-
-    /* Desktop Dropdown Toggle */
-    (function () {
-      var dropdown = document.getElementById('companyDropdown');
-      var btn = document.getElementById('companyDropdownBtn');
-      if (dropdown && btn) {
-        btn.addEventListener('click', function (e) {
-          e.stopPropagation();
-          var isOpen = dropdown.classList.toggle('open');
-          btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-        });
-        document.addEventListener('click', function (e) {
-          if (!dropdown.contains(e.target)) {
-            dropdown.classList.remove('open');
-            btn.setAttribute('aria-expanded', 'false');
-          }
-        });
-      }
-    })();
-
-    /* Mobile Drawer & Accordion Toggle */
-    (function () {
-      var toggle = document.getElementById('navToggle');
-      var drawer = document.getElementById('mobileDrawer');
-      var acc = document.getElementById('companyAccordion');
-      var accBtn = document.getElementById('companyAccordionBtn');
-
-      if (acc && accBtn) {
-        accBtn.addEventListener('click', function (e) {
-          e.preventDefault();
-          e.stopPropagation();
-          var isOpen = acc.classList.toggle('open');
-          accBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-        });
-      }
-
-      if (toggle && drawer) {
-        toggle.addEventListener('click', function (e) {
-          e.stopPropagation();
-          var isOpen = toggle.classList.toggle('open');
-          drawer.classList.toggle('open', isOpen);
-        });
-
-        var links = drawer.querySelectorAll('.drawer-lnk, .btn');
-        links.forEach(function (lnk) {
-          lnk.addEventListener('click', function () {
-            toggle.classList.remove('open');
-            drawer.classList.remove('open');
-          });
-        });
-
-        document.addEventListener('click', function (e) {
-          if (!drawer.contains(e.target) && !toggle.contains(e.target)) {
-            toggle.classList.remove('open');
-            drawer.classList.remove('open');
-          }
-        });
-      }
-    })();
-
-    /* Scope Query Pre-fill Handler */
-    (function () {
-      var params = new URLSearchParams(window.location.search);
-      var scopeVal = params.get('scope');
-      if (scopeVal) {
-        var textarea = document.getElementById('a-bottle');
-        if (textarea) {
-          textarea.value = decodeURIComponent(scopeVal);
-          textarea.style.borderColor = 'var(--accent)';
-          textarea.style.boxShadow = '0 0 0 3px var(--accent-tint)';
-          var suite = document.getElementById('suite');
-          if (suite) {
-            setTimeout(function () {
-              suite.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }, 400);
-          }
-        }
-      }
-    })();
-
-    /* Capabilities Tabs */
-    (function () {
-      var tabBtns = document.querySelectorAll('.tab-btn');
-      var tabPanels = document.querySelectorAll('.tab-panel');
-
-      tabBtns.forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          tabBtns.forEach(function (b) { b.setAttribute('aria-selected', 'false'); });
-          tabPanels.forEach(function (p) { p.classList.remove('active'); });
-
-          btn.setAttribute('aria-selected', 'true');
-          var targetId = btn.getAttribute('aria-controls');
-          var targetPanel = document.getElementById(targetId);
-          if (targetPanel) {
-            targetPanel.classList.add('active');
-          }
-        });
-      });
-    })();
-
-    /* Toast Notifier */
-    function showToast(message) {
-      var toast = document.createElement('div');
-      toast.className = 'toast';
-      toast.innerHTML = '<div class="icon">✓</div><div class="msg">' + message + '</div>';
-      document.body.appendChild(toast);
-      setTimeout(function () { toast.classList.add('show'); }, 10);
-      setTimeout(function () {
-        toast.classList.remove('show');
-        setTimeout(function () { toast.remove(); }, 400);
-      }, 4000);
-    }
-
-    /* Google Chat Webhook Integration with Anti-Bot Protection */
-    var GOOGLE_CHAT_WEBHOOK_URL = 'https://chat.googleapis.com/v1/spaces/AAQAgcxp6nM/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=NYzpLArOTxnwEYuEzvw094eXwTbbpD_WZs2ugBGOH7U';
-
-    function sendToGoogleChat(payload, fallbackAction) {
-      if (!GOOGLE_CHAT_WEBHOOK_URL) {
-        console.warn('Google Chat Webhook URL is empty. Falling back to default mail client.');
-        fallbackAction();
-        return;
-      }
-
-      fetch(GOOGLE_CHAT_WEBHOOK_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(payload)
-      })
-        .then(function () {
-          showToast('Thank you! Your details have been submitted to Nihar.');
-        })
-        .catch(function (err) {
-          console.error('Webhook post error:', err);
-          showToast('Submission error. Opening your email client...');
-          setTimeout(fallbackAction, 1000);
-        });
-    }
-
-    function val(f, n) {
-      var el = f.querySelector('[name="' + n + '"]');
-      return el ? el.value.trim() : '';
-    }
-
-    /* Founder Suite Form Submission */
-    var af = document.getElementById('auditForm');
-    if (af) {
-      af.addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        // Honeypot spam bot check
-        var hp = val(af, 'a_hp_user');
-        if (hp) {
-          console.warn('Spam submission filtered.');
-          showToast('Submission received.');
-          af.reset();
-          return;
-        }
-
-        var name = val(af, 'name');
-        var phone = val(af, 'phone');
-        var business = val(af, 'biz');
-        var industry = val(af, 'ind');
-        var team = val(af, 'team');
-        var bottle = val(af, 'bottle');
-        var email = val(af, 'email');
-
-        var payload = {
-          "cardsV2": [
-            {
-              "cardId": "auditFormSubmit",
-              "card": {
-                "header": {
-                  "title": "New Project Enquiry — Founder Suite",
-                  "subtitle": "Submitted via niharrout.com",
-                  "imageUrl": "https://niharrout.com/assets/nihar.jpg",
-                  "imageType": "CIRCLE"
-                },
-                "sections": [
-                  {
-                    "widgets": [
-                      { "decoratedText": { "topLabel": "Lead Name", "text": name } },
-                      { "decoratedText": { "topLabel": "Mobile Number", "text": phone } },
-                      { "decoratedText": { "topLabel": "Business Name", "text": business } },
-                      { "decoratedText": { "topLabel": "Industry Sector", "text": industry } },
-                      { "decoratedText": { "topLabel": "Team Size", "text": team } },
-                      { "decoratedText": { "topLabel": "What they want to build", "text": bottle } },
-                      { "decoratedText": { "topLabel": "Work Email", "text": email } }
-                    ]
-                  }
-                ]
-              }
-            }
-          ]
-        };
-
-        var fallback = function () {
-          var body = 'New project enquiry%0D%0A%0D%0AName: ' + encodeURIComponent(name)
-            + '%0D%0AMobile: ' + encodeURIComponent(phone)
-            + '%0D%0ABusiness: ' + encodeURIComponent(business)
-            + '%0D%0AIndustry: ' + encodeURIComponent(industry)
-            + '%0D%0ATeam size: ' + encodeURIComponent(team)
-            + '%0D%0AWhat they want to build: ' + encodeURIComponent(bottle)
-            + '%0D%0AEmail: ' + encodeURIComponent(email);
-          window.location.href = 'mailto:mail@niharrout.com?subject=' + encodeURIComponent('Project enquiry — ' + business) + '&body=' + body;
-        };
-
-        sendToGoogleChat(payload, fallback);
-        af.reset();
-      });
-    }
-
-    /* Contact Form Submission */
-    var cf = document.getElementById('contactForm');
-    if (cf) {
-      cf.addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        // Honeypot spam bot check
-        var hp = val(cf, 'c_hp_user');
-        if (hp) {
-          console.warn('Spam submission filtered.');
-          showToast('Submission received.');
-          cf.reset();
-          return;
-        }
-
-        var name = val(cf, 'name');
-        var email = val(cf, 'email');
-        var budget = val(cf, 'budget');
-        var help = val(cf, 'help');
-        var details = val(cf, 'details');
-
-        var payload = {
-          "cardsV2": [
-            {
-              "cardId": "contactFormSubmit",
-              "card": {
-                "header": {
-                  "title": "New Consultation Enquiry — Contact Form",
-                  "subtitle": "Submitted via niharrout.com",
-                  "imageUrl": "https://niharrout.com/assets/nihar.jpg",
-                  "imageType": "CIRCLE"
-                },
-                "sections": [
-                  {
-                    "widgets": [
-                      { "decoratedText": { "topLabel": "Full Name", "text": name } },
-                      { "decoratedText": { "topLabel": "Email", "text": email } },
-                      { "decoratedText": { "topLabel": "Project Budget", "text": budget } },
-                      { "decoratedText": { "topLabel": "How I can help", "text": help } },
-                      { "decoratedText": { "topLabel": "Project Details", "text": details } }
-                    ]
-                  }
-                ]
-              }
-            }
-          ]
-        };
-
-        var fallback = function () {
-          var body = 'New project enquiry%0D%0A%0D%0AName: ' + encodeURIComponent(name)
-            + '%0D%0AEmail: ' + encodeURIComponent(email)
-            + '%0D%0ABudget: ' + encodeURIComponent(budget)
-            + '%0D%0AService: ' + encodeURIComponent(help)
-            + '%0D%0A%0D%0ADetails:%0D%0A' + encodeURIComponent(details);
-          window.location.href = 'mailto:mail@niharrout.com?subject=' + encodeURIComponent('Project enquiry — ' + name) + '&body=' + body;
-        };
-
-        sendToGoogleChat(payload, fallback);
-        cf.reset();
-      });
-    }
-
-    /* ================= PORTFOLIO / WORK SECTION LOGIC ================= */
-    (function () {
-      var grid = document.getElementById('workGrid');
-      var filtersContainer = document.getElementById('workFilters');
-      var projects = window.portfolioProjects || [];
-
-      if (!grid || !filtersContainer || !projects.length) return;
-
-      var currentFilter = 'All';
-      var filterCategories = ['All', 'B2B', 'Consumer Marketplace', 'Enterprise', 'Mobile', 'SaaS'];
-
-      function matchesCategory(project, cat) {
-        if (cat === 'All') return true;
-        var lowerCat = cat.toLowerCase();
-        return project.tags.some(function (t) {
-          var lt = t.toLowerCase();
-          if (lowerCat === 'b2b') return lt.indexOf('b2b') !== -1 || lt.indexOf('enterprise') !== -1;
-          if (lowerCat === 'consumer marketplace' || lowerCat === 'consumer' || lowerCat === 'marketplace') {
-            return lt.indexOf('consumer') !== -1 || lt.indexOf('marketplace') !== -1;
-          }
-          if (lowerCat === 'mobile') return lt.indexOf('mobile') !== -1;
-          if (lowerCat === 'enterprise') return lt.indexOf('enterprise') !== -1 || lt.indexOf('erp') !== -1;
-          if (lowerCat === 'saas') return lt.indexOf('saas') !== -1 || lt.indexOf('b2b') !== -1;
-          return lt === lowerCat || lt.indexOf(lowerCat) !== -1;
-        });
-      }
-
-      function getCategoryCount(cat) {
-        if (cat === 'All') return projects.length;
-        return projects.filter(function (p) { return matchesCategory(p, cat); }).length;
-      }
-
-      function renderFilters() {
-        filtersContainer.innerHTML = '';
-        filterCategories.forEach(function (cat) {
-          var count = getCategoryCount(cat);
-          if (count === 0 && cat !== 'All') return;
-
-          var btn = document.createElement('button');
-          btn.type = 'button';
-          btn.className = 'work-filter-btn' + (cat === currentFilter ? ' active' : '');
-          btn.setAttribute('data-filter', cat);
-          btn.setAttribute('role', 'tab');
-          btn.setAttribute('aria-selected', cat === currentFilter ? 'true' : 'false');
-          btn.innerHTML = cat + ' <span class="count">(' + count + ')</span>';
-
-          btn.addEventListener('click', function () {
-            if (currentFilter === cat) return;
-            currentFilter = cat;
-            renderFilters();
-            renderProjects();
-          });
-
-          filtersContainer.appendChild(btn);
-        });
-      }
-
-      function renderProjects() {
-        grid.style.opacity = '0';
-        setTimeout(function () {
-          grid.innerHTML = '';
-          var filtered = projects.filter(function (p) {
-            return matchesCategory(p, currentFilter);
-          });
-
-          filtered.forEach(function (p, idx) {
-            var card = document.createElement('div');
-            card.className = 'work-card rv in' + (p.video ? ' has-video' : '');
-            card.setAttribute('data-id', idx);
-
-            var tagsHtml = p.tags.map(function (t) {
-              return '<span class="work-tag">' + t + '</span>';
-            }).join('');
-
-            var metricHtml = p.result
-              ? '<div class="work-metric"><span class="tick">✓</span><span>' + p.result + '</span></div>'
-              : '';
-
-            var clientHtml = p.client
-              ? '<div class="work-client">' + p.client + '</div>'
-              : '';
-
-            var videoHtml = p.video
-              ? '<video class="work-video" muted loop playsinline preload="none" data-src="' + p.video + '"></video>'
-                + '<div class="work-media-badge"><span class="pulse-dot"></span> Hover Video</div>'
-              : '';
-
-            var caseStudyLink = p.link || '#';
-
-            card.innerHTML =
-              '<a href="' + caseStudyLink + '" class="work-media" aria-label="Read full case study for ' + p.title + '">' +
-                '<img src="' + p.thumbnail + '" alt="' + p.title + '" class="work-thumb" loading="lazy">' +
-                videoHtml +
-              '</a>' +
-              '<div class="work-body">' +
-                '<div class="work-tags">' + tagsHtml + '</div>' +
-                '<a href="' + caseStudyLink + '" class="work-title-link" style="text-decoration:none; color:inherit;">' +
-                  '<div class="work-title-wrap">' +
-                    '<h3 class="work-title">' + p.title + '</h3>' +
-                    '<div class="work-arrow" aria-hidden="true">↗</div>' +
-                  '</div>' +
-                '</a>' +
-                clientHtml +
-                '<p class="work-desc">' + p.description + '</p>' +
-                metricHtml +
-                '<div style="display:flex; gap:10px; margin-top:auto; padding-top:6px;">' +
-                  '<a href="' + caseStudyLink + '" class="btn btn-dark" style="flex:1; justify-content:center; padding:10px 14px; font-size:13px; border-radius:0px;">' +
-                    'Read Full Case Study <span class="arw">→</span>' +
-                  '</a>' +
-                  '<button type="button" class="work-expand-btn" aria-expanded="false" style="width:auto; border-top:none; padding:10px 14px; background:var(--bg); border:1px solid var(--line); border-radius:0px; cursor:pointer;" title="Toggle quick breakdown">' +
-                    '<span>Overview</span>' +
-                    '<span class="chevron" style="margin-left:4px;">▾</span>' +
-                  '</button>' +
-                '</div>' +
-                '<div class="work-details">' +
-                  '<div class="work-details-inner">' +
-                    '<div class="work-detail-block">' +
-                      '<strong>The Challenge</strong>' +
-                      '<p>' + p.challenge + '</p>' +
-                    '</div>' +
-                    '<div class="work-detail-block">' +
-                      '<strong>The Product Decision</strong>' +
-                      '<p>' + p.decision + '</p>' +
-                    '</div>' +
-                  '</div>' +
-                '</div>' +
-              '</div>';
-
-            var expandBtn = card.querySelector('.work-expand-btn');
-
-            function toggleExpand(e) {
-              e.stopPropagation();
-              e.preventDefault();
-              var isExpanded = card.classList.toggle('is-expanded');
-              expandBtn.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
-            }
-
-            expandBtn.addEventListener('click', toggleExpand);
-
-            if (p.video) {
-              var video = card.querySelector('.work-video');
-              card.addEventListener('mouseenter', function () {
-                if (!video.src && video.getAttribute('data-src')) {
-                  video.src = video.getAttribute('data-src');
-                }
-                card.classList.add('video-playing');
-                var playPromise = video.play();
-                if (playPromise !== undefined) {
-                  playPromise.catch(function () {});
-                }
-              });
-
-              card.addEventListener('mouseleave', function () {
-                card.classList.remove('video-playing');
-                video.pause();
-                video.currentTime = 0;
-              });
-            }
-
-            grid.appendChild(card);
-          });
-
-          grid.style.opacity = '1';
-        }, 120);
-      }
-
-      renderFilters();
-      renderProjects();
-    })();
-
-
-
-    /* Scroll Reveal */
-    var rv = document.querySelectorAll('.rv');
-    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (en) {
-          if (en.isIntersecting) {
-            en.target.classList.add('in');
-            io.unobserve(en.target);
-          }
-        });
-      }, { threshold: 0.08, rootMargin: '0px 0px -4% 0px' });
-
-      rv.forEach(function (el, i) {
-        el.style.transitionDelay = Math.min((i % 4) * 50, 200) + 'ms';
-        io.observe(el);
-      });
-    } else {
-      rv.forEach(function (el) { el.classList.add('in'); });
-    }
-  </script>
-
-  <!-- AOS & Site Enhancements -->
-  <script src="/assets/aos.js"></script>
-  <script src="/assets/site-enhancements.js"></script>
 </body>
 </html>
