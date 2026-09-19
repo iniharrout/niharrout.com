@@ -32,40 +32,55 @@
   function initDropdowns() {
     var dropdownItems = document.querySelectorAll('.nav-item-dropdown');
     dropdownItems.forEach(function (item) {
+      item.addEventListener('mouseenter', function () {
+        item.classList.add('open');
+      });
+      item.addEventListener('mouseleave', function () {
+        item.classList.remove('open');
+      });
+
       var link = item.querySelector('.nav-link');
       if (!link) return;
 
       link.addEventListener('click', function (e) {
         if (window.innerWidth <= 991) {
           e.preventDefault();
-          var menu = item.querySelector('.dropdown-menu');
-          if (menu) {
-            var isOpen = menu.style.display === 'block';
-            menu.style.display = isOpen ? 'none' : 'block';
-            menu.style.opacity = isOpen ? '0' : '1';
-            menu.style.visibility = isOpen ? 'hidden' : 'visible';
-            menu.style.pointerEvents = isOpen ? 'none' : 'auto';
+          var isOpen = item.classList.contains('open');
+          if (isOpen) {
+            item.classList.remove('open');
+          } else {
+            dropdownItems.forEach(function (d) { d.classList.remove('open'); });
+            item.classList.add('open');
           }
         }
       });
     });
+
+    // Close dropdowns on outside click
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('.nav-item-dropdown')) {
+        dropdownItems.forEach(function (d) { d.classList.remove('open'); });
+      }
+    });
   }
 
-  // 3. Minimalist FAQ Accordion
+  // 3. Universal FAQ Accordion
   function initFAQ() {
-    var faqItems = document.querySelectorAll('.faq-item-minimal');
+    var faqItems = document.querySelectorAll('.faq-item, .faq-item-minimal, .faq-item-excited');
     faqItems.forEach(function (item) {
-      var btn = item.querySelector('.faq-question-btn');
+      var btn = item.querySelector('.faq-question, .faq-question-btn');
       if (!btn) return;
 
       btn.addEventListener('click', function () {
         var isOpen = item.classList.contains('open');
 
-        // Close other items
-        faqItems.forEach(function (other) {
+        // Close other items in the same container
+        var parentContainer = item.parentElement;
+        var siblings = parentContainer ? parentContainer.querySelectorAll('.faq-item, .faq-item-minimal, .faq-item-excited') : faqItems;
+        siblings.forEach(function (other) {
           if (other !== item) {
             other.classList.remove('open');
-            var otherBtn = other.querySelector('.faq-question-btn');
+            var otherBtn = other.querySelector('.faq-question, .faq-question-btn');
             if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
           }
         });
