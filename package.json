@@ -1,0 +1,17 @@
+{
+  "name": "niharrout-com",
+  "version": "1.0.0",
+  "description": "Nihar Ranjan Rout's personal website",
+  "private": true,
+  "scripts": {
+    "dev": "node dev-server.js",
+    "start": "node dev-server.js"
+  },
+  "dependencies": {
+    "@vercel/speed-insights": "^1.0.12"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
