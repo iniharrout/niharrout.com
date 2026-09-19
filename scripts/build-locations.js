@@ -162,7 +162,7 @@ function footer(city) {
   </footer>
 
   <script src="/assets/site-enhancements.js?v=hs2026_5"></script>
-  <script src="/assets/lead-forms.js?v=2"></script>
+  <script src="/assets/lead-forms.js?v=3"></script>
 </body>
 </html>
 `;

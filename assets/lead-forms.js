@@ -1,16 +1,12 @@
 /**
  * Enquiry forms: location pages, homepage, /services/ pages and the b2b startup form.
- *
- * Delivery order:
- *   1. POST /api/lead        -> Google Chat (needs LEAD_WEBHOOK_URL on the server)
- *   2. POST to Formspree     -> the site's existing form endpoint, used if step 1 is unavailable
- * On success the visitor is sent to /thank-you/. If both channels fail, the form stays
- * on the page with a message and a mailto link (no automatic redirect to an email app).
+ * Every form posts to /api/lead, which forwards the lead to Google Chat, then sends the
+ * visitor to /thank-you/. If that fails the form stays on the page with an error message
+ * and an "Email us instead" link.
  */
 (function () {
   'use strict';
 
-  var FORMSPREE_DEFAULT = 'https://formspree.io/f/xbjnqypk';
   var forms = document.querySelectorAll('form[action*="formspree.io"], form#startupLeadForm, form[data-loc-form]');
   if (!forms.length) return;
 
@@ -91,24 +87,8 @@
     return 'mailto:me@niharrout.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
   }
 
-  function toFormspree(form, lead) {
-    var action = form.getAttribute('action') || '';
-    var url = action.indexOf('formspree.io') !== -1 ? action : FORMSPREE_DEFAULT;
-    var flat = {
-      name: lead.name, email: lead.email, phone: lead.phone, service: lead.service, city: lead.city,
-      budget: lead.budget, message: lead.message, page: lead.page,
-      _subject: 'New ' + (lead.service || 'project') + ' enquiry' + (lead.city ? ' (' + lead.city + ')' : '')
-    };
-    Object.keys(lead.extras).forEach(function (k) { flat[k] = lead.extras[k]; });
-    return fetch(url, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-      body: JSON.stringify(flat)
-    }).then(function (response) { return response.ok; });
-  }
-
   // Resolves { done: true } or { done: false, error?: string }.
-  function deliver(form, lead) {
+  function deliver(lead) {
     return fetch('/api/lead', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -117,15 +97,10 @@
       .then(function (response) {
         return response.json().catch(function () { return {}; }).then(function (json) {
           if (json.ok) return { done: true };
-          if (response.status === 400) return { done: false, error: json.error };
-          throw new Error('lead api unavailable');
+          return { done: false, error: response.status === 400 ? json.error : null };
         });
       })
-      .catch(function () {
-        return toFormspree(form, lead)
-          .then(function (ok) { return { done: ok }; })
-          .catch(function () { return { done: false }; });
-      });
+      .catch(function () { return { done: false, error: null }; });
   }
 
   function goToThankYou(lead) {
@@ -147,13 +122,13 @@
       if (button) button.disabled = true;
       show(form, true, 'Sending…');
 
-      deliver(form, lead).then(function (result) {
+      deliver(lead).then(function (result) {
         if (result.done) {
           form.reset();
           goToThankYou(lead);
           return;
         }
-        show(form, false, result.error || 'We could not send this just now. Please try again in a moment, or', result.error ? null : mailtoHref(lead));
+        show(form, false, result.error || 'We could not send your enquiry just now. Please try again, or', result.error ? null : mailtoHref(lead));
         if (button) button.disabled = false;
       });
     });
