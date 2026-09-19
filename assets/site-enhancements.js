@@ -112,6 +112,44 @@
     });
   }
 
+  // 6. Calendly Integration
+  function initCalendly() {
+    function openCalendlyModal(e) {
+      if (e) e.preventDefault();
+      if (window.Calendly && typeof window.Calendly.initPopupWidget === 'function') {
+        window.Calendly.initPopupWidget({
+          url: 'https://calendly.com/creuto/meet?primary_color=ff5f2d&text_color=2d3e50'
+        });
+      } else {
+        window.open('https://calendly.com/creuto/meet', '_blank');
+      }
+    }
+
+    // Attach to all elements with data-calendly="true" or .btn-book-call
+    document.querySelectorAll('[data-calendly="true"], .btn-book-call, a[href="#calendly"]').forEach(function (btn) {
+      btn.addEventListener('click', openCalendlyModal);
+    });
+
+    // Initialize badge widget if script is loaded
+    function setupBadge() {
+      if (window.Calendly && typeof window.Calendly.initBadgeWidget === 'function') {
+        // Prevent duplicate badges
+        if (!document.querySelector('.calendly-badge-widget')) {
+          window.Calendly.initBadgeWidget({
+            url: 'https://calendly.com/creuto/meet?primary_color=ff5f2d&text_color=2d3e50',
+            text: 'Schedule time with me',
+            color: '#FF5F2D',
+            textColor: '#ffffff',
+            branding: false
+          });
+        }
+      } else {
+        setTimeout(setupBadge, 400);
+      }
+    }
+    setupBadge();
+  }
+
   // DOM Ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function () {
@@ -120,6 +158,7 @@
       initFAQ();
       initFooterYear();
       initSmoothScroll();
+      initCalendly();
     });
   } else {
     initStickyNav();
@@ -127,5 +166,6 @@
     initFAQ();
     initFooterYear();
     initSmoothScroll();
+    initCalendly();
   }
 })();

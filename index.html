@@ -57,7 +57,11 @@
   <!-- Design System Stylesheet -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/assets/design-system.css?v=hs2026_4">
+  <link rel="stylesheet" href="/assets/design-system.css?v=hs2026_5">
+
+  <!-- Calendly Widget CSS & JS -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </head>
 
 <body>
@@ -65,10 +69,9 @@
   <!-- ================= NAVIGATION HEADER WITH CLEAN DROPDOWNS ================= -->
   <header class="site-header" id="site-header">
     <div class="wrap nav-inner">
-      <!-- Brand Monogram -->
+      <!-- Brand Logo -->
       <a href="/" class="brand-link" aria-label="Nihar Ranjan Rout Homepage">
-        <div class="brand-monogram">NR</div>
-        <div class="brand-text">nihar<span class="dot">.</span></div>
+        <div class="brand-text">nihar<span class="dot">.html</span></div>
       </a>
 
       <!-- Primary Navigation -->
@@ -162,22 +165,29 @@
               <svg class="chevron" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
             <div class="dropdown-menu">
-              <a href="/project-costs" class="dropdown-item">
+              <a href="/blog/" class="dropdown-item">
                 <div class="dropdown-num">01</div>
+                <div class="dropdown-text">
+                  <h4>Engineering &amp; Product Playbooks</h4>
+                  <p>In-depth tactical guides on MVPs, ERPs &amp; AI</p>
+                </div>
+              </a>
+              <a href="/project-costs" class="dropdown-item">
+                <div class="dropdown-num">02</div>
                 <div class="dropdown-text">
                   <h4>Project Costs &amp; Pricing Guide</h4>
                   <p>Comprehensive cost models for 2026 builds</p>
                 </div>
               </a>
               <a href="/b2b-software-development-for-startups" class="dropdown-item">
-                <div class="dropdown-num">02</div>
+                <div class="dropdown-num">03</div>
                 <div class="dropdown-text">
                   <h4>B2B Startup Software Playbook</h4>
                   <p>De-risking 0-to-1 PRDs &amp; sprint roadmaps</p>
                 </div>
               </a>
               <a href="/technology" class="dropdown-item">
-                <div class="dropdown-num">03</div>
+                <div class="dropdown-num">04</div>
                 <div class="dropdown-text">
                   <h4>Enterprise Technology Stack</h4>
                   <p>Production tools: Node, React, Python, AWS</p>
@@ -195,11 +205,7 @@
 
       <!-- Right CTAs -->
       <div class="nav-actions">
-        <div class="nav-status-badge">
-          <span class="status-ping"></span>
-          2 SLOTS OPEN Q3/Q4
-        </div>
-        <a href="#contact" class="cl-button -primary -small">Book a Call <span style="margin-left:4px;">→</span></a>
+        <a href="https://calendly.com/creuto/meet" data-calendly="true" class="cl-button -primary -small btn-book-call">Book a Call <span style="margin-left:4px;">→</span></a>
       </div>
     </div>
   </header>
@@ -226,7 +232,7 @@
             </p>
 
             <div class="hero-ctas">
-              <a href="#contact" class="cl-button -primary">Book a Strategy Call <span style="margin-left:4px;">→</span></a>
+              <a href="https://calendly.com/creuto/meet" data-calendly="true" class="cl-button -primary btn-book-call">Book a Strategy Call <span style="margin-left:4px;">→</span></a>
               <a href="#portfolio" class="cl-button -secondary">Explore Our Portfolio ↓</a>
             </div>
 
@@ -259,7 +265,7 @@
                     <div class="hero-stat-label">Product Leadership</div>
                   </div>
                   <div class="hero-stat-box">
-                    <div class="hero-stat-number">14+ Products</div>
+                    <div class="hero-stat-number">45+ Products</div>
                     <div class="hero-stat-label">Shipped Live</div>
                   </div>
                   <div class="hero-stat-box">
@@ -595,7 +601,109 @@
       </div>
     </section>
 
-    <!-- ================= 6. MINIMALIST FAQ SECTION ================= -->
+    <!-- ================= 6. LATEST INSIGHTS & PLAYBOOKS ================= -->
+    <section class="blog-section" id="insights" style="border-top:1px solid var(--hs-border-subtle); padding: 90px 0;">
+      <div class="wrap">
+        <div class="section-header" style="text-align:center; max-width:800px; margin: 0 auto 48px;">
+          <div class="hs-eyebrow" style="justify-content:center;">
+            <span class="dot"></span>
+            FIELD NOTES &amp; PLAYBOOKS
+          </div>
+          <h2 class="section-title">Frameworks for building software that scales.</h2>
+          <p class="section-sub">
+            Battle-tested playbooks on MVP budgeting, custom ERP migrations, React Native mobile apps, and pragmatic enterprise AI.
+          </p>
+        </div>
+
+        <div class="blog-grid">
+          <!-- Lead Article 1 -->
+          <article class="blog-card">
+            <a href="/blog/cost-to-build-mvp-2026/" style="text-decoration:none; color:inherit; display:flex; flex-direction:column; height:100%;">
+              <div class="blog-card-thumb">
+                <img src="/work/skribe-card.jpg" alt="Cost to Build an MVP in 2026" loading="lazy">
+              </div>
+              <div class="blog-card-body">
+                <div class="blog-card-meta">
+                  <span class="blog-category-badge">Product Strategy</span>
+                  <span class="blog-read-time">9 min read</span>
+                </div>
+                <h3 class="blog-card-title">The True Cost of Building an MVP in 2026: Agency vs. Freelancers vs. Dedicated Squad</h3>
+                <p class="blog-card-desc">
+                  Why 70% of MVP budgets get burned on rework, how agency markups function, and how a disciplined founder-led squad delivers 3x faster with clear PRD scoping.
+                </p>
+                <div class="blog-card-footer">
+                  <div class="blog-author">
+                    <img src="/assets/nihar.jpg" alt="Nihar Ranjan Rout" class="blog-author-img">
+                    <span class="blog-author-name">Nihar Ranjan Rout</span>
+                  </div>
+                  <span class="blog-read-link">Read Guide →</span>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <!-- Lead Article 2 -->
+          <article class="blog-card">
+            <a href="/blog/why-custom-erp-implementations-fail/" style="text-decoration:none; color:inherit; display:flex; flex-direction:column; height:100%;">
+              <div class="blog-card-thumb">
+                <img src="/work/erp-manufacturing-card.jpg" alt="Why Custom ERP Implementations Fail" loading="lazy">
+              </div>
+              <div class="blog-card-body">
+                <div class="blog-card-meta">
+                  <span class="blog-category-badge">Enterprise ERP</span>
+                  <span class="blog-read-time">11 min read</span>
+                </div>
+                <h3 class="blog-card-title">Why 78% of Custom ERP Implementations Fail (And the Product Architecture That Prevents It)</h3>
+                <p class="blog-card-desc">
+                  Moving manufacturing and multi-department operations from messy spreadsheets to custom software requires modular cutovers, granular RBAC, and strict normalization.
+                </p>
+                <div class="blog-card-footer">
+                  <div class="blog-author">
+                    <img src="/assets/nihar.jpg" alt="Nihar Ranjan Rout" class="blog-author-img">
+                    <span class="blog-author-name">Nihar Ranjan Rout</span>
+                  </div>
+                  <span class="blog-read-link">Read Guide →</span>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <!-- Lead Article 3 -->
+          <article class="blog-card">
+            <a href="/blog/react-native-mobile-app-playbook/" style="text-decoration:none; color:inherit; display:flex; flex-direction:column; height:100%;">
+              <div class="blog-card-thumb">
+                <img src="/work/mml-card.jpg" alt="React Native & Flutter Engineering Playbook" loading="lazy">
+              </div>
+              <div class="blog-card-body">
+                <div class="blog-card-meta">
+                  <span class="blog-category-badge">Mobile Engineering</span>
+                  <span class="blog-read-time">10 min read</span>
+                </div>
+                <h3 class="blog-card-title">From PRD to App Store: The 10-Week React Native &amp; Flutter Engineering Playbook</h3>
+                <p class="blog-card-desc">
+                  A production blueprint for consumer and B2B mobile apps: offline-first synchronization, real-time WebSockets, background geolocation, and App Store approval tactics.
+                </p>
+                <div class="blog-card-footer">
+                  <div class="blog-author">
+                    <img src="/assets/nihar.jpg" alt="Nihar Ranjan Rout" class="blog-author-img">
+                    <span class="blog-author-name">Nihar Ranjan Rout</span>
+                  </div>
+                  <span class="blog-read-link">Read Guide →</span>
+                </div>
+              </div>
+            </a>
+          </article>
+        </div>
+
+        <div style="text-align:center; margin-top:48px;">
+          <a href="/blog/" class="cl-button -secondary" style="font-size:15px; padding: 12px 28px;">
+            Explore All 5 In-Depth Guides &amp; Playbooks →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 7. MINIMALIST FAQ SECTION ================= -->
     <section class="faq-section" id="faq">
       <div class="wrap">
         <div class="section-header">
@@ -721,7 +829,7 @@
             <div style="background: var(--hs-bg-02); border: 1px solid var(--hs-border-03); border-radius: 8px; padding: 16px 20px;">
               <div style="font-size: 13px; font-weight: 700; color: var(--hs-text-01); margin-bottom: 4px;">Direct Contact</div>
               <div style="font-size: 14px; color: var(--hs-text-02);">
-                Email: <a href="mailto:nihar@niharrout.com" style="color:var(--hs-brand); font-weight:600; text-decoration:none;">nihar@niharrout.com</a><br>
+                Email: <a href="mailto:me@niharrout.com" style="color:var(--hs-brand); font-weight:600; text-decoration:none;">me@niharrout.com</a><br>
                 Location: Creuto HQ, Bhubaneswar, Odisha, India
               </div>
             </div>
@@ -779,12 +887,12 @@
       <div class="footer-grid">
         <!-- Brand & Bio -->
         <div class="footer-brand">
-          <h3>Nihar Ranjan Rout</h3>
+          <div class="brand-text" style="color:#fff; font-size:22px; font-weight:700; margin-bottom:12px;">nihar<span class="dot">.html</span></div>
           <p>
             Founder &amp; CEO of Creuto. Product leader with 8+ years across product management, custom ERP systems, mobile applications, and B2B software engineering with a dedicated 100% in-house team.
           </p>
           <div style="font-size: 13.5px; color: #a8a8a8;">
-            Bhubaneswar, Odisha, India · <a href="mailto:nihar@niharrout.com" style="color:var(--hs-brand); text-decoration:none;">nihar@niharrout.com</a>
+            Bhubaneswar, Odisha, India · <a href="mailto:me@niharrout.com" style="color:var(--hs-brand); text-decoration:none;">me@niharrout.com</a>
           </div>
         </div>
 
@@ -815,6 +923,7 @@
         <div class="footer-col">
           <h4>Insights</h4>
           <ul class="footer-links">
+            <li><a href="/blog/" style="color:var(--hs-brand); font-weight:600;">Blog &amp; Playbooks</a></li>
             <li><a href="/project-costs">Project Costs Guide 2026</a></li>
             <li><a href="/b2b-software-development-for-startups">B2B Startup Playbook</a></li>
             <li><a href="/technology">Technology Stack</a></li>
@@ -838,7 +947,7 @@
   </footer>
 
   <!-- Interactive Scripts -->
-  <script src="/assets/site-enhancements.js?v=hs2026_4"></script>
+  <script src="/assets/site-enhancements.js?v=hs2026_5"></script>
 </body>
 
 </html>

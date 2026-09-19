@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>From PRD to App Store: The 10-Week React Native Engineering Playbook — Nihar Rout</title>
+  <meta name="description" content="Production architectural playbook for shipping iOS and Android mobile apps in 10 weeks: offline-first sync, background geofencing, payment escrow, and App Store approval. By Nihar Ranjan Rout.">
+  <meta name="author" content="Nihar Ranjan Rout">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://niharrout.com/blog/react-native-mobile-app-playbook/">
+  <link rel="icon" href="/assets/nihar.jpg" type="image/jpeg">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Nihar Ranjan Rout | Creuto">
+  <meta property="og:url" content="https://niharrout.com/blog/react-native-mobile-app-playbook/">
+  <meta property="og:title" content="From PRD to App Store: The 10-Week React Native Engineering Playbook">
+  <meta property="og:description" content="A production engineering blueprint for consumer and B2B mobile applications delivering 60 FPS performance and rapid store approval.">
+  <meta property="og:image" content="https://niharrout.com/assets/mml-mockup.png">
+
+  <!-- Structured Data: BlogPosting -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "From PRD to App Store: The 10-Week React Native Engineering Playbook",
+    "image": "https://niharrout.com/assets/mml-mockup.png",
+    "author": {
+      "@type": "Person",
+      "name": "Nihar Ranjan Rout",
+      "jobTitle": "Founder & CEO, Creuto",
+      "url": "https://niharrout.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Creuto",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://niharrout.com/assets/nihar.jpg"
+      }
+    },
+    "datePublished": "2026-05-18",
+    "dateModified": "2026-09-18",
+    "description": "The definitive engineering guide for shipping cross-platform mobile apps to Apple App Store and Google Play on a disciplined timeline."
+  }
+  </script>
+
+  <!-- Fonts & Design System -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/assets/design-system.css?v=hs2026_5">
+
+  <!-- Calendly Widget CSS & JS -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+</head>
+
+<body>
+
+  <!-- Navigation Header -->
+  <header class="site-header" id="site-header">
+    <div class="wrap nav-inner">
+      <a href="/" class="brand-link" aria-label="Nihar Ranjan Rout Homepage">
+        <div class="brand-text">nihar<span class="dot">.html</span></div>
+      </a>
+
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li class="nav-item">
+            <a href="/#services" class="nav-link">Services</a>
+          </li>
+          <li class="nav-item">
+            <a href="/#portfolio" class="nav-link">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a href="/blog/" class="nav-link" style="color:var(--hs-brand); font-weight:700;">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a href="/project-costs" class="nav-link">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a href="/about" class="nav-link">About</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="https://calendly.com/creuto/meet" data-calendly="true" class="cl-button -primary -small btn-book-call">Book a Call <span style="margin-left:4px;">→</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <article>
+      <header class="article-header">
+        <div class="wrap" style="max-width:920px;">
+          <div class="article-breadcrumbs">
+            <a href="/">Home</a>
+            <span>/</span>
+            <a href="/blog/">Blog</a>
+            <span>/</span>
+            <span>Mobile Engineering</span>
+          </div>
+
+          <div class="blog-category-badge" style="display:inline-block; margin-bottom:16px;">
+            MOBILE APPLICATION ARCHITECTURE
+          </div>
+
+          <h1 class="article-headline">
+            From PRD to App Store: The 10-Week React Native &amp; Flutter Engineering Playbook
+          </h1>
+
+          <p class="article-lead">
+            Building native mobile applications for iOS and Android does not require maintaining two separate engineering teams or spending six months in development hell.
+          </p>
+
+          <div class="article-meta-bar">
+            <div class="article-author-info">
+              <img src="/assets/nihar.jpg" alt="Nihar Ranjan Rout" class="article-author-avatar">
+              <div>
+                <div class="article-author-name">Nihar Ranjan Rout</div>
+                <div class="article-author-title">Founder &amp; CEO, Creuto · Mobile Product Strategist</div>
+              </div>
+            </div>
+            <div style="font-size:13.5px; color:var(--hs-text-03);">
+              Published May 2026 · 10 min read
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="article-body-container">
+        <div class="prose">
+          <p>
+            In the early days of mobile startups, the standard industry advice was rigid: hire two Swift/Objective-C developers for iOS, hire two Kotlin/Java developers for Android, and double your engineering budget.
+          </p>
+
+          <p>
+            In 2026, modern cross-platform frameworks like React Native (with the new Hermes engine and Fabric architecture) have fundamentally eliminated the performance gap. Companies like Shopify, Discord, Coinbase, and Instagram run mission-critical apps on unified codebases. At Creuto, we have leveraged this stack to ship high-conversion consumer platforms (like Make My Look and FlashNow) in a fraction of traditional timelines.
+          </p>
+
+          <div class="blog-callout">
+            <h4>The Mobile Rule of Thumb:</h4>
+            <p>
+              Users do not judge mobile apps by how clever your backend code is. They judge them in the first 800 milliseconds: instant startup time, buttery 60 FPS transitions, zero white screen flashes during offline network dips, and frictionless payments.
+            </p>
+          </div>
+
+          <h2>1. The 10-Week Milestone Breakdown</h2>
+          <p>
+            Here is the exact sprint cadences we follow to take a mobile project from functional specification to production app store deployment:
+          </p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Sprint (2-Wk)</th>
+                <th>Core Focus</th>
+                <th>Deliverables</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Sprint 1</strong></td>
+                <td>PRD &amp; Design Freeze</td>
+                <td>Clickable Figma prototype, edge-case interaction states, API contract specification, database schema.</td>
+              </tr>
+              <tr>
+                <td><strong>Sprint 2</strong></td>
+                <td>Core Scaffold &amp; Auth</td>
+                <td>React Native boilerplate, deep linking, phone OTP / social auth, push notification tokens (FCM/APNs).</td>
+              </tr>
+              <tr>
+                <td><strong>Sprint 3</strong></td>
+                <td>Core Transaction Loop</td>
+                <td>Main catalog/feed, search with debounce, booking calendar / shopping cart state machine, payment gateway.</td>
+              </tr>
+              <tr>
+                <td><strong>Sprint 4</strong></td>
+                <td>Offline Sync &amp; Background</td>
+                <td>Local SQLite/WatermelonDB persistence, network listener, background location tracking (if applicable).</td>
+              </tr>
+              <tr>
+                <td><strong>Sprint 5</strong></td>
+                <td>Store Submission &amp; QA</td>
+                <td>TestFlight beta release, Google Play Internal track, crash telemetry (Sentry), App Store review compliance.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2>2. Four Critical Mobile Architecture Decisions</h2>
+
+          <h3>A. Offline-First Data Architecture</h3>
+          <p>
+            Real users ride in elevators, pass through subway tunnels, or shop on spotty cellular networks. An app that displays a full-screen spinning loader whenever the Wi-Fi blinks will see immediate uninstalls. We store state locally using high-performance SQLite caching so the app opens instantly and queues background mutations until connectivity returns.
+          </p>
+
+          <h3>B. Push Notification Orchestration</h3>
+          <p>
+            Push notifications are the heartbeat of mobile retention. We configure silent background notifications to wake up the app and fetch fresh data before the user even taps the banner, ensuring that when the app opens, their feed is already rendered.
+          </p>
+
+          <h3>C. Avoiding Apple App Store Rejections</h3>
+          <p>
+            Apple rejects roughly 35% of initial submissions due to three common oversights: lack of an in-app "Delete Account" button (mandatory under Guideline 5.1.1), broken in-app purchase classifications (physical services vs. digital goods), or placeholder copy in privacy policies. We run a 24-point App Store compliance audit before submitting the final binary.
+          </p>
+
+          <!-- Strategy CTA -->
+          <div class="blog-cta-box">
+            <h3>Building a mobile product for iOS &amp; Android?</h3>
+            <p>
+              Schedule a mobile architecture consultation with Nihar. We will review your screens, audit your offline/payment requirements, and deliver a fixed sprint roadmap.
+            </p>
+            <a href="https://calendly.com/creuto/meet" data-calendly="true" class="cl-button -primary btn-book-call">
+              Schedule a Mobile Scoping Session <span style="margin-left:4px;">→</span>
+            </a>
+          </div>
+
+          <h2>3. Key Takeaways for Mobile Founders</h2>
+          <ul>
+            <li>Never build separate native iOS and Android apps for an MVP unless you require low-level Bluetooth kernel drivers or heavy 3D game engines.</li>
+            <li>Enforce 60 FPS UI by offloading heavy computations to background JavaScript threads.</li>
+            <li>Setup automated CI/CD with Fastlane and GitHub Actions to deploy test builds to TestFlight every Friday.</li>
+          </ul>
+        </div>
+
+        <div style="margin-top:60px; padding:32px; background:var(--hs-surface-subtle); border-radius:16px; border:1px solid var(--hs-border-subtle); display:flex; gap:20px; align-items:center;">
+          <img src="/assets/nihar.jpg" alt="Nihar Ranjan Rout" style="width:72px; height:72px; border-radius:50%; object-fit:cover; flex-shrink:0;">
+          <div>
+            <h4 style="font-size:18px; margin-bottom:6px; color:var(--hs-text-01);">About Nihar Ranjan Rout</h4>
+            <p style="font-size:14.5px; line-height:1.6; color:var(--hs-text-02); margin-bottom:8px;">
+              Founder &amp; CEO of Creuto. Nihar has led the product definition and mobile development of on-demand platforms, marketplace apps, and enterprise handheld scanners used by hundreds of thousands of active users.
+            </p>
+            <a href="https://linkedin.com/in/iniharrout" target="_blank" rel="noopener" style="color:var(--hs-brand); font-weight:600; font-size:13.5px; text-decoration:none;">Connect on LinkedIn ↗</a>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <!-- Dark Footer -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-text" style="color:#fff; font-size:22px; font-weight:700; margin-bottom:12px;">nihar<span class="dot">.html</span></div>
+          <p>
+            Founder &amp; CEO of Creuto. Product leader with 8+ years turning complex operational requirements into scalable digital systems with a dedicated 100% in-house squad.
+          </p>
+          <div style="font-size: 13.5px; color: #a8a8a8;">
+            Bhubaneswar, Odisha, India · <a href="mailto:me@niharrout.com" style="color:var(--hs-brand); text-decoration:none;">me@niharrout.com</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul class="footer-links">
+            <li><a href="/#services">Mobile Application Development</a></li>
+            <li><a href="/#services">AI Product Development</a></li>
+            <li><a href="/#services">Custom Enterprise ERP</a></li>
+            <li><a href="/#services">Product Strategy &amp; PRDs</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Case Studies</h4>
+          <ul class="footer-links">
+            <li><a href="/work/custom-erp-manufacturing">Manufacturing ERP</a></li>
+            <li><a href="/work/sky1-event-booking">Skyeone Event Booking</a></li>
+            <li><a href="/work/make-my-look">Make My Look Platform</a></li>
+            <li><a href="/work/flashnow">FlashNow Delivery App</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Insights</h4>
+          <ul class="footer-links">
+            <li><a href="/blog/" style="color:var(--hs-brand); font-weight:600;">Blog &amp; Playbooks</a></li>
+            <li><a href="/project-costs">Project Costs Guide 2026</a></li>
+            <li><a href="/b2b-software-development-for-startups">B2B Startup Playbook</a></li>
+            <li><a href="/technology">Technology Stack</a></li>
+            <li><a href="https://linkedin.com/in/iniharrout" target="_blank" rel="noopener">LinkedIn Profile ↗</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © <span id="yr"></span> Nihar Ranjan Rout · Founder &amp; CEO, Creuto. All rights reserved.
+        </div>
+        <div style="display:flex; gap:20px;">
+          <a href="/privacy-policy">Privacy Policy</a>
+          <a href="/terms">Terms of Service</a>
+          <a href="#top">Back to Top ↑</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/site-enhancements.js?v=hs2026_5"></script>
+</body>
+</html>
