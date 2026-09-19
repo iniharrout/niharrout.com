@@ -1331,28 +1331,343 @@ p {
   }
 }
 
-@media (max-width: 640px) {
+/* ================= 14B. CREATIVE MOBILE POLISH (< 768px) ================= */
+/* Web/Desktop layout remains 100% untouched. Scoped strictly to mobile devices */
+@media (max-width: 768px) {
+  /* Navigation & Header */
+  .site-header {
+    height: 64px;
+  }
+  .nav-inner {
+    height: 64px;
+    padding: 0 16px;
+  }
+  .brand-link {
+    gap: 8px;
+  }
+  .brand-avatar {
+    width: 32px;
+    height: 32px;
+  }
+  .brand-text {
+    font-size: 19px;
+  }
+  .nav-actions .cl-button.-small {
+    padding: 7px 14px;
+    font-size: 12.5px;
+  }
+
+  /* Global Container & Typography */
+  .wrap {
+    padding: 0 16px;
+  }
+  .section-header {
+    margin-bottom: 26px;
+  }
+  .section-title, h2 {
+    font-size: 24px !important;
+    line-height: 1.25 !important;
+    letter-spacing: -0.02em !important;
+    margin-bottom: 10px !important;
+  }
+  .section-sub {
+    font-size: 14px !important;
+    line-height: 1.55 !important;
+  }
+
+  /* Section Spacings */
   .hero-section {
-    padding-top: 36px;
-    padding-bottom: 52px;
+    padding-top: 24px;
+    padding-bottom: 40px;
+  }
+  .why-section,
+  .services-section,
+  .portfolio-section-excited,
+  .testimonials-section,
+  .field-notes-section,
+  .contact-section,
+  .faq-section-excited {
+    padding-top: 44px !important;
+    padding-bottom: 44px !important;
+  }
+
+  /* Hero Section Components - Sleek & Non-Bulky */
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .hero-content {
+    max-width: 100%;
+  }
+  .hs-eyebrow {
+    font-size: 11px;
+    padding: 4px 10px;
+    margin-bottom: 12px;
+    letter-spacing: 0.04em;
+    width: fit-content;
+  }
+  .hero-title,
+  h1 {
+    font-size: 26px !important;
+    line-height: 1.22 !important;
+    letter-spacing: -0.025em !important;
+    margin-bottom: 14px !important;
+    font-weight: 600 !important;
+  }
+  .hero-sub {
+    font-size: 14.5px !important;
+    line-height: 1.52 !important;
+    color: var(--hs-text-02) !important;
+    margin-bottom: 20px !important;
   }
   .hero-ctas {
+    display: flex;
     flex-direction: column;
     width: 100%;
+    gap: 10px;
+    margin-bottom: 22px;
   }
   .hero-ctas .cl-button {
     width: 100%;
+    justify-content: center;
+    height: 48px;
+    font-size: 15px;
+    border-radius: 8px;
   }
+  .hero-guarantee {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px 14px;
+    background: rgba(0, 164, 180, 0.06);
+    border: 1px solid rgba(0, 164, 180, 0.16);
+    border-radius: 8px;
+    margin-bottom: 28px;
+  }
+  .hero-guarantee-item {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--hs-text-01);
+  }
+
+  /* Executive Founder Card Showcase on Mobile */
+  .hero-showcase {
+    max-width: 100%;
+    margin: 0;
+  }
+  .hero-executive-card {
+    border-radius: 14px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+    border: 1px solid var(--hs-border-03);
+  }
+  .hero-portrait-frame {
+    height: 220px !important; /* Compact executive photo, eliminates mobile bulk */
+  }
+  .hero-portrait-img {
+    object-position: center 20%;
+  }
+  .hero-portrait-badge {
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    padding: 10px 14px;
+    border-radius: 8px;
+  }
+  .hero-portrait-badge h3 {
+    font-size: 15px;
+    margin: 0 0 2px 0;
+  }
+  .hero-portrait-badge p {
+    font-size: 11px;
+  }
+  .hero-card-details {
+    padding: 16px 14px;
+  }
+  .hero-quote-snippet {
+    font-size: 13px;
+    line-height: 1.45;
+    padding-left: 10px;
+    margin-bottom: 14px;
+    border-left-width: 2.5px;
+  }
+  .hero-stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .hero-stat-box {
+    padding: 8px 10px;
+    border-radius: 6px;
+  }
+  .hero-stat-number {
+    font-size: 17px;
+    margin-bottom: 1px;
+  }
+  .hero-stat-label {
+    font-size: 10px;
+  }
+
+  /* Cards & Grids on Mobile */
   .why-grid {
     grid-template-columns: 1fr;
+    gap: 14px;
   }
+  .why-card {
+    padding: 20px 16px;
+    border-radius: 12px;
+  }
+  .why-card h3 {
+    font-size: 17px;
+    margin-bottom: 8px;
+  }
+  .why-card p {
+    font-size: 13.5px;
+    line-height: 1.5;
+  }
+
+  .services-grid-4 {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .service-card-excited {
+    padding: 22px 18px;
+    border-radius: 14px;
+  }
+  .service-card-excited h3 {
+    font-size: 18px;
+  }
+  .service-deliverables {
+    gap: 6px;
+    margin: 14px 0;
+  }
+  .service-pill {
+    font-size: 11.5px;
+    padding: 4px 10px;
+  }
+
+  .portfolio-grid-excited {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .portfolio-card-excited {
+    border-radius: 14px;
+  }
+  .portfolio-card-media {
+    height: 180px;
+  }
+  .portfolio-card-content {
+    padding: 18px 16px;
+  }
+  .portfolio-card-content h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+  .portfolio-card-content p {
+    font-size: 13.5px;
+    line-height: 1.5;
+  }
+  .portfolio-metrics-pill {
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .testimonial-card-excited {
+    padding: 20px 18px;
+    border-radius: 14px;
+  }
+  .testimonial-card-excited p {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .faq-item-excited {
+    padding: 16px 18px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  .faq-question {
+    font-size: 15px;
+  }
+  .faq-answer p {
+    font-size: 13.5px;
+    line-height: 1.55;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .contact-card-box {
+    padding: 22px 18px;
+    border-radius: 14px;
+  }
+  .form-input,
+  .form-select,
+  .form-textarea {
+    font-size: 16px !important; /* Prevents iOS Safari input focus zoom */
+    padding: 12px 14px;
+  }
+
+  /* Footer on Mobile */
   .footer-grid {
     grid-template-columns: 1fr;
+    gap: 28px;
+    padding-bottom: 36px;
+  }
+  .footer-brand p {
+    font-size: 13px;
+    line-height: 1.5;
   }
   .footer-bottom {
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
+    font-size: 12px;
+    padding-top: 20px;
+  }
+
+  /* Blog Elements on Mobile */
+  .blog-hero h1 {
+    font-size: 26px !important;
+    line-height: 1.25 !important;
+  }
+  .blog-hero p {
+    font-size: 15px;
+  }
+  .blog-filter-bar {
+    gap: 6px;
+    margin-bottom: 28px;
+  }
+  .blog-filter-btn {
+    font-size: 12.5px;
+    padding: 6px 14px;
+  }
+  .blog-card .blog-card-media {
+    height: 160px;
+  }
+  .blog-card-body {
+    padding: 18px 16px;
+  }
+  .blog-card-body h3 {
+    font-size: 17px;
+  }
+  .blog-card-body p {
+    font-size: 13px;
+  }
+
+  /* Article Reading Mode on Mobile */
+  .article-hero h1 {
+    font-size: 25px !important;
+    line-height: 1.25 !important;
+  }
+  .article-content table {
+    display: block !important;
+    overflow-x: auto !important;
+    font-size: 13px !important;
+    -webkit-overflow-scrolling: touch !important;
   }
 }
 
@@ -1797,4 +2112,81 @@ p {
 .calendly-badge-widget .calendly-badge-content:hover {
   transform: translateY(-2px) !important;
   box-shadow: 0 14px 28px rgba(255, 95, 45, 0.45) !important;
+}
+
+/* Mobile Calendly Badge & Overlay Polish (< 768px) */
+@media (max-width: 768px) {
+  .calendly-badge-widget {
+    right: 14px !important;
+    bottom: 16px !important;
+    z-index: 9998 !important;
+  }
+
+  .calendly-badge-widget .calendly-badge-content {
+    height: 38px !important;
+    padding: 0 16px !important;
+    font-size: 12.5px !important;
+    border-radius: 9999px !important;
+    box-shadow: 0 4px 14px rgba(255, 95, 45, 0.4) !important;
+    letter-spacing: -0.01em !important;
+  }
+
+  /* Fullscreen, seamless mobile Calendly modal fallback if opened */
+  .calendly-overlay {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    z-index: 999999 !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    background: rgba(15, 23, 42, 0.85) !important;
+    backdrop-filter: blur(8px) !important;
+  }
+
+  .calendly-overlay .calendly-popup {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    height: 100dvh !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    transform: none !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    padding-top: 48px !important;
+    box-sizing: border-box !important;
+  }
+
+  .calendly-overlay .calendly-popup .calendly-popup-content {
+    height: 100% !important;
+    width: 100% !important;
+    -webkit-overflow-scrolling: touch !important;
+    overflow-y: auto !important;
+  }
+
+  .calendly-overlay .calendly-popup-close {
+    position: fixed !important;
+    top: 10px !important;
+    right: 12px !important;
+    width: 34px !important;
+    height: 34px !important;
+    background-color: rgba(24, 24, 26, 0.9) !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.3) !important;
+    border-radius: 50% !important;
+    z-index: 1000000 !important;
+    background-size: 14px 14px !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+  }
 }
