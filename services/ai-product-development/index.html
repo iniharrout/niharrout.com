@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enterprise AI Product Development &amp; RAG Workflows | Nihar Ranjan Rout</title>
+  <meta name="description"
+    content="Production-grade enterprise AI product engineering. Custom RAG pipelines, pgvector semantic search, autonomous agent workflows, and private VPC LLMs with zero hallucination guardrails led by Nihar Ranjan Rout.">
+  <link rel="canonical" href="https://niharrout.com/services/ai-product-development/">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/assets/nihar.jpg">
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Nihar Ranjan Rout | Creuto">
+  <meta property="og:url" content="https://niharrout.com/services/ai-product-development/">
+  <meta property="og:title" content="Enterprise AI Product Development Services | Nihar Ranjan Rout">
+  <meta property="og:description"
+    content="Turn generative AI into dependable business workflows. Private enterprise RAG, autonomous agents, and deterministic guardrails. 45+ products shipped live.">
+  <meta property="og:image" content="https://niharrout.com/assets/img/service-ai-product.jpg">
+
+  <!-- Fonts & Design System -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/assets/design-system.css?v=serv2026_1">
+
+  <!-- Calendly Widget CSS & JS -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+  <!-- Structured Data: Service Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Enterprise AI Product Development",
+    "provider": {
+      "@type": "Person",
+      "name": "Nihar Ranjan Rout",
+      "url": "https://niharrout.com"
+    },
+    "description": "Architecting production enterprise AI applications, private RAG pipelines, autonomous agent workflows, and deterministic LLM guardrails.",
+    "areaServed": "Global",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "AI Engineering Services",
+      "itemListElement": [
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Enterprise RAG Pipelines"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Autonomous Agent Workflows"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Private LLM Fine-Tuning & Hosting"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Intelligent Document Extraction"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Deterministic Guardrails & Output Validation"}}
+      ]
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+  <!-- ================= SITE HEADER ================= -->
+  <header class="site-header" id="site-header">
+    <div class="wrap nav-inner">
+      <a href="/" class="brand-link" aria-label="Nihar Ranjan Rout Homepage">
+        <img src="/assets/nihar.jpg" alt="Nihar Ranjan Rout" class="brand-avatar" width="36" height="36">
+        <div class="brand-text">nihar<span class="dot">.</span></div>
+      </a>
+
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li class="nav-item nav-item-dropdown">
+            <a href="/services/" class="nav-link active">
+              Services
+              <svg class="chevron" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <div class="dropdown-menu">
+              <a href="/services/mobile-app-development/" class="dropdown-item">
+                <div class="dropdown-num">01</div>
+                <div class="dropdown-text">
+                  <h4>Mobile Application Development</h4>
+                  <p>React Native, Flutter, Swift iOS &amp; Kotlin Android</p>
+                </div>
+              </a>
+              <a href="/services/custom-software-development/" class="dropdown-item">
+                <div class="dropdown-num">02</div>
+                <div class="dropdown-text">
+                  <h4>Custom Software &amp; ERP</h4>
+                  <p>Unified enterprise operations &amp; multi-tenant SaaS</p>
+                </div>
+              </a>
+              <a href="/services/ai-product-development/" class="dropdown-item">
+                <div class="dropdown-num">03</div>
+                <div class="dropdown-text">
+                  <h4>AI Product Development</h4>
+                  <p>Enterprise RAG pipelines &amp; autonomous agent workflows</p>
+                </div>
+              </a>
+              <a href="/services/product-strategy-prd/" class="dropdown-item">
+                <div class="dropdown-num">04</div>
+                <div class="dropdown-text">
+                  <h4>Product Strategy &amp; PRDs</h4>
+                  <p>Scope boundaries, roadmaps, and clickable Figma testing</p>
+                </div>
+              </a>
+            </div>
+          </li>
+          <li class="nav-item"><a href="/#why" class="nav-link">Why Us</a></li>
+          <li class="nav-item"><a href="/blog/" class="nav-link">Blog</a></li>
+          <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="https://calendly.com/creuto/meet" data-calendly="true" class="cl-button -primary -small btn-book-call">Book a Call <span style="margin-left:4px;">→</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ================= HERO SECTION ================= -->
+    <section class="service-hero">
+      <div class="wrap">
+        <div class="service-hero-grid">
+          <div class="service-hero-content">
+            <div class="hs-eyebrow">
+              <span class="dot"></span>
+              PRODUCTION-GRADE ENTERPRISE AI ARCHITECTURE
+            </div>
+
+            <h1 class="service-hero-title">
+              We turn generative AI into reliable enterprise systems.
+            </h1>
+
+            <p class="service-hero-sub">
+              Stop deploying brittle chat demo toys. We engineer production-ready AI applications powered by private RAG pipelines, pgvector hybrid search, autonomous task agents, and strict deterministic validation guardrails that eliminate hallucinations.
+            </p>
+
+            <div class="hero-ctas">
+              <a href="https://calendly.com/creuto/meet" data-calendly="true" class="cl-button -primary btn-book-call">Schedule an AI Architecture Call <span style="margin-left:4px;">→</span></a>
+              <a href="#capabilities" class="cl-button -secondary">Explore Capabilities ↓</a>
+            </div>
+
+            <div class="service-stat-strip">
+              <div class="service-stat-item"><span class="check">✓</span> 100% Private VPC Hosting</div>
+              <div class="service-stat-item"><span class="check">✓</span> Sub-800ms Vector Search</div>
+              <div class="service-stat-item"><span class="check">✓</span> Deterministic Schema Output</div>
+              <div class="service-stat-item"><span class="check">✓</span> Zero Model Data Leakage</div>
+            </div>
+          </div>
+
+          <div class="service-hero-mockup-frame">
+            <img src="/assets/img/service-ai-product.jpg" alt="Enterprise AI Product Development Dashboard by Nihar Ranjan Rout" width="640" height="360" loading="eager">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CAPABILITIES GRID ================= -->
+    <section class="cap-section" id="capabilities">
+      <div class="wrap">
+        <div class="section-header">
+          <div class="hs-eyebrow"><span class="dot"></span> CORE CAPABILITIES</div>
+          <h2 class="section-title">Engineered for accuracy, privacy, and speed.</h2>
+          <p class="section-sub">
+            We focus on pragmatic enterprise workflows that drive real efficiency gains without exposing proprietary company IP or introducing hallucinations into business operations.
+          </p>
+        </div>
+
+        <div class="cap-grid-6">
+          <div class="cap-card">
+            <div class="cap-icon">🔍</div>
+            <h3>Enterprise RAG &amp; Semantic Search</h3>
+            <p>
+              High-precision Retrieval-Augmented Generation using PostgreSQL pgvector and Qdrant. Context-aware chunking, hybrid keyword/vector search, and metadata filtering over millions of documents.
+            </p>
+            <div class="cap-tags">
+              <span class="cap-tag">pgvector</span>
+              <span class="cap-tag">Hybrid Search</span>
+              <span class="cap-tag">Cohere Rerank</span>
+              <span class="cap-tag">Context Chunking</span>
+            </div>
+          </div>
+
+          <div class="cap-card">
+            <div class="cap-icon">🤖</div>
+            <h3>Autonomous Task Agents</h3>
+            <p>
+              Multi-step autonomous agents built on LangGraph and CrewAI. Tool-calling agents that execute database lookups, trigger internal APIs, generate reports, and verify their own work before completion.
+            </p>
+            <div class="cap-tags">
+              <span class="cap-tag">LangGraph</span>
+              <span class="cap-tag">Function Calling</span>
+              <span class="cap-tag">State Machines</span>
+              <span class="cap-tag">Human-in-the-Loop</span>
+            </div>
+          </div>
+
+          <div class="cap-card">
+            <div class="cap-icon">🔒</div>
+            <h3>Private LLM VPC Deployment</h3>
+            <p>
+              Host open-weight foundation models (Llama 3.1, Mistral, Qwen) completely inside your own AWS / Google Cloud VPC via vLLM. Zero third-party data retention and guaranteed data sovereignty.
+            </p>
+            <div class="cap-tags">
+              <span class="cap-tag">vLLM Inference</span>
+              <span class="cap-tag">Llama 3.1</span>
+              <span class="cap-tag">Private VPC</span>
+              <span class="cap-tag">Zero Retention</span>
+            </div>
+          </div>
+
+          <div class="cap-card">
+            <div class="cap-icon">📄</div>
+            <h3>Intelligent Document Parsing</h3>
+            <p>
+              Automated extraction and classification of messy PDFs, purchase orders, medical records, and legal contracts into structured, validated JSON using vision models and layout parsers.
+            </p>
+            <div class="cap-tags">
+              <span class="cap-tag">Layout Parser</span>
+              <span class="cap-tag">Vision LLMs</span>
+              <span class="cap-tag">PDF OCR</span>
+              <span class="cap-tag">JSON Schema</span>
+            </div>
+          </div>
+
+          <div class="cap-card">
+            <div class="cap-icon">🛡️</div>
+            <h3>Deterministic Guardrails</h3>
+            <p>
+              Eliminate hallucinations and model drift with Pydantic / Zod strict schema enforcement, prompt injection firewalls, and programmatic fallback routes for mission-critical tasks.
+            </p>
+            <div class="cap-tags">
+              <span class="cap-tag">Pydantic Schemas</span>
+              <span class="cap-tag">NeMo Guardrails</span>
+              <span class="cap-tag">Hallucination Evals</span>
+              <span class="cap-tag">Safety Fallback</span>
+            </div>
+          </div>
+
+          <div class="cap-card">
+            <div class="cap-icon">⚡</div>
+            <h3>Fine-Tuning &amp; Domain Adaptation</h3>
+            <p>
+              Low-Rank Adaptation (LoRA / QLoRA) fine-tuning for domain-specific jargon, proprietary coding syntax, and specialized industry terminology to outperform generalist models at 10x lower cost.
+            </p>
+            <div class="cap-tags">
+              <span class="cap-tag">QLoRA</span>
+              <span class="cap-tag">Axolotl</span>
+              <span class="cap-tag">Domain Adapters</span>
+              <span class="cap-tag">Cost Reduction</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= LIFECYCLE SECTION ================= -->
+    <section class="lifecycle-section">
+      <div class="wrap">
+        <div class="section-header">
+          <div class="hs-eyebrow"><span class="dot"></span> 6-PHASE AI ENGINEERING LIFECYCLE</div>
+          <h2 class="section-title">How we deliver deterministic, production-ready AI systems.</h2>
+          <p class="section-sub">
+            We reject the "wrap an API and hope" methodology. Every AI system we ship is subjected to rigorous semantic evaluation, latency profiling, and edge-case boundary testing.
+          </p>
+        </div>
+
+        <div class="lifecycle-grid">
+          <div class="lifecycle-card">
+            <div class="step-num-pill">01</div>
+            <div class="step-phase-tag">Phase 1 · Week 1–2</div>
+            <h3>Data Auditing &amp; Feasibility Scoping</h3>
+            <p>
+              We analyze your raw document formats, database structures, and workflow requirements to determine whether RAG, fine-tuning, or heuristic agent workflows are optimal.
+            </p>
+            <ul class="lifecycle-deliverables">
+              <li><span class="check">✓</span> Data Cleanliness &amp; Quality Audit</li>
+              <li><span class="check">✓</span> Architecture Feasibility Report</li>
+              <li><span class="check">✓</span> Accuracy Baseline &amp; Success KPIs</li>
+            </ul>
+          </div>
+
+          <div class="lifecycle-card">
+            <div class="step-num-pill">02</div>
+            <div class="step-phase-tag">Phase 2 · Week 2–4</div>
+            <h3>Chunking &amp; Vector Index Architecture</h3>
+            <p>
+              We engineer custom semantic chunking strategies tailored to your document structure, configure pgvector embeddings, and set up metadata indexing for sub-second retrieval.
+            </p>
+            <ul class="lifecycle-deliverables">
+              <li><span class="check">✓</span> Semantic Token Chunking Strategy</li>
+              <li><span class="check">✓</span> Vector Index &amp; Distance Metric Tuning</li>
+              <li><span class="check">✓</span> Hybrid Search &amp; Reranking Pipeline</li>
+            </ul>
+          </div>
+
+          <div class="lifecycle-card">
+            <div class="step-num-pill">03</div>
+            <div class="step-phase-tag">Phase 3 · Week 4–6</div>
+            <h3>Semantic Evaluation &amp; Benchmarking</h3>
+            <p>
+              Using the RAG Triad framework (Context Relevance, Groundedness, Answer Relevance), we run automated benchmarks against 200+ test queries to guarantee minimum 95%+ precision.
+            </p>
+            <ul class="lifecycle-deliverables">
+              <li><span class="check">✓</span> RAG Triad Precision Benchmarks</li>
+              <li><span class="check">✓</span> Negative Testing (Hallucination Traps)</li>
+              <li><span class="check">✓</span> Latency &amp; Cost Per Query Profile</li>
+            </ul>
+          </div>
+
+          <div class="lifecycle-card">
+            <div class="step-num-pill">04</div>
+            <div class="step-phase-tag">Phase 4 · Week 6–10</div>
+            <h3>Agent Orchestration &amp; Guardrails</h3>
+            <p>
+              We wire the LangGraph state machine, integrate external tool APIs, configure Pydantic deterministic schema validation, and implement safety fallback heuristics.
+            </p>
+            <ul class="lifecycle-deliverables">
+              <li><span class="check">✓</span> State Machine Agent Graph</li>
+              <li><span class="check">✓</span> Tool Calling Execution Connectors</li>
+              <li><span class="check">✓</span> Strict Output Validation Layer</li>
+            </ul>
+          </div>
+
+          <div class="lifecycle-card">
+            <div class="step-num-pill">05</div>
+            <div class="step-phase-tag">Phase 5 · Week 10–12</div>
+            <h3>UI/UX &amp; Operator Copilot Interface</h3>
+            <p>
+              We build fast, responsive web or mobile interfaces featuring streaming tokens, source citation footnotes, interactive feedback buttons (thumbs up/down), and audit dashboards.
+            </p>
+            <ul class="lifecycle-deliverables">
+              <li><span class="check">✓</span> Real-Time SSE Token Streaming UI</li>
+              <li><span class="check">✓</span> Clickable Source Citation Badges</li>
+              <li><span class="check">✓</span> Admin Telemetry &amp; Flagging Console</li>
+            </ul>
+          </div>
+
+          <div class="lifecycle-card">
+            <div class="step-num-pill">06</div>
+            <div class="step-phase-tag">Phase 6 · Production &amp; Scale</div>
+            <h3>Private VPC Deployment &amp; Observability</h3>
+            <p>
+              Production deployment on your AWS / GCP infrastructure, automated vector reindexing schedules, LangSmith / OpenTelemetry monitoring, and 60 days of hyper-care support.
+            </p>
+            <ul class="lifecycle-deliverables">
+              <li><span class="check">✓</span> 100% Private Cloud Infrastructure</li>
+              <li><span class="check">✓</span> OpenTelemetry Query Tracing</li>
+              <li><span class="check">✓</span> 60-Day Dedicated Hyper-Care SLA</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TECHNOLOGY STACK ================= -->
+    <section class="techstack-section">
+      <div class="wrap">
+        <div class="section-header">
+          <div class="hs-eyebrow"><span class="dot"></span> AI TECH STACK</div>
+          <h2 class="section-title">The enterprise AI engineering toolchain.</h2>
+          <p class="section-sub">
+            Engineered with modern vector databases, high-throughput inference engines, and industrial-strength orchestration frameworks.
+          </p>
+        </div>
+
+        <div class="techstack-grid">
+          <div class="techstack-group">
+            <h4>Vector DBs &amp; Retrieval</h4>
+            <div class="techstack-pills">
+              <span class="techstack-pill">pgvector (Postgres)</span>
+              <span class="techstack-pill">Qdrant</span>
+              <span class="techstack-pill">Pinecone</span>
+              <span class="techstack-pill">Cohere Rerank</span>
+              <span class="techstack-pill">OpenSearch</span>
+            </div>
+          </div>
+
+          <div class="techstack-group">
+            <h4>Orchestration &amp; Agents</h4>
+            <div class="techstack-pills">
+              <span class="techstack-pill">LangGraph</span>
+              <span class="techstack-pill">LangChain</span>
+              <span class="techstack-pill">CrewAI</span>
+              <span class="techstack-pill">LlamaIndex</span>
+              <span class="techstack-pill">Pydantic</span>
+            </div>
+          </div>
+
+          <div class="techstack-group">
+            <h4>Models &amp; Inference</h4>
+            <div class="techstack-pills">
+              <span class="techstack-pill">OpenAI GPT-4o</span>
+              <span class="techstack-pill">Claude 3.5 Sonnet</span>
+              <span class="techstack-pill">Llama 3.1 70B</span>
+              <span class="techstack-pill">vLLM Engine</span>
+              <span class="techstack-pill">AWS Bedrock</span>
+            </div>
+          </div>
+
+          <div class="techstack-group">
+            <h4>Evals &amp; Observability</h4>
+            <div class="techstack-pills">
+              <span class="techstack-pill">LangSmith</span>
+              <span class="techstack-pill">Ragas Benchmark</span>
+              <span class="techstack-pill">Datadog LLM Ops</span>
+              <span class="techstack-pill">OpenTelemetry</span>
+              <span class="techstack-pill">Prometheus</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FEATURED CASE STUDY ================= -->
+    <section class="service-case-study">
+      <div class="wrap">
+        <div class="case-study-hero-card">
+          <div class="case-study-media-col">
+            <img src="/work/skribe-card.jpg" alt="Skribe AI Enterprise Case Study" width="600" height="400" loading="lazy">
+          </div>
+
+          <div class="case-study-content-col">
+            <div class="hs-eyebrow"><span class="dot"></span> FEATURED AI CASE STUDY</div>
+            <h3>Skribe — Enterprise Audio Intelligence &amp; Semantic Knowledge RAG</h3>
+            <p>
+              Engineered a multi-tenant enterprise voice and document intelligence platform that transcribes, diarizes, and indexes audio recordings into an encrypted pgvector semantic search engine. Enables instant retrieval across 10,000+ hours of team meetings with sub-second response times.
+            </p>
+
+            <div class="case-metrics-grid">
+              <div class="case-metric-box">
+                <div class="case-metric-num">&lt;800ms</div>
+                <div class="case-metric-lbl">Semantic Search Latency</div>
+              </div>
+              <div class="case-metric-box">
+                <div class="case-metric-num">99.4%</div>
+                <div class="case-metric-lbl">Citation Accuracy</div>
+              </div>
+              <div class="case-metric-box">
+                <div class="case-metric-num">Zero</div>
+                <div class="case-metric-lbl">Third-Party Data Training</div>
+              </div>
+            </div>
+
+            <div>
+              <a href="/work/skribe" class="cl-button -secondary">Read Full AI Case Study →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FAQS ACCORDION ================= -->
+    <section class="service-faq-section">
+      <div class="wrap">
+        <div class="section-header">
+          <div class="hs-eyebrow"><span class="dot"></span> FREQUENTLY ASKED QUESTIONS</div>
+          <h2 class="section-title">Common questions about enterprise AI product development.</h2>
+          <p class="section-sub">
+            Honest answers regarding data privacy, accuracy guarantees, and recurring inference costs.
+          </p>
+        </div>
+
+        <div class="service-faq-container">
+          <div class="faq-list-excited">
+            <div class="faq-item-excited">
+              <button class="faq-question" aria-expanded="false">
+                <span>Will our company data or user data be used to train public models?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Never. We use enterprise zero-data-retention agreements for proprietary foundation APIs (such as Azure OpenAI or AWS Bedrock), or deploy open-weight models (Llama 3.1 / Mistral) entirely within your private VPC with no outbound network access. Your confidential intellectual property remains 100% under your ownership and perimeter.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item-excited">
+              <button class="faq-question" aria-expanded="false">
+                <span>How do you guarantee that the AI will not hallucinate incorrect information?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  We implement a three-layer defense: (1) Strict Retrieval Grounding where models are instructed to answer only from verified chunk citations; (2) Pydantic/Zod structured schema output validation that rejects non-conforming responses; and (3) Automated RAG Triad evaluation pipelines that grade answers for groundedness before displaying them to end users.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item-excited">
+              <button class="faq-question" aria-expanded="false">
+                <span>What are the ongoing monthly costs to operate an enterprise RAG system?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  By using efficient vector indexing in PostgreSQL (pgvector) and intelligent prompt compression with Cohere Rerank, most business applications process tens of thousands of queries for under $150 to $300 per month in LLM API tokens. For high-volume use cases, self-hosted open-weight models on reserved GPU instances reduce token costs by up to 80%.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item-excited">
+              <button class="faq-question" aria-expanded="false">
+                <span>How long does it take to deploy a production AI product?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  A focused Enterprise RAG pipeline and copilot interface typically ships in 6 to 8 weeks. Autonomous multi-step agent workflows with custom tool integrations and private VPC fine-tuning launch in 10 to 12 weeks.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item-excited">
+              <button class="faq-question" aria-expanded="false">
+                <span>Can the AI interface integrate directly into our existing mobile or web apps?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  Yes. We provide clean REST, GraphQL, or Server-Sent Event (SSE) streaming endpoints with drop-in React/TypeScript UI components that embed seamlessly into your existing mobile apps, CRM, or customer portal.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= STRATEGIC PROJECT CONSULTATION CTA ================= -->
+    <section class="contact-section" id="contact">
+      <div class="wrap">
+        <div class="contact-grid">
+          <div>
+            <div class="hs-eyebrow"><span class="dot"></span> READY TO BUILD YOUR AI WORKFLOW?</div>
+            <h2>Let's build an AI product that delivers verified business ROI.</h2>
+            <p>
+              Schedule a 30-minute technical evaluation directly with Nihar Ranjan Rout. We will discuss your data sources, retrieval architecture, privacy requirements, and a concrete prototype plan.
+            </p>
+
+            <div style="background: var(--hs-bg-02); border: 1px solid var(--hs-border-03); border-radius: 12px; padding: 20px; margin-top: 24px;">
+              <div style="font-size: 14px; font-weight: 700; color: var(--hs-text-01); margin-bottom: 6px;">Direct Founder Contact</div>
+              <div style="font-size: 14px; color: var(--hs-text-02);">
+                Email: <a href="mailto:me@niharrout.com" style="color:var(--hs-brand); font-weight:600; text-decoration:none;">me@niharrout.com</a><br>
+                Location: Creuto HQ, Bhubaneswar, Odisha, India
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-card-box">
+            <form action="https://formspree.io/f/xbjnqypk" method="POST">
+              <input type="hidden" name="service" value="AI Product Development">
+              <div class="form-group">
+                <label for="name">Your Name *</label>
+                <input type="text" id="name" name="name" class="form-input" placeholder="e.g. Dr. Rajesh Mohanty" required>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Work Email *</label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="name@company.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Phone / WhatsApp *</label>
+                <input type="tel" id="phone" name="phone" class="form-input" placeholder="+91 98765 43210" required>
+              </div>
+
+              <div class="form-group">
+                <label for="ai_type">AI Project Category *</label>
+                <select id="ai_type" name="ai_type" class="form-select" required>
+                  <option value="Enterprise RAG & Search" selected>Enterprise RAG &amp; Semantic Knowledge Search</option>
+                  <option value="Autonomous Task Agents">Autonomous Multi-Step Task Agents</option>
+                  <option value="Document Extraction & OCR">Intelligent Document Extraction &amp; OCR</option>
+                  <option value="Private VPC LLM Hosting">Private VPC Self-Hosted LLM (Llama 3)</option>
+                  <option value="AI Copilot & Chat Interface">Customer-Facing AI Copilot &amp; Chat</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="details">Data Sources &amp; Objectives *</label>
+                <textarea id="details" name="details" class="form-textarea" placeholder="Briefly describe your raw data sources (PDFs, SQL database, audio), target users, and expected workflow outcomes..." required></textarea>
+              </div>
+
+              <button type="submit" class="cl-button -primary" style="width:100%; justify-content:center; padding:15px;">
+                Request AI Architecture Review <span style="margin-left:6px;">→</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= DARK STRATEGIC FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="brand-link" style="margin-bottom:14px; display:inline-flex;" aria-label="Nihar Ranjan Rout Homepage">
+            <img src="/assets/nihar.jpg" alt="Nihar Ranjan Rout" class="brand-avatar" width="36" height="36">
+            <div class="brand-text" style="color:#ffffff;">nihar<span class="dot">.</span></div>
+          </a>
+          <p>
+            Founder &amp; CEO of Creuto. Product leader with 8+ years turning complex operational requirements into scalable digital systems with a dedicated 100% in-house squad.
+          </p>
+          <div class="footer-contact-info" style="margin-top:16px;">
+            Email: <a href="mailto:me@niharrout.com" style="color:var(--hs-brand); font-weight:600;">me@niharrout.com</a><br>
+            HQ: Creuto, Bhubaneswar, Odisha, India
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-col-title">Core Services</div>
+          <ul class="footer-links">
+            <li><a href="/services/mobile-app-development/">Mobile App Development</a></li>
+            <li><a href="/services/custom-software-development/">Custom Software &amp; ERP</a></li>
+            <li><a href="/services/ai-product-development/">AI Product Development</a></li>
+            <li><a href="/services/product-strategy-prd/">Product Strategy &amp; PRDs</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-col-title">Case Studies</div>
+          <ul class="footer-links">
+            <li><a href="/work/skribe">Skribe Enterprise AI Notes</a></li>
+            <li><a href="/work/custom-erp-manufacturing">Custom ERP for Manufacturing</a></li>
+            <li><a href="/work/make-my-look">Make My Look Booking App</a></li>
+            <li><a href="/work/sky1-event-booking">Sky1 Nightclub Booking</a></li>
+            <li><a href="/work/flashnow">FlashNow Delivery System</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <div class="footer-col-title">Playbooks &amp; Resources</div>
+          <ul class="footer-links">
+            <li><a href="/blog/" style="color:var(--hs-brand); font-weight:600;">Blog &amp; Field Playbooks</a></li>
+            <li><a href="/blog/pragmatic-enterprise-ai-workflows/">Enterprise AI Workflows Guide</a></li>
+            <li><a href="/blog/cost-to-build-mvp-2026/">MVP Cost Guide 2026</a></li>
+            <li><a href="/about">About Nihar &amp; Creuto</a></li>
+            <li><a href="https://linkedin.com/in/iniharrout" target="_blank" rel="noopener">LinkedIn Profile ↗</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© <span id="yr"></span> Nihar Ranjan Rout · Founder &amp; CEO, Creuto. All rights reserved.</div>
+        <div style="display:flex; gap:20px;">
+          <a href="/privacy-policy">Privacy Policy</a>
+          <a href="/terms">Terms of Service</a>
+          <a href="#top">Back to Top ↑</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/site-enhancements.js?v=hs2026_6"></script>
+</body>
+
+</html>

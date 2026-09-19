@@ -68,21 +68,45 @@
 
       <nav aria-label="Primary Navigation">
         <ul class="nav-links">
-          <li class="nav-item">
-            <a href="/#services" class="nav-link">Services</a>
+          <li class="nav-item nav-item-dropdown">
+            <a href="/services/" class="nav-link">
+              Services
+              <svg class="chevron" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <div class="dropdown-menu">
+              <a href="/services/mobile-app-development/" class="dropdown-item">
+                <div class="dropdown-num">01</div>
+                <div class="dropdown-text">
+                  <h4>Mobile Application Development</h4>
+                  <p>React Native, Flutter, Swift iOS &amp; Kotlin Android</p>
+                </div>
+              </a>
+              <a href="/services/custom-software-development/" class="dropdown-item">
+                <div class="dropdown-num">02</div>
+                <div class="dropdown-text">
+                  <h4>Custom Software &amp; Enterprise ERP</h4>
+                  <p>Unified enterprise operations &amp; multi-tenant SaaS</p>
+                </div>
+              </a>
+              <a href="/services/ai-product-development/" class="dropdown-item">
+                <div class="dropdown-num">03</div>
+                <div class="dropdown-text">
+                  <h4>AI Product Development</h4>
+                  <p>Enterprise RAG pipelines &amp; autonomous task agents</p>
+                </div>
+              </a>
+              <a href="/services/product-strategy-prd/" class="dropdown-item">
+                <div class="dropdown-num">04</div>
+                <div class="dropdown-text">
+                  <h4>Product Strategy &amp; PRDs</h4>
+                  <p>Scope boundaries, roadmaps, and clickable Figma testing</p>
+                </div>
+              </a>
+            </div>
           </li>
-          <li class="nav-item">
-            <a href="/#portfolio" class="nav-link">Portfolio</a>
-          </li>
-          <li class="nav-item">
-            <a href="/blog/" class="nav-link" style="color:var(--hs-brand); font-weight:700;">Blog</a>
-          </li>
-          <li class="nav-item">
-            <a href="/project-costs" class="nav-link">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a href="/about" class="nav-link">About</a>
-          </li>
+          <li class="nav-item"><a href="/#why" class="nav-link">Why Us</a></li>
+          <li class="nav-item"><a href="/blog/" class="nav-link" style="color:var(--hs-brand); font-weight:700;">Blog</a></li>
+          <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
         </ul>
       </nav>
 
@@ -271,10 +295,10 @@
         <div class="footer-col">
           <h4>Services</h4>
           <ul class="footer-links">
-            <li><a href="/#services">Mobile Application Development</a></li>
-            <li><a href="/#services">AI Product Development</a></li>
-            <li><a href="/#services">Custom Enterprise ERP</a></li>
-            <li><a href="/#services">Product Strategy &amp; PRDs</a></li>
+            <li><a href="/services/mobile-app-development/">Mobile App Development</a></li>
+            <li><a href="/services/custom-software-development/">Custom Software &amp; ERP</a></li>
+            <li><a href="/services/ai-product-development/">AI Product Development</a></li>
+            <li><a href="/services/product-strategy-prd/">Product Strategy &amp; PRDs</a></li>
           </ul>
         </div>
 
