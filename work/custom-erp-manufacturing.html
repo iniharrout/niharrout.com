@@ -748,14 +748,8 @@
 
     /* Scroll reveal utility */
     .rv {
-      opacity: 0;
-      transform: translateY(18px);
-      transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .rv.in {
-      opacity: 1;
-      transform: translateY(0);
+      opacity: 1 !important;
+      transform: none !important;
     }
   </style>
 </head>
@@ -982,7 +976,7 @@
 
         <!-- Closing CTA Box -->
         <section class="cta-box rv">
-          Next Steps</span>
+          <div class="hs-eyebrow" style="margin-bottom:12px;"><span class="dot"></span> NEXT STEPS</div>
           <h2>Have a similar idea? Let's talk.</h2>
           <p>
             Whether you need a full 0-to-1 PRD and product strategy or dedicated engineering execution, let's explore how to build it right from day one.

@@ -64,27 +64,13 @@
   <!-- HubSpot Design System Stylesheet -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap">
-  <link rel="stylesheet" href="/assets/aos.css">
-  <link rel="stylesheet" href="/assets/design-system.css?v=hs2026_1">
+  <link rel="stylesheet" href="/assets/design-system.css?v=hs2026_2">
 
   <style>
-    /* Smooth Scroll & Content Reveal */
+    /* Full Content Visibility Guarantee */
     .rv {
-      opacity: 0;
-      transform: translateY(16px);
-      transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .rv.in {
-      opacity: 1;
-      transform: none;
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .rv {
-        opacity: 1;
-        transform: none;
-        transition: none;
-      }
+      opacity: 1 !important;
+      transform: none !important;
     }
   </style>
 </head>
@@ -485,7 +471,7 @@
           <!-- Card 2: Skyeone -->
           <div class="work-card" data-category="marketplace mobile">
             <div class="work-thumb-wrap">
-              <img src="work/skyeone-card.jpg" alt="Skyeone — Multi-Vendor Event &amp; Venue Booking" class="work-thumb-img" loading="lazy">
+              <img src="/work/sky1-card.jpg" alt="Skyeone — Multi-Vendor Event &amp; Venue Booking" class="work-thumb-img" loading="lazy">
             </div>
             <div class="work-card-body">
               <span class="work-card-category">Consumer Marketplace · Mobile</span>
@@ -822,8 +808,7 @@
   </script>
 
   <!-- HubSpot Design System Interactive Scripts -->
-  <script src="/assets/aos.js"></script>
-  <script src="/assets/site-enhancements.js?v=hs2026_1"></script>
+  <script src="/assets/site-enhancements.js?v=hs2026_2"></script>
   <!-- Floating AI Chat Widget -->
   <script src="/assets/chat-widget.js" defer></script>
 </body>
