@@ -1,0 +1,48 @@
+/**
+ * Illustrative project scenarios, one per city x service. They describe how we would
+ * scope a typical engagement, not past client work, and are labelled as such on the page.
+ * Format: [title, body].
+ */
+
+module.exports = {
+  cuttack: {
+    mobile: ['A Badambadi distributor takes orders without phone calls', 'A stationery distributor with 400 retail customers wants orders captured in one place. Phase one is a reorder app for retailers and an offline order-taking app for three field reps, syncing to the existing Tally ledger. We would launch it in about 8 weeks in the ₹1.5L–₹5L band, then add credit-limit checks and scheme notifications once reps are using it daily.'],
+    ai: ['A filigree exporter reads buyer enquiries in three languages', 'A silver filigree workshop receives export enquiries by email and WhatsApp in English, Hindi and Odia. A 4-week pilot would classify each enquiry, extract product, quantity and deadline into a sheet, and draft a first reply for the owner to approve. Success is measured by the owner’s minutes per enquiry, and the pilot ends with a clear go or no-go.'],
+    software: ['A wholesale group replaces Tally-plus-Excel for stock and dues', 'A trading group with two godowns and 60 credit customers keeps stock in Excel and dues in Tally. Phase one is a multi-godown stock module, party-wise dues with reminders and GST invoicing, with Tally kept for accounts. About 10 weeks in the ₹7L–₹18L band, then purchase and dispatch modules in later sprints.']
+  },
+  rourkela: {
+    mobile: ['A fabrication unit digitises its daily safety and quality rounds', 'A fabrication unit supplying a large plant runs daily safety and quality checks on paper. Phase one is an offline Android checklist app with photo evidence and supervisor sign-off, plus a dashboard for the plant head. We would scope about 8 weeks in the ₹1.5L–₹5L band, then add contractor gate passes.'],
+    ai: ['A maintenance team gets answers from a decade of manuals', 'A maintenance team has equipment manuals, SOPs and breakdown reports scattered across shared drives. A 6-week pilot builds a permission-aware assistant that answers technician questions with page citations, running on the company’s own server. We would test it on 100 real past breakdown questions before any wider rollout.'],
+    software: ['A contractor firm connects indents, stores and bills', 'A civil and maintenance contractor works with several plant clients and tracks indents, stores and running bills in spreadsheets. Phase one is a purchase-to-store flow with approvals and a bill-preparation module that pulls measurements from site entries. About 12 weeks in the ₹7L–₹18L band, with an audit log on every approval.']
+  },
+  berhampur: {
+    mobile: ['A saree wholesaler lets boutiques reorder from a phone', 'A silk saree wholesaler sends catalogue photos over WhatsApp and books orders by call. Phase one is a catalogue app with fabric and colour filters, wholesale price tiers, order booking and dispatch tracking in Odia and English. We would plan about 8 weeks in the ₹1.5L–₹5L band, then add advance-payment collection.'],
+    ai: ['A seafood exporter grades lots from photos', 'A seafood exporter grades incoming lots by eye, which varies between staff. A 5-week pilot would test whether phone photos under fixed lighting can predict the grade the best grader would assign, and report agreement rates against human grading. If the numbers are not good enough, we say so and stop.'],
+    software: ['A textile trading firm moves party ledgers off notebooks', 'A textile trading firm records design-wise stock and party dues in notebooks and Excel. Phase one is a party ledger, design-wise stock, order booking and GST invoicing module with simple Odia-labelled screens designed with the staff. About 8 to 10 weeks in the ₹7L–₹18L band.']
+  },
+  sambalpur: {
+    mobile: ['A handloom cooperative sells beyond the local market', 'A cooperative of Sambalpuri ikat weavers sells mainly to walk-in and festival buyers. Phase one is a marketplace app with artisan profiles, made-to-order flows and split payouts to members’ accounts. We would scope about 10 weeks in the ₹5L–₹12L band, borrowing the vendor-onboarding patterns from our Make My Look platform.'],
+    ai: ['A mining transporter reads weighbridge slips automatically', 'A transport contractor re-types weighbridge slips into billing sheets every evening. A 4-week pilot would extract vehicle, weight, party and grade from slip photos, flag mismatches against dispatch orders, and let a clerk approve exceptions. We would measure minutes saved per day and error rate against manual entry.'],
+    software: ['An institute replaces paper admissions and fee registers', 'A college or institute runs admissions, fee receipts and records on paper and separate sheets. Phase one is online applications, fee collection with receipts, student records and a parent notification channel. About 10 weeks in the ₹7L–₹18L band, deployed on the institute’s preferred cloud or server.']
+  },
+  bangalore: {
+    mobile: ['A seed-stage founder needs an investor-ready app in eight weeks', 'A seed-stage consumer startup needs a demo-ready iOS and Android app before its next round. We would run a two-week PRD sprint, cut scope to the one loop that proves retention, and ship a Flutter build with analytics and payments in about 8 weeks in the ₹1.5L–₹5L band. Founders keep full code ownership for their engineering hires.'],
+    ai: ['A SaaS company adds an in-product copilot without breaking margins', 'A B2B SaaS company wants an assistant inside its product but worries about wrong answers and model cost. A 6-week pilot would build retrieval over each customer’s data, an evaluation set from real support tickets, and per-request cost tracking with a fallback model, so the team can decide on rollout with numbers.'],
+    software: ['A pre-seed team builds its first multi-tenant SaaS', 'Two founders have validated a workflow with spreadsheets and need a first multi-tenant product. We would scope tenants, roles, billing and one integration, and deliver in 10 to 14 weeks in the ₹7L–₹18L band with staging access every sprint, leaving a codebase the first engineering hires can extend.']
+  },
+  hyderabad: {
+    mobile: ['A GCC rolls out an internal app that passes security review', 'A global capability centre needs an employee app with single sign-on, MDM support and integration to its HR system. We would design the auth and data flows against the security checklist in week one, then build in two-week sprints, targeting about 12 weeks in the ₹5L–₹12L band, with penetration-test fixes reserved in the plan.'],
+    ai: ['A pharma team searches submissions with page-level citations', 'A regulatory team searches through past submissions and SOPs by hand. A 6-week pilot would build permission-aware retrieval with citations to the exact page, hosted in the company’s private cloud, and be tested on real past queries by the team’s own reviewers before any expansion.'],
+    software: ['A distributor network gets a partner portal wired to SAP', 'A manufacturer wants distributors to check orders, invoices and claim status without emailing account managers. We would build a partner portal reading from SAP through its APIs, with role-based access and audit logs. About 12 weeks in the ₹7L–₹18L band, with integration limits and failure handling written into the PRD.']
+  },
+  pune: {
+    mobile: ['A tier-2 auto-component supplier moves quality checks onto tablets', 'A supplier running three shifts wants inspection data captured at the machine instead of on paper. We would build an offline Android tablet app with defect codes, photos and barcode scanning, plus a live dashboard for the plant head. About 8 weeks in the ₹1.5L–₹5L band, piloted on one line before rollout.'],
+    ai: ['A machining unit tests camera-based defect detection', 'A precision machining unit wants to reduce escaped defects. A 5-week pilot would collect images from one line, train a model for the two most costly defects, and report precision and recall against current manual inspection. Hardware spending waits until those numbers justify it.'],
+    software: ['A component maker adds job-work traceability beside its ERP', 'A component manufacturer’s existing ERP covers accounts but not job-work challans and batch traceability. We would build a module linking work orders, job-work movement and batch records, syncing with the accounts package. About 10 to 12 weeks in the ₹7L–₹18L band, piloted in one department first.']
+  },
+  'delhi-ncr': {
+    mobile: ['A D2C brand rebuilds its app around repeat purchase', 'A D2C brand’s app has good downloads but weak repeat orders. We would audit the funnel, rebuild onboarding, one-tap reorder and loyalty in Flutter, and add crash and funnel analytics. Around 10 weeks in the ₹5L–₹12L band, with releases staged so ratings are protected during the change.'],
+    ai: ['An e-commerce team deflects order-status tickets safely', 'An e-commerce team spends most support hours on order-status and returns questions. A 5-week pilot would connect an assistant to order and policy data, let it answer only what it can verify, and hand the rest to agents with a drafted reply. We would baseline resolution time and cost per ticket first.'],
+    software: ['A franchise group consolidates billing and royalties', 'A group with franchise outlets across NCR reconciles sales and royalties monthly in spreadsheets. Phase one is outlet-wise billing, royalty calculation and a consolidated dashboard with entity-level access. About 12 weeks in the ₹7L–₹18L band, with marketplace and payment integrations added afterward.']
+  }
+};

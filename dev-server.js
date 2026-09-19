@@ -8,6 +8,7 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 const chatHandler = require('./api/chat.js');
+const leadHandler = require('./api/lead.js');
 
 const PORT = process.env.PORT || 8085;
 const PUBLIC_DIR = __dirname;
@@ -34,6 +35,11 @@ const server = http.createServer(async (req, res) => {
   // Handle /api/chat
   if (pathname === '/api/chat') {
     return chatHandler(req, res);
+  }
+
+  // Handle /api/lead
+  if (pathname === '/api/lead') {
+    return leadHandler(req, res);
   }
 
   // Static File Serving
@@ -73,7 +79,7 @@ if (require.main === module) {
   server.listen(PORT, () => {
     console.log(`[Dev Server] running at http://localhost:${PORT}`);
     console.log(`[Dev Server] Serving static files from ${PUBLIC_DIR}`);
-    console.log(`[Dev Server] /api/chat active`);
+    console.log(`[Dev Server] /api/chat and /api/lead active`);
   });
 }
 

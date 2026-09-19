@@ -1,0 +1,163 @@
+/**
+ * Location landing pages (/locations/...). Loaded after design-system.css and only
+ * adds what that file lacks. Uses its tokens (--hs-*) so light styling stays in sync.
+ */
+
+/* ---------- Layout primitives ---------- */
+.loc-section { padding: 88px 0; background: var(--hs-bg-01); }
+.loc-section.-alt { background: var(--hs-bg-02); border-top: 1px solid var(--hs-border-03); border-bottom: 1px solid var(--hs-border-03); }
+.loc-section .section-header { margin-bottom: 44px; }
+.loc-grid { display: grid; gap: 22px; }
+.loc-grid.c2 { grid-template-columns: repeat(2, 1fr); }
+.loc-grid.c3 { grid-template-columns: repeat(3, 1fr); }
+.loc-grid.c4 { grid-template-columns: repeat(4, 1fr); }
+
+.loc-card {
+  background: #fff;
+  border: 1px solid var(--hs-border-03);
+  border-radius: var(--hs-radius-md);
+  padding: 26px 24px;
+  box-shadow: var(--hs-shadow-sm);
+  display: flex;
+  flex-direction: column;
+}
+.loc-card h3 { font-family: var(--font-body); font-size: 17px; font-weight: 700; line-height: 1.32; margin: 0 0 10px; color: var(--hs-text-01); }
+.loc-card p { font-size: 14.5px; line-height: 1.62; margin: 0; color: var(--hs-text-02); }
+a.loc-card { text-decoration: none; transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+a.loc-card:hover { transform: translateY(-3px); box-shadow: var(--hs-shadow-md); border-color: var(--hs-brand); }
+.loc-card .loc-num { font-family: var(--font-mono); font-size: 12.5px; font-weight: 700; color: var(--hs-brand); background: var(--hs-brand-tint); border: 1px solid rgba(255,72,0,.15); border-radius: 6px; width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+.loc-card .loc-more { margin-top: 16px; font-size: 13.5px; font-weight: 700; color: var(--hs-brand); }
+
+/* ---------- Breadcrumbs ---------- */
+.loc-breadcrumbs { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 13px; color: var(--hs-text-muted); margin-bottom: 22px; }
+.loc-breadcrumbs a { color: var(--hs-text-02); text-decoration: none; }
+.loc-breadcrumbs a:hover { color: var(--hs-brand); }
+.loc-breadcrumbs [aria-current] { color: var(--hs-text-01); font-weight: 600; }
+
+/* ---------- Hero ---------- */
+.loc-hero { padding: 48px 0 76px; background: var(--hs-bg-01); }
+.loc-hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 52px; align-items: start; }
+.loc-hero h1 { margin-bottom: 18px; }
+.loc-hero .hero-sub { max-width: 60ch; }
+.loc-proof { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 8px; border: 1px solid var(--hs-border-03); border-radius: var(--hs-radius-md); background: #fff; overflow: hidden; }
+.loc-proof > div { padding: 16px 14px; border-right: 1px solid var(--hs-border-03); }
+.loc-proof > div:last-child { border-right: 0; }
+.loc-proof strong { display: block; font-family: var(--font-display); font-size: 1.5rem; line-height: 1.1; color: var(--hs-text-01); margin-bottom: 4px; }
+.loc-proof span { font-size: 12px; line-height: 1.35; color: var(--hs-text-muted); display: block; }
+
+/* ---------- Lead form ---------- */
+.loc-form-card { background: #fff; border: 1.5px solid var(--hs-border-03); border-radius: var(--hs-radius-lg); padding: 28px 26px; box-shadow: var(--hs-shadow-lg); }
+.loc-form-card h2 { font-family: var(--font-body); font-size: 1.2rem; font-weight: 700; letter-spacing: -0.01em; margin: 0 0 6px; }
+.loc-form-card > p { font-size: 13.5px; margin-bottom: 18px; color: var(--hs-text-muted); }
+.loc-form .form-group { margin-bottom: 14px; }
+.loc-form .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.loc-form .form-textarea { min-height: 84px; }
+.loc-form .loc-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.loc-form button[type="submit"] { width: 100%; justify-content: center; padding: 14px; }
+.loc-form button[disabled] { opacity: .7; cursor: progress; }
+.loc-form-note { font-size: 12px; color: var(--hs-text-muted); text-align: center; margin: 12px 0 0; line-height: 1.5; }
+.loc-form-status { display: none; margin-top: 14px; padding: 12px 14px; border-radius: var(--hs-radius-sm); font-size: 13.5px; line-height: 1.5; }
+.loc-form-status.-ok { display: block; background: var(--hs-mint-tint); color: var(--hs-mint); border: 1px solid #b3ebd3; }
+.loc-form-status.-err { display: block; background: var(--hs-brand-tint); color: var(--hs-brand-pressed); border: 1px solid rgba(255,72,0,.25); }
+
+/* ---------- Local market ---------- */
+.loc-local { display: grid; grid-template-columns: 1.2fr .8fr; gap: 44px; align-items: start; }
+.loc-local h2 { margin-bottom: 18px; }
+.loc-local p { font-size: 1.05rem; }
+.loc-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0 0; padding: 0; list-style: none; }
+.loc-chips li { font-size: 13px; font-weight: 600; color: var(--hs-text-02); background: #fff; border: 1px solid var(--hs-border-03); padding: 6px 12px; border-radius: var(--hs-radius-pill); }
+.loc-chips.-soft li { background: var(--hs-bg-02); }
+.loc-subhead { font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--hs-text-muted); margin: 26px 0 10px; }
+.loc-facts { background: #fff; border: 1px solid var(--hs-border-03); border-radius: var(--hs-radius-lg); padding: 26px 24px; box-shadow: var(--hs-shadow-sm); }
+.loc-facts h3 { font-family: var(--font-body); font-size: 16px; font-weight: 700; margin: 0 0 16px; }
+.loc-facts dl { margin: 0; }
+.loc-facts dt { font-size: 11.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--hs-brand); margin-top: 16px; }
+.loc-facts dt:first-child { margin-top: 0; }
+.loc-facts dd { margin: 4px 0 0; font-size: 14.5px; line-height: 1.6; color: var(--hs-text-02); }
+
+/* ---------- Portfolio ---------- */
+.loc-case { padding: 0; overflow: hidden; }
+.loc-case img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: block; background: var(--hs-bg-03); }
+.loc-case .loc-case-body { padding: 20px 22px 22px; display: flex; flex-direction: column; flex: 1; }
+.loc-case .loc-case-tag { font-size: 11.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--hs-brand); margin-bottom: 8px; }
+.loc-case .loc-case-result { margin-top: 12px; font-size: 13px; font-weight: 600; color: var(--hs-text-01); }
+
+/* ---------- Compliance / why lists ---------- */
+.loc-list { display: grid; gap: 16px; }
+.loc-list.c2 { grid-template-columns: repeat(2, 1fr); }
+.loc-row { display: flex; gap: 14px; background: #fff; border: 1px solid var(--hs-border-03); border-radius: var(--hs-radius-md); padding: 20px 22px; }
+.loc-row .loc-tick { flex: 0 0 auto; width: 24px; height: 24px; border-radius: 50%; background: var(--hs-mint-tint); color: var(--hs-mint); font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center; margin-top: 2px; }
+.loc-row h3 { font-family: var(--font-body); font-size: 15.5px; font-weight: 700; margin: 0 0 5px; }
+.loc-row p { font-size: 14px; line-height: 1.6; margin: 0; }
+
+/* ---------- Tech stack ---------- */
+.loc-stack { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.loc-stack > div { background: #fff; border: 1px solid var(--hs-border-03); border-radius: var(--hs-radius-md); padding: 18px 18px 20px; }
+.loc-stack h3 { font-family: var(--font-body); font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--hs-brand); margin: 0 0 8px; }
+.loc-stack p { font-size: 14px; line-height: 1.55; margin: 0; color: var(--hs-text-01); }
+
+/* ---------- Process ---------- */
+.loc-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; counter-reset: step; }
+.loc-steps > div { position: relative; background: #fff; border: 1px solid var(--hs-border-03); border-radius: var(--hs-radius-md); padding: 26px 24px; }
+.loc-steps > div::before { counter-increment: step; content: "0" counter(step); font-family: var(--font-mono); font-weight: 700; font-size: 13px; color: var(--hs-brand); display: block; margin-bottom: 12px; }
+.loc-steps h3 { font-family: var(--font-body); font-size: 17px; font-weight: 700; margin: 0 0 8px; }
+.loc-steps p { font-size: 14.5px; line-height: 1.6; margin: 0; }
+
+/* ---------- Pricing ---------- */
+.loc-tier h3 { margin-bottom: 4px; }
+.loc-tier .loc-price { font-family: var(--font-display); font-size: 1.85rem; line-height: 1.15; color: var(--hs-text-01); margin: 8px 0 2px; }
+.loc-tier .loc-usd { font-size: 13px; color: var(--hs-text-muted); margin-bottom: 14px; }
+.loc-tier .loc-time { display: inline-block; align-self: flex-start; font-size: 12px; font-weight: 700; color: var(--hs-brand); background: var(--hs-brand-tint); border-radius: var(--hs-radius-pill); padding: 4px 10px; margin-bottom: 14px; }
+.loc-note { max-width: 780px; margin: 26px auto 0; text-align: center; font-size: 14.5px; color: var(--hs-text-02); }
+
+/* ---------- FAQ (extends .faq-item-minimal) ---------- */
+.loc-faq { max-width: 860px; margin: 0 auto; }
+
+/* ---------- Related links ---------- */
+.loc-related { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
+.loc-related h3 { font-family: var(--font-body); font-size: 15px; font-weight: 700; margin: 0 0 12px; }
+.loc-links { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.loc-links a { color: var(--hs-text-02); font-size: 14.5px; text-decoration: none; border-bottom: 1px solid transparent; }
+.loc-links a:hover { color: var(--hs-brand); border-bottom-color: var(--hs-brand); }
+
+/* ---------- City cards on hub pages ---------- */
+.loc-citycard h3 { font-size: 19px; margin-bottom: 4px; }
+.loc-citycard .loc-region { font-size: 12.5px; color: var(--hs-text-muted); margin-bottom: 12px; }
+.loc-citycard .loc-links { margin-top: 12px; }
+
+/* ---------- Closing CTA ---------- */
+.loc-cta { padding: 84px 0; background: var(--hs-container-dark); text-align: center; }
+.loc-cta h2 { color: #fff; margin-bottom: 14px; }
+.loc-cta p { color: var(--hs-text-on-dark-muted); max-width: 620px; margin: 0 auto 28px; font-size: 1.1rem; }
+.loc-cta .hero-ctas { justify-content: center; margin-bottom: 0; }
+.loc-cta .cl-button.-secondary { background: transparent; color: #fff; border-color: rgba(255,255,255,.35); box-shadow: none; }
+.loc-cta .cl-button.-secondary:hover { border-color: #fff; color: #fff; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 991px) {
+  .loc-hero-grid, .loc-local { grid-template-columns: 1fr; gap: 36px; }
+  .loc-grid.c3, .loc-grid.c4, .loc-stack { grid-template-columns: repeat(2, 1fr); }
+  .loc-steps { grid-template-columns: repeat(2, 1fr); }
+  .loc-proof { grid-template-columns: repeat(2, 1fr); }
+  .loc-proof > div:nth-child(2) { border-right: 0; }
+  .loc-proof > div:nth-child(-n+2) { border-bottom: 1px solid var(--hs-border-03); }
+}
+@media (max-width: 640px) {
+  .loc-section { padding: 60px 0; }
+  .loc-hero { padding: 28px 0 56px; }
+  .loc-grid.c2, .loc-grid.c3, .loc-grid.c4, .loc-stack, .loc-steps, .loc-list.c2, .loc-related { grid-template-columns: 1fr; }
+  .loc-form .form-row { grid-template-columns: 1fr; }
+  .loc-form-card { padding: 22px 18px; }
+  .loc-cta { padding: 60px 0; }
+}
+
+/* ---------- Scenario & single testimonial ---------- */
+.loc-scenario { max-width: 860px; margin: 0 auto; background: #fff; border: 1px solid var(--hs-border-03); border-left: 4px solid var(--hs-brand); border-radius: var(--hs-radius-md); padding: 34px 36px; box-shadow: var(--hs-shadow-sm); }
+.loc-scenario h2 { font-size: clamp(1.4rem, 2.4vw, 1.9rem); margin-bottom: 14px; }
+.loc-scenario p { font-size: 1.02rem; }
+.loc-scenario .loc-scenario-note { font-size: 12.5px; color: var(--hs-text-muted); margin: 14px 0 0; }
+.loc-quote { max-width: 820px; margin: 0 auto; text-align: center; }
+.loc-quote blockquote { margin: 10px 0 16px; font-family: var(--font-display); font-size: clamp(1.2rem, 2.1vw, 1.6rem); line-height: 1.4; color: var(--hs-text-01); }
+.loc-quote figcaption { font-size: 14px; color: var(--hs-text-muted); }
+.loc-quote figcaption a { color: var(--hs-brand); text-decoration: none; font-weight: 600; }
+@media (max-width: 640px) { .loc-scenario { padding: 24px 20px; } }
