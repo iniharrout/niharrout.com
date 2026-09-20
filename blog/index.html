@@ -24,6 +24,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap">
   <link rel="stylesheet" href="/assets/design-system.css?v=serv2026_fix2">
+  <link rel="stylesheet" href="/assets/editorial.css?v=2">
 
   <!-- Calendly Widget CSS & JS -->
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
@@ -56,7 +57,7 @@
   </script>
 </head>
 
-<body>
+<body class="ed-page">
 
   <!-- Navigation Header -->
   <header class="site-header" id="site-header">
@@ -155,138 +156,27 @@
         </div>
 
         <!-- 5 Lead-Generating Articles Grid -->
-        <div class="blog-grid">
-
-          <!-- Article 1: MVP Cost Breakdown -->
-          <article class="blog-card">
-            <a href="/blog/cost-to-build-mvp-2026" style="text-decoration:none; color:inherit; display:flex; flex-direction:column; height:100%;">
-              <div class="blog-card-thumb">
-                <img src="/work/skribe-card.jpg" alt="Cost to Build an MVP in 2026" loading="lazy" width="1024" height="682" decoding="async">
-              </div>
-              <div class="blog-card-body">
-                <div class="blog-card-meta">
-                  <span class="blog-category-badge">Product Strategy</span>
-                  <span class="blog-read-time">9 min read</span>
-                </div>
-                <h2 class="blog-card-title">The True Cost of Building an MVP in 2026: Agency vs. Freelancers vs. Dedicated Squad</h2>
-                <p class="blog-card-desc">
-                  Why 70% of MVP budgets get burned on rework, how agency markups function, and how a founder-led product squad delivers 3x faster with disciplined PRD scoping.
-                </p>
-                <div class="blog-card-footer">
-                  <div class="blog-author">
-                    <img src="/assets/nihar.jpg" alt="Nihar Ranjan Rout" class="blog-author-img" width="1024" height="1024" loading="lazy" decoding="async">
-                    <span class="blog-author-name">Nihar Ranjan Rout</span>
-                  </div>
-                  <span class="blog-read-link">Read Guide →</span>
-                </div>
-              </div>
-            </a>
-          </article>
-
-          <!-- Article 2: Custom ERP Failures -->
-          <article class="blog-card">
-            <a href="/blog/why-custom-erp-implementations-fail" style="text-decoration:none; color:inherit; display:flex; flex-direction:column; height:100%;">
-              <div class="blog-card-thumb">
-                <img src="/work/erp-manufacturing-card.jpg" alt="Why Custom ERP Implementations Fail" loading="lazy" width="1024" height="716" decoding="async">
-              </div>
-              <div class="blog-card-body">
-                <div class="blog-card-meta">
-                  <span class="blog-category-badge">Enterprise ERP</span>
-                  <span class="blog-read-time">11 min read</span>
-                </div>
-                <h2 class="blog-card-title">Why 78% of Custom ERP Implementations Fail (And the Product Discipline That Prevents It)</h2>
-                <p class="blog-card-desc">
-                  Moving manufacturing and supply chain operations from messy spreadsheets to custom software requires modular cutovers, granular RBAC, and strict schema normalization.
-                </p>
-                <div class="blog-card-footer">
-                  <div class="blog-author">
-                    <img src="/assets/nihar.jpg" alt="Nihar Ranjan Rout" class="blog-author-img" width="1024" height="1024" loading="lazy" decoding="async">
-                    <span class="blog-author-name">Nihar Ranjan Rout</span>
-                  </div>
-                  <span class="blog-read-link">Read Guide →</span>
-                </div>
-              </div>
-            </a>
-          </article>
-
-          <!-- Article 3: Mobile App Playbook -->
-          <article class="blog-card">
-            <a href="/blog/react-native-mobile-app-playbook" style="text-decoration:none; color:inherit; display:flex; flex-direction:column; height:100%;">
-              <div class="blog-card-thumb">
-                <img src="/work/mml-card.jpg" alt="React Native & Flutter Engineering Playbook" loading="lazy" width="1024" height="768" decoding="async">
-              </div>
-              <div class="blog-card-body">
-                <div class="blog-card-meta">
-                  <span class="blog-category-badge">Mobile Engineering</span>
-                  <span class="blog-read-time">10 min read</span>
-                </div>
-                <h2 class="blog-card-title">From PRD to App Store: The 10-Week React Native &amp; Flutter Engineering Playbook</h2>
-                <p class="blog-card-desc">
-                  A production blueprint for consumer and B2B mobile apps: offline-first synchronization, real-time WebSockets, background geolocation, and Apple review approval tactics.
-                </p>
-                <div class="blog-card-footer">
-                  <div class="blog-author">
-                    <img src="/assets/nihar.jpg" alt="Nihar Ranjan Rout" class="blog-author-img" width="1024" height="1024" loading="lazy" decoding="async">
-                    <span class="blog-author-name">Nihar Ranjan Rout</span>
-                  </div>
-                  <span class="blog-read-link">Read Guide →</span>
-                </div>
-              </div>
-            </a>
-          </article>
-
-          <!-- Article 4: Pragmatic Enterprise AI -->
-          <article class="blog-card">
-            <a href="/blog/pragmatic-enterprise-ai-workflows" style="text-decoration:none; color:inherit; display:flex; flex-direction:column; height:100%;">
-              <div class="blog-card-thumb">
-                <img src="/work/sky1-card.jpg" alt="Pragmatic Enterprise AI Workflows" loading="lazy" width="1024" height="682" decoding="async">
-              </div>
-              <div class="blog-card-body">
-                <div class="blog-card-meta">
-                  <span class="blog-category-badge">Enterprise AI</span>
-                  <span class="blog-read-time">8 min read</span>
-                </div>
-                <h2 class="blog-card-title">Pragmatic Enterprise AI: Integrating LLMs &amp; Vector Search Without Burning Capital on Hype</h2>
-                <p class="blog-card-desc">
-                  How real businesses generate measurable ROI with private vector search over company ERP data, automated triage pipelines, and deterministic safety fallbacks.
-                </p>
-                <div class="blog-card-footer">
-                  <div class="blog-author">
-                    <img src="/assets/nihar.jpg" alt="Nihar Ranjan Rout" class="blog-author-img" width="1024" height="1024" loading="lazy" decoding="async">
-                    <span class="blog-author-name">Nihar Ranjan Rout</span>
-                  </div>
-                  <span class="blog-read-link">Read Guide →</span>
-                </div>
-              </div>
-            </a>
-          </article>
-
-          <!-- Article 5: Product Scoping Framework -->
-          <article class="blog-card">
-            <a href="/blog/product-scoping-framework-kill-feature-bloat" style="text-decoration:none; color:inherit; display:flex; flex-direction:column; height:100%;">
-              <div class="blog-card-thumb">
-                <img src="/work/flashnow-card.jpg" alt="Kill 50% Feature Bloat Framework" loading="lazy" width="1024" height="660" decoding="async">
-              </div>
-              <div class="blog-card-body">
-                <div class="blog-card-meta">
-                  <span class="blog-category-badge">Product Leadership</span>
-                  <span class="blog-read-time">8 min read</span>
-                </div>
-                <h2 class="blog-card-title">The Product Owner's Scoping Framework: How to Kill 50% of Feature Bloat Before Writing Code</h2>
-                <p class="blog-card-desc">
-                  A step-by-step methodology honed over 8+ years of product management to challenge assumptions, validate with clickable Figma prototypes, and protect your budget.
-                </p>
-                <div class="blog-card-footer">
-                  <div class="blog-author">
-                    <img src="/assets/nihar.jpg" alt="Nihar Ranjan Rout" class="blog-author-img" width="1024" height="1024" loading="lazy" decoding="async">
-                    <span class="blog-author-name">Nihar Ranjan Rout</span>
-                  </div>
-                  <span class="blog-read-link">Read Guide →</span>
-                </div>
-              </div>
-            </a>
-          </article>
-
+        <div class="ed-posts">
+          <a class="ed-post" href="/blog/cost-to-build-mvp-2026">
+            <div><p class="ed-tag">Product Strategy &middot; 9 min read</p><h2>The True Cost of Building an MVP in 2026: Agency vs. Freelancers vs. Dedicated Squad</h2></div>
+            <div><p>Why 70% of MVP budgets get burned on rework, how agency markups function, and how a founder-led product squad delivers 3x faster with disciplined PRD scoping.</p><span class="ed-link">Read the guide &rarr;</span></div>
+          </a>
+          <a class="ed-post" href="/blog/why-custom-erp-implementations-fail">
+            <div><p class="ed-tag">Enterprise ERP &middot; 11 min read</p><h2>Why 78% of Custom ERP Implementations Fail (And the Product Discipline That Prevents It)</h2></div>
+            <div><p>Moving manufacturing and supply chain operations from messy spreadsheets to custom software requires modular cutovers, granular RBAC, and strict schema normalization.</p><span class="ed-link">Read the guide &rarr;</span></div>
+          </a>
+          <a class="ed-post" href="/blog/react-native-mobile-app-playbook">
+            <div><p class="ed-tag">Mobile Engineering &middot; 10 min read</p><h2>From PRD to App Store: The 10-Week React Native &amp; Flutter Engineering Playbook</h2></div>
+            <div><p>A production blueprint for consumer and B2B mobile apps: offline-first synchronization, real-time WebSockets, background geolocation, and Apple review approval tactics.</p><span class="ed-link">Read the guide &rarr;</span></div>
+          </a>
+          <a class="ed-post" href="/blog/pragmatic-enterprise-ai-workflows">
+            <div><p class="ed-tag">Enterprise AI &middot; 8 min read</p><h2>Pragmatic Enterprise AI: Integrating LLMs &amp; Vector Search Without Burning Capital on Hype</h2></div>
+            <div><p>How real businesses generate measurable ROI with private vector search over company ERP data, automated triage pipelines, and deterministic safety fallbacks.</p><span class="ed-link">Read the guide &rarr;</span></div>
+          </a>
+          <a class="ed-post" href="/blog/product-scoping-framework-kill-feature-bloat">
+            <div><p class="ed-tag">Product Leadership &middot; 8 min read</p><h2>The Product Owner's Scoping Framework: How to Kill 50% of Feature Bloat Before Writing Code</h2></div>
+            <div><p>A step-by-step methodology honed over 8+ years of product management to challenge assumptions, validate with clickable Figma prototypes, and protect your budget.</p><span class="ed-link">Read the guide &rarr;</span></div>
+          </a>
         </div>
 
         <!-- Strategy Scoping CTA Box -->

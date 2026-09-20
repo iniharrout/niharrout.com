@@ -74,7 +74,7 @@ function head({ title, description, path: urlPath, ogType = 'website', graph, no
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap">
-  <link rel="stylesheet" href="/assets/design-system.css?v=hs2026_7">
+  <link rel="stylesheet" href="/assets/design-system.css?v=hs2026_8">
   <link rel="stylesheet" href="/assets/location-pages.css?v=loc1">
 
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
@@ -343,7 +343,9 @@ function portfolioSection(c, svc) {
   const chosen = [0, 1].map((i) => svc.cases[(start + i) % svc.cases.length]);
   const cards = chosen.map((slug) => portfolio[slug]).filter(Boolean).map((p) => `
           <a class="loc-card loc-case" href="${esc(p.link)}">
-            <img src="/${esc(p.thumbnail)}" alt="${esc(p.title)}" loading="lazy" width="640" height="400">
+            ${p.thumbnail
+              ? `<img src="/${esc(p.thumbnail)}" alt="${esc(p.title)}" loading="lazy" width="640" height="400">`
+              : `<div class="loc-case-cover" aria-hidden="true"><span>${esc(p.title.split(/\s[—–-]\s/)[0])}</span></div>`}
             <div class="loc-case-body">
               <div class="loc-case-tag">${esc(p.industry)}</div>
               <h3>${esc(p.title)}</h3>
@@ -878,7 +880,9 @@ function buildReference() {
 function buildThankYou() {
   const cards = ['make-my-look', 'flashnow', 'custom-erp-manufacturing'].map((slug) => portfolio[slug]).filter(Boolean).map((p) => `
           <a class="loc-card loc-case" href="${esc(p.link)}">
-            <img src="/${esc(p.thumbnail)}" alt="${esc(p.title)}" loading="lazy" width="640" height="400">
+            ${p.thumbnail
+              ? `<img src="/${esc(p.thumbnail)}" alt="${esc(p.title)}" loading="lazy" width="640" height="400">`
+              : `<div class="loc-case-cover" aria-hidden="true"><span>${esc(p.title.split(/\s[—–-]\s/)[0])}</span></div>`}
             <div class="loc-case-body">
               <div class="loc-case-tag">${esc(p.industry)}</div>
               <h3>${esc(p.title)}</h3>

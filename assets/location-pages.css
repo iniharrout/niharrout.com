@@ -190,3 +190,7 @@ a.loc-card:hover { transform: translateY(-3px); box-shadow: var(--hs-shadow-md);
 @keyframes ty-pop { from { transform: scale(.6); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { .ty-icon { animation: none; } }
 @media (max-width: 640px) { .ty-hero { padding: 48px 0 56px; } }
+
+/* Project with no honest screenshot yet: plain typographic cover */
+.loc-case-cover { aspect-ratio: 16 / 10; display: flex; align-items: flex-end; padding: 22px 24px; background: #1f1d1a; color: #f7f3ea; }
+.loc-case-cover span { font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 2.4rem); line-height: 1; letter-spacing: -0.02em; }

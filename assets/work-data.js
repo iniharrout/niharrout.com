@@ -72,7 +72,7 @@ var portfolioProjects = [
     challenge: "Most companies aren't actually on one communication tool anymore — one team lives on Google Chat, another runs on Microsoft 365, and getting a message across the org means either forcing everyone onto the same platform or watching messages fall through the cracks between tools no one wants to give up.",
     decision: "Rather than build another standalone team-chat app asking companies to migrate away from tools they'd already standardized on, Skribe was scoped as a connective layer: native team chat that also bridges into Google Chat, Google Workspace, and Microsoft 365 — so a message reaches people wherever they already are, instead of creating one more inbox for everyone to check. The product promise: \"Reach with clarity. Know what worked.\"",
     result: "Connects native chat, Google Chat, Google Workspace & Microsoft 365 in one place",
-    thumbnail: "work/skribe-card.jpg",
+    thumbnail: null,
     video: null,
     link: "/work/skribe"
   }
