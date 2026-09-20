@@ -1,5 +1,5 @@
 /**
- * Mobile App Development Cost & Timeline Calculator
+ * Mobile App Development Cost & Timeline Calculator (Multi-Step Wizard)
  * NiharRout.com Interactive Tools Suite
  */
 
@@ -8,96 +8,101 @@
 
   // Base state
   const state = {
+    currentStep: 1, // 1: Archetype, 2: Platform, 3: Features, 4: Design Tier
     currency: 'INR', // 'INR' or 'USD'
     archetype: 'ecommerce',
     platforms: ['cross_platform', 'include_admin'],
     features: ['auth_social', 'payments', 'push_sms'],
-    designTier: 'custom',
-    scaleUsers: 10000
+    designTier: 'custom'
   };
 
-  // Archetype Data
+  // Archetype Data with realistic, high-calibre production figures
   const ARCHETYPES = {
     ecommerce: {
-      name: 'E-Commerce / Multi-Vendor Marketplace',
-      tagline: 'Amazon, Flipkart, or Shopify-style commerce',
-      baseWeeks: 8,
-      baseInrMin: 550000,
-      baseInrMax: 850000,
-      benchmark: 'Like Amazon: Involves customer shopping app, product catalog, cart/checkout, payment gateways, order tracking, and vendor/admin inventory management. Enterprise Amazon costs millions to run at scale, but a high-performing 0-to-1 marketplace MVP launches reliably within this bracket.'
+      name: 'E-Commerce / Marketplace',
+      shortName: 'Amazon / Marketplace',
+      tagline: 'Amazon, Flipkart, or D2C brand store with catalog & seller panel',
+      baseWeeks: 10,
+      baseInrMin: 1450000,
+      baseInrMax: 2250000,
+      benchmark: 'Like Amazon: Involves customer shopping app, product catalog, cart/checkout, payment gateways, order tracking, and vendor/admin inventory management. Building an enterprise Amazon costs tens of millions, but a solid, scalable production MVP with multi-vendor flows and mobile apps typically scopes between ₹18L – ₹32L+ ($22k – $40k+ USD).'
     },
     ondemand: {
       name: 'On-Demand Service & Booking',
-      tagline: 'Urban Company, Uber, or Swiggy-style delivery',
-      baseWeeks: 9,
-      baseInrMin: 650000,
-      baseInrMax: 950000,
-      benchmark: 'Like Urban Company / Uber: Dual-sided marketplace requiring customer app, provider/agent app, real-time dispatch state machine, geolocation tracking, and dynamic slot scheduling.'
+      shortName: 'Urban Company / On-Demand',
+      tagline: 'Urban Company, Uber, or Swiggy: live slots, partner app, real-time dispatch',
+      baseWeeks: 11,
+      baseInrMin: 1600000,
+      baseInrMax: 2450000,
+      benchmark: 'Like Urban Company / Uber: Dual-sided marketplace requiring customer app, provider/agent app, real-time dispatch state machine, geolocation tracking, and dynamic slot scheduling. A production system with real-time sockets typically ranges ₹20L – ₹35L+ ($25k – $45k+ USD).'
     },
     healthtech: {
-      name: 'HealthTech & Care Management',
-      tagline: 'Telehealth, donor/organ registry, clinic scheduling',
-      baseWeeks: 7,
-      baseInrMin: 480000,
-      baseInrMax: 780000,
-      benchmark: 'Like Healthcare / Registry Portals: Prioritizes encrypted patient records, doctor scheduling, video consultation or verified listing matching with audit-logged role permissions.'
+      name: 'HealthTech & Care Registry',
+      shortName: 'Care & Registry / Telehealth',
+      tagline: 'Organ/donor registries, tele-consultation, clinic bookings, secure health data',
+      baseWeeks: 9,
+      baseInrMin: 1350000,
+      baseInrMax: 2100000,
+      benchmark: 'Like Organ Registries / Healthcare Portals: Prioritizes encrypted patient records, verified donor-recipient matching logic, doctor tele-consultations, slot concurrency, and audit-logged role permissions. Production healthcare builds typically scope between ₹16L – ₹28L+ ($20k – $35k+ USD).'
     },
     b2b_saas: {
       name: 'Custom B2B SaaS & Enterprise ERP',
-      tagline: 'Operations workflow, supply chain, multi-tenant portal',
-      baseWeeks: 8,
-      baseInrMin: 580000,
-      baseInrMax: 900000,
-      benchmark: 'Like Custom ERPs: High-throughput data tables, complex approval workflows, multi-tenant data partitioning, and offline sync for field operators.'
+      shortName: 'Custom ERP / B2B SaaS',
+      tagline: 'Operations systems, inventory, field staff workflows, enterprise audit tracking',
+      baseWeeks: 10,
+      baseInrMin: 1500000,
+      baseInrMax: 2350000,
+      benchmark: 'Like Custom ERPs: High-throughput operational databases, custom approval workflows, multi-tenant partitioning, and offline sync for field operators. Real-world custom ERPs scope from ₹18L – ₹32L+ ($24k – $42k+ USD).'
     },
     social_chat: {
-      name: 'Social, Community & Messaging',
-      tagline: 'Feed, direct chat, audio/video channels, groups',
-      baseWeeks: 7,
-      baseInrMin: 450000,
-      baseInrMax: 720000,
+      name: 'Social, Community & Live Chat',
+      shortName: 'Social & Real-Time Chat',
+      tagline: 'Community feeds, real-time messaging, WebSocket channels, media sharing',
+      baseWeeks: 9,
+      baseInrMin: 1250000,
+      baseInrMax: 1950000,
       benchmark: 'Like Discord or Community Apps: Real-time WebSocket connection pools, push notification fanouts, user profile directories, and content moderation feeds.'
     },
     mvp_lean: {
-      name: 'Lean 0-to-1 Startup Prototype',
-      tagline: 'Ultra-focused core value proposition to test PMF',
-      baseWeeks: 5,
-      baseInrMin: 320000,
-      baseInrMax: 490000,
-      benchmark: 'Fastest time-to-market: Trims secondary bloat and launches the primary user loop within 4 to 6 weeks to collect investor interest or early paying customers.'
+      name: '0-to-1 Startup Prototype',
+      shortName: 'Lean MVP Prototype',
+      tagline: 'Laser-focused on 1 core loop. Minimum scope to validate paying demand in 5–7 weeks',
+      baseWeeks: 6,
+      baseInrMin: 750000,
+      baseInrMax: 1150000,
+      benchmark: 'Fastest time-to-market: Laser-focused core loop with senior engineering and clean architecture to validate customer demand or raise funding. Typical scope ranges ₹8L – ₹14L ($10k – $18k USD).'
     }
   };
 
   // Feature Addons (in INR addition and extra weeks)
   const FEATURES = {
-    auth_social: { name: 'Social & Phone OTP Auth', inrMin: 35000, inrMax: 55000, weeks: 0.5 },
-    payments: { name: 'Payments & Subscriptions (Razorpay/Stripe)', inrMin: 60000, inrMax: 90000, weeks: 1.0 },
-    realtime_chat: { name: 'In-App Live Chat & WebSockets', inrMin: 70000, inrMax: 110000, weeks: 1.2 },
-    geo_tracking: { name: 'Live GPS & Route Tracking', inrMin: 75000, inrMax: 120000, weeks: 1.2 },
-    ai_copilot: { name: 'AI / LLM Integration & Smart Search', inrMin: 85000, inrMax: 140000, weeks: 1.5 },
-    push_sms: { name: 'Push Alerts & Transactional SMS', inrMin: 30000, inrMax: 45000, weeks: 0.5 },
-    multilingual: { name: 'Multi-Language Localization', inrMin: 40000, inrMax: 65000, weeks: 0.8 },
-    offline_sync: { name: 'Offline-First Local Storage & Sync', inrMin: 65000, inrMax: 95000, weeks: 1.0 }
+    auth_social: { name: 'Phone OTP & Social Auth', inrMin: 75000, inrMax: 120000, weeks: 0.5 },
+    payments: { name: 'Payments & Subscriptions (Razorpay/Stripe)', inrMin: 140000, inrMax: 220000, weeks: 1.2 },
+    realtime_chat: { name: 'In-App Live Chat & WebSockets', inrMin: 160000, inrMax: 260000, weeks: 1.5 },
+    geo_tracking: { name: 'Live GPS & Route Tracking', inrMin: 180000, inrMax: 280000, weeks: 1.5 },
+    ai_copilot: { name: 'AI / LLM Assistant & Smart Search', inrMin: 220000, inrMax: 350000, weeks: 2.0 },
+    push_sms: { name: 'Push Alerts & WhatsApp/SMS', inrMin: 70000, inrMax: 110000, weeks: 0.5 },
+    multilingual: { name: 'Multi-Language Localization', inrMin: 90000, inrMax: 150000, weeks: 1.0 },
+    offline_sync: { name: 'Offline-First Local Storage & Sync', inrMin: 150000, inrMax: 240000, weeks: 1.2 }
   };
 
   // Platform Multipliers
   const PLATFORM_CONFIG = {
-    cross_platform: { mult: 1.0, weeks: 0, label: 'Cross-Platform (Flutter / React Native)' },
-    native_both: { mult: 1.45, weeks: 2.5, label: 'Separate Native Swift & Kotlin Apps' },
-    include_admin: { inrMin: 90000, inrMax: 160000, weeks: 1.5, label: 'Web Admin Operations Portal' }
+    cross_platform: { mult: 1.0, weeks: 0, label: 'Cross-Platform (Flutter / RN)' },
+    native_both: { mult: 1.45, weeks: 3.0, label: 'Separate Native Swift & Kotlin' },
+    include_admin: { inrMin: 280000, inrMax: 450000, weeks: 2.0, label: 'Web Admin Portal' }
   };
 
   // Design Tiers
   const DESIGN_TIERS = {
-    mvp: { mult: 0.9, label: 'Clean Utilitarian MVP', weeks: -0.5 },
+    mvp: { mult: 0.95, label: 'Clean Utilitarian MVP', weeks: -0.5 },
     custom: { mult: 1.0, label: 'Custom Branded & Polished', weeks: 0 },
-    editorial: { mult: 1.2, label: 'High-End Editorial & Micro-interactions', weeks: 1.5 }
+    editorial: { mult: 1.25, label: 'High-End Editorial & Micro-interactions', weeks: 2.0 }
   };
 
-  // USD Conversion Ratio & Global standard multiplier
-  // US standard baseline is priced reflecting global boutique product management & engineering delivery
-  const INR_TO_USD_RATE = 1 / 86; // live spot baseline
-  const US_MARKET_FACTOR = 2.4;   // Reflects US/European delivery standard benchmark vs offshore Indian standard
+  // Currency calculations
+  const INR_TO_USD_RATE = 1 / 86;
+  const US_MARKET_FACTOR = 1.35; // Reflects US/European delivery standard benchmark
 
   function formatCurrency(inrAmount, isMax = false) {
     if (state.currency === 'INR') {
@@ -144,9 +149,9 @@
     maxInr *= dt.mult;
     weeks += dt.weeks;
 
-    // Rounding
-    minInr = Math.round(minInr / 10000) * 10000;
-    maxInr = Math.round(maxInr / 10000) * 10000;
+    // Rounding to clean thousands
+    minInr = Math.round(minInr / 50000) * 50000;
+    maxInr = Math.round(maxInr / 50000) * 50000;
     weeks = Math.round(weeks);
 
     return {
@@ -157,10 +162,51 @@
     };
   }
 
+  function goToStep(stepNum) {
+    if (stepNum < 1 || stepNum > 4) return;
+    state.currentStep = stepNum;
+
+    // Update Step Tabs
+    document.querySelectorAll('.step-tab').forEach((tab, index) => {
+      const tabStep = index + 1;
+      tab.classList.remove('active');
+      if (tabStep === state.currentStep) {
+        tab.classList.add('active');
+      }
+      if (tabStep < state.currentStep) {
+        tab.classList.add('completed');
+        const numEl = tab.querySelector('.step-tab-num');
+        if (numEl) numEl.textContent = '✓';
+      } else {
+        tab.classList.remove('completed');
+        const numEl = tab.querySelector('.step-tab-num');
+        if (numEl) numEl.textContent = `0${tabStep}`;
+      }
+    });
+
+    // Show active step container
+    document.querySelectorAll('.calc-step').forEach((stepEl, index) => {
+      if (index + 1 === state.currentStep) {
+        stepEl.classList.add('active');
+      } else {
+        stepEl.classList.remove('active');
+      }
+    });
+
+    // Scroll smoothly to the top of the calculator container if needed
+    const container = document.getElementById('calc-wizard-top');
+    if (container) {
+      container.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    render();
+  }
+
   function render() {
     const result = calculate();
+    const arch = ARCHETYPES[state.archetype];
 
-    // Update Price
+    // Update Price Display
     const priceEl = document.getElementById('calc-price-display');
     if (priceEl) {
       priceEl.textContent = `${formatCurrency(result.minInr)} – ${formatCurrency(result.maxInr, true)}`;
@@ -170,9 +216,9 @@
     const standardEl = document.getElementById('calc-standard-label');
     if (standardEl) {
       if (state.currency === 'INR') {
-        standardEl.innerHTML = '🇮🇳 <strong>Indian Standard Delivery</strong> · In-house full-time team';
+        standardEl.innerHTML = '🇮🇳 <strong>Indian Standard Delivery</strong> · Full senior squad';
       } else {
-        standardEl.innerHTML = '🇺🇸 <strong>US &amp; Global Standard</strong> · Fully dedicated squad';
+        standardEl.innerHTML = '🇺🇸 <strong>US &amp; Global Standard</strong> · Dedicated boutique squad';
       }
     }
 
@@ -201,18 +247,61 @@
     if (bBackend) bBackend.textContent = formatCurrency(result.minInr * 0.20);
     if (bDeploy) bDeploy.textContent = formatCurrency(result.minInr * 0.10);
 
+    // Update Sidebar Selected Summary Pills
+    const sumArch = document.getElementById('sum-arch-val');
+    const sumPlat = document.getElementById('sum-plat-val');
+    const sumFeat = document.getElementById('sum-feat-val');
+    const sumTier = document.getElementById('sum-tier-val');
+
+    if (sumArch) sumArch.textContent = arch.shortName;
+    if (sumPlat) {
+      const isNative = state.platforms.includes('native_both');
+      const hasAdmin = state.platforms.includes('include_admin');
+      sumPlat.textContent = `${isNative ? 'Native iOS & Android' : 'Flutter/RN'}${hasAdmin ? ' + Admin' : ''}`;
+    }
+    if (sumFeat) sumFeat.textContent = `${state.features.length} core features`;
+    if (sumTier) sumTier.textContent = DESIGN_TIERS[state.designTier].label;
+
     // Update Calendly link with summary params
     const bookBtn = document.getElementById('btn-book-calc');
     if (bookBtn) {
       const summaryText = encodeURIComponent(
-        `App Estimate: ${ARCHETYPES[state.archetype].name} (${formatCurrency(result.minInr)} - ${formatCurrency(result.maxInr, true)}, ${result.weeks} wks)`
+        `App Scope: ${arch.name} (${formatCurrency(result.minInr)} - ${formatCurrency(result.maxInr, true)}, ~${result.weeks} wks, ${DESIGN_TIERS[state.designTier].label})`
       );
       bookBtn.href = `https://calendly.com/creuto/meet?a1=${summaryText}`;
     }
   }
 
-  // Event Listeners
   function init() {
+    // Stepper Tabs Click
+    document.querySelectorAll('.step-tab').forEach((tab, index) => {
+      tab.addEventListener('click', () => {
+        goToStep(index + 1);
+      });
+    });
+
+    // Step Prev/Next Buttons
+    document.querySelectorAll('.btn-step-next').forEach(btn => {
+      btn.addEventListener('click', function () {
+        goToStep(state.currentStep + 1);
+      });
+    });
+
+    document.querySelectorAll('.btn-step-prev').forEach(btn => {
+      btn.addEventListener('click', function () {
+        goToStep(state.currentStep - 1);
+      });
+    });
+
+    // Sidebar "Edit" links
+    document.querySelectorAll('[data-jump-step]').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetStep = parseInt(this.getAttribute('data-jump-step'), 10);
+        goToStep(targetStep);
+      });
+    });
+
     // Currency Toggle
     const currencyBtns = document.querySelectorAll('.currency-btn');
     currencyBtns.forEach(btn => {
@@ -240,15 +329,12 @@
     platOptions.forEach(card => {
       card.addEventListener('click', function () {
         const plat = this.getAttribute('data-platform');
-        
-        // Single choice between cross vs native
         if (plat === 'cross_platform' || plat === 'native_both') {
           state.platforms = state.platforms.filter(p => p !== 'cross_platform' && p !== 'native_both');
           state.platforms.push(plat);
           document.querySelectorAll('[data-platform="cross_platform"], [data-platform="native_both"]').forEach(c => c.classList.remove('selected'));
           this.classList.add('selected');
         } else if (plat === 'include_admin') {
-          // Toggle admin portal
           if (state.platforms.includes('include_admin')) {
             state.platforms = state.platforms.filter(p => p !== 'include_admin');
             this.classList.remove('selected');
@@ -296,13 +382,13 @@
         const arch = ARCHETYPES[state.archetype];
         const text = [
           `--- MOBILE APPLICATION ESTIMATE SUMMARY ---`,
-          `Application Type: ${arch.name}`,
+          `Application Model: ${arch.name}`,
           `Estimated Investment: ${formatCurrency(res.minInr)} – ${formatCurrency(res.maxInr, true)} (${state.currency === 'INR' ? 'Indian Standard' : 'US/Global Standard'})`,
           `Estimated Timeline: ${res.weeks - 1} to ${res.weeks + 1} Weeks`,
-          `Platforms: ${state.platforms.join(', ')}`,
-          `Features Selected: ${state.features.map(f => FEATURES[f]?.name).join(', ')}`,
-          `Design Tier: ${DESIGN_TIERS[state.designTier].label}`,
-          `Recommended Squad: 1 Product Strategist, 1 Tech Lead, 2 Mobile Developers, 1 UI/UX Designer, 1 QA`,
+          `Platforms: ${state.platforms.map(p => PLATFORM_CONFIG[p]?.label).join(' + ')}`,
+          `Selected Capabilities: ${state.features.map(f => FEATURES[f]?.name).join(', ')}`,
+          `Design Standard: ${DESIGN_TIERS[state.designTier].label}`,
+          `Squad: 1 Product Strategist, 1 Tech Architect, 2 Mobile Devs, 1 UI/UX Designer, 1 QA Specialist`,
           `Calculated via niharrout.com/tools/app-cost-calculator`
         ].join('\n');
 
@@ -314,7 +400,7 @@
       });
     }
 
-    render();
+    goToStep(1);
   }
 
   function showToast(msg) {

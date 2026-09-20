@@ -189,21 +189,21 @@
 }
 
 /* ==========================================================================
-   APP COST CALCULATOR STYLES
+   APP COST CALCULATOR STYLES & WIZARD
    ========================================================================== */
 
 .calc-layout {
   display: grid;
   grid-template-columns: 1fr 380px;
   gap: 48px;
-  padding: 48px 0 96px;
+  padding: 40px 0 96px;
   align-items: start;
 }
 
 @media (max-width: 991px) {
   .calc-layout {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 36px;
   }
 }
 
@@ -214,11 +214,11 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 16px;
-  padding: 18px 24px;
+  padding: 16px 22px;
   background: var(--tool-paper-card);
   border: 1px solid var(--tool-rule);
   border-radius: var(--tool-radius);
-  margin-bottom: 36px;
+  margin-bottom: 24px;
 }
 .calc-top-title {
   font-family: var(--tool-mono);
@@ -252,14 +252,118 @@
   color: #ffffff;
 }
 
-/* Steps */
+/* Stepper Tabs Bar */
+.calc-stepper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: var(--tool-paper-card);
+  border: 1px solid var(--tool-rule);
+  border-radius: var(--tool-radius);
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+.step-tab {
+  padding: 14px 12px;
+  background: transparent;
+  border: none;
+  border-right: 1px solid var(--tool-rule);
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.15s ease;
+  position: relative;
+}
+.step-tab:last-child {
+  border-right: none;
+}
+.step-tab:hover {
+  background: var(--tool-paper);
+}
+.step-tab.active {
+  background: #ffffff;
+  box-shadow: inset 0 -3px 0 var(--tool-accent);
+}
+.step-tab.completed .step-tab-num {
+  background: var(--tool-ink);
+  color: #ffffff;
+  border-color: var(--tool-ink);
+}
+.step-tab-num {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1.5px solid var(--tool-rule);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--tool-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--tool-ink-3);
+  flex-shrink: 0;
+  transition: all 0.15s;
+}
+.step-tab.active .step-tab-num {
+  border-color: var(--tool-accent);
+  color: var(--tool-accent);
+  background: var(--tool-accent-tint);
+}
+.step-tab-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.step-tab-label {
+  font-family: var(--tool-mono);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--tool-ink-3);
+  letter-spacing: 0.05em;
+  line-height: 1;
+  margin-bottom: 3px;
+}
+.step-tab-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--tool-ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+  .calc-stepper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .step-tab:nth-child(2) {
+    border-right: none;
+  }
+  .step-tab:nth-child(1), .step-tab:nth-child(2) {
+    border-bottom: 1px solid var(--tool-rule);
+  }
+}
+
+/* Wizard Step Containers */
 .calc-step {
-  margin-bottom: 44px;
+  display: none;
   background: var(--tool-paper-card);
   border: 1px solid var(--tool-rule);
   border-radius: var(--tool-radius);
   padding: 32px 28px;
+  animation: stepFadeIn 0.22s ease forwards;
 }
+.calc-step.active {
+  display: block;
+}
+@keyframes stepFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 .calc-step-header {
   margin-bottom: 22px;
 }
@@ -274,7 +378,7 @@
   margin-bottom: 6px;
 }
 .calc-step-header h2 {
-  font-size: 1.45rem;
+  font-size: 1.5rem;
   letter-spacing: -0.02em;
   line-height: 1.25;
   margin: 0 0 6px;
@@ -284,6 +388,108 @@
   font-size: 14px;
   color: var(--tool-ink-3);
   margin: 0;
+}
+
+/* Step Navigation Footer */
+.step-nav-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 32px;
+  padding-top: 22px;
+  border-top: 1px solid var(--tool-rule);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.btn-step-prev {
+  background: transparent;
+  border: 1px solid var(--tool-rule);
+  color: var(--tool-ink);
+  font-family: var(--tool-mono);
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.btn-step-prev:hover {
+  border-color: var(--tool-ink);
+  background: var(--tool-paper);
+}
+.btn-step-prev:disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+.btn-step-next {
+  background: var(--tool-accent);
+  border: none;
+  color: #ffffff;
+  font-family: var(--tool-mono);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 11px 22px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-step-next:hover {
+  background: var(--tool-ink);
+}
+.step-counter-label {
+  font-family: var(--tool-mono);
+  font-size: 12px;
+  color: var(--tool-ink-3);
+}
+
+/* Sidebar Selected Summary Pills */
+.sidebar-summary-box {
+  background: var(--tool-paper-2);
+  border-radius: 3px;
+  padding: 14px 16px;
+  margin-bottom: 20px;
+}
+.sidebar-summary-title {
+  font-family: var(--tool-mono);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--tool-ink-3);
+  margin-bottom: 10px;
+}
+.summary-pill-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+  font-size: 12.5px;
+  border-bottom: 1px dotted var(--tool-rule);
+}
+.summary-pill-row:last-child {
+  border-bottom: none;
+}
+.summary-pill-val {
+  font-weight: 600;
+  color: var(--tool-ink);
+  text-align: right;
+  max-width: 60%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.summary-edit-link {
+  font-family: var(--tool-mono);
+  font-size: 10.5px;
+  color: var(--tool-accent);
+  cursor: pointer;
+  margin-left: 6px;
+  text-decoration: underline;
 }
 
 /* Option Cards Grid */

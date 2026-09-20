@@ -174,26 +174,58 @@
     <!-- Interactive Calculator Content -->
     <section>
       <div class="tool-wrap">
-        <div class="calc-layout">
+        <div class="calc-layout" id="calc-wizard-top">
 
-          <!-- Left Interactive Form -->
+          <!-- Left Interactive Wizard Form -->
           <div class="calc-main">
 
             <!-- Currency Standard Switcher -->
             <div class="calc-top-bar">
-              <div class="calc-top-title">Select Market Standard:</div>
+              <div class="calc-top-title">Select Market Delivery Standard:</div>
               <div class="currency-toggle">
                 <button type="button" class="currency-btn active" data-currency="INR">🇮🇳 INR (₹ Lakhs)</button>
                 <button type="button" class="currency-btn" data-currency="USD">🇺🇸 USD ($k)</button>
               </div>
             </div>
 
+            <!-- Stepper Progress Tabs -->
+            <div class="calc-stepper" id="calc-stepper">
+              <button type="button" class="step-tab active" data-step="1">
+                <span class="step-tab-num">01</span>
+                <span class="step-tab-text">
+                  <span class="step-tab-label">Step 01</span>
+                  <span class="step-tab-title">Archetype</span>
+                </span>
+              </button>
+              <button type="button" class="step-tab" data-step="2">
+                <span class="step-tab-num">02</span>
+                <span class="step-tab-text">
+                  <span class="step-tab-label">Step 02</span>
+                  <span class="step-tab-title">Platform</span>
+                </span>
+              </button>
+              <button type="button" class="step-tab" data-step="3">
+                <span class="step-tab-num">03</span>
+                <span class="step-tab-text">
+                  <span class="step-tab-label">Step 03</span>
+                  <span class="step-tab-title">Features</span>
+                </span>
+              </button>
+              <button type="button" class="step-tab" data-step="4">
+                <span class="step-tab-num">04</span>
+                <span class="step-tab-text">
+                  <span class="step-tab-label">Step 04</span>
+                  <span class="step-tab-title">Design Tier</span>
+                </span>
+              </button>
+            </div>
+
             <!-- Step 1: Application Archetype -->
-            <div class="calc-step">
+            <div class="calc-step active" id="step-1">
               <div class="calc-step-header">
-                <span class="calc-step-num">Step 01</span>
+                <span class="calc-step-num">Step 01 of 04</span>
                 <h2>Application Archetype</h2>
-                <p>Select the model that best reflects your core user flow and operational mechanics.</p>
+                <p>Select the model that best reflects your core user flow and business mechanics.</p>
               </div>
 
               <div class="option-grid">
@@ -253,7 +285,7 @@
                     <span>0-to-1 Startup Prototype</span>
                     <span class="calc-check">✓</span>
                   </div>
-                  <p class="calc-option-desc">Laser-focused on 1 core loop. Minimum scope to validate paying demand in 4–6 weeks.</p>
+                  <p class="calc-option-desc">Laser-focused on 1 core loop. Minimum scope to validate paying demand in 5–7 weeks.</p>
                   <span class="calc-option-tag">Fastest Launch</span>
                 </div>
               </div>
@@ -267,12 +299,20 @@
                   Like Amazon: Involves customer shopping app, product catalog, cart/checkout, payment gateways, order tracking, and vendor/admin inventory management.
                 </div>
               </div>
+
+              <!-- Step 1 Navigation Footer -->
+              <div class="step-nav-footer">
+                <span class="step-counter-label">Step 1 of 4: Select Archetype</span>
+                <button type="button" class="btn-step-next">
+                  Continue to Step 02: Platform →
+                </button>
+              </div>
             </div>
 
             <!-- Step 2: Platform Strategy -->
-            <div class="calc-step">
+            <div class="calc-step" id="step-2">
               <div class="calc-step-header">
-                <span class="calc-step-num">Step 02</span>
+                <span class="calc-step-num">Step 02 of 04</span>
                 <h2>Target Platform &amp; Admin Tools</h2>
                 <p>Choose your codebase architecture and back-office tooling.</p>
               </div>
@@ -305,12 +345,23 @@
                   <span class="calc-option-tag">Essential for Ops</span>
                 </div>
               </div>
+
+              <!-- Step 2 Navigation Footer -->
+              <div class="step-nav-footer">
+                <button type="button" class="btn-step-prev">
+                  ← Back to Archetype
+                </button>
+                <span class="step-counter-label">Step 2 of 4: Platform Strategy</span>
+                <button type="button" class="btn-step-next">
+                  Continue to Step 03: Features →
+                </button>
+              </div>
             </div>
 
             <!-- Step 3: Features & Architecture -->
-            <div class="calc-step">
+            <div class="calc-step" id="step-3">
               <div class="calc-step-header">
-                <span class="calc-step-num">Step 03</span>
+                <span class="calc-step-num">Step 03 of 04</span>
                 <h2>Features &amp; Technical Capabilities</h2>
                 <p>Toggle additional architectural building blocks required for your product.</p>
               </div>
@@ -380,12 +431,23 @@
                   <p class="calc-option-desc">SQLite / WatermelonDB local caching with automated cloud synchronization.</p>
                 </div>
               </div>
+
+              <!-- Step 3 Navigation Footer -->
+              <div class="step-nav-footer">
+                <button type="button" class="btn-step-prev">
+                  ← Back to Platform
+                </button>
+                <span class="step-counter-label">Step 3 of 4: Capabilities</span>
+                <button type="button" class="btn-step-next">
+                  Continue to Step 04: Design Tier →
+                </button>
+              </div>
             </div>
 
             <!-- Step 4: UI/UX Quality Tier -->
-            <div class="calc-step">
+            <div class="calc-step" id="step-4">
               <div class="calc-step-header">
-                <span class="calc-step-num">Step 04</span>
+                <span class="calc-step-num">Step 04 of 04</span>
                 <h2>UI/UX Design Standard</h2>
                 <p>Choose the level of visual polish and interaction detail.</p>
               </div>
@@ -415,6 +477,17 @@
                   <p class="calc-option-desc">Micro-interactions, haptic feedback, custom motion, and executive-tier aesthetics.</p>
                 </div>
               </div>
+
+              <!-- Step 4 Navigation Footer -->
+              <div class="step-nav-footer">
+                <button type="button" class="btn-step-prev">
+                  ← Back to Features
+                </button>
+                <span class="step-counter-label">Step 4 of 4: Design Quality</span>
+                <button type="button" class="btn-step-next" style="background:var(--tool-ink);">
+                  Review Final Scope Summary ✓
+                </button>
+              </div>
             </div>
 
           </div>
@@ -423,19 +496,52 @@
           <aside class="calc-sidebar">
             <div class="sidebar-eyebrow">Estimated Scope &amp; Budget</div>
             <div class="sidebar-price-label">Project Investment Range:</div>
-            <div class="sidebar-price-value" id="calc-price-display">₹6.5L – ₹9.5L</div>
+            <div class="sidebar-price-value" id="calc-price-display">₹18.5L – ₹28.5L</div>
             <div class="sidebar-standard-badge" id="calc-standard-label">
-              🇮🇳 <strong>Indian Standard Delivery</strong> · In-house full-time team
+              🇮🇳 <strong>Indian Standard Delivery</strong> · Full senior squad
+            </div>
+
+            <!-- Selected Summary Box -->
+            <div class="sidebar-summary-box">
+              <div class="sidebar-summary-title">Selected Configuration</div>
+              <div class="summary-pill-row">
+                <span>Archetype:</span>
+                <div>
+                  <span class="summary-pill-val" id="sum-arch-val">Amazon / Marketplace</span>
+                  <a href="#" class="summary-edit-link" data-jump-step="1">Edit</a>
+                </div>
+              </div>
+              <div class="summary-pill-row">
+                <span>Platform:</span>
+                <div>
+                  <span class="summary-pill-val" id="sum-plat-val">Flutter/RN + Admin</span>
+                  <a href="#" class="summary-edit-link" data-jump-step="2">Edit</a>
+                </div>
+              </div>
+              <div class="summary-pill-row">
+                <span>Features:</span>
+                <div>
+                  <span class="summary-pill-val" id="sum-feat-val">3 core features</span>
+                  <a href="#" class="summary-edit-link" data-jump-step="3">Edit</a>
+                </div>
+              </div>
+              <div class="summary-pill-row">
+                <span>Design:</span>
+                <div>
+                  <span class="summary-pill-val" id="sum-tier-val">Custom Polished</span>
+                  <a href="#" class="summary-edit-link" data-jump-step="4">Edit</a>
+                </div>
+              </div>
             </div>
 
             <div class="sidebar-stat-grid">
               <div class="stat-item">
                 <dt>Estimated Timeline</dt>
-                <dd id="calc-timeline-display">8–10 Weeks</dd>
+                <dd id="calc-timeline-display">10–12 Weeks</dd>
               </div>
               <div class="stat-item">
                 <dt>Engineering Sprints</dt>
-                <dd>4 to 5 Sprints</dd>
+                <dd>5 to 6 Sprints</dd>
               </div>
             </div>
 
@@ -445,23 +551,23 @@
             <ul class="breakdown-list">
               <li class="breakdown-row">
                 <span>Product Strategy &amp; Wireframes (15%)</span>
-                <strong id="breakdown-discovery">₹1.0L</strong>
+                <strong id="breakdown-discovery">₹2.8L</strong>
               </li>
               <li class="breakdown-row">
                 <span>UI/UX Figma Systems (20%)</span>
-                <strong id="breakdown-design">₹1.3L</strong>
+                <strong id="breakdown-design">₹3.7L</strong>
               </li>
               <li class="breakdown-row">
                 <span>Mobile App Frontend (35%)</span>
-                <strong id="breakdown-frontend">₹2.3L</strong>
+                <strong id="breakdown-frontend">₹6.5L</strong>
               </li>
               <li class="breakdown-row">
                 <span>Backend API &amp; Database (20%)</span>
-                <strong id="breakdown-backend">₹1.3L</strong>
+                <strong id="breakdown-backend">₹3.7L</strong>
               </li>
               <li class="breakdown-row">
                 <span>QA &amp; App Store Deployment (10%)</span>
-                <strong id="breakdown-deploy">₹0.7L</strong>
+                <strong id="breakdown-deploy">₹1.8L</strong>
               </li>
             </ul>
 
@@ -472,6 +578,7 @@
               <span class="team-chip">1 Product Strategist</span>
               <span class="team-chip">1 Tech Lead / Architect</span>
               <span class="team-chip">2 Mobile Engineers</span>
+              <span class="team-chip">1 Backend Engineer</span>
               <span class="team-chip">1 UI/UX Designer</span>
               <span class="team-chip">1 QA Specialist</span>
             </div>
