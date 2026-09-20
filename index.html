@@ -54,6 +54,7 @@
   <!-- Design System Stylesheet -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="/assets/nihar-hero-900.jpg" imagesrcset="/assets/nihar-hero-480.jpg 480w, /assets/nihar-hero-900.jpg 900w" imagesizes="(max-width: 991px) 92vw, 460px" fetchpriority="high">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap">
   <link rel="stylesheet" href="/assets/design-system.css?v=serv2026_fix2">
 
@@ -100,14 +101,14 @@
   </script>
 </head>
 
-<body>
+<body class="page-home">
 
   <!-- ================= NAVIGATION HEADER WITH CLEAN DROPDOWNS ================= -->
   <header class="site-header" id="site-header">
     <div class="wrap nav-inner">
       <!-- Brand Logo -->
       <a href="/" class="brand-link" aria-label="Nihar Ranjan Rout Homepage">
-        <img src="/assets/nihar.jpg" alt="Nihar Ranjan Rout" class="brand-avatar" width="36" height="36" decoding="async">
+        <img src="/assets/nihar-avatar.jpg" alt="Nihar Ranjan Rout" class="brand-avatar" width="36" height="36" decoding="async">
         <div class="brand-text">nihar<span class="dot">.</span></div>
       </a>
 
@@ -233,13 +234,17 @@
         <div class="hero-grid">
           <!-- Left: Direct Value Proposition -->
           <div class="hero-content">
+            <div class="hero-founder-strip">
+              <img src="/assets/nihar-avatar.jpg" alt="" width="44" height="44" class="hero-founder-avatar" decoding="async">
+              <div><strong>Nihar Ranjan Rout</strong><span>Founder &amp; CEO, Creuto</span></div>
+            </div>
             <div class="hs-eyebrow">
               <span class="dot"></span>
               FOUNDER &amp; CEO, CREUTO · PRODUCT STRATEGY &amp; LEADERSHIP
             </div>
 
             <h1 class="hero-title">
-              I help founders and enterprises build digital products that launch and scale.
+              I help founders and enterprises build <span class="hl">digital products</span> that launch and scale.
             </h1>
 
             <p class="hero-sub">
@@ -262,7 +267,7 @@
           <div class="hero-showcase">
             <div class="hero-executive-card">
               <div class="hero-portrait-frame">
-                <img src="/assets/nihar-hero.jpg" alt="Nihar Ranjan Rout — Founder &amp; CEO, Creuto" class="hero-portrait-img" loading="eager" width="1024" height="921" decoding="async">
+                <img src="/assets/nihar-hero-900.jpg" srcset="/assets/nihar-hero-480.jpg 480w, /assets/nihar-hero-900.jpg 900w" sizes="(max-width: 991px) 92vw, 460px" alt="Nihar Ranjan Rout — Founder &amp; CEO, Creuto" class="hero-portrait-img" loading="eager" fetchpriority="high" width="900" height="809" decoding="async">
                 <div class="hero-portrait-badge">
                   <h3>Nihar Ranjan Rout</h3>
                   <p>Founder &amp; CEO, Creuto · Product Strategist</p>
@@ -903,7 +908,7 @@
         <!-- Brand & Bio -->
         <div class="footer-brand">
           <a href="/" class="brand-link" style="margin-bottom:14px; display:inline-flex;" aria-label="Nihar Ranjan Rout Homepage">
-            <img src="/assets/nihar.jpg" alt="Nihar Ranjan Rout" class="brand-avatar" width="36" height="36" decoding="async">
+            <img src="/assets/nihar-avatar.jpg" alt="Nihar Ranjan Rout" class="brand-avatar" width="36" height="36" decoding="async">
             <div class="brand-text" style="color:#ffffff;">nihar<span class="dot">.</span></div>
           </a>
           <p>

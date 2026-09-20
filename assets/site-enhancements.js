@@ -159,7 +159,7 @@
         if (!document.querySelector('.calendly-badge-widget')) {
           window.Calendly.initBadgeWidget({
             url: 'https://calendly.com/creuto/meet?primary_color=ff5f2d&text_color=2d3e50',
-            text: 'Schedule a Call with Me',
+            text: (window.innerWidth <= 768) ? 'Book a call' : 'Schedule a Call with Me',
             color: '#FF5F2D',
             textColor: '#ffffff',
             branding: false

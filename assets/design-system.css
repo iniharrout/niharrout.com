@@ -2790,3 +2790,207 @@ p {
 
 /* Images carry width/height attributes to reserve space (CLS); class rules still win. */
 :where(img[width][height]) { height: auto; }
+
+/* =====================================================================
+   DESIGN REFRESH (Sep 2026)
+   One additive block: readability, hero, section rhythm, motion, mobile.
+   Homepage-only rules are scoped with .page-home. To undo the whole refresh,
+   delete everything from this comment to the end of the file.
+   ===================================================================== */
+
+/* ---------- A. Readability and tap targets ---------- */
+:root { --hs-text-muted: #5c5c65; }
+.why-card p { font-size: 15px; line-height: 1.62; }
+.service-card-clean p { font-size: 15.5px; }
+.service-specs-list li { font-size: 14.5px; }
+.service-card-link { font-size: 15px; }
+.testimonial-text { font-size: 15.5px; line-height: 1.65; }
+.testimonial-meta p { font-size: 13px; }
+.case-desc { font-size: 15px; }
+.case-tag-item { font-size: 12.5px; }
+.contact-point-text span { font-size: 14px; }
+.hero-stat-label { font-size: 11.5px; }
+.form-group label { font-size: 14px; }
+.cl-button { min-height: 44px; }
+.cl-button.-small { min-height: 40px; }
+:focus-visible { outline: 2px solid var(--hs-brand); outline-offset: 3px; border-radius: 4px; }
+
+/* ---------- B. Hero ---------- */
+.page-home .hero-section {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(60% 55% at 88% 10%, rgba(255, 72, 0, 0.10), transparent 62%),
+    radial-gradient(45% 40% at 4% 96%, rgba(255, 72, 0, 0.06), transparent 60%),
+    var(--hs-bg-01);
+}
+.page-home .hero-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(24, 24, 26, 0.07) 1px, transparent 1px);
+  background-size: 22px 22px;
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, transparent 78%);
+  mask-image: linear-gradient(180deg, #000 0%, transparent 78%);
+}
+.page-home .hero-section > .wrap { position: relative; z-index: 1; }
+.page-home .hero-title {
+  font-size: clamp(2.4rem, 4.6vw, 3.9rem);
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+}
+.hl {
+  background: linear-gradient(transparent 62%, rgba(255, 72, 0, 0.22) 62% 92%, transparent 92%);
+  padding: 0 0.06em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+.page-home .hero-portrait-frame { background: linear-gradient(135deg, #f0eadd, #e3dccb); }
+.page-home .hero-executive-card { box-shadow: 0 30px 60px -22px rgba(24, 24, 26, 0.28), 0 4px 14px rgba(0, 0, 0, 0.05); }
+.page-home .hero-showcase::before {
+  content: '';
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  width: 72%;
+  height: 72%;
+  border-radius: 28px;
+  background: rgba(255, 72, 0, 0.10);
+  transform: rotate(4deg);
+  z-index: -1;
+}
+.hero-founder-strip { display: none; }
+
+/* ---------- C. Section rhythm (desktop layouts) ---------- */
+/* Services: uneven "bento" widths instead of four identical tiles */
+.page-home .service-card-clean { position: relative; overflow: hidden; }
+.page-home .service-card-clean::before {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; top: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--hs-brand), rgba(255, 72, 0, 0));
+}
+.page-home .service-card-clean:nth-child(1),
+.page-home .service-card-clean:nth-child(4) { background: linear-gradient(180deg, #ffffff 0%, #fff8f4 100%); }
+.page-home .service-index {
+  font-family: var(--font-display);
+  font-size: 44px;
+  font-weight: 500;
+  line-height: 1;
+  color: rgba(24, 24, 26, 0.10);
+}
+@media (min-width: 992px) {
+  .page-home .services-grid-4 { grid-template-columns: repeat(12, 1fr); gap: 28px; }
+  .page-home .services-grid-4 > .service-card-clean:nth-child(1) { grid-column: span 7; }
+  .page-home .services-grid-4 > .service-card-clean:nth-child(2) { grid-column: span 5; }
+  .page-home .services-grid-4 > .service-card-clean:nth-child(3) { grid-column: span 5; }
+  .page-home .services-grid-4 > .service-card-clean:nth-child(4) { grid-column: span 7; }
+
+  /* Portfolio: featured first project, three more below */
+  .page-home .portfolio-grid-excited { grid-template-columns: repeat(6, 1fr); gap: 44px 32px; }
+  .page-home .portfolio-grid-excited > .case-card-excited { grid-column: span 2; }
+  .page-home .portfolio-grid-excited > .case-card-excited:first-child {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    grid-template-rows: 1fr repeat(4, min-content) 1fr;
+    column-gap: 48px;
+  }
+  .page-home .portfolio-grid-excited > .case-card-excited:first-child .case-thumb-box { grid-column: 1; grid-row: 1 / 7; margin-bottom: 0; }
+  .page-home .portfolio-grid-excited > .case-card-excited:first-child > :not(.case-thumb-box) { grid-column: 2; }
+  .page-home .portfolio-grid-excited > .case-card-excited:first-child > :nth-child(2) { grid-row: 2; }
+  .page-home .portfolio-grid-excited > .case-card-excited:first-child > :nth-child(3) { grid-row: 3; }
+  .page-home .portfolio-grid-excited > .case-card-excited:first-child > :nth-child(4) { grid-row: 4; }
+  .page-home .portfolio-grid-excited > .case-card-excited:first-child > :nth-child(5) { grid-row: 5; }
+  .page-home .portfolio-grid-excited > .case-card-excited:first-child .case-title { font-size: 30px; margin-bottom: 12px; }
+  .page-home .portfolio-grid-excited > .case-card-excited:first-child .case-desc { font-size: 16px; }
+}
+/* Portfolio on a dark band to break up the cream sections */
+.page-home .portfolio-section { background: #141416; border-color: #28282b; }
+.page-home .portfolio-section .section-title { color: #ffffff; }
+.page-home .portfolio-section .section-sub { color: rgba(255, 255, 255, 0.74); }
+.page-home .portfolio-section .case-title { color: #ffffff; }
+.page-home .portfolio-section .case-desc { color: rgba(255, 255, 255, 0.74); }
+.page-home .portfolio-section .case-client-badge { color: #ff8a5c; }
+.page-home .portfolio-section .case-outcome-pill { background: rgba(0, 200, 120, 0.14); color: #63e6a4; border-color: rgba(99, 230, 164, 0.28); }
+.page-home .portfolio-section .case-tag-item { background: rgba(255, 255, 255, 0.07); border-color: rgba(255, 255, 255, 0.16); color: rgba(255, 255, 255, 0.8); }
+.page-home .portfolio-section .case-thumb-box { border-color: rgba(255, 255, 255, 0.12); box-shadow: 0 12px 34px rgba(0, 0, 0, 0.4); }
+
+/* ---------- D. Motion (subtle; never hides content) ---------- */
+.testimonial-card, .blog-card { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.testimonial-card:hover, .blog-card:hover { transform: translateY(-3px); box-shadow: var(--hs-shadow-md); }
+.cl-button > span:last-child { display: inline-block; transition: transform 0.2s ease; }
+.cl-button:hover > span:last-child { transform: translateX(3px); }
+.cl-button:active { transform: scale(0.98); }
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    /* Cards ease in as they enter the viewport. They start at 55% opacity, so text is
+       always readable, and the animation does not hold a transform after it finishes. */
+    .page-home .why-card,
+    .page-home .service-card-clean,
+    .page-home .case-card-excited,
+    .page-home .testimonial-card,
+    .page-home .blog-card,
+    .page-home .faq-item-minimal {
+      animation: dsReveal linear backwards;
+      animation-timeline: view();
+      animation-range: entry 0% entry 45%;
+    }
+    @keyframes dsReveal {
+      from { opacity: 0.55; transform: translateY(24px); }
+      to { opacity: 1; transform: none; }
+    }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+@media print { * { animation: none !important; } }
+
+
+/* Proof boxes rise in one after another. Pure CSS: the text itself never changes. */
+@media (prefers-reduced-motion: no-preference) {
+  .page-home .hero-stat-box { animation: dsPop 0.7s cubic-bezier(0.16, 1, 0.3, 1) backwards; }
+  .page-home .hero-stat-box:nth-child(1) { animation-delay: 0.25s; }
+  .page-home .hero-stat-box:nth-child(2) { animation-delay: 0.35s; }
+  .page-home .hero-stat-box:nth-child(3) { animation-delay: 0.45s; }
+  .page-home .hero-stat-box:nth-child(4) { animation-delay: 0.55s; }
+  @keyframes dsPop { from { opacity: 0; transform: translateY(10px) scale(0.97); } to { opacity: 1; transform: none; } }
+}
+
+/* ---------- E. Phones ---------- */
+@media (max-width: 768px) {
+  .hero-founder-strip { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+  .hero-founder-avatar {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ffffff;
+    box-shadow: 0 0 0 1.5px var(--hs-border-03);
+  }
+  .hero-founder-strip strong { display: block; font-size: 15px; line-height: 1.2; color: var(--hs-text-01); }
+  .hero-founder-strip span { font-size: 12.5px; color: var(--hs-text-muted); }
+  .page-home .hero-content > .hs-eyebrow { display: none; }
+  .page-home .hero-title { font-size: clamp(30px, 8.4vw, 36px) !important; line-height: 1.1 !important; }
+  .page-home .hero-guarantee {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 6px 14px;
+    padding: 0;
+    background: none;
+    border: 0;
+    margin-bottom: 8px;
+  }
+  .page-home .hero-showcase::before { display: none; }
+  .hero-quote-snippet { font-size: 14px; }
+  .hero-stat-label { font-size: 11px; }
+  /* Long button labels wrap instead of pushing the page wider than the screen */
+  .cl-button { max-width: 100%; white-space: normal; text-align: center; line-height: 1.25; }
+  /* Floating buttons: smaller, and they never sit on top of each other */
+  .calendly-badge-widget { right: 12px !important; bottom: 12px !important; }
+  body .nihar-chat-fab { bottom: 68px !important; right: 14px !important; width: 52px !important; height: 52px !important; }
+  body .nihar-chat-panel { bottom: 128px !important; right: 12px !important; }
+}
