@@ -106,10 +106,12 @@ async function handler(req, res) {
     return send(res, 400, { ok: false, error: 'Please provide your name and a valid email address.' });
   }
 
-  const DEFAULT_WEBHOOK_URL = 'https://chat.googleapis.com/v1/spaces/AAQAgcxp6nM/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=NYzpLArOTxnwEYuEzvw094eXwTbbpD_WZs2ugBGOH7U';
-  const webhook = process.env.LEAD_WEBHOOK_URL || DEFAULT_WEBHOOK_URL;
-  if (!webhook) {
-    console.warn('[Lead API] LEAD_WEBHOOK_URL is not set; lead not delivered.');
+  const DEFAULT_GOOGLE_CHAT_URL = 'https://chat.googleapis.com/v1/spaces/AAQAgcxp6nM/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=NYzpLArOTxnwEYuEzvw094eXwTbbpD_WZs2ugBGOH7U';
+  const googleChatWebhook = process.env.LEAD_WEBHOOK_URL || process.env.GOOGLE_CHAT_WEBHOOK_URL || DEFAULT_GOOGLE_CHAT_URL;
+  const slackWebhook = process.env.SLACK_WEBHOOK_URL;
+
+  if (!googleChatWebhook && !slackWebhook) {
+    console.warn('[Lead API] Neither Google Chat nor Slack webhook URL is set; lead not delivered.');
     return send(res, 503, { ok: false, fallback: true });
   }
 
@@ -125,7 +127,9 @@ async function handler(req, res) {
   ].filter(([, v]) => v);
 
   const title = `New ${lead.service || 'project'} enquiry${lead.city ? ' (' + lead.city + ')' : ''}`;
-  const cardMessage = {
+
+  // Google Chat Card and Fallback Text
+  const googleCardMessage = {
     cardsV2: [{
       cardId: 'siteLead',
       card: {
@@ -139,24 +143,100 @@ async function handler(req, res) {
       }
     }]
   };
-  const textMessage = {
+  const googleTextMessage = {
     text: [`*${title}*`, ...fields.map(([label, value]) => `${label}: ${value}`), lead.page && `Page: https://niharrout.com${lead.page}`].filter(Boolean).join('\n')
   };
 
-  const post = (payload) => fetch(webhook, {
+  // Slack Block Kit Message
+  const slackMessage = {
+    text: `🎯 *${title}:* ${lead.name} (${lead.email})`,
+    blocks: [
+      {
+        type: 'header',
+        text: {
+          type: 'plain_text',
+          text: `🎯 ${title}`,
+          emoji: true
+        }
+      },
+      {
+        type: 'section',
+        fields: [
+          { type: 'mrkdwn', text: `*Name:*\n${lead.name}` },
+          { type: 'mrkdwn', text: `*Email:*\n${lead.email}` },
+          { type: 'mrkdwn', text: `*Phone:*\n${lead.phone || 'Not provided'}` },
+          { type: 'mrkdwn', text: `*Service / Category:*\n${lead.service || 'General Project'}` }
+        ]
+      },
+      ...(lead.city || lead.budget ? [{
+        type: 'section',
+        fields: [
+          ...(lead.city ? [{ type: 'mrkdwn', text: `*City:*\n${lead.city}` }] : []),
+          ...(lead.budget ? [{ type: 'mrkdwn', text: `*Budget:*\n${lead.budget}` }] : [])
+        ]
+      }] : []),
+      ...(lead.message ? [{
+        type: 'section',
+        text: {
+          type: 'mrkdwn',
+          text: `*Project Details & Objectives:*\n${lead.message}`
+        }
+      }] : []),
+      {
+        type: 'context',
+        elements: [
+          {
+            type: 'mrkdwn',
+            text: `📍 *Page:* ${lead.page ? '<https://niharrout.com' + lead.page + '|' + lead.page + '>' : '<https://niharrout.com|niharrout.com>'} | 🕒 *Time:* ${new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' })} IST`
+          }
+        ]
+      }
+    ]
+  };
+
+  const postJson = (url, payload) => fetch(url, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json; charset=UTF-8' },
     body: JSON.stringify(payload)
   });
 
+  const deliveryTasks = [];
+
+  // Post to Google Chat
+  if (googleChatWebhook) {
+    deliveryTasks.push((async () => {
+      let resp = await postJson(googleChatWebhook, googleCardMessage);
+      if (!resp.ok) resp = await postJson(googleChatWebhook, googleTextMessage);
+      if (!resp.ok) throw new Error(`Google Chat webhook failed with status ${resp.status}`);
+      return 'google_chat';
+    })());
+  }
+
+  // Post to Slack
+  if (slackWebhook) {
+    deliveryTasks.push((async () => {
+      const resp = await postJson(slackWebhook, slackMessage);
+      if (!resp.ok) throw new Error(`Slack webhook failed with status ${resp.status}`);
+      return 'slack';
+    })());
+  }
+
   try {
-    let response = await post(cardMessage);
-    // If the card layout is rejected, still deliver the lead as plain text.
-    if (!response.ok) response = await post(textMessage);
-    if (!response.ok) throw new Error(`Webhook responded ${response.status}`);
-    return send(res, 200, { ok: true });
+    const results = await Promise.allSettled(deliveryTasks);
+    const fulfilled = results.filter(r => r.status === 'fulfilled');
+    const rejected = results.filter(r => r.status === 'rejected');
+
+    if (rejected.length > 0) {
+      rejected.forEach(err => console.error('[Lead Dispatch Error]:', err.reason?.message || err.reason));
+    }
+
+    if (fulfilled.length > 0) {
+      return send(res, 200, { ok: true, dispatched: fulfilled.map(f => f.value) });
+    }
+
+    return send(res, 502, { ok: false, fallback: true });
   } catch (err) {
-    console.error('[Lead API Error]:', err.message);
+    console.error('[Lead API Global Error]:', err.message);
     return send(res, 502, { ok: false, fallback: true });
   }
 }
