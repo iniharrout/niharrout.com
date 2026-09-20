@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 /**
  * Builds the location landing pages:
- *   /locations/                          index of all locations
- *   /locations/<city>/                   city hub (links to the three service pages)
- *   /locations/<city>/<service>/         city x service landing page
- *   /location/                           internal link reference (noindex, not in the sitemap)
- *   /thank-you/                          shown after any enquiry form (noindex, not in the sitemap)
- * and refreshes the locations block in sitemap.xml.
+ *   /locations                           index of all locations
+ *   /locations/<city>                    city hub (links to the three service pages)
+ *   /locations/<city>/<service>          city x service landing page
+ *   /location                            internal link reference (noindex)
+ *   /thank-you                           shown after any enquiry form (noindex)
+ * Run `node scripts/build-sitemap.js` afterwards to refresh sitemap.xml.
  *
  * Usage: node scripts/build-locations.js
  * Content lives in scripts/locations/*.js. Zero dependencies.
@@ -16,13 +16,11 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
-const SITE = 'https://niharrout.com';
+const SITE = 'https://www.niharrout.com';
 const services = require('./locations/services');
 const cities = [...require('./locations/cities-odisha'), ...require('./locations/cities-metros')];
 const scenarios = require('./locations/scenarios');
 const SERVICE_KEYS = Object.keys(services);
-const now = new Date();
-const TODAY = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
 const warnings = [];
 
 /* ---------- Data helpers ---------- */
@@ -38,8 +36,8 @@ const esc = (value) => String(value).replace(/&/g, '&amp;').replace(/</g, '&lt;'
 const fill = (text, city) => String(text).replace(/\{city\}/g, city.name);
 const jsonLd = (obj) => `<script type="application/ld+json">\n${JSON.stringify(obj, null, 2).replace(/</g, '\\u003c')}\n  </script>`;
 
-const cityUrl = (c) => `/locations/${c.slug}/`;
-const pageUrl = (c, key) => `/locations/${c.slug}/${services[key].slug}/`;
+const cityUrl = (c) => `/locations/${c.slug}`;
+const pageUrl = (c, key) => `/locations/${c.slug}/${services[key].slug}`;
 
 /* ---------- Shared page chrome ---------- */
 
@@ -75,7 +73,8 @@ function head({ title, description, path: urlPath, ogType = 'website', graph, no
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/assets/design-system.css?v=hs2026_5">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap">
+  <link rel="stylesheet" href="/assets/design-system.css?v=hs2026_6">
   <link rel="stylesheet" href="/assets/location-pages.css?v=loc1">
 
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
@@ -95,9 +94,10 @@ const header = () => `
       </a>
       <nav aria-label="Primary Navigation">
         <ul class="nav-links">
-          <li class="nav-item"><a href="/#services" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="/services" class="nav-link">Services</a></li>
           <li class="nav-item"><a href="/#portfolio" class="nav-link">Portfolio</a></li>
-          <li class="nav-item"><a href="/locations/" class="nav-link" style="color:var(--hs-brand); font-weight:700;">Locations</a></li>
+          <li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li>
+          <li class="nav-item"><a href="/locations" class="nav-link" style="color:var(--hs-brand); font-weight:700;">Locations</a></li>
           <li class="nav-item"><a href="/project-costs" class="nav-link">Pricing</a></li>
           <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
         </ul>
@@ -135,14 +135,14 @@ function footer(city) {
         <div class="footer-col">
           <h4>Locations</h4>
           <ul class="footer-links">
-            <li><a href="/locations/" style="color:var(--hs-brand); font-weight:600;">All locations</a></li>
+            <li><a href="/locations" style="color:var(--hs-brand); font-weight:600;">All locations</a></li>
             ${locationLinks}
           </ul>
         </div>
         <div class="footer-col">
           <h4>Insights</h4>
           <ul class="footer-links">
-            <li><a href="/blog/">Blog &amp; Playbooks</a></li>
+            <li><a href="/blog">Blog &amp; Playbooks</a></li>
             <li><a href="/project-costs">Project Costs Guide 2026</a></li>
             <li><a href="/b2b-software-development-for-startups">B2B Startup Playbook</a></li>
             <li><a href="/technology">Technology Stack</a></li>
@@ -488,7 +488,7 @@ function buildServicePage(c, svcKey) {
   const cs = c.services[svcKey];
   const urlPath = pageUrl(c, svcKey);
   const fullUrl = SITE + urlPath;
-  const trail = [['Home', '/'], ['Locations', '/locations/'], [c.name, cityUrl(c)], [svc.name, urlPath]];
+  const trail = [['Home', '/'], ['Locations', '/locations'], [c.name, cityUrl(c)], [svc.name, urlPath]];
   const startPrice = svc.tiers[0][1].split(' – ')[0];
   const title = `${fill(svc.titleLead, c)} | Creuto`;
   const description = `${svc.name} for ${c.name} businesses: fixed-scope PRD, in-house engineers, full code ownership. Estimates from ${startPrice}. Free call with the founder.`;
@@ -566,7 +566,7 @@ ${ctaBand(`Ready to start ${svc.nameLc} in ${c.name}?`, 'Book a discovery call w
 function buildCityHub(c) {
   const urlPath = cityUrl(c);
   const fullUrl = SITE + urlPath;
-  const trail = [['Home', '/'], ['Locations', '/locations/'], [c.name, urlPath]];
+  const trail = [['Home', '/'], ['Locations', '/locations'], [c.name, urlPath]];
   const title = `Software, App & AI Development in ${c.name} | Creuto`;
   const description = `Mobile app, AI product and custom software development for ${c.name} businesses. Founder-led Creuto team, fixed-scope PRDs, full code ownership. Free discovery call.`;
 
@@ -668,7 +668,7 @@ ${faqSection(faqs, { heading: `${c.name}: common questions`, sub: `How we work w
             <h3>Other locations</h3>
             <ul class="loc-links">
               ${otherCities.map((x) => `<li><a href="${cityUrl(x)}">${esc(x.name)}</a></li>`).join('\n              ')}
-              <li><a href="/locations/">All locations</a></li>
+              <li><a href="/locations">All locations</a></li>
             </ul>
           </div>
         </div>
@@ -683,7 +683,7 @@ ${ctaBand(`Building something in ${c.name}?`, 'Book a discovery call with Nihar.
 /* ---------- Page: locations index ---------- */
 
 function buildIndex() {
-  const urlPath = '/locations/';
+  const urlPath = '/locations';
   const trail = [['Home', '/'], ['Locations', urlPath]];
   const title = 'Software, App & AI Development Across India | Creuto';
   const description = 'Creuto builds mobile apps, AI products and custom software for businesses across Odisha and India’s metros. Founder-led, fixed-scope, remote-first from Bhubaneswar.';
@@ -772,7 +772,7 @@ ${ctaBand('Not sure which page fits?', 'Tell us what you are building and where 
 /* ---------- Page: internal reference (noindex, unlinked) ---------- */
 
 function buildReference() {
-  const urlPath = '/location/';
+  const urlPath = '/location';
   const abs = (p) => (p.startsWith('http') ? p : SITE + p);
   const link = (label, href, city, type) => `<div class="ref-link"><a href="${href}" data-city="${esc(city)}" data-type="${esc(type)}">${esc(label)}</a><button type="button" class="ref-copy" data-copy="${esc(abs(href))}">Copy</button></div>`;
 
@@ -791,7 +791,7 @@ function buildReference() {
             </tr>`;
 
   const allUrls = [
-    '/locations/',
+    '/locations',
     ...cities.flatMap((c) => [cityUrl(c), ...SERVICE_KEYS.map((k) => pageUrl(c, k))])
   ].map(abs);
 
@@ -830,7 +830,7 @@ function buildReference() {
         </div>
 
         <div class="loc-subhead" style="margin-top:36px;">Index page</div>
-        <div class="ref-link" style="max-width:420px;">${link('/locations/', '/locations/', 'All', 'index').replace('class="ref-link"', '')}</div>
+        <div class="ref-link" style="max-width:420px;">${link('/locations', '/locations', 'All', 'index').replace('class="ref-link"', '')}</div>
 
         <div class="loc-subhead" style="margin-top:36px;">All URLs (one per line)</div>
         <textarea class="form-textarea ref-all" id="ref-all" readonly rows="10" aria-label="All URLs">${esc(allUrls.join('\n'))}</textarea>
@@ -890,7 +890,7 @@ function buildThankYou() {
   return head({
     title: 'Thank you | Creuto',
     description: 'Your enquiry has been received. Nihar’s team will reply within one working day.',
-    path: '/thank-you/',
+    path: '/thank-you',
     noindex: true
   }) + `${header()}
   <main id="top">
@@ -954,38 +954,23 @@ function write(relPath, html) {
   fs.writeFileSync(full, html);
 }
 
-function updateSitemap(urls) {
-  const file = path.join(ROOT, 'sitemap.xml');
-  let xml = fs.readFileSync(file, 'utf8');
-  xml = xml.replace(/\s*<!-- locations:start -->[\s\S]*?<!-- locations:end -->/, '');
-  const entries = urls.map(({ loc, priority, changefreq }) => `  <url>
-    <loc>${SITE}${loc}</loc>
-    <lastmod>${TODAY}</lastmod>
-    <changefreq>${changefreq}</changefreq>
-    <priority>${priority}</priority>
-  </url>`).join('\n');
-  xml = xml.replace('</urlset>', `  <!-- locations:start -->\n${entries}\n  <!-- locations:end -->\n</urlset>`);
-  fs.writeFileSync(file, xml);
-}
-
 function main() {
-  const urls = [];
+  let count = 0;
   write('location/index.html', buildReference());
   write('thank-you/index.html', buildThankYou());
   write('locations/index.html', buildIndex());
-  urls.push({ loc: '/locations/', priority: '0.8', changefreq: 'monthly' });
+  count += 1;
 
   for (const c of cities) {
     write(`locations/${c.slug}/index.html`, buildCityHub(c));
-    urls.push({ loc: cityUrl(c), priority: '0.7', changefreq: 'monthly' });
+    count += 1;
     for (const key of SERVICE_KEYS) {
       write(`locations/${c.slug}/${services[key].slug}/index.html`, buildServicePage(c, key));
-      urls.push({ loc: pageUrl(c, key), priority: '0.8', changefreq: 'monthly' });
+      count += 1;
     }
   }
 
-  updateSitemap(urls);
-  console.log(`Built ${urls.length} pages and updated sitemap.xml.`);
+  console.log(`Built ${count + 2} pages (locations, reference and thank-you). Run node scripts/build-sitemap.js to refresh sitemap.xml.`);
   if (warnings.length) {
     console.warn('\nWarnings:');
     warnings.forEach((w) => console.warn(' - ' + w));

@@ -108,7 +108,7 @@ function initLeadForms() {
     try {
       sessionStorage.setItem('leadThanks', JSON.stringify({ name: lead.name, service: lead.service, city: lead.city }));
     } catch (e) { /* storage unavailable: the page still works without personalisation */ }
-    window.location.assign('/thank-you/');
+    window.location.assign('/thank-you');
   }
 
   Array.prototype.forEach.call(forms, function (form) {

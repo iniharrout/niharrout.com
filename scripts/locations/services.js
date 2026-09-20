@@ -17,7 +17,7 @@ module.exports = {
     heroSub: 'iOS, Android, Flutter and React Native apps for {city} businesses, built by a product-led in-house team. Fixed-scope PRD, fortnightly demos, and 100% code ownership.',
     formType: 'Mobile App',
     budgets: ['Under ₹5L', '₹5L – ₹12L', '₹12L – ₹25L', 'Above ₹25L', 'Still evaluating'],
-    bhubaneswarPage: '/mobile-app-development-bhubaneswar.html',
+    bhubaneswarPage: '/mobile-app-development-bhubaneswar',
     servicesHeading: 'Mobile app development services for {city}',
     servicesSub: 'Every layer of a shipped app, from PRD and design to store approval and post-launch support.',
     services: [
@@ -83,7 +83,7 @@ module.exports = {
     heroSub: 'Practical AI for {city} businesses: LLM assistants, document automation and agentic workflows that ship to production with measurable results, not demos.',
     formType: 'AI Product',
     budgets: ['Under ₹5L', '₹5L – ₹10L', '₹10L – ₹25L', 'Above ₹25L', 'Still evaluating'],
-    bhubaneswarPage: '/ai-product-development-bhubaneswar.html',
+    bhubaneswarPage: '/ai-product-development-bhubaneswar',
     servicesHeading: 'AI development services for {city}',
     servicesSub: 'From a two-week feasibility check to production AI features with evaluation, guardrails and cost control.',
     services: [
@@ -145,7 +145,7 @@ module.exports = {
     label: 'custom software',
     short: 'Custom Software',
     h1: 'Custom Software Development Company in {city}',
-    titleLead: 'Custom Software & ERP Development Company in {city}',
+    titleLead: 'Custom Software & ERP Development in {city}',
     heroSub: 'Custom ERP, B2B platforms and SaaS products for {city} companies that have outgrown spreadsheets and off-the-shelf tools. One system of record, built around your process.',
     formType: 'Custom Software',
     budgets: ['Under ₹7L', '₹7L – ₹18L', '₹18L – ₹40L', 'Above ₹40L', 'Still evaluating'],
