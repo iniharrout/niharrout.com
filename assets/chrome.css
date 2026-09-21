@@ -92,30 +92,49 @@ html.sc-lock { overflow: hidden; }
 /* the floating booking pill must not sit on top of the open mobile menu */
 html.sc-lock .calendly-badge-widget { display: none !important; }
 
-/* ---------- Announcement bar (above the header; scrolls away while the header stays pinned) ---------- */
-.sc-announce { position: relative; background: var(--sc-accent); color: var(--sc-dark); font-family: var(--font-body, "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif); font-size: 15px; line-height: 1.35; }
-.sc-announce[hidden] { display: none; }
-.sc-announce-link { display: flex; align-items: center; justify-content: center; gap: 16px; padding: 12px 56px; color: inherit; text-decoration: none; }
-.sc-announce-tag { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 8px; background: #fff; color: var(--sc-dark); font-size: 11px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; padding: 5px 10px 5px 9px; }
-.sc-announce-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--sc-accent); animation: sc-pulse 1.8s ease-out infinite; }
-.sc-announce-text { font-weight: 600; }
-.sc-announce-text strong { font-weight: 800; }
-.sc-announce-btn { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 8px; background: var(--sc-dark); color: #fff; font-size: 13.5px; font-weight: 700; padding: 8px 16px; white-space: nowrap; transition: background 0.15s ease; }
-.sc-announce-short { display: none; }
-.sc-announce-arrow { transition: transform 0.15s ease; }
-.sc-announce-link:hover .sc-announce-btn { background: #000; }
-.sc-announce-link:hover .sc-announce-arrow { transform: translateX(3px); }
-.sc-announce-close { position: absolute; top: 50%; right: 12px; transform: translateY(-50%); width: 32px; height: 32px; background: none; border: 0; color: var(--sc-dark); font-size: 24px; line-height: 1; cursor: pointer; opacity: 0.75; }
-.sc-announce-close:hover { opacity: 1; }
+/* ---------- Announcement: a small slide-up card on every page and a one-time pop-up on the homepage ---------- */
+/* content and rules live in assets/chrome.js (ANNOUNCEMENT); set it to null there to retire this */
+.sc-toast { position: fixed; left: 24px; bottom: 24px; z-index: 900; width: 360px; max-width: calc(100vw - 32px); background: #fbf8f1; color: var(--sc-ink); border: 1px solid var(--sc-rule); border-left: 3px solid var(--sc-accent); box-shadow: 0 18px 44px rgba(29, 27, 24, 0.18); font-family: var(--font-body, "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif); line-height: 1.4; opacity: 0; transform: translateY(24px); transition: opacity 0.45s ease, transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.sc-toast.is-in { opacity: 1; transform: none; }
+.sc-toast.is-out { opacity: 0; transform: translateY(12px); transition-duration: 0.25s; }
+.sc-toast-link { display: block; color: inherit; text-decoration: none; }
+.sc-toast-img { width: 100%; height: 52px; object-fit: cover; background: #141416; display: block; }
+.sc-toast-body { display: block; padding: 12px 16px 14px; }
+.sc-toast-tag { display: flex; align-items: center; gap: 7px; margin: 0 0 4px; font-size: 10.5px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sc-accent); }
+.sc-toast-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--sc-accent); animation: sc-pulse 1.8s ease-out infinite; }
+.sc-toast-title { margin: 0 0 4px; font-size: 14.5px; font-weight: 800; line-height: 1.3; }
+.sc-toast-cta { font-size: 13px; font-weight: 700; color: var(--sc-ink); }
+.sc-toast-cta span { display: inline-block; transition: transform 0.15s ease; }
+.sc-toast-link:hover .sc-toast-cta { color: var(--sc-accent); }
+.sc-toast-link:hover .sc-toast-cta span { transform: translateX(3px); }
+.sc-toast-close, .sc-modal-close { position: absolute; top: 6px; right: 6px; width: 28px; height: 28px; background: none; border: 0; color: var(--sc-ink-2); font-size: 20px; line-height: 1; cursor: pointer; }
+.sc-toast-close { background: rgba(20, 20, 22, 0.55); color: #fff; }
+.sc-toast-close:hover { background: rgba(20, 20, 22, 0.85); color: #fff; }
+.sc-modal-close:hover { color: var(--sc-ink); }
 @keyframes sc-pulse { 0% { box-shadow: 0 0 0 0 rgba(255, 72, 0, 0.55); } 70%, 100% { box-shadow: 0 0 0 7px rgba(255, 72, 0, 0); } }
-@media (prefers-reduced-motion: reduce) { .sc-announce-dot { animation: none; } .sc-announce-arrow { transition: none; } }
+
+.sc-modal { position: fixed; inset: 0; z-index: 2000; display: flex; align-items: center; justify-content: center; padding: 24px; background: rgba(20, 20, 22, 0.62); opacity: 0; transition: opacity 0.3s ease; font-family: var(--font-body, "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif); line-height: 1.45; }
+.sc-modal.is-in { opacity: 1; }
+.sc-modal-card { position: relative; width: 100%; max-width: 560px; background: #fbf8f1; color: var(--sc-ink); box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35); transform: translateY(20px) scale(0.97); transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.sc-modal.is-in .sc-modal-card { transform: none; }
+.sc-modal-img { display: block; width: 100%; height: auto; aspect-ratio: 1400 / 533; object-fit: cover; background: #141416; }
+.sc-modal-body { padding: 26px 30px 30px; }
+.sc-modal-tag { display: flex; align-items: center; gap: 8px; margin: 0 0 10px; font-size: 11px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sc-accent); }
+.sc-modal-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--sc-accent); animation: sc-pulse 1.8s ease-out infinite; }
+.sc-modal-title { margin: 0 0 10px; font-size: 26px; font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; }
+.sc-modal-text { margin: 0 0 22px; font-size: 15.5px; color: var(--sc-ink-2); }
+.sc-modal-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 22px; }
+.sc-modal-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--sc-accent); color: #fff; font-weight: 700; font-size: 14.5px; padding: 13px 22px; text-decoration: none; transition: background 0.15s ease; }
+.sc-modal-btn:hover { background: var(--sc-ink); }
+.sc-modal-later { background: none; border: 0; padding: 0; font: inherit; font-size: 14px; font-weight: 600; color: var(--sc-ink-2); cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+.sc-modal-later:hover { color: var(--sc-ink); }
+.sc-modal-close { top: 10px; right: 10px; width: 34px; height: 34px; background: rgba(20, 20, 22, 0.55); color: #fff; font-size: 22px; }
+.sc-modal-close:hover { background: rgba(20, 20, 22, 0.85); color: #fff; }
 @media (max-width: 720px) {
-  .sc-announce { font-size: 13.5px; }
-  .sc-announce-link { gap: 10px; padding: 10px 44px 10px 14px; justify-content: flex-start; }
-  .sc-announce-tag { display: none; }
-  .sc-announce-text { flex: 1 1 auto; }
-  .sc-announce-btn { padding: 7px 12px; font-size: 12.5px; }
-  .sc-announce-full { display: none; }
-  .sc-announce-short { display: inline; }
+  .sc-toast { left: 12px; right: 12px; bottom: 84px; width: auto; max-width: none; }
 }
-@media print { .sc-announce { display: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .sc-toast, .sc-toast.is-out, .sc-modal, .sc-modal-card { transition: none; transform: none; }
+  .sc-toast-dot, .sc-modal-dot { animation: none; }
+}
+@media print { .sc-toast, .sc-modal { display: none; } }
