@@ -55,14 +55,22 @@
     ]
   }
   </script>
-  <link rel="stylesheet" href="/assets/chrome.css?v=3">
-  <script src="/assets/chrome.js?v=1" defer></script>
+  <link rel="stylesheet" href="/assets/chrome.css?v=4">
+  <script src="/assets/chrome.js?v=2" defer></script>
 </head>
 
 <body class="ed-page">
 
   <!-- Navigation Header -->
   <!-- chrome:header -->
+<div class="sc-announce" id="sc-announce" data-announce="openai-select-partner" role="region" aria-label="Announcement">
+  <a class="sc-announce-link" href="/blog/openai-select-partner">
+    <span class="sc-announce-tag">News</span>
+    <span class="sc-announce-text">Creuto is now an OpenAI Select Partner.</span>
+    <span class="sc-announce-more">Read why it matters &rarr;</span>
+  </a>
+  <button class="sc-announce-close" type="button" aria-label="Dismiss announcement">&times;</button>
+</div>
 <header class="sc-header" id="site-header">
   <div class="sc-wrap sc-bar">
     <a class="sc-brand" href="/" aria-label="Nihar Ranjan Rout, home">
@@ -169,7 +177,8 @@
 
         <!-- Filter Bar -->
         <div class="blog-filter-bar">
-          <span class="blog-filter-btn active">All Articles (5)</span>
+          <span class="blog-filter-btn active">All Articles (6)</span>
+          <a href="/blog/openai-select-partner" class="blog-filter-btn">Company News</a>
           <a href="/blog/cost-to-build-mvp-2026" class="blog-filter-btn">Product Strategy</a>
           <a href="/blog/why-custom-erp-implementations-fail" class="blog-filter-btn">Enterprise ERP</a>
           <a href="/blog/react-native-mobile-app-playbook" class="blog-filter-btn">Mobile Engineering</a>
@@ -178,6 +187,10 @@
 
         <!-- 5 Lead-Generating Articles Grid -->
         <div class="ed-posts">
+          <a class="ed-post" href="/blog/openai-select-partner">
+            <div><p class="ed-tag">Company News &middot; 3 min read</p><h2>Building AI That Actually Works: Why the OpenAI Select Partner Status Matters More to Me Than It Looks</h2></div>
+            <div><p>Creuto is now an OpenAI Select Partner. Why that matters, what it does and does not change, and why making AI work in production is an engineering discipline.</p><span class="ed-link">Read the post &rarr;</span></div>
+          </a>
           <a class="ed-post" href="/blog/cost-to-build-mvp-2026">
             <div><p class="ed-tag">Product Strategy &middot; 9 min read</p><h2>The True Cost of Building an MVP in 2026: Agency vs. Freelancers vs. Dedicated Squad</h2></div>
             <div><p>Why 70% of MVP budgets get burned on rework, how agency markups function, and how a founder-led product squad delivers 3x faster with disciplined PRD scoping.</p><span class="ed-link">Read the guide &rarr;</span></div>

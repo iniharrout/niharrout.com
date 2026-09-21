@@ -15,8 +15,8 @@ const ROOT = path.resolve(__dirname, '..');
 const SKIP = new Set(['node_modules', '.git', '.claude', 'scripts', 'partials', 'api']);
 const header = fs.readFileSync(path.join(ROOT, 'partials/header.html'), 'utf8').trim();
 const footer = fs.readFileSync(path.join(ROOT, 'partials/footer.html'), 'utf8').trim();
-const CSS = '<link rel="stylesheet" href="/assets/chrome.css?v=3">';
-const JS = '<script src="/assets/chrome.js?v=1" defer></script>';
+const CSS = '<link rel="stylesheet" href="/assets/chrome.css?v=4">';
+const JS = '<script src="/assets/chrome.js?v=2" defer></script>';
 
 const block = (name, body) => `<!-- chrome:${name} -->\n${body}\n<!-- /chrome:${name} -->`;
 const markerRe = (name) => new RegExp(`<!-- chrome:${name} -->[\\s\\S]*?<!-- /chrome:${name} -->`);
@@ -67,6 +67,7 @@ for (const file of files) {
   html = stamp(html, 'footer', footer, (h, b) => (/<\/main>/i.test(h) ? h.replace(/<\/main>/i, (m) => `${m}\n${b}`) : h.replace(/<\/body>/i, `${b}\n</body>`)));
 
   html = html.replace(/<link rel="stylesheet" href="\/assets\/chrome\.css[^"]*">/, CSS);
+  html = html.replace(/<script src="\/assets\/chrome\.js[^"]*" defer><\/script>/, JS);
   if (!html.includes('/assets/chrome.css')) html = html.replace('</head>', `  ${CSS}\n  ${JS}\n</head>`);
   if (html !== before) { fs.writeFileSync(file, html); changed++; }
 }

@@ -1,9 +1,22 @@
 /**
- * Site chrome behaviour: dropdown menus, mobile menu and the footer year.
+ * Site chrome behaviour: announcement bar, dropdown menus, mobile menu and the footer year.
  * The header and footer themselves are plain HTML (partials/*.html).
  */
 (function () {
   'use strict';
+
+  var announce = document.getElementById('sc-announce');
+  if (announce) {
+    var key = 'sc-announce-' + (announce.getAttribute('data-announce') || 'news');
+    var dismissed = false;
+    try { dismissed = localStorage.getItem(key) === '1'; } catch (e) {}
+    if (dismissed) announce.hidden = true;
+    var close = announce.querySelector('.sc-announce-close');
+    if (close) close.addEventListener('click', function () {
+      announce.hidden = true;
+      try { localStorage.setItem(key, '1'); } catch (e) {}
+    });
+  }
 
   var header = document.getElementById('site-header');
   if (!header) return;
