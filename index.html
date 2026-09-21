@@ -57,7 +57,7 @@
   <link rel="preload" as="image" href="/assets/nihar-hero-900.jpg" imagesrcset="/assets/nihar-hero-480.jpg 480w, /assets/nihar-hero-900.jpg 900w" imagesizes="(max-width: 991px) 92vw, 460px" fetchpriority="high">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap">
   <link rel="stylesheet" href="/assets/design-system.css?v=emerald1">
-  <link rel="stylesheet" href="/assets/editorial.css?v=13">
+  <link rel="stylesheet" href="/assets/editorial.css?v=15">
   <script>document.documentElement.classList.add('js')</script>
 
   <!-- Calendly Widget CSS & JS -->
@@ -216,10 +216,10 @@
             <h1 class="hero-title">I help founders and enterprises build digital products that launch and scale.</h1>
             <p class="hero-sub">Backed by 8+ years in product management and product leadership across mobile applications, enterprise ERPs, and B2B SaaS, I turn complex business requirements into clear PRDs and production-ready systems — delivered with my dedicated in-house team at Creuto.</p>
             <div class="hero-ctas">
-              <a href="https://calendly.com/creuto/meet" data-calendly="true" class="cl-button -primary btn-book-call">Book a Strategy Call <span style="margin-left:4px;">→</span></a>
-              <a href="#portfolio" class="cl-button -secondary">Explore Our Portfolio ↓</a>
+              <a href="https://calendly.com/creuto/meet" data-calendly="true" class="cl-button -primary btn-book-call">Book a free strategy call <span style="margin-left:4px;">→</span></a>
+              <a href="#portfolio" class="cl-button -secondary">See our work ↓</a>
             </div>
-            <p class="ed-trust">100% In-House Squad &middot; 5.0 Clutch Verified &middot; Direct Founder Collaboration</p>
+            <ul class="ed-assure"><li>Free 45-minute discovery call</li><li>You talk directly to Nihar</li><li>No sales team in between</li></ul>
           </div>
           <figure class="ed-portrait">
             <img src="/assets/nihar-hero-900.jpg" srcset="/assets/nihar-hero-480.jpg 480w, /assets/nihar-hero-900.jpg 900w" sizes="(max-width: 991px) 92vw, 460px" alt="Nihar Ranjan Rout &mdash; Founder &amp; CEO, Creuto" loading="eager" fetchpriority="high" width="900" height="809" decoding="async">
@@ -470,6 +470,52 @@
       </div>
     </section>
 
+    <!-- ================= MID-PAGE CTA ================= -->
+    <section class="ed-cta ed-cta-home" aria-labelledby="ed-cta-title">
+      <div class="wrap ed-cta-grid">
+        <div class="ed-reveal">
+          <h2 id="ed-cta-title">Have a product worth building? Let&rsquo;s scope it in 45 minutes.</h2>
+          <p>Bring the idea, the spreadsheet mess or the half-built app. You leave the call with a clear read on scope, budget and next steps.</p>
+        </div>
+        <div class="ed-cta-actions ed-reveal">
+          <a href="https://calendly.com/creuto/meet" data-calendly="true" class="cl-button -primary">Book a free strategy call <span style="margin-left:4px;">&rarr;</span></a>
+          <a href="#contact" class="cl-button -secondary">Send a project brief</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= HOW WE WORK ================= -->
+    <section class="ed-section ed-process" id="process">
+      <div class="wrap">
+        <header class="ed-head">
+          <p class="ed-label">How we work</p>
+          <h2 class="section-title">From first call to live product, in four clear steps.</h2>
+          <p>Every stage ends with something you can review, so you always know what you are paying for and what happens next.</p>
+        </header>
+        <ol class="ed-steps">
+          <li><span class="ed-num">01</span><h3>Discovery call</h3><p>A 45-minute conversation about your product, your users and your bottlenecks, including whether custom software is the right answer at all.</p><span class="ed-step-out">You get a clear read on scope</span></li>
+          <li><span class="ed-num">02</span><h3>PRD and prototype</h3><p>A functional PRD, database schema and clickable Figma prototype, written and tested before any engineering starts.</p><span class="ed-step-out">You get a spec, a prototype and a roadmap</span></li>
+          <li><span class="ed-num">03</span><h3>Build in sprints</h3><p>Transparent two-week sprints tied to testable deliverables, weekly demos and a direct line to Nihar on Slack or WhatsApp.</p><span class="ed-step-out">You get working software every two weeks</span></li>
+          <li><span class="ed-num">04</span><h3>Launch and support</h3><p>App Store and Google Play submission or production deployment, then post-launch support as your users grow.</p><span class="ed-step-out">You get a live product and a team behind it</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ================= FREE TOOL ================= -->
+    <section class="ed-tool" aria-labelledby="ed-tool-title">
+      <div class="wrap ed-tool-grid">
+        <div class="ed-reveal">
+          <p class="ed-label">Free tool &middot; no sign-up</p>
+          <h2 id="ed-tool-title">What will your app actually cost?</h2>
+          <p>Choose your app type, platforms and features and get a realistic budget and timeline in rupees or dollars, based on production builds.</p>
+        </div>
+        <div class="ed-tool-actions ed-reveal">
+          <a href="/tools/app-cost-calculator" class="cl-button -primary">Estimate my app cost <span style="margin-left:4px;">&rarr;</span></a>
+          <a href="/project-costs" class="ed-link">Read the project costs guide &rarr;</a>
+        </div>
+      </div>
+    </section>
+
     <!-- ================= 6. FIELD NOTES ================= -->
     <section class="blog-section ed-section" id="insights">
       <div class="wrap">
@@ -658,6 +704,7 @@
               <button type="submit" class="cl-button -primary" style="width:100%; justify-content:center; padding:15px;">
                 Send Project Brief <span style="margin-left:6px;">→</span>
               </button>
+              <p class="ed-form-note">Your brief goes straight to Nihar. Prefer to talk? <a href="https://calendly.com/creuto/meet" data-calendly="true">Book a free 45-minute call</a>.</p>
             </form>
           </div>
         </div>
@@ -731,8 +778,11 @@
   <script src="/assets/lead-forms.js?v=4"></script>
   <script src="/assets/site-enhancements.js?v=serv2026_fix2"></script>
   <script>
-    // gentle reveal for the milestone section; content stays visible without JS
+    // gentle scroll reveal; content stays visible without JS
     (function () {
+      document.querySelectorAll('.ed-section .ed-head, .ed-work-row, .ed-row, .ed-list li, .ed-quote, .ed-post, .ed-steps li, .ed-note, .faq-item-minimal').forEach(function (n, i) {
+        n.classList.add('ed-reveal');
+      });
       var items = document.querySelectorAll('.ed-reveal');
       if (!('IntersectionObserver' in window)) { items.forEach(function (n) { n.classList.add('is-in'); }); return; }
       var io = new IntersectionObserver(function (entries) {

@@ -470,3 +470,59 @@ html.js .ed-milestone-fig.ed-reveal { transition-delay: 0.12s; }
   .ed-milestone-tag i { animation: none; }
   html.js .ed-reveal { opacity: 1; transform: none; transition: none; }
 }
+
+/* ---------- homepage conversion pieces: assurance line, CTA band, process, free tool ---------- */
+.ed-assure { display: flex; flex-wrap: wrap; gap: 6px 22px; list-style: none; margin: 18px 0 0; padding: 0; font-size: 13.5px; font-weight: 600; color: var(--ink); }
+.ed-assure li { display: inline-flex; align-items: center; gap: 8px; }
+.ed-assure li::before { content: ''; width: 14px; height: 14px; flex: 0 0 auto; background: var(--accent); -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8.5l3.2 3.2L13 4.8' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8.5l3.2 3.2L13 4.8' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat; }
+.ed-trust { margin-top: 14px; }
+
+.ed-cta-home { padding: 96px 0; }
+.ed-cta-grid { display: grid; grid-template-columns: 7fr 5fr; column-gap: 64px; align-items: center; }
+.ed-cta-home h2 { max-width: 18ch; }
+.ed-cta-home p { margin: 0; }
+.ed-cta-actions { display: flex; flex-direction: column; align-items: stretch; gap: 14px; max-width: 300px; }
+.ed-cta-actions .cl-button { justify-content: center; text-align: center; }
+.ed-cta-home .cl-button.-secondary { background: transparent; color: var(--paper) !important; border-color: rgba(246, 241, 231, 0.5); }
+.ed-cta-home .cl-button.-secondary:hover { background: var(--paper); border-color: var(--paper); color: var(--ink) !important; }
+
+.ed-process { background: var(--paper-2); }
+.ed-steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); column-gap: 32px; counter-reset: none; }
+.ed-steps li { padding-top: 22px; border-top: 1px solid var(--ink); display: flex; flex-direction: column; }
+.ed-steps h3 { font-size: 1.4rem; line-height: 1.2; letter-spacing: -0.02em; font-weight: 500; margin: 10px 0 12px; }
+.ed-steps p { margin: 0 0 18px; font-size: 1rem; line-height: 1.6; }
+.ed-step-out { margin-top: auto; min-height: 4.3em; padding-top: 14px; border-top: 1px solid var(--rule); font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); line-height: 1.45; }
+
+.ed-tool { padding: 72px 0; background: var(--paper); border-top: 1px solid var(--rule); }
+.ed-tool-grid { display: grid; grid-template-columns: 7fr 5fr; column-gap: 64px; align-items: center; }
+.ed-tool h2 { font-size: clamp(1.8rem, 3vw, 2.5rem); line-height: 1.1; letter-spacing: -0.03em; font-weight: 500; margin: 0 0 12px; max-width: 20ch; }
+.ed-tool p:not(.ed-label) { margin: 0; max-width: 54ch; font-size: 1.05rem; line-height: 1.6; }
+.ed-tool .ed-label { margin-bottom: 14px; }
+.ed-tool-actions { display: flex; flex-direction: column; align-items: flex-start; gap: 18px; }
+
+.ed-form-note { margin: 14px 0 0; font-size: 13.5px; line-height: 1.5; color: var(--ink-3); text-align: center; }
+.ed-form-note a { color: var(--ink); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--accent); }
+.ed-form-note a:hover { color: var(--accent); }
+
+/* work rows: outcome cue on hover, and a bit more presence for the numbers */
+.ed-work-outcome::after { content: 'View case study \2192'; display: block; margin-top: 10px; font-family: var(--font-body, inherit); font-size: 13px; font-weight: 600; letter-spacing: 0; color: var(--accent); opacity: 0; transform: translateX(-6px); transition: opacity 0.2s ease, transform 0.25s ease; }
+.ed-work-row:hover .ed-work-outcome::after { opacity: 1; transform: none; }
+@media (hover: none) { .ed-work-outcome::after { opacity: 1; transform: none; } }
+
+/* reveal on scroll for rows, heads and quotes (set up in the page script) */
+html.js .ed-work-row.ed-reveal, html.js .ed-row.ed-reveal, html.js .ed-list li.ed-reveal, html.js .ed-quote.ed-reveal, html.js .ed-post.ed-reveal, html.js .ed-steps li.ed-reveal, html.js .faq-item-minimal.ed-reveal { transform: translateY(16px); }
+html.js .ed-steps li:nth-child(2).ed-reveal, html.js .ed-quote:nth-child(2).ed-reveal { transition-delay: 0.08s; }
+html.js .ed-steps li:nth-child(3).ed-reveal, html.js .ed-quote:nth-child(3).ed-reveal { transition-delay: 0.16s; }
+html.js .ed-steps li:nth-child(4).ed-reveal { transition-delay: 0.24s; }
+html.js .ed-reveal.is-in { opacity: 1; transform: none; }
+
+@media (max-width: 991px) {
+  .ed-cta-grid, .ed-tool-grid { grid-template-columns: 1fr; row-gap: 32px; }
+  .ed-cta-home { padding: 68px 0; }
+  .ed-tool { padding: 56px 0; }
+  .ed-steps { grid-template-columns: 1fr 1fr; row-gap: 40px; }
+}
+@media (max-width: 560px) {
+  .ed-steps { grid-template-columns: 1fr; }
+  .ed-assure { flex-direction: column; gap: 6px; }
+}
