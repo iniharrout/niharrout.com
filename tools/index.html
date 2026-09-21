@@ -1,67 +1,52 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Product &amp; Software Engineering Playbooks | Nihar Rout</title>
-  <meta name="description" content="Practical guides on MVP costs, custom ERP, React Native apps and enterprise AI, written by Nihar Ranjan Rout, founder of Creuto.">
-  <meta name="author" content="Nihar Ranjan Rout">
-  <meta name="robots" content="index, follow, max-image-preview:large">
-  <link rel="canonical" href="https://www.niharrout.com/blog">
-  <link rel="icon" href="/assets/nihar.jpg" type="image/jpeg">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Founder &amp; Product Engineering Tools | Nihar Rout</title>
+  <meta name="description" content="Interactive calculators, name generators, and tactical scoping tools for startup founders and product leaders by Nihar Ranjan Rout.">
+  <link rel="canonical" href="https://www.niharrout.com/tools">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/assets/nihar.jpg">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Nihar Ranjan Rout | Creuto">
-  <meta property="og:url" content="https://www.niharrout.com/blog">
-  <meta property="og:title" content="Product &amp; Software Engineering Playbooks | Nihar Rout">
-  <meta property="og:description" content="Practical guides on MVP costs, custom ERP, React Native apps and enterprise AI, written by Nihar Ranjan Rout, founder of Creuto.">
+  <meta property="og:url" content="https://www.niharrout.com/tools">
+  <meta property="og:title" content="Free Founder &amp; Product Engineering Tools | Nihar Rout">
+  <meta property="og:description" content="Interactive calculators, name generators, and tactical scoping tools for startup founders and product leaders by Nihar Ranjan Rout.">
   <meta property="og:image" content="https://www.niharrout.com/assets/niharrout-og-image.png">
 
   <!-- Fonts & Design System -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/design-system.css?v=serv2026_fix2">
   <link rel="stylesheet" href="/assets/editorial.css?v=2">
+  <link rel="stylesheet" href="/assets/tools.css?v=1">
 
   <!-- Calendly Widget CSS & JS -->
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Product &amp; Software Engineering Playbooks | Nihar Rout">
-  <meta name="twitter:description" content="Practical guides on MVP costs, custom ERP, React Native apps and enterprise AI, written by Nihar Ranjan Rout, founder of Creuto.">
-  <meta name="twitter:image" content="https://www.niharrout.com/assets/niharrout-og-image.png">
+
+  <!-- Schema.org WebSite -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://www.niharrout.com/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Blog",
-        "item": "https://www.niharrout.com/blog"
-      }
-    ]
+    "@type": "CollectionPage",
+    "name": "Founder & Product Engineering Tools",
+    "description": "Interactive calculators, name generators, and tactical scoping tools for startup founders and product leaders.",
+    "url": "https://www.niharrout.com/tools"
   }
   </script>
   <link rel="stylesheet" href="/assets/chrome.css?v=3">
   <script src="/assets/chrome.js?v=1" defer></script>
 </head>
 
-<body class="ed-page">
+<body class="ed-page tool-page">
 
-  <!-- Navigation Header -->
+  <!-- ================= SITE HEADER ================= -->
   <!-- chrome:header -->
 <header class="sc-header" id="site-header">
   <div class="sc-wrap sc-bar">
@@ -153,68 +138,141 @@
 <!-- /chrome:header -->
 
   <main id="top">
-    <!-- Blog Hero -->
-    <section class="blog-section">
-      <div class="wrap">
-        <div class="blog-hero">
-          <div class="hs-eyebrow">
-            <span class="dot"></span>
-            FIELD NOTES &amp; PLAYBOOKS
+    <!-- Hero Section -->
+    <section class="tool-hero">
+      <div class="tool-wrap">
+        <div class="tool-breadcrumbs">
+          <a href="/">Home</a>
+          <span class="sep">/</span>
+          <span>Tools Directory</span>
+        </div>
+
+        <div class="tool-hero-label">
+          <span class="dot"></span>
+          Founder &amp; Product Engineering Suite
+        </div>
+
+        <h1>Interactive Tools for Founders &amp; Builders</h1>
+        <p class="lead">
+          Free calculators, generators, and tactical utilities designed from 8+ years of scoping and shipping production mobile applications, custom ERPs, and B2B platforms.
+        </p>
+      </div>
+    </section>
+
+    <!-- Hub Grid -->
+    <section>
+      <div class="tool-wrap">
+        <div class="tools-hub-grid">
+
+          <!-- Tool 1: Cost Calculator -->
+          <a href="/tools/app-cost-calculator" class="tool-card">
+            <div>
+              <div class="tool-card-tag">
+                <span>Interactive Calculator</span>
+                <span>Active</span>
+              </div>
+              <h3>Mobile App Cost &amp; Timeline Calculator</h3>
+              <p>
+                Estimate your mobile application development investment, sprint timeline, and team squad composition. Toggle between Indian Standard (₹ Lakhs) and US Standard ($k), configure complex features, and compare against benchmarks like Amazon or Urban Company.
+              </p>
+              <ul class="tool-card-features">
+                <li>Dual Currency (₹ / $)</li>
+                <li>Amazon / Marketplace Benchmarks</li>
+                <li>Timeline &amp; Team Breakdown</li>
+                <li>1-Click Scope Copy</li>
+              </ul>
+            </div>
+            <div class="tool-card-action">
+              Launch Cost Calculator <span>→</span>
+            </div>
+          </a>
+
+          <!-- Tool 2: Name Generator -->
+          <a href="/tools/startup-name-generator" class="tool-card">
+            <div>
+              <div class="tool-card-tag">
+                <span>Creative Tool</span>
+                <span>Active</span>
+              </div>
+              <h3>Startup &amp; Project Name Generator</h3>
+              <p>
+                Brainstorm brandable names for your new startup, SaaS, or mobile app. Pin your favorite seed keywords so generated suggestions anchor directly to your core concept. Check instant domain availability and save shortlists.
+              </p>
+              <ul class="tool-card-features">
+                <li>📌 Keyword Pinning</li>
+                <li>5 Naming Archetypes</li>
+                <li>Instant Domain Check Links</li>
+                <li>Favorites Shortlist</li>
+              </ul>
+            </div>
+            <div class="tool-card-action">
+              Launch Name Generator <span>→</span>
+            </div>
+          </a>
+
+          <!-- Tool 3: SaaS Runway (Upcoming) -->
+          <div class="tool-card upcoming">
+            <div>
+              <div class="tool-card-tag" style="color:var(--tool-ink-3);">
+                <span>Financial Tool</span>
+                <span>In Development</span>
+              </div>
+              <h3>SaaS Runway &amp; Unit Economics Calculator</h3>
+              <p>
+                Interactive burn rate, customer acquisition cost (CAC), lifetime value (LTV), and cash runway model designed specifically for bootstrapped software businesses.
+              </p>
+              <ul class="tool-card-features">
+                <li>Burn &amp; Runway Months</li>
+                <li>CAC:LTV Ratios</li>
+                <li>Hiring Impact Model</li>
+              </ul>
+            </div>
+            <div class="tool-card-action" style="color:var(--tool-ink-3); border-color:var(--tool-rule);">
+              Coming Q2 2026
+            </div>
           </div>
-          <h1>Insights on product management and software architecture.</h1>
-          <p>
-            Actionable playbooks on MVP budgeting, custom ERP migrations, React Native mobile apps, and pragmatic enterprise AI — written for founders and operators who value execution over fluff.
-          </p>
+
+          <!-- Tool 4: PRD Scope Boundary (Upcoming) -->
+          <div class="tool-card upcoming">
+            <div>
+              <div class="tool-card-tag" style="color:var(--tool-ink-3);">
+                <span>Product Strategy</span>
+                <span>In Development</span>
+              </div>
+              <h3>MVP Feature Scope Boundary Generator</h3>
+              <p>
+                A tactical prioritization matrix that turns extensive feature wishlists into crisp 0-to-1 PRD boundaries, de-risking sprint budgets before writing a single line of code.
+              </p>
+              <ul class="tool-card-features">
+                <li>Feature Bloat Killer</li>
+                <li>MoSCoW Scoring</li>
+                <li>Exportable PRD Outline</li>
+              </ul>
+            </div>
+            <div class="tool-card-action" style="color:var(--tool-ink-3); border-color:var(--tool-rule);">
+              Coming Q2 2026
+            </div>
+          </div>
+
         </div>
 
-        <!-- Filter Bar -->
-        <div class="blog-filter-bar">
-          <span class="blog-filter-btn active">All Articles (5)</span>
-          <a href="/blog/cost-to-build-mvp-2026" class="blog-filter-btn">Product Strategy</a>
-          <a href="/blog/why-custom-erp-implementations-fail" class="blog-filter-btn">Enterprise ERP</a>
-          <a href="/blog/react-native-mobile-app-playbook" class="blog-filter-btn">Mobile Engineering</a>
-          <a href="/blog/pragmatic-enterprise-ai-workflows" class="blog-filter-btn">Enterprise AI</a>
-        </div>
-
-        <!-- 5 Lead-Generating Articles Grid -->
-        <div class="ed-posts">
-          <a class="ed-post" href="/blog/cost-to-build-mvp-2026">
-            <div><p class="ed-tag">Product Strategy &middot; 9 min read</p><h2>The True Cost of Building an MVP in 2026: Agency vs. Freelancers vs. Dedicated Squad</h2></div>
-            <div><p>Why 70% of MVP budgets get burned on rework, how agency markups function, and how a founder-led product squad delivers 3x faster with disciplined PRD scoping.</p><span class="ed-link">Read the guide &rarr;</span></div>
-          </a>
-          <a class="ed-post" href="/blog/why-custom-erp-implementations-fail">
-            <div><p class="ed-tag">Enterprise ERP &middot; 11 min read</p><h2>Why 78% of Custom ERP Implementations Fail (And the Product Discipline That Prevents It)</h2></div>
-            <div><p>Moving manufacturing and supply chain operations from messy spreadsheets to custom software requires modular cutovers, granular RBAC, and strict schema normalization.</p><span class="ed-link">Read the guide &rarr;</span></div>
-          </a>
-          <a class="ed-post" href="/blog/react-native-mobile-app-playbook">
-            <div><p class="ed-tag">Mobile Engineering &middot; 10 min read</p><h2>From PRD to App Store: The 10-Week React Native &amp; Flutter Engineering Playbook</h2></div>
-            <div><p>A production blueprint for consumer and B2B mobile apps: offline-first synchronization, real-time WebSockets, background geolocation, and Apple review approval tactics.</p><span class="ed-link">Read the guide &rarr;</span></div>
-          </a>
-          <a class="ed-post" href="/blog/pragmatic-enterprise-ai-workflows">
-            <div><p class="ed-tag">Enterprise AI &middot; 8 min read</p><h2>Pragmatic Enterprise AI: Integrating LLMs &amp; Vector Search Without Burning Capital on Hype</h2></div>
-            <div><p>How real businesses generate measurable ROI with private vector search over company ERP data, automated triage pipelines, and deterministic safety fallbacks.</p><span class="ed-link">Read the guide &rarr;</span></div>
-          </a>
-          <a class="ed-post" href="/blog/product-scoping-framework-kill-feature-bloat">
-            <div><p class="ed-tag">Product Leadership &middot; 8 min read</p><h2>The Product Owner's Scoping Framework: How to Kill 50% of Feature Bloat Before Writing Code</h2></div>
-            <div><p>A step-by-step methodology honed over 8+ years of product management to challenge assumptions, validate with clickable Figma prototypes, and protect your budget.</p><span class="ed-link">Read the guide &rarr;</span></div>
-          </a>
-        </div>
-
-        <!-- Strategy Scoping CTA Box -->
-        <div class="blog-cta-box" style="margin-top:72px;">
-          <h3>Have an upcoming product build or ERP transformation?</h3>
-          <p>
-            Schedule a confidential 45-minute roadmap consultation with Nihar. We will review your product specs, identify high-risk technical assumptions, and outline an exact sprint timeline.
-          </p>
-          <a href="https://calendly.com/creuto/meet" data-calendly="true" class="cl-button -primary btn-book-call">
-            Book a Strategy Call <span style="margin-left:4px;">→</span>
+        <!-- Banner CTA -->
+        <div class="tool-cta-banner">
+          <div class="tool-cta-content">
+            <h3>Need a Custom Architecture or Engineering Scope?</h3>
+            <p>
+              If your product requires custom hardware integration, HIPAA/GDPR compliance, or multi-tenant ERP logic, let's review your architecture directly.
+            </p>
+          </div>
+          <a href="https://calendly.com/creuto/meet" data-calendly="true" class="btn-cta-banner">
+            Book a 30-Min Scoping Call →
           </a>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Dark Footer -->
+  <!-- ================= SITE FOOTER ================= -->
   <!-- chrome:footer -->
 <footer class="sc-footer">
   <div class="sc-wrap">
@@ -277,4 +335,5 @@
 
   <script src="/assets/site-enhancements.js?v=serv2026_fix2"></script>
 </body>
+
 </html>

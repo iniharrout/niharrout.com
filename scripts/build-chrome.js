@@ -66,6 +66,7 @@ for (const file of files) {
   html = stamp(html, 'header', header, (h, b) => h.replace(/<body[^>]*>/i, (m) => `${m}\n${b}`));
   html = stamp(html, 'footer', footer, (h, b) => (/<\/main>/i.test(h) ? h.replace(/<\/main>/i, (m) => `${m}\n${b}`) : h.replace(/<\/body>/i, `${b}\n</body>`)));
 
+  html = html.replace(/<link rel="stylesheet" href="\/assets\/chrome\.css[^"]*">/, CSS);
   if (!html.includes('/assets/chrome.css')) html = html.replace('</head>', `  ${CSS}\n  ${JS}\n</head>`);
   if (html !== before) { fs.writeFileSync(file, html); changed++; }
 }
