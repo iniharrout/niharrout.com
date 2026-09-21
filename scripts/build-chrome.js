@@ -15,7 +15,7 @@ const ROOT = path.resolve(__dirname, '..');
 const SKIP = new Set(['node_modules', '.git', '.claude', 'scripts', 'partials', 'api']);
 const header = fs.readFileSync(path.join(ROOT, 'partials/header.html'), 'utf8').trim();
 const footer = fs.readFileSync(path.join(ROOT, 'partials/footer.html'), 'utf8').trim();
-const CSS = '<link rel="stylesheet" href="/assets/chrome.css?v=7">';
+const CSS = '<link rel="stylesheet" href="/assets/chrome.css?v=9">';
 const JS = '<script src="/assets/chrome.js?v=4" defer></script>';
 
 const block = (name, body) => `<!-- chrome:${name} -->\n${body}\n<!-- /chrome:${name} -->`;

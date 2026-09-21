@@ -74,8 +74,8 @@ function head({ title, description, path: urlPath, ogType = 'website', graph, no
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap">
-  <link rel="stylesheet" href="/assets/design-system.css?v=hs2026_8">
-  <link rel="stylesheet" href="/assets/location-pages.css?v=loc1">
+  <link rel="stylesheet" href="/assets/design-system.css?v=emerald1">
+  <link rel="stylesheet" href="/assets/location-pages.css?v=emerald1">
 
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>

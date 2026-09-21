@@ -140,7 +140,7 @@
       }
       if (window.Calendly && typeof window.Calendly.initPopupWidget === 'function') {
         window.Calendly.initPopupWidget({
-          url: 'https://calendly.com/creuto/meet?primary_color=ff5f2d&text_color=2d3e50'
+          url: 'https://calendly.com/creuto/meet?primary_color=0b7a45&text_color=2d3e50'
         });
       } else {
         window.open('https://calendly.com/creuto/meet', '_blank');
@@ -158,9 +158,9 @@
         // Prevent duplicate badges
         if (!document.querySelector('.calendly-badge-widget')) {
           window.Calendly.initBadgeWidget({
-            url: 'https://calendly.com/creuto/meet?primary_color=ff5f2d&text_color=2d3e50',
+            url: 'https://calendly.com/creuto/meet?primary_color=0b7a45&text_color=2d3e50',
             text: (window.innerWidth <= 768) ? 'Book a call' : 'Schedule a Call with Me',
-            color: '#FF5F2D',
+            color: '#0b7a45',
             textColor: '#ffffff',
             branding: false
           });

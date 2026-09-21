@@ -83,7 +83,7 @@
         right: 3px;
         width: 12px;
         height: 12px;
-        background: #FF5500;
+        background: #0b7a45;
         border-radius: 50%;
         border: 2px solid #141312;
         animation: chatDotPulse 2.4s infinite ease-in-out;
@@ -189,7 +189,7 @@
         justify-content: center;
         font-weight: 700;
         font-size: 14px;
-        color: #FF5500;
+        color: #0b7a45;
         flex-shrink: 0;
         overflow: hidden;
       }
@@ -298,13 +298,13 @@
       }
 
       .nihar-chat-bubble a {
-        color: #FF5500;
+        color: #0b7a45;
         text-decoration: underline;
         font-weight: 600;
       }
 
       .nihar-chat-bubble a:hover {
-        color: #E04B00;
+        color: #075d34;
       }
 
       /* Action buttons inside chat (Fallback or Cap CTA) */
@@ -324,7 +324,7 @@
       }
 
       .nihar-chat-cta-btn:hover {
-        background: #FF5500;
+        background: #0b7a45;
         transform: translateY(-1px);
       }
 
@@ -363,8 +363,8 @@
 
       .nihar-chat-starter-chip:hover {
         background: #FFFDF9;
-        border-color: #FF5500;
-        color: #FF5500;
+        border-color: #0b7a45;
+        color: #0b7a45;
         transform: translateX(3px);
       }
 
@@ -374,7 +374,7 @@
       }
 
       .nihar-chat-starter-chip:hover span.arrow {
-        color: #FF5500;
+        color: #0b7a45;
         transform: translateX(3px);
       }
 
@@ -492,7 +492,7 @@
       }
 
       .nihar-chat-send-btn:hover:not(:disabled) {
-        background: #FF5500;
+        background: #0b7a45;
         transform: scale(1.05);
       }
 

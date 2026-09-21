@@ -12,9 +12,9 @@
   --tool-ink-3: #676154;
   --tool-rule: #d6cdb9;
   --tool-rule-dark: #1d1b18;
-  --tool-accent: #ff4800;
-  --tool-accent-tint: #fff2eb;
-  --tool-accent-hover: #e03f00;
+  --tool-accent: #0b7a45;
+  --tool-accent-tint: #e8f5ee;
+  --tool-accent-hover: #075d34;
   --tool-radius: 4px;
   --tool-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
@@ -1412,7 +1412,7 @@
 .btn-editor-primary:hover {
   background: var(--tool-accent-hover);
   border-color: var(--tool-accent-hover);
-  box-shadow: 0 2px 8px rgba(255, 72, 0, 0.25);
+  box-shadow: 0 2px 8px rgba(11, 122, 69, 0.25);
 }
 
 /* Hook Meter & Stats Card */

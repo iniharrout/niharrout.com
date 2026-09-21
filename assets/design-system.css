@@ -1,7 +1,7 @@
 /**
  * NiharRout.com - Official Design System Architecture (2025/2026)
  * Brand: Authentic HubSpot Precision + Excited.agency Editorial Portfolio Aesthetics
- * Palette: Signature Coral (#ff4800 / #ff5c35), Warm Porcelain (#fcfcfa),
+ * Palette: Emerald (#0b7a45), Warm Porcelain (#fcfcfa),
  *          Warm Alabaster (#f8f5ee), Pure White (#ffffff), Deep Charcoal (#18181a)
  * Typography: Modern Geometric Sans + Clean Editorial Serif
  */
@@ -38,11 +38,11 @@
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
   /* Palette */
-  --hs-brand: #ff4800;
-  --hs-brand-hover: #e03e00;
-  --hs-brand-pressed: #be3300;
-  --hs-brand-tint: #fef0eb;
-  --hs-brand-glow: rgba(255, 72, 0, 0.22);
+  --hs-brand: #0b7a45;
+  --hs-brand-hover: #075d34;
+  --hs-brand-pressed: #054a29;
+  --hs-brand-tint: #e8f5ee;
+  --hs-brand-glow: rgba(11, 122, 69, 0.22);
 
   /* Backgrounds */
   --hs-bg-01: #fcfcfa;          /* Warm porcelain canvas */
@@ -63,7 +63,7 @@
   --hs-border-01: rgba(0, 0, 0, 0.14);
   --hs-border-02: rgba(0, 0, 0, 0.08);
   --hs-border-03: #e6e2d8;       /* Signature warm border */
-  --hs-border-active: #ff4800;
+  --hs-border-active: #0b7a45;
 
   /* Accents */
   --hs-mint: #00823a;
@@ -210,7 +210,7 @@ p {
   text-transform: uppercase;
   color: var(--hs-brand);
   background-color: var(--hs-brand-tint);
-  border: 1px solid rgba(255, 72, 0, 0.18);
+  border: 1px solid rgba(11, 122, 69, 0.18);
   padding: 5px 12px;
   border-radius: var(--hs-radius-pill);
   margin-bottom: 20px;
@@ -263,14 +263,14 @@ p {
   background-color: var(--hs-brand);
   color: #ffffff;
   border-color: var(--hs-brand);
-  box-shadow: 0 2px 6px rgba(255, 72, 0, 0.22);
+  box-shadow: 0 2px 6px rgba(11, 122, 69, 0.22);
 }
 
 .cl-button.-primary:hover {
   background-color: var(--hs-brand-hover);
   border-color: var(--hs-brand-hover);
   color: #ffffff;
-  box-shadow: 0 4px 14px rgba(255, 72, 0, 0.32);
+  box-shadow: 0 4px 14px rgba(11, 122, 69, 0.32);
   transform: translateY(-1px);
 }
 
@@ -468,7 +468,7 @@ p {
   width: 32px;
   height: 32px;
   border-radius: 8px;
-  background: rgba(255, 95, 45, 0.1);
+  background: rgba(11, 122, 69, 0.1);
   color: var(--hs-brand);
   display: flex;
   align-items: center;
@@ -479,7 +479,7 @@ p {
 }
 
 .dropdown-item:hover .dropdown-icon-wrap {
-  background: rgba(255, 95, 45, 0.18);
+  background: rgba(11, 122, 69, 0.18);
   transform: scale(1.06);
 }
 
@@ -519,7 +519,7 @@ p {
   padding: 5px 12px;
   border-radius: var(--hs-radius-pill);
   background-color: var(--hs-brand-tint);
-  border: 1px solid rgba(255, 72, 0, 0.2);
+  border: 1px solid rgba(11, 122, 69, 0.2);
   color: var(--hs-brand);
   font-size: 11.5px;
   font-weight: 700;
@@ -726,7 +726,7 @@ p {
   font-weight: 700;
   color: var(--hs-brand);
   background: var(--hs-brand-tint);
-  border: 1px solid rgba(255, 72, 0, 0.15);
+  border: 1px solid rgba(11, 122, 69, 0.15);
   width: 32px;
   height: 32px;
   border-radius: 6px;
@@ -778,7 +778,7 @@ p {
 .service-card-clean:hover {
   transform: translateY(-3px);
   box-shadow: var(--hs-shadow-md);
-  border-color: rgba(255, 72, 0, 0.35);
+  border-color: rgba(11, 122, 69, 0.35);
 }
 
 .service-top-meta {
@@ -1096,15 +1096,15 @@ p {
 .faq-item-minimal:hover,
 .faq-item-excited:hover,
 .faq-item:hover {
-  border-color: rgba(255, 95, 45, 0.35);
+  border-color: rgba(11, 122, 69, 0.35);
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
 }
 
 .faq-item-minimal.open,
 .faq-item-excited.open,
 .faq-item.open {
-  border-color: rgba(255, 95, 45, 0.45);
-  box-shadow: 0 8px 24px rgba(255, 95, 45, 0.08);
+  border-color: rgba(11, 122, 69, 0.45);
+  box-shadow: 0 8px 24px rgba(11, 122, 69, 0.08);
 }
 
 .faq-question-btn,
@@ -1155,7 +1155,7 @@ p {
 .faq-item.open .faq-icon,
 .faq-item.open .faq-toggle-sign {
   transform: rotate(45deg);
-  background: rgba(255, 95, 45, 0.12);
+  background: rgba(11, 122, 69, 0.12);
   color: var(--hs-brand);
 }
 
@@ -1287,7 +1287,7 @@ p {
 .form-select:focus,
 .form-textarea:focus {
   border-color: var(--hs-brand);
-  box-shadow: 0 0 0 3px rgba(255, 72, 0, 0.12);
+  box-shadow: 0 0 0 3px rgba(11, 122, 69, 0.12);
 }
 
 .form-textarea {
@@ -1848,7 +1848,7 @@ p {
 .blog-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.06);
-  border-color: rgba(255, 95, 45, 0.35);
+  border-color: rgba(11, 122, 69, 0.35);
 }
 
 .blog-card-thumb {
@@ -1890,7 +1890,7 @@ p {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--hs-brand);
-  background: rgba(255, 95, 45, 0.08);
+  background: rgba(11, 122, 69, 0.08);
   padding: 4px 10px;
   border-radius: var(--hs-radius-pill);
 }
@@ -2122,8 +2122,8 @@ p {
 }
 
 .blog-callout {
-  background: #fff8f5;
-  border: 1px solid rgba(255, 95, 45, 0.25);
+  background: #f2f9f5;
+  border: 1px solid rgba(11, 122, 69, 0.25);
   border-radius: 16px;
   padding: 24px 28px;
   margin: 36px 0;
@@ -2187,13 +2187,13 @@ p {
   font-size: 14px !important;
   border-radius: 9999px !important;
   padding: 12px 22px !important;
-  box-shadow: 0 10px 24px rgba(255, 95, 45, 0.35) !important;
+  box-shadow: 0 10px 24px rgba(11, 122, 69, 0.35) !important;
   transition: transform 0.2s ease, box-shadow 0.2s ease !important;
 }
 
 .calendly-badge-widget .calendly-badge-content:hover {
   transform: translateY(-2px) !important;
-  box-shadow: 0 14px 28px rgba(255, 95, 45, 0.45) !important;
+  box-shadow: 0 14px 28px rgba(11, 122, 69, 0.45) !important;
 }
 
 /* Mobile Calendly Badge & Overlay Polish (< 768px) */
@@ -2209,7 +2209,7 @@ p {
     padding: 0 16px !important;
     font-size: 12.5px !important;
     border-radius: 9999px !important;
-    box-shadow: 0 4px 14px rgba(255, 95, 45, 0.4) !important;
+    box-shadow: 0 4px 14px rgba(11, 122, 69, 0.4) !important;
     letter-spacing: -0.01em !important;
   }
 
@@ -2379,7 +2379,7 @@ p {
 .cap-card:hover {
   transform: translateY(-4px);
   border-color: var(--hs-brand);
-  box-shadow: 0 16px 36px rgba(255, 95, 45, 0.09);
+  box-shadow: 0 16px 36px rgba(11, 122, 69, 0.09);
 }
 
 .cap-icon {
@@ -2387,7 +2387,7 @@ p {
   height: 50px;
   border-radius: 12px;
   background: #FFF0EB;
-  border: 1px solid rgba(255, 95, 45, 0.2);
+  border: 1px solid rgba(11, 122, 69, 0.2);
   color: var(--hs-brand);
   display: flex;
   align-items: center;
@@ -2398,7 +2398,7 @@ p {
 
 .cap-card:hover .cap-icon {
   transform: scale(1.06);
-  background: #FFE5DC;
+  background: #d3ecdf;
 }
 
 .cap-icon svg {
@@ -2477,7 +2477,7 @@ p {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: rgba(255, 95, 45, 0.1);
+  background: rgba(11, 122, 69, 0.1);
   color: var(--hs-brand);
   font-family: var(--font-display);
   font-size: 18px;
@@ -2590,7 +2590,7 @@ p {
 
 .techstack-pill:hover {
   background: #ffffff;
-  border-color: rgba(255, 95, 45, 0.4);
+  border-color: rgba(11, 122, 69, 0.4);
   transform: translateY(-1px);
 }
 

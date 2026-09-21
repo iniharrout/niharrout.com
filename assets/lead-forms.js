@@ -71,9 +71,9 @@ function initLeadForms() {
       return;
     }
     el.style.display = 'block';
-    el.style.background = ok ? '#e6f7ec' : '#fef0eb';
-    el.style.color = ok ? '#00823a' : '#be3300';
-    el.style.border = '1px solid ' + (ok ? '#b3ebd3' : 'rgba(255,72,0,.25)');
+    el.style.background = ok ? '#e6f7ec' : '#e8f5ee';
+    el.style.color = ok ? '#00823a' : '#054a29';
+    el.style.border = '1px solid ' + (ok ? '#b3ebd3' : 'rgba(11, 122, 69,.25)');
   }
 
   function mailtoHref(lead) {
