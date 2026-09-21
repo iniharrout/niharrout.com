@@ -1808,7 +1808,37 @@
         var budget = form.querySelector('[name="budget"]').value;
         var details = form.querySelector('[name="details"]').value.trim();
 
+        var escapeChat = function (s) {
+          return String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        };
+
+        var sections = [
+          {
+            "widgets": [
+              { "decoratedText": { "topLabel": "Lead Name", "text": escapeChat(name), "wrapText": true } },
+              { "decoratedText": { "topLabel": "Phone", "text": escapeChat(phone), "wrapText": true } },
+              { "decoratedText": { "topLabel": "Work Email", "text": escapeChat(email), "wrapText": true } },
+              { "decoratedText": { "topLabel": "AI Solution Type", "text": escapeChat(type), "wrapText": true } },
+              { "decoratedText": { "topLabel": "Budget Range", "text": escapeChat(budget), "wrapText": true } }
+            ]
+          }
+        ];
+
+        if (details) {
+          sections.push({
+            "header": "Project & Data Details",
+            "widgets": [
+              {
+                "textParagraph": {
+                  "text": escapeChat(details).replace(/\n/g, '<br>')
+                }
+              }
+            ]
+          });
+        }
+
         var payload = {
+          "text": "🧠 *New AI Product Lead (Bhubaneswar Page)*\n*From:* " + name + " (" + email + ")" + (phone ? " | " + phone : "") + "\n" + (details ? "*Project & Data Details:*\n" + details : ""),
           "cardsV2": [
             {
               "cardId": "aiProductEnquiryBhubaneswar",
@@ -1819,18 +1849,7 @@
                   "imageUrl": "https://www.niharrout.com/assets/nihar.jpg",
                   "imageType": "CIRCLE"
                 },
-                "sections": [
-                  {
-                    "widgets": [
-                      { "decoratedText": { "topLabel": "Lead Name", "text": name } },
-                      { "decoratedText": { "topLabel": "Phone", "text": phone } },
-                      { "decoratedText": { "topLabel": "Work Email", "text": email } },
-                      { "decoratedText": { "topLabel": "AI Solution Type", "text": type } },
-                      { "decoratedText": { "topLabel": "Budget Range", "text": budget } },
-                      { "decoratedText": { "topLabel": "Project & Data Details", "text": details } }
-                    ]
-                  }
-                ]
+                "sections": sections
               }
             }
           ]

@@ -64,6 +64,19 @@ async function readBody(req) {
 
 const clean = (value, max) => String(value == null ? '' : value).replace(/[\u0000-\u001f\u007f]+/g, ' ').trim().slice(0, max);
 
+const cleanMultiline = (value, max) => String(value == null ? '' : value)
+  .replace(/[\u0000-\u0009\u000b\u000c\u000e-\u001f\u007f]+/g, ' ')
+  .replace(/\r\n|\r/g, '\n')
+  .trim()
+  .slice(0, max);
+
+function escapeChatHtml(str) {
+  return String(str || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+}
+
 async function handler(req, res) {
   if (req.method !== 'POST') {
     res.setHeader('Allow', 'POST');
@@ -86,7 +99,7 @@ async function handler(req, res) {
     email: clean(body.email, 160),
     phone: clean(body.phone, 40),
     budget: clean(body.budget, 60),
-    message: clean(body.message || body.details, 1500),
+    message: cleanMultiline(body.message || body.details, 1500),
     service: clean(body.service, 80),
     city: clean(body.city, 60),
     page: clean(body.page, 200),
@@ -115,21 +128,23 @@ async function handler(req, res) {
     return send(res, 503, { ok: false, fallback: true });
   }
 
-  const fields = [
+  const contactFields = [
     ['Name', lead.name],
     ['Email', lead.email],
     ['Phone', lead.phone],
     ['Service', lead.service],
     ['City', lead.city],
     ['Budget', lead.budget],
-    ...Object.entries(lead.extras).map(([k, v]) => [k.replace(/_/g, ' '), v]),
-    ['Message', lead.message]
+    ...Object.entries(lead.extras).map(([k, v]) => [k.replace(/_/g, ' '), v])
   ].filter(([, v]) => v);
+
+  const allFields = [...contactFields, ...(lead.message ? [['Message', lead.message]] : [])];
 
   const title = `New ${lead.service || 'project'} enquiry${lead.city ? ' (' + lead.city + ')' : ''}`;
 
   // Google Chat Card and Fallback Text
   const googleCardMessage = {
+    text: `🎯 *${title}*\n*From:* ${lead.name} (${lead.email})${lead.phone ? ' | ' + lead.phone : ''}\n${lead.message ? '*Message:*\n' + lead.message : ''}`.trim(),
     cardsV2: [{
       cardId: 'siteLead',
       card: {
@@ -139,12 +154,32 @@ async function handler(req, res) {
           imageUrl: 'https://niharrout.com/assets/nihar.jpg',
           imageType: 'CIRCLE'
         },
-        sections: [{ widgets: fields.map(([label, text]) => ({ decoratedText: { topLabel: label, text } })) }]
+        sections: [
+          {
+            widgets: contactFields.map(([label, text]) => ({
+              decoratedText: {
+                topLabel: label,
+                text: escapeChatHtml(text),
+                wrapText: true
+              }
+            }))
+          },
+          ...(lead.message ? [{
+            header: 'Project Details / Message',
+            widgets: [
+              {
+                textParagraph: {
+                  text: escapeChatHtml(lead.message).replace(/\n/g, '<br>')
+                }
+              }
+            ]
+          }] : [])
+        ]
       }
     }]
   };
   const googleTextMessage = {
-    text: [`*${title}*`, ...fields.map(([label, value]) => `${label}: ${value}`), lead.page && `Page: https://niharrout.com${lead.page}`].filter(Boolean).join('\n')
+    text: [`*${title}*`, ...allFields.map(([label, value]) => `${label}: ${value}`), lead.page && `Page: https://niharrout.com${lead.page}`].filter(Boolean).join('\n')
   };
 
   // Slack Block Kit Message
