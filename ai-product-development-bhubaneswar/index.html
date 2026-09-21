@@ -41,1297 +41,327 @@
   <!-- Fonts: Manrope -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/aos.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap">
   <link rel="stylesheet" href="/assets/design-system.css">
-
-  <style>
-    /* ================= DESIGN SYSTEM TOKENS ================= */
-    :root {
-      --bg: #fcfcfa;
-      --bg-alt: #f8f5ee;
-      --bg-card: #FFFFFF;
-      --surface: #ffffff;
-      --surface-subtle: #f8f5ee;
-      
-      /* Typography Colors */
-      --ink: #1f1f1f;
-      --ink-soft: rgba(0, 0, 0, 0.68);
-      --ink-faint: rgba(0, 0, 0, 0.48);
-      --ink-muted: rgba(0, 0, 0, 0.38);
-      --line: rgba(0, 0, 0, 0.08);
-      --line-subtle: rgba(17, 24, 39, 0.04);
-      --line-focus: #111827;
-      
-      /* Accents */
-      --accent: #ff4800;
-      --accent-deep: #E04818;
-      --accent-tint: #fcece6;
-      --accent-border: rgba(255, 72, 0, 0.25);
-      --emerald: #0DA868;
-      --emerald-dark: #059669;
-      --emerald-tint: #E7F8F0;
-      --emerald-border: #B3EBD3;
-      
-      --ocean: #FF5F2D;
-      --ocean-tint: #EEF2FF;
-      
-      /* Diffused Natural Shadows */
-      --shadow-sm: 0 1px 2px rgba(17, 24, 39, 0.04);
-      --shadow-card: 0 8px 24px -6px rgba(17, 24, 39, 0.04), 0 2px 6px rgba(17, 24, 39, 0.02);
-      --shadow-hover: 0 16px 36px -8px rgba(17, 24, 39, 0.08), 0 4px 12px rgba(17, 24, 39, 0.03);
-      --shadow-hero: 0 24px 48px -12px rgba(17, 24, 39, 0.08);
-      
-      --maxw: 1180px;
-      --measure: 64ch;
-      --r-lg: 18px;
-      --r-md: 12px;
-      --r-pill: 9999px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      background-color: var(--bg);
-    }
-
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--ink-soft);
-      font-family: "Manrope", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      font-size: 16.5px;
-      line-height: 1.68;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-      padding-top: 72px;
-    }
-
-    .wrap {
-      max-width: var(--maxw);
-      margin: 0 auto;
-      padding: 0 28px;
-    }
-
-    section {
-      padding: clamp(72px, 8.5vw, 115px) 0;
-      position: relative;
-    }
-
-    a {
-      color: inherit;
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-      font-family: "Manrope", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      font-weight: 700;
-      color: var(--ink);
-      margin: 0;
-      text-wrap: balance;
-      letter-spacing: -0.03em;
-    }
-
-    p {
-      margin: 0;
-    }
-
-
-
-    /* ================= BUTTONS & PILLS ================= */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      font-family: inherit;
-      font-size: 15px;
-      font-weight: 600;
-      text-decoration: none;
-      border-radius: var(--r-pill);
-      padding: 13px 28px;
-      line-height: 1.2;
-      cursor: pointer;
-      border: 1px solid transparent;
-      transition: all .25s cubic-bezier(0.165, 0.84, 0.44, 1);
-      white-space: nowrap;
-    }
-
-    .btn-primary {
-      background: var(--ink);
-      color: #FFFFFF;
-      border-color: var(--ink);
-      box-shadow: 0 4px 14px rgba(24, 23, 22, 0.12);
-    }
-
-    .btn-primary:hover {
-      background: #302E2B;
-      border-color: #302E2B;
-      color: #FFFFFF;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(24, 23, 22, 0.18);
-    }
-
-    .eyebrow-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 14px;
-      border-radius: var(--r-pill);
-      background: var(--accent-tint);
-      border: 1px solid var(--accent-border);
-      color: var(--accent-deep);
-      font-size: 12.5px;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      margin-bottom: 18px;
-    }
-
-    .eyebrow-pill .dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--accent);
-      display: inline-block;
-    }
-
-    .sub {
-      color: var(--ink-soft);
-      font-size: 18px;
-      line-height: 1.65;
-      max-width: var(--measure);
-    }
-
-    /* ================= NAV ================= */
-    header.nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 72px;
-      z-index: 100;
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(226, 232, 240, 0.7);
-      transition: all 0.3s ease;
-    }
-
-    .nav-inner {
-      max-width: var(--maxw);
-      margin: 0 auto;
-      padding: 0 24px;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .brand {
-      font-family: "Manrope", sans-serif;
-      font-weight: 800;
-      font-size: 21px;
-      letter-spacing: -.03em;
-      text-decoration: none;
-      color: var(--ink);
-    }
-
-    .brand .d {
-      color: var(--accent);
-    }
-
-    .nav-desktop {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-    }
-
-    @media (max-width: 920px) {
-      .nav-desktop {
-        display: none;
-      }
-    }
-
-    .nav-desktop a.lnk {
-      font-size: 14.5px;
-      font-weight: 500;
-      color: var(--ink-soft);
-      text-decoration: none;
-      transition: color .2s;
-    }
-
-    .nav-desktop a.lnk:hover {
-      color: var(--ink);
-    }
-
-    .nav-toggle {
-      display: none;
-      background: none;
-      border: none;
-      width: 36px;
-      height: 36px;
-      cursor: pointer;
-      padding: 0;
-    }
-
-    @media (max-width: 920px) {
-      .nav-toggle {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 5px;
-      }
-    }
-
-    .nav-toggle .line {
-      width: 20px;
-      height: 2px;
-      background: var(--ink);
-      transition: all 0.3s ease;
-      border-radius: 2px;
-    }
-
-    .nav-toggle.open .line-1 {
-      transform: translateY(7px) rotate(45deg);
-    }
-    .nav-toggle.open .line-2 {
-      opacity: 0;
-    }
-    .nav-toggle.open .line-3 {
-      transform: translateY(-7px) rotate(-45deg);
-    }
-
-    .mobile-drawer {
-      position: fixed;
-      top: 72px;
-      left: 0;
-      right: 0;
-      background: #FFFFFF;
-      border-bottom: 1px solid var(--line);
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      opacity: 0;
-      transform: translateY(-12px);
-      pointer-events: none;
-      transition: all 0.3s ease;
-      z-index: 95;
-      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
-    }
-
-    .mobile-drawer.open {
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: auto;
-    }
-
-    .drawer-links {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .drawer-lnk {
-      font-size: 16px;
-      font-weight: 600;
-      color: var(--ink);
-      text-decoration: none;
-    }
-
-    /* ================= HERO ================= */
-    .hero {
-      position: relative;
-      padding-top: clamp(64px, 8vw, 100px);
-      padding-bottom: clamp(64px, 8vw, 96px);
-      text-align: center;
-      background: #FFFFFF;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      top: -100px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 1000px;
-      height: 600px;
-      background: radial-gradient(circle at 50% 25%, rgba(139, 92, 246, 0.06) 0%, rgba(240, 103, 42, 0.03) 40%, transparent 70%);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .hero > .wrap {
-      position: relative;
-      z-index: 1;
-      max-width: 920px;
-    }
-
-    .hero h1 {
-      font-size: clamp(38px, 5.8vw, 60px);
-      line-height: 1.12;
-      font-weight: 800;
-      margin: 14px auto 0;
-      max-width: 18ch;
-      letter-spacing: -0.035em;
-      color: var(--ink);
-    }
-
-    .hero .pitch {
-      font-size: clamp(17px, 1.8vw, 19.5px);
-      color: var(--ink-soft);
-      max-width: 60ch;
-      margin: 20px auto 0;
-      line-height: 1.65;
-    }
-
-    .hero-cta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      justify-content: center;
-      margin-top: 36px;
-    }
-
-    /* Sleek Hero Ribbon */
-    .hero-stats-ribbon {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      gap: 32px 48px;
-      margin-top: 54px;
-      padding: 24px 32px;
-      background: var(--bg-alt);
-      border-radius: var(--r-lg);
-      border: 1px solid var(--line-subtle);
-    }
-
-    @media (max-width: 680px) {
-      .hero-stats-ribbon {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 24px 20px;
-        padding: 20px;
-        text-align: left;
-      }
-    }
-
-    .stat-item {
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-    }
-
-    @media (max-width: 680px) {
-      .stat-item {
-        text-align: left;
-      }
-    }
-
-    .stat-item .v {
-      font-size: 24px;
-      font-weight: 800;
-      color: var(--ink);
-      letter-spacing: -0.02em;
-      line-height: 1.2;
-    }
-
-    .stat-item .v .u {
-      color: var(--accent);
-      font-weight: 700;
-    }
-
-    .stat-item .k {
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--ink-faint);
-      margin-top: 4px;
-    }
-
-    /* ================= SECTION HEADINGS ================= */
-    .shead {
-      max-width: 780px;
-      margin-bottom: 48px;
-    }
-
-    .shead h2 {
-      font-size: clamp(28px, 3.8vw, 42px);
-      line-height: 1.15;
-      font-weight: 800;
-      margin-top: 12px;
-      letter-spacing: -0.03em;
-      color: var(--ink);
-    }
-
-    .shead .sub {
-      margin-top: 14px;
-      font-size: clamp(16px, 1.7vw, 18.5px);
-      line-height: 1.6;
-      color: var(--ink-soft);
-    }
-
-    .center {
-      margin-left: auto;
-      margin-right: auto;
-      text-align: center;
-    }
-
-    .center .eyebrow-pill {
-      justify-content: center;
-    }
-
-    .center .sub {
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* ================= CARDS & GRIDS ================= */
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    @media (max-width: 960px) {
-      .grid-3 {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 640px) {
-      .grid-3 {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .sleek-card {
-      background: #FFFFFF;
-      border: 1px solid var(--line);
-      border-radius: var(--r-lg);
-      padding: 30px;
-      box-shadow: var(--shadow-card);
-      transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .sleek-card:hover {
-      border-color: var(--line-focus);
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-hover);
-    }
-
-    .sleek-card .ic {
-      font-size: 24px;
-      margin-bottom: 16px;
-      display: inline-block;
-    }
-
-    .sleek-card h3 {
-      font-size: 19px;
-      font-weight: 700;
-      color: var(--ink);
-      line-height: 1.3;
-      margin-bottom: 10px;
-    }
-
-    .sleek-card p {
-      font-size: 14.5px;
-      color: var(--ink-soft);
-      line-height: 1.6;
-      margin-bottom: 18px;
-    }
-
-    .sleek-card .pills {
-      list-style: none;
-      padding: 0;
-      margin: auto 0 0;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-
-    .sleek-card .pills li {
-      font-size: 11.5px;
-      font-weight: 500;
-      color: var(--ink-soft);
-      background: var(--bg-alt);
-      border: 1px solid var(--line);
-      padding: 4px 9px;
-      border-radius: 6px;
-    }
-
-    /* ================= LOCAL SECTION ================= */
-    .local-section {
-      background: var(--bg-alt);
-    }
-
-    .local-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: clamp(32px, 5vw, 64px);
-      align-items: center;
-    }
-
-    @media (max-width: 880px) {
-      .local-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .local-box {
-      background: #FFFFFF;
-      border: 1px solid var(--line);
-      border-radius: var(--r-lg);
-      padding: clamp(28px, 4vw, 36px);
-      box-shadow: var(--shadow-card);
-    }
-
-    .hub-list {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-top: 22px;
-    }
-
-    @media (max-width: 520px) {
-      .hub-list {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .hub-item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 13.5px;
-      font-weight: 600;
-      color: var(--ink);
-      background: #FFFFFF;
-      border: 1px solid var(--line);
-      padding: 9px 12px;
-      border-radius: 8px;
-    }
-
-    .hub-item::before {
-      content: "📍";
-      font-size: 12px;
-    }
-
-    /* ================= TECH GRID ================= */
-    .tech-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-    }
-
-    @media (max-width: 960px) {
-      .tech-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 480px) {
-      .tech-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .tech-box {
-      background: #FFFFFF;
-      border: 1px solid var(--line);
-      border-radius: var(--r-lg);
-      padding: 24px;
-      box-shadow: var(--shadow-card);
-    }
-
-    .tech-box h4 {
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--ink);
-      margin-bottom: 14px;
-      padding-bottom: 8px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .tech-list {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .tech-list span {
-      font-size: 13px;
-      color: var(--ink-soft);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .tech-list span::before {
-      content: "•";
-      color: var(--accent);
-      font-size: 16px;
-      line-height: 0;
-    }
-
-    /* ================= PROCESS STEPS ================= */
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-    }
-
-    @media (max-width: 860px) {
-      .steps-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 520px) {
-      .steps-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .step-card {
-      background: #FFFFFF;
-      border: 1px solid var(--line);
-      border-radius: var(--r-lg);
-      padding: 28px;
-      box-shadow: var(--shadow-card);
-      transition: all 0.3s ease;
-    }
-
-    .step-card:hover {
-      border-color: var(--line-focus);
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-hover);
-    }
-
-    .step-num {
-      font-size: 12.5px;
-      font-weight: 700;
-      color: var(--accent);
-      background: var(--accent-tint);
-      border: 1px solid var(--accent-border);
-      padding: 4px 10px;
-      border-radius: var(--r-pill);
-      display: inline-block;
-      margin-bottom: 14px;
-      font-family: "JetBrains Mono", monospace;
-    }
-
-    .step-card h3 {
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--ink);
-      margin-bottom: 8px;
-    }
-
-    .step-card p {
-      font-size: 14px;
-      color: var(--ink-soft);
-      line-height: 1.55;
-    }
-
-    /* ================= FAQ ================= */
-    .faq-grid {
-      display: grid;
-      grid-template-columns: 0.8fr 1.2fr;
-      gap: clamp(28px, 4vw, 56px);
-      align-items: start;
-    }
-
-    @media (max-width: 820px) {
-      .faq-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    details.q {
-      background: #FFFFFF;
-      border-bottom: 1px solid var(--line);
-      transition: all 0.2s ease;
-    }
-
-    details.q summary {
-      list-style: none;
-      cursor: pointer;
-      padding: 18px 0;
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      align-items: center;
-      font-size: 16.5px;
-      font-weight: 700;
-      color: var(--ink);
-    }
-
-    details.q summary::-webkit-details-marker {
-      display: none;
-    }
-
-    details.q .ans {
-      padding: 0 0 20px;
-      color: var(--ink-soft);
-      font-size: 15px;
-      line-height: 1.65;
-    }
-
-    /* ================= LEAD ESTIMATE / CONSULT BOX ================= */
-    .lead-section {
-      background: var(--bg-alt);
-    }
-
-    .lead-box {
-      background: #FFFFFF;
-      border: 1px solid var(--line);
-      border-radius: var(--r-lg);
-      padding: clamp(32px, 5vw, 48px);
-      box-shadow: var(--shadow-card);
-    }
-
-    .lead-grid {
-      display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
-      gap: clamp(32px, 5vw, 56px);
-      align-items: start;
-      margin-top: 32px;
-    }
-
-    @media (max-width: 880px) {
-      .lead-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .lead-perks {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .perk-item {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      font-size: 14.5px;
-      color: var(--ink-soft);
-    }
-
-    .perk-item .ck {
-      flex: none;
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      background: var(--emerald-tint);
-      color: var(--emerald-dark);
-      border: 1px solid var(--emerald-border);
-      display: grid;
-      place-items: center;
-      font-size: 11px;
-      font-weight: 800;
-    }
-
-    .cform-card {
-      background: var(--bg-alt);
-      border: 1px solid var(--line);
-      border-radius: var(--r-md);
-      padding: clamp(24px, 3vw, 32px);
-    }
-
-    .form-group {
-      margin-bottom: 14px;
-    }
-
-    .form-group label {
-      display: block;
-      font-size: 12.5px;
-      font-weight: 600;
-      color: var(--ink);
-      margin-bottom: 6px;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%;
-      background: #FFFFFF;
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      padding: 12px 14px;
-      color: var(--ink);
-      font-family: inherit;
-      font-size: 14.5px;
-      transition: all 0.2s ease;
-    }
-
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(240, 103, 42, 0.1);
-    }
-
-    /* ================= FOOTER ================= */
-    footer.ft {
-      background: #FFFFFF;
-      border-top: 1px solid var(--line);
-      padding: 60px 0 32px;
-    }
-
-    .ft-grid {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr;
-      gap: 36px;
-    }
-
-    @media (max-width: 760px) {
-      .ft-grid {
-        grid-template-columns: 1fr;
-        gap: 28px;
-      }
-    }
-
-    .ft-brand {
-      font-family: "Manrope", sans-serif;
-      font-weight: 800;
-      font-size: 22px;
-      letter-spacing: -.03em;
-      color: var(--ink);
-    }
-
-    .ft-brand .d {
-      color: var(--accent);
-    }
-
-    .ft-desc {
-      color: var(--ink-soft);
-      font-size: 14px;
-      margin-top: 10px;
-      max-width: 36ch;
-      line-height: 1.6;
-    }
-
-    .ft h4 {
-      font-size: 12px;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-      color: var(--ink);
-      font-weight: 700;
-      margin: 0 0 14px;
-    }
-
-    .ft-links {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .ft-links a {
-      color: var(--ink-soft);
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 500;
-      transition: color .2s;
-    }
-
-    .ft-links a:hover {
-      color: var(--accent);
-    }
-
-    .ft-bottom {
-      margin-top: 44px;
-      padding-top: 20px;
-      border-top: 1px solid var(--line-subtle);
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 12px;
-      align-items: center;
-      font-size: 13px;
-      color: var(--ink-faint);
-    }
-  </style>
+  <link rel="stylesheet" href="/assets/editorial.css?v=3">
+
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+  <link rel="stylesheet" href="/assets/chrome.css?v=1">
+  <script src="/assets/chrome.js?v=1" defer></script>
 </head>
 
-<body>
-  <!-- ================= NAV ================= -->
-  <header class="nav" id="nav">
-    <div class="nav-inner">
-      <a href="/" class="brand">nihar<span class="d">.</span></a>
+<body class="ed-page">
+<!-- chrome:header -->
+<header class="sc-header" id="site-header">
+  <div class="sc-wrap sc-bar">
+    <a class="sc-brand" href="/" aria-label="Nihar Ranjan Rout, home">
+      <img src="/assets/nihar-avatar.jpg" alt="" width="36" height="36" decoding="async">
+      <span class="sc-brand-text">nihar<span class="sc-dot">.</span></span>
+    </a>
 
-      <div class="nav-desktop">
-        <a href="#services" class="lnk">AI Services</a>
-        <a href="#hubs" class="lnk">Bhubaneswar Hubs</a>
-        <a href="#models" class="lnk">AI Stack</a>
-        <a href="#process" class="lnk">Playbook</a>
-        <a href="#faq" class="lnk">FAQ</a>
-      </div>
+    <nav class="sc-nav" aria-label="Primary">
+      <ul class="sc-links">
+        <li class="sc-item sc-has-menu">
+          <a class="sc-link" href="/services">Services</a>
+          <button class="sc-toggle" type="button" aria-expanded="false" aria-label="Show services menu"><svg viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="sc-menu">
+            <a href="/services/mobile-app-development"><strong>Mobile Application Development</strong><span>React Native, Flutter, Swift and Kotlin</span></a>
+            <a href="/services/custom-software-development"><strong>Custom Software &amp; ERP</strong><span>Enterprise operations and multi-tenant SaaS</span></a>
+            <a href="/services/ai-product-development"><strong>AI Product Development</strong><span>RAG pipelines and task agents</span></a>
+            <a href="/services/product-strategy-prd"><strong>Product Strategy &amp; PRDs</strong><span>Scope, roadmaps and clickable prototypes</span></a>
+            <a class="sc-menu-all" href="/services">All services &rarr;</a>
+          </div>
+        </li>
+        <li class="sc-item sc-has-menu">
+          <a class="sc-link" href="/#portfolio">Work</a>
+          <button class="sc-toggle" type="button" aria-expanded="false" aria-label="Show work menu"><svg viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="sc-menu">
+            <a href="/work/custom-erp-manufacturing"><strong>Custom ERP for Manufacturing</strong><span>Four departments, one system</span></a>
+            <a href="/work/sky1-event-booking"><strong>Sky1 Event Booking</strong><span>Venues and vendors in one booking flow</span></a>
+            <a href="/work/make-my-look"><strong>Make My Look</strong><span>On-demand beauty and salon booking</span></a>
+            <a href="/work/flashnow"><strong>FlashNow</strong><span>Quick commerce on local shops</span></a>
+            <a href="/work/skribe"><strong>Skribe</strong><span>One chat layer across team tools</span></a>
+          </div>
+        </li>
+        <li class="sc-item sc-has-menu">
+          <a class="sc-link" href="/blog">Insights</a>
+          <button class="sc-toggle" type="button" aria-expanded="false" aria-label="Show insights menu"><svg viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="sc-menu">
+            <a href="/blog"><strong>Blog &amp; Playbooks</strong><span>Guides on MVPs, ERP, mobile and AI</span></a>
+            <a href="/project-costs"><strong>Project Costs Guide</strong><span>What production software typically costs</span></a>
+            <a href="/b2b-software-development-for-startups"><strong>B2B Startup Playbook</strong><span>Working with a remote-first product team</span></a>
+            <a href="/technology"><strong>Technology Stack</strong><span>The tools we build with</span></a>
+          </div>
+        </li>
+        <li class="sc-item sc-has-menu">
+          <a class="sc-link" href="/tools">Tools</a>
+          <button class="sc-toggle" type="button" aria-expanded="false" aria-label="Show tools menu"><svg viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="sc-menu">
+            <a href="/tools/app-cost-calculator"><strong>App Cost Calculator</strong><span>Realistic build budgets and timelines</span></a>
+            <a href="/tools/startup-name-generator"><strong>Startup Name Generator</strong><span>Pin keywords, generate brandable names</span></a>
+            <a class="sc-menu-all" href="/tools">All tools &rarr;</a>
+          </div>
+        </li>
+        <li class="sc-item"><a class="sc-link" href="/about">About</a></li>
+      </ul>
+    </nav>
 
-      <div class="nav-actions">
-        <a href="#ai-consult" class="btn btn-primary" style="padding:9px 18px; font-size:13.5px;">Audit AI Project <span class="arw">→</span></a>
-
-        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-          <span class="line line-1"></span>
-          <span class="line line-2"></span>
-          <span class="line line-3"></span>
-        </button>
-      </div>
+    <div class="sc-actions">
+      <a class="sc-cta" href="https://calendly.com/creuto/meet" data-calendly="true">Book a Call</a>
+      <button class="sc-burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="sc-drawer"><span></span><span></span><span></span></button>
     </div>
+  </div>
 
-    <div class="mobile-drawer" id="mobileDrawer">
-      <nav class="drawer-links">
-        <a href="/" class="drawer-lnk">← Back to Main Portfolio</a>
-        <a href="#services" class="drawer-lnk">AI Services</a>
-        <a href="#hubs" class="drawer-lnk">Bhubaneswar Hubs</a>
-        <a href="#models" class="drawer-lnk">AI Stack</a>
-        <a href="#process" class="drawer-lnk">Playbook</a>
-        <a href="#faq" class="drawer-lnk">FAQ</a>
-        <a href="#ai-consult" class="btn btn-primary">Audit AI Project <span class="arw">→</span></a>
-      </nav>
+  <div class="sc-drawer" id="sc-drawer" hidden>
+    <div class="sc-wrap">
+      <p class="sc-drawer-label">Services</p>
+      <a href="/services/mobile-app-development">Mobile Application Development</a>
+      <a href="/services/custom-software-development">Custom Software &amp; ERP</a>
+      <a href="/services/ai-product-development">AI Product Development</a>
+      <a href="/services/product-strategy-prd">Product Strategy &amp; PRDs</a>
+      <p class="sc-drawer-label">Work</p>
+      <a href="/work/custom-erp-manufacturing">Custom ERP for Manufacturing</a>
+      <a href="/work/sky1-event-booking">Sky1 Event Booking</a>
+      <a href="/work/make-my-look">Make My Look</a>
+      <a href="/work/flashnow">FlashNow</a>
+      <a href="/work/skribe">Skribe</a>
+      <p class="sc-drawer-label">Insights</p>
+      <a href="/blog">Blog &amp; Playbooks</a>
+      <a href="/project-costs">Project Costs Guide</a>
+      <a href="/b2b-software-development-for-startups">B2B Startup Playbook</a>
+      <a href="/technology">Technology Stack</a>
+      <p class="sc-drawer-label">Tools</p>
+      <a href="/tools/app-cost-calculator">App Cost Calculator</a>
+      <a href="/tools/startup-name-generator">Startup Name Generator</a>
+      <p class="sc-drawer-label">Company</p>
+      <a href="/about">About</a>
+      <a class="sc-drawer-cta" href="https://calendly.com/creuto/meet" data-calendly="true">Book a Call</a>
     </div>
-  </header>
+  </div>
+</header>
+<!-- /chrome:header -->
 
   <main id="top">
-
     <!-- ================= HERO ================= -->
-    <section class="hero" id="hero">
+    <section class="ed-pagehero" id="hero">
       <div class="wrap">
-        <div>
-          <span class="eyebrow-pill"><span class="dot"></span> AI Engineering &amp; Custom LLM Solutions · Infocity, Bhubaneswar</span>
+        <div class="ed-hero ed-hero-flip">
+          <div class="ed-hero-copy">
+            <p class="ed-label">AI Engineering &amp; Custom LLM Solutions · Infocity, Bhubaneswar</p>
+            <h1 class="ed-page-title">AI Product Development Company in Bhubaneswar</h1>
+            <p class="ed-lede">We architect and deploy production-grade Generative AI software, custom LLM pipelines, autonomous multi-agent workflows, and enterprise RAG systems for ambitious startups and businesses in Bhubaneswar, Odisha and globally.</p>
+            <div class="hero-ctas"><a href="#ai-consult" class="cl-button -primary">Book Free AI Feasibility Audit <span>&rarr;</span></a><a href="#services" class="cl-button -secondary">Explore Capabilities</a></div>
+          </div>
+          <figure class="ed-figure ed-figure-paper"><svg class="pipeline-diagram" viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="pd-title pd-desc" preserveAspectRatio="xMidYMid meet">
+  <title id="pd-title">How a question becomes an answer</title>
+  <desc id="pd-desc">Documents are split and indexed, the right passages are retrieved for the person asking, an answer is written with page citations, and risky answers go to a human for approval.</desc>
+  <rect width="640" height="360" fill="#f7f3ea"/>
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" fill="#6b665e" letter-spacing="0.6">
+    <text x="28" y="40">HOW A QUESTION BECOMES AN ANSWER</text>
+  </g>
+  <g fill="none" stroke="#1f1d1a" stroke-width="1.4">
+    <rect x="28" y="70" width="128" height="104" rx="3"/>
+    <rect x="176" y="70" width="128" height="104" rx="3"/>
+    <rect x="324" y="70" width="128" height="104" rx="3"/>
+    <rect x="472" y="70" width="140" height="104" rx="3"/>
+  </g>
+  <g stroke="#ff4800" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M158 122h16m-5-5 5 5-5 5"/>
+    <path d="M306 122h16m-5-5 5 5-5 5"/>
+    <path d="M454 122h16m-5-5 5 5-5 5"/>
+  </g>
+  <g font-family="'Plus Jakarta Sans', system-ui, sans-serif" fill="#1f1d1a">
+    <text x="42" y="98" font-size="12" font-weight="700" fill="#ff4800">1</text>
+    <text x="42" y="120" font-size="14" font-weight="700">Your documents</text>
+    <text x="42" y="140" font-size="12" fill="#6b665e">Contracts, manuals,</text>
+    <text x="42" y="156" font-size="12" fill="#6b665e">tickets, records</text>
+
+    <text x="190" y="98" font-size="12" font-weight="700" fill="#ff4800">2</text>
+    <text x="190" y="120" font-size="14" font-weight="700">Split and index</text>
+    <text x="190" y="140" font-size="12" fill="#6b665e">Small passages,</text>
+    <text x="190" y="156" font-size="12" fill="#6b665e">searchable by meaning</text>
+
+    <text x="338" y="98" font-size="12" font-weight="700" fill="#ff4800">3</text>
+    <text x="338" y="120" font-size="14" font-weight="700">Retrieve</text>
+    <text x="338" y="140" font-size="12" fill="#6b665e">Only what this person</text>
+    <text x="338" y="156" font-size="12" fill="#6b665e">is allowed to see</text>
+
+    <text x="486" y="98" font-size="12" font-weight="700" fill="#ff4800">4</text>
+    <text x="486" y="120" font-size="14" font-weight="700">Answer</text>
+    <text x="486" y="140" font-size="12" fill="#6b665e">Written with the page</text>
+    <text x="486" y="156" font-size="12" fill="#6b665e">it came from</text>
+  </g>
+  <g fill="none" stroke="#1f1d1a" stroke-width="1.2" stroke-dasharray="4 4">
+    <path d="M542 174v40"/>
+    <rect x="324" y="214" width="288" height="72" rx="3"/>
+  </g>
+  <g font-family="'Plus Jakarta Sans', system-ui, sans-serif" fill="#1f1d1a">
+    <text x="338" y="240" font-size="12" font-weight="700" fill="#ff4800">5</text>
+    <text x="338" y="260" font-size="14" font-weight="700">A person approves risky answers</text>
+    <text x="338" y="278" font-size="12" fill="#6b665e">Finance, health and legal stay checked</text>
+  </g>
+  <g font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="12" fill="#6b665e">
+    <text x="28" y="240">Before launch, we test it on</text>
+    <text x="28" y="258">your own real questions and</text>
+    <text x="28" y="276">only ship what passes.</text>
+  </g>
+  <g stroke="#1f1d1a" stroke-width="1.4" fill="none"><path d="M28 312h584"/></g>
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10.5" fill="#6b665e" letter-spacing="0.5">
+    <text x="28" y="334">PERMISSIONS  ·  CITATIONS  ·  SPEND LIMITS  ·  AUDIT LOG</text>
+  </g>
+</svg></figure>
         </div>
-
-        <h1>
-          AI Product Development Company in Bhubaneswar
-        </h1>
-
-        <p class="pitch">
-          We architect and deploy production-grade Generative AI software, custom LLM pipelines, autonomous multi-agent workflows, and enterprise RAG systems for ambitious startups and businesses in Bhubaneswar, Odisha and globally.
-        </p>
-
-        <div class="hero-cta">
-          <a href="#ai-consult" class="btn btn-primary">Book Free AI Feasibility Audit <span class="arw">→</span></a>
-          <a href="#solutions" class="btn btn-ghost">Explore Capabilities</a>
-        </div>
-
-        <div class="hero-stats-ribbon">
-          <div class="stat-item">
-            <div class="v">Custom<span class="u"> LLMs</span></div>
-            <div class="k">Fine-Tuned &amp; RAG</div>
-          </div>
-          <div class="stat-item">
-            <div class="v">Autonomous<span class="u"> Agents</span></div>
-            <div class="k">LangGraph &amp; CrewAI</div>
-          </div>
-          <div class="stat-item">
-            <div class="v">4-8<span class="u"> Wks</span></div>
-            <div class="k">Fast MVP Launch</div>
-          </div>
-          <div class="stat-item">
-            <div class="v">100<span class="u">%</span></div>
-            <div class="k">Production-Ready &amp; Private</div>
-          </div>
-        </div>
+        <dl class="ed-facts ed-facts-rule">
+          <div><dt>Custom LLMs</dt><dd>Fine-Tuned &amp; RAG</dd></div>
+          <div><dt>Autonomous Agents</dt><dd>LangGraph &amp; CrewAI</dd></div>
+          <div><dt>4-8 Wks</dt><dd>Fast MVP Launch</dd></div>
+          <div><dt>100%</dt><dd>Production-Ready &amp; Private</dd></div>
+        </dl>
       </div>
     </section>
 
-    <!-- ================= SERVICES / CAPABILITIES ================= -->
-    <section id="services">
+    <!-- ================= SERVICES ================= -->
+    <section class="ed-section" id="services">
       <div class="wrap">
-        <div class="shead center">
-          <span class="eyebrow-pill"><span class="dot"></span> Production AI Engineering</span>
-          <h2>AI Product Development Services in Bhubaneswar</h2>
-          <p class="sub">
-            From problem framing and data engineering to model evaluation, guardrail orchestration, and scalable cloud deployment.
-          </p>
-        </div>
-
-        <div class="grid-3">
-          <div class="sleek-card">
-            <span class="ic">🧠</span>
+        <header class="ed-head">
+          <p class="ed-label">Production AI Engineering</p>
+          <h2 class="section-title">AI Product Development Services in Bhubaneswar</h2>
+          <p>From problem framing and data engineering to model evaluation, guardrail orchestration, and scalable cloud deployment.</p>
+        </header>
+        <div class="cap-grid-6">
+          <div class="cap-card">
             <h3>Custom LLM Application Development</h3>
-            <p>
-              Domain-specific conversational systems, summarization pipelines, and intelligent automated workflows powered by OpenAI GPT-4o, Anthropic Claude 3.5, and Meta Llama 3 with prompt caching and deterministic controls.
-            </p>
-            <ul class="pills">
-              <li>GPT-4o &amp; Claude 3.5</li>
-              <li>Llama 3 / Mistral</li>
-              <li>Prompt Engineering</li>
-              <li>Structured Outputs</li>
-              <li>Cost Optimization</li>
-            </ul>
+            <p>Domain-specific conversational systems, summarization pipelines, and intelligent automated workflows powered by OpenAI GPT-4o, Anthropic Claude 3.5, and Meta Llama 3 with prompt caching and deterministic controls.</p>
+            <div class="cap-tags"><span class="cap-tag">GPT-4o &amp; Claude 3.5</span><span class="cap-tag">Llama 3 / Mistral</span><span class="cap-tag">Prompt Engineering</span><span class="cap-tag">Structured Outputs</span><span class="cap-tag">Cost Optimization</span></div>
           </div>
-
-          <div class="sleek-card">
-            <span class="ic">🤖</span>
+          <div class="cap-card">
             <h3>Autonomous AI Agents &amp; Tool Calling</h3>
-            <p>
-              Multi-agent systems that autonomously plan, research, query internal databases, execute API calls, and resolve complex multi-step workflows without constant human micro-management.
-            </p>
-            <ul class="pills">
-              <li>LangGraph</li>
-              <li>CrewAI</li>
-              <li>Function Calling</li>
-              <li>Self-Reflection Loops</li>
-              <li>Human-in-the-Loop</li>
-            </ul>
+            <p>Multi-agent systems that autonomously plan, research, query internal databases, execute API calls, and resolve complex multi-step workflows without constant human micro-management.</p>
+            <div class="cap-tags"><span class="cap-tag">LangGraph</span><span class="cap-tag">CrewAI</span><span class="cap-tag">Function Calling</span><span class="cap-tag">Self-Reflection Loops</span><span class="cap-tag">Human-in-the-Loop</span></div>
           </div>
-
-          <div class="sleek-card">
-            <span class="ic">📚</span>
+          <div class="cap-card">
             <h3>Enterprise Retrieval-Augmented Generation (RAG)</h3>
-            <p>
-              Grounded AI search engines that chat with your private knowledge bases (PDFs, Notion, SQL databases, Confluence, ERP). Hybrid keyword + vector semantic search with zero hallucination guarantee.
-            </p>
-            <ul class="pills">
-              <li>Pinecone / Qdrant</li>
-              <li>LlamaIndex</li>
-              <li>Chunking &amp; Reranking</li>
-              <li>pgvector</li>
-              <li>Citation Tracing</li>
-            </ul>
+            <p>Grounded AI search engines that chat with your private knowledge bases (PDFs, Notion, SQL databases, Confluence, ERP). Hybrid keyword + vector semantic search with zero hallucination guarantee.</p>
+            <div class="cap-tags"><span class="cap-tag">Pinecone / Qdrant</span><span class="cap-tag">LlamaIndex</span><span class="cap-tag">Chunking &amp; Reranking</span><span class="cap-tag">pgvector</span><span class="cap-tag">Citation Tracing</span></div>
           </div>
-
-          <div class="sleek-card">
-            <span class="ic">⚙️</span>
+          <div class="cap-card">
             <h3>Model Fine-Tuning &amp; Quantization</h3>
-            <p>
-              Custom weights adaptation using LoRA, QLoRA, and supervised fine-tuning (SFT) on your proprietary datasets. Run self-hosted, lightweight open-weight models on your own AWS/GCP servers with vLLM.
-            </p>
-            <ul class="pills">
-              <li>LoRA / QLoRA</li>
-              <li>vLLM Inference</li>
-              <li>Ollama</li>
-              <li>PyTorch</li>
-              <li>HuggingFace Hub</li>
-            </ul>
+            <p>Custom weights adaptation using LoRA, QLoRA, and supervised fine-tuning (SFT) on your proprietary datasets. Run self-hosted, lightweight open-weight models on your own AWS/GCP servers with vLLM.</p>
+            <div class="cap-tags"><span class="cap-tag">LoRA / QLoRA</span><span class="cap-tag">vLLM Inference</span><span class="cap-tag">Ollama</span><span class="cap-tag">PyTorch</span><span class="cap-tag">HuggingFace Hub</span></div>
           </div>
-
-          <div class="sleek-card">
-            <span class="ic">🚀</span>
+          <div class="cap-card">
             <h3>AI MVP Development for Startups</h3>
-            <p>
-              Launch your AI SaaS product in 4 to 8 weeks. We provide end-to-end product architecture, UI/UX frontend in Next.js/React, token metering, Stripe billing, and scalable vector pipelines.
-            </p>
-            <ul class="pills">
-              <li>FastAPI Backend</li>
-              <li>Next.js Frontend</li>
-              <li>Token Rate Limiting</li>
-              <li>Stripe Subscriptions</li>
-              <li>Analytics Dashboard</li>
-            </ul>
+            <p>Launch your AI SaaS product in 4 to 8 weeks. We provide end-to-end product architecture, UI/UX frontend in Next.js/React, token metering, Stripe billing, and scalable vector pipelines.</p>
+            <div class="cap-tags"><span class="cap-tag">FastAPI Backend</span><span class="cap-tag">Next.js Frontend</span><span class="cap-tag">Token Rate Limiting</span><span class="cap-tag">Stripe Subscriptions</span><span class="cap-tag">Analytics Dashboard</span></div>
           </div>
-
-          <div class="sleek-card">
-            <span class="ic">🛡️</span>
+          <div class="cap-card">
             <h3>AI Security, Privacy &amp; Guardrails</h3>
-            <p>
-              Hardened AI applications with automated PII masking, prompt injection defense, hallucination detectors, content moderation filters, and full compliance with enterprise security policies.
-            </p>
-            <ul class="pills">
-              <li>NeMo Guardrails</li>
-              <li>Llama Guard</li>
-              <li>PII Anonymization</li>
-              <li>Audit Trails</li>
-              <li>SOC2 Alignment</li>
-            </ul>
+            <p>Hardened AI applications with automated PII masking, prompt injection defense, hallucination detectors, content moderation filters, and full compliance with enterprise security policies.</p>
+            <div class="cap-tags"><span class="cap-tag">NeMo Guardrails</span><span class="cap-tag">Llama Guard</span><span class="cap-tag">PII Anonymization</span><span class="cap-tag">Audit Trails</span><span class="cap-tag">SOC2 Alignment</span></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ================= LOCAL BHUBANESWAR ADVANTAGE ================= -->
-    <section class="local-section" id="hubs">
-      <div class="wrap">
-        <div class="local-grid">
-          <div>
-            <span class="eyebrow-pill"><span class="dot"></span> Local AI Innovation Hub</span>
-            <h2>Why Bhubaneswar Companies Partner with Nihar &amp; Creuto</h2>
-            <p style="color:var(--ink-soft); margin-top:16px; font-size:16px;">
-              Bhubaneswar's tech corridor (Infocity, Patia, O-Hub, and STPI) is becoming a center of deep-tech innovation. We cut through the AI hype: instead of selling wrapper toys, we build robust software that integrates with your core database, automates real team hours, and delivers measurable ROI.
-            </p>
-
-            <div class="hub-list">
-              <div class="hub-item">Infocity Tech Corridor</div>
-              <div class="hub-item">Patia &amp; Chandrasekharpur</div>
-              <div class="hub-item">O-Hub &amp; Startup Odisha</div>
-              <div class="hub-item">KIIT-TBI &amp; SOA Incubators</div>
-              <div class="hub-item">Fortune Towers &amp; DLF Cybercity</div>
-              <div class="hub-item">Cuttack, Rourkela &amp; Global</div>
-            </div>
-
-            <div style="margin-top:28px;">
-              <a href="#ai-consult" class="btn btn-primary">Schedule In-Person / Virtual AI Audit <span class="arw">→</span></a>
-            </div>
-          </div>
-
-          <div class="local-box">
-            <h3 style="font-size:20px; margin-bottom:14px; font-weight:700;">The Product-First AI Methodology</h3>
-            <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:14px;">
-              <li style="display:flex; gap:12px; font-size:14.5px; color:var(--ink-soft);">
-                <span style="color:var(--emerald-dark); font-weight:bold;">✓</span>
-                <span><strong>No AI for AI's Sake:</strong> We run a feasibility assessment to determine whether an LLM, traditional ML, or deterministic heuristic algorithm is the fastest, cheapest solution.</span>
-              </li>
-              <li style="display:flex; gap:12px; font-size:14.5px; color:var(--ink-soft);">
-                <span style="color:var(--emerald-dark); font-weight:bold;">✓</span>
-                <span><strong>Zero Data Leakage / Full IP Ownership:</strong> Your internal knowledge bases and fine-tuned model artifacts remain your exclusive property.</span>
-              </li>
-              <li style="display:flex; gap:12px; font-size:14.5px; color:var(--ink-soft);">
-                <span style="color:var(--emerald-dark); font-weight:bold;">✓</span>
-                <span><strong>Cost &amp; Token Architecture:</strong> Intelligent semantic caching and prompt distillation to prevent runaway API bills.</span>
-              </li>
-              <li style="display:flex; gap:12px; font-size:14.5px; color:var(--ink-soft);">
-                <span style="color:var(--emerald-dark); font-weight:bold;">✓</span>
-                <span><strong>Production SLA &amp; Observability:</strong> Real-time latency tracking, token consumption logging, and LangSmith/Arize observability tracing.</span>
-              </li>
-            </ul>
-          </div>
+    <!-- ================= LOCAL ================= -->
+    <section class="ed-section why-alt" id="hubs">
+      <div class="wrap ed-split">
+        <div class="ed-split-head">
+          <p class="ed-label">Local AI Innovation Hub</p>
+          <h2 class="section-title">Why Bhubaneswar Companies Partner with Nihar &amp; Creuto</h2>
+          <p>Bhubaneswar's tech corridor (Infocity, Patia, O-Hub, and STPI) is becoming a center of deep-tech innovation. We cut through the AI hype: instead of selling wrapper toys, we build robust software that integrates with your core database, automates real team hours, and delivers measurable ROI.</p>
+          <ul class="ed-inline ed-inline-lg"><li>Infocity Tech Corridor</li><li>Patia &amp; Chandrasekharpur</li><li>O-Hub &amp; Startup Odisha</li><li>KIIT-TBI &amp; SOA Incubators</li><li>Fortune Towers &amp; DLF Cybercity</li><li>Cuttack, Rourkela &amp; Global</li></ul>
+          <p class="ed-cta-line"><a href="#ai-consult" class="ed-link">Schedule In-Person / Virtual AI Audit &rarr;</a></p>
+        </div>
+        <div>
+          <p class="ed-label">The Product-First AI Methodology</p>
+          <ol class="ed-list">
+          <li><span class="ed-num">01</span><div><h3>No AI for AI's Sake</h3><p>We run a feasibility assessment to determine whether an LLM, traditional ML, or deterministic heuristic algorithm is the fastest, cheapest solution.</p></div></li>
+          <li><span class="ed-num">02</span><div><h3>Zero Data Leakage / Full IP Ownership</h3><p>Your internal knowledge bases and fine-tuned model artifacts remain your exclusive property.</p></div></li>
+          <li><span class="ed-num">03</span><div><h3>Cost &amp; Token Architecture</h3><p>Intelligent semantic caching and prompt distillation to prevent runaway API bills.</p></div></li>
+          <li><span class="ed-num">04</span><div><h3>Production SLA &amp; Observability</h3><p>Real-time latency tracking, token consumption logging, and LangSmith/Arize observability tracing.</p></div></li>
+          </ol>
         </div>
       </div>
     </section>
 
-    <!-- ================= MODELS & TECH STACK ================= -->
-    <section id="models">
+    <!-- ================= TECHNOLOGY ================= -->
+    <section class="ed-section" id="models">
       <div class="wrap">
-        <div class="shead center">
-          <span class="eyebrow-pill"><span class="dot"></span> AI Engineering Stack</span>
-          <h2>Models, Frameworks &amp; Vector Databases</h2>
-          <p class="sub">
-            Battle-tested AI tech stack chosen for enterprise latency, throughput, cost-efficiency, and resilience.
-          </p>
-        </div>
-
-        <div class="tech-grid">
-          <div class="tech-box">
-            <h4>LLMs &amp; Foundational</h4>
-            <div class="tech-list">
-              <span>OpenAI GPT-4o &amp; o1</span>
-              <span>Claude 3.5 Sonnet / Opus</span>
-              <span>Meta Llama 3.1 (8B, 70B)</span>
-              <span>Mistral Large &amp; Codestral</span>
-            </div>
-          </div>
-
-          <div class="tech-box">
-            <h4>Agentic Frameworks</h4>
-            <div class="tech-list">
-              <span>LangChain &amp; LangGraph</span>
-              <span>LlamaIndex RAG Workflows</span>
-              <span>CrewAI Autonomous Teams</span>
-              <span>Instructor / Pydantic</span>
-            </div>
-          </div>
-
-          <div class="tech-box">
-            <h4>Vector DBs &amp; Search</h4>
-            <div class="tech-list">
-              <span>Pinecone &amp; Qdrant</span>
-              <span>pgvector (PostgreSQL)</span>
-              <span>Weaviate &amp; ChromaDB</span>
-              <span>Cohere Rerank 3</span>
-            </div>
-          </div>
-
-          <div class="tech-box">
-            <h4>Inference &amp; Cloud</h4>
-            <div class="tech-list">
-              <span>vLLM &amp; TGI Inference</span>
-              <span>FastAPI (Python 3.12)</span>
-              <span>AWS Bedrock &amp; SageMaker</span>
-              <span>LangSmith &amp; OpenTelemetry</span>
-            </div>
-          </div>
+        <header class="ed-head">
+          <p class="ed-label">AI Engineering Stack</p>
+          <h2 class="section-title">Models, Frameworks &amp; Vector Databases</h2>
+          <p>Battle-tested AI tech stack chosen for enterprise latency, throughput, cost-efficiency, and resilience.</p>
+        </header>
+        <div class="techstack-grid">
+          <div class="techstack-group"><h4>LLMs &amp; Foundational</h4><div class="techstack-pills"><span class="techstack-pill"><span>OpenAI GPT-4o &amp; o1</span></span><span class="techstack-pill"><span>Claude 3.5 Sonnet / Opus</span></span><span class="techstack-pill"><span>Meta Llama 3.1 (8B, 70B)</span></span><span class="techstack-pill"><span>Mistral Large &amp; Codestral</span></span></div></div>
+          <div class="techstack-group"><h4>Agentic Frameworks</h4><div class="techstack-pills"><span class="techstack-pill"><span>LangChain &amp; LangGraph</span></span><span class="techstack-pill"><span>LlamaIndex RAG Workflows</span></span><span class="techstack-pill"><span>CrewAI Autonomous Teams</span></span><span class="techstack-pill"><span>Instructor / Pydantic</span></span></div></div>
+          <div class="techstack-group"><h4>Vector DBs &amp; Search</h4><div class="techstack-pills"><span class="techstack-pill"><span>Pinecone &amp; Qdrant</span></span><span class="techstack-pill"><span>pgvector (PostgreSQL)</span></span><span class="techstack-pill"><span>Weaviate &amp; ChromaDB</span></span><span class="techstack-pill"><span>Cohere Rerank 3</span></span></div></div>
+          <div class="techstack-group"><h4>Inference &amp; Cloud</h4><div class="techstack-pills"><span class="techstack-pill"><span>vLLM &amp; TGI Inference</span></span><span class="techstack-pill"><span>FastAPI (Python 3.12)</span></span><span class="techstack-pill"><span>AWS Bedrock &amp; SageMaker</span></span><span class="techstack-pill"><span>LangSmith &amp; OpenTelemetry</span></span></div></div>
         </div>
       </div>
     </section>
 
     <!-- ================= PROCESS ================= -->
-    <section class="local-section" id="process">
+    <section class="ed-section why-alt" id="process">
       <div class="wrap">
-        <div class="shead center">
-          <span class="eyebrow-pill"><span class="dot"></span> Proven Execution</span>
-          <h2>Our 4-Step AI Product Engineering Playbook</h2>
-          <p class="sub">
-            How we take your AI concept from prompt experimentation to high-scale production reliability.
-          </p>
-        </div>
-
-        <div class="steps-grid">
-          <div class="step-card">
-            <span class="step-num">01</span>
-            <h3>Feasibility Audit &amp; PRD</h3>
-            <p>We analyze your proprietary data, evaluate benchmark accuracy goals, calculate expected inference cost per user, and write a crystal-clear technical PRD.</p>
-          </div>
-
-          <div class="step-card">
-            <span class="step-num">02</span>
-            <h3>Architecture &amp; Prototype</h3>
-            <p>We construct the data ingestion pipeline, implement vector chunking strategies, set up eval benchmarks, and demo a working MVP prototype within 2 weeks.</p>
-          </div>
-
-          <div class="step-card">
-            <span class="step-num">03</span>
-            <h3>Guardrails &amp; Accuracy</h3>
-            <p>We test edge cases, optimize prompts, implement semantic caching, add injection guardrails, and fine-tune models to reach 99%+ accuracy.</p>
-          </div>
-
-          <div class="step-card">
-            <span class="step-num">04</span>
-            <h3>Production Deployment</h3>
-            <p>We containerize your AI microservices, hook up token billing and latency observability, and deploy on resilient AWS/GCP cloud architecture.</p>
-          </div>
+        <header class="ed-head">
+          <p class="ed-label">Proven Execution</p>
+          <h2 class="section-title">Our 4-Step AI Product Engineering Playbook</h2>
+          <p>How we take your AI concept from prompt experimentation to high-scale production reliability.</p>
+        </header>
+        <div class="ed-index">
+          <article class="ed-row">
+            <div class="ed-row-title"><span class="ed-num">01</span><h3>Feasibility Audit &amp; PRD</h3></div>
+            <div class="ed-row-body"><p>We analyze your proprietary data, evaluate benchmark accuracy goals, calculate expected inference cost per user, and write a crystal-clear technical PRD.</p></div>
+          </article>
+          <article class="ed-row">
+            <div class="ed-row-title"><span class="ed-num">02</span><h3>Architecture &amp; Prototype</h3></div>
+            <div class="ed-row-body"><p>We construct the data ingestion pipeline, implement vector chunking strategies, set up eval benchmarks, and demo a working MVP prototype within 2 weeks.</p></div>
+          </article>
+          <article class="ed-row">
+            <div class="ed-row-title"><span class="ed-num">03</span><h3>Guardrails &amp; Accuracy</h3></div>
+            <div class="ed-row-body"><p>We test edge cases, optimize prompts, implement semantic caching, add injection guardrails, and fine-tune models to reach 99%+ accuracy.</p></div>
+          </article>
+          <article class="ed-row">
+            <div class="ed-row-title"><span class="ed-num">04</span><h3>Production Deployment</h3></div>
+            <div class="ed-row-body"><p>We containerize your AI microservices, hook up token billing and latency observability, and deploy on resilient AWS/GCP cloud architecture.</p></div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- ================= INDUSTRY USE CASES ================= -->
-    <section>
+    <!-- ================= SECTORS ================= -->
+    <section class="ed-section">
       <div class="wrap">
-        <div class="shead center">
-          <span class="eyebrow-pill"><span class="dot"></span> Real-World Applications</span>
-          <h2>AI Product Solutions Tailored for High Impact</h2>
-          <p class="sub">
-            Practical AI tools that automate manual operations and unlock net-new revenue streams.
-          </p>
-        </div>
-
-        <div class="grid-3">
-          <div class="sleek-card">
-            <span class="ic">⚖️</span>
+        <header class="ed-head">
+          <p class="ed-label">Real-World Applications</p>
+          <h2 class="section-title">AI Product Solutions Tailored for High Impact</h2>
+          <p>Practical AI tools that automate manual operations and unlock net-new revenue streams.</p>
+        </header>
+        <div class="cap-grid-6">
+          <div class="cap-card">
             <h3>LegalTech &amp; Contract Analysis</h3>
             <p>Autonomous clause extraction, multi-jurisdiction regulatory compliance checks, document redlining, and instant precedent cross-referencing.</p>
           </div>
-          <div class="sleek-card">
-            <span class="ic">🏥</span>
+          <div class="cap-card">
             <h3>Healthcare Clinical AI Copilots</h3>
             <p>Patient intake summarization, medical transcript parsing, diagnostic query assistance, and HIPAA-compliant doctor notes generation.</p>
           </div>
-          <div class="sleek-card">
-            <span class="ic">📊</span>
+          <div class="cap-card">
             <h3>FinTech Intelligence &amp; Risk AI</h3>
             <p>Automated balance sheet auditing, transaction anomaly detection, conversational SQL query engines, and predictive credit assessment.</p>
           </div>
-          <div class="sleek-card">
-            <span class="ic">🎧</span>
+          <div class="cap-card">
             <h3>Autonomous Customer Support Agents</h3>
             <p>Context-aware tier-1 &amp; tier-2 support agents that read order history, resolve tickets, process refunds, and escalate gracefully to humans.</p>
           </div>
-          <div class="sleek-card">
-            <span class="ic">🛒</span>
+          <div class="cap-card">
             <h3>E-Commerce Semantic Search &amp; Recs</h3>
             <p>Natural language search bars that understand intent ("red evening dress under 3000 for a winter party"), personalized cross-sell engines.</p>
           </div>
-          <div class="sleek-card">
-            <span class="ic">🏗️</span>
+          <div class="cap-card">
             <h3>Industrial &amp; Supply Chain Analytics</h3>
             <p>Predictive equipment maintenance, automated vendor invoice matching, inventory demand forecasting, and logistics routing intelligence.</p>
           </div>
@@ -1340,239 +370,132 @@
     </section>
 
     <!-- ================= FAQ ================= -->
-    <section id="faq">
+    <section class="ed-section" id="faq">
       <div class="wrap">
-        <div class="faq-grid">
-          <div>
-            <span class="eyebrow-pill"><span class="dot"></span> Frequently Asked Questions</span>
-            <h2>Common Questions on AI Product Development</h2>
-            <p style="color:var(--ink-soft); margin-top:14px; font-size:16px;">
-              Learn how we protect data confidentiality, control API expenses, and bring AI products to life in Bhubaneswar.
-            </p>
-            <div style="margin-top:24px;">
-              <a href="#ai-consult" class="btn btn-ghost">Have a Custom AI Query? Contact Us →</a>
+        <header class="ed-head">
+          <p class="ed-label">Frequently Asked Questions</p>
+          <h2 class="section-title">Common Questions on AI Product Development</h2>
+          <p>Learn how we protect data confidentiality, control API expenses, and bring AI products to life in Bhubaneswar.</p>
+        </header>
+        <div class="ed-faqs">
+          <details class="ed-faq" open><summary>How much does it cost to build a custom AI product or MVP in Bhubaneswar?</summary><div class="ed-faq-a">A production-ready AI MVP (such as an Enterprise RAG chatbot, custom document processing engine, or AI agent workflow) typically ranges between ₹2.5 Lakhs to ₹7 Lakhs ($3,000 - $8,500 USD). Large-scale enterprise AI software with custom fine-tuning, multi-agent pipelines, and multi-tenant billing ranges between ₹8 Lakhs to ₹20+ Lakhs. We offer fixed milestone pricing after an initial architecture review.</div></details>
+          <details class="ed-faq"><summary>How do you prevent hallucinations in generative AI systems?</summary><div class="ed-faq-a">We implement multi-stage verification: strictly grounded Retrieval-Augmented Generation (RAG) with citation mapping, low-temperature prompt constraints, Guardrails (NeMo &amp; LlamaGuard), and self-reflection loops where the model audits its own response against the retrieved source passages before displaying it to the user.</div></details>
+          <details class="ed-faq"><summary>Is my proprietary company data safe from training public models?</summary><div class="ed-faq-a">Yes. We strictly use enterprise API endpoints (OpenAI Enterprise, AWS Bedrock, Anthropic Claude Commercial) which legally guarantee that your data is never used to train foundational models. For highly sensitive requirements (banking, defense, healthcare), we deploy private, self-hosted open-weight models (Llama 3, Mistral) inside your own dedicated cloud VPC.</div></details>
+          <details class="ed-faq"><summary>How fast can we launch an AI MVP?</summary><div class="ed-faq-a">Most AI MVPs are scoped, designed, built, benchmarked, and deployed in 4 to 8 weeks. We leverage modular backend accelerators (FastAPI, LangGraph, Vector DB adapters) so you don't spend months reinventing the wheel.</div></details>
+          <details class="ed-faq"><summary>Can we meet in Bhubaneswar for an in-person AI discovery session?</summary><div class="ed-faq-a">Yes. We frequently meet founders, CTOs, and innovation heads across Bhubaneswar in Infocity, Patia, Chandrasekharpur, Jayadev Vihar, Saheed Nagar, and O-Hub. You can also book a virtual video session right away.</div></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ENQUIRY ================= -->
+    <section class="contact-section ed-section" id="ai-consult">
+      <div class="wrap">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <p class="ed-label">Build Intelligent Software</p>
+            <h2>Book a Free AI Feasibility &amp; Architecture Audit</h2>
+            <p>Share what you want to automate or build. We evaluate technical feasibility, model selection, token economics, and provide a clear PRD roadmap within 24 hours.</p>
+            <ul class="contact-points">
+              <li class="contact-point-item"><div class="contact-point-icon">–</div><div class="contact-point-text"><strong>Free 30-Min AI Feasibility Review:</strong><span>Identify the right model, vector strategy, and architectural trade-offs.</span></div></li>
+              <li class="contact-point-item"><div class="contact-point-icon">–</div><div class="contact-point-text"><strong>Standard NDA Included:</strong><span>Your business models, proprietary workflows, and data are protected with 100% confidentiality.</span></div></li>
+              <li class="contact-point-item"><div class="contact-point-icon">–</div><div class="contact-point-text"><strong>Token Cost &amp; Latency Modeling:</strong><span>Exact calculation of expected inference costs so there are no cloud bill surprises.</span></div></li>
+              <li class="contact-point-item"><div class="contact-point-icon">–</div><div class="contact-point-text"><strong>Bhubaneswar In-Person Leadership:</strong><span>Direct interaction with Nihar Ranjan Rout (AI Strategist &amp; Creuto Founder).</span></div></li>
+            </ul>
+            <div class="ed-contact-box">
+              <div>Direct contact</div>
+              <div>Email: <a href="mailto:me@niharrout.com">me@niharrout.com</a><br>Infocity &amp; Patia Tech Hub, Bhubaneswar, Odisha 751024</div>
             </div>
           </div>
-
-          <div>
-            <details class="q" open>
-              <summary>
-                <span>How much does it cost to build a custom AI product or MVP in Bhubaneswar?</span>
-                <span class="ic"></span>
-              </summary>
-              <div class="ans">
-                A production-ready AI MVP (such as an Enterprise RAG chatbot, custom document processing engine, or AI agent workflow) typically ranges between ₹2.5 Lakhs to ₹7 Lakhs ($3,000 - $8,500 USD). Large-scale enterprise AI software with custom fine-tuning, multi-agent pipelines, and multi-tenant billing ranges between ₹8 Lakhs to ₹20+ Lakhs. We offer fixed milestone pricing after an initial architecture review.
-              </div>
-            </details>
-
-            <details class="q">
-              <summary>
-                <span>How do you prevent hallucinations in generative AI systems?</span>
-                <span class="ic"></span>
-              </summary>
-              <div class="ans">
-                We implement multi-stage verification: strictly grounded Retrieval-Augmented Generation (RAG) with citation mapping, low-temperature prompt constraints, Guardrails (NeMo &amp; LlamaGuard), and self-reflection loops where the model audits its own response against the retrieved source passages before displaying it to the user.
-              </div>
-            </details>
-
-            <details class="q">
-              <summary>
-                <span>Is my proprietary company data safe from training public models?</span>
-                <span class="ic"></span>
-              </summary>
-              <div class="ans">
-                Yes. We strictly use enterprise API endpoints (OpenAI Enterprise, AWS Bedrock, Anthropic Claude Commercial) which legally guarantee that your data is never used to train foundational models. For highly sensitive requirements (banking, defense, healthcare), we deploy private, self-hosted open-weight models (Llama 3, Mistral) inside your own dedicated cloud VPC.
-              </div>
-            </details>
-
-            <details class="q">
-              <summary>
-                <span>How fast can we launch an AI MVP?</span>
-                <span class="ic"></span>
-              </summary>
-              <div class="ans">
-                Most AI MVPs are scoped, designed, built, benchmarked, and deployed in 4 to 8 weeks. We leverage modular backend accelerators (FastAPI, LangGraph, Vector DB adapters) so you don't spend months reinventing the wheel.
-              </div>
-            </details>
-
-            <details class="q">
-              <summary>
-                <span>Can we meet in Bhubaneswar for an in-person AI discovery session?</span>
-                <span class="ic"></span>
-              </summary>
-              <div class="ans">
-                Yes. We frequently meet founders, CTOs, and innovation heads across Bhubaneswar in Infocity, Patia, Chandrasekharpur, Jayadev Vihar, Saheed Nagar, and O-Hub. You can also book a virtual video session right away.
-              </div>
-            </details>
+          <div class="contact-card-box">
+            <form>
+              <input type="hidden" name="service" value="AI Product">
+              <input type="hidden" name="city" value="Bhubaneswar">
+              <div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;"><label>Leave this empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+                <div class="form-group"><label for="f-name">Your Name *</label><input class="form-input" id="f-name" type="text" name="name" placeholder="e.g. Soumya Ranjan" required></div>
+                <div class="form-group"><label for="f-phone">Phone Number *</label><input class="form-input" id="f-phone" type="tel" name="phone" placeholder="+91 98765 43210" required></div>
+                <div class="form-group"><label for="f-email">Work Email *</label><input class="form-input" id="f-email" type="email" name="email" placeholder="soumya@company.com" required></div>
+                <div class="form-group"><label for="f1">AI Solution Required</label><select class="form-select" id="f1" name="type"><option value="Custom LLM App / Chatbot">Custom LLM App / Chatbot</option><option value="Enterprise RAG on Company Documents">Enterprise RAG on Company Documents</option><option value="Autonomous AI Agents & Workflows">Autonomous AI Agents &amp; Workflows</option><option value="AI SaaS MVP from Scratch">AI SaaS MVP from Scratch</option><option value="Model Fine-Tuning / Private Hosting">Model Fine-Tuning / Private Hosting</option><option value="General AI Consulting / Strategy">General AI Consulting / Strategy</option></select></div>
+                <div class="form-group"><label for="f2">Estimated Budget Range</label><select class="form-select" id="f2" name="budget"><option value="₹2.5L - ₹5L ($3k - $6k)">₹2.5L - ₹5L ($3k - $6k)</option><option value="₹5L - ₹10L ($6k - $12k)">₹5L - ₹10L ($6k - $12k)</option><option value="₹10L - ₹25L+ ($12k - $30k+)">₹10L - ₹25L+ ($12k - $30k+)</option><option value="Enterprise / Undecided">Enterprise / Undecided</option></select></div>
+                <div class="form-group"><label for="f-details">Tell Us About Your AI Project &amp; Data Source</label><textarea class="form-textarea" id="f-details" name="details" placeholder="What task should the AI solve? What data do you have (PDFs, SQL, APIs)? Any specific models you prefer?" required></textarea></div>
+              <button type="submit" class="cl-button -primary" style="width:100%; justify-content:center;">Submit For Free AI Feasibility &amp; Estimate <span>&rarr;</span></button>
+              <p class="loc-form-note">100% Confidentiality &amp; NDA Assured · Response in 24 Hours</p>
+              <div class="loc-form-status" role="status" aria-live="polite"></div>
+            </form>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ================= LEAD ESTIMATE FORM ================= -->
-    <section class="lead-section" id="ai-consult">
+    <!-- ================= CLOSING CALL TO ACTION ================= -->
+    <section class="ed-cta">
       <div class="wrap">
-        <div class="lead-box">
-          <div class="shead">
-            <span class="eyebrow-pill"><span class="dot"></span> Build Intelligent Software</span>
-            <h2 style="font-size:clamp(28px, 3.8vw, 38px); margin-top:12px;">Book a Free AI Feasibility &amp; Architecture Audit</h2>
-            <p class="sub" style="margin-top:10px;">
-              Share what you want to automate or build. We evaluate technical feasibility, model selection, token economics, and provide a clear PRD roadmap within 24 hours.
-            </p>
-          </div>
-
-          <div class="lead-grid">
-            <div class="lead-perks">
-              <div class="perk-item">
-                <span class="ck">✓</span>
-                <div><strong>Free 30-Min AI Feasibility Review:</strong> Identify the right model, vector strategy, and architectural trade-offs.</div>
-              </div>
-              <div class="perk-item">
-                <span class="ck">✓</span>
-                <div><strong>Standard NDA Included:</strong> Your business models, proprietary workflows, and data are protected with 100% confidentiality.</div>
-              </div>
-              <div class="perk-item">
-                <span class="ck">✓</span>
-                <div><strong>Token Cost &amp; Latency Modeling:</strong> Exact calculation of expected inference costs so there are no cloud bill surprises.</div>
-              </div>
-              <div class="perk-item">
-                <span class="ck">✓</span>
-                <div><strong>Bhubaneswar In-Person Leadership:</strong> Direct interaction with Nihar Ranjan Rout (AI Strategist &amp; Creuto Founder).</div>
-              </div>
-
-              <div style="margin-top:20px; padding:18px; background:#FFFFFF; border-radius:12px; border:1px solid var(--line);">
-                <p style="font-size:14px; color:var(--ink-soft); margin:0; line-height:1.6;">
-                  <strong style="color:var(--ink);">Direct Founder Contact:</strong><br>
-                  📧 Email: <a href="mailto:me@niharrout.com" style="color:var(--accent); text-decoration:none; font-weight:600;">me@niharrout.com</a><br>
-                  📍 Location: Infocity &amp; Patia Tech Hub, Bhubaneswar, Odisha 751024
-                </p>
-              </div>
-            </div>
-
-            <div class="cform-card">
-              <form id="aiLeadForm">
-                <!-- Anti-spam honeypot field -->
-                <div style="display:none!important;visibility:hidden!important;opacity:0!important;position:absolute!important;left:-9999px!important;">
-                  <label for="ai_hp_user">Leave this empty</label>
-                  <input type="text" id="ai_hp_user" name="ai_hp_user" tabindex="-1" autocomplete="off">
-                </div>
-
-                <div class="form-group">
-                  <label for="aiName">Your Name *</label>
-                  <input type="text" id="aiName" name="name" placeholder="e.g. Soumya Ranjan" required>
-                </div>
-
-                <div class="form-group">
-                  <label for="aiPhone">Phone Number *</label>
-                  <input type="tel" id="aiPhone" name="phone" placeholder="+91 98765 43210" required>
-                </div>
-
-                <div class="form-group">
-                  <label for="aiEmail">Work Email *</label>
-                  <input type="email" id="aiEmail" name="email" placeholder="soumya@company.com" required>
-                </div>
-
-                <div class="form-group">
-                  <label for="aiType">AI Solution Required</label>
-                  <select id="aiType" name="type">
-                    <option value="Custom LLM App / Chatbot">Custom LLM App / Chatbot</option>
-                    <option value="Enterprise RAG on Company Documents">Enterprise RAG on Company Documents</option>
-                    <option value="Autonomous AI Agents & Workflows">Autonomous AI Agents &amp; Workflows</option>
-                    <option value="AI SaaS MVP from Scratch">AI SaaS MVP from Scratch</option>
-                    <option value="Model Fine-Tuning / Private Hosting">Model Fine-Tuning / Private Hosting</option>
-                    <option value="General AI Consulting / Strategy">General AI Consulting / Strategy</option>
-                  </select>
-                </div>
-
-                <div class="form-group">
-                  <label for="aiBudget">Estimated Budget Range</label>
-                  <select id="aiBudget" name="budget">
-                    <option value="₹2.5L - ₹5L ($3k - $6k)">₹2.5L - ₹5L ($3k - $6k)</option>
-                    <option value="₹5L - ₹10L ($6k - $12k)">₹5L - ₹10L ($6k - $12k)</option>
-                    <option value="₹10L - ₹25L+ ($12k - $30k+)">₹10L - ₹25L+ ($12k - $30k+)</option>
-                    <option value="Enterprise / Undecided">Enterprise / Undecided</option>
-                  </select>
-                </div>
-
-                <div class="form-group">
-                  <label for="aiDetails">Tell Us About Your AI Project &amp; Data Source</label>
-                  <textarea id="aiDetails" name="details" rows="3" placeholder="What task should the AI solve? What data do you have (PDFs, SQL, APIs)? Any specific models you prefer?" required></textarea>
-                </div>
-
-                <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; padding:13px;">
-                  Submit For Free AI Feasibility &amp; Estimate <span class="arw">→</span>
-                </button>
-                <div style="font-size:12px; color:var(--ink-faint); text-align:center; margin-top:12px;">
-                  🔒 100% Confidentiality &amp; NDA Assured · Response in 24 Hours
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    <!-- ================= FULL-BLEED CLOSING CTA BAND ================= -->
-    <section class="closing-cta-band">
-      <div class="closing-cta-inner">
         <h2>Ready to architect your AI product?</h2>
         <p>Book a dedicated discovery session with Nihar Ranjan Rout. Let's scope your architecture, models, and timeline.</p>
-        <a href="https://cal.com/niharrout/30min" target="_blank" rel="noopener" class="btn-closing-cta">
-          Book a Discovery Call
-          <span style="font-size:1.1rem; line-height:1;">→</span>
-        </a>
+        <a href="https://calendly.com/creuto/meet" data-calendly="true" class="cl-button -primary">Book a Discovery Call <span>&rarr;</span></a>
       </div>
     </section>
   </main>
 
-  <!-- ================= FOOTER ================= -->
-  <footer class="ft">
-    <div class="wrap">
-      <div class="ft-grid">
-        <div>
-          <span class="ft-brand">nihar<span class="d">.</span></span>
-          <p class="ft-desc">
-            Product strategist &amp; Founder of Creuto. Engineering growth-standard software, generative AI products, and enterprise applications built within budget.
-          </p>
-          <div style="margin-top:12px; font-size:13px; color:var(--ink-faint);">
-            📍 Bhubaneswar, Odisha, India · Global Delivery
-          </div>
-        </div>
-
-        <div>
-          <h4>Services &amp; Solutions</h4>
-          <div class="ft-links">
-            <a href="/b2b-software-development-for-startups">B2B Software for Startups</a>
-            <a href="/ai-product-development-bhubaneswar">AI Product Development Bhubaneswar</a>
-            <a href="/mobile-app-development-bhubaneswar">Mobile App Development Bhubaneswar</a>
-            <a href="https://creuto.com" target="_blank" rel="noopener">Creuto B2B Software Studio</a>
-          </div>
-        </div>
-
-        <div>
-          <h4>Direct Connect</h4>
-          <div class="ft-links">
-            <a href="mailto:me@niharrout.com">me@niharrout.com</a>
-            <a href="#ai-consult">Start an AI Consultation</a>
-            <a href="/privacy-policy">Privacy Policy</a>
-            <a href="/terms">Terms of Service</a>
-            <a href="https://www.linkedin.com/in/niharrout/" target="_blank" rel="noopener">LinkedIn Profile</a>
-          </div>
-        </div>
+<!-- chrome:footer -->
+<footer class="sc-footer">
+  <div class="sc-wrap">
+    <div class="sc-foot-grid">
+      <div class="sc-foot-brand">
+        <a class="sc-brand sc-brand-light" href="/" aria-label="Nihar Ranjan Rout, home">
+          <img src="/assets/nihar-avatar.jpg" alt="" width="36" height="36" loading="lazy" decoding="async">
+          <span class="sc-brand-text">nihar<span class="sc-dot">.</span></span>
+        </a>
+        <p>Founder &amp; CEO of Creuto. Product leader with 8+ years across product management, custom ERP systems, mobile applications, and B2B software engineering with a dedicated 100% in-house team.</p>
+        <p class="sc-foot-contact">Working with teams worldwide<br><a href="mailto:me@niharrout.com">me@niharrout.com</a></p>
       </div>
 
-      <div class="ft-bottom">
-        <div>© <span id="yr"></span> Nihar Ranjan Rout (Creuto). All rights reserved.</div>
-        <div style="display:flex; gap:12px;">
-          <a href="/privacy-policy" style="color:inherit; text-decoration:none;">Privacy</a>
-          <span>·</span>
-          <a href="/terms" style="color:inherit; text-decoration:none;">Terms</a>
-          <span>·</span>
-          <span>Bhubaneswar &amp; Remote</span>
-        </div>
+      <div class="sc-foot-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/services/mobile-app-development">Mobile App Development</a></li>
+          <li><a href="/services/custom-software-development">Custom Software &amp; ERP</a></li>
+          <li><a href="/services/ai-product-development">AI Product Development</a></li>
+          <li><a href="/services/product-strategy-prd">Product Strategy &amp; PRDs</a></li>
+        </ul>
+      </div>
+
+      <div class="sc-foot-col">
+        <h4>Work</h4>
+        <ul>
+          <li><a href="/work/custom-erp-manufacturing">Manufacturing ERP</a></li>
+          <li><a href="/work/sky1-event-booking">Sky1 Event Booking</a></li>
+          <li><a href="/work/make-my-look">Make My Look</a></li>
+          <li><a href="/work/flashnow">FlashNow</a></li>
+          <li><a href="/work/skribe">Skribe</a></li>
+        </ul>
+      </div>
+
+      <div class="sc-foot-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about">About Nihar &amp; Creuto</a></li>
+          <li><a href="/blog">Blog &amp; Playbooks</a></li>
+          <li><a href="/project-costs">Project Costs Guide</a></li>
+          <li><a href="/b2b-software-development-for-startups">B2B Startup Playbook</a></li>
+          <li><a href="/technology">Technology Stack</a></li>
+          <li><a href="/tools">Free Tools</a></li>
+          <li><a href="https://www.linkedin.com/in/iniharrout" target="_blank" rel="noopener">LinkedIn &nearr;</a></li>
+        </ul>
       </div>
     </div>
-  </footer>
 
-  <!-- ================= JSON-LD STRUCTURED DATA FOR BHUBANESWAR SEO ================= -->
+    <div class="sc-foot-bottom">
+      <div>&copy; <span id="yr" data-year>2026</span> Nihar Ranjan Rout &middot; Founder &amp; CEO, Creuto. All rights reserved.</div>
+      <div class="sc-foot-legal">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms">Terms of Service</a>
+        <a href="#top">Back to top &uarr;</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- /chrome:footer -->
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -1649,7 +572,6 @@
     }
   }
   </script>
-
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -1698,7 +620,6 @@
     ]
   }
   </script>
-
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -1720,139 +641,7 @@
   }
   </script>
 
-  <!-- ================= SCRIPTS ================= -->
-  <script>
-    document.getElementById('yr').textContent = new Date().getFullYear();
-
-    /* Mobile drawer toggle */
-    (function () {
-      var toggle = document.getElementById('navToggle');
-      var drawer = document.getElementById('mobileDrawer');
-      if (toggle && drawer) {
-        toggle.addEventListener('click', function (e) {
-          e.stopPropagation();
-          var isOpen = toggle.classList.toggle('open');
-          drawer.classList.toggle('open', isOpen);
-        });
-
-        var links = drawer.querySelectorAll('.drawer-lnk, .btn');
-        links.forEach(function (lnk) {
-          lnk.addEventListener('click', function () {
-            toggle.classList.remove('open');
-            drawer.classList.remove('open');
-          });
-        });
-
-        document.addEventListener('click', function (e) {
-          if (!drawer.contains(e.target) && !toggle.contains(e.target)) {
-            toggle.classList.remove('open');
-            drawer.classList.remove('open');
-          }
-        });
-      }
-    })();
-
-    /* Toast */
-    function showToast(message) {
-      var toast = document.createElement('div');
-      toast.className = 'toast';
-      toast.innerHTML = '<div style="width:22px;height:22px;border-radius:50%;background:var(--emerald-tint);color:var(--emerald-dark);display:grid;place-items:center;font-weight:bold;font-size:12px;">✓</div><div style="font-size:14px;font-weight:600;color:var(--ink);">' + message + '</div>';
-      document.body.appendChild(toast);
-      setTimeout(function () { toast.classList.add('show'); }, 10);
-      setTimeout(function () {
-        toast.classList.remove('show');
-        setTimeout(function () { toast.remove(); }, 400);
-      }, 4000);
-    }
-
-    /* Google Chat Webhook Integration */
-    var GOOGLE_CHAT_WEBHOOK_URL = 'https://chat.googleapis.com/v1/spaces/AAQAgcxp6nM/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=NYzpLArOTxnwEYuEzvw094eXwTbbpD_WZs2ugBGOH7U';
-
-    function sendToGoogleChat(payload, fallbackAction) {
-      if (!GOOGLE_CHAT_WEBHOOK_URL) {
-        fallbackAction();
-        return;
-      }
-      fetch(GOOGLE_CHAT_WEBHOOK_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      })
-      .then(function () {
-        showToast('Thank you! Your AI project enquiry has been submitted. We will contact you within 24 hours.');
-      })
-      .catch(function (err) {
-        console.error('Webhook error:', err);
-        showToast('Submitting via email client...');
-        setTimeout(fallbackAction, 1000);
-      });
-    }
-
-    /* Form Handler */
-    var form = document.getElementById('aiLeadForm');
-    if (form) {
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        var hp = form.querySelector('[name="ai_hp_user"]');
-        if (hp && hp.value.trim() !== '') {
-          console.warn('Spam filtered.');
-          showToast('Thank you! Your enquiry has been received.');
-          form.reset();
-          return;
-        }
-        var name = form.querySelector('[name="name"]').value.trim();
-        var phone = form.querySelector('[name="phone"]').value.trim();
-        var email = form.querySelector('[name="email"]').value.trim();
-        var type = form.querySelector('[name="type"]').value;
-        var budget = form.querySelector('[name="budget"]').value;
-        var details = form.querySelector('[name="details"]').value.trim();
-
-        var payload = {
-          "cardsV2": [
-            {
-              "cardId": "aiProductEnquiryBhubaneswar",
-              "card": {
-                "header": {
-                  "title": "🧠 New AI Product Lead (Bhubaneswar Page)",
-                  "subtitle": "Submitted via niharrout.com/ai-product-development-bhubaneswar.html",
-                  "imageUrl": "https://www.niharrout.com/assets/nihar.jpg",
-                  "imageType": "CIRCLE"
-                },
-                "sections": [
-                  {
-                    "widgets": [
-                      { "decoratedText": { "topLabel": "Lead Name", "text": name } },
-                      { "decoratedText": { "topLabel": "Phone", "text": phone } },
-                      { "decoratedText": { "topLabel": "Work Email", "text": email } },
-                      { "decoratedText": { "topLabel": "AI Solution Type", "text": type } },
-                      { "decoratedText": { "topLabel": "Budget Range", "text": budget } },
-                      { "decoratedText": { "topLabel": "Project & Data Details", "text": details } }
-                    ]
-                  }
-                ]
-              }
-            }
-          ]
-        };
-
-        var fallback = function () {
-          var body = 'AI Product Development Enquiry (Bhubaneswar)%0D%0A%0D%0AName: ' + encodeURIComponent(name)
-            + '%0D%0APhone: ' + encodeURIComponent(phone)
-            + '%0D%0AEmail: ' + encodeURIComponent(email)
-            + '%0D%0AType: ' + encodeURIComponent(type)
-            + '%0D%0ABudget: ' + encodeURIComponent(budget)
-            + '%0D%0ADetails:%0D%0A' + encodeURIComponent(details);
-          window.location.href = 'mailto:me@niharrout.com?subject=' + encodeURIComponent('AI Product Enquiry (Bhubaneswar) — ' + name) + '&body=' + body;
-        };
-
-        sendToGoogleChat(payload, fallback);
-        form.reset();
-      });
-    }
-  </script>
-  <script src="/assets/aos.js"></script>
-  <script src="/assets/site-enhancements.js"></script>
+  <script src="/assets/site-enhancements.js?v=serv2026_fix2"></script>
+  <script src="/assets/lead-forms.js?v=4"></script>
 </body>
-
 </html>

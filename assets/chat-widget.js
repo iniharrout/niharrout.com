@@ -538,7 +538,7 @@
         <div class="nihar-chat-header">
           <div class="nihar-chat-header-info">
             <div class="nihar-chat-avatar">
-              <img src="/assets/img/nihar-portrait-hero.jpg" alt="Nihar Ranjan Rout" onerror="this.style.display='none'; this.parentNode.textContent='NR';">
+              <img src="/assets/nihar-avatar.jpg" alt="Nihar Ranjan Rout" onerror="this.style.display='none'; this.parentNode.textContent='NR';">
             </div>
             <div class="nihar-chat-header-text">
               <h3>Nihar's AI Assistant</h3>

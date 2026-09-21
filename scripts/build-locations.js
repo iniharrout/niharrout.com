@@ -6,7 +6,7 @@
  *   /locations/<city>/<service>          city x service landing page
  *   /location                            internal link reference (noindex)
  *   /thank-you                           shown after any enquiry form (noindex)
- * Run `node scripts/build-sitemap.js` afterwards to refresh sitemap.xml.
+ * Then run `node scripts/build-chrome.js` (shared header/footer) and `node scripts/build-sitemap.js`.
  *
  * Usage: node scripts/build-locations.js
  * Content lives in scripts/locations/*.js. Zero dependencies.
@@ -86,83 +86,17 @@ function head({ title, description, path: urlPath, ogType = 'website', graph, no
 }
 
 const header = () => `
-  <header class="site-header" id="site-header">
-    <div class="wrap nav-inner">
-      <a href="/" class="brand-link" aria-label="Nihar Ranjan Rout Homepage">
-        <img src="/assets/nihar-avatar.jpg" alt="Nihar Ranjan Rout" class="brand-avatar" width="36" height="36">
-        <div class="brand-text">nihar<span class="dot">.</span></div>
-      </a>
-      <nav aria-label="Primary Navigation">
-        <ul class="nav-links">
-          <li class="nav-item"><a href="/services" class="nav-link">Services</a></li>
-          <li class="nav-item"><a href="/#portfolio" class="nav-link">Portfolio</a></li>
-          <li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li>
-          <li class="nav-item"><a href="/locations" class="nav-link" style="color:var(--hs-brand); font-weight:700;">Locations</a></li>
-          <li class="nav-item"><a href="/project-costs" class="nav-link">Pricing</a></li>
-          <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
-        </ul>
-      </nav>
-      <div class="nav-actions">
-        <a href="https://calendly.com/creuto/meet" data-calendly="true" class="cl-button -primary -small btn-book-call">Book a Call <span style="margin-left:4px;">→</span></a>
-      </div>
-    </div>
-  </header>
+  <!-- chrome:header -->
+  <!-- /chrome:header -->
 `;
 
-function footer(city) {
-  const serviceLinks = city
-    ? SERVICE_KEYS.map((k) => `<li><a href="${pageUrl(city, k)}">${esc(services[k].name)} in ${esc(city.name)}</a></li>`).join('')
-    : SERVICE_KEYS.map((k) => `<li><a href="${services[k].bhubaneswarPage}">${esc(services[k].name)}</a></li>`).join('');
-  const locationLinks = cities.map((c) => `<li><a href="${cityUrl(c)}">${esc(c.name)}</a></li>`).join('');
+function footer() {
   return `
-  <footer class="site-footer">
-    <div class="wrap">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="/" class="brand-link" style="margin-bottom:14px; display:inline-flex;" aria-label="Nihar Ranjan Rout Homepage">
-            <img src="/assets/nihar-avatar.jpg" alt="Nihar Ranjan Rout" class="brand-avatar" width="36" height="36">
-            <div class="brand-text" style="color:#ffffff;">nihar<span class="dot">.</span></div>
-          </a>
-          <p>Founder &amp; CEO of Creuto. Product leader with 8+ years turning complex operational requirements into scalable digital systems with a dedicated in-house squad.</p>
-          <div style="font-size: 13.5px; color: #a8a8a8;">
-            Bhubaneswar, Odisha, India · <a href="mailto:me@niharrout.com" style="color:var(--hs-brand); text-decoration:none;">me@niharrout.com</a>
-          </div>
-        </div>
-        <div class="footer-col">
-          <h4>${city ? 'Services in ' + esc(city.name) : 'Services'}</h4>
-          <ul class="footer-links">${serviceLinks}</ul>
-        </div>
-        <div class="footer-col">
-          <h4>Locations</h4>
-          <ul class="footer-links">
-            <li><a href="/locations" style="color:var(--hs-brand); font-weight:600;">All locations</a></li>
-            ${locationLinks}
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Insights</h4>
-          <ul class="footer-links">
-            <li><a href="/blog">Blog &amp; Playbooks</a></li>
-            <li><a href="/project-costs">Project Costs Guide 2026</a></li>
-            <li><a href="/b2b-software-development-for-startups">B2B Startup Playbook</a></li>
-            <li><a href="/technology">Technology Stack</a></li>
-            <li><a href="https://linkedin.com/in/iniharrout" target="_blank" rel="noopener">LinkedIn Profile ↗</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <div>© <span id="yr"></span> Nihar Ranjan Rout · Founder &amp; CEO, Creuto. All rights reserved.</div>
-        <div style="display:flex; gap:20px;">
-          <a href="/privacy-policy">Privacy Policy</a>
-          <a href="/terms">Terms of Service</a>
-          <a href="#top">Back to Top ↑</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <!-- chrome:footer -->
+  <!-- /chrome:footer -->
 
   <script src="/assets/site-enhancements.js?v=hs2026_6"></script>
-  <script src="/assets/lead-forms.js?v=3"></script>
+    <script src="/assets/lead-forms.js?v=3"></script>
 </body>
 </html>
 `;

@@ -41,1324 +41,270 @@
   <!-- Fonts: Manrope -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/aos.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap">
   <link rel="stylesheet" href="/assets/design-system.css">
-
-  <style>
-    /* ================= DESIGN SYSTEM TOKENS ================= */
-    :root {
-      --bg: #fcfcfa;
-      --bg-alt: #f8f5ee;
-      --bg-card: #FFFFFF;
-      --surface: #ffffff;
-      --surface-subtle: #f8f5ee;
-      
-      /* Typography Colors */
-      --ink: #1f1f1f;
-      --ink-soft: rgba(0, 0, 0, 0.68);
-      --ink-faint: rgba(0, 0, 0, 0.48);
-      --ink-muted: rgba(0, 0, 0, 0.38);
-      --line: rgba(0, 0, 0, 0.08);
-      --line-subtle: rgba(17, 24, 39, 0.04);
-      --line-focus: #111827;
-      
-      /* Accents */
-      --accent: #ff4800;
-      --accent-deep: #E04818;
-      --accent-tint: #fcece6;
-      --accent-border: rgba(255, 72, 0, 0.25);
-      --emerald: #0DA868;
-      --emerald-dark: #059669;
-      --emerald-tint: #E7F8F0;
-      --emerald-border: #B3EBD3;
-      
-      --ocean: #FF5F2D;
-      --ocean-tint: #EEF2FF;
-      
-      /* Diffused Natural Shadows */
-      --shadow-sm: 0 1px 2px rgba(17, 24, 39, 0.04);
-      --shadow-card: 0 8px 24px -6px rgba(17, 24, 39, 0.04), 0 2px 6px rgba(17, 24, 39, 0.02);
-      --shadow-hover: 0 16px 36px -8px rgba(17, 24, 39, 0.08), 0 4px 12px rgba(17, 24, 39, 0.03);
-      --shadow-hero: 0 24px 48px -12px rgba(17, 24, 39, 0.08);
-      --shadow-float: 0 24px 48px -12px rgba(17, 24, 39, 0.1);
-      
-      --maxw: 1180px;
-      --measure: 64ch;
-      --r-xl: 24px;
-      --r-lg: 18px;
-      --r-md: 12px;
-      --r-sm: 8px;
-      --r-pill: 9999px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      background-color: var(--bg);
-    }
-
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--ink-soft);
-      font-family: "Manrope", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      font-size: 16.5px;
-      line-height: 1.68;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-      padding-top: 72px;
-    }
-
-    .wrap {
-      max-width: var(--maxw);
-      margin: 0 auto;
-      padding: 0 28px;
-    }
-
-    section {
-      padding: clamp(72px, 8.5vw, 115px) 0;
-      position: relative;
-    }
-
-    a {
-      color: inherit;
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-      font-family: "Manrope", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      font-weight: 700;
-      color: var(--ink);
-      margin: 0;
-      text-wrap: balance;
-      letter-spacing: -0.03em;
-    }
-
-    p {
-      margin: 0;
-    }
-
-
-
-    /* ================= BUTTONS & PILLS ================= */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      font-family: inherit;
-      font-size: 15px;
-      font-weight: 600;
-      text-decoration: none;
-      border-radius: var(--r-pill);
-      padding: 13px 28px;
-      line-height: 1.2;
-      cursor: pointer;
-      border: 1px solid transparent;
-      transition: all .25s cubic-bezier(0.165, 0.84, 0.44, 1);
-      white-space: nowrap;
-    }
-
-    .btn-primary {
-      background: var(--ink);
-      color: #FFFFFF;
-      border-color: var(--ink);
-      box-shadow: 0 4px 14px rgba(24, 23, 22, 0.12);
-    }
-
-    .btn-primary:hover {
-      background: #302E2B;
-      border-color: #302E2B;
-      color: #FFFFFF;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(24, 23, 22, 0.18);
-    }
-
-    .btn-ghost {
-      background: #FFFFFF;
-      color: var(--ink);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .btn-ghost:hover {
-      border-color: var(--line-focus);
-      background: var(--bg-alt);
-      color: var(--ink);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(24, 23, 22, 0.05);
-    }
-
-    .eyebrow-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 14px;
-      border-radius: var(--r-pill);
-      background: var(--accent-tint);
-      border: 1px solid var(--accent-border);
-      color: var(--accent-deep);
-      font-size: 12.5px;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      margin-bottom: 18px;
-    }
-
-    .eyebrow-pill .dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--accent);
-      display: inline-block;
-    }
-
-    .sub {
-      color: var(--ink-soft);
-      font-size: 18px;
-      line-height: 1.65;
-      max-width: var(--measure);
-    }
-
-    /* ================= NAV ================= */
-    header.nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 72px;
-      z-index: 100;
-      background: rgba(246, 244, 238, 0.88);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--line);
-      transition: all 0.3s ease;
-    }
-
-    .nav-inner {
-      max-width: var(--maxw);
-      margin: 0 auto;
-      padding: 0 28px;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .brand {
-      font-family: "Manrope", sans-serif;
-      font-weight: 800;
-      font-size: 21px;
-      letter-spacing: -.03em;
-      text-decoration: none;
-      color: var(--ink);
-    }
-
-    .brand .d {
-      color: var(--accent);
-    }
-
-    .nav-desktop {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-    }
-
-    @media (max-width: 920px) {
-      .nav-desktop {
-        display: none;
-      }
-    }
-
-    .nav-desktop a.lnk {
-      font-size: 14.5px;
-      font-weight: 500;
-      color: var(--ink-soft);
-      text-decoration: none;
-      transition: color .2s;
-    }
-
-    .nav-desktop a.lnk:hover {
-      color: var(--ink);
-    }
-
-    .nav-toggle {
-      display: none;
-      background: none;
-      border: none;
-      width: 36px;
-      height: 36px;
-      cursor: pointer;
-      padding: 0;
-    }
-
-    @media (max-width: 920px) {
-      .nav-toggle {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 5px;
-      }
-    }
-
-    .nav-toggle .line {
-      width: 20px;
-      height: 2px;
-      background: var(--ink);
-      transition: all 0.3s ease;
-      border-radius: 2px;
-    }
-
-    .nav-toggle.open .line-1 {
-      transform: translateY(7px) rotate(45deg);
-    }
-    .nav-toggle.open .line-2 {
-      opacity: 0;
-    }
-    .nav-toggle.open .line-3 {
-      transform: translateY(-7px) rotate(-45deg);
-    }
-
-    .mobile-drawer {
-      position: fixed;
-      top: 72px;
-      left: 0;
-      right: 0;
-      background: var(--bg-card);
-      border-bottom: 1px solid var(--line);
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      opacity: 0;
-      transform: translateY(-12px);
-      pointer-events: none;
-      transition: all 0.3s ease;
-      z-index: 95;
-      box-shadow: var(--shadow-float);
-    }
-
-    .mobile-drawer.open {
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: auto;
-    }
-
-    .drawer-links {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .drawer-lnk {
-      font-size: 16.5px;
-      font-weight: 600;
-      color: var(--ink);
-      text-decoration: none;
-    }
-
-    /* ================= HERO ================= */
-    .hero {
-      position: relative;
-      padding-top: clamp(60px, 8vw, 96px);
-      padding-bottom: clamp(54px, 7vw, 80px);
-      text-align: center;
-      background: var(--bg);
-      overflow: hidden;
-    }
-
-    .hero > .wrap {
-      position: relative;
-      z-index: 1;
-      max-width: 960px;
-    }
-
-    .hero h1 {
-      font-size: clamp(38px, 6vw, 62px);
-      line-height: 1.12;
-      font-weight: 800;
-      margin: 12px auto 0;
-      max-width: 18ch;
-      letter-spacing: -0.035em;
-      color: var(--ink);
-    }
-
-    .hero .pitch {
-      font-size: clamp(17px, 1.8vw, 20px);
-      color: var(--ink-soft);
-      max-width: 62ch;
-      margin: 22px auto 0;
-      line-height: 1.65;
-    }
-
-    .hero-cta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      justify-content: center;
-      margin-top: 36px;
-    }
-
-    /* Sleek Hero Ribbon */
-    .hero-stats-ribbon {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      gap: 32px 48px;
-      margin-top: 54px;
-      padding: 24px 32px;
-      background: var(--bg-card);
-      border-radius: var(--r-xl);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow-card);
-    }
-
-    @media (max-width: 680px) {
-      .hero-stats-ribbon {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 24px 20px;
-        padding: 20px;
-        text-align: left;
-      }
-    }
-
-    .stat-item {
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-    }
-
-    @media (max-width: 680px) {
-      .stat-item {
-        text-align: left;
-      }
-    }
-
-    .stat-item .v {
-      font-size: 24px;
-      font-weight: 800;
-      color: var(--ink);
-      letter-spacing: -0.02em;
-      line-height: 1.2;
-    }
-
-    .stat-item .v .u {
-      color: var(--ink);
-      font-weight: 700;
-    }
-
-    .stat-item .k {
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--ink-faint);
-      margin-top: 4px;
-    }
-
-    /* ================= SECTION HEADINGS ================= */
-    .shead {
-      max-width: 780px;
-      margin-bottom: 48px;
-    }
-
-    .shead h2 {
-      font-size: clamp(28px, 3.8vw, 42px);
-      line-height: 1.15;
-      font-weight: 800;
-      margin-top: 12px;
-      letter-spacing: -0.03em;
-      color: var(--ink);
-    }
-
-    .shead .sub {
-      margin-top: 14px;
-      font-size: clamp(16px, 1.7vw, 18.5px);
-      line-height: 1.6;
-      color: var(--ink-soft);
-    }
-
-    .center {
-      margin-left: auto;
-      margin-right: auto;
-      text-align: center;
-    }
-
-    .center .eyebrow-pill {
-      justify-content: center;
-    }
-
-    .center .sub {
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* ================= CARDS & GRIDS ================= */
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    @media (max-width: 960px) {
-      .grid-3 {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 640px) {
-      .grid-3 {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .sleek-card {
-      background: var(--bg-card);
-      border: 1px solid var(--line);
-      border-radius: var(--r-xl);
-      padding: 30px;
-      box-shadow: var(--shadow-card);
-      transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .sleek-card:hover {
-      border-color: var(--line-focus);
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-hover);
-    }
-
-    .sleek-card .ic {
-      font-size: 24px;
-      margin-bottom: 16px;
-      display: inline-block;
-    }
-
-    .sleek-card h3 {
-      font-size: 19px;
-      font-weight: 700;
-      color: var(--ink);
-      line-height: 1.3;
-      margin-bottom: 10px;
-    }
-
-    .sleek-card p {
-      font-size: 14.5px;
-      color: var(--ink-soft);
-      line-height: 1.65;
-      margin-bottom: 18px;
-    }
-
-    .sleek-card .pills {
-      list-style: none;
-      padding: 0;
-      margin: auto 0 0;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 7px;
-    }
-
-    .sleek-card .pills li {
-      font-family: "JetBrains Mono", monospace;
-      font-size: 11.5px;
-      font-weight: 500;
-      color: var(--ink-soft);
-      background: var(--bg-alt);
-      border: 1px solid var(--line);
-      padding: 4px 9px;
-      border-radius: 6px;
-    }
-
-    /* ================= LOCAL SECTION ================= */
-    .local-section {
-      background: var(--bg-alt);
-    }
-
-    .local-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: clamp(32px, 5vw, 64px);
-      align-items: center;
-    }
-
-    @media (max-width: 880px) {
-      .local-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .local-box {
-      background: var(--bg-card);
-      border: 1px solid var(--line);
-      border-radius: var(--r-xl);
-      padding: clamp(28px, 4vw, 40px);
-      box-shadow: var(--shadow-card);
-    }
-
-    .hub-list {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-top: 24px;
-    }
-
-    @media (max-width: 520px) {
-      .hub-list {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .hub-item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--ink);
-      background: var(--bg-card);
-      border: 1px solid var(--line);
-      padding: 10px 14px;
-      border-radius: var(--r-sm);
-    }
-
-    .hub-item::before {
-      content: "📍";
-      font-size: 13px;
-    }
-
-    /* ================= TECH GRID ================= */
-    .tech-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-    }
-
-    @media (max-width: 960px) {
-      .tech-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 480px) {
-      .tech-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .tech-box {
-      background: var(--bg-card);
-      border: 1px solid var(--line);
-      border-radius: var(--r-xl);
-      padding: 24px;
-      box-shadow: var(--shadow-card);
-    }
-
-    .tech-box h4 {
-      font-size: 15.5px;
-      font-weight: 700;
-      color: var(--ink);
-      margin-bottom: 14px;
-      padding-bottom: 8px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .tech-list {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .tech-list span {
-      font-family: "JetBrains Mono", monospace;
-      font-size: 13px;
-      color: var(--ink-soft);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .tech-list span::before {
-      content: "•";
-      color: var(--ink);
-      font-size: 18px;
-      line-height: 0;
-    }
-
-    /* ================= PROCESS STEPS ================= */
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-    }
-
-    @media (max-width: 860px) {
-      .steps-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 520px) {
-      .steps-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .step-card {
-      background: var(--bg-card);
-      border: 1px solid var(--line);
-      border-radius: var(--r-xl);
-      padding: 28px;
-      box-shadow: var(--shadow-card);
-      transition: all 0.3s ease;
-    }
-
-    .step-card:hover {
-      border-color: var(--line-focus);
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-hover);
-    }
-
-    .step-num {
-      width: 40px;
-      height: 40px;
-      border-radius: var(--r-pill);
-      background: var(--ink);
-      color: #FFFFFF;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: "JetBrains Mono", monospace;
-      font-size: 15px;
-      font-weight: 700;
-      margin-bottom: 16px;
-    }
-
-    .step-card h3 {
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--ink);
-      margin-bottom: 10px;
-    }
-
-    .step-card p {
-      font-size: 14px;
-      color: var(--ink-soft);
-      line-height: 1.6;
-    }
-
-    /* ================= FAQ ACCORDION ================= */
-    .faq-section {
-      background: var(--bg-alt);
-    }
-
-    .faq-grid {
-      display: grid;
-      grid-template-columns: 0.85fr 1.15fr;
-      gap: clamp(32px, 5vw, 64px);
-      align-items: start;
-    }
-
-    @media (max-width: 820px) {
-      .faq-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    details.q {
-      background: transparent;
-      border: none;
-      border-bottom: 1px solid var(--line);
-      padding: 8px 0;
-      transition: all 0.2s ease;
-    }
-
-    details.q summary {
-      list-style: none;
-      cursor: pointer;
-      padding: 16px 0;
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      align-items: center;
-      font-size: 17px;
-      font-weight: 700;
-      color: var(--ink);
-    }
-
-    details.q summary::-webkit-details-marker {
-      display: none;
-    }
-
-    details.q summary::after {
-      content: "+";
-      font-family: "Manrope", sans-serif;
-      font-size: 22px;
-      font-weight: 400;
-      color: var(--ink-muted);
-      transition: transform 0.2s ease;
-    }
-
-    details.q[open] summary::after {
-      content: "−";
-      color: var(--ink);
-    }
-
-    details.q .ans {
-      padding: 0 0 18px 0;
-      color: var(--ink-soft);
-      font-size: 15.5px;
-      line-height: 1.65;
-    }
-
-    /* ================= LEAD ESTIMATE / CONSULT BOX ================= */
-    .lead-box {
-      background: var(--bg-card);
-      border: 1px solid var(--line);
-      border-radius: var(--r-xl);
-      padding: clamp(32px, 5vw, 56px);
-      box-shadow: var(--shadow-float);
-      position: relative;
-    }
-
-    .lead-grid {
-      display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
-      gap: clamp(32px, 5vw, 60px);
-      align-items: start;
-      margin-top: 36px;
-    }
-
-    @media (max-width: 880px) {
-      .lead-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .lead-perks {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
-
-    .perk-item {
-      display: flex;
-      gap: 14px;
-      align-items: flex-start;
-      font-size: 15px;
-      color: var(--ink-soft);
-    }
-
-    .perk-item .ck {
-      flex: none;
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      background: var(--emerald-tint);
-      color: var(--emerald-dark);
-      border: 1px solid var(--emerald-border);
-      display: grid;
-      place-items: center;
-      font-size: 11px;
-      font-weight: 800;
-    }
-
-    .cform-card {
-      background: var(--bg-alt);
-      border: 1px solid var(--line);
-      border-radius: var(--r-lg);
-      padding: clamp(24px, 3vw, 36px);
-    }
-
-    .form-group {
-      margin-bottom: 16px;
-    }
-
-    .form-group label {
-      display: block;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--ink);
-      margin-bottom: 7px;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%;
-      background: #FFFFFF;
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      padding: 13px 16px;
-      color: var(--ink);
-      font-family: inherit;
-      font-size: 15px;
-      transition: all 0.25s ease;
-    }
-
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: var(--ink);
-      box-shadow: 0 0 0 4px rgba(24, 23, 22, 0.08);
-    }
-
-    /* ================= FOOTER ================= */
-    footer.ft {
-      background: var(--bg-alt);
-      border-top: 1px solid var(--line);
-      padding: 64px 0 36px;
-    }
-
-    .ft-grid {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr;
-      gap: 36px;
-    }
-
-    @media (max-width: 760px) {
-      .ft-grid {
-        grid-template-columns: 1fr;
-        gap: 28px;
-      }
-    }
-
-    .ft-brand {
-      font-family: "Manrope", sans-serif;
-      font-weight: 800;
-      font-size: 24px;
-      letter-spacing: -.03em;
-      color: var(--ink);
-    }
-
-    .ft-brand .d {
-      color: var(--accent);
-    }
-
-    .ft-desc {
-      color: var(--ink-soft);
-      font-size: 14.5px;
-      margin-top: 12px;
-      max-width: 36ch;
-      line-height: 1.6;
-    }
-
-    .ft h4 {
-      font-family: "JetBrains Mono", monospace;
-      font-size: 12px;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      color: var(--ink);
-      font-weight: 700;
-      margin: 0 0 16px;
-    }
-
-    .ft-links {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .ft-links a {
-      color: var(--ink-soft);
-      text-decoration: none;
-      font-size: 14.5px;
-      font-weight: 500;
-      transition: color .2s;
-    }
-
-    .ft-links a:hover {
-      color: var(--ink);
-    }
-
-    .ft-bottom {
-      margin-top: 48px;
-      padding-top: 24px;
-      border-top: 1px solid var(--line);
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 12px;
-      align-items: center;
-      font-size: 13px;
-      color: var(--ink-faint);
-    }
-  </style>
+  <link rel="stylesheet" href="/assets/editorial.css?v=3">
+
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+  <link rel="stylesheet" href="/assets/chrome.css?v=1">
+  <script src="/assets/chrome.js?v=1" defer></script>
 </head>
 
-<body>
-  <!-- ================= NAV ================= -->
-  <header class="nav" id="nav">
-    <div class="nav-inner">
-      <a href="/" class="brand">nihar<span class="d">.</span></a>
+<body class="ed-page">
+<!-- chrome:header -->
+<header class="sc-header" id="site-header">
+  <div class="sc-wrap sc-bar">
+    <a class="sc-brand" href="/" aria-label="Nihar Ranjan Rout, home">
+      <img src="/assets/nihar-avatar.jpg" alt="" width="36" height="36" decoding="async">
+      <span class="sc-brand-text">nihar<span class="sc-dot">.</span></span>
+    </a>
 
-      <div class="nav-desktop">
-        <a href="#services" class="lnk">App Services</a>
-        <a href="#hubs" class="lnk">Bhubaneswar Hubs</a>
-        <a href="#tech" class="lnk">Tech Stack</a>
-        <a href="#process" class="lnk">Playbook</a>
-        <a href="#faq" class="lnk">FAQ</a>
-      </div>
+    <nav class="sc-nav" aria-label="Primary">
+      <ul class="sc-links">
+        <li class="sc-item sc-has-menu">
+          <a class="sc-link" href="/services">Services</a>
+          <button class="sc-toggle" type="button" aria-expanded="false" aria-label="Show services menu"><svg viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="sc-menu">
+            <a href="/services/mobile-app-development"><strong>Mobile Application Development</strong><span>React Native, Flutter, Swift and Kotlin</span></a>
+            <a href="/services/custom-software-development"><strong>Custom Software &amp; ERP</strong><span>Enterprise operations and multi-tenant SaaS</span></a>
+            <a href="/services/ai-product-development"><strong>AI Product Development</strong><span>RAG pipelines and task agents</span></a>
+            <a href="/services/product-strategy-prd"><strong>Product Strategy &amp; PRDs</strong><span>Scope, roadmaps and clickable prototypes</span></a>
+            <a class="sc-menu-all" href="/services">All services &rarr;</a>
+          </div>
+        </li>
+        <li class="sc-item sc-has-menu">
+          <a class="sc-link" href="/#portfolio">Work</a>
+          <button class="sc-toggle" type="button" aria-expanded="false" aria-label="Show work menu"><svg viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="sc-menu">
+            <a href="/work/custom-erp-manufacturing"><strong>Custom ERP for Manufacturing</strong><span>Four departments, one system</span></a>
+            <a href="/work/sky1-event-booking"><strong>Sky1 Event Booking</strong><span>Venues and vendors in one booking flow</span></a>
+            <a href="/work/make-my-look"><strong>Make My Look</strong><span>On-demand beauty and salon booking</span></a>
+            <a href="/work/flashnow"><strong>FlashNow</strong><span>Quick commerce on local shops</span></a>
+            <a href="/work/skribe"><strong>Skribe</strong><span>One chat layer across team tools</span></a>
+          </div>
+        </li>
+        <li class="sc-item sc-has-menu">
+          <a class="sc-link" href="/blog">Insights</a>
+          <button class="sc-toggle" type="button" aria-expanded="false" aria-label="Show insights menu"><svg viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="sc-menu">
+            <a href="/blog"><strong>Blog &amp; Playbooks</strong><span>Guides on MVPs, ERP, mobile and AI</span></a>
+            <a href="/project-costs"><strong>Project Costs Guide</strong><span>What production software typically costs</span></a>
+            <a href="/b2b-software-development-for-startups"><strong>B2B Startup Playbook</strong><span>Working with a remote-first product team</span></a>
+            <a href="/technology"><strong>Technology Stack</strong><span>The tools we build with</span></a>
+          </div>
+        </li>
+        <li class="sc-item sc-has-menu">
+          <a class="sc-link" href="/tools">Tools</a>
+          <button class="sc-toggle" type="button" aria-expanded="false" aria-label="Show tools menu"><svg viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="sc-menu">
+            <a href="/tools/app-cost-calculator"><strong>App Cost Calculator</strong><span>Realistic build budgets and timelines</span></a>
+            <a href="/tools/startup-name-generator"><strong>Startup Name Generator</strong><span>Pin keywords, generate brandable names</span></a>
+            <a class="sc-menu-all" href="/tools">All tools &rarr;</a>
+          </div>
+        </li>
+        <li class="sc-item"><a class="sc-link" href="/about">About</a></li>
+      </ul>
+    </nav>
 
-      <div class="nav-actions">
-        <a href="#estimate" class="btn btn-primary" style="padding:10px 20px; font-size:14px;">Get App Estimate <span class="arw">→</span></a>
-
-        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-          <span class="line line-1"></span>
-          <span class="line line-2"></span>
-          <span class="line line-3"></span>
-        </button>
-      </div>
+    <div class="sc-actions">
+      <a class="sc-cta" href="https://calendly.com/creuto/meet" data-calendly="true">Book a Call</a>
+      <button class="sc-burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="sc-drawer"><span></span><span></span><span></span></button>
     </div>
+  </div>
 
-    <div class="mobile-drawer" id="mobileDrawer">
-      <nav class="drawer-links">
-        <a href="/" class="drawer-lnk">← Back to Main Portfolio</a>
-        <a href="#services" class="drawer-lnk">App Services</a>
-        <a href="#hubs" class="drawer-lnk">Bhubaneswar Hubs</a>
-        <a href="#tech" class="drawer-lnk">Tech Stack</a>
-        <a href="#process" class="drawer-lnk">Playbook</a>
-        <a href="#faq" class="drawer-lnk">FAQ</a>
-        <a href="#estimate" class="btn btn-primary">Get App Estimate <span class="arw">→</span></a>
-      </nav>
+  <div class="sc-drawer" id="sc-drawer" hidden>
+    <div class="sc-wrap">
+      <p class="sc-drawer-label">Services</p>
+      <a href="/services/mobile-app-development">Mobile Application Development</a>
+      <a href="/services/custom-software-development">Custom Software &amp; ERP</a>
+      <a href="/services/ai-product-development">AI Product Development</a>
+      <a href="/services/product-strategy-prd">Product Strategy &amp; PRDs</a>
+      <p class="sc-drawer-label">Work</p>
+      <a href="/work/custom-erp-manufacturing">Custom ERP for Manufacturing</a>
+      <a href="/work/sky1-event-booking">Sky1 Event Booking</a>
+      <a href="/work/make-my-look">Make My Look</a>
+      <a href="/work/flashnow">FlashNow</a>
+      <a href="/work/skribe">Skribe</a>
+      <p class="sc-drawer-label">Insights</p>
+      <a href="/blog">Blog &amp; Playbooks</a>
+      <a href="/project-costs">Project Costs Guide</a>
+      <a href="/b2b-software-development-for-startups">B2B Startup Playbook</a>
+      <a href="/technology">Technology Stack</a>
+      <p class="sc-drawer-label">Tools</p>
+      <a href="/tools/app-cost-calculator">App Cost Calculator</a>
+      <a href="/tools/startup-name-generator">Startup Name Generator</a>
+      <p class="sc-drawer-label">Company</p>
+      <a href="/about">About</a>
+      <a class="sc-drawer-cta" href="https://calendly.com/creuto/meet" data-calendly="true">Book a Call</a>
     </div>
-  </header>
+  </div>
+</header>
+<!-- /chrome:header -->
 
   <main id="top">
-
     <!-- ================= HERO ================= -->
-    <section class="hero" id="hero">
+    <section class="ed-pagehero" id="hero">
       <div class="wrap">
-        <div>
-          <span class="eyebrow-pill"><span class="dot"></span> iOS, Android &amp; Flutter App Engineering · Infocity, Bhubaneswar</span>
+        <div class="ed-hero">
+          <div class="ed-hero-copy">
+            <p class="ed-label">iOS, Android &amp; Flutter App Engineering · Infocity, Bhubaneswar</p>
+            <h1 class="ed-page-title">Mobile App Development Company in Bhubaneswar</h1>
+            <p class="ed-lede">We architect, design, and engineer world-class iOS, Android, Flutter, and React Native mobile applications for startups, fast-growing businesses, and enterprise teams in Bhubaneswar and globally.</p>
+            <div class="hero-ctas"><a href="#estimate" class="cl-button -primary">Get Free App Architecture &amp; Estimate <span>&rarr;</span></a><a href="#services" class="cl-button -secondary">Explore Capabilities</a></div>
+          </div>
+          <figure class="ed-figure"><img src="/work/mml-card.jpg" alt="Make My Look, a salon booking app built by Creuto" width="1024" height="768" loading="eager" fetchpriority="high" decoding="async"></figure>
         </div>
-
-        <h1>
-          Mobile App Development Company in Bhubaneswar
-        </h1>
-
-        <p class="pitch">
-          We architect, design, and engineer world-class iOS, Android, Flutter, and React Native mobile applications for startups, fast-growing businesses, and enterprise teams in Bhubaneswar and globally.
-        </p>
-
-        <div class="hero-cta">
-          <a href="#estimate" class="btn btn-primary">Get Free App Architecture &amp; Estimate <span class="arw">→</span></a>
-          <a href="#services" class="btn btn-ghost">Explore Capabilities</a>
-        </div>
-
-        <div class="hero-stats-ribbon">
-          <div class="stat-item">
-            <div class="v">Native<span class="u"> &amp; Hybrid</span></div>
-            <div class="k">iOS, Android, Flutter</div>
-          </div>
-          <div class="stat-item">
-            <div class="v">4-8<span class="u"> Wks</span></div>
-            <div class="k">Fast MVP Delivery</div>
-          </div>
-          <div class="stat-item">
-            <div class="v">In-house<span class="u"> Devs</span></div>
-            <div class="k">Direct Bhubaneswar Team</div>
-          </div>
-          <div class="stat-item">
-            <div class="v">100<span class="u">%</span></div>
-            <div class="k">IP &amp; Code Ownership</div>
-          </div>
-        </div>
+        <dl class="ed-facts ed-facts-rule">
+          <div><dt>Native &amp; Hybrid</dt><dd>iOS, Android, Flutter</dd></div>
+          <div><dt>4-8 Wks</dt><dd>Fast MVP Delivery</dd></div>
+          <div><dt>In-house Devs</dt><dd>Direct Bhubaneswar Team</dd></div>
+          <div><dt>100%</dt><dd>IP &amp; Code Ownership</dd></div>
+        </dl>
       </div>
     </section>
 
     <!-- ================= SERVICES ================= -->
-    <section id="services">
+    <section class="ed-section" id="services">
       <div class="wrap">
-        <div class="shead center">
-          <span class="eyebrow-pill"><span class="dot"></span> Complete Lifecycle Engineering</span>
-          <h2>Mobile App Development Services in Bhubaneswar</h2>
-          <p class="sub">
-            From PRD specification and UI/UX design to native performance, secure API backends, and App Store optimization.
-          </p>
-        </div>
-
-        <div class="grid-3">
-          <div class="sleek-card">
-            <div class="ic">📱</div>
+        <header class="ed-head">
+          <p class="ed-label">Complete Lifecycle Engineering</p>
+          <h2 class="section-title">Mobile App Development Services in Bhubaneswar</h2>
+          <p>From PRD specification and UI/UX design to native performance, secure API backends, and App Store optimization.</p>
+        </header>
+        <div class="cap-grid-6">
+          <div class="cap-card">
             <h3>iOS App Development (Swift &amp; SwiftUI)</h3>
-            <p>
-              Custom iOS applications designed for iPhones, iPads, and Apple Watch. High-performance native Swift codebase, Apple Human Interface Guidelines adherence, Metal graphics, and robust offline caching.
-            </p>
-            <ul class="pills">
-              <li>Swift 5.10</li>
-              <li>SwiftUI</li>
-              <li>Combine</li>
-              <li>CoreData</li>
-              <li>Apple Pay</li>
-            </ul>
+            <p>Custom iOS applications designed for iPhones, iPads, and Apple Watch. High-performance native Swift codebase, Apple Human Interface Guidelines adherence, Metal graphics, and robust offline caching.</p>
+            <div class="cap-tags"><span class="cap-tag">Swift 5.10</span><span class="cap-tag">SwiftUI</span><span class="cap-tag">Combine</span><span class="cap-tag">CoreData</span><span class="cap-tag">Apple Pay</span></div>
           </div>
-
-          <div class="sleek-card">
-            <div class="ic">🤖</div>
+          <div class="cap-card">
             <h3>Android App Development (Kotlin &amp; Jetpack)</h3>
-            <p>
-              Modern Android apps engineered for speed, battery efficiency, and device compatibility across 10,000+ screen formats. Built with Kotlin, Jetpack Compose, MVVM/Clean Architecture, and Google Play billing.
-            </p>
-            <ul class="pills">
-              <li>Kotlin</li>
-              <li>Jetpack Compose</li>
-              <li>Coroutines</li>
-              <li>Room DB</li>
-              <li>Material 3</li>
-            </ul>
+            <p>Modern Android apps engineered for speed, battery efficiency, and device compatibility across 10,000+ screen formats. Built with Kotlin, Jetpack Compose, MVVM/Clean Architecture, and Google Play billing.</p>
+            <div class="cap-tags"><span class="cap-tag">Kotlin</span><span class="cap-tag">Jetpack Compose</span><span class="cap-tag">Coroutines</span><span class="cap-tag">Room DB</span><span class="cap-tag">Material 3</span></div>
           </div>
-
-          <div class="sleek-card">
-            <div class="ic">⚡</div>
+          <div class="cap-card">
             <h3>Cross-Platform Apps (Flutter &amp; React Native)</h3>
-            <p>
-              Single-codebase mobile applications that look and feel 100% native on both iOS and Android. Reduce development costs by 40% and launch faster in Bhubaneswar and global markets without sacrificing speed.
-            </p>
-            <ul class="pills">
-              <li>Flutter / Dart</li>
-              <li>React Native</li>
-              <li>Bloc / Riverpod</li>
-              <li>Expo EAS</li>
-              <li>Native Bridges</li>
-            </ul>
+            <p>Single-codebase mobile applications that look and feel 100% native on both iOS and Android. Reduce development costs by 40% and launch faster in Bhubaneswar and global markets without sacrificing speed.</p>
+            <div class="cap-tags"><span class="cap-tag">Flutter / Dart</span><span class="cap-tag">React Native</span><span class="cap-tag">Bloc / Riverpod</span><span class="cap-tag">Expo EAS</span><span class="cap-tag">Native Bridges</span></div>
           </div>
-
-          <div class="sleek-card">
-            <div class="ic">☁️</div>
+          <div class="cap-card">
             <h3>Mobile Backend &amp; Cloud API Architecture</h3>
-            <p>
-              High-throughput REST and GraphQL backend architectures. Microservices, real-time WebSockets, push notifications, Firebase integration, PostgreSQL, and serverless AWS/GCP infrastructure.
-            </p>
-            <ul class="pills">
-              <li>Node.js</li>
-              <li>Python FastAPI</li>
-              <li>PostgreSQL</li>
-              <li>Redis</li>
-              <li>AWS Lambda</li>
-            </ul>
+            <p>High-throughput REST and GraphQL backend architectures. Microservices, real-time WebSockets, push notifications, Firebase integration, PostgreSQL, and serverless AWS/GCP infrastructure.</p>
+            <div class="cap-tags"><span class="cap-tag">Node.js</span><span class="cap-tag">Python FastAPI</span><span class="cap-tag">PostgreSQL</span><span class="cap-tag">Redis</span><span class="cap-tag">AWS Lambda</span></div>
           </div>
-
-          <div class="sleek-card">
-            <div class="ic">🎨</div>
+          <div class="cap-card">
             <h3>UI/UX Design &amp; Rapid Clickable Prototyping</h3>
-            <p>
-              User-centric wireframes, design systems, and micro-interactions crafted in Figma. We test with real user cohorts before coding to ensure intuitive onboarding and high retention metrics.
-            </p>
-            <ul class="pills">
-              <li>Figma Prototypes</li>
-              <li>Design Tokens</li>
-              <li>User Research</li>
-              <li>A/B Onboarding</li>
-            </ul>
+            <p>User-centric wireframes, design systems, and micro-interactions crafted in Figma. We test with real user cohorts before coding to ensure intuitive onboarding and high retention metrics.</p>
+            <div class="cap-tags"><span class="cap-tag">Figma Prototypes</span><span class="cap-tag">Design Tokens</span><span class="cap-tag">User Research</span><span class="cap-tag">A/B Onboarding</span></div>
           </div>
-
-          <div class="sleek-card">
-            <div class="ic">🛡️</div>
+          <div class="cap-card">
             <h3>App Store Optimization (ASO) &amp; Maintenance</h3>
-            <p>
-              End-to-end App Store &amp; Google Play Store compliance, keyword ranking, release management, CI/CD pipelines, security penetration testing, and 24/7 SLA maintenance support.
-            </p>
-            <ul class="pills">
-              <li>ASO Strategy</li>
-              <li>CI/CD Fastlane</li>
-              <li>Crashlytics</li>
-              <li>Security Audit</li>
-              <li>SLA Support</li>
-            </ul>
+            <p>End-to-end App Store &amp; Google Play Store compliance, keyword ranking, release management, CI/CD pipelines, security penetration testing, and 24/7 SLA maintenance support.</p>
+            <div class="cap-tags"><span class="cap-tag">ASO Strategy</span><span class="cap-tag">CI/CD Fastlane</span><span class="cap-tag">Crashlytics</span><span class="cap-tag">Security Audit</span><span class="cap-tag">SLA Support</span></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ================= LOCAL BHUBANESWAR ADVANTAGE ================= -->
-    <section class="local-section" id="hubs">
-      <div class="wrap">
-        <div class="local-grid">
-          <div>
-            <span class="eyebrow-pill"><span class="dot"></span> Local Presence &amp; Global Standard</span>
-            <h2>Why Bhubaneswar Startups &amp; Businesses Choose Us</h2>
-            <p style="color:var(--ink-soft); margin-top:16px; font-size:16px;">
-              Bhubaneswar is rapidly emerging as India's premier IT hub with O-Hub, STPI, Infocity, and world-class educational institutes (IIT, KIIT, SOA). Unlike typical outsourcing agencies that outsource to third parties, we combine <strong>Product Management rigor</strong> with dedicated in-house engineers right here in Bhubaneswar.
-            </p>
-
-            <div class="hub-list">
-              <div class="hub-item">Infocity &amp; Infovalley</div>
-              <div class="hub-item">Patia &amp; Chandrasekharpur</div>
-              <div class="hub-item">DLF Cybercity &amp; Fortune Towers</div>
-              <div class="hub-item">Saheed Nagar &amp; Jayadev Vihar</div>
-              <div class="hub-item">O-Hub &amp; STPI Tech Park</div>
-              <div class="hub-item">Cuttack &amp; Greater Odisha</div>
-            </div>
-
-            <div style="margin-top:28px;">
-              <a href="#estimate" class="btn btn-primary">Schedule In-Person / Virtual Meeting <span class="arw">→</span></a>
-            </div>
-          </div>
-
-          <div class="local-box">
-            <h3 style="font-size:22px; margin-bottom:14px;">The Creuto Quality Guarantee</h3>
-            <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:16px;">
-              <li style="display:flex; gap:12px; font-size:15px; color:var(--ink-soft);">
-                <span style="color:var(--emerald-dark); font-weight:bold;">✓</span>
-                <span><strong>Detailed PRD &amp; Fixed Milestones:</strong> No scope creep or surprise bills. Every screen, API endpoint, and state is locked prior to sprint kick-off.</span>
-              </li>
-              <li style="display:flex; gap:12px; font-size:15px; color:var(--ink-soft);">
-                <span style="color:var(--emerald); font-weight:bold;">✓</span>
-                <span><strong>Direct Access to Tech Leadership:</strong> You work directly with Nihar Ranjan Rout (Founder &amp; CEO of Creuto) and our in-house engineering team.</span>
-              </li>
-              <li style="display:flex; gap:12px; font-size:15px; color:var(--ink-soft);">
-                <span style="color:var(--emerald-dark); font-weight:bold;">✓</span>
-                <span><strong>Comprehensive Security &amp; Compliance:</strong> SOC2-ready protocols, biometric authentication, data encryption at rest and in transit.</span>
-              </li>
-              <li style="display:flex; gap:12px; font-size:15px; color:var(--ink-soft);">
-                <span style="color:var(--emerald-dark); font-weight:bold;">✓</span>
-                <span><strong>Complete Source Code Transfer:</strong> Full repository ownership with zero vendor lock-in.</span>
-              </li>
-            </ul>
-          </div>
+    <!-- ================= LOCAL ================= -->
+    <section class="ed-section why-alt" id="hubs">
+      <div class="wrap ed-split">
+        <div class="ed-split-head">
+          <p class="ed-label">Local Presence &amp; Global Standard</p>
+          <h2 class="section-title">Why Bhubaneswar Startups &amp; Businesses Choose Us</h2>
+          <p>Bhubaneswar is rapidly emerging as India's premier IT hub with O-Hub, STPI, Infocity, and world-class educational institutes (IIT, KIIT, SOA). Unlike typical outsourcing agencies that outsource to third parties, we combine <strong>Product Management rigor</strong> with dedicated in-house engineers right here in Bhubaneswar.</p>
+          <ul class="ed-inline ed-inline-lg"><li>Infocity &amp; Infovalley</li><li>Patia &amp; Chandrasekharpur</li><li>DLF Cybercity &amp; Fortune Towers</li><li>Saheed Nagar &amp; Jayadev Vihar</li><li>O-Hub &amp; STPI Tech Park</li><li>Cuttack &amp; Greater Odisha</li></ul>
+          <p class="ed-cta-line"><a href="#estimate" class="ed-link">Schedule In-Person / Virtual Meeting &rarr;</a></p>
+        </div>
+        <div>
+          <p class="ed-label">The Creuto Quality Guarantee</p>
+          <ol class="ed-list">
+          <li><span class="ed-num">01</span><div><h3>Detailed PRD &amp; Fixed Milestones</h3><p>No scope creep or surprise bills. Every screen, API endpoint, and state is locked prior to sprint kick-off.</p></div></li>
+          <li><span class="ed-num">02</span><div><h3>Direct Access to Tech Leadership</h3><p>You work directly with Nihar Ranjan Rout (Founder &amp; CEO of Creuto) and our in-house engineering team.</p></div></li>
+          <li><span class="ed-num">03</span><div><h3>Comprehensive Security &amp; Compliance</h3><p>SOC2-ready protocols, biometric authentication, data encryption at rest and in transit.</p></div></li>
+          <li><span class="ed-num">04</span><div><h3>Complete Source Code Transfer</h3><p>Full repository ownership with zero vendor lock-in.</p></div></li>
+          </ol>
         </div>
       </div>
     </section>
 
-    <!-- ================= TECH STACK ================= -->
-    <section id="tech">
+    <!-- ================= TECHNOLOGY ================= -->
+    <section class="ed-section" id="tech">
       <div class="wrap">
-        <div class="shead center">
-          <span class="eyebrow-pill"><span class="dot"></span> Enterprise-Grade Stack</span>
-          <h2>Modern Technologies We Build With</h2>
-          <p class="sub">
-            We pick the exact right tool for your specific latency, platform, security, and scalability requirements.
-          </p>
-        </div>
-
-        <div class="tech-grid">
-          <div class="tech-box">
-            <h4>iOS Native</h4>
-            <div class="tech-list">
-              <span>Swift 5.10 &amp; SwiftUI</span>
-              <span>Combine / Async-Await</span>
-              <span>CoreData &amp; Realm</span>
-              <span>XCTest &amp; Fastlane</span>
-            </div>
-          </div>
-
-          <div class="tech-box">
-            <h4>Android Native</h4>
-            <div class="tech-list">
-              <span>Kotlin 2.0+</span>
-              <span>Jetpack Compose UI</span>
-              <span>Coroutines &amp; Flow</span>
-              <span>Hilt / Dagger DI</span>
-            </div>
-          </div>
-
-          <div class="tech-box">
-            <h4>Cross Platform</h4>
-            <div class="tech-list">
-              <span>Flutter / Dart</span>
-              <span>React Native 0.74+</span>
-              <span>Expo Application Services</span>
-              <span>Native Modules / C++</span>
-            </div>
-          </div>
-
-          <div class="tech-box">
-            <h4>Backend &amp; Cloud</h4>
-            <div class="tech-list">
-              <span>Node.js / Express</span>
-              <span>Python FastAPI / Django</span>
-              <span>PostgreSQL / Redis</span>
-              <span>AWS / GCP / Firebase</span>
-            </div>
-          </div>
+        <header class="ed-head">
+          <p class="ed-label">Enterprise-Grade Stack</p>
+          <h2 class="section-title">Modern Technologies We Build With</h2>
+          <p>We pick the exact right tool for your specific latency, platform, security, and scalability requirements.</p>
+        </header>
+        <div class="techstack-grid">
+          <div class="techstack-group"><h4>iOS Native</h4><div class="techstack-pills"><span class="techstack-pill"><span>Swift 5.10 &amp; SwiftUI</span></span><span class="techstack-pill"><span>Combine / Async-Await</span></span><span class="techstack-pill"><span>CoreData &amp; Realm</span></span><span class="techstack-pill"><span>XCTest &amp; Fastlane</span></span></div></div>
+          <div class="techstack-group"><h4>Android Native</h4><div class="techstack-pills"><span class="techstack-pill"><span>Kotlin 2.0+</span></span><span class="techstack-pill"><span>Jetpack Compose UI</span></span><span class="techstack-pill"><span>Coroutines &amp; Flow</span></span><span class="techstack-pill"><span>Hilt / Dagger DI</span></span></div></div>
+          <div class="techstack-group"><h4>Cross Platform</h4><div class="techstack-pills"><span class="techstack-pill"><span>Flutter / Dart</span></span><span class="techstack-pill"><span>React Native 0.74+</span></span><span class="techstack-pill"><span>Expo Application Services</span></span><span class="techstack-pill"><span>Native Modules / C++</span></span></div></div>
+          <div class="techstack-group"><h4>Backend &amp; Cloud</h4><div class="techstack-pills"><span class="techstack-pill"><span>Node.js / Express</span></span><span class="techstack-pill"><span>Python FastAPI / Django</span></span><span class="techstack-pill"><span>PostgreSQL / Redis</span></span><span class="techstack-pill"><span>AWS / GCP / Firebase</span></span></div></div>
         </div>
       </div>
     </section>
 
     <!-- ================= PROCESS ================= -->
-    <section class="local-section" id="process">
+    <section class="ed-section why-alt" id="process">
       <div class="wrap">
-        <div class="shead center">
-          <span class="eyebrow-pill"><span class="dot"></span> Transparent Methodology</span>
-          <h2>Our 4-Phase App Development Playbook</h2>
-          <p class="sub">
-            Proven execution framework designed to get you from concept to live app stores on time and within budget.
-          </p>
-        </div>
-
-        <div class="steps-grid">
-          <div class="step-card">
-            <div class="step-num">01</div>
-            <h3>Product Discovery &amp; PRD</h3>
-            <p>We clarify business objectives, user personas, core feature sets, technical architecture, and produce a watertight Product Requirement Document (PRD).</p>
-          </div>
-
-          <div class="step-card">
-            <div class="step-num">02</div>
-            <h3>UI/UX &amp; Interactive Prototype</h3>
-            <p>We design pixel-perfect screen flows, high-fidelity Figma components, design systems, and clickable user test prototypes.</p>
-          </div>
-
-          <div class="step-card">
-            <div class="step-num">03</div>
-            <h3>Agile Sprints &amp; Bi-Weekly Demos</h3>
-            <p>Clean modular code written in 2-week sprints with continuous CI/CD test builds on TestFlight &amp; Play Store Internal Track for your live review.</p>
-          </div>
-
-          <div class="step-card">
-            <div class="step-num">04</div>
-            <h3>Store Approval &amp; Scale</h3>
-            <p>Full App Store &amp; Google Play submission handling, metadata optimization, crash monitoring, and post-launch maintenance scaling.</p>
-          </div>
+        <header class="ed-head">
+          <p class="ed-label">Transparent Methodology</p>
+          <h2 class="section-title">Our 4-Phase App Development Playbook</h2>
+          <p>Proven execution framework designed to get you from concept to live app stores on time and within budget.</p>
+        </header>
+        <div class="ed-index">
+          <article class="ed-row">
+            <div class="ed-row-title"><span class="ed-num">01</span><h3>Product Discovery &amp; PRD</h3></div>
+            <div class="ed-row-body"><p>We clarify business objectives, user personas, core feature sets, technical architecture, and produce a watertight Product Requirement Document (PRD).</p></div>
+          </article>
+          <article class="ed-row">
+            <div class="ed-row-title"><span class="ed-num">02</span><h3>UI/UX &amp; Interactive Prototype</h3></div>
+            <div class="ed-row-body"><p>We design pixel-perfect screen flows, high-fidelity Figma components, design systems, and clickable user test prototypes.</p></div>
+          </article>
+          <article class="ed-row">
+            <div class="ed-row-title"><span class="ed-num">03</span><h3>Agile Sprints &amp; Bi-Weekly Demos</h3></div>
+            <div class="ed-row-body"><p>Clean modular code written in 2-week sprints with continuous CI/CD test builds on TestFlight &amp; Play Store Internal Track for your live review.</p></div>
+          </article>
+          <article class="ed-row">
+            <div class="ed-row-title"><span class="ed-num">04</span><h3>Store Approval &amp; Scale</h3></div>
+            <div class="ed-row-body"><p>Full App Store &amp; Google Play submission handling, metadata optimization, crash monitoring, and post-launch maintenance scaling.</p></div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- ================= INDUSTRIES ================= -->
-    <section>
+    <!-- ================= SECTORS ================= -->
+    <section class="ed-section">
       <div class="wrap">
-        <div class="shead center">
-          <span class="eyebrow-pill"><span class="dot"></span> Domain Expertise</span>
-          <h2>Mobile Solutions Built for Diverse Sectors</h2>
-          <p class="sub">
-            We deliver tailored mobile experiences that solve complex operational hurdles across core industries.
-          </p>
-        </div>
-
-        <div class="grid-3">
-          <div class="sleek-card">
-            <div class="ic">🏥</div>
+        <header class="ed-head">
+          <p class="ed-label">Domain Expertise</p>
+          <h2 class="section-title">Mobile Solutions Built for Diverse Sectors</h2>
+          <p>We deliver tailored mobile experiences that solve complex operational hurdles across core industries.</p>
+        </header>
+        <div class="cap-grid-6">
+          <div class="cap-card">
             <h3>Healthcare &amp; Telemedicine</h3>
             <p>HIPAA-compliant doctor consultations, EHR integration, real-time vitals monitoring, appointment scheduling, and e-prescriptions.</p>
           </div>
-          <div class="sleek-card">
-            <div class="ic">💳</div>
+          <div class="cap-card">
             <h3>FinTech &amp; Neobanking</h3>
             <p>Secure digital wallets, UPI payment gateways, KYC verification, micro-lending workflows, and personal finance dashboards.</p>
           </div>
-          <div class="sleek-card">
-            <div class="ic">🛍️</div>
+          <div class="cap-card">
             <h3>E-Commerce &amp; Quick Commerce</h3>
             <p>High-conversion catalogs, live inventory tracking, hyper-local delivery routing, push marketing, and multi-currency checkouts.</p>
           </div>
-          <div class="sleek-card">
-            <div class="ic">🚚</div>
+          <div class="cap-card">
             <h3>Logistics &amp; Fleet Mobility</h3>
             <p>GPS geo-fencing, driver dispatch apps, route optimization, digital proof of delivery (POD), and warehouse barcode scanning.</p>
           </div>
-          <div class="sleek-card">
-            <div class="ic">🎓</div>
+          <div class="cap-card">
             <h3>EdTech &amp; Learning Apps</h3>
             <p>Interactive video streaming, quiz engines, live classroom WebRTC integration, offline course downloads, and gamification.</p>
           </div>
-          <div class="sleek-card">
-            <div class="ic">🏢</div>
+          <div class="cap-card">
             <h3>Enterprise B2B Portals</h3>
             <p>Field workforce management, CRM mobile sync, inventory auditing, internal approvals, and single sign-on (SSO) security.</p>
           </div>
@@ -1367,238 +313,132 @@
     </section>
 
     <!-- ================= FAQ ================= -->
-    <section class="faq-section" id="faq">
+    <section class="ed-section" id="faq">
       <div class="wrap">
-        <div class="faq-grid">
-          <div>
-            <span class="eyebrow-pill"><span class="dot"></span> Frequently Asked Questions</span>
-            <h2>Answers to Your Mobile App Questions</h2>
-            <p style="color:var(--ink-soft); margin-top:14px; font-size:16px;">
-              Have questions about costs, timelines, or technologies? Check our answers below or message us directly via the project form.
-            </p>
-            <div style="margin-top:24px;">
-              <a href="#estimate" class="btn btn-ghost">Have a Custom App Query? Contact Us →</a>
+        <header class="ed-head">
+          <p class="ed-label">Frequently Asked Questions</p>
+          <h2 class="section-title">Answers to Your Mobile App Questions</h2>
+          <p>Have questions about costs, timelines, or technologies? Check our answers below or message us directly via the project form.</p>
+        </header>
+        <div class="ed-faqs">
+          <details class="ed-faq" open><summary>How much does it cost to develop a mobile app in Bhubaneswar?</summary><div class="ed-faq-a">The cost of mobile app development in Bhubaneswar depends on complexity, platform choice (iOS, Android, or Cross-Platform Flutter/React Native), backend integrations, and custom features. A standard MVP typically ranges between ₹1.5 Lakhs to ₹5 Lakhs ($2,000 - $6,000 USD), while complex enterprise mobile systems range from ₹6 Lakhs to ₹15+ Lakhs. We provide fixed-price quotes after a detailed PRD session so there are zero surprise costs.</div></details>
+          <details class="ed-faq"><summary>How long does it take to build and launch an MVP mobile app?</summary><div class="ed-faq-a">A focused Minimum Viable Product (MVP) mobile app usually takes 4 to 8 weeks from PRD sign-off to App Store &amp; Google Play Store submission. Larger enterprise applications with custom backend APIs, payment integrations, and admin dashboards take between 10 to 16 weeks.</div></details>
+          <details class="ed-faq"><summary>Should I choose Native (Swift/Kotlin) or Cross-Platform (Flutter/React Native)?</summary><div class="ed-faq-a">For 85% of startups and businesses, Cross-Platform development with Flutter or React Native is the best choice because it cuts costs and development time by almost 40% while maintaining native 60fps performance on both iOS and Android. If your app requires heavy hardware access (e.g. low-level Bluetooth, ARKit/ARCore, or high-end 3D graphics), we recommend native Swift and Kotlin.</div></details>
+          <details class="ed-faq"><summary>Do I own the intellectual property (IP) and source code?</summary><div class="ed-faq-a">Yes, 100%. Upon milestone completion and final handover, all source code, design assets, database schemas, and intellectual property rights belong entirely to you with zero vendor lock-in. We also sign an enforceable Non-Disclosure Agreement (NDA) before discussing your project.</div></details>
+          <details class="ed-faq"><summary>Can we meet in person in Bhubaneswar to discuss my app idea?</summary><div class="ed-faq-a">Absolutely. We regularly meet founders, business leaders, and product teams across Bhubaneswar (Infocity, Patia, Chandrasekharpur, Jayadev Vihar, Saheed Nagar, DLF Cybercity, and O-Hub). You can also schedule an instant virtual video call.</div></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ENQUIRY ================= -->
+    <section class="contact-section ed-section" id="estimate">
+      <div class="wrap">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <p class="ed-label">Let's Build Together</p>
+            <h2>Get a Detailed Mobile App Architecture &amp; Cost Breakdown</h2>
+            <p>Share your project goals. We analyze your requirements and respond within 24 hours with an actionable PRD outline, technical architecture recommendation, and transparent estimate.</p>
+            <ul class="contact-points">
+              <li class="contact-point-item"><div class="contact-point-icon">–</div><div class="contact-point-text"><strong>Free 30-Min Architecture Consultation:</strong><span>Evaluate Flutter vs Native, cloud backend, and tech trade-offs.</span></div></li>
+              <li class="contact-point-item"><div class="contact-point-icon">–</div><div class="contact-point-text"><strong>Standard NDA Included:</strong><span>Your intellectual property, concept, and business data remain 100% confidential.</span></div></li>
+              <li class="contact-point-item"><div class="contact-point-icon">–</div><div class="contact-point-text"><strong>Milestone-Based Transparent Pricing:</strong><span>Pay only as approved deliverables and tested sprint builds are handed over.</span></div></li>
+              <li class="contact-point-item"><div class="contact-point-icon">–</div><div class="contact-point-text"><strong>Bhubaneswar In-Person Support:</strong><span>On-ground technical leadership for local enterprises and startups.</span></div></li>
+            </ul>
+            <div class="ed-contact-box">
+              <div>Direct contact</div>
+              <div>Email: <a href="mailto:me@niharrout.com">me@niharrout.com</a><br>Infocity &amp; Patia Corridor, Bhubaneswar, Odisha 751024</div>
             </div>
           </div>
-
-          <div>
-            <details class="q" open>
-              <summary>
-                <span>How much does it cost to develop a mobile app in Bhubaneswar?</span>
-                <span class="ic"></span>
-              </summary>
-              <div class="ans">
-                The cost of mobile app development in Bhubaneswar depends on complexity, platform choice (iOS, Android, or Cross-Platform Flutter/React Native), backend integrations, and custom features. A standard MVP typically ranges between ₹1.5 Lakhs to ₹5 Lakhs ($2,000 - $6,000 USD), while complex enterprise mobile systems range from ₹6 Lakhs to ₹15+ Lakhs. We provide fixed-price quotes after a detailed PRD session so there are zero surprise costs.
-              </div>
-            </details>
-
-            <details class="q">
-              <summary>
-                <span>How long does it take to build and launch an MVP mobile app?</span>
-                <span class="ic"></span>
-              </summary>
-              <div class="ans">
-                A focused Minimum Viable Product (MVP) mobile app usually takes 4 to 8 weeks from PRD sign-off to App Store &amp; Google Play Store submission. Larger enterprise applications with custom backend APIs, payment integrations, and admin dashboards take between 10 to 16 weeks.
-              </div>
-            </details>
-
-            <details class="q">
-              <summary>
-                <span>Should I choose Native (Swift/Kotlin) or Cross-Platform (Flutter/React Native)?</span>
-                <span class="ic"></span>
-              </summary>
-              <div class="ans">
-                For 85% of startups and businesses, Cross-Platform development with Flutter or React Native is the best choice because it cuts costs and development time by almost 40% while maintaining native 60fps performance on both iOS and Android. If your app requires heavy hardware access (e.g. low-level Bluetooth, ARKit/ARCore, or high-end 3D graphics), we recommend native Swift and Kotlin.
-              </div>
-            </details>
-
-            <details class="q">
-              <summary>
-                <span>Do I own the intellectual property (IP) and source code?</span>
-                <span class="ic"></span>
-              </summary>
-              <div class="ans">
-                Yes, 100%. Upon milestone completion and final handover, all source code, design assets, database schemas, and intellectual property rights belong entirely to you with zero vendor lock-in. We also sign an enforceable Non-Disclosure Agreement (NDA) before discussing your project.
-              </div>
-            </details>
-
-            <details class="q">
-              <summary>
-                <span>Can we meet in person in Bhubaneswar to discuss my app idea?</span>
-                <span class="ic"></span>
-              </summary>
-              <div class="ans">
-                Absolutely. We regularly meet founders, business leaders, and product teams across Bhubaneswar (Infocity, Patia, Chandrasekharpur, Jayadev Vihar, Saheed Nagar, DLF Cybercity, and O-Hub). You can also schedule an instant virtual video call.
-              </div>
-            </details>
+          <div class="contact-card-box">
+            <form>
+              <input type="hidden" name="service" value="Mobile App">
+              <input type="hidden" name="city" value="Bhubaneswar">
+              <div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;"><label>Leave this empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+                <div class="form-group"><label for="f-name">Your Name *</label><input class="form-input" id="f-name" type="text" name="name" placeholder="e.g. Priyabrata Mohanty" required></div>
+                <div class="form-group"><label for="f-phone">Phone Number *</label><input class="form-input" id="f-phone" type="tel" name="phone" placeholder="+91 98765 43210" required></div>
+                <div class="form-group"><label for="f-email">Work Email *</label><input class="form-input" id="f-email" type="email" name="email" placeholder="priyabrata@company.com" required></div>
+                <div class="form-group"><label for="f1">Target Platform</label><select class="form-select" id="f1" name="platform"><option value="Cross-Platform (Flutter / React Native)">Cross-Platform (Flutter / React Native)</option><option value="iOS Native (Swift)">iOS Native (Swift)</option><option value="Android Native (Kotlin)">Android Native (Kotlin)</option><option value="Both iOS and Android">Both iOS &amp; Android</option><option value="Need Consultation on Platform">Need Consultation on Platform</option></select></div>
+                <div class="form-group"><label for="f2">Estimated Budget Range</label><select class="form-select" id="f2" name="budget"><option value="₹1.5L - ₹3.5L ($2k - $4.5k)">₹1.5L - ₹3.5L ($2k - $4.5k)</option><option value="₹3.5L - ₹7L ($4.5k - $9k)">₹3.5L - ₹7L ($4.5k - $9k)</option><option value="₹7L - ₹15L+ ($9k - $20k+)">₹7L - ₹15L+ ($9k - $20k+)</option><option value="Enterprise / Undecided">Enterprise / Undecided</option></select></div>
+                <div class="form-group"><label for="f-details">Brief Project Scope / Key Features</label><textarea class="form-textarea" id="f-details" name="details" placeholder="Tell us about the app idea, main features, or any reference apps..." required></textarea></div>
+              <button type="submit" class="cl-button -primary" style="width:100%; justify-content:center;">Submit For Free PRD &amp; Estimate <span>&rarr;</span></button>
+              <p class="loc-form-note">100% Privacy Protected · Response in 24 Hours</p>
+              <div class="loc-form-status" role="status" aria-live="polite"></div>
+            </form>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ================= LEAD ESTIMATE FORM ================= -->
-    <section id="estimate">
+    <!-- ================= CLOSING CALL TO ACTION ================= -->
+    <section class="ed-cta">
       <div class="wrap">
-        <div class="lead-box">
-          <div class="shead">
-            <span class="eyebrow-pill"><span class="dot"></span> Let's Build Together</span>
-            <h2 style="font-size:clamp(30px, 4.2vw, 44px); margin-top:12px;">Get a Detailed Mobile App Architecture &amp; Cost Breakdown</h2>
-            <p class="sub" style="margin-top:10px;">
-              Share your project goals. We analyze your requirements and respond within 24 hours with an actionable PRD outline, technical architecture recommendation, and transparent estimate.
-            </p>
-          </div>
-
-          <div class="lead-grid">
-            <div class="lead-perks">
-              <div class="perk-item">
-                <span class="ck">✓</span>
-                <div><strong>Free 30-Min Architecture Consultation:</strong> Evaluate Flutter vs Native, cloud backend, and tech trade-offs.</div>
-              </div>
-              <div class="perk-item">
-                <span class="ck">✓</span>
-                <div><strong>Standard NDA Included:</strong> Your intellectual property, concept, and business data remain 100% confidential.</div>
-              </div>
-              <div class="perk-item">
-                <span class="ck">✓</span>
-                <div><strong>Milestone-Based Transparent Pricing:</strong> Pay only as approved deliverables and tested sprint builds are handed over.</div>
-              </div>
-              <div class="perk-item">
-                <span class="ck">✓</span>
-                <div><strong>Bhubaneswar In-Person Support:</strong> On-ground technical leadership for local enterprises and startups.</div>
-              </div>
-
-              <div style="margin-top:24px; padding:20px; background:var(--bg-2); border-radius:12px; border:1px solid var(--line);">
-                <p style="font-size:14.5px; color:var(--ink-soft); margin:0; line-height:1.6;">
-                  <strong style="color:var(--ink);">Direct Founder Contact:</strong><br>
-                  📧 Email: <a href="mailto:me@niharrout.com" style="color:var(--accent); text-decoration:none; font-weight:600;">me@niharrout.com</a><br>
-                  📍 Location: Infocity &amp; Patia Corridor, Bhubaneswar, Odisha 751024
-                </p>
-              </div>
-            </div>
-
-            <div class="cform-card">
-              <form id="appLeadForm">
-                <!-- Anti-spam honeypot field -->
-                <div style="display:none!important;visibility:hidden!important;opacity:0!important;position:absolute!important;left:-9999px!important;">
-                  <label for="app_hp_user">Leave this empty</label>
-                  <input type="text" id="app_hp_user" name="app_hp_user" tabindex="-1" autocomplete="off">
-                </div>
-
-                <div class="form-group">
-                  <label for="appName">Your Name *</label>
-                  <input type="text" id="appName" name="name" placeholder="e.g. Priyabrata Mohanty" required>
-                </div>
-
-                <div class="form-group">
-                  <label for="appPhone">Phone Number *</label>
-                  <input type="tel" id="appPhone" name="phone" placeholder="+91 98765 43210" required>
-                </div>
-
-                <div class="form-group">
-                  <label for="appEmail">Work Email *</label>
-                  <input type="email" id="appEmail" name="email" placeholder="priyabrata@company.com" required>
-                </div>
-
-                <div class="form-group">
-                  <label for="appPlatform">Target Platform</label>
-                  <select id="appPlatform" name="platform">
-                    <option value="Cross-Platform (Flutter / React Native)">Cross-Platform (Flutter / React Native)</option>
-                    <option value="iOS Native (Swift)">iOS Native (Swift)</option>
-                    <option value="Android Native (Kotlin)">Android Native (Kotlin)</option>
-                    <option value="Both iOS and Android">Both iOS &amp; Android</option>
-                    <option value="Need Consultation on Platform">Need Consultation on Platform</option>
-                  </select>
-                </div>
-
-                <div class="form-group">
-                  <label for="appBudget">Estimated Budget Range</label>
-                  <select id="appBudget" name="budget">
-                    <option value="₹1.5L - ₹3.5L ($2k - $4.5k)">₹1.5L - ₹3.5L ($2k - $4.5k)</option>
-                    <option value="₹3.5L - ₹7L ($4.5k - $9k)">₹3.5L - ₹7L ($4.5k - $9k)</option>
-                    <option value="₹7L - ₹15L+ ($9k - $20k+)">₹7L - ₹15L+ ($9k - $20k+)</option>
-                    <option value="Enterprise / Undecided">Enterprise / Undecided</option>
-                  </select>
-                </div>
-
-                <div class="form-group">
-                  <label for="appDetails">Brief Project Scope / Key Features</label>
-                  <textarea id="appDetails" name="details" rows="3" placeholder="Tell us about the app idea, main features, or any reference apps..." required></textarea>
-                </div>
-
-                <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; padding:14px;">
-                  Submit For Free PRD &amp; Estimate <span class="arw">→</span>
-                </button>
-                <div style="font-size:12px; color:var(--ink-faint); text-align:center; margin-top:12px;">
-                  🔒 100% Privacy Protected · Response in 24 Hours
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    <!-- ================= FULL-BLEED CLOSING CTA BAND ================= -->
-    <section class="closing-cta-band">
-      <div class="closing-cta-inner">
         <h2>Ready to build your mobile application?</h2>
         <p>Book a dedicated product discovery session with Nihar Ranjan Rout. Let's scope features, platform strategy, and sprint milestones.</p>
-        <a href="https://cal.com/niharrout/30min" target="_blank" rel="noopener" class="btn-closing-cta">
-          Book a Discovery Call
-          <span style="font-size:1.1rem; line-height:1;">→</span>
-        </a>
+        <a href="https://calendly.com/creuto/meet" data-calendly="true" class="cl-button -primary">Book a Discovery Call <span>&rarr;</span></a>
       </div>
     </section>
   </main>
 
-  <!-- ================= FOOTER ================= -->
-  <footer class="ft">
-    <div class="wrap">
-      <div class="ft-grid">
-        <div>
-          <span class="ft-brand">nihar<span class="d">.</span></span>
-          <p class="ft-desc">
-            Product strategist &amp; Founder of Creuto. Delivering growth-standard mobile applications, enterprise software, and AI systems built within budget.
-          </p>
-          <div style="margin-top:14px; font-size:13px; color:var(--ink-faint);">
-            📍 Bhubaneswar, Odisha, India · Global Delivery
-          </div>
-        </div>
-
-        <div>
-          <h4>Services &amp; Solutions</h4>
-          <div class="ft-links">
-            <a href="/b2b-software-development-for-startups">B2B Software for Startups</a>
-            <a href="/mobile-app-development-bhubaneswar">Mobile App Development Bhubaneswar</a>
-            <a href="/ai-product-development-bhubaneswar">AI Product Development Bhubaneswar</a>
-            <a href="https://creuto.com" target="_blank" rel="noopener">Creuto B2B Software Studio</a>
-          </div>
-        </div>
-
-        <div>
-          <h4>Direct Connect</h4>
-          <div class="ft-links">
-            <a href="mailto:me@niharrout.com">me@niharrout.com</a>
-            <a href="#estimate">Start a Mobile Project</a>
-            <a href="/privacy-policy">Privacy Policy</a>
-            <a href="/terms">Terms of Service</a>
-            <a href="https://www.linkedin.com/in/niharrout/" target="_blank" rel="noopener">LinkedIn Profile</a>
-          </div>
-        </div>
+<!-- chrome:footer -->
+<footer class="sc-footer">
+  <div class="sc-wrap">
+    <div class="sc-foot-grid">
+      <div class="sc-foot-brand">
+        <a class="sc-brand sc-brand-light" href="/" aria-label="Nihar Ranjan Rout, home">
+          <img src="/assets/nihar-avatar.jpg" alt="" width="36" height="36" loading="lazy" decoding="async">
+          <span class="sc-brand-text">nihar<span class="sc-dot">.</span></span>
+        </a>
+        <p>Founder &amp; CEO of Creuto. Product leader with 8+ years across product management, custom ERP systems, mobile applications, and B2B software engineering with a dedicated 100% in-house team.</p>
+        <p class="sc-foot-contact">Working with teams worldwide<br><a href="mailto:me@niharrout.com">me@niharrout.com</a></p>
       </div>
 
-      <div class="ft-bottom">
-        <div>© <span id="yr"></span> Nihar Ranjan Rout (Creuto). All rights reserved.</div>
-        <div style="display:flex; gap:12px;">
-          <a href="/privacy-policy" style="color:inherit; text-decoration:none;">Privacy</a>
-          <span>·</span>
-          <a href="/terms" style="color:inherit; text-decoration:none;">Terms</a>
-          <span>·</span>
-          <span>Bhubaneswar &amp; Remote</span>
-        </div>
+      <div class="sc-foot-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/services/mobile-app-development">Mobile App Development</a></li>
+          <li><a href="/services/custom-software-development">Custom Software &amp; ERP</a></li>
+          <li><a href="/services/ai-product-development">AI Product Development</a></li>
+          <li><a href="/services/product-strategy-prd">Product Strategy &amp; PRDs</a></li>
+        </ul>
+      </div>
+
+      <div class="sc-foot-col">
+        <h4>Work</h4>
+        <ul>
+          <li><a href="/work/custom-erp-manufacturing">Manufacturing ERP</a></li>
+          <li><a href="/work/sky1-event-booking">Sky1 Event Booking</a></li>
+          <li><a href="/work/make-my-look">Make My Look</a></li>
+          <li><a href="/work/flashnow">FlashNow</a></li>
+          <li><a href="/work/skribe">Skribe</a></li>
+        </ul>
+      </div>
+
+      <div class="sc-foot-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about">About Nihar &amp; Creuto</a></li>
+          <li><a href="/blog">Blog &amp; Playbooks</a></li>
+          <li><a href="/project-costs">Project Costs Guide</a></li>
+          <li><a href="/b2b-software-development-for-startups">B2B Startup Playbook</a></li>
+          <li><a href="/technology">Technology Stack</a></li>
+          <li><a href="/tools">Free Tools</a></li>
+          <li><a href="https://www.linkedin.com/in/iniharrout" target="_blank" rel="noopener">LinkedIn &nearr;</a></li>
+        </ul>
       </div>
     </div>
-  </footer>
 
-  <!-- ================= JSON-LD STRUCTURED DATA FOR BHUBANESWAR SEO ================= -->
+    <div class="sc-foot-bottom">
+      <div>&copy; <span id="yr" data-year>2026</span> Nihar Ranjan Rout &middot; Founder &amp; CEO, Creuto. All rights reserved.</div>
+      <div class="sc-foot-legal">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms">Terms of Service</a>
+        <a href="#top">Back to top &uarr;</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- /chrome:footer -->
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -1675,7 +515,6 @@
     }
   }
   </script>
-
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -1724,7 +563,6 @@
     ]
   }
   </script>
-
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -1746,139 +584,7 @@
   }
   </script>
 
-  <!-- ================= SCRIPTS ================= -->
-  <script>
-    document.getElementById('yr').textContent = new Date().getFullYear();
-
-    /* Mobile drawer toggle */
-    (function () {
-      var toggle = document.getElementById('navToggle');
-      var drawer = document.getElementById('mobileDrawer');
-      if (toggle && drawer) {
-        toggle.addEventListener('click', function (e) {
-          e.stopPropagation();
-          var isOpen = toggle.classList.toggle('open');
-          drawer.classList.toggle('open', isOpen);
-        });
-
-        var links = drawer.querySelectorAll('.drawer-lnk, .btn');
-        links.forEach(function (lnk) {
-          lnk.addEventListener('click', function () {
-            toggle.classList.remove('open');
-            drawer.classList.remove('open');
-          });
-        });
-
-        document.addEventListener('click', function (e) {
-          if (!drawer.contains(e.target) && !toggle.contains(e.target)) {
-            toggle.classList.remove('open');
-            drawer.classList.remove('open');
-          }
-        });
-      }
-    })();
-
-    /* Toast */
-    function showToast(message) {
-      var toast = document.createElement('div');
-      toast.className = 'toast';
-      toast.innerHTML = '<div style="width:22px;height:22px;border-radius:50%;background:var(--emerald-tint);color:var(--emerald-dark);display:grid;place-items:center;font-weight:bold;font-size:12px;">✓</div><div style="font-size:14px;font-weight:600;color:var(--ink);">' + message + '</div>';
-      document.body.appendChild(toast);
-      setTimeout(function () { toast.classList.add('show'); }, 10);
-      setTimeout(function () {
-        toast.classList.remove('show');
-        setTimeout(function () { toast.remove(); }, 400);
-      }, 4000);
-    }
-
-    /* Google Chat Webhook Integration */
-    var GOOGLE_CHAT_WEBHOOK_URL = 'https://chat.googleapis.com/v1/spaces/AAQAgcxp6nM/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=NYzpLArOTxnwEYuEzvw094eXwTbbpD_WZs2ugBGOH7U';
-
-    function sendToGoogleChat(payload, fallbackAction) {
-      if (!GOOGLE_CHAT_WEBHOOK_URL) {
-        fallbackAction();
-        return;
-      }
-      fetch(GOOGLE_CHAT_WEBHOOK_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      })
-      .then(function () {
-        showToast('Thank you! Your mobile app enquiry has been submitted. We will contact you within 24 hours.');
-      })
-      .catch(function (err) {
-        console.error('Webhook error:', err);
-        showToast('Submitting via email client...');
-        setTimeout(fallbackAction, 1000);
-      });
-    }
-
-    /* Form Handler */
-    var form = document.getElementById('appLeadForm');
-    if (form) {
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        var hp = form.querySelector('[name="app_hp_user"]');
-        if (hp && hp.value.trim() !== '') {
-          console.warn('Spam filtered.');
-          showToast('Thank you! Your enquiry has been received.');
-          form.reset();
-          return;
-        }
-        var name = form.querySelector('[name="name"]').value.trim();
-        var phone = form.querySelector('[name="phone"]').value.trim();
-        var email = form.querySelector('[name="email"]').value.trim();
-        var platform = form.querySelector('[name="platform"]').value;
-        var budget = form.querySelector('[name="budget"]').value;
-        var details = form.querySelector('[name="details"]').value.trim();
-
-        var payload = {
-          "cardsV2": [
-            {
-              "cardId": "mobileAppEnquiryBhubaneswar",
-              "card": {
-                "header": {
-                  "title": "📱 New Mobile App Lead (Bhubaneswar Page)",
-                  "subtitle": "Submitted via niharrout.com/mobile-app-development-bhubaneswar.html",
-                  "imageUrl": "https://www.niharrout.com/assets/nihar.jpg",
-                  "imageType": "CIRCLE"
-                },
-                "sections": [
-                  {
-                    "widgets": [
-                      { "decoratedText": { "topLabel": "Lead Name", "text": name } },
-                      { "decoratedText": { "topLabel": "Phone", "text": phone } },
-                      { "decoratedText": { "topLabel": "Work Email", "text": email } },
-                      { "decoratedText": { "topLabel": "Platform Preference", "text": platform } },
-                      { "decoratedText": { "topLabel": "Budget Range", "text": budget } },
-                      { "decoratedText": { "topLabel": "Project Description", "text": details } }
-                    ]
-                  }
-                ]
-              }
-            }
-          ]
-        };
-
-        var fallback = function () {
-          var body = 'Mobile App Development Enquiry (Bhubaneswar)%0D%0A%0D%0AName: ' + encodeURIComponent(name)
-            + '%0D%0APhone: ' + encodeURIComponent(phone)
-            + '%0D%0AEmail: ' + encodeURIComponent(email)
-            + '%0D%0APlatform: ' + encodeURIComponent(platform)
-            + '%0D%0ABudget: ' + encodeURIComponent(budget)
-            + '%0D%0ADetails:%0D%0A' + encodeURIComponent(details);
-          window.location.href = 'mailto:me@niharrout.com?subject=' + encodeURIComponent('Mobile App Enquiry (Bhubaneswar) — ' + name) + '&body=' + body;
-        };
-
-        sendToGoogleChat(payload, fallback);
-        form.reset();
-      });
-    }
-  </script>
-  <script src="/assets/aos.js"></script>
-  <script src="/assets/site-enhancements.js"></script>
+  <script src="/assets/site-enhancements.js?v=serv2026_fix2"></script>
+  <script src="/assets/lead-forms.js?v=4"></script>
 </body>
-
 </html>
