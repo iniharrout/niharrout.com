@@ -56,6 +56,9 @@ body.page-home, body.ed-page { background: var(--paper) !important; color: var(-
 .ed-portrait figcaption { display: flex; flex-direction: column; gap: 2px; padding: 12px 0 0; font-size: 14px; color: var(--ink-2); }
 .ed-portrait figcaption strong { font-size: 15px; color: var(--ink); }
 .ed-portrait figcaption span { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.04em; color: var(--ink-3); }
+.ed-badge { display: inline-block; margin-top: 20px; line-height: 0; transition: opacity 0.15s ease, transform 0.15s ease; }
+.ed-portrait .ed-badge img { display: block; width: 176px; height: auto; aspect-ratio: auto; object-fit: contain; object-position: center; background: none; border-radius: 0; }
+.ed-badge:hover { opacity: 0.8; transform: translateY(-2px); }
 .ed-hero-founder { display: none; }
 
 .ed-band { display: grid; grid-template-columns: 1fr; row-gap: 40px; margin-top: 72px; padding: 44px 0 44px; border-top: 1px solid var(--ink); }
