@@ -582,9 +582,6 @@ body.page-home .ed-facts dd { color: rgba(255, 255, 255, 0.48); }
 body.page-home .ed-logos-label { font-weight: 700; }
 
 /* ---------- OpenAI Select Partner: flat full-bleed, no card ---------- */
-body.page-home .ed-milestone-mark { display: block; font-family: var(--font-display); font-weight: 700; letter-spacing: -0.04em; font-size: clamp(2.6rem, 5vw, 4.4rem); line-height: 1; color: #fff !important; margin-bottom: 18px; }
-body.page-home .ed-milestone-mark i { font-style: normal; color: var(--accent-light); padding: 0 0.12em; }
-body.page-home #ed-milestone-title { display: block; font-size: 1.05rem !important; font-weight: 500 !important; letter-spacing: -0.01em !important; color: rgba(255, 255, 255, 0.56) !important; max-width: none !important; margin-bottom: 20px !important; }
 body.page-home .ed-milestone-fig a { border-radius: 10px; overflow: hidden; padding: 0; }
 body.page-home .ed-milestone-fig img { border-radius: 10px; }
 
@@ -637,9 +634,6 @@ body.page-home .ed-steps li:not(:last-child)::after {
   body.page-home .ed-quote, body.page-home .ed-quotes > .ed-quote:nth-child(2), body.page-home .ed-quotes > .ed-quote:nth-child(3) { grid-column: 1; grid-row: auto; }
   body.page-home .ed-steps li:not(:last-child)::after { display: none; }
 }
-@media (max-width: 640px) {
-  body.page-home .ed-milestone-mark { font-size: clamp(2.1rem, 9vw, 2.8rem); }
-}
 
 /* =====================================================================
    Homepage v4: matched more closely to pagerduty.com's actual colour
@@ -671,7 +665,7 @@ body.page-home .ed-stats .ed-facts > div {
 }
 body.page-home .ed-stats .ed-facts dt {
   color: var(--accent-deep) !important; font-family: var(--font-display); font-weight: 700;
-  font-size: clamp(1.9rem, 2.6vw, 2.4rem); margin: 0; order: 2;
+  font-size: clamp(1.5rem, 2.1vw, 1.85rem); white-space: nowrap; margin: 0; order: 2;
 }
 
 /* ---------- OpenAI Select Partner: an inset dark panel, not edge to edge ---------- */
@@ -707,73 +701,39 @@ body.page-home .ed-work-text .ed-tag {
 }
 
 /* =====================================================================
-   Hero photo v2: a floating circular portrait with layered credential
-   chips and a soft glow, instead of a plain rectangle with text stacked
-   underneath. Text content is untouched - CSS only.
+   Homepage v6: hero centered and bolder. Left-aligned text left a wall of
+   empty space on the right at wide widths, so the whole column - identity
+   chip, pill, headline, subtext, CTAs, assurance line - is centered, and
+   the founder chip is sized up so the name/photo/title read as a real
+   statement instead of a small aside.
    ===================================================================== */
-body.page-home .ed-portrait {
-  display: block; position: relative;
-  width: min(420px, 100%); margin: 0 auto; padding: 28px 34px 40px;
-}
-body.page-home .ed-portrait::before {
-  content: ''; position: absolute; inset: 0; z-index: 0;
-  background: radial-gradient(circle at 50% 42%, rgba(173, 240, 126, 0.22), transparent 68%);
-  filter: blur(6px);
-}
-body.page-home .ed-portrait > img {
-  position: relative; z-index: 1; aspect-ratio: 1 / 1; border-radius: 50%;
-  object-position: center 22%; box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08), 0 30px 60px -20px rgba(0, 0, 0, 0.6);
-}
-body.page-home .ed-portrait figcaption {
-  position: absolute; z-index: 2; left: 0; bottom: 4px; grid-column: auto;
-  flex-direction: column; gap: 1px; background: rgba(10, 10, 10, 0.72); backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 14px; padding: 11px 16px;
-}
-body.page-home .ed-portrait figcaption strong { color: #fff; font-size: 14px; }
-body.page-home .ed-portrait figcaption span { color: rgba(255, 255, 255, 0.55); font-size: 11px; }
-body.page-home .ed-badge {
-  position: absolute; z-index: 2; right: 4px; top: 12px; grid-column: auto;
-  background: #fff; border-radius: 999px; padding: 8px 14px;
-  box-shadow: 0 10px 24px -8px rgba(0, 0, 0, 0.5);
-}
-body.page-home .ed-portrait .ed-badge img { height: 26px; }
-
-@media (max-width: 991px) {
-  body.page-home .ed-portrait { width: min(340px, 78vw); padding: 22px 26px 34px; }
-}
-@media (max-width: 480px) {
-  body.page-home .ed-badge { right: 0; top: 6px; padding: 7px 11px; }
-  body.page-home .ed-portrait .ed-badge img { height: 22px; }
-  body.page-home .ed-portrait figcaption { left: -6px; bottom: 0; padding: 9px 13px; }
-}
-
-/* =====================================================================
-   Homepage v5: hero without a photo. The large floating portrait made the
-   hero read as top-heavy no matter how it was styled, so it's gone; the
-   founder identity now lives in an always-visible glass chip above the
-   announcement pill, and the layout is single-column since there's no
-   image to balance against.
-   ===================================================================== */
-body.page-home .ed-hero { grid-template-columns: 1fr; }
-body.page-home .ed-hero-copy { max-width: 760px; }
+body.page-home .ed-hero { grid-template-columns: 1fr; justify-items: center; text-align: center; }
+body.page-home .ed-hero-copy { max-width: 720px; margin: 0 auto; }
+body.page-home .hero-sub { margin-left: auto; margin-right: auto; }
+body.page-home .hero-ctas { justify-content: center; }
+body.page-home .ed-assure { justify-content: center; }
 
 body.page-home .ed-hero-founder {
-  display: flex; align-items: center; gap: 10px; width: fit-content;
-  margin: 0 0 24px; padding: 6px 16px 6px 6px;
+  display: flex; align-items: center; gap: 14px; width: fit-content;
+  margin: 0 auto 28px; padding: 8px 24px 8px 8px;
   background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 999px;
   backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
 }
 body.page-home .ed-hero-founder img {
-  width: 34px; height: 34px; border-radius: 50%; object-fit: cover;
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2);
+  width: 56px; height: 56px; border-radius: 50%; object-fit: cover;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.22);
 }
-body.page-home .ed-hero-founder div { display: flex; flex-direction: column; line-height: 1.2; }
-body.page-home .ed-hero-founder strong { font-size: 13px; font-weight: 600; }
-body.page-home .ed-hero-founder span { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.02em; }
+body.page-home .ed-hero-founder div { display: flex; flex-direction: column; line-height: 1.25; text-align: left; }
+body.page-home .ed-hero-founder strong { font-size: 17px; font-weight: 700; }
+body.page-home .ed-hero-founder span { font-family: var(--mono); font-size: 12px; letter-spacing: 0.02em; }
 
 @media (max-width: 480px) {
-  body.page-home .ed-hero-founder { padding: 5px 14px 5px 5px; gap: 8px; margin-bottom: 20px; }
-  body.page-home .ed-hero-founder img { width: 30px; height: 30px; }
+  body.page-home .ed-hero-founder { padding: 6px 18px 6px 6px; gap: 10px; margin-bottom: 22px; }
+  body.page-home .ed-hero-founder img { width: 46px; height: 46px; }
+  body.page-home .ed-hero-founder strong { font-size: 15px; }
 }
+
+/* ---------- OpenAI Select Partner: heading needs room for the full sentence ---------- */
+body.page-home #ed-milestone-title { max-width: 22ch; }
