@@ -540,43 +540,26 @@ html.js .ed-reveal.is-in { opacity: 1; transform: none; }
    shared .cl-button rules above). Nothing here wraps content in a
    rounded "card" — full-bleed flat sections and thin rules do the work.
    ===================================================================== */
-/* a faint dot-grid texture on the dark sections, standing in for "blueprint" */
-body.page-home .hero-section,
+/* a faint dot-grid texture, standing in for "blueprint" */
 body.page-home .ed-milestone {
   position: relative;
   background-image: radial-gradient(circle, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
   background-size: 22px 22px;
 }
 
-/* ---------- Hero: flat, full-bleed near-black, no card ---------- */
+/* ---------- Hero: flat, full-bleed white, no card ---------- */
 body.page-home .hero-section {
-  background-color: var(--ink);
+  position: relative;
+  background-color: var(--paper);
+  background-image: radial-gradient(circle, rgba(10, 10, 10, 0.07) 1px, transparent 1px);
+  background-size: 22px 22px;
+  border-bottom: 1px solid var(--rule);
   padding: 0;
 }
 body.page-home .hero-section .wrap { padding-top: 40px; padding-bottom: 56px; }
 body.page-home .ed-hero { padding-bottom: 8px; }
-body.page-home .ed-label { color: rgba(255, 255, 255, 0.5); }
-body.page-home .hero-title { color: #fff; font-weight: 600; letter-spacing: -0.035em; }
-body.page-home .hero-title .ed-hl { color: var(--accent-light); }
-body.page-home .hero-sub { color: rgba(255, 255, 255, 0.68); }
-body.page-home .ed-pill { border-color: rgba(255, 255, 255, 0.24); color: #fff; background: rgba(255, 255, 255, 0.05); }
-body.page-home .ed-pill:hover { background: #fff; color: var(--ink); }
-body.page-home .hero-section .cl-button.-secondary { border-color: rgba(255, 255, 255, 0.32); color: #fff; }
-body.page-home .hero-section .cl-button.-secondary:hover { background: #fff; color: var(--ink); }
-body.page-home .ed-assure { color: rgba(255, 255, 255, 0.8); border-top-color: rgba(255, 255, 255, 0.14); }
-body.page-home .ed-assure li::before { background: var(--accent-light); }
-body.page-home .ed-hero-founder strong { color: #fff; }
-body.page-home .ed-hero-founder span { color: rgba(255, 255, 255, 0.5); }
-body.page-home .ed-portrait figcaption strong { color: #fff; }
-body.page-home .ed-portrait figcaption span { color: rgba(255, 255, 255, 0.5); }
-body.page-home .ed-badge { background: #fff; border-radius: 10px; padding: 7px 12px; }
-body.page-home .ed-portrait .ed-badge img { mix-blend-mode: normal; height: 30px; }
-body.page-home .ed-band { border-top-color: rgba(255, 255, 255, 0.14); }
-body.page-home .ed-pull { color: #fff; font-weight: 500; }
-body.page-home .ed-facts { position: relative; }
-body.page-home .ed-facts > div { border-left-color: rgba(255, 255, 255, 0.14); }
-body.page-home .ed-facts dt { color: #fff; font-family: var(--font-display); font-weight: 700; font-size: clamp(1.7rem, 2.7vw, 2.5rem); }
-body.page-home .ed-facts dd { color: rgba(255, 255, 255, 0.48); }
+body.page-home .hero-title { color: var(--ink); font-weight: 600; letter-spacing: -0.035em; }
+body.page-home .hero-title .ed-hl { color: var(--accent); }
 
 /* ---------- Trusted-by: quieter label, unchanged logos ---------- */
 body.page-home .ed-logos-label { font-weight: 700; }
@@ -716,14 +699,15 @@ body.page-home .ed-assure { justify-content: center; }
 body.page-home .ed-hero-founder {
   display: flex; align-items: center; gap: 14px; width: fit-content;
   margin: 0 auto 28px; padding: 8px 24px 8px 8px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(10, 10, 10, 0.035);
+  border: 1px solid var(--rule);
   border-radius: 999px;
+  box-shadow: 0 2px 10px rgba(10, 10, 10, 0.04);
   backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
 }
 body.page-home .ed-hero-founder img {
   width: 56px; height: 56px; border-radius: 50%; object-fit: cover;
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.22);
+  box-shadow: 0 0 0 1px rgba(10, 10, 10, 0.1);
 }
 body.page-home .ed-hero-founder div { display: flex; flex-direction: column; line-height: 1.25; text-align: left; }
 body.page-home .ed-hero-founder strong { font-size: 17px; font-weight: 700; }
