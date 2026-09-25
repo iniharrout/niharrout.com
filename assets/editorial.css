@@ -571,30 +571,44 @@ body.page-home .ed-milestone-fig img { border-radius: 10px; }
 /* ---------- Services: product-problem eyebrows ---------- */
 body.page-home .ed-row-title .ed-tag { color: var(--accent); font-weight: 700; }
 
-/* ---------- Work: flat, hairline-divided, the image itself is the focus ---------- */
+/* ---------- Work: a colour-tinted project grid, each case in its own card ---------- */
 body.page-home .ed-work { border-bottom: 0; }
+body.page-home .ed-work {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 56px 40px;
+}
 body.page-home .ed-work-row {
   display: block; grid-template-columns: none;
-  border-top: 1px solid var(--rule); border-radius: 0; background: none;
-  padding: 48px 0; margin: 0; box-shadow: none; transition: none;
+  border-top: 0; border-radius: 0; background: none;
+  padding: 0; margin: 0; box-shadow: none; transition: none;
 }
-body.page-home .ed-work-row:first-child { border-top-color: var(--ink); }
+body.page-home .ed-work-row:first-child { border-top-color: transparent; }
 body.page-home .ed-work-row:hover { transform: none; box-shadow: none; }
 body.page-home .ed-work-row > .ed-num { display: none; }
 body.page-home .ed-work-thumb {
-  max-width: none; aspect-ratio: 16 / 9; border-radius: 10px; background: var(--paper-2);
-  padding: 0; margin-bottom: 28px;
+  max-width: none; aspect-ratio: 4 / 3; border-radius: 24px;
+  padding: 26px; margin-bottom: 24px;
+  display: flex; align-items: center; justify-content: center;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
-body.page-home .ed-work-thumb img { border-radius: 10px; box-shadow: none; }
+body.page-home .ed-work-row:hover .ed-work-thumb { transform: translateY(-4px); }
+body.page-home .ed-work-thumb img {
+  border-radius: 14px; box-shadow: 0 20px 40px -18px rgba(10, 10, 10, 0.3);
+  width: 100%; height: 100%;
+}
 body.page-home .ed-work-row:hover .ed-work-thumb img { transform: scale(1.015); }
+body.page-home .ed-work-row.tone-dark .ed-work-thumb { background: var(--ink); }
+body.page-home .ed-work-row.tone-amber .ed-work-thumb { background: #fbeee0; }
+body.page-home .ed-work-row.tone-rose .ed-work-thumb { background: #faeaf0; }
+body.page-home .ed-work-row.tone-lime .ed-work-thumb { background: #eef6df; }
 body.page-home .ed-work-text { padding: 0; }
 body.page-home .ed-work-text .case-title { transition: color 0.15s ease; }
 body.page-home .ed-work-outcome { text-align: left; padding: 0; margin-top: 14px; font-size: 1.05rem; }
 body.page-home .ed-work-outcome::after { content: 'View case study \2192'; }
-body.page-home .ed-work-row.tone-dark .ed-tag { color: #4a4844; }
-body.page-home .ed-work-row.tone-amber .ed-tag { color: #b9560a; }
-body.page-home .ed-work-row.tone-rose .ed-tag { color: #a6386a; }
-body.page-home .ed-work-row.tone-lime .ed-tag { color: #4c7a0d; }
+
+@media (max-width: 991px) {
+  body.page-home .ed-work { grid-template-columns: 1fr; gap: 48px; }
+  body.page-home .ed-work-thumb { padding: 18px; border-radius: 20px; margin-bottom: 20px; }
+}
 
 /* ---------- Testimonials: one large quote, two supporting ---------- */
 body.page-home .ed-quotes { grid-template-columns: 1.6fr 1fr; column-gap: 56px; align-items: start; }
