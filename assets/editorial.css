@@ -556,10 +556,15 @@ body.page-home .hero-section {
   border-bottom: 1px solid var(--rule);
   padding: 0;
 }
-body.page-home .hero-section .wrap { padding-top: 40px; padding-bottom: 56px; }
-body.page-home .ed-hero { padding-bottom: 8px; }
-body.page-home .hero-title { color: var(--ink); font-weight: 600; letter-spacing: -0.035em; }
+body.page-home .hero-section { padding: 0; }
+body.page-home .hero-section .wrap { padding-top: 28px; padding-bottom: 36px; }
+body.page-home .ed-hero { padding-bottom: 0; }
+body.page-home .hero-title { color: var(--ink); font-weight: 600; letter-spacing: -0.035em; margin-bottom: 20px; }
 body.page-home .hero-title .ed-hl { color: var(--accent); }
+body.page-home .hero-sub { margin-bottom: 26px; }
+body.page-home .hero-ctas { margin-bottom: 16px; }
+body.page-home .hero-section .ed-band { margin-top: 36px; padding: 28px 0; }
+body.page-home .hero-section .ed-pull { font-size: clamp(1.25rem, 1.9vw, 1.6rem); max-width: 42ch; margin: 0 auto; }
 
 /* ---------- Trusted-by: quieter label, unchanged logos ---------- */
 body.page-home .ed-logos-label { font-weight: 700; }
@@ -698,40 +703,34 @@ body.page-home .ed-work-text .ed-tag {
 }
 
 /* =====================================================================
-   Homepage v6: hero centered and bolder. Left-aligned text left a wall of
-   empty space on the right at wide widths, so the whole column - identity
-   chip, pill, headline, subtext, CTAs, assurance line - is centered, and
-   the founder chip is sized up so the name/photo/title read as a real
-   statement instead of a small aside.
+   Homepage v6: hero centered. Left-aligned text left a wall of empty
+   space on the right at wide widths, so the whole column - identity
+   line, pill, headline, subtext, CTAs, assurance line - is centered.
    ===================================================================== */
 body.page-home .ed-hero { grid-template-columns: 1fr; justify-items: center; text-align: center; }
-body.page-home .ed-hero-copy { max-width: 720px; margin: 0 auto; }
+body.page-home .ed-hero-copy { max-width: 700px; margin: 0 auto; }
 body.page-home .hero-sub { margin-left: auto; margin-right: auto; }
 body.page-home .hero-ctas { justify-content: center; }
 body.page-home .ed-assure { justify-content: center; }
 
+/* =====================================================================
+   Homepage v8: founder identity as a plain byline, not a bordered card.
+   Two stacked bordered pills (identity chip + announcement pill) read as
+   heavy chrome before the headline even starts - the identity is now a
+   single quiet line, no box/border/shadow, so the headline carries the
+   hero instead of competing with it.
+   ===================================================================== */
 body.page-home .ed-hero-founder {
-  display: flex; align-items: center; gap: 14px; width: fit-content;
-  margin: 0 auto 28px; padding: 8px 24px 8px 8px;
-  background: rgba(10, 10, 10, 0.035);
-  border: 1px solid var(--rule);
-  border-radius: 999px;
-  box-shadow: 0 2px 10px rgba(10, 10, 10, 0.04);
-  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  display: flex; align-items: center; gap: 8px; width: fit-content;
+  margin: 0 auto 14px;
 }
 body.page-home .ed-hero-founder img {
-  width: 56px; height: 56px; border-radius: 50%; object-fit: cover;
-  box-shadow: 0 0 0 1px rgba(10, 10, 10, 0.1);
+  width: 26px; height: 26px; border-radius: 50%; object-fit: cover;
 }
-body.page-home .ed-hero-founder div { display: flex; flex-direction: column; line-height: 1.25; text-align: left; }
-body.page-home .ed-hero-founder strong { font-size: 17px; font-weight: 700; }
-body.page-home .ed-hero-founder span { font-family: var(--mono); font-size: 12px; letter-spacing: 0.02em; }
-
-@media (max-width: 480px) {
-  body.page-home .ed-hero-founder { padding: 6px 18px 6px 6px; gap: 10px; margin-bottom: 22px; }
-  body.page-home .ed-hero-founder img { width: 46px; height: 46px; }
-  body.page-home .ed-hero-founder strong { font-size: 15px; }
-}
+body.page-home .ed-hero-founder div { display: flex; align-items: baseline; gap: 5px; line-height: 1.2; text-align: left; }
+body.page-home .ed-hero-founder strong { font-size: 13.5px; font-weight: 600; }
+body.page-home .ed-hero-founder span { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.01em; color: var(--ink-3); }
+body.page-home .ed-hero-founder span::before { content: '\2014 '; }
 
 /* ---------- OpenAI Select Partner: heading needs room for the full sentence ---------- */
 body.page-home #ed-milestone-title { max-width: 22ch; }
