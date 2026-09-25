@@ -1,17 +1,21 @@
 /**
- * Editorial layer: warm paper, ink type, thin rules, one orange accent.
+ * Editorial layer, v3: crisp white / near-black / green, pill buttons, hairline
+ * dividers instead of boxed cards. Palette and button shape are deliberately close
+ * to Amplitude (layout, restraint) and PagerDuty (near-black + green + a lime
+ * highlight) — see assets/editorial.css git history for the earlier warm-paper version.
  * Loaded after design-system.css on the homepage (.page-home) and on subpages (.ed-page).
- * No gradients, glows, shadows-on-cards, pill badges or icon chips on purpose.
  */
 
 .page-home, .ed-page {
-  --paper: #f6f1e7;
-  --paper-2: #eee7d8;
-  --ink: #1d1b18;
-  --ink-2: #4a453d;
-  --ink-3: #676154;
-  --rule: #d6cdb9;
+  --paper: #ffffff;
+  --paper-2: #f4f5f3;
+  --ink: #0a0a0a;
+  --ink-2: #50565b;
+  --ink-3: #86898c;
+  --rule: #e3e5e2;
   --accent: #0b7a45;
+  --accent-light: #a3e635;
+  --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
   --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 body.page-home, body.ed-page { background: var(--paper) !important; color: var(--ink) !important; }
@@ -20,15 +24,15 @@ body.page-home, body.ed-page { background: var(--paper) !important; color: var(-
 .ed-page h1, .ed-page h2, .ed-page h3, .ed-page h4 { color: var(--ink); }
 .page-home ::selection, .ed-page ::selection { background: var(--accent); color: #fff; }
 
-/* ---------- Header: same bar, on paper ---------- */
-.page-home .site-header, .ed-page .site-header { background: rgba(246, 241, 231, 0.94); border-bottom: 1px solid var(--rule); box-shadow: none; }
+/* ---------- Header: same bar, on white ---------- */
+.page-home .site-header, .ed-page .site-header { background: rgba(255, 255, 255, 0.94); border-bottom: 1px solid var(--rule); box-shadow: none; }
 .page-home .site-header.scrolled, .ed-page .site-header.scrolled { box-shadow: none; }
 
-/* ---------- Buttons: flat, square-ish, no glow ---------- */
-.page-home .cl-button, .ed-page .cl-button { border-radius: 3px; box-shadow: none; font-weight: 600; letter-spacing: 0; }
+/* ---------- Buttons: fully rounded pills, no glow ---------- */
+.page-home .cl-button, .ed-page .cl-button { border-radius: 999px; box-shadow: none; font-weight: 600; letter-spacing: 0; }
 .page-home .cl-button.-primary, .ed-page .cl-button.-primary { background: var(--accent); border-color: var(--accent); color: #fff; }
 .page-home .cl-button.-primary:hover, .ed-page .cl-button.-primary:hover { background: var(--ink); border-color: var(--ink); box-shadow: none; transform: none; }
-.page-home .cl-button.-secondary, .ed-page .cl-button.-secondary { background: transparent; border: 1px solid var(--ink); color: var(--ink); }
+.page-home .cl-button.-secondary, .ed-page .cl-button.-secondary { background: transparent; border: 1.5px solid var(--ink); color: var(--ink); }
 .page-home .cl-button.-secondary:hover, .ed-page .cl-button.-secondary:hover { background: var(--ink); color: var(--paper); transform: none; box-shadow: none; }
 
 /* ---------- Small parts ---------- */
@@ -528,94 +532,88 @@ html.js .ed-reveal.is-in { opacity: 1; transform: none; }
 }
 
 /* =====================================================================
-   Homepage v2: premium product-studio pass (scoped to body.page-home only,
-   subpages / .ed-page are untouched). Warm paper + near-black + one green
-   accent; a modern grotesk for display type; case studies and the OpenAI
-   milestone get the dominant visual treatment; a faint dotted-grid motif
-   stands in for "product blueprint" without any new imagery.
+   Homepage v3: white / near-black / green, no card chrome. Layout borrows
+   Amplitude's restraint (flat sections, hairline dividers, generous white
+   space); colour borrows PagerDuty's near-black hero with a green CTA and
+   a lime highlight word. Buttons are pill-shaped everywhere (see the
+   shared .cl-button rules above). Nothing here wraps content in a
+   rounded "card" — full-bleed flat sections and thin rules do the work.
    ===================================================================== */
-body.page-home {
-  --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
-}
-
-/* a faint blueprint-grid texture, reused behind dark sections */
+/* a faint dot-grid texture on the dark sections, standing in for "blueprint" */
 body.page-home .hero-section,
-body.page-home .ed-milestone,
-body.page-home .ed-cta-home,
-body.page-home .cta-band-final {
+body.page-home .ed-milestone {
   position: relative;
-  background-image: radial-gradient(circle, rgba(246, 241, 231, 0.14) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
   background-size: 22px 22px;
 }
 
-/* ---------- Hero: one rounded near-black card ---------- */
+/* ---------- Hero: flat, full-bleed near-black, no card ---------- */
 body.page-home .hero-section {
   background-color: var(--ink);
-  padding: 0 0 0;
-  border-radius: 0 0 40px 40px;
-  overflow: hidden;
+  padding: 0;
 }
-body.page-home .hero-section .wrap { padding-top: 40px; padding-bottom: 0; }
+body.page-home .hero-section .wrap { padding-top: 40px; padding-bottom: 56px; }
 body.page-home .ed-hero { padding-bottom: 8px; }
-body.page-home .ed-label { color: rgba(246, 241, 231, 0.55); }
-body.page-home .hero-title { color: var(--paper); font-weight: 700; letter-spacing: -0.04em; }
-body.page-home .hero-sub { color: rgba(246, 241, 231, 0.72); }
-body.page-home .ed-pill { border-color: rgba(246, 241, 231, 0.28); color: var(--paper); background: rgba(246, 241, 231, 0.06); }
-body.page-home .ed-pill:hover { background: var(--paper); color: var(--ink); }
-body.page-home .hero-section .cl-button.-secondary { border-color: rgba(246, 241, 231, 0.32); color: var(--paper); }
-body.page-home .hero-section .cl-button.-secondary:hover { background: var(--paper); color: var(--ink); }
-body.page-home .ed-assure { color: rgba(246, 241, 231, 0.85); border-top-color: rgba(246, 241, 231, 0.16); }
-body.page-home .ed-hero-founder strong { color: var(--paper); }
-body.page-home .ed-hero-founder span { color: rgba(246, 241, 231, 0.55); }
-body.page-home .ed-portrait figcaption strong { color: var(--paper); }
-body.page-home .ed-portrait figcaption span { color: rgba(246, 241, 231, 0.55); }
-body.page-home .ed-badge { background: var(--paper); border-radius: 10px; padding: 7px 12px; }
+body.page-home .ed-label { color: rgba(255, 255, 255, 0.5); }
+body.page-home .hero-title { color: #fff; font-weight: 600; letter-spacing: -0.035em; }
+body.page-home .hero-title .ed-hl { color: var(--accent-light); }
+body.page-home .hero-sub { color: rgba(255, 255, 255, 0.68); }
+body.page-home .ed-pill { border-color: rgba(255, 255, 255, 0.24); color: #fff; background: rgba(255, 255, 255, 0.05); }
+body.page-home .ed-pill:hover { background: #fff; color: var(--ink); }
+body.page-home .hero-section .cl-button.-secondary { border-color: rgba(255, 255, 255, 0.32); color: #fff; }
+body.page-home .hero-section .cl-button.-secondary:hover { background: #fff; color: var(--ink); }
+body.page-home .ed-assure { color: rgba(255, 255, 255, 0.8); border-top-color: rgba(255, 255, 255, 0.14); }
+body.page-home .ed-assure li::before { background: var(--accent-light); }
+body.page-home .ed-hero-founder strong { color: #fff; }
+body.page-home .ed-hero-founder span { color: rgba(255, 255, 255, 0.5); }
+body.page-home .ed-portrait figcaption strong { color: #fff; }
+body.page-home .ed-portrait figcaption span { color: rgba(255, 255, 255, 0.5); }
+body.page-home .ed-badge { background: #fff; border-radius: 10px; padding: 7px 12px; }
 body.page-home .ed-portrait .ed-badge img { mix-blend-mode: normal; height: 30px; }
-body.page-home .ed-band { border-top-color: rgba(246, 241, 231, 0.16); }
-body.page-home .ed-pull { color: var(--paper); font-weight: 500; }
+body.page-home .ed-band { border-top-color: rgba(255, 255, 255, 0.14); }
+body.page-home .ed-pull { color: #fff; font-weight: 500; }
 body.page-home .ed-facts { position: relative; }
-body.page-home .ed-facts > div { border-left-color: rgba(246, 241, 231, 0.16); }
-body.page-home .ed-facts dt { color: var(--paper); font-family: var(--font-display); font-weight: 700; font-size: clamp(1.7rem, 2.7vw, 2.5rem); }
-body.page-home .ed-facts dd { color: rgba(246, 241, 231, 0.5); }
+body.page-home .ed-facts > div { border-left-color: rgba(255, 255, 255, 0.14); }
+body.page-home .ed-facts dt { color: #fff; font-family: var(--font-display); font-weight: 700; font-size: clamp(1.7rem, 2.7vw, 2.5rem); }
+body.page-home .ed-facts dd { color: rgba(255, 255, 255, 0.48); }
 
 /* ---------- Trusted-by: quieter label, unchanged logos ---------- */
 body.page-home .ed-logos-label { font-weight: 700; }
 
-/* ---------- OpenAI Select Partner: the milestone moment ---------- */
-body.page-home .ed-milestone { border-radius: 32px; margin: 0 auto; max-width: calc(1200px + 48px); }
-body.page-home .ed-milestone-mark { display: block; font-family: var(--font-display); font-weight: 800; letter-spacing: -0.04em; font-size: clamp(2.6rem, 5vw, 4.4rem); line-height: 1; color: var(--paper) !important; margin-bottom: 18px; }
-body.page-home .ed-milestone-mark i { font-style: normal; color: #5fd394; padding: 0 0.12em; }
-body.page-home #ed-milestone-title { display: block; font-size: 1.05rem !important; font-weight: 500 !important; letter-spacing: -0.01em !important; color: rgba(246, 241, 231, 0.6) !important; max-width: none !important; margin-bottom: 20px !important; }
-body.page-home .ed-milestone-fig a { border-radius: 18px; overflow: hidden; padding: 0; }
-body.page-home .ed-milestone-fig img { border-radius: 18px; }
+/* ---------- OpenAI Select Partner: flat full-bleed, no card ---------- */
+body.page-home .ed-milestone-mark { display: block; font-family: var(--font-display); font-weight: 700; letter-spacing: -0.04em; font-size: clamp(2.6rem, 5vw, 4.4rem); line-height: 1; color: #fff !important; margin-bottom: 18px; }
+body.page-home .ed-milestone-mark i { font-style: normal; color: var(--accent-light); padding: 0 0.12em; }
+body.page-home #ed-milestone-title { display: block; font-size: 1.05rem !important; font-weight: 500 !important; letter-spacing: -0.01em !important; color: rgba(255, 255, 255, 0.56) !important; max-width: none !important; margin-bottom: 20px !important; }
+body.page-home .ed-milestone-fig a { border-radius: 10px; overflow: hidden; padding: 0; }
+body.page-home .ed-milestone-fig img { border-radius: 10px; }
 
 /* ---------- Services: product-problem eyebrows ---------- */
 body.page-home .ed-row-title .ed-tag { color: var(--accent); font-weight: 700; }
 
-/* ---------- Work: colour-framed case studies, the dominant visual feature ---------- */
+/* ---------- Work: flat, hairline-divided, the image itself is the focus ---------- */
 body.page-home .ed-work { border-bottom: 0; }
 body.page-home .ed-work-row {
-  display: flex; flex-direction: column; grid-template-columns: none;
-  border: 1px solid var(--rule) !important; border-radius: 20px; overflow: hidden;
-  background: #fff; padding: 0; margin-bottom: 24px;
-  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.25s ease;
+  display: block; grid-template-columns: none;
+  border-top: 1px solid var(--rule); border-radius: 0; background: none;
+  padding: 48px 0; margin: 0; box-shadow: none; transition: none;
 }
-body.page-home .ed-work-row:last-child { margin-bottom: 0; }
-body.page-home .ed-work-row:hover { transform: translateY(-5px); box-shadow: 0 24px 48px rgba(29, 27, 24, 0.12); }
+body.page-home .ed-work-row:first-child { border-top-color: var(--ink); }
+body.page-home .ed-work-row:hover { transform: none; box-shadow: none; }
 body.page-home .ed-work-row > .ed-num { display: none; }
 body.page-home .ed-work-thumb {
-  max-width: none; aspect-ratio: auto; border-radius: 0; background: none;
-  padding: 28px 28px 0; display: flex; align-items: flex-end; justify-content: center;
+  max-width: none; aspect-ratio: 16 / 9; border-radius: 10px; background: var(--paper-2);
+  padding: 0; margin-bottom: 28px;
 }
-body.page-home .ed-work-thumb img { border-radius: 12px 12px 0 0; aspect-ratio: 16 / 10; box-shadow: 0 18px 34px rgba(0, 0, 0, 0.2); }
-body.page-home .ed-work-row.tone-dark .ed-work-thumb { background: #17140f; }
-body.page-home .ed-work-row.tone-amber .ed-work-thumb { background: linear-gradient(160deg, #e8720f, #b9560a); }
-body.page-home .ed-work-row.tone-rose .ed-work-thumb { background: linear-gradient(160deg, #c3437a, #8f2b58); }
-body.page-home .ed-work-row.tone-lime .ed-work-thumb { background: linear-gradient(160deg, #6f9c1a, #3f5c0c); }
-body.page-home .ed-work-text { padding: 24px 26px 6px; }
+body.page-home .ed-work-thumb img { border-radius: 10px; box-shadow: none; }
+body.page-home .ed-work-row:hover .ed-work-thumb img { transform: scale(1.015); }
+body.page-home .ed-work-text { padding: 0; }
 body.page-home .ed-work-text .case-title { transition: color 0.15s ease; }
-body.page-home .ed-work-outcome { text-align: left; padding: 0 26px 24px; font-size: 1.05rem; }
+body.page-home .ed-work-outcome { text-align: left; padding: 0; margin-top: 14px; font-size: 1.05rem; }
 body.page-home .ed-work-outcome::after { content: 'View case study \2192'; }
+body.page-home .ed-work-row.tone-dark .ed-tag { color: #4a4844; }
+body.page-home .ed-work-row.tone-amber .ed-tag { color: #b9560a; }
+body.page-home .ed-work-row.tone-rose .ed-tag { color: #a6386a; }
+body.page-home .ed-work-row.tone-lime .ed-tag { color: #4c7a0d; }
 
 /* ---------- Testimonials: one large quote, two supporting ---------- */
 body.page-home .ed-quotes { grid-template-columns: 1.6fr 1fr; column-gap: 56px; align-items: start; }
@@ -634,8 +632,6 @@ body.page-home .ed-steps li:not(:last-child)::after {
 }
 
 @media (max-width: 991px) {
-  body.page-home .hero-section { border-radius: 0 0 28px 28px; }
-  body.page-home .ed-milestone { border-radius: 24px; }
   body.page-home .ed-quotes { grid-template-columns: 1fr; }
   body.page-home .ed-quote, body.page-home .ed-quotes > .ed-quote:nth-child(2), body.page-home .ed-quotes > .ed-quote:nth-child(3) { grid-column: 1; grid-row: auto; }
   body.page-home .ed-steps li:not(:last-child)::after { display: none; }
