@@ -746,3 +746,34 @@ body.page-home .ed-portrait .ed-badge img { height: 26px; }
   body.page-home .ed-portrait .ed-badge img { height: 22px; }
   body.page-home .ed-portrait figcaption { left: -6px; bottom: 0; padding: 9px 13px; }
 }
+
+/* =====================================================================
+   Homepage v5: hero without a photo. The large floating portrait made the
+   hero read as top-heavy no matter how it was styled, so it's gone; the
+   founder identity now lives in an always-visible glass chip above the
+   announcement pill, and the layout is single-column since there's no
+   image to balance against.
+   ===================================================================== */
+body.page-home .ed-hero { grid-template-columns: 1fr; }
+body.page-home .ed-hero-copy { max-width: 760px; }
+
+body.page-home .ed-hero-founder {
+  display: flex; align-items: center; gap: 10px; width: fit-content;
+  margin: 0 0 24px; padding: 6px 16px 6px 6px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+}
+body.page-home .ed-hero-founder img {
+  width: 34px; height: 34px; border-radius: 50%; object-fit: cover;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+body.page-home .ed-hero-founder div { display: flex; flex-direction: column; line-height: 1.2; }
+body.page-home .ed-hero-founder strong { font-size: 13px; font-weight: 600; }
+body.page-home .ed-hero-founder span { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.02em; }
+
+@media (max-width: 480px) {
+  body.page-home .ed-hero-founder { padding: 5px 14px 5px 5px; gap: 8px; margin-bottom: 20px; }
+  body.page-home .ed-hero-founder img { width: 30px; height: 30px; }
+}
