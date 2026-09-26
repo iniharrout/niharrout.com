@@ -12,9 +12,9 @@
   --tool-ink-3: #676154;
   --tool-rule: #d6cdb9;
   --tool-rule-dark: #1d1b18;
-  --tool-accent: #4f46e5;
-  --tool-accent-tint: #e0e7ff;
-  --tool-accent-hover: #4338ca;
+  --tool-accent: #0e7c4a;
+  --tool-accent-tint: #e3f3ea;
+  --tool-accent-hover: #0a5c37;
   --tool-radius: 4px;
   --tool-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
@@ -1412,7 +1412,7 @@
 .btn-editor-primary:hover {
   background: var(--tool-accent-hover);
   border-color: var(--tool-accent-hover);
-  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.25);
+  box-shadow: 0 2px 8px rgba(14, 124, 74, 0.25);
 }
 
 /* Hook Meter & Stats Card */
@@ -1470,7 +1470,7 @@
 .hook-progress-bar {
   height: 100%;
   width: 0%;
-  background: #6366f1;
+  background: #127a4c;
   transition: width 0.2s ease, background-color 0.2s ease;
   border-radius: 3px;
 }
@@ -1482,7 +1482,7 @@
 }
 
 .hook-meter-status.status-good {
-  color: #3730a3;
+  color: #073d25;
 }
 
 .hook-meter-status.status-warn {

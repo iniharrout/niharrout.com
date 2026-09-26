@@ -10,7 +10,7 @@
   --sc-ink: #1d1b18;
   --sc-ink-2: #4a453d;
   --sc-rule: #d6cdb9;
-  --sc-accent: #4f46e5;
+  --sc-accent: #0e7c4a;
   --sc-dark: #141416;
 }
 /* older pages reserved space for a fixed header; the shared header is sticky */
@@ -112,7 +112,7 @@ html.sc-lock .calendly-badge-widget { display: none !important; }
 .sc-toast-close { background: rgba(20, 20, 22, 0.55); color: #fff; }
 .sc-toast-close:hover { background: rgba(20, 20, 22, 0.85); color: #fff; }
 .sc-modal-close:hover { color: var(--sc-ink); }
-@keyframes sc-pulse { 0% { box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.55); } 70%, 100% { box-shadow: 0 0 0 7px rgba(79, 70, 229, 0); } }
+@keyframes sc-pulse { 0% { box-shadow: 0 0 0 0 rgba(14, 124, 74, 0.55); } 70%, 100% { box-shadow: 0 0 0 7px rgba(14, 124, 74, 0); } }
 
 .sc-modal { position: fixed; inset: 0; z-index: 2000; display: flex; align-items: center; justify-content: center; padding: 24px; background: rgba(20, 20, 22, 0.62); opacity: 0; transition: opacity 0.3s ease; font-family: var(--font-body, "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif); line-height: 1.45; }
 .sc-modal.is-in { opacity: 1; }
