@@ -54,31 +54,11 @@
   <!-- Design System Stylesheet -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="image" href="/assets/nihar-hero-900.jpg" imagesrcset="/assets/nihar-hero-480.jpg 480w, /assets/nihar-hero-900.jpg 900w" imagesizes="(max-width: 991px) 92vw, 440px" fetchpriority="high">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap">
-  <link rel="stylesheet" href="/assets/design-system.css?v=hero_v45">
-  <link rel="stylesheet" href="/assets/editorial.css?v=hero_v45">
-  <link rel="stylesheet" href="/assets/chrome.css?v=hero_v45">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap">
+  <link rel="stylesheet" href="/assets/design-system.css?v=hero_v46">
+  <link rel="stylesheet" href="/assets/editorial.css?v=hero_v46">
+  <link rel="stylesheet" href="/assets/chrome.css?v=hero_v46">
   <script>document.documentElement.classList.add('js')</script>
-  <style>
-    /* Critical Hero Visibility & Layout Assurance */
-    body.page-home .hero-section {
-      display: block !important;
-      visibility: visible !important;
-      opacity: 1 !important;
-      min-height: 480px;
-      background-color: #fafbfc;
-    }
-    .hero-split-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.22fr) minmax(360px, 0.78fr);
-      column-gap: 48px;
-      align-items: center;
-    }
-    @media (max-width: 991px) {
-      .hero-split-grid { grid-template-columns: 1fr; }
-    }
-  </style>
 
   <!-- Calendly Widget CSS & JS -->
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
@@ -222,153 +202,39 @@
   <main id="top">
 
     <!-- ================= 1. HERO: CINEMATIC SPLIT SHOWCASE ================= -->
-    <section class="hero-section hero-cinematic" id="hero">
+    <section class="hero-section" id="hero">
       <div class="wrap">
-        <div class="hero-split-grid">
-          <!-- Left Column: Command & Vision -->
-          <div class="hero-main-column">
-            <div class="hero-top-kicker">
-              <a class="hero-milestone-pill" href="/blog/openai-select-partner">
-                <span class="pill-spark" aria-hidden="true">⚡</span>
-                <span class="pill-badge">OpenAI Partner</span>
-                <span class="pill-text">Creuto is now an OpenAI Select Partner</span>
-                <span class="pill-arrow" aria-hidden="true">&rarr;</span>
-              </a>
-            </div>
+        <div class="hero-inner">
+          <a class="hero-badge" href="/blog/openai-select-partner">
+            <span class="hero-badge-dot" aria-hidden="true"></span>
+            Creuto is now an OpenAI Select Partner
+            <span aria-hidden="true">&rarr;</span>
+          </a>
 
-            <h1 class="hero-title">
-              <span class="hero-name-primary">Nihar Ranjan Rout</span>
-              <span class="hero-role-badge">Founder &amp; CEO, Creuto &middot; Digital Product Architect</span>
-              <span class="hero-headline-pitch">
-                Engineering high-growth <span class="text-gradient-emerald">digital products</span> that <span class="text-gradient-emerald">launch and scale</span>.
-              </span>
-            </h1>
+          <h1 class="hero-title">Engineering high-growth <span class="hero-hl">digital products</span> that <span class="hero-hl">launch and scale</span>.</h1>
 
-            <p class="hero-sub">
-              Backed by 8+ years leading product architecture across mobile applications, enterprise ERPs, and autonomous AI systems. I transform complex operational friction into clear PRDs and production-grade software &mdash; built directly with my dedicated in-house squad at Creuto.
-            </p>
+          <p class="hero-sub">Backed by 8+ years leading product architecture across mobile applications, enterprise ERPs, and autonomous AI systems. I transform complex operational friction into clear PRDs and production-grade software &mdash; built directly with my dedicated in-house squad at Creuto.</p>
 
-            <!-- Interactive Capability Selector Strip -->
-            <div class="hero-capability-showcase">
-              <span class="cap-tabs-label">Core Product Disciplines:</span>
-              <div class="cap-pills-row" role="tablist" aria-label="Core Engineering Disciplines">
-                <a href="/services/mobile-app-development" class="cap-pill-item">
-                  <span class="cap-pill-dot" aria-hidden="true"></span>
-                  <strong>Mobile Apps</strong>
-                  <span>iOS &middot; Android</span>
-                </a>
-                <a href="/services/custom-software-development" class="cap-pill-item">
-                  <span class="cap-pill-dot" aria-hidden="true"></span>
-                  <strong>Custom ERP</strong>
-                  <span>Operations Core</span>
-                </a>
-                <a href="/services/ai-product-development" class="cap-pill-item">
-                  <span class="cap-pill-dot" aria-hidden="true"></span>
-                  <strong>Pragmatic AI</strong>
-                  <span>LLMs &middot; RAG</span>
-                </a>
-                <a href="/services/product-strategy-prd" class="cap-pill-item">
-                  <span class="cap-pill-dot" aria-hidden="true"></span>
-                  <strong>Strategy &amp; PRDs</strong>
-                  <span>Scoping &middot; Roadmaps</span>
-                </a>
-              </div>
-            </div>
-
-            <!-- Action Suite -->
-            <div class="hero-actions-suite">
-              <a href="https://calendly.com/creuto/meet" data-calendly="true" class="hero-btn-primary">
-                <span>Book a free strategy call</span>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-              </a>
-              <a href="#portfolio" class="hero-btn-secondary">
-                <span>Explore selected work</span>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
-              </a>
-            </div>
-
-            <!-- Proof & Trust Badges -->
-            <div class="hero-proof-bar">
-              <a href="https://www.niharrout.com/?utm_source=google&utm_medium=gbp" class="proof-pill proof-verified" title="Official Verified Website">
-                <svg class="pill-check" width="13" height="13" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                <span>niharrout.com</span>
-              </a>
-              <span class="proof-pill">
-                <svg class="pill-check" width="13" height="13" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                <span>Free 45-min discovery</span>
-              </span>
-              <span class="proof-pill">
-                <svg class="pill-check" width="13" height="13" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                <span>Direct founder access</span>
-              </span>
-              <span class="proof-pill">
-                <svg class="pill-check" width="13" height="13" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                <span>100% In-house squad</span>
-              </span>
-            </div>
+          <div class="hero-actions-suite">
+            <a href="https://calendly.com/creuto/meet" data-calendly="true" class="hero-btn-primary">
+              <span>Book a free strategy call</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            <a href="#portfolio" class="hero-btn-secondary">
+              <span>Explore selected work</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+            </a>
           </div>
 
-          <!-- Right Column: Immersive Portrait Stage -->
-          <div class="hero-stage-column">
-            <div class="stage-sculpture">
-              <div class="stage-backdrop-glow" aria-hidden="true"></div>
-              
-              <!-- Floating Card 1: Clutch Rating -->
-              <div class="stage-floating-badge badge-clutch">
-                <span class="badge-icon-stars" aria-hidden="true">★★★★★</span>
-                <div class="badge-text-group">
-                  <strong>5.0 Clutch Verified</strong>
-                  <span>Top Product Agency</span>
-                </div>
-              </div>
-
-              <!-- Floating Card 2: OpenAI Partner -->
-              <a href="/blog/openai-select-partner" class="stage-floating-badge badge-partner" title="Creuto is an OpenAI Select Partner">
-                <img src="/assets/openai-select-partner-mark.png" alt="OpenAI Select Partner" width="92" height="32">
-              </a>
-
-              <!-- Main Stage Portrait Container -->
-              <div class="stage-frame">
-                <img src="/assets/nihar-hero-900.jpg" 
-                     srcset="/assets/nihar-hero-480.jpg 480w, /assets/nihar-hero-900.jpg 900w" 
-                     sizes="(max-width: 991px) 92vw, 480px" 
-                     alt="Nihar Ranjan Rout — Founder &amp; CEO, Creuto" 
-                     loading="eager" 
-                     fetchpriority="high" 
-                     width="900" 
-                     height="809" 
-                     decoding="async" 
-                     class="stage-portrait-img">
-                
-                <!-- Floating Card 3: Metrics Callout -->
-                <div class="stage-metric-pill">
-                  <span class="metric-num">45+</span>
-                  <div class="metric-desc">
-                    <strong>Products Live</strong>
-                    <span>Across US &middot; UK &middot; IN</span>
-                  </div>
-                </div>
-
-                <!-- Bottom Glass Identity Bar -->
-                <div class="stage-identity-bar">
-                  <div class="identity-info">
-                    <a href="https://www.niharrout.com/?utm_source=google&utm_medium=gbp" class="identity-name">Nihar Ranjan Rout</a>
-                    <span class="identity-role">Founder &amp; CEO, Creuto</span>
-                  </div>
-                  <div class="identity-status-pill">
-                    <span class="status-live-beacon" aria-hidden="true"></span>
-                    <span>Available Q2/Q3</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <ul class="hero-trust">
+            <li>Free 45-minute discovery call</li>
+            <li>Direct founder access</li>
+            <li>100% in-house squad</li>
+          </ul>
         </div>
 
-        <!-- Executive Philosophy Callout Band -->
         <div class="hero-philosophy-band">
           <div class="philosophy-content">
-            <span class="philosophy-icon" aria-hidden="true">&ldquo;</span>
             <blockquote class="philosophy-quote">
               If you build the wrong feature set on time and under budget, you still lost. Real product discipline is knowing what <em>NOT</em> to build.
             </blockquote>
