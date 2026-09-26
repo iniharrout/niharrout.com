@@ -54,9 +54,10 @@
   <!-- Design System Stylesheet -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="/assets/nihar-hero-900.jpg" imagesrcset="/assets/nihar-hero-480.jpg 480w, /assets/nihar-hero-900.jpg 900w" imagesizes="(max-width: 991px) 92vw, 440px" fetchpriority="high">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap">
   <link rel="stylesheet" href="/assets/design-system.css?v=emerald1">
-  <link rel="stylesheet" href="/assets/editorial.css?v=24">
+  <link rel="stylesheet" href="/assets/editorial.css?v=29">
   <script>document.documentElement.classList.add('js')</script>
 
   <!-- Calendly Widget CSS & JS -->
@@ -111,7 +112,6 @@
 <header class="sc-header" id="site-header">
   <div class="sc-wrap sc-bar">
     <a class="sc-brand" href="/" aria-label="Nihar Ranjan Rout, home">
-      <img src="/assets/nihar-avatar.jpg" alt="" width="36" height="36" decoding="async">
       <span class="sc-brand-text">nihar<span class="sc-dot">.</span></span>
     </a>
 
@@ -206,18 +206,87 @@
       <div class="wrap">
         <div class="ed-hero">
           <div class="ed-hero-copy">
-            <div class="ed-hero-founder">
-              <img src="/assets/nihar-avatar.jpg" alt="" width="44" height="44" decoding="async">
-              <div><strong>Nihar Ranjan Rout</strong><span>Founder &amp; CEO, Creuto</span></div>
+            <div class="hero-pill-bar">
+              <a class="hero-milestone-pill" href="/blog/openai-select-partner">
+                <span class="pill-badge">New</span>
+                <span class="pill-text">Creuto is now an OpenAI Select Partner</span>
+                <span class="pill-arrow" aria-hidden="true">&rarr;</span>
+              </a>
             </div>
-            <a class="ed-pill" href="/blog/openai-select-partner"><span class="ed-pill-tag">New</span>Creuto is now an OpenAI Select Partner<span class="ed-pill-arrow" aria-hidden="true">&rarr;</span></a>
-            <h1 class="hero-title">I help founders and enterprises <span class="ed-hl">build digital products</span> that <span class="ed-hl">launch and scale</span>.</h1>
-            <p class="hero-sub">Backed by 8+ years in product management and product leadership across mobile applications, enterprise ERPs, and B2B SaaS, I turn complex business requirements into clear PRDs and production-ready systems — delivered with my dedicated in-house team at Creuto.</p>
+
+            <h1 class="hero-title">
+              <span class="hero-name-primary">Nihar Ranjan Rout</span>
+              <span class="hero-role-tagline">Founder &amp; CEO, Creuto &middot; Digital Product Strategist</span>
+              <span class="hero-headline-pitch">I help founders and enterprises <span class="ed-hl">build digital products</span> that <span class="ed-hl">launch and scale</span>.</span>
+            </h1>
+
+            <p class="hero-sub">Backed by 8+ years leading product architecture across mobile applications, enterprise ERPs, and AI systems. I transform complex operational challenges into clear PRDs and production-grade software — delivered directly with my dedicated in-house team at Creuto.</p>
+
+            <div class="hero-capabilities" aria-label="Core Engineering Disciplines">
+              <a href="/services/mobile-app-development" class="hero-cap-tag">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                <span>Mobile Apps</span>
+              </a>
+              <a href="/services/custom-software-development" class="hero-cap-tag">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                <span>Custom ERP Systems</span>
+              </a>
+              <a href="/services/ai-product-development" class="hero-cap-tag">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                <span>Pragmatic AI Products</span>
+              </a>
+              <a href="/services/product-strategy-prd" class="hero-cap-tag">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                <span>Strategy &amp; PRDs</span>
+              </a>
+            </div>
+
             <div class="hero-ctas">
-              <a href="https://calendly.com/creuto/meet" data-calendly="true" class="cl-button -primary btn-book-call">Book a free strategy call <span style="margin-left:4px;">→</span></a>
-              <a href="#portfolio" class="cl-button -secondary">View selected work ↓</a>
+              <a href="https://calendly.com/creuto/meet" data-calendly="true" class="cl-button -primary btn-book-call">Book a free strategy call <span class="btn-arrow" aria-hidden="true">&rarr;</span></a>
+              <a href="#portfolio" class="cl-button -secondary">View selected work <span class="btn-arrow" aria-hidden="true">&darr;</span></a>
             </div>
-            <ul class="ed-assure"><li>Free 45-minute discovery call</li><li>You talk directly to Nihar</li><li>No sales team in between</li></ul>
+
+            <div class="hero-trust-bar">
+              <a href="https://www.niharrout.com/?utm_source=google&utm_medium=gbp" class="hero-trust-pill" title="Official Website: niharrout.com"><svg class="trust-check" width="13" height="13" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> niharrout.com</a>
+              <span class="hero-trust-pill"><svg class="trust-check" width="13" height="13" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Free 45-min discovery</span>
+              <span class="hero-trust-pill"><svg class="trust-check" width="13" height="13" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Talk directly to Nihar</span>
+              <span class="hero-trust-pill"><svg class="trust-check" width="13" height="13" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> 100% In-house Creuto squad</span>
+            </div>
+          </div>
+
+          <!-- The Big Photo (Right Column) -->
+          <div class="hero-visual">
+            <div class="hero-big-photo-card">
+              <div class="photo-glow" aria-hidden="true"></div>
+              <div class="photo-frame">
+                <img src="/assets/nihar-hero-900.jpg" srcset="/assets/nihar-hero-480.jpg 480w, /assets/nihar-hero-900.jpg 900w" sizes="(max-width: 991px) 92vw, 470px" alt="Nihar Ranjan Rout — Founder &amp; CEO, Creuto" loading="eager" fetchpriority="high" width="900" height="809" decoding="async">
+                
+                <div class="photo-badge-clutch">
+                  <span class="stars-gold" aria-hidden="true">★★★★★</span>
+                  <span><strong>5.0 Clutch</strong> Verified</span>
+                </div>
+                
+                <a class="photo-badge-partner" href="/blog/openai-select-partner" aria-label="Creuto is an OpenAI Select Partner">
+                  <img src="/assets/openai-select-partner-mark.png" alt="OpenAI Select Partner" width="94" height="38">
+                </a>
+
+                <div class="photo-caption-overlay">
+                  <div class="caption-left">
+                    <strong class="caption-name"><a href="https://www.niharrout.com/?utm_source=google&utm_medium=gbp" style="color:inherit; text-decoration:none;">Nihar Ranjan Rout</a></strong>
+                    <span class="caption-title">Founder &amp; CEO, Creuto</span>
+                  </div>
+                  <div class="caption-status">
+                    <span class="status-pulse-dot" aria-hidden="true"></span>
+                    <span>Available Q2/Q3</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="photo-floating-stat">
+                <span class="stat-number">45+</span>
+                <span class="stat-text">Products Shipped Live</span>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -655,8 +724,12 @@
             </ul>
 
             <div class="ed-contact-box">
-              <div style="font-size: 13px; font-weight: 700; color: var(--hs-text-01); margin-bottom: 4px;">Direct Contact</div>
-              <div style="font-size: 14px; color: var(--hs-text-02);">
+              <div style="font-size: 13px; font-weight: 700; color: var(--hs-text-01); margin-bottom: 6px; display:flex; align-items:center; justify-content:space-between;">
+                <span>Direct Contact</span>
+                <a href="https://www.niharrout.com/?utm_source=google&utm_medium=gbp" style="font-size:12px; color:var(--hs-brand); font-weight:600; text-decoration:none;">Official Site &nearr;</a>
+              </div>
+              <div style="font-size: 14px; color: var(--hs-text-02); line-height: 1.6;">
+                Website: <a href="https://www.niharrout.com/?utm_source=google&utm_medium=gbp" style="color:var(--hs-brand); font-weight:600; text-decoration:none;">www.niharrout.com</a><br>
                 Email: <a href="mailto:me@niharrout.com" style="color:var(--hs-brand); font-weight:600; text-decoration:none;">me@niharrout.com</a><br>
                 Location: Creuto HQ, Bhubaneswar, Odisha, India
               </div>
@@ -717,11 +790,10 @@
     <div class="sc-foot-grid">
       <div class="sc-foot-brand">
         <a class="sc-brand sc-brand-light" href="/" aria-label="Nihar Ranjan Rout, home">
-          <img src="/assets/nihar-avatar.jpg" alt="" width="36" height="36" loading="lazy" decoding="async">
           <span class="sc-brand-text">nihar<span class="sc-dot">.</span></span>
         </a>
         <p>Founder &amp; CEO of Creuto. Product leader with 8+ years across product management, custom ERP systems, mobile applications, and B2B software engineering with a dedicated 100% in-house team.</p>
-        <p class="sc-foot-contact">Working with teams worldwide<br><a href="mailto:me@niharrout.com">me@niharrout.com</a></p>
+        <p class="sc-foot-contact">Working with teams worldwide<br><a href="mailto:me@niharrout.com">me@niharrout.com</a> &middot; <a href="https://www.niharrout.com/?utm_source=google&utm_medium=gbp">niharrout.com</a></p>
       </div>
 
       <div class="sc-foot-col">
@@ -754,14 +826,16 @@
           <li><a href="/b2b-software-development-for-startups">B2B Startup Playbook</a></li>
           <li><a href="/technology">Technology Stack</a></li>
           <li><a href="/tools">Free Tools</a></li>
+          <li><a href="https://www.niharrout.com/?utm_source=google&utm_medium=gbp">Official Website &nearr;</a></li>
           <li><a href="https://www.linkedin.com/in/iniharrout" target="_blank" rel="noopener">LinkedIn &nearr;</a></li>
         </ul>
       </div>
     </div>
 
     <div class="sc-foot-bottom">
-      <div>&copy; <span id="yr" data-year>2026</span> Nihar Ranjan Rout &middot; Founder &amp; CEO, Creuto. All rights reserved.</div>
+      <div>&copy; <span id="yr" data-year>2026</span> <a href="https://www.niharrout.com/?utm_source=google&utm_medium=gbp" style="color:inherit; text-decoration:none;">Nihar Ranjan Rout</a> &middot; Founder &amp; CEO, Creuto. All rights reserved.</div>
       <div class="sc-foot-legal">
+        <a href="https://www.niharrout.com/?utm_source=google&utm_medium=gbp">Official Website</a>
         <a href="/privacy-policy">Privacy Policy</a>
         <a href="/terms">Terms of Service</a>
         <a href="#top">Back to top &uarr;</a>

@@ -36,7 +36,8 @@ body.page-home, body.ed-page { background: var(--paper) !important; color: var(-
 .page-home .cl-button.-secondary, .ed-page .cl-button.-secondary { background: transparent; border: 1.5px solid var(--ink); color: var(--ink); }
 .page-home .cl-button.-secondary:hover, .ed-page .cl-button.-secondary:hover { background: var(--ink); color: var(--paper); transform: none; box-shadow: none; }
 
-/* ---------- Small parts ---------- */
+/* ---------- Accessibility & Small parts ---------- */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0; }
 .ed-label { font-family: var(--mono); font-size: 12px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 18px; }
 .ed-num { font-family: var(--mono); font-size: 13px; color: var(--ink-3); }
 .ed-tag { font-family: var(--mono); font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin: 0 0 10px; }
@@ -547,7 +548,7 @@ body.page-home .ed-milestone {
   background-size: 22px 22px;
 }
 
-/* ---------- Hero: flat, full-bleed white, no card ---------- */
+/* ---------- Hero: flat, full-bleed white background ---------- */
 body.page-home .hero-section {
   position: relative;
   background-color: var(--paper);
@@ -556,15 +557,8 @@ body.page-home .hero-section {
   border-bottom: 1px solid var(--rule);
   padding: 0;
 }
-body.page-home .hero-section { padding: 0; }
-body.page-home .hero-section .wrap { padding-top: 28px; padding-bottom: 36px; }
-body.page-home .ed-hero { padding-bottom: 0; }
-body.page-home .hero-title { color: var(--ink); font-weight: 600; letter-spacing: -0.035em; margin-bottom: 20px; }
-body.page-home .hero-title .ed-hl { color: var(--accent); }
-body.page-home .hero-sub { margin-bottom: 26px; }
-body.page-home .hero-ctas { margin-bottom: 16px; }
-body.page-home .hero-section .ed-band { margin-top: 36px; padding: 28px 0; }
-body.page-home .hero-section .ed-pull { font-size: clamp(1.25rem, 1.9vw, 1.6rem); max-width: 42ch; margin: 0 auto; }
+body.page-home .hero-section .ed-band { margin-top: 40px; padding: 32px 0; }
+body.page-home .hero-section .ed-pull { font-size: clamp(1.25rem, 1.9vw, 1.6rem); max-width: 44ch; margin: 0 auto; text-align: center; }
 
 /* ---------- Trusted-by: quieter label, unchanged logos ---------- */
 body.page-home .ed-logos-label { font-weight: 700; }
@@ -703,34 +697,520 @@ body.page-home .ed-work-text .ed-tag {
 }
 
 /* =====================================================================
-   Homepage v6: hero centered. Left-aligned text left a wall of empty
-   space on the right at wide widths, so the whole column - identity
-   line, pill, headline, subtext, CTAs, assurance line - is centered.
+   Homepage Hero: Complete Redesign (Nihar Ranjan Rout Front & Center)
    ===================================================================== */
-body.page-home .ed-hero { grid-template-columns: 1fr; justify-items: center; text-align: center; }
-body.page-home .ed-hero-copy { max-width: 700px; margin: 0 auto; }
-body.page-home .hero-sub { margin-left: auto; margin-right: auto; }
-body.page-home .hero-ctas { justify-content: center; }
-body.page-home .ed-assure { justify-content: center; }
+body.page-home .hero-section .wrap {
+  padding-top: 44px;
+  padding-bottom: 52px;
+}
 
-/* =====================================================================
-   Homepage v8: founder identity as a plain byline, not a bordered card.
-   Two stacked bordered pills (identity chip + announcement pill) read as
-   heavy chrome before the headline even starts - the identity is now a
-   single quiet line, no box/border/shadow, so the headline carries the
-   hero instead of competing with it.
-   ===================================================================== */
-body.page-home .ed-hero-founder {
-  display: flex; align-items: center; gap: 8px; width: fit-content;
-  margin: 0 auto 14px;
+body.page-home .ed-hero {
+  display: grid;
+  grid-template-columns: 1.18fr 0.82fr;
+  column-gap: 56px;
+  align-items: center;
+  justify-items: stretch;
+  text-align: left;
 }
-body.page-home .ed-hero-founder img {
-  width: 26px; height: 26px; border-radius: 50%; object-fit: cover;
+
+body.page-home .ed-hero-copy {
+  max-width: 660px;
+  margin: 0;
+  text-align: left;
 }
-body.page-home .ed-hero-founder div { display: flex; align-items: baseline; gap: 5px; line-height: 1.2; text-align: left; }
-body.page-home .ed-hero-founder strong { font-size: 13.5px; font-weight: 600; }
-body.page-home .ed-hero-founder span { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.01em; color: var(--ink-3); }
-body.page-home .ed-hero-founder span::before { content: '\2014 '; }
+
+/* ---------- Top Milestone Announcement Pill ---------- */
+.hero-pill-bar {
+  margin-bottom: 22px;
+}
+
+.hero-milestone-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff;
+  border: 1px solid rgba(10, 10, 10, 0.12);
+  padding: 5px 16px 5px 5px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--ink);
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s ease;
+}
+
+.hero-milestone-pill:hover {
+  background: var(--ink);
+  color: #ffffff;
+  border-color: var(--ink);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(10, 10, 10, 0.12);
+}
+
+.hero-milestone-pill .pill-badge {
+  background: var(--accent);
+  color: #ffffff;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.hero-milestone-pill:hover .pill-badge {
+  background: var(--accent-light);
+  color: var(--accent-deep);
+}
+
+.hero-milestone-pill .pill-arrow {
+  transition: transform 0.2s ease;
+}
+
+.hero-milestone-pill:hover .pill-arrow {
+  transform: translateX(3px);
+}
+
+/* ---------- H1: Nihar Ranjan Rout Front & Center ---------- */
+body.page-home .hero-title {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 22px;
+}
+
+.hero-name-primary {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 5.2vw, 4.3rem);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  color: var(--ink);
+  line-height: 1.0;
+  margin-bottom: 8px;
+}
+
+.hero-role-tagline {
+  display: block;
+  font-family: var(--mono);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+
+.hero-headline-pitch {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(1.85rem, 3.1vw, 2.65rem);
+  line-height: 1.14;
+  letter-spacing: -0.03em;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.hero-headline-pitch .ed-hl {
+  color: var(--accent);
+}
+
+/* ---------- Subtitle ---------- */
+body.page-home .hero-sub {
+  font-size: 1.08rem;
+  line-height: 1.62;
+  color: var(--ink-2);
+  margin: 0 0 24px;
+  max-width: 58ch;
+}
+
+/* ---------- Core Engineering Disciplines ---------- */
+.hero-capabilities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 28px;
+}
+
+.hero-cap-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(10, 10, 10, 0.03);
+  border: 1px solid rgba(10, 10, 10, 0.08);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.hero-cap-tag svg {
+  color: var(--accent);
+  transition: transform 0.2s ease;
+}
+
+.hero-cap-tag:hover {
+  background: #ffffff;
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(11, 122, 69, 0.08);
+}
+
+.hero-cap-tag:hover svg {
+  transform: scale(1.1);
+}
+
+/* ---------- Hero CTAs ---------- */
+body.page-home .hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 22px;
+}
+
+body.page-home .hero-ctas .cl-button.-primary {
+  padding: 13px 26px;
+  font-size: 15px;
+}
+
+body.page-home .hero-ctas .cl-button.-secondary {
+  padding: 12px 24px;
+  font-size: 15px;
+}
+
+body.page-home .hero-ctas .btn-arrow {
+  margin-left: 6px;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+body.page-home .hero-ctas .cl-button:hover .btn-arrow {
+  transform: translateX(3px);
+}
+
+/* ---------- Trust Assurance Bar ---------- */
+.hero-trust-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin-top: 6px;
+}
+
+.hero-trust-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  color: var(--ink-2);
+  background: rgba(10, 10, 10, 0.025);
+  border: 1px solid rgba(10, 10, 10, 0.06);
+  padding: 4px 12px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+a.hero-trust-pill:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(11, 122, 69, 0.06);
+  transform: translateY(-1px);
+}
+
+.trust-check {
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+/* ---------- Right Column: The Big Executive Photo ---------- */
+.hero-visual {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  margin-left: auto;
+}
+
+.photo-glow {
+  position: absolute;
+  inset: -24px;
+  background: radial-gradient(circle at 60% 40%, rgba(11, 122, 69, 0.14) 0%, transparent 70%);
+  filter: blur(32px);
+  z-index: -1;
+  pointer-events: none;
+  border-radius: 40px;
+}
+
+.hero-big-photo-card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid rgba(10, 10, 10, 0.12);
+  border-radius: 26px;
+  padding: 12px;
+  box-shadow: 0 30px 70px -15px rgba(10, 10, 10, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.9) inset;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-big-photo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 36px 80px -18px rgba(10, 10, 10, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.95) inset;
+}
+
+.photo-frame {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  aspect-ratio: 4 / 4.7;
+  background: #0f1712;
+}
+
+.photo-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 12%;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-big-photo-card:hover .photo-frame img {
+  transform: scale(1.02);
+}
+
+.photo-badge-clutch {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(10, 10, 10, 0.08);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  color: var(--ink);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+
+.stars-gold {
+  color: #f59e0b;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.photo-badge-partner {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(10, 10, 10, 0.08);
+  padding: 5px 11px;
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  transition: transform 0.2s ease;
+}
+
+.photo-badge-partner:hover {
+  transform: scale(1.05);
+}
+
+.photo-badge-partner img {
+  height: 20px;
+  width: auto;
+  display: block;
+}
+
+/* Scrim & overlay at the base of the photo */
+.photo-caption-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 36px 18px 16px;
+  background: linear-gradient(180deg, transparent 0%, rgba(10, 14, 12, 0.88) 100%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  z-index: 2;
+}
+
+.caption-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.caption-name {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.caption-title {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.75);
+  letter-spacing: 0.02em;
+}
+
+.caption-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #ffffff;
+  background: rgba(11, 122, 69, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 5px 12px;
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+
+.status-pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #adf07e;
+  box-shadow: 0 0 0 0 rgba(173, 240, 126, 0.7);
+  animation: pulseDot 2s infinite;
+}
+
+/* Floating social proof stat pill */
+.photo-floating-stat {
+  position: absolute;
+  top: 48%;
+  left: -26px;
+  transform: translateY(-50%);
+  background: #ffffff;
+  border: 1px solid rgba(10, 10, 10, 0.12);
+  box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.18);
+  border-radius: 14px;
+  padding: 9px 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 4;
+  animation: floatSubtle 4s ease-in-out infinite;
+}
+
+@keyframes floatSubtle {
+  0%, 100% { transform: translateY(-50%); }
+  50% { transform: translateY(calc(-50% - 4px)); }
+}
+
+.stat-number {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.stat-text {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.25;
+  text-align: left;
+}
+
+/* ---------- Responsive Layout for Hero ---------- */
+@media (max-width: 991px) {
+  body.page-home .ed-hero {
+    grid-template-columns: 1fr;
+    row-gap: 40px;
+    justify-items: center;
+    text-align: center;
+  }
+  body.page-home .ed-hero-copy {
+    max-width: 100%;
+    text-align: center;
+  }
+  .hero-pill-bar {
+    text-align: center;
+  }
+  body.page-home .hero-title {
+    align-items: center;
+  }
+  body.page-home .hero-sub {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-capabilities {
+    justify-content: center;
+  }
+  body.page-home .hero-ctas {
+    justify-content: center;
+  }
+  .hero-trust-bar {
+    justify-content: center;
+  }
+  .hero-visual {
+    max-width: 440px;
+    margin: 0 auto;
+  }
+  .photo-floating-stat {
+    left: 8px;
+    top: auto;
+    bottom: 60px;
+    transform: none;
+    animation: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero-name-primary {
+    font-size: clamp(2.3rem, 9.5vw, 3rem);
+  }
+  .hero-headline-pitch {
+    font-size: clamp(1.5rem, 6.2vw, 1.9rem);
+  }
+  .hero-big-photo-card {
+    padding: 10px;
+    border-radius: 20px;
+  }
+  .photo-frame {
+    border-radius: 14px;
+  }
+  .photo-caption-overlay {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 24px 14px 14px;
+  }
+  .photo-floating-stat {
+    position: static;
+    margin: 12px auto 0;
+    width: fit-content;
+    transform: none;
+    animation: none;
+  }
+}
 
 /* ---------- OpenAI Select Partner: heading needs room for the full sentence ---------- */
 body.page-home #ed-milestone-title { max-width: 22ch; }
+
+
+
