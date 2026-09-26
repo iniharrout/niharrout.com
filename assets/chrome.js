@@ -72,21 +72,7 @@
 (function () {
   'use strict';
 
-  var ANNOUNCEMENT = {
-    id: 'openai-select-partner',
-    tag: 'Partnership news',
-    title: 'Creuto is now an OpenAI Select Partner',
-    text: 'Why the partnership matters, and what it changes for teams building AI that has to work in production.',
-    cta: 'Read the announcement',
-    href: '/blog/openai-select-partner',
-    image: '/assets/blog/openai-select-partner-banner.jpg',
-    strip: '/assets/blog/openai-select-partner-strip.jpg',
-    imageAlt: 'Creuto and OpenAI Select Partner logos',
-    hideOn: ['/blog/openai-select-partner', '/thank-you'],
-    modalOn: ['/'],
-    toastDelay: 2500,
-    modalDelay: 7000
-  };
+  var ANNOUNCEMENT = null;
 
   if (!ANNOUNCEMENT) return;
 

@@ -56,9 +56,29 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="image" href="/assets/nihar-hero-900.jpg" imagesrcset="/assets/nihar-hero-480.jpg 480w, /assets/nihar-hero-900.jpg 900w" imagesizes="(max-width: 991px) 92vw, 440px" fetchpriority="high">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap">
-  <link rel="stylesheet" href="/assets/design-system.css?v=emerald1">
-  <link rel="stylesheet" href="/assets/editorial.css?v=29">
+  <link rel="stylesheet" href="/assets/design-system.css?v=hero_v45">
+  <link rel="stylesheet" href="/assets/editorial.css?v=hero_v45">
+  <link rel="stylesheet" href="/assets/chrome.css?v=hero_v45">
   <script>document.documentElement.classList.add('js')</script>
+  <style>
+    /* Critical Hero Visibility & Layout Assurance */
+    body.page-home .hero-section {
+      display: block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      min-height: 480px;
+      background-color: #fafbfc;
+    }
+    .hero-split-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.22fr) minmax(360px, 0.78fr);
+      column-gap: 48px;
+      align-items: center;
+    }
+    @media (max-width: 991px) {
+      .hero-split-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 
   <!-- Calendly Widget CSS & JS -->
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
@@ -201,14 +221,16 @@
 
   <main id="top">
 
-    <!-- ================= 1. HERO ================= -->
-    <section class="hero-section" id="hero">
+    <!-- ================= 1. HERO: CINEMATIC SPLIT SHOWCASE ================= -->
+    <section class="hero-section hero-cinematic" id="hero">
       <div class="wrap">
-        <div class="ed-hero">
-          <div class="ed-hero-copy">
-            <div class="hero-pill-bar">
+        <div class="hero-split-grid">
+          <!-- Left Column: Command & Vision -->
+          <div class="hero-main-column">
+            <div class="hero-top-kicker">
               <a class="hero-milestone-pill" href="/blog/openai-select-partner">
-                <span class="pill-badge">New</span>
+                <span class="pill-spark" aria-hidden="true">⚡</span>
+                <span class="pill-badge">OpenAI Partner</span>
                 <span class="pill-text">Creuto is now an OpenAI Select Partner</span>
                 <span class="pill-arrow" aria-hidden="true">&rarr;</span>
               </a>
@@ -216,142 +238,222 @@
 
             <h1 class="hero-title">
               <span class="hero-name-primary">Nihar Ranjan Rout</span>
-              <span class="hero-role-tagline">Founder &amp; CEO, Creuto &middot; Digital Product Strategist</span>
-              <span class="hero-headline-pitch">I help founders and enterprises <span class="ed-hl">build digital products</span> that <span class="ed-hl">launch and scale</span>.</span>
+              <span class="hero-role-badge">Founder &amp; CEO, Creuto &middot; Digital Product Architect</span>
+              <span class="hero-headline-pitch">
+                Engineering high-growth <span class="text-gradient-emerald">digital products</span> that <span class="text-gradient-emerald">launch and scale</span>.
+              </span>
             </h1>
 
-            <p class="hero-sub">Backed by 8+ years leading product architecture across mobile applications, enterprise ERPs, and AI systems. I transform complex operational challenges into clear PRDs and production-grade software — delivered directly with my dedicated in-house team at Creuto.</p>
+            <p class="hero-sub">
+              Backed by 8+ years leading product architecture across mobile applications, enterprise ERPs, and autonomous AI systems. I transform complex operational friction into clear PRDs and production-grade software &mdash; built directly with my dedicated in-house squad at Creuto.
+            </p>
 
-            <div class="hero-capabilities" aria-label="Core Engineering Disciplines">
-              <a href="/services/mobile-app-development" class="hero-cap-tag">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-                <span>Mobile Apps</span>
+            <!-- Interactive Capability Selector Strip -->
+            <div class="hero-capability-showcase">
+              <span class="cap-tabs-label">Core Product Disciplines:</span>
+              <div class="cap-pills-row" role="tablist" aria-label="Core Engineering Disciplines">
+                <a href="/services/mobile-app-development" class="cap-pill-item">
+                  <span class="cap-pill-dot" aria-hidden="true"></span>
+                  <strong>Mobile Apps</strong>
+                  <span>iOS &middot; Android</span>
+                </a>
+                <a href="/services/custom-software-development" class="cap-pill-item">
+                  <span class="cap-pill-dot" aria-hidden="true"></span>
+                  <strong>Custom ERP</strong>
+                  <span>Operations Core</span>
+                </a>
+                <a href="/services/ai-product-development" class="cap-pill-item">
+                  <span class="cap-pill-dot" aria-hidden="true"></span>
+                  <strong>Pragmatic AI</strong>
+                  <span>LLMs &middot; RAG</span>
+                </a>
+                <a href="/services/product-strategy-prd" class="cap-pill-item">
+                  <span class="cap-pill-dot" aria-hidden="true"></span>
+                  <strong>Strategy &amp; PRDs</strong>
+                  <span>Scoping &middot; Roadmaps</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Action Suite -->
+            <div class="hero-actions-suite">
+              <a href="https://calendly.com/creuto/meet" data-calendly="true" class="hero-btn-primary">
+                <span>Book a free strategy call</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </a>
-              <a href="/services/custom-software-development" class="hero-cap-tag">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-                <span>Custom ERP Systems</span>
-              </a>
-              <a href="/services/ai-product-development" class="hero-cap-tag">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
-                <span>Pragmatic AI Products</span>
-              </a>
-              <a href="/services/product-strategy-prd" class="hero-cap-tag">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-                <span>Strategy &amp; PRDs</span>
+              <a href="#portfolio" class="hero-btn-secondary">
+                <span>Explore selected work</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
               </a>
             </div>
 
-            <div class="hero-ctas">
-              <a href="https://calendly.com/creuto/meet" data-calendly="true" class="cl-button -primary btn-book-call">Book a free strategy call <span class="btn-arrow" aria-hidden="true">&rarr;</span></a>
-              <a href="#portfolio" class="cl-button -secondary">View selected work <span class="btn-arrow" aria-hidden="true">&darr;</span></a>
-            </div>
-
-            <div class="hero-trust-bar">
-              <a href="https://www.niharrout.com/?utm_source=google&utm_medium=gbp" class="hero-trust-pill" title="Official Website: niharrout.com"><svg class="trust-check" width="13" height="13" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> niharrout.com</a>
-              <span class="hero-trust-pill"><svg class="trust-check" width="13" height="13" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Free 45-min discovery</span>
-              <span class="hero-trust-pill"><svg class="trust-check" width="13" height="13" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Talk directly to Nihar</span>
-              <span class="hero-trust-pill"><svg class="trust-check" width="13" height="13" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> 100% In-house Creuto squad</span>
+            <!-- Proof & Trust Badges -->
+            <div class="hero-proof-bar">
+              <a href="https://www.niharrout.com/?utm_source=google&utm_medium=gbp" class="proof-pill proof-verified" title="Official Verified Website">
+                <svg class="pill-check" width="13" height="13" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <span>niharrout.com</span>
+              </a>
+              <span class="proof-pill">
+                <svg class="pill-check" width="13" height="13" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <span>Free 45-min discovery</span>
+              </span>
+              <span class="proof-pill">
+                <svg class="pill-check" width="13" height="13" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <span>Direct founder access</span>
+              </span>
+              <span class="proof-pill">
+                <svg class="pill-check" width="13" height="13" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <span>100% In-house squad</span>
+              </span>
             </div>
           </div>
 
-          <!-- The Big Photo (Right Column) -->
-          <div class="hero-visual">
-            <div class="hero-big-photo-card">
-              <div class="photo-glow" aria-hidden="true"></div>
-              <div class="photo-frame">
-                <img src="/assets/nihar-hero-900.jpg" srcset="/assets/nihar-hero-480.jpg 480w, /assets/nihar-hero-900.jpg 900w" sizes="(max-width: 991px) 92vw, 470px" alt="Nihar Ranjan Rout — Founder &amp; CEO, Creuto" loading="eager" fetchpriority="high" width="900" height="809" decoding="async">
-                
-                <div class="photo-badge-clutch">
-                  <span class="stars-gold" aria-hidden="true">★★★★★</span>
-                  <span><strong>5.0 Clutch</strong> Verified</span>
+          <!-- Right Column: Immersive Portrait Stage -->
+          <div class="hero-stage-column">
+            <div class="stage-sculpture">
+              <div class="stage-backdrop-glow" aria-hidden="true"></div>
+              
+              <!-- Floating Card 1: Clutch Rating -->
+              <div class="stage-floating-badge badge-clutch">
+                <span class="badge-icon-stars" aria-hidden="true">★★★★★</span>
+                <div class="badge-text-group">
+                  <strong>5.0 Clutch Verified</strong>
+                  <span>Top Product Agency</span>
                 </div>
-                
-                <a class="photo-badge-partner" href="/blog/openai-select-partner" aria-label="Creuto is an OpenAI Select Partner">
-                  <img src="/assets/openai-select-partner-mark.png" alt="OpenAI Select Partner" width="94" height="38">
-                </a>
+              </div>
 
-                <div class="photo-caption-overlay">
-                  <div class="caption-left">
-                    <strong class="caption-name"><a href="https://www.niharrout.com/?utm_source=google&utm_medium=gbp" style="color:inherit; text-decoration:none;">Nihar Ranjan Rout</a></strong>
-                    <span class="caption-title">Founder &amp; CEO, Creuto</span>
+              <!-- Floating Card 2: OpenAI Partner -->
+              <a href="/blog/openai-select-partner" class="stage-floating-badge badge-partner" title="Creuto is an OpenAI Select Partner">
+                <img src="/assets/openai-select-partner-mark.png" alt="OpenAI Select Partner" width="92" height="32">
+              </a>
+
+              <!-- Main Stage Portrait Container -->
+              <div class="stage-frame">
+                <img src="/assets/nihar-hero-900.jpg" 
+                     srcset="/assets/nihar-hero-480.jpg 480w, /assets/nihar-hero-900.jpg 900w" 
+                     sizes="(max-width: 991px) 92vw, 480px" 
+                     alt="Nihar Ranjan Rout — Founder &amp; CEO, Creuto" 
+                     loading="eager" 
+                     fetchpriority="high" 
+                     width="900" 
+                     height="809" 
+                     decoding="async" 
+                     class="stage-portrait-img">
+                
+                <!-- Floating Card 3: Metrics Callout -->
+                <div class="stage-metric-pill">
+                  <span class="metric-num">45+</span>
+                  <div class="metric-desc">
+                    <strong>Products Live</strong>
+                    <span>Across US &middot; UK &middot; IN</span>
                   </div>
-                  <div class="caption-status">
-                    <span class="status-pulse-dot" aria-hidden="true"></span>
+                </div>
+
+                <!-- Bottom Glass Identity Bar -->
+                <div class="stage-identity-bar">
+                  <div class="identity-info">
+                    <a href="https://www.niharrout.com/?utm_source=google&utm_medium=gbp" class="identity-name">Nihar Ranjan Rout</a>
+                    <span class="identity-role">Founder &amp; CEO, Creuto</span>
+                  </div>
+                  <div class="identity-status-pill">
+                    <span class="status-live-beacon" aria-hidden="true"></span>
                     <span>Available Q2/Q3</span>
                   </div>
                 </div>
               </div>
-              
-              <div class="photo-floating-stat">
-                <span class="stat-number">45+</span>
-                <span class="stat-text">Products Shipped Live</span>
-              </div>
             </div>
           </div>
         </div>
 
-        <div class="ed-band">
-          <blockquote class="ed-pull">&ldquo;If you build the wrong feature set on time and under budget, you still lost. Real product discipline is knowing what NOT to build.&rdquo;</blockquote>
+        <!-- Executive Philosophy Callout Band -->
+        <div class="hero-philosophy-band">
+          <div class="philosophy-content">
+            <span class="philosophy-icon" aria-hidden="true">&ldquo;</span>
+            <blockquote class="philosophy-quote">
+              If you build the wrong feature set on time and under budget, you still lost. Real product discipline is knowing what <em>NOT</em> to build.
+            </blockquote>
+            <div class="philosophy-author">
+              <strong>Nihar Ranjan Rout</strong> &mdash; <span>Product Scoping &amp; Architecture Philosophy</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ================= STAT CARDS ================= -->
-    <section class="ed-stats">
+    <!-- ================= 2. VERIFIED METRICS BENTO ================= -->
+    <section class="ed-stats" id="stats">
       <div class="wrap">
-        <dl class="ed-facts">
-          <div><span class="ed-fact-badge">Product Leadership</span><dt>8+ Years</dt></div>
-          <div><span class="ed-fact-badge">Shipped Live</span><dt>45+ Products</dt></div>
-          <div><span class="ed-fact-badge">Zero Outsourcing</span><dt>100% In-House</dt></div>
-          <div><span class="ed-fact-badge">Clutch Verified</span><dt>5.0 ★</dt></div>
-        </dl>
+        <div class="bento-stats-grid">
+          <div class="bento-stat-card">
+            <span class="stat-badge-tag">Experience</span>
+            <div class="stat-metric-val">8+ Years</div>
+            <div class="stat-metric-sub">Leading digital product strategy and full-stack software architecture.</div>
+          </div>
+          <div class="bento-stat-card">
+            <span class="stat-badge-tag">Shipped Live</span>
+            <div class="stat-metric-val">45+ Products</div>
+            <div class="stat-metric-sub">Deployed across US, UK, and India markets with zero downtime.</div>
+          </div>
+          <div class="bento-stat-card">
+            <span class="stat-badge-tag">Delivery Model</span>
+            <div class="stat-metric-val">100% In-House</div>
+            <div class="stat-metric-sub">Dedicated Creuto engineering squad. Zero subcontracted labor.</div>
+          </div>
+          <div class="bento-stat-card">
+            <span class="stat-badge-tag">Client Reputation</span>
+            <div class="stat-metric-val">5.0 ★ Rating</div>
+            <div class="stat-metric-sub">Clutch verified reviews across mobile, enterprise ERP, and AI systems.</div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- ================= TRUSTED BY ================= -->
+    <!-- ================= 3. TRUSTED BY CLIENTS ================= -->
     <section class="ed-logos" aria-labelledby="ed-logos-label">
       <div class="wrap">
-        <p class="ed-logos-label" id="ed-logos-label">Trusted by teams building what&rsquo;s next</p>
-      </div>
-      <div class="ed-marquee">
-        <div class="ed-marquee-track">
-          <ul class="ed-marquee-set">
-              <li class="ed-logo"><img src="/assets/clients/skoda.webp" alt="&Scaron;KODA" loading="lazy" decoding="async" height="48"></li>
-              <li class="ed-logo"><img src="/assets/clients/vit-ap-university.webp" alt="VIT-AP University" loading="lazy" decoding="async" height="48"></li>
-              <li class="ed-logo"><img src="/assets/clients/canopus.webp" alt="Canopus Engineering Services" loading="lazy" decoding="async" height="48"></li>
-              <li class="ed-logo"><img src="/assets/clients/flashnow.webp" alt="FlashNow" loading="lazy" decoding="async" height="48"></li>
-              <li class="ed-logo"><img src="/assets/clients/make-my-look.webp" alt="Make My Look" loading="lazy" decoding="async" height="48"></li>
-              <li class="ed-logo"><img src="/assets/clients/skyeone.webp" alt="SkyeOne" loading="lazy" decoding="async" height="48"></li>
-              <li class="ed-logo"><img src="/assets/clients/karma.webp" alt="Karma" loading="lazy" decoding="async" height="48"></li>
-              <li class="ed-logo"><img src="/assets/clients/orox.webp" alt="Orox" loading="lazy" decoding="async" height="48"></li>
-              <li class="ed-logo"><img src="/assets/clients/aquapulse.webp" alt="Aquapulse" loading="lazy" decoding="async" height="48"></li>
-              <li class="ed-logo"><img src="/assets/clients/fyuga.webp" alt="Fyuga" loading="lazy" decoding="async" height="48"></li>
-              <li class="ed-logo"><img src="/assets/clients/treasure-moments.webp" alt="Treasure Moments" loading="lazy" decoding="async" height="48"></li>
-              <li class="ed-logo"><img src="/assets/clients/opus-momentus.webp" alt="Opus Momentus" loading="lazy" decoding="async" height="48"></li>
-              <li class="ed-logo"><img src="/assets/clients/brabima.webp" alt="Brabima" loading="lazy" decoding="async" height="48"></li>
-              <li class="ed-logo"><img src="/assets/clients/saviour.webp" alt="Saviour" loading="lazy" decoding="async" height="48"></li>
-          </ul>
-          <ul class="ed-marquee-set" aria-hidden="true">
-              <li class="ed-logo"><img src="/assets/clients/skoda.webp" alt="" loading="lazy" decoding="async" height="48"></li>
-              <li class="ed-logo"><img src="/assets/clients/vit-ap-university.webp" alt="" loading="lazy" decoding="async" height="48"></li>
-              <li class="ed-logo"><img src="/assets/clients/canopus.webp" alt="" loading="lazy" decoding="async" height="48"></li>
-              <li class="ed-logo"><img src="/assets/clients/flashnow.webp" alt="" loading="lazy" decoding="async" height="48"></li>
-              <li class="ed-logo"><img src="/assets/clients/make-my-look.webp" alt="" loading="lazy" decoding="async" height="48"></li>
-              <li class="ed-logo"><img src="/assets/clients/skyeone.webp" alt="" loading="lazy" decoding="async" height="48"></li>
-              <li class="ed-logo"><img src="/assets/clients/karma.webp" alt="" loading="lazy" decoding="async" height="48"></li>
-              <li class="ed-logo"><img src="/assets/clients/orox.webp" alt="" loading="lazy" decoding="async" height="48"></li>
-              <li class="ed-logo"><img src="/assets/clients/aquapulse.webp" alt="" loading="lazy" decoding="async" height="48"></li>
-              <li class="ed-logo"><img src="/assets/clients/fyuga.webp" alt="" loading="lazy" decoding="async" height="48"></li>
-              <li class="ed-logo"><img src="/assets/clients/treasure-moments.webp" alt="" loading="lazy" decoding="async" height="48"></li>
-              <li class="ed-logo"><img src="/assets/clients/opus-momentus.webp" alt="" loading="lazy" decoding="async" height="48"></li>
-              <li class="ed-logo"><img src="/assets/clients/brabima.webp" alt="" loading="lazy" decoding="async" height="48"></li>
-              <li class="ed-logo"><img src="/assets/clients/saviour.webp" alt="" loading="lazy" decoding="async" height="48"></li>
-          </ul>
+        <div class="logos-container-card">
+          <p class="ed-logos-label" id="ed-logos-label">Trusted by high-growth startups and global enterprises</p>
+          <div class="ed-marquee">
+            <div class="ed-marquee-track">
+              <ul class="ed-marquee-set">
+                  <li class="ed-logo"><img src="/assets/clients/skoda.webp" alt="ŠKODA" loading="lazy" decoding="async" height="40"></li>
+                  <li class="ed-logo"><img src="/assets/clients/vit-ap-university.webp" alt="VIT-AP University" loading="lazy" decoding="async" height="40"></li>
+                  <li class="ed-logo"><img src="/assets/clients/canopus.webp" alt="Canopus Engineering Services" loading="lazy" decoding="async" height="40"></li>
+                  <li class="ed-logo"><img src="/assets/clients/flashnow.webp" alt="FlashNow" loading="lazy" decoding="async" height="40"></li>
+                  <li class="ed-logo"><img src="/assets/clients/make-my-look.webp" alt="Make My Look" loading="lazy" decoding="async" height="40"></li>
+                  <li class="ed-logo"><img src="/assets/clients/skyeone.webp" alt="SkyeOne" loading="lazy" decoding="async" height="40"></li>
+                  <li class="ed-logo"><img src="/assets/clients/karma.webp" alt="Karma" loading="lazy" decoding="async" height="40"></li>
+                  <li class="ed-logo"><img src="/assets/clients/orox.webp" alt="Orox" loading="lazy" decoding="async" height="40"></li>
+                  <li class="ed-logo"><img src="/assets/clients/aquapulse.webp" alt="Aquapulse" loading="lazy" decoding="async" height="40"></li>
+                  <li class="ed-logo"><img src="/assets/clients/fyuga.webp" alt="Fyuga" loading="lazy" decoding="async" height="40"></li>
+                  <li class="ed-logo"><img src="/assets/clients/treasure-moments.webp" alt="Treasure Moments" loading="lazy" decoding="async" height="40"></li>
+                  <li class="ed-logo"><img src="/assets/clients/opus-momentus.webp" alt="Opus Momentus" loading="lazy" decoding="async" height="40"></li>
+                  <li class="ed-logo"><img src="/assets/clients/brabima.webp" alt="Brabima" loading="lazy" decoding="async" height="40"></li>
+                  <li class="ed-logo"><img src="/assets/clients/saviour.webp" alt="Saviour" loading="lazy" decoding="async" height="40"></li>
+              </ul>
+              <ul class="ed-marquee-set" aria-hidden="true">
+                  <li class="ed-logo"><img src="/assets/clients/skoda.webp" alt="" loading="lazy" decoding="async" height="40"></li>
+                  <li class="ed-logo"><img src="/assets/clients/vit-ap-university.webp" alt="" loading="lazy" decoding="async" height="40"></li>
+                  <li class="ed-logo"><img src="/assets/clients/canopus.webp" alt="" loading="lazy" decoding="async" height="40"></li>
+                  <li class="ed-logo"><img src="/assets/clients/flashnow.webp" alt="" loading="lazy" decoding="async" height="40"></li>
+                  <li class="ed-logo"><img src="/assets/clients/make-my-look.webp" alt="" loading="lazy" decoding="async" height="40"></li>
+                  <li class="ed-logo"><img src="/assets/clients/skyeone.webp" alt="" loading="lazy" decoding="async" height="40"></li>
+                  <li class="ed-logo"><img src="/assets/clients/karma.webp" alt="" loading="lazy" decoding="async" height="40"></li>
+                  <li class="ed-logo"><img src="/assets/clients/orox.webp" alt="" loading="lazy" decoding="async" height="40"></li>
+                  <li class="ed-logo"><img src="/assets/clients/aquapulse.webp" alt="" loading="lazy" decoding="async" height="40"></li>
+                  <li class="ed-logo"><img src="/assets/clients/fyuga.webp" alt="" loading="lazy" decoding="async" height="40"></li>
+                  <li class="ed-logo"><img src="/assets/clients/treasure-moments.webp" alt="" loading="lazy" decoding="async" height="40"></li>
+                  <li class="ed-logo"><img src="/assets/clients/opus-momentus.webp" alt="" loading="lazy" decoding="async" height="40"></li>
+                  <li class="ed-logo"><img src="/assets/clients/brabima.webp" alt="" loading="lazy" decoding="async" height="40"></li>
+                  <li class="ed-logo"><img src="/assets/clients/saviour.webp" alt="" loading="lazy" decoding="async" height="40"></li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ================= OPENAI SELECT PARTNER ================= -->
+    <!-- ================= OPENAI SELECT PARTNER MILESTONE ================= -->
     <section class="ed-milestone" id="openai" aria-labelledby="ed-milestone-title">
       <div class="wrap ed-milestone-grid">
         <div class="ed-milestone-copy ed-reveal">
@@ -359,9 +461,9 @@
           <h2 id="ed-milestone-title">Creuto is now an OpenAI Select Partner.</h2>
           <p>We work with OpenAI to help organizations build, deploy, and scale AI solutions responsibly and effectively. Someone outside our own walls looked closely at how we build and decided it holds up.</p>
           <ul class="ed-milestone-points">
-            <li><span>01</span>Direct access to OpenAI&rsquo;s frontier models</li>
-            <li><span>02</span>Closer alignment with how OpenAI expects enterprises to deploy them responsibly</li>
-            <li><span>03</span>An answer to the trust question that doesn&rsquo;t rely on our word alone</li>
+            <li><span>01</span>Direct access to OpenAI’s frontier models and engineering team</li>
+            <li><span>02</span>Closer alignment with how OpenAI expects enterprises to deploy LLMs responsibly</li>
+            <li><span>03</span>Independent validation of our production software and architecture standards</li>
           </ul>
           <div class="ed-milestone-actions">
             <a href="/blog/openai-select-partner" class="cl-button -primary">Read the announcement <span style="margin-left:4px;">&rarr;</span></a>
@@ -377,212 +479,351 @@
       </div>
     </section>
 
-    <!-- ================= 2. WHY ================= -->
+    <!-- ================= 4. THE CREUTO ADVANTAGE (WHY PARTNER) ================= -->
     <section class="why-section ed-section" id="why">
-      <div class="wrap ed-split">
-        <div class="ed-split-head">
+      <div class="wrap">
+        <header class="ed-head">
           <p class="ed-label">Why choose Nihar &amp; Creuto</p>
-          <h2 class="section-title">Product management discipline meets in-house execution.</h2>
-          <p>We bridge the gap between business strategy and engineering execution. When you partner with us, you work with seasoned product practitioners who care about your commercial metrics:</p>
-          <figure class="ed-photo">
-            <img src="/assets/nihar-cafe-600.jpg" alt="Nihar Ranjan Rout having a cup of chai at a caf&eacute; table" width="600" height="800" loading="lazy" decoding="async">
-          </figure>
+          <h2 class="section-title">Product leadership discipline meets 100% in-house engineering.</h2>
+          <p>We bridge business goals, user psychology, and enterprise code without middle managers or outsourced handoffs.</p>
+        </header>
+
+        <div class="bento-why-grid">
+          <div class="why-pillar-card">
+            <span class="pillar-number">01</span>
+            <h3 class="pillar-title">Product Discipline First</h3>
+            <p class="pillar-desc">We write exhaustive functional PRDs, interactive Figma prototypes, and schema blueprints before writing code. We eliminate expensive rework before it starts.</p>
+          </div>
+
+          <div class="why-pillar-card">
+            <span class="pillar-number">02</span>
+            <h3 class="pillar-title">100% In-House Squad</h3>
+            <p class="pillar-desc">Zero subcontracting, zero unvetted freelancers. Every engineer, UI designer, and QA specialist is part of our dedicated in-house Creuto team.</p>
+          </div>
+
+          <div class="why-pillar-card">
+            <span class="pillar-number">03</span>
+            <h3 class="pillar-title">Direct Founder Access</h3>
+            <p class="pillar-desc">You collaborate directly with Nihar via private Slack or WhatsApp channels and weekly architecture reviews. Rapid decisions without red tape.</p>
+          </div>
+
+          <div class="why-pillar-card">
+            <span class="pillar-number">04</span>
+            <h3 class="pillar-title">Milestone Predictability</h3>
+            <p class="pillar-desc">Every build runs in transparent 2-week sprints with testable deployments. You always know what is being built, when it ships, and budget status.</p>
+          </div>
         </div>
-        <ol class="ed-list">
-          <li><span class="ed-num">01</span><div><h3>Product Discipline First</h3><p>We write exhaustive functional PRDs, user journey maps, and clickable Figma prototypes before touching code. We challenge assumptions early to eliminate expensive scope bloat.</p></div></li>
-          <li><span class="ed-num">02</span><div><h3>100% In-House Creuto Squad</h3><p>Zero subcontracting, zero anonymous freelancers. Every full-stack engineer, mobile developer, and QA specialist works directly within our dedicated in-house Creuto team.</p></div></li>
-          <li><span class="ed-num">03</span><div><h3>Direct Founder Collaboration</h3><p>You communicate directly with Nihar via private Slack/WhatsApp channels and weekly sprint architecture demos. No account managers or communication bottlenecks.</p></div></li>
-          <li><span class="ed-num">04</span><div><h3>Milestone Predictability</h3><p>Every build is staged in transparent two-week sprints tied to clear, testable deliverables. You always know what is being built, when it ships, and how your budget is allocated.</p></div></li>
-        </ol>
       </div>
     </section>
 
-    <!-- ================= 3. SERVICES ================= -->
+    <!-- ================= 5. CORE DISCIPLINES (SERVICES BENTO) ================= -->
     <section class="services-section ed-section" id="services">
       <div class="wrap">
         <header class="ed-head">
-          <p class="ed-label">Core disciplines</p>
-          <h2 class="section-title">Specialized digital product engineering.</h2>
-          <p>Focused, commercial capabilities designed to automate operational bottlenecks and scale user adoption.</p>
+          <p class="ed-label">Core engineering disciplines</p>
+          <h2 class="section-title">Specialized digital product architecture.</h2>
+          <p>Focused commercial capabilities engineered to automate operational bottlenecks and scale user adoption.</p>
         </header>
-        <div class="ed-index">
-      <article class="ed-row">
-        <div class="ed-row-title"><span class="ed-num">01</span><p class="ed-tag">Build a Mobile Product</p><h3>Mobile Application Development (iOS &amp; Android)</h3></div>
-        <div class="ed-row-body">
-          <p>High-performance React Native and Flutter mobile applications delivering 60 FPS native feel, instant offline synchronization, background location tracking, and real-time push notifications.</p>
-          <ul class="ed-dash">
-            <li>Unified iOS &amp; Android cross-platform codebase</li>
-            <li>Offline-first local database caching</li>
-            <li>Push notifications, WebSockets &amp; payment gateways</li>
-            <li>Full App Store &amp; Google Play submission support</li>
-          </ul>
-          <a href="/work/make-my-look" class="ed-link">Explore Mobile Case Study &rarr;</a>
-        </div>
-      </article>
-      <article class="ed-row">
-        <div class="ed-row-title"><span class="ed-num">02</span><p class="ed-tag">Build an AI Product</p><h3>AI Product Development &amp; Workflows</h3></div>
-        <div class="ed-row-body">
-          <p>Pragmatic machine learning pipelines, custom RAG document search over company data, and autonomous task agents directly integrated into your operational stack for measurable business ROI.</p>
-          <ul class="ed-dash">
-            <li>Domain-specific vector search &amp; document retrieval (RAG)</li>
-            <li>Autonomous operational triage and drafting agents</li>
-            <li>Token budgeting, latency tracking &amp; telemetry</li>
-            <li>Enterprise privacy guardrails &amp; deterministic fallbacks</li>
-          </ul>
-          <a href="/services/ai-product-development" class="ed-link">Explore AI Capabilities &rarr;</a>
-        </div>
-      </article>
-      <article class="ed-row">
-        <div class="ed-row-title"><span class="ed-num">03</span><p class="ed-tag">Build Custom Software</p><h3>Custom Software &amp; Enterprise ERP Systems</h3></div>
-        <div class="ed-row-body">
-          <p>Replace disconnected spreadsheets and fragmented SaaS subscriptions with a unified, real-time operating system tailored to your exact manufacturing, warehouse, and multi-department workflows.</p>
-          <ul class="ed-dash">
-            <li>Granular Role-Based Access Control (RBAC)</li>
-            <li>Live inventory, purchase order &amp; supply chain tracking</li>
-            <li>Multi-department accounting and payroll reconciliation</li>
-            <li>Real-time executive KPI dashboards</li>
-          </ul>
-          <a href="/work/custom-erp-manufacturing" class="ed-link">View ERP Case Study &rarr;</a>
-        </div>
-      </article>
-      <article class="ed-row">
-        <div class="ed-row-title"><span class="ed-num">04</span><p class="ed-tag">Figure Out What to Build</p><h3>Product Strategy, PRDs &amp; Roadmapping</h3></div>
-        <div class="ed-row-body">
-          <p>Before committing capital to engineering, validate your product roadmap with an exhaustive functional PRD, database schema mapping, clickable Figma prototypes, and a milestone roadmap.</p>
-          <ul class="ed-dash">
-            <li>Functional specification (PRD) with edge-case mapping</li>
-            <li>High-fidelity clickable Figma prototype</li>
-            <li>Relational database schema &amp; API contracts</li>
-            <li>Fixed-milestone sprint schedule &amp; budget estimation</li>
-          </ul>
-          <a href="#contact" class="ed-link">Book a Strategy Session &rarr;</a>
-        </div>
-      </article>
+
+        <div class="bento-services-grid">
+          <!-- Service Card 1 -->
+          <article class="service-bento-card">
+            <div class="service-card-top">
+              <div class="service-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+              </div>
+              <span class="service-card-tag">Mobile Engineering</span>
+              <h3 class="service-card-title">Mobile Application Development</h3>
+              <p class="service-card-desc">High-performance React Native and Flutter applications delivering 60 FPS native feel, instant offline synchronization, and frictionless payments.</p>
+              <ul class="service-feature-list">
+                <li><svg width="15" height="15" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Unified iOS &amp; Android cross-platform codebases</li>
+                <li><svg width="15" height="15" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Offline-first local database caching</li>
+                <li><svg width="15" height="15" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> App Store &amp; Google Play guaranteed approval</li>
+              </ul>
+            </div>
+            <a href="/services/mobile-app-development" class="service-card-action">
+              <span>Explore Mobile Capabilities</span> &rarr;
+            </a>
+          </article>
+
+          <!-- Service Card 2 -->
+          <article class="service-bento-card">
+            <div class="service-card-top">
+              <div class="service-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              </div>
+              <span class="service-card-tag">Enterprise Core</span>
+              <h3 class="service-card-title">Custom Software &amp; Enterprise ERP</h3>
+              <p class="service-card-desc">Replace disconnected spreadsheets and rigid SaaS subscriptions with a single unified operating system tailored to your exact manufacturing workflows.</p>
+              <ul class="service-feature-list">
+                <li><svg width="15" height="15" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Granular Role-Based Access Control (RBAC)</li>
+                <li><svg width="15" height="15" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Live inventory, purchasing &amp; supply chain tracking</li>
+                <li><svg width="15" height="15" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Real-time executive KPI telemetry</li>
+              </ul>
+            </div>
+            <a href="/services/custom-software-development" class="service-card-action">
+              <span>View ERP Capabilities</span> &rarr;
+            </a>
+          </article>
+
+          <!-- Service Card 3 -->
+          <article class="service-bento-card">
+            <div class="service-card-top">
+              <div class="service-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+              </div>
+              <span class="service-card-tag">OpenAI Partner</span>
+              <h3 class="service-card-title">AI Product Development &amp; Agents</h3>
+              <p class="service-card-desc">Pragmatic LLM pipelines, proprietary document RAG systems, and autonomous task agents directly integrated into operational software for measurable ROI.</p>
+              <ul class="service-feature-list">
+                <li><svg width="15" height="15" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Vector search &amp; private document RAG pipelines</li>
+                <li><svg width="15" height="15" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Autonomous operational triage and drafting agents</li>
+                <li><svg width="15" height="15" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Token budgeting, strict latency &amp; safety guardrails</li>
+              </ul>
+            </div>
+            <a href="/services/ai-product-development" class="service-card-action">
+              <span>Explore AI Solutions</span> &rarr;
+            </a>
+          </article>
+
+          <!-- Service Card 4 -->
+          <article class="service-bento-card">
+            <div class="service-card-top">
+              <div class="service-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              </div>
+              <span class="service-card-tag">Architecture &amp; Scoping</span>
+              <h3 class="service-card-title">Product Strategy, PRDs &amp; Roadmaps</h3>
+              <p class="service-card-desc">Before committing budget to engineering, de-risk your vision with complete functional specifications, edge-case analysis, and clickable Figma prototypes.</p>
+              <ul class="service-feature-list">
+                <li><svg width="15" height="15" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Functional PRDs with exhaustive edge-case mapping</li>
+                <li><svg width="15" height="15" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> High-fidelity clickable Figma user journey flows</li>
+                <li><svg width="15" height="15" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Fixed-milestone sprint schedule and budget blueprint</li>
+              </ul>
+            </div>
+            <a href="/services/product-strategy-prd" class="service-card-action">
+              <span>View Strategy &amp; PRD Framework</span> &rarr;
+            </a>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- ================= 4. WORK ================= -->
+    <!-- ================= 6. FLAGSHIP PRODUCTION WORK BENTO ================= -->
     <section class="portfolio-section ed-section" id="portfolio">
       <div class="wrap">
         <header class="ed-head">
-          <p class="ed-label">Selected production work</p>
-          <h2 class="section-title">Real products. Live in production. Measured in outcomes.</h2>
-          <p>Recent digital platforms engineered by Nihar and the Creuto in-house squad across manufacturing operations, on-demand marketplaces, and logistics.</p>
+          <p class="ed-label">Selected flagship production work</p>
+          <h2 class="section-title">Live in production. Measured in tangible business outcomes.</h2>
+          <p>Recent digital platforms engineered by Nihar and the Creuto squad across manufacturing, marketplaces, and logistics.</p>
         </header>
-        <div class="ed-work">
-        <a class="ed-work-row tone-dark" href="/work/custom-erp-manufacturing">
-          <span class="ed-num">01</span>
-          <div class="ed-work-thumb"><img src="/work/erp-manufacturing-card.jpg" alt="Custom ERP for Manufacturing Operations" loading="lazy" width="1024" height="716" decoding="async"></div>
-          <div class="ed-work-text">
-            <p class="ed-tag">Enterprise Operations · ERP</p>
-            <h3 class="case-title">Custom ERP for Manufacturing Operations</h3>
-            <p>Replaced four disconnected departments and manual spreadsheets with one unified, real-time operating system across inventory, purchasing, HR, and accounting.</p>
-            <ul class="ed-inline"><li>Custom ERP</li><li>Supply Chain</li><li>Operations Core</li></ul>
-          </div>
-          <p class="ed-work-outcome">4 Departments Unified</p>
-        </a>
-        <a class="ed-work-row tone-amber" href="/work/sky1-event-booking">
-          <span class="ed-num">02</span>
-          <div class="ed-work-thumb"><img src="/work/sky1-card.jpg" alt="Skyeone — Multi-Vendor Event &amp; Venue Booking" loading="lazy" width="1024" height="682" decoding="async"></div>
-          <div class="ed-work-text">
-            <p class="ed-tag">Consumer Marketplace · Booking</p>
-            <h3 class="case-title">Skyeone — Multi-Vendor Event &amp; Venue Booking</h3>
-            <p>Architected a two-sided event marketplace coordinating venues, caterers, and decorators with real-time availability calendars and automated Stripe split payouts.</p>
-            <ul class="ed-inline"><li>Two-Sided Marketplace</li><li>Mobile App</li><li>Stripe Connect</li></ul>
-          </div>
-          <p class="ed-work-outcome">300+ Venues Live</p>
-        </a>
-        <a class="ed-work-row tone-rose" href="/work/make-my-look">
-          <span class="ed-num">03</span>
-          <div class="ed-work-thumb"><img src="/work/mml-card.jpg" alt="Make My Look — Salon &amp; Wellness Marketplace" loading="lazy" width="1024" height="768" decoding="async"></div>
-          <div class="ed-work-text">
-            <p class="ed-tag">On-Demand Services · Mobile</p>
-            <h3 class="case-title">Make My Look — Beauty &amp; Salon Platform</h3>
-            <p>Digitized an offline service industry with a high-conversion consumer booking app and an intuitive merchant portal for salon staff scheduling and daily revenues.</p>
-            <ul class="ed-inline"><li>Consumer App</li><li>Merchant Portal</li><li>iOS &amp; Android</li></ul>
-          </div>
-          <p class="ed-work-outcome">200+ Salons Onboarded</p>
-        </a>
-        <a class="ed-work-row tone-lime" href="/work/flashnow">
-          <span class="ed-num">04</span>
-          <div class="ed-work-thumb"><img src="/work/flashnow-card.jpg" alt="FlashNow — Quick Commerce Delivery Ecosystem" loading="lazy" width="1024" height="660" decoding="async"></div>
-          <div class="ed-work-text">
-            <p class="ed-tag">Hyper-Local Logistics · Cloud</p>
-            <h3 class="case-title">FlashNow — Quick Commerce Delivery Ecosystem</h3>
-            <p>Engineered an end-to-end quick-commerce platform pairing consumer ordering, dark-store warehouse picking terminals, and automated rider dispatch algorithms.</p>
-            <ul class="ed-inline"><li>Quick Commerce</li><li>GPS Routing</li><li>Real-Time Dispatch</li></ul>
-          </div>
-          <p class="ed-work-outcome">15-Min Order SLA</p>
-        </a>
+
+        <div class="bento-work-grid">
+          <!-- Work Card 1 -->
+          <a class="work-bento-card" href="/work/custom-erp-manufacturing">
+            <div class="work-thumb-frame">
+              <img src="/work/erp-manufacturing-card.jpg" alt="Custom ERP for Manufacturing Operations" loading="lazy" width="1024" height="716" decoding="async">
+              <span class="work-outcome-badge">4 Depts Unified</span>
+            </div>
+            <div class="work-card-content">
+              <span class="work-category-tag">Enterprise Operations &middot; Custom ERP</span>
+              <h3 class="work-card-title">Custom ERP for Manufacturing Operations</h3>
+              <p class="work-card-desc">Replaced four disconnected departments and manual spreadsheets with one unified, real-time operating system across inventory, purchasing, HR, and accounting.</p>
+              <ul class="work-tech-tags">
+                <li>Enterprise ERP</li>
+                <li>Supply Chain Core</li>
+                <li>PostgreSQL</li>
+                <li>RBAC</li>
+              </ul>
+            </div>
+          </a>
+
+          <!-- Work Card 2 -->
+          <a class="work-bento-card" href="/work/sky1-event-booking">
+            <div class="work-thumb-frame">
+              <img src="/work/sky1-card.jpg" alt="Skyeone Multi-Vendor Event &amp; Venue Booking" loading="lazy" width="1024" height="682" decoding="async">
+              <span class="work-outcome-badge">300+ Venues Live</span>
+            </div>
+            <div class="work-card-content">
+              <span class="work-category-tag">Consumer Marketplace &middot; Booking</span>
+              <h3 class="work-card-title">Skyeone — Multi-Vendor Event Booking</h3>
+              <p class="work-card-desc">Architected a two-sided event marketplace coordinating venues, caterers, and decorators with real-time availability calendars and automated Stripe split payouts.</p>
+              <ul class="work-tech-tags">
+                <li>Two-Sided Marketplace</li>
+                <li>Mobile App</li>
+                <li>Stripe Connect</li>
+                <li>Next.js</li>
+              </ul>
+            </div>
+          </a>
+
+          <!-- Work Card 3 -->
+          <a class="work-bento-card" href="/work/make-my-look">
+            <div class="work-thumb-frame">
+              <img src="/work/mml-card.jpg" alt="Make My Look Salon &amp; Wellness Marketplace" loading="lazy" width="1024" height="768" decoding="async">
+              <span class="work-outcome-badge">200+ Salons Onboarded</span>
+            </div>
+            <div class="work-card-content">
+              <span class="work-category-tag">On-Demand Services &middot; Mobile Platform</span>
+              <h3 class="work-card-title">Make My Look — Salon &amp; Wellness App</h3>
+              <p class="work-card-desc">Digitized an offline service industry with a high-conversion consumer booking app and an intuitive merchant portal for salon staff scheduling and daily revenues.</p>
+              <ul class="work-tech-tags">
+                <li>React Native</li>
+                <li>iOS &amp; Android</li>
+                <li>Merchant Portal</li>
+                <li>Real-Time Sockets</li>
+              </ul>
+            </div>
+          </a>
+
+          <!-- Work Card 4 -->
+          <a class="work-bento-card" href="/work/flashnow">
+            <div class="work-thumb-frame">
+              <img src="/work/flashnow-card.jpg" alt="FlashNow Quick Commerce Delivery Ecosystem" loading="lazy" width="1024" height="660" decoding="async">
+              <span class="work-outcome-badge">15-Min Order SLA</span>
+            </div>
+            <div class="work-card-content">
+              <span class="work-category-tag">Hyper-Local Logistics &middot; Cloud Architecture</span>
+              <h3 class="work-card-title">FlashNow — Quick Commerce Ecosystem</h3>
+              <p class="work-card-desc">Engineered an end-to-end quick-commerce platform pairing consumer ordering, dark-store warehouse picking terminals, and automated rider dispatch algorithms.</p>
+              <ul class="work-tech-tags">
+                <li>Quick Commerce</li>
+                <li>GPS Routing</li>
+                <li>Warehouse Terminal</li>
+                <li>High Concurrency</li>
+              </ul>
+            </div>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- ================= 5. WHAT CLIENTS SAY ================= -->
+    <!-- ================= 7. CLIENT TESTIMONIALS BENTO ================= -->
     <section class="testimonials-section ed-section" id="testimonials">
       <div class="wrap">
         <header class="ed-head">
           <p class="ed-label">Client feedback</p>
-          <h2 class="section-title">Trusted by founders and business operators.</h2>
-          <p>Direct feedback from entrepreneurs and executives who partnered with Nihar and Creuto to launch and scale their platforms.</p>
+          <h2 class="section-title">Trusted by founders and business leaders worldwide.</h2>
+          <p>Direct feedback from executives who partnered with Nihar and Creuto to launch and scale their digital products.</p>
         </header>
-        <div class="ed-quotes">
-          <figure class="ed-quote"><blockquote>&ldquo;Before Creuto, every department was running on its own disconnected spreadsheet. Nihar locked down our operational requirements in the PRD, and his team delivered a unified system that gave our management team real-time visibility for the first time.&rdquo;</blockquote><figcaption><strong>Operations Director</strong>Large-Scale Manufacturing Enterprise</figcaption></figure>
-          <figure class="ed-quote"><blockquote>&ldquo;Nihar is that rare breed of product leader who understands business levers just as well as software architecture. He stopped us from wasting budget on features our customers didn't want and delivered our marketplace ahead of our launch schedule.&rdquo;</blockquote><figcaption><strong>Co-Founder</strong>Skyeone Event Booking Marketplace</figcaption></figure>
-          <figure class="ed-quote"><blockquote>&ldquo;Finding an engineering team that doesn't disappear or cut corners is rare. Creuto's in-house squad was disciplined, delivered bi-weekly demos like clockwork, and launched our mobile apps cleanly to the App Store and Google Play.&rdquo;</blockquote><figcaption><strong>Founder &amp; CEO</strong>Make My Look Beauty Platform</figcaption></figure>
+
+        <div class="bento-quotes-grid">
+          <figure class="quote-bento-card">
+            <div>
+              <div class="quote-stars">★★★★★</div>
+              <blockquote class="quote-body-text">&ldquo;Before Creuto, every department was running on its own disconnected spreadsheet. Nihar locked down our operational requirements in the PRD, and his team delivered a unified system that gave our management team real-time visibility for the first time.&rdquo;</blockquote>
+            </div>
+            <figcaption class="quote-author-info">
+              <div class="quote-author-avatar">OD</div>
+              <div class="quote-author-text">
+                <strong>Operations Director</strong>
+                <span>Large-Scale Manufacturing Enterprise</span>
+              </div>
+            </figcaption>
+          </figure>
+
+          <figure class="quote-bento-card">
+            <div>
+              <div class="quote-stars">★★★★★</div>
+              <blockquote class="quote-body-text">&ldquo;Nihar is that rare breed of product leader who understands business levers just as well as software architecture. He stopped us from wasting budget on features our customers didn't want and delivered our marketplace ahead of our launch schedule.&rdquo;</blockquote>
+            </div>
+            <figcaption class="quote-author-info">
+              <div class="quote-author-avatar">CF</div>
+              <div class="quote-author-text">
+                <strong>Co-Founder</strong>
+                <span>Skyeone Event Booking Marketplace</span>
+              </div>
+            </figcaption>
+          </figure>
+
+          <figure class="quote-bento-card">
+            <div>
+              <div class="quote-stars">★★★★★</div>
+              <blockquote class="quote-body-text">&ldquo;Finding an engineering team that doesn't disappear or cut corners is rare. Creuto's in-house squad was disciplined, delivered bi-weekly demos like clockwork, and launched our mobile apps cleanly to the App Store and Google Play.&rdquo;</blockquote>
+            </div>
+            <figcaption class="quote-author-info">
+              <div class="quote-author-avatar">FC</div>
+              <div class="quote-author-text">
+                <strong>Founder &amp; CEO</strong>
+                <span>Make My Look Beauty Platform</span>
+              </div>
+            </figcaption>
+          </figure>
         </div>
-        <p class="ed-note">Verified 5.0 &#9733; Rating on Clutch · 100% Client Satisfaction · Zero Subcontracted Labor</p>
       </div>
     </section>
 
-    <!-- ================= MID-PAGE CTA ================= -->
+    <!-- ================= MID-PAGE CALL TO ACTION ================= -->
     <section class="ed-cta ed-cta-home" aria-labelledby="ed-cta-title">
       <div class="wrap ed-cta-grid">
         <div class="ed-reveal">
-          <h2 id="ed-cta-title">Have a product worth building? Let&rsquo;s scope it in 45 minutes.</h2>
-          <p>Bring the idea, the spreadsheet mess or the half-built app. You leave the call with a clear read on scope, budget and next steps.</p>
+          <h2 id="ed-cta-title">Have a product worth building? Let’s scope it in 45 minutes.</h2>
+          <p>Bring the idea, the spreadsheet bottlenecks, or the half-built prototype. You leave the call with a clear read on scope, budget, and architectural roadmap.</p>
         </div>
         <div class="ed-cta-actions ed-reveal">
-          <a href="https://calendly.com/creuto/meet" data-calendly="true" class="cl-button -primary">Book a free strategy call <span style="margin-left:4px;">&rarr;</span></a>
-          <a href="#contact" class="cl-button -secondary">Send a project brief</a>
+          <a href="https://calendly.com/creuto/meet" data-calendly="true" class="hero-btn-primary">Book a free strategy call &rarr;</a>
+          <a href="#contact" class="hero-btn-secondary">Send a project brief</a>
         </div>
       </div>
     </section>
 
-    <!-- ================= HOW WE WORK ================= -->
+    <!-- ================= 8. HOW WE WORK (DELIVERY PROTOCOL) ================= -->
     <section class="ed-section ed-process" id="process">
       <div class="wrap">
         <header class="ed-head">
           <p class="ed-label">How we work</p>
-          <h2 class="section-title">From first call to live product, in four clear steps.</h2>
-          <p>Every stage ends with something you can review, so you always know what you are paying for and what happens next.</p>
+          <h2 class="section-title">From first call to live production, in four clear steps.</h2>
+          <p>Every phase culminates in tangible, reviewable deliverables — so you maintain 100% control of scope and budget.</p>
         </header>
-        <ol class="ed-steps">
-          <li><span class="ed-num">01</span><h3>Discovery call</h3><p>A 45-minute conversation about your product, your users and your bottlenecks, including whether custom software is the right answer at all.</p><span class="ed-step-out">You get a clear read on scope</span></li>
-          <li><span class="ed-num">02</span><h3>PRD and prototype</h3><p>A functional PRD, database schema and clickable Figma prototype, written and tested before any engineering starts.</p><span class="ed-step-out">You get a spec, a prototype and a roadmap</span></li>
-          <li><span class="ed-num">03</span><h3>Build in sprints</h3><p>Transparent two-week sprints tied to testable deliverables, weekly demos and a direct line to Nihar on Slack or WhatsApp.</p><span class="ed-step-out">You get working software every two weeks</span></li>
-          <li><span class="ed-num">04</span><h3>Launch and support</h3><p>App Store and Google Play submission or production deployment, then post-launch support as your users grow.</p><span class="ed-step-out">You get a live product and a team behind it</span></li>
-        </ol>
+
+        <div class="bento-steps-grid">
+          <div class="step-bento-card">
+            <span class="step-card-num">01</span>
+            <h3 class="step-card-title">Discovery Call</h3>
+            <p class="step-card-desc">A deep 45-minute consultation examining your product vision, operational friction, and whether custom engineering is truly the right commercial investment.</p>
+            <div class="step-card-deliverable">Clear read on scope boundaries</div>
+          </div>
+
+          <div class="step-bento-card">
+            <span class="step-card-num">02</span>
+            <h3 class="step-card-title">PRD &amp; Prototype</h3>
+            <p class="step-card-desc">An exhaustive functional PRD, relational database schema, API contracts, and high-fidelity Figma prototype built and vetted before touching code.</p>
+            <div class="step-card-deliverable">Spec, prototype &amp; milestone roadmap</div>
+          </div>
+
+          <div class="step-bento-card">
+            <span class="step-card-num">03</span>
+            <h3 class="step-card-title">Build in Sprints</h3>
+            <p class="step-card-desc">Disciplined 2-week agile sprints with testable staging builds, weekly video demos, and continuous collaboration directly with Nihar on Slack or WhatsApp.</p>
+            <div class="step-card-deliverable">Working software every 2 weeks</div>
+          </div>
+
+          <div class="step-bento-card">
+            <span class="step-card-num">04</span>
+            <h3 class="step-card-title">Launch &amp; Scale</h3>
+            <p class="step-card-desc">App Store and Google Play release management, cloud infrastructure provisioning, automated CI/CD pipelines, and 60-day post-launch warranty.</p>
+            <div class="step-card-deliverable">Live product &amp; telemetry monitoring</div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- ================= FREE TOOL ================= -->
+    <!-- ================= FREE CALCULATOR TOOL ================= -->
     <section class="ed-tool" aria-labelledby="ed-tool-title">
       <div class="wrap ed-tool-grid">
         <div class="ed-reveal">
-          <p class="ed-label">Free tool &middot; no sign-up</p>
+          <p class="ed-label">Free interactive tool &middot; No sign-up required</p>
           <h2 id="ed-tool-title">What will your app actually cost?</h2>
-          <p>Choose your app type, platforms and features and get a realistic budget and timeline in rupees or dollars, based on production builds.</p>
+          <p>Select your app category, target platforms, and feature requirements to receive a realistic budget and sprint timeline breakdown based on production agency benchmarks.</p>
         </div>
         <div class="ed-tool-actions ed-reveal">
-          <a href="/tools/app-cost-calculator" class="cl-button -primary">Estimate my app cost <span style="margin-left:4px;">&rarr;</span></a>
+          <a href="/tools/app-cost-calculator" class="hero-btn-primary">Estimate my app cost &rarr;</a>
           <a href="/project-costs" class="ed-link">Read the project costs guide &rarr;</a>
         </div>
       </div>
     </section>
 
-    <!-- ================= 6. FIELD NOTES ================= -->
+    <!-- ================= FIELD NOTES & PLAYBOOKS ================= -->
     <section class="blog-section ed-section" id="insights">
       <div class="wrap">
         <header class="ed-head">
@@ -604,11 +845,11 @@
             <div><p>A production blueprint for consumer and B2B mobile apps: offline-first synchronization, real-time WebSockets, background geolocation, and App Store approval tactics.</p><span class="ed-link">Read the guide &rarr;</span></div>
           </a>
         </div>
-        <p class="ed-post-more"><a href="/blog" class="ed-link">Explore All 5 In-Depth Guides &amp; Playbooks &rarr;</a></p>
+        <p class="ed-post-more"><a href="/blog" class="ed-link">Explore All Guides &amp; Playbooks &rarr;</a></p>
       </div>
     </section>
 
-    <!-- ================= 7. MINIMALIST FAQ SECTION ================= -->
+    <!-- ================= STRAIGHTFORWARD FAQ ================= -->
     <section class="faq-section ed-section" id="faq">
       <div class="wrap">
         <header class="ed-head">
@@ -618,7 +859,6 @@
         </header>
 
         <div class="faq-list-minimal">
-          <!-- FAQ 1 -->
           <div class="faq-item-minimal open">
             <button class="faq-question-btn" aria-expanded="true">
               <span>How does an engagement with Nihar and Creuto typically begin?</span>
@@ -629,7 +869,6 @@
             </div>
           </div>
 
-          <!-- FAQ 2 -->
           <div class="faq-item-minimal">
             <button class="faq-question-btn" aria-expanded="false">
               <span>Do you outsource development to third-party contractors or freelancers?</span>
@@ -640,7 +879,6 @@
             </div>
           </div>
 
-          <!-- FAQ 3 -->
           <div class="faq-item-minimal">
             <button class="faq-question-btn" aria-expanded="false">
               <span>Who owns the source code and intellectual property?</span>
@@ -651,7 +889,6 @@
             </div>
           </div>
 
-          <!-- FAQ 4 -->
           <div class="faq-item-minimal">
             <button class="faq-question-btn" aria-expanded="false">
               <span>How are project budgets and milestones structured?</span>
@@ -662,7 +899,6 @@
             </div>
           </div>
 
-          <!-- FAQ 5 -->
           <div class="faq-item-minimal">
             <button class="faq-question-btn" aria-expanded="false">
               <span>What core technology stacks do you build with?</span>
@@ -673,7 +909,6 @@
             </div>
           </div>
 
-          <!-- FAQ 6 -->
           <div class="faq-item-minimal">
             <button class="faq-question-btn" aria-expanded="false">
               <span>What happens after the software launches in production?</span>
@@ -687,51 +922,51 @@
       </div>
     </section>
 
-    <!-- ================= 7. CONTACT & CONSULTATION SECTION ================= -->
+    <!-- ================= 9. DIRECT STRATEGY & CONSULTATION HUB ================= -->
     <section class="contact-section ed-section" id="contact">
       <div class="wrap">
         <div class="contact-grid">
-          <!-- Left Column -->
+          <!-- Left Column: Executive Summary & Direct Links -->
           <div class="contact-info">
-            <p class="ed-label">Let's talk</p>
-            <h2>Tell me about your idea. Get a clear path forward.</h2>
+            <p class="ed-label">Direct founder consultation</p>
+            <h2 class="section-title">Tell me about your product. Get a clear path forward.</h2>
             <p>
-              Share where you are in your business and I will come back within 24 hours with honest first thoughts — scope boundaries, an architecture starting point, and a realistic roadmap.
+              Share where you are in your business and I will personally review your requirements within 24 hours with an honest assessment — scope boundaries, an architectural blueprint, and a realistic budget.
             </p>
 
             <ul class="contact-points">
               <li class="contact-point-item">
-                <div class="contact-point-icon">–</div>
+                <div class="contact-point-icon">✓</div>
                 <div class="contact-point-text">
                   <strong>A clear read on scope:</strong>
-                  <span>Exactly what must be built first to test demand or operational bottlenecks, and what should wait.</span>
+                  <span>Identify what must be built first to validate user demand and what should wait for phase two.</span>
                 </div>
               </li>
               <li class="contact-point-item">
-                <div class="contact-point-icon">–</div>
+                <div class="contact-point-icon">✓</div>
                 <div class="contact-point-text">
-                  <strong>An honest sense of budget:</strong>
-                  <span>A realistic timeline and milestone breakdown with zero inflated quotes or hidden retainers.</span>
+                  <strong>Predictable milestone budget:</strong>
+                  <span>A realistic timeline and milestone schedule with zero inflated overhead or hidden retainers.</span>
                 </div>
               </li>
               <li class="contact-point-item">
-                <div class="contact-point-icon">–</div>
+                <div class="contact-point-icon">✓</div>
                 <div class="contact-point-text">
-                  <strong>Direct founder access:</strong>
-                  <span>You speak directly with Nihar Ranjan Rout, not a commissioned business development rep.</span>
+                  <strong>Direct founder accountability:</strong>
+                  <span>You speak directly with Nihar Ranjan Rout, not a commissioned business development representative.</span>
                 </div>
               </li>
             </ul>
 
             <div class="ed-contact-box">
-              <div style="font-size: 13px; font-weight: 700; color: var(--hs-text-01); margin-bottom: 6px; display:flex; align-items:center; justify-content:space-between;">
-                <span>Direct Contact</span>
-                <a href="https://www.niharrout.com/?utm_source=google&utm_medium=gbp" style="font-size:12px; color:var(--hs-brand); font-weight:600; text-decoration:none;">Official Site &nearr;</a>
+              <div style="font-size: 13px; font-weight: 700; color: #090d16; margin-bottom: 8px; display:flex; align-items:center; justify-content:space-between;">
+                <span>Verified Direct Contact</span>
+                <a href="https://www.niharrout.com/?utm_source=google&utm_medium=gbp" style="font-size:12px; color:#059669; font-weight:600; text-decoration:none;">Official Site &nearr;</a>
               </div>
-              <div style="font-size: 14px; color: var(--hs-text-02); line-height: 1.6;">
-                Website: <a href="https://www.niharrout.com/?utm_source=google&utm_medium=gbp" style="color:var(--hs-brand); font-weight:600; text-decoration:none;">www.niharrout.com</a><br>
-                Email: <a href="mailto:me@niharrout.com" style="color:var(--hs-brand); font-weight:600; text-decoration:none;">me@niharrout.com</a><br>
-                Location: Creuto HQ, Bhubaneswar, Odisha, India
+              <div style="font-size: 13.5px; color: #475569; line-height: 1.6;">
+                <strong>Official Website:</strong> <a href="https://www.niharrout.com/?utm_source=google&utm_medium=gbp" style="color:#059669; font-weight:600; text-decoration:none;">www.niharrout.com</a><br>
+                <strong>Direct Email:</strong> <a href="mailto:me@niharrout.com" style="color:#059669; font-weight:600; text-decoration:none;">me@niharrout.com</a><br>
+                <strong>Creuto HQ:</strong> Bhubaneswar, Odisha, India &middot; Working with founders globally
               </div>
             </div>
           </div>
@@ -759,8 +994,8 @@
                 <select id="project_type" name="project_type" class="form-select" required>
                   <option value="" disabled selected>Select your project type...</option>
                   <option value="Mobile App (iOS/Android)">Mobile Application (iOS / Android)</option>
-                  <option value="AI Product & Workflows">AI Product Development &amp; Workflows</option>
                   <option value="Custom Software & ERP">Custom Enterprise Software &amp; ERP</option>
+                  <option value="AI Product & Workflows">AI Product Development &amp; Agents</option>
                   <option value="Two-Sided Marketplace">Two-Sided Marketplace &amp; Booking</option>
                   <option value="Product PRD & Roadmapping">Product Strategy &amp; PRD Roadmapping</option>
                 </select>
@@ -768,20 +1003,19 @@
 
               <div class="form-group">
                 <label for="details">Project Details &amp; Objectives *</label>
-                <textarea id="details" name="details" class="form-textarea" placeholder="Briefly describe what you are building, key problems to solve, and your ideal timeline..." required></textarea>
+                <textarea id="details" name="details" class="form-textarea" placeholder="Briefly describe what you are building, the key problems to solve, and your target timeline..." required></textarea>
               </div>
 
-              <button type="submit" class="cl-button -primary" style="width:100%; justify-content:center; padding:15px;">
-                Send Project Brief <span style="margin-left:6px;">→</span>
+              <button type="submit" class="hero-btn-primary" style="width:100%; justify-content:center; padding:15px; border:none; cursor:pointer;">
+                <span>Send Project Brief</span> <span style="margin-left:6px;">&rarr;</span>
               </button>
-              <p class="ed-form-note">Your brief goes straight to Nihar. Prefer to talk? <a href="https://calendly.com/creuto/meet" data-calendly="true">Book a free 45-minute call</a>.</p>
+              <p class="ed-form-note" style="margin-top:14px; font-size:12.5px; color:#64748b; text-align:center;">Your brief goes straight to Nihar. Prefer to talk live? <a href="https://calendly.com/creuto/meet" data-calendly="true" style="color:#059669; font-weight:600;">Book a free 45-minute call</a>.</p>
             </form>
           </div>
         </div>
       </div>
     </section>
-
-  </main>
+</main>
 
   <!-- ================= 8. DARK STRATEGIC FOOTER ================= -->
   <!-- chrome:footer -->
@@ -846,8 +1080,8 @@
 <!-- /chrome:footer -->
 
   <!-- Interactive Scripts -->
-  <script src="/assets/lead-forms.js?v=4"></script>
-  <script src="/assets/site-enhancements.js?v=serv2026_fix2"></script>
+  <script src="/assets/lead-forms.js?v=hero_v45"></script>
+  <script src="/assets/site-enhancements.js?v=hero_v45"></script>
   <script>
     // gentle scroll reveal; content stays visible without JS
     (function () {

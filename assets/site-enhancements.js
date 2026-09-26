@@ -183,8 +183,8 @@
       } else {
         setTimeout(setupBadge, 400);
       }
-    }
-    setupBadge();
+    // Floating badge widget disabled to avoid overlapping hero elements
+    // setupBadge();
   }
 
   // DOM Ready
