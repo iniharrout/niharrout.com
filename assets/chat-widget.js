@@ -19,7 +19,7 @@
     "Show me some of his work"
   ];
 
-  const FALLBACK_MESSAGE = "I'm taking a quick breather — but you can reach Nihar directly here";
+  const FALLBACK_MESSAGE = "I'm taking a quick breather, but you can reach Nihar directly here";
   const SESSION_LIMIT_MESSAGE = "We've covered quite a bit! Let's continue this directly over a call or message:";
 
   // Session State (In-Memory, cleared on refresh)
@@ -741,7 +741,7 @@
       showTypingIndicator();
       setTimeout(() => {
         hideTypingIndicator();
-        appendMessage('assistant', "Let's continue this over a call — you can book a call with Nihar directly or send a message below:", {
+        appendMessage('assistant', "Let's continue this over a call, you can book a call with Nihar directly or send a message below:", {
           text: "Book a Call with Nihar",
           url: "#contact"
         });
