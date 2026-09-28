@@ -1742,3 +1742,135 @@ body.page-home .ed-post-more { margin: 34px 0 0; }
 }
 
 body.page-home .ed-label { display: inline-flex; align-items: center; margin: 0 0 16px; padding: 6px 13px; border-radius: 999px; background: var(--accent-light); color: var(--accent-deep); font-family: var(--mono); font-size: 11.5px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; }
+
+/* =====================================================================
+   Homepage v10: editorial treatment for Select Partner, Why, How we work,
+   FAQ and Contact. Rules and typography do the work instead of stacked
+   cards, icon tiles, chips and glows. One green, used sparingly.
+   ===================================================================== */
+body.page-home { --hair: rgba(9, 13, 22, 0.13); }
+
+body.page-home .kicker { display: flex; align-items: center; gap: 12px; margin: 0 0 22px; font-family: 'Inter', system-ui, sans-serif; font-size: 12.5px; font-weight: 600; line-height: 1; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-2); }
+body.page-home .kicker::before { content: ''; width: 28px; height: 1.5px; background: var(--accent); }
+
+body.page-home .btn-solid { display: inline-flex; align-items: center; gap: 10px; padding: 14px 22px; border: 0; border-radius: 8px; background: var(--accent); color: #fff !important; font-family: 'Inter', system-ui, sans-serif; font-size: 15px; font-weight: 600; line-height: 1; text-decoration: none; cursor: pointer; transition: background 0.18s ease; }
+body.page-home .btn-solid svg { transition: transform 0.2s ease; }
+body.page-home .btn-solid:hover { background: var(--accent-deep); }
+body.page-home .btn-solid:hover svg { transform: translateX(3px); }
+body.page-home .btn-block { width: 100%; justify-content: center; padding: 16px; }
+body.page-home .link-arrow { display: inline-flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 600; color: var(--accent); text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 5px; text-decoration-color: rgba(14, 124, 74, 0.35); transition: text-decoration-color 0.18s ease, color 0.18s ease; }
+body.page-home .link-arrow svg { transition: transform 0.2s ease; }
+body.page-home .link-arrow:hover { color: var(--accent-deep); text-decoration-color: currentColor; }
+body.page-home .link-arrow:hover svg { transform: translateX(3px); }
+
+/* ---------- Select Partner ---------- */
+body.page-home .partner { padding: 104px 0; background: #f2efe8; border-top: 1px solid var(--hair); border-bottom: 1px solid var(--hair); }
+body.page-home .partner-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 72px; align-items: center; }
+body.page-home .partner-copy h2 { max-width: 14ch; margin: 0 0 22px; font-family: var(--font-display); font-size: clamp(2.2rem, 3.8vw, 3.3rem); font-weight: 500; line-height: 1.06; letter-spacing: -0.02em; color: var(--ink); }
+body.page-home .partner-lead { max-width: 48ch; margin: 0 0 30px; font-size: 1.1rem; line-height: 1.65; color: var(--ink-2); }
+body.page-home .partner-points { list-style: none; margin: 0 0 34px; padding: 0; border-top: 1px solid var(--hair); }
+body.page-home .partner-points li { display: grid; grid-template-columns: 30px 1fr; gap: 10px; padding: 16px 0; border-bottom: 1px solid var(--hair); font-size: 1rem; font-weight: 500; line-height: 1.5; color: var(--ink); }
+body.page-home .partner-points li span { font-family: var(--font-display); font-size: 1.15rem; line-height: 1.3; color: var(--accent); }
+body.page-home .partner-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 18px 28px; }
+body.page-home .partner-fig { margin: 0; }
+body.page-home .partner-fig a { display: block; overflow: hidden; border: 1px solid rgba(9, 13, 22, 0.2); border-radius: 8px; }
+body.page-home .partner-fig img { display: block; width: 100%; height: auto; }
+body.page-home .partner-fig figcaption { margin-top: 14px; font-size: 13px; color: var(--ink-3); }
+
+/* ---------- Why choose: numbered list, sticky heading ---------- */
+body.page-home .why2 { padding: 104px 0; background: #fff; }
+body.page-home .why2-grid { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: 80px; align-items: start; }
+body.page-home .why2-head { position: sticky; top: 112px; }
+body.page-home .why2-head h2 { max-width: 15ch; margin: 0 0 18px; font-family: var(--font-display); font-size: clamp(2rem, 3.2vw, 2.85rem); font-weight: 500; line-height: 1.1; letter-spacing: -0.02em; color: var(--ink); }
+body.page-home .why2-sub { max-width: 38ch; margin: 0 0 28px; font-size: 1.05rem; line-height: 1.6; color: var(--ink-2); }
+body.page-home .why2-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
+body.page-home .why2-item { display: grid; grid-template-columns: 56px minmax(0, 1fr) 44px; gap: 8px 24px; align-items: start; padding: 34px 0; border-bottom: 1px solid var(--hair); }
+body.page-home .why2-no { padding-top: 5px; font-family: var(--font-display); font-size: 1.05rem; color: var(--accent); }
+body.page-home .why2-body h3 { margin: 0 0 10px; font-family: 'Inter', system-ui, sans-serif; font-size: 1.4rem; font-weight: 600; line-height: 1.25; letter-spacing: -0.015em; color: var(--ink); }
+body.page-home .why2-body p { max-width: 56ch; margin: 0 0 14px; font-size: 1rem; line-height: 1.65; color: var(--ink-2); }
+body.page-home .why2-body .why2-proof { margin: 0; font-size: 13.5px; font-weight: 500; color: var(--ink-3); }
+body.page-home .why2-ico { width: 44px; height: 44px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; color: rgba(9, 13, 22, 0.42); transition: color 0.25s ease; }
+body.page-home .why2-item:hover .why2-ico { color: var(--accent); }
+body.page-home .why2-ico .draw { stroke-dasharray: 80; stroke-dashoffset: 0; }
+html.js body.page-home .why2-item:not(.is-in) .why2-ico .draw { stroke-dashoffset: 80; }
+body.page-home .why2-item.is-in .why2-ico .draw { animation: v10Draw 1.3s cubic-bezier(0.4, 0, 0.2, 1) 0.25s backwards; }
+@keyframes v10Draw { from { stroke-dashoffset: 80; } to { stroke-dashoffset: 0; } }
+
+/* ---------- How we work: a ruled table, one row per step ---------- */
+body.page-home .flow2 { padding: 104px 0; background: #fdfbf7; }
+body.page-home .flow2-head { max-width: 660px; margin: 0 0 56px; }
+body.page-home .flow2-head h2 { max-width: 18ch; margin: 0 0 16px; font-family: var(--font-display); font-size: clamp(2rem, 3.4vw, 3rem); font-weight: 500; line-height: 1.1; letter-spacing: -0.02em; color: var(--ink); }
+body.page-home .flow2-sub { max-width: 52ch; margin: 0; font-size: 1.05rem; line-height: 1.6; color: var(--ink-2); }
+body.page-home .flow2-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
+body.page-home .flow2-row { display: grid; grid-template-columns: 64px 250px minmax(0, 1fr) 230px; gap: 0 32px; align-items: start; padding: 32px 0; border-bottom: 1px solid var(--hair); }
+body.page-home .flow2-no { font-family: var(--font-display); font-size: 1.9rem; line-height: 1; color: rgba(9, 13, 22, 0.26); transition: color 0.25s ease; }
+body.page-home .flow2-row:hover .flow2-no, body.page-home .flow2-key .flow2-no { color: var(--accent); }
+body.page-home .flow2-row h3 { margin: 0; font-family: 'Inter', system-ui, sans-serif; font-size: 1.3rem; font-weight: 600; line-height: 1.3; letter-spacing: -0.015em; color: var(--ink); }
+body.page-home .flow2-desc p { max-width: 52ch; margin: 0; font-size: 1rem; line-height: 1.65; color: var(--ink-2); }
+body.page-home .flow2-desc .flow2-loop { margin: 14px 0 0; font-size: 13.5px; font-weight: 600; color: var(--accent-deep); }
+body.page-home .flow2-loop i { margin: 0 4px; font-style: normal; color: var(--ink-3); }
+body.page-home .flow2-out { margin: 0; font-size: 14.5px; font-weight: 600; line-height: 1.45; color: var(--ink); }
+body.page-home .flow2-out span { display: block; margin-bottom: 6px; font-size: 11.5px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); }
+body.page-home .flow2-key { position: relative; isolation: isolate; }
+body.page-home .flow2-key::before { content: ''; position: absolute; z-index: -1; inset: 0 -20px; background: linear-gradient(90deg, rgba(14, 124, 74, 0.07), transparent 75%); box-shadow: inset 3px 0 0 var(--accent); }
+
+/* ---------- FAQ: plain ruled rows ---------- */
+body.page-home .faq2 { padding: 104px 0; background: #fff; }
+body.page-home .faq2-grid { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: 80px; align-items: start; }
+body.page-home .faq2-head { position: sticky; top: 112px; }
+body.page-home .faq2-head h2 { max-width: 15ch; margin: 0 0 18px; font-family: var(--font-display); font-size: clamp(2rem, 3.2vw, 2.85rem); font-weight: 500; line-height: 1.1; letter-spacing: -0.02em; color: var(--ink); }
+body.page-home .faq2-sub { max-width: 38ch; margin: 0; font-size: 1.05rem; line-height: 1.6; color: var(--ink-2); }
+body.page-home .faq2-help { max-width: 38ch; margin: 28px 0 0; padding-top: 20px; border-top: 1px solid var(--hair); font-size: 0.95rem; line-height: 1.6; color: var(--ink-2); }
+body.page-home .faq2-help a { color: var(--accent); font-weight: 600; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: rgba(14, 124, 74, 0.35); }
+body.page-home .faq2 .faq-list-minimal { display: block; max-width: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
+body.page-home .faq2 .faq-item-minimal { overflow: visible; background: none; border: 0; border-bottom: 1px solid var(--hair); border-radius: 0; box-shadow: none; }
+body.page-home .faq2 .faq-item-minimal:hover, body.page-home .faq2 .faq-item-minimal.open { border-color: var(--hair); box-shadow: none; }
+body.page-home .faq2 .faq-question-btn { padding: 26px 0; font-family: 'Inter', system-ui, sans-serif; font-size: 1.15rem; font-weight: 600; line-height: 1.4; letter-spacing: -0.01em; color: var(--ink); }
+body.page-home .faq2 .faq-question-btn:hover { color: var(--accent); }
+body.page-home .faq2 .faq-toggle-sign { width: 24px; height: 24px; border-radius: 0; background: none; font-size: 28px; font-weight: 300; color: var(--ink-3); }
+body.page-home .faq2 .faq-item-minimal.open .faq-toggle-sign { background: none; color: var(--accent); transform: rotate(45deg); }
+body.page-home .faq2 .faq-answer-pane { padding: 0 56px 28px 0; font-size: 1.02rem; line-height: 1.7; color: var(--ink-2); }
+
+/* ---------- Contact: text on the left, a plain form on the right ---------- */
+body.page-home .contact2 { padding: 104px 0; background: #f2efe8; border-top: 1px solid var(--hair); }
+body.page-home .contact2 .contact-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 80px; align-items: start; }
+body.page-home .contact2 .contact-info h2 { max-width: 15ch; margin: 0 0 20px; font-family: var(--font-display); font-size: clamp(2rem, 3.4vw, 3rem); font-weight: 500; line-height: 1.08; letter-spacing: -0.02em; color: var(--ink); }
+body.page-home .contact2-lead { max-width: 50ch; margin: 0 0 36px; font-size: 1.08rem; line-height: 1.65; color: var(--ink-2); }
+body.page-home .contact2-points { margin: 0 0 36px; border-top: 1px solid var(--hair); }
+body.page-home .contact2-points > div { padding: 20px 0; border-bottom: 1px solid var(--hair); }
+body.page-home .contact2-points dt { margin: 0 0 6px; font-size: 1.05rem; font-weight: 600; color: var(--ink); }
+body.page-home .contact2-points dd { margin: 0; font-size: 0.98rem; line-height: 1.6; color: var(--ink-2); }
+body.page-home .contact2-meta { margin: 0; }
+body.page-home .contact2-meta > div { display: grid; grid-template-columns: 96px 1fr; gap: 12px; padding: 7px 0; }
+body.page-home .contact2-meta dt { padding-top: 3px; font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); }
+body.page-home .contact2-meta dd { margin: 0; font-size: 0.98rem; line-height: 1.55; color: var(--ink); }
+body.page-home .contact2-meta a { color: var(--accent); font-weight: 600; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: rgba(14, 124, 74, 0.35); }
+body.page-home .contact2 .contact-card-box { padding: 38px; background: #fff; border: 1px solid rgba(9, 13, 22, 0.14); border-radius: 12px; box-shadow: none; }
+body.page-home .contact2 .form-group { margin: 0 0 20px; }
+body.page-home .contact2 .form-group label { display: block; margin: 0 0 8px; font-size: 13.5px; font-weight: 600; color: var(--ink); }
+body.page-home .contact2 .form-input, body.page-home .contact2 .form-select, body.page-home .contact2 .form-textarea { width: 100%; padding: 13px 14px; background: #fff; border: 1px solid rgba(9, 13, 22, 0.2); border-radius: 8px; box-shadow: none; font-family: 'Inter', system-ui, sans-serif; font-size: 15px; color: var(--ink); transition: border-color 0.15s ease, box-shadow 0.15s ease; }
+body.page-home .contact2 .form-input:focus, body.page-home .contact2 .form-select:focus, body.page-home .contact2 .form-textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(14, 124, 74, 0.14); }
+body.page-home .contact2 .form-textarea { min-height: 120px; resize: vertical; }
+body.page-home .contact2-note { margin: 16px 0 0; font-size: 13px; line-height: 1.5; text-align: center; color: var(--ink-3); }
+body.page-home .contact2-note a { color: var(--accent); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 991px) {
+  body.page-home .partner, body.page-home .why2, body.page-home .flow2, body.page-home .faq2, body.page-home .contact2 { padding: 72px 0; }
+  body.page-home .partner-grid, body.page-home .why2-grid, body.page-home .faq2-grid, body.page-home .contact2 .contact-grid { grid-template-columns: 1fr; gap: 44px; }
+  body.page-home .why2-head, body.page-home .faq2-head { position: static; }
+  body.page-home .flow2-row { grid-template-columns: 48px 1fr; gap: 6px 16px; }
+  body.page-home .flow2-desc, body.page-home .flow2-out { grid-column: 2; }
+  body.page-home .flow2-out { margin-top: 14px; }
+  body.page-home .flow2-key::before { inset: 0 -12px; }
+  body.page-home .flow2-head { margin-bottom: 40px; }
+}
+@media (max-width: 640px) {
+  body.page-home .why2-item { grid-template-columns: 36px minmax(0, 1fr); gap: 6px 14px; padding: 28px 0; }
+  body.page-home .why2-ico { grid-column: 2; width: 36px; height: 36px; margin-top: 12px; }
+  body.page-home .contact2 .contact-card-box { padding: 26px 20px; }
+  body.page-home .contact2-meta > div { grid-template-columns: 80px 1fr; }
+  body.page-home .faq2 .faq-answer-pane { padding-right: 0; }
+  body.page-home .partner-actions { flex-direction: column; align-items: flex-start; }
+}
+@media (prefers-reduced-motion: reduce) { body.page-home .why2-item.is-in .why2-ico .draw { animation: none; } }
