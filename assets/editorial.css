@@ -1889,3 +1889,10 @@ html.js body.page-home .flow2-row::after { background: var(--hair); transition: 
   body.page-home .flow2-row::after { left: 19px; }
   body.page-home .flow2-no { width: 32px; height: 32px; font-size: 0.95rem; }
 }
+
+/* ---------- Hero: a plain byline above the badge, so the name is the first thing read ---------- */
+body.page-home .hero-byline { display: flex; align-items: center; gap: 10px; margin: 0 0 18px; }
+body.page-home .hero-byline img { width: 34px; height: 34px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 1px var(--hair); }
+body.page-home .hero-byline strong { font-size: 15px; font-weight: 700; color: var(--ink); }
+body.page-home .hero-byline span { margin-left: 2px; font-size: 13px; color: var(--ink-3); }
+body.page-home .hero-byline span::before { content: '\00b7'; margin-right: 6px; color: var(--ink-3); }
