@@ -1590,37 +1590,6 @@ body.page-home .tst-feature figcaption em { color: rgba(255,255,255,0.72); }
 body.page-home .tst-feature .tst-avatar { background: rgba(255,255,255,0.16); color: #fff; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.3); }
 
 /* ---------- CTA panel ---------- */
-body.page-home .cta-wrap { padding: 8px 0 96px; background: #fff; }
-body.page-home .cta-panel { position: relative; display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; align-items: center; padding: 60px 56px; border-radius: 26px; overflow: hidden; color: #fff; background: radial-gradient(circle at 95% 8%, rgba(63,174,124,0.42), transparent 42%), linear-gradient(135deg, #082a1c 0%, #0b3a26 50%, #0e7c4a 130%); box-shadow: 0 40px 90px -36px rgba(14,124,74,0.6); }
-body.page-home .cta-panel::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 42px 42px; -webkit-mask-image: linear-gradient(120deg, transparent 30%, #000 100%); mask-image: linear-gradient(120deg, transparent 30%, #000 100%); }
-body.page-home .cta-copy, body.page-home .cta-side { position: relative; }
-body.page-home .cta-kicker { display: inline-flex; align-items: center; gap: 9px; margin: 0 0 18px; font-family: var(--mono); font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent-bright); }
-body.page-home .cta-live { width: 8px; height: 8px; border-radius: 50%; background: var(--accent-bright); animation: v9Ping 1.8s ease-out infinite; }
-@keyframes v9Ping { 0% { box-shadow: 0 0 0 0 rgba(63,174,124,0.65); } 70%, 100% { box-shadow: 0 0 0 10px rgba(63,174,124,0); } }
-body.page-home .cta-copy h2 { max-width: 18ch; margin: 0 0 16px; font-family: var(--font-display); font-size: clamp(2rem, 3.4vw, 2.9rem); font-weight: 400; line-height: 1.12; letter-spacing: -0.015em; color: #fff; }
-body.page-home .cta-text { max-width: 52ch; margin: 0 0 22px; font-size: 1.05rem; line-height: 1.6; color: rgba(255,255,255,0.8); }
-body.page-home .cta-points { display: flex; flex-wrap: wrap; gap: 10px 22px; list-style: none; margin: 0 0 30px; padding: 0; font-size: 14px; font-weight: 600; color: #fff; }
-body.page-home .cta-points li { display: inline-flex; align-items: center; gap: 8px; }
-body.page-home .cta-points li::before { content: ''; width: 16px; height: 16px; flex: 0 0 auto; background: var(--accent-bright); -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8.5l3.2 3.2L13 4.8' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8.5l3.2 3.2L13 4.8' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat; }
-body.page-home .cta-actions { display: flex; flex-wrap: wrap; gap: 14px; }
-body.page-home .cta-btn-main { display: inline-flex; align-items: center; gap: 10px; padding: 14px 24px; border-radius: 12px; background: var(--accent); color: #fff !important; font-size: 15px; font-weight: 700; text-decoration: none; box-shadow: 0 10px 24px -10px rgba(14,124,74,0.7); transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease; }
-body.page-home .cta-btn-main svg { transition: transform 0.2s ease; }
-body.page-home .cta-btn-main:hover { background: var(--accent-deep); transform: translateY(-2px); }
-body.page-home .cta-btn-main:hover svg { transform: translateX(4px); }
-body.page-home .cta-panel .cta-btn-main { background: #fff; color: var(--ink) !important; box-shadow: 0 12px 28px -12px rgba(0,0,0,0.5); }
-body.page-home .cta-panel .cta-btn-main:hover { background: var(--accent-light); }
-body.page-home .cta-btn-ghost { display: inline-flex; align-items: center; padding: 14px 24px; border-radius: 12px; border: 1.5px solid rgba(255,255,255,0.4); color: #fff !important; font-size: 15px; font-weight: 600; text-decoration: none; transition: background 0.18s ease, border-color 0.18s ease; }
-body.page-home .cta-btn-ghost:hover { background: rgba(255,255,255,0.12); border-color: #fff; }
-body.page-home .cta-person { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; padding: 16px 18px; border-radius: 16px; background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.18); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
-body.page-home .cta-person img { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 2px rgba(255,255,255,0.9), 0 0 0 4px var(--accent-bright); }
-body.page-home .cta-person strong { display: block; font-size: 15.5px; color: #fff; }
-body.page-home .cta-person span { display: block; margin-top: 2px; font-size: 13px; color: rgba(255,255,255,0.72); }
-body.page-home .cta-steps { position: relative; list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 20px; }
-body.page-home .cta-steps::before { content: ''; position: absolute; left: 15px; top: 16px; bottom: 16px; width: 2px; background: rgba(255,255,255,0.2); }
-body.page-home .cta-steps li { position: relative; display: flex; gap: 16px; align-items: flex-start; }
-body.page-home .cta-steps li > span { position: relative; flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 50%; background: var(--accent-bright); color: #062314; font-size: 14px; font-weight: 800; }
-body.page-home .cta-steps strong { display: block; font-size: 15px; color: #fff; }
-body.page-home .cta-steps em { display: block; margin-top: 2px; font-style: normal; font-size: 13.5px; line-height: 1.45; color: rgba(255,255,255,0.72); }
 
 /* ---------- How we work: six steps, sprints highlighted ---------- */
 body.page-home .ed-process { background: #fff; }
@@ -1719,7 +1688,6 @@ body.page-home .ed-post-more { margin: 34px 0 0; }
   body.page-home .why-4 { grid-column: span 6; }
   body.page-home .tst-grid { grid-template-columns: 1fr; }
   body.page-home .tst-feature { grid-row: auto; }
-  body.page-home .cta-panel { grid-template-columns: 1fr; padding: 44px 30px; gap: 36px; }
   body.page-home .flow-grid { grid-template-columns: 1fr 1fr; }
   body.page-home .tool-grid { grid-template-columns: 1fr; gap: 36px; }
   body.page-home .blog-layout { grid-template-columns: 1fr; }
@@ -1731,14 +1699,11 @@ body.page-home .ed-post-more { margin: 34px 0 0; }
   body.page-home .stat-item, body.page-home .stat-item:nth-child(3) { border-left: 0; padding: 0; }
   body.page-home .why-3, body.page-home .why-4, body.page-home .why-5, body.page-home .why-wide { grid-column: span 12; }
   body.page-home .flow-grid { grid-template-columns: 1fr; }
-  body.page-home .cta-panel { padding: 36px 22px; border-radius: 20px; }
-  body.page-home .cta-actions { flex-direction: column; align-items: stretch; }
-  body.page-home .cta-btn-main, body.page-home .cta-btn-ghost { justify-content: center; }
   body.page-home .tst-feature { padding: 32px 24px 26px; }
   body.page-home .blog-mini { flex-direction: column; }
 }
 @media (prefers-reduced-motion: reduce) {
-  body.page-home .why-card .draw, body.page-home .why-card .ring, body.page-home .why-card .slash, body.page-home .why-card .spark, body.page-home .coin, body.page-home .blog-ico, body.page-home .blog-ico *, body.page-home .blog-orb, body.page-home .ed-milestone-fig a, body.page-home .flow-ico .spin, body.page-home .cta-live { animation: none !important; }
+  body.page-home .why-card .draw, body.page-home .why-card .ring, body.page-home .why-card .slash, body.page-home .why-card .spark, body.page-home .coin, body.page-home .blog-ico, body.page-home .blog-ico *, body.page-home .blog-orb, body.page-home .ed-milestone-fig a, body.page-home .flow-ico .spin { animation: none !important; }
 }
 
 body.page-home .ed-label { display: inline-flex; align-items: center; margin: 0 0 16px; padding: 6px 13px; border-radius: 999px; background: var(--accent-light); color: var(--accent-deep); font-family: var(--mono); font-size: 11.5px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; }
@@ -1874,3 +1839,53 @@ body.page-home .contact2-note a { color: var(--accent); font-weight: 600; text-d
   body.page-home .partner-actions { flex-direction: column; align-items: flex-start; }
 }
 @media (prefers-reduced-motion: reduce) { body.page-home .why2-item.is-in .why2-ico .draw { animation: none; } }
+
+/* =====================================================================
+   Homepage v11: mid-page CTA flattened to match the editorial sections
+   (no gradient panel, no glow), and the process list reads as one
+   connected flow instead of a stack of isolated rows.
+   ===================================================================== */
+body.page-home .cta2 { padding: 104px 0; background: #fff; border-top: 1px solid var(--hair); }
+body.page-home .cta2-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 72px; align-items: start; }
+body.page-home .cta2-copy h2 { max-width: 16ch; margin: 0 0 18px; font-family: var(--font-display); font-size: clamp(2rem, 3.4vw, 2.9rem); font-weight: 500; line-height: 1.12; letter-spacing: -0.02em; color: var(--ink); }
+body.page-home .cta2-text { max-width: 50ch; margin: 0 0 32px; font-size: 1.08rem; line-height: 1.6; color: var(--ink-2); }
+body.page-home .cta2-points { display: flex; flex-wrap: wrap; gap: 0; margin: 0 0 36px; padding: 20px 0; border-top: 1px solid var(--hair); border-bottom: 1px solid var(--hair); }
+body.page-home .cta2-points > div { flex: 1 1 33%; min-width: 160px; padding-right: 16px; }
+body.page-home .cta2-points dt { margin: 0 0 4px; font-size: 1rem; font-weight: 600; color: var(--ink); }
+body.page-home .cta2-points dd { margin: 0; font-size: 0.92rem; color: var(--ink-3); }
+body.page-home .cta2-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 18px 28px; }
+body.page-home .cta2-side { padding: 32px; background: #fdfbf7; border: 1px solid var(--hair); border-radius: 12px; }
+body.page-home .cta2-person { display: flex; align-items: center; gap: 14px; margin: 0 0 28px; padding-bottom: 24px; border-bottom: 1px solid var(--hair); }
+body.page-home .cta2-person img { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 1px var(--hair); }
+body.page-home .cta2-person strong { display: block; font-size: 15px; color: var(--ink); }
+body.page-home .cta2-person span { display: block; margin-top: 2px; font-size: 12.5px; color: var(--ink-3); }
+body.page-home .cta2-steps { position: relative; list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 22px; }
+body.page-home .cta2-steps::before { content: ''; position: absolute; left: 13px; top: 8px; bottom: 8px; width: 1px; background: var(--hair); }
+body.page-home .cta2-steps li { position: relative; display: flex; gap: 16px; align-items: flex-start; }
+body.page-home .cta2-steps li > span { position: relative; z-index: 1; flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: #fdfbf7; border: 1.5px solid var(--accent); color: var(--accent-deep); font-family: var(--font-display); font-size: 12.5px; font-weight: 500; }
+body.page-home .cta2-steps strong { display: block; font-size: 14.5px; color: var(--ink); }
+body.page-home .cta2-steps em { display: block; margin-top: 2px; font-style: normal; font-size: 13px; line-height: 1.45; color: var(--ink-3); }
+
+/* ---------- Process: a connecting thread down the step numbers ---------- */
+body.page-home .flow2-list { position: relative; }
+body.page-home .flow2-row { position: relative; }
+body.page-home .flow2-row::after { content: ''; position: absolute; left: 31px; top: 100%; width: 1px; height: 32px; background: var(--hair); z-index: 1; }
+body.page-home .flow2-row:last-child::after { display: none; }
+body.page-home .flow2-no { position: relative; display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: #fff; border: 1.5px solid var(--hair); font-size: 1.05rem; }
+body.page-home .flow2-row:hover .flow2-no, body.page-home .flow2-key .flow2-no { border-color: var(--accent); background: var(--accent-light); }
+body.page-home .flow2-row:hover, body.page-home .flow2-key { padding-left: 8px; }
+body.page-home .flow2-row { transition: padding-left 0.25s cubic-bezier(0.2, 0.8, 0.2, 1); }
+body.page-home .flow2-row:hover::after, body.page-home .flow2-row.is-in::after { background: var(--accent); }
+html.js body.page-home .flow2-row::after { background: var(--hair); transition: background 0.4s ease 0.15s; }
+
+@media (max-width: 991px) {
+  body.page-home .cta2 { padding: 72px 0; }
+  body.page-home .cta2-grid { grid-template-columns: 1fr; gap: 44px; }
+  body.page-home .cta2-points > div { flex: 1 1 45%; margin-bottom: 14px; }
+}
+@media (max-width: 640px) {
+  body.page-home .cta2-actions { flex-direction: column; align-items: stretch; }
+  body.page-home .cta2-actions .btn-solid { justify-content: center; }
+  body.page-home .flow2-row::after { left: 19px; }
+  body.page-home .flow2-no { width: 32px; height: 32px; font-size: 0.95rem; }
+}
