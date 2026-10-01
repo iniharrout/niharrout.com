@@ -74,7 +74,7 @@ function head({ title, description, path: urlPath, ogType = 'website', graph, no
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap">
-  <link rel="stylesheet" href="/assets/design-system.css?v=emerald1">
+  <link rel="stylesheet" href="/assets/design-system.css?v=zoho_v1">
   <link rel="stylesheet" href="/assets/location-pages.css?v=emerald1">
 
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
@@ -95,7 +95,7 @@ function footer() {
   <!-- chrome:footer -->
   <!-- /chrome:footer -->
 
-  <script src="/assets/site-enhancements.js?v=hs2026_6"></script>
+  <script src="/assets/site-enhancements.js?v=fix3"></script>
     <script src="/assets/lead-forms.js?v=3"></script>
 </body>
 </html>
@@ -309,7 +309,7 @@ function testimonialsSection(c, svcKey) {
     <section class="loc-section -alt" id="testimonials">
       <div class="wrap">
         <figure class="loc-quote">
-          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-stars">★★★★★ <span style="font-size:13px; font-weight:600; color:var(--hs-text-muted); margin-left:6px;">5.0 on Clutch</span></div>
           <blockquote>“${esc(quote)}”</blockquote>
           <figcaption><strong>${esc(role)}</strong>, ${esc(org)} · <a href="/#testimonials">More client feedback</a></figcaption>
         </figure>
@@ -502,6 +502,8 @@ ${ctaBand(`Ready to start ${svc.nameLc} in ${c.name}?`, 'Book a discovery call w
 function buildCityHub(c) {
   const urlPath = cityUrl(c);
   const fullUrl = SITE + urlPath;
+  const repSvcKey = SERVICE_KEYS[cities.indexOf(c) % SERVICE_KEYS.length];
+  const repSvc = services[repSvcKey];
   const trail = [['Home', '/'], ['Locations', '/locations'], [c.name, urlPath]];
   const title = `Software, App & AI Development in ${c.name} | Creuto`;
   const description = `Mobile app, AI product and custom software development for ${c.name} businesses. Founder-led Creuto team, fixed-scope PRDs, full code ownership. Free discovery call.`;
@@ -592,6 +594,8 @@ function buildCityHub(c) {
         </div>
       </div>
     </section>
+${portfolioSection(c, repSvc)}
+${testimonialsSection(c, repSvcKey)}
 ${faqSection(faqs, { heading: `${c.name}: common questions`, sub: `How we work with ${c.name} teams, what it costs and how long it takes.` })}
     <section class="loc-section -alt" id="related">
       <div class="wrap">
