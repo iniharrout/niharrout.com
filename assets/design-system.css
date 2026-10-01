@@ -75,10 +75,10 @@
 
   /* Radii */
   --hs-radius-xs: 4px;
-  --hs-radius-sm: 8px;          /* Buttons & chips */
-  --hs-radius-md: 14px;         /* Standard cards */
-  --hs-radius-lg: 20px;         /* Executive cards & portfolio thumbs */
-  --hs-radius-pill: 9999px;
+  --hs-radius-sm: 6px;          /* Buttons & chips */
+  --hs-radius-md: 10px;         /* Standard cards */
+  --hs-radius-lg: 14px;         /* Executive cards & portfolio thumbs */
+  --hs-radius-pill: 6px;
 
   /* Shadows */
   --hs-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 2px 8px rgba(0, 0, 0, 0.02);
