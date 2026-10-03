@@ -41,26 +41,26 @@
     
     <circle cx="28" cy="23" r="5" fill="#FF5F2D"/>
     <circle cx="44" cy="23" r="5" fill="#D6F75A"/>
-    <circle cx="60" cy="23" r="5" fill="#0DA868"/>
+    <circle cx="60" cy="23" r="5" fill="#2563eb"/>
 
     <!-- Query Bar -->
     <rect x="90" y="11" width="380" height="24" rx="12" fill="#121110" stroke="#FFFFFF" stroke-opacity="0.1"/>
-    <circle cx="106" cy="23" r="4" fill="#0DA868"/>
+    <circle cx="106" cy="23" r="4" fill="#2563eb"/>
     <text x="120" y="27" font-family="'JetBrains Mono', monospace" font-size="10" fill="#D6F75A">query: hybrid_rag_embed(intent="b2b_contract_pricing")</text>
 
     <!-- Header Badge -->
-    <rect x="520" y="12" width="136" height="22" rx="6" fill="#1E2B1E" stroke="#0DA868" stroke-opacity="0.5" stroke-width="1"/>
-    <text x="532" y="26" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="700" fill="#0DA868">✓ 99.4% FACTUAL ACCURACY</text>
+    <rect x="520" y="12" width="136" height="22" rx="6" fill="#0b0d12" stroke="#2563eb" stroke-opacity="0.5" stroke-width="1"/>
+    <text x="532" y="26" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="700" fill="#2563eb">✓ 99.4% FACTUAL ACCURACY</text>
 
     <!-- Architecture Visual Flow -->
     <!-- Node 1: Vector Query Intake -->
     <g transform="translate(30, 80)">
       <rect width="180" height="130" rx="12" fill="#1C1B1A" stroke="#FFFFFF" stroke-opacity="0.08"/>
       <rect x="14" y="14" width="8" height="8" rx="2" fill="#FF5F2D"/>
-      <text x="30" y="22" font-family="-apple-system, sans-serif" font-size="11" font-weight="700" fill="#FAF8F5">Semantic Caching</text>
+      <text x="30" y="22" font-family="-apple-system, sans-serif" font-size="11" font-weight="700" fill="#f3f4f6">Semantic Caching</text>
       
       <text x="14" y="50" font-family="'JetBrains Mono', monospace" font-size="9" fill="#A8A49D">Cache Hit Ratio</text>
-      <text x="14" y="72" font-family="'JetBrains Mono', monospace" font-size="20" font-weight="700" fill="#FAF8F5">82.4%</text>
+      <text x="14" y="72" font-family="'JetBrains Mono', monospace" font-size="20" font-weight="700" fill="#f3f4f6">82.4%</text>
       
       <rect x="14" y="90" width="150" height="24" rx="6" fill="#FF5F2D" fill-opacity="0.15"/>
       <text x="24" y="106" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="600" fill="#FF5F2D">↓ 85% Token Cost</text>
@@ -72,15 +72,15 @@
 
     <!-- Node 2: Hybrid RAG & Vector Search -->
     <g transform="translate(250, 80)">
-      <rect width="200" height="130" rx="12" fill="#1C1B1A" stroke="#0DA868" stroke-opacity="0.3"/>
-      <rect x="14" y="14" width="8" height="8" rx="2" fill="#0DA868"/>
-      <text x="30" y="22" font-family="-apple-system, sans-serif" font-size="11" font-weight="700" fill="#FAF8F5">Vector RAG Engine</text>
+      <rect width="200" height="130" rx="12" fill="#1C1B1A" stroke="#2563eb" stroke-opacity="0.3"/>
+      <rect x="14" y="14" width="8" height="8" rx="2" fill="#2563eb"/>
+      <text x="30" y="22" font-family="-apple-system, sans-serif" font-size="11" font-weight="700" fill="#f3f4f6">Vector RAG Engine</text>
       
       <text x="14" y="50" font-family="'JetBrains Mono', monospace" font-size="9" fill="#A8A49D">Index Size / Chunks</text>
-      <text x="14" y="72" font-family="'JetBrains Mono', monospace" font-size="20" font-weight="700" fill="#0DA868">4.8M Embeddings</text>
+      <text x="14" y="72" font-family="'JetBrains Mono', monospace" font-size="20" font-weight="700" fill="#2563eb">4.8M Embeddings</text>
       
-      <rect x="14" y="90" width="170" height="24" rx="6" fill="#0DA868" fill-opacity="0.15"/>
-      <text x="24" y="106" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="600" fill="#0DA868">Cosine Similarity: 0.984</text>
+      <rect x="14" y="90" width="170" height="24" rx="6" fill="#2563eb" fill-opacity="0.15"/>
+      <text x="24" y="106" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="600" fill="#2563eb">Cosine Similarity: 0.984</text>
     </g>
 
     <!-- Connector Line 2 -->
@@ -91,7 +91,7 @@
     <g transform="translate(490, 80)">
       <rect width="160" height="130" rx="12" fill="#1C1B1A" stroke="#FFFFFF" stroke-opacity="0.08"/>
       <rect x="14" y="14" width="8" height="8" rx="2" fill="#D6F75A"/>
-      <text x="30" y="22" font-family="-apple-system, sans-serif" font-size="11" font-weight="700" fill="#FAF8F5">Inference Layer</text>
+      <text x="30" y="22" font-family="-apple-system, sans-serif" font-size="11" font-weight="700" fill="#f3f4f6">Inference Layer</text>
       
       <text x="14" y="50" font-family="'JetBrains Mono', monospace" font-size="9" fill="#A8A49D">End-to-End Latency</text>
       <text x="14" y="72" font-family="'JetBrains Mono', monospace" font-size="20" font-weight="700" fill="#D6F75A">&lt; 380ms</text>
@@ -105,14 +105,14 @@
       <rect width="620" height="155" rx="10" fill="#121110" stroke="#FFFFFF" stroke-opacity="0.06"/>
       <rect width="620" height="26" rx="10" fill="#181716"/>
       <text x="16" y="17" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="600" fill="#7E7A73">AI PIPELINE TRACE &amp; TELEMETRY LOG</text>
-      <circle cx="598" cy="13" r="3" fill="#0DA868"/>
-      <text x="562" y="17" font-family="'JetBrains Mono', monospace" font-size="9" fill="#0DA868">STREAMING</text>
+      <circle cx="598" cy="13" r="3" fill="#2563eb"/>
+      <text x="562" y="17" font-family="'JetBrains Mono', monospace" font-size="9" fill="#2563eb">STREAMING</text>
 
       <text x="16" y="48" font-family="'JetBrains Mono', monospace" font-size="10" fill="#A8A49D">[00.012s] incoming query parsed → embeddings generated with bge-large-en-v1.5</text>
       <text x="16" y="70" font-family="'JetBrains Mono', monospace" font-size="10" fill="#D6F75A">[00.045s] semantic cache hit on similarity cluster #891 → retrieved high-confidence ground truth</text>
       <text x="16" y="92" font-family="'JetBrains Mono', monospace" font-size="10" fill="#A8A49D">[00.180s] reranked top 5 context passages via cross-encoder (hallucination risk: 0.002)</text>
-      <text x="16" y="114" font-family="'JetBrains Mono', monospace" font-size="10" fill="#0DA868">[00.340s] structured response synthesized · TTFT: 140ms · total token cost: $0.0014</text>
-      <text x="16" y="136" font-family="'JetBrains Mono', monospace" font-size="10" fill="#FAF8F5">✓ Result delivered in 340ms · Verified accuracy: 99.4%</text>
+      <text x="16" y="114" font-family="'JetBrains Mono', monospace" font-size="10" fill="#2563eb">[00.340s] structured response synthesized · TTFT: 140ms · total token cost: $0.0014</text>
+      <text x="16" y="136" font-family="'JetBrains Mono', monospace" font-size="10" fill="#f3f4f6">✓ Result delivered in 340ms · Verified accuracy: 99.4%</text>
     </g>
   </g>
 </svg>

@@ -1,8 +1,8 @@
 /**
  * NiharRout.com - Official Design System Architecture (2025/2026)
  * Brand: Authentic HubSpot Precision + Excited.agency Editorial Portfolio Aesthetics
- * Palette: Emerald (#0e7c4a), Warm Porcelain (#fcfcfa),
- *          Warm Alabaster (#f8f5ee), Pure White (#ffffff), Deep Charcoal (#18181a)
+ * Palette: Emerald (#1d4ed8), Warm Porcelain (#f3f4f6),
+ *          Warm Alabaster (#f3f4f6), Pure White (#ffffff), Deep Charcoal (#18181a)
  * Typography: Modern Geometric Sans + Clean Editorial Serif
  */
 
@@ -38,16 +38,16 @@
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
   /* Palette */
-  --hs-brand: #0e7c4a;
-  --hs-brand-hover: #0a5c37;
-  --hs-brand-pressed: #073d25;
-  --hs-brand-tint: #e3f3ea;
-  --hs-brand-glow: rgba(14, 124, 74, 0.22);
+  --hs-brand: #1d4ed8;
+  --hs-brand-hover: #1e40af;
+  --hs-brand-pressed: #0b0d12;
+  --hs-brand-tint: #e8effe;
+  --hs-brand-glow: rgba(29, 78, 216, 0.22);
 
   /* Backgrounds */
-  --hs-bg-01: #fcfcfa;          /* Warm porcelain canvas */
-  --hs-bg-02: #f8f5ee;          /* Warm alabaster section contrast */
-  --hs-bg-03: #f1ece1;          /* Subtle surface border fill */
+  --hs-bg-01: #f3f4f6;          /* Warm porcelain canvas */
+  --hs-bg-02: #f3f4f6;          /* Warm alabaster section contrast */
+  --hs-bg-03: #e8eaee;          /* Subtle surface border fill */
   --hs-container: #ffffff;       /* Pure white cards */
   --hs-container-dark: #141416;  /* Executive dark footer */
 
@@ -62,16 +62,16 @@
   /* Borders */
   --hs-border-01: rgba(0, 0, 0, 0.14);
   --hs-border-02: rgba(0, 0, 0, 0.08);
-  --hs-border-03: #e6e2d8;       /* Signature warm border */
-  --hs-border-active: #0e7c4a;
+  --hs-border-03: #e5e7eb;       /* Signature warm border */
+  --hs-border-active: #1d4ed8;
 
   /* Accents */
-  --hs-mint: #00823a;
-  --hs-mint-tint: #e6f7ec;
+  --hs-mint: #1d4ed8;
+  --hs-mint-tint: #e8effe;
   --hs-purple: #6e44ff;
   --hs-purple-tint: #f1edff;
-  --hs-teal: #1a7f80;
-  --hs-teal-tint: #e6f6f7;
+  --hs-teal: #1d4ed8;
+  --hs-teal-tint: #e8effe;
 
   /* Radii */
   --hs-radius-xs: 4px;
@@ -210,7 +210,7 @@ p {
   text-transform: uppercase;
   color: var(--hs-brand);
   background-color: var(--hs-brand-tint);
-  border: 1px solid rgba(14, 124, 74, 0.18);
+  border: 1px solid rgba(29, 78, 216, 0.18);
   padding: 5px 12px;
   border-radius: var(--hs-radius-pill);
   margin-bottom: 20px;
@@ -263,14 +263,14 @@ p {
   background-color: var(--hs-brand);
   color: #ffffff;
   border-color: var(--hs-brand);
-  box-shadow: 0 2px 6px rgba(14, 124, 74, 0.22);
+  box-shadow: 0 2px 6px rgba(29, 78, 216, 0.22);
 }
 
 .cl-button.-primary:hover {
   background-color: var(--hs-brand-hover);
   border-color: var(--hs-brand-hover);
   color: #ffffff;
-  box-shadow: 0 4px 14px rgba(14, 124, 74, 0.32);
+  box-shadow: 0 4px 14px rgba(29, 78, 216, 0.32);
   transform: translateY(-1px);
 }
 
@@ -468,7 +468,7 @@ p {
   width: 32px;
   height: 32px;
   border-radius: 8px;
-  background: rgba(14, 124, 74, 0.1);
+  background: rgba(29, 78, 216, 0.1);
   color: var(--hs-brand);
   display: flex;
   align-items: center;
@@ -479,7 +479,7 @@ p {
 }
 
 .dropdown-item:hover .dropdown-icon-wrap {
-  background: rgba(14, 124, 74, 0.18);
+  background: rgba(29, 78, 216, 0.18);
   transform: scale(1.06);
 }
 
@@ -519,7 +519,7 @@ p {
   padding: 5px 12px;
   border-radius: var(--hs-radius-pill);
   background-color: var(--hs-brand-tint);
-  border: 1px solid rgba(14, 124, 74, 0.2);
+  border: 1px solid rgba(29, 78, 216, 0.2);
   color: var(--hs-brand);
   font-size: 11.5px;
   font-weight: 700;
@@ -605,7 +605,7 @@ p {
   width: 100%;
   height: 380px;
   overflow: hidden;
-  background: #edeae2;
+  background: #e8eaee;
 }
 
 .hero-portrait-img {
@@ -726,7 +726,7 @@ p {
   font-weight: 700;
   color: var(--hs-brand);
   background: var(--hs-brand-tint);
-  border: 1px solid rgba(14, 124, 74, 0.15);
+  border: 1px solid rgba(29, 78, 216, 0.15);
   width: 32px;
   height: 32px;
   border-radius: 6px;
@@ -778,7 +778,7 @@ p {
 .service-card-clean:hover {
   transform: translateY(-3px);
   box-shadow: var(--hs-shadow-md);
-  border-color: rgba(14, 124, 74, 0.35);
+  border-color: rgba(29, 78, 216, 0.35);
 }
 
 .service-top-meta {
@@ -910,7 +910,7 @@ p {
   aspect-ratio: 16 / 10;
   border-radius: var(--hs-radius-lg);
   overflow: hidden;
-  background-color: #edeae2;
+  background-color: #e8eaee;
   border: 1px solid var(--hs-border-03);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
   margin-bottom: 20px;
@@ -949,7 +949,7 @@ p {
   font-weight: 600;
   color: var(--hs-mint);
   background: var(--hs-mint-tint);
-  border: 1px solid rgba(0, 130, 58, 0.15);
+  border: 1px solid rgba(29, 78, 216, 0.15);
   padding: 3px 8px;
   border-radius: 4px;
 }
@@ -1096,15 +1096,15 @@ p {
 .faq-item-minimal:hover,
 .faq-item-excited:hover,
 .faq-item:hover {
-  border-color: rgba(14, 124, 74, 0.35);
+  border-color: rgba(29, 78, 216, 0.35);
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
 }
 
 .faq-item-minimal.open,
 .faq-item-excited.open,
 .faq-item.open {
-  border-color: rgba(14, 124, 74, 0.45);
-  box-shadow: 0 8px 24px rgba(14, 124, 74, 0.08);
+  border-color: rgba(29, 78, 216, 0.45);
+  box-shadow: 0 8px 24px rgba(29, 78, 216, 0.08);
 }
 
 .faq-question-btn,
@@ -1155,7 +1155,7 @@ p {
 .faq-item.open .faq-icon,
 .faq-item.open .faq-toggle-sign {
   transform: rotate(45deg);
-  background: rgba(14, 124, 74, 0.12);
+  background: rgba(29, 78, 216, 0.12);
   color: var(--hs-brand);
 }
 
@@ -1287,7 +1287,7 @@ p {
 .form-select:focus,
 .form-textarea:focus {
   border-color: var(--hs-brand);
-  box-shadow: 0 0 0 3px rgba(14, 124, 74, 0.12);
+  box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.12);
 }
 
 .form-textarea {
@@ -1848,13 +1848,13 @@ p {
 .blog-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.06);
-  border-color: rgba(14, 124, 74, 0.35);
+  border-color: rgba(29, 78, 216, 0.35);
 }
 
 .blog-card-thumb {
   width: 100%;
   height: 220px;
-  background: #f1ede4;
+  background: #e8eaee;
   overflow: hidden;
   position: relative;
 }
@@ -1890,7 +1890,7 @@ p {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--hs-brand);
-  background: rgba(14, 124, 74, 0.08);
+  background: rgba(29, 78, 216, 0.08);
   padding: 4px 10px;
   border-radius: var(--hs-radius-pill);
 }
@@ -2118,12 +2118,12 @@ p {
 }
 
 .prose tr:nth-child(even) td {
-  background: #faf8f5;
+  background: #f3f4f6;
 }
 
 .blog-callout {
-  background: #f2f9f5;
-  border: 1px solid rgba(14, 124, 74, 0.25);
+  background: #f3f4f6;
+  border: 1px solid rgba(29, 78, 216, 0.25);
   border-radius: 16px;
   padding: 24px 28px;
   margin: 36px 0;
@@ -2187,13 +2187,13 @@ p {
   font-size: 14px !important;
   border-radius: 9999px !important;
   padding: 12px 22px !important;
-  box-shadow: 0 10px 24px rgba(14, 124, 74, 0.35) !important;
+  box-shadow: 0 10px 24px rgba(29, 78, 216, 0.35) !important;
   transition: transform 0.2s ease, box-shadow 0.2s ease !important;
 }
 
 .calendly-badge-widget .calendly-badge-content:hover {
   transform: translateY(-2px) !important;
-  box-shadow: 0 14px 28px rgba(14, 124, 74, 0.45) !important;
+  box-shadow: 0 14px 28px rgba(29, 78, 216, 0.45) !important;
 }
 
 /* Mobile Calendly Badge & Overlay Polish (< 768px) */
@@ -2209,7 +2209,7 @@ p {
     padding: 0 16px !important;
     font-size: 12.5px !important;
     border-radius: 9999px !important;
-    box-shadow: 0 4px 14px rgba(14, 124, 74, 0.4) !important;
+    box-shadow: 0 4px 14px rgba(29, 78, 216, 0.4) !important;
     letter-spacing: -0.01em !important;
   }
 
@@ -2379,15 +2379,15 @@ p {
 .cap-card:hover {
   transform: translateY(-4px);
   border-color: var(--hs-brand);
-  box-shadow: 0 16px 36px rgba(14, 124, 74, 0.09);
+  box-shadow: 0 16px 36px rgba(29, 78, 216, 0.09);
 }
 
 .cap-icon {
   width: 50px;
   height: 50px;
   border-radius: 12px;
-  background: #FFF0EB;
-  border: 1px solid rgba(14, 124, 74, 0.2);
+  background: #e8effe;
+  border: 1px solid rgba(29, 78, 216, 0.2);
   color: var(--hs-brand);
   display: flex;
   align-items: center;
@@ -2398,7 +2398,7 @@ p {
 
 .cap-card:hover .cap-icon {
   transform: scale(1.06);
-  background: #d3ecdf;
+  background: #c7d7fe;
 }
 
 .cap-icon svg {
@@ -2477,7 +2477,7 @@ p {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: rgba(14, 124, 74, 0.1);
+  background: rgba(29, 78, 216, 0.1);
   color: var(--hs-brand);
   font-family: var(--font-display);
   font-size: 18px;
@@ -2590,7 +2590,7 @@ p {
 
 .techstack-pill:hover {
   background: #ffffff;
-  border-color: rgba(14, 124, 74, 0.4);
+  border-color: rgba(29, 78, 216, 0.4);
   transform: translateY(-1px);
 }
 
@@ -2620,7 +2620,7 @@ p {
 .case-study-media-col {
   position: relative;
   min-height: 380px;
-  background: #edeae2;
+  background: #e8eaee;
   overflow: hidden;
 }
 

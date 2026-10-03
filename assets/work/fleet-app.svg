@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
   <defs>
     <linearGradient id="mob-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#FAF8F5"/>
-      <stop offset="100%" stop-color="#EAE6DC"/>
+      <stop offset="0%" stop-color="#f3f4f6"/>
+      <stop offset="100%" stop-color="#e8eaee"/>
     </linearGradient>
     <filter id="phone-shadow" x="-10%" y="-5%" width="125%" height="115%" filterUnits="userSpaceOnUse">
       <feDropShadow dx="0" dy="20" stdDeviation="24" flood-color="#141312" flood-opacity="0.12"/>
@@ -20,12 +20,12 @@
   <!-- Left: Metric Highlight Card Floating -->
   <g transform="translate(70, 90)" filter="url(#phone-shadow)">
     <rect width="250" height="150" rx="16" fill="#FFFFFF" stroke="#141312" stroke-opacity="0.08"/>
-    <rect x="20" y="20" width="80" height="22" rx="11" fill="#E7F8F0"/>
-    <text x="32" y="35" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#0DA868">4.9 ★ RATING</text>
+    <rect x="20" y="20" width="80" height="22" rx="11" fill="#e8effe"/>
+    <text x="32" y="35" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#2563eb">4.9 ★ RATING</text>
     
     <text x="20" y="70" font-family="-apple-system, sans-serif" font-size="12" font-weight="600" fill="#7E7A73">ACTIVE FLEET USERS</text>
     <text x="20" y="104" font-family="'JetBrains Mono', monospace" font-size="28" font-weight="800" fill="#141312">25,400+</text>
-    <text x="20" y="128" font-family="-apple-system, sans-serif" font-size="11" font-weight="600" fill="#0DA868">✓ 45% QA &amp; Dev Cost Saved</text>
+    <text x="20" y="128" font-family="-apple-system, sans-serif" font-size="11" font-weight="600" fill="#2563eb">✓ 45% QA &amp; Dev Cost Saved</text>
   </g>
 
   <!-- Left Bottom: Architecture Card -->
@@ -33,13 +33,13 @@
     <rect width="250" height="155" rx="16" fill="#FFFFFF" stroke="#141312" stroke-opacity="0.08"/>
     <text x="20" y="32" font-family="-apple-system, sans-serif" font-size="11" font-weight="700" fill="#141312">UNIFIED FLUTTER ENGINE</text>
     
-    <rect x="20" y="48" width="210" height="28" rx="6" fill="#F7F5F0"/>
+    <rect x="20" y="48" width="210" height="28" rx="6" fill="#f3f4f6"/>
     <text x="30" y="66" font-family="'JetBrains Mono', monospace" font-size="10" fill="#4E4B46">Single Codebase (iOS &amp; Android)</text>
     
-    <rect x="20" y="84" width="210" height="28" rx="6" fill="#F7F5F0"/>
+    <rect x="20" y="84" width="210" height="28" rx="6" fill="#f3f4f6"/>
     <text x="30" y="102" font-family="'JetBrains Mono', monospace" font-size="10" fill="#4E4B46">Clean Architecture / BLoC</text>
 
-    <rect x="20" y="120" width="210" height="22" rx="6" fill="#FDF0EB"/>
+    <rect x="20" y="120" width="210" height="22" rx="6" fill="#e8effe"/>
     <text x="30" y="135" font-family="'JetBrains Mono', monospace" font-size="9.5" font-weight="600" fill="#FF5F2D">Sub-second GPS Telemetry</text>
   </g>
 
@@ -48,7 +48,7 @@
     <!-- Device Body -->
     <rect width="220" height="420" rx="36" fill="#141312" stroke="#4E4B46" stroke-width="2"/>
     <!-- Screen Glass -->
-    <rect x="8" y="8" width="204" height="404" rx="28" fill="#FBF9F5"/>
+    <rect x="8" y="8" width="204" height="404" rx="28" fill="#f3f4f6"/>
     
     <!-- Dynamic Island / Speaker -->
     <rect x="74" y="16" width="72" height="18" rx="9" fill="#141312"/>
@@ -78,7 +78,7 @@
       </g>
 
       <!-- Destination Marker -->
-      <circle cx="155" cy="190" r="6" fill="#0DA868"/>
+      <circle cx="155" cy="190" r="6" fill="#2563eb"/>
     </g>
 
     <!-- Bottom Sheet / Fleet Driver Telemetry -->
@@ -89,19 +89,19 @@
       <rect x="80" y="8" width="28" height="3" rx="1.5" fill="#A8A49D"/>
 
       <text x="14" y="28" font-family="-apple-system, sans-serif" font-size="11" font-weight="700" fill="#141312">Fleet Transit #4092</text>
-      <rect x="130" y="16" width="46" height="16" rx="8" fill="#E7F8F0"/>
-      <text x="137" y="28" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="700" fill="#0DA868">LIVE</text>
+      <rect x="130" y="16" width="46" height="16" rx="8" fill="#e8effe"/>
+      <text x="137" y="28" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="700" fill="#2563eb">LIVE</text>
 
       <text x="14" y="48" font-family="-apple-system, sans-serif" font-size="9" fill="#7E7A73">ETA to Hub: 14 mins (4.2 km)</text>
       
       <!-- Progress Bar -->
-      <rect x="14" y="58" width="160" height="4" rx="2" fill="#EFECE3"/>
+      <rect x="14" y="58" width="160" height="4" rx="2" fill="#e8eaee"/>
       <rect x="14" y="58" width="115" height="4" rx="2" fill="#FF5F2D"/>
 
-      <rect x="14" y="72" width="76" height="24" rx="6" fill="#F7F5F0"/>
+      <rect x="14" y="72" width="76" height="24" rx="6" fill="#f3f4f6"/>
       <text x="22" y="88" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600" fill="#141312">Speed: 42 km/h</text>
 
-      <rect x="98" y="72" width="76" height="24" rx="6" fill="#F7F5F0"/>
+      <rect x="98" y="72" width="76" height="24" rx="6" fill="#f3f4f6"/>
       <text x="106" y="88" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="600" fill="#141312">Battery: 94%</text>
 
       <rect x="14" y="104" width="160" height="26" rx="8" fill="#141312"/>
@@ -112,15 +112,15 @@
   <!-- Far Right: Secondary Device / Consumer App -->
   <g transform="translate(605, 75)" filter="url(#phone-shadow)" opacity="0.85">
     <rect width="140" height="360" rx="24" fill="#FFFFFF" stroke="#141312" stroke-opacity="0.08"/>
-    <rect x="12" y="18" width="116" height="40" rx="10" fill="#FAF8F5"/>
+    <rect x="12" y="18" width="116" height="40" rx="10" fill="#f3f4f6"/>
     <text x="20" y="36" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" fill="#141312">Consumer View</text>
-    <text x="20" y="48" font-family="'JetBrains Mono', monospace" font-size="8.5" fill="#0DA868">Driver Approaching</text>
+    <text x="20" y="48" font-family="'JetBrains Mono', monospace" font-size="8.5" fill="#2563eb">Driver Approaching</text>
     
     <rect x="12" y="70" width="116" height="160" rx="10" fill="#E8ECE9"/>
     <circle cx="70" cy="150" r="10" fill="#FF5F2D" fill-opacity="0.3"/>
     <circle cx="70" cy="150" r="4" fill="#FF5F2D"/>
 
-    <rect x="12" y="242" width="116" height="100" rx="10" fill="#FAF8F5"/>
+    <rect x="12" y="242" width="116" height="100" rx="10" fill="#f3f4f6"/>
     <text x="20" y="264" font-family="-apple-system, sans-serif" font-size="10" font-weight="600" fill="#141312">One-Tap Booking</text>
     <rect x="20" y="276" width="100" height="20" rx="6" fill="#141312"/>
     <text x="36" y="290" font-family="-apple-system, sans-serif" font-size="8.5" font-weight="600" fill="#FFFFFF">Book Ride →</text>

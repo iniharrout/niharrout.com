@@ -4,17 +4,17 @@
  */
 
 :root {
-  --tool-paper: #f6f1e7;
-  --tool-paper-2: #eee7d8;
+  --tool-paper: #f3f4f6;
+  --tool-paper-2: #e8eaee;
   --tool-paper-card: #ffffff;
   --tool-ink: #1d1b18;
   --tool-ink-2: #4a453d;
   --tool-ink-3: #676154;
   --tool-rule: #d6cdb9;
   --tool-rule-dark: #1d1b18;
-  --tool-accent: #0e7c4a;
-  --tool-accent-tint: #e3f3ea;
-  --tool-accent-hover: #0a5c37;
+  --tool-accent: #1d4ed8;
+  --tool-accent-tint: #e8effe;
+  --tool-accent-hover: #1e40af;
   --tool-radius: 4px;
   --tool-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
@@ -1196,7 +1196,7 @@
   flex-wrap: wrap;
   gap: 4px;
   padding: 12px 16px;
-  background: #faf8f5;
+  background: #f3f4f6;
   border-bottom: 1px solid var(--tool-rule);
   border-radius: var(--tool-radius) var(--tool-radius) 0 0;
   position: relative;
@@ -1234,7 +1234,7 @@
 }
 
 .btn-format-tool:hover {
-  background: #ede6d8;
+  background: #e8eaee;
   color: var(--tool-ink);
   border-color: var(--tool-rule);
 }
@@ -1363,7 +1363,7 @@
   flex-wrap: wrap;
   gap: 12px;
   padding: 14px 20px;
-  background: #faf8f5;
+  background: #f3f4f6;
   border-top: 1px solid var(--tool-rule);
   border-radius: 0 0 var(--tool-radius) var(--tool-radius);
 }
@@ -1412,7 +1412,7 @@
 .btn-editor-primary:hover {
   background: var(--tool-accent-hover);
   border-color: var(--tool-accent-hover);
-  box-shadow: 0 2px 8px rgba(14, 124, 74, 0.25);
+  box-shadow: 0 2px 8px rgba(29, 78, 216, 0.25);
 }
 
 /* Hook Meter & Stats Card */
@@ -1461,7 +1461,7 @@
 .hook-progress-track {
   width: 100%;
   height: 6px;
-  background: #eae4d5;
+  background: #e5e7eb;
   border-radius: 3px;
   overflow: hidden;
   margin-bottom: 10px;
@@ -1470,7 +1470,7 @@
 .hook-progress-bar {
   height: 100%;
   width: 0%;
-  background: #127a4c;
+  background: #1d4ed8;
   transition: width 0.2s ease, background-color 0.2s ease;
   border-radius: 3px;
 }
@@ -1482,7 +1482,7 @@
 }
 
 .hook-meter-status.status-good {
-  color: #073d25;
+  color: #0b0d12;
 }
 
 .hook-meter-status.status-warn {
@@ -1532,7 +1532,7 @@
 /* Device Segmented Control */
 .device-toggle-wrap {
   display: inline-flex;
-  background: #e6dfcf;
+  background: #e5e7eb;
   padding: 3px;
   border-radius: 6px;
   gap: 2px;
@@ -1740,7 +1740,7 @@
 }
 
 .li-reaction-icon.celebrate {
-  background: #6dae23;
+  background: #3b82f6;
   color: #fff;
 }
 
@@ -1910,7 +1910,7 @@
 }
 
 .btn-copy-style {
-  background: #fbf9f6;
+  background: #f3f4f6;
   border: 1px solid var(--tool-rule);
   border-radius: 4px;
   padding: 5px 10px;
@@ -1931,8 +1931,8 @@
 }
 
 .style-preview-box {
-  background: #faf8f5;
-  border: 1px solid #ebe4d5;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
   border-radius: 4px;
   padding: 8px;
   flex-grow: 1;
@@ -2066,7 +2066,7 @@
 }
 
 .faq-question:hover {
-  background: #faf8f5;
+  background: #f3f4f6;
 }
 
 .faq-question svg {

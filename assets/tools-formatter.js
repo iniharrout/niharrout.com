@@ -592,7 +592,7 @@
       if (hookProgressEl) {
         hookProgressEl.style.width = percent + '%';
         if (firstChunk.length <= cutoffLimit) {
-          hookProgressEl.style.backgroundColor = '#10b981';
+          hookProgressEl.style.backgroundColor = '#2563eb';
         } else {
           hookProgressEl.style.backgroundColor = '#f59e0b';
         }
@@ -663,8 +663,8 @@
 
           const originalContent = this.innerHTML;
           this.innerHTML = `
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:#10b981;"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            <span style="color:#10b981; font-weight:700;">Copied!</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:#2563eb;"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span style="color:#2563eb; font-weight:700;">Copied!</span>
           `;
           setTimeout(() => {
             this.innerHTML = originalContent;
