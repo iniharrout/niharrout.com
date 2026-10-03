@@ -27,6 +27,7 @@
     burger.setAttribute('aria-expanded', String(open));
     burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
     burger.classList.toggle('is-open', open);
+    header.classList.toggle('is-menu-open', open);
     document.documentElement.classList.toggle('sc-lock', open);
   }
 
@@ -41,6 +42,59 @@
       toggle.setAttribute('aria-expanded', String(open));
     });
   });
+
+  // Mobile menu: built from the desktop menus above so the two never drift apart.
+  var acc = drawer && drawer.querySelector('[data-sc-acc]');
+  if (acc) {
+    var chevron = '<svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    header.querySelectorAll('.sc-links > .sc-item:not(.sc-item-ai)').forEach(function (li, index) {
+      var link = li.querySelector('.sc-link');
+      var menu = li.querySelector('.sc-menu');
+      if (!link) return;
+      var label = link.textContent.trim();
+      if (!menu) {
+        var plain = document.createElement('a');
+        plain.className = 'sc-acc-link';
+        plain.href = link.getAttribute('href');
+        plain.textContent = label;
+        acc.appendChild(plain);
+        return;
+      }
+      var item = document.createElement('div');
+      item.className = 'sc-acc-item';
+      var panelId = 'sc-acc-' + index;
+      var button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'sc-acc-btn';
+      button.setAttribute('aria-expanded', 'false');
+      button.setAttribute('aria-controls', panelId);
+      button.innerHTML = '<span></span>' + chevron;
+      button.firstChild.textContent = label;
+      var panel = document.createElement('div');
+      panel.className = 'sc-acc-panel';
+      panel.id = panelId;
+      var inner = document.createElement('div');
+      inner.className = 'sc-acc-inner';
+      menu.querySelectorAll('a').forEach(function (a) {
+        var copy = a.cloneNode(true);
+        if (a.classList.contains('sc-menu-all')) copy.className = 'sc-acc-all';
+        inner.appendChild(copy);
+      });
+      panel.appendChild(inner);
+      item.appendChild(button);
+      item.appendChild(panel);
+      acc.appendChild(item);
+      button.addEventListener('click', function () {
+        var open = !item.classList.contains('open');
+        acc.querySelectorAll('.sc-acc-item.open').forEach(function (other) {
+          other.classList.remove('open');
+          other.querySelector('.sc-acc-btn').setAttribute('aria-expanded', 'false');
+        });
+        item.classList.toggle('open', open);
+        button.setAttribute('aria-expanded', String(open));
+      });
+    });
+  }
 
   if (burger && drawer) {
     burger.addEventListener('click', function () { setDrawer(drawer.hidden); });
