@@ -1432,6 +1432,8 @@ body.page-home .hero-sub {
   padding: 0;
 }
 
+.philosophy-quote .pq-lead { display: block; margin: 0 0 10px; font-family: 'Inter', system-ui, sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; line-height: 1.5; color: #64748b; }
+.philosophy-quote .pq-line { display: block; }
 .philosophy-quote em {
   font-style: normal;
   color: #0e7c4a;
