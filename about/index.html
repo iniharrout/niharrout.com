@@ -505,6 +505,16 @@
       font-style: normal;
     }
 
+    /* Tools and links lists */
+    .about-extra { margin-top: 64px; }
+    .about-list { list-style: none; margin: 24px 0 0; padding: 0; border-top: 1px solid var(--line); }
+    .about-list li { display: grid; grid-template-columns: minmax(150px, 230px) minmax(0, 1fr); gap: 8px 24px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+    .about-list strong, .about-list a { font-weight: 700; color: var(--ink); text-decoration: none; }
+    .about-list a { color: var(--accent); }
+    .about-list a:hover { color: var(--accent-dark); text-decoration: underline; }
+    .about-list span { font-size: 16px; line-height: 1.6; color: var(--ink-soft); }
+    @media (max-width: 640px) { .about-list li { grid-template-columns: 1fr; gap: 4px; } }
+
     /* Chapter 02 Editorial Pillars List */
     .pillars-editorial-list {
       display: flex;
@@ -1095,6 +1105,23 @@
             </div>
             <a href="/work/sky1-event-booking" class="testi-case-link">View Case Study ↗</a>
           </div>
+        </div>
+
+        <div class="about-extra" id="tools-i-trust">
+          <h2>Tools I actually trust.</h2>
+          <ul class="about-list">
+            <li><strong>Google Calendar</strong><span>It keeps my whole schedule organized in one place.</span></li>
+            <li><strong>Wispr Flow</strong><span>One of my favorites. I speak my emails, WhatsApp messages and AI prompts instead of typing them, and it makes my day much easier.</span></li>
+            <li><strong>Claude, ChatGPT and Perplexity</strong><span>I move between all three depending on the job.</span></li>
+          </ul>
+        </div>
+
+        <div class="about-extra" id="around-the-internet">
+          <h2>Around the internet.</h2>
+          <ul class="about-list">
+            <li><a href="https://www.linkedin.com/in/iniharrout" target="_blank" rel="noopener">LinkedIn</a><span>Follow along as I build products and grow Creuto.</span></li>
+            <li><a href="https://x.com/iniharrout" target="_blank" rel="noopener">X (@iniharrout)</a><span>Shorter, rawer thoughts on building software.</span></li>
+          </ul>
         </div>
       </div>
     </section>
