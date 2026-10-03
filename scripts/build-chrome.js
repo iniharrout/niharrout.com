@@ -15,8 +15,8 @@ const ROOT = path.resolve(__dirname, '..');
 const SKIP = new Set(['node_modules', '.git', '.claude', 'scripts', 'partials', 'api']);
 const header = fs.readFileSync(path.join(ROOT, 'partials/header.html'), 'utf8').trim();
 const footer = fs.readFileSync(path.join(ROOT, 'partials/footer.html'), 'utf8').trim();
-const CSS = '<link rel="stylesheet" href="/assets/chrome.css?v=17">';
-const JS = '<script src="/assets/chrome.js?v=7" defer></script>';
+const CSS = '<link rel="stylesheet" href="/assets/chrome.css?v=19">';
+const JS = '<script src="/assets/chrome.js?v=8" defer></script>';
 
 const block = (name, body) => `<!-- chrome:${name} -->\n${body}\n<!-- /chrome:${name} -->`;
 const markerRe = (name) => new RegExp(`<!-- chrome:${name} -->[\\s\\S]*?<!-- /chrome:${name} -->`);
