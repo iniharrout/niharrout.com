@@ -46,9 +46,9 @@ html.sc-lock { overflow: hidden; }
 .sc-has-menu:hover .sc-menu, .sc-has-menu:focus-within .sc-menu, .sc-has-menu.open .sc-menu { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
 .sc-menu a { display: flex; align-items: center; gap: 13px; padding: 10px 12px; border-radius: 11px; text-decoration: none; color: var(--sc-ink); transition: background 0.15s ease; }
 .sc-menu a:hover { background: var(--sc-paper-2); }
-.sc-mi { flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 10px; background: var(--sc-tint); color: var(--sc-accent-deep); transition: background 0.2s ease, color 0.2s ease, transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.sc-mi { flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 10px; background: var(--tone, var(--sc-accent)); color: #fff; box-shadow: 0 6px 14px -8px var(--tone, var(--sc-accent)); transition: background 0.2s ease, color 0.2s ease, transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1); }
 .sc-mi svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-.sc-menu a:hover .sc-mi { background: var(--sc-accent); color: #fff; transform: scale(1.06) rotate(-4deg); }
+.sc-menu a:hover .sc-mi { transform: scale(1.08) rotate(-4deg); }
 .sc-mt { min-width: 0; }
 .sc-menu strong { display: block; font-size: 14.5px; font-weight: 700; letter-spacing: -0.005em; }
 .sc-mt > span { display: block; margin-top: 2px; font-size: 12.5px; line-height: 1.35; color: var(--sc-ink-2); }
@@ -166,6 +166,72 @@ html.sc-lock { overflow: hidden; }
   .sc-drawer, .sc-drawer:not([hidden]) .sc-drawer-ai, .sc-drawer:not([hidden]) .sc-acc > *, .sc-drawer-ai::after, .sc-drawer-ai > svg, .sc-dock-cta::after, .sc-dock-cta svg { animation: none; }
   .sc-acc-panel, .sc-acc-btn svg { transition: none; }
 }
+
+/* ---------- Icon colours: solid, colour-coded tiles with white glyphs (same idea as the creuto.com menu) ---------- */
+:root { --t-blue: #2563eb; --t-green: #16a34a; --t-teal: #0d9488; --t-violet: #8b5cf6; --t-rose: #f43f5e; --t-orange: #ea580c; }
+
+/* menus (desktop dropdowns and the mobile menu share these links) */
+:is(.sc-menu, .sc-acc-inner) a[href="/services/mobile-app-development"], :is(.sc-menu, .sc-acc-inner) a[href="/project-costs"], :is(.sc-menu, .sc-acc-inner) a[href="/tools/app-cost-calculator"] { --tone: var(--t-green); }
+:is(.sc-menu, .sc-acc-inner) a[href="/services/web-application-development"], :is(.sc-menu, .sc-acc-inner) a[href="/work/skribe"], :is(.sc-menu, .sc-acc-inner) a[href="/blog"], :is(.sc-menu, .sc-acc-inner) a[href="/tools/linkedin-text-formatter"] { --tone: var(--t-blue); }
+:is(.sc-menu, .sc-acc-inner) a[href="/services/custom-software-development"], :is(.sc-menu, .sc-acc-inner) a[href="/work/flashnow"], :is(.sc-menu, .sc-acc-inner) a[href="/tools/startup-name-generator"] { --tone: var(--t-orange); }
+:is(.sc-menu, .sc-acc-inner) a[href="/services/ai-product-development"], :is(.sc-menu, .sc-acc-inner) a[href="/work/make-my-look"], :is(.sc-menu, .sc-acc-inner) a[href="/b2b-software-development-for-startups"] { --tone: var(--t-violet); }
+:is(.sc-menu, .sc-acc-inner) a[href="/services/product-strategy-prd"], :is(.sc-menu, .sc-acc-inner) a[href="/work/sky1-event-booking"] { --tone: var(--t-rose); }
+:is(.sc-menu, .sc-acc-inner) a[href="/work/custom-erp-manufacturing"], :is(.sc-menu, .sc-acc-inner) a[href="/technology"] { --tone: var(--t-teal); }
+
+/* homepage */
+body.page-home .stat-item:nth-child(1) .stat-ico { --tone: var(--t-blue); }
+body.page-home .stat-item:nth-child(2) .stat-ico { --tone: var(--t-orange); }
+body.page-home .stat-item:nth-child(3) .stat-ico { --tone: var(--t-violet); }
+body.page-home .stat-item:nth-child(4) .stat-ico { --tone: var(--t-rose); }
+body.page-home .stat-ico { background: var(--tone); box-shadow: 0 8px 18px -8px var(--tone), inset 0 0 0 1px rgba(255, 255, 255, 0.22); }
+
+.bento-services-grid > :nth-child(1) { --tone: var(--t-green); }
+.bento-services-grid > :nth-child(2) { --tone: var(--t-orange); }
+.bento-services-grid > :nth-child(3) { --tone: var(--t-violet); }
+.bento-services-grid > :nth-child(4) { --tone: var(--t-rose); }
+.service-bento-card .service-icon-box, .service-bento-card:hover .service-icon-box { background: var(--tone); color: #fff; box-shadow: 0 8px 18px -10px var(--tone); }
+
+body.page-home .tool-list > :nth-child(2) { --tone: var(--t-green); }
+body.page-home .tool-list > :nth-child(3) { --tone: var(--t-blue); }
+body.page-home .tool-list > :nth-child(4) { --tone: var(--t-orange); }
+body.page-home .tool-ico, body.page-home .tool-row:hover .tool-ico { background: var(--tone, var(--t-blue)); color: #fff; box-shadow: 0 8px 18px -10px var(--tone, var(--t-blue)); }
+
+body.page-home .blog-ico-grid { --tone: var(--t-teal); }
+body.page-home .blog-ico-phone { --tone: var(--t-blue); }
+body.page-home .blog-ico:not(.blog-ico-lg) { background: var(--tone); color: #fff; box-shadow: 0 10px 20px -10px var(--tone); }
+
+body.page-home .why2-item:nth-child(1) .why2-ico { --tone: var(--t-blue); }
+body.page-home .why2-item:nth-child(2) .why2-ico { --tone: var(--t-violet); }
+body.page-home .why2-item:nth-child(3) .why2-ico { --tone: var(--t-rose); }
+body.page-home .why2-item:nth-child(4) .why2-ico { --tone: var(--t-green); }
+body.page-home .why2-item:nth-child(5) .why2-ico { --tone: var(--t-orange); }
+body.page-home .why2-ico, body.page-home .why2-item:hover .why2-ico { color: var(--tone); }
+
+/* service pages: capability icons come back as coloured tiles */
+.ed-page .cap-grid-6 > :nth-child(6n+1) { --tone: var(--t-blue); }
+.ed-page .cap-grid-6 > :nth-child(6n+2) { --tone: var(--t-green); }
+.ed-page .cap-grid-6 > :nth-child(6n+3) { --tone: var(--t-violet); }
+.ed-page .cap-grid-6 > :nth-child(6n+4) { --tone: var(--t-orange); }
+.ed-page .cap-grid-6 > :nth-child(6n+5) { --tone: var(--t-rose); }
+.ed-page .cap-grid-6 > :nth-child(6n+6) { --tone: var(--t-teal); }
+.ed-page .cap-icon, .ed-page .cap-card:hover .cap-icon { display: inline-flex; align-items: center; justify-content: center; width: 46px; height: 46px; margin: 0 0 18px; border: 0; border-radius: 11px; background: var(--tone, var(--t-green)); color: #fff; box-shadow: 0 10px 20px -10px var(--tone, var(--t-green)); transform: none; }
+.ed-page .cap-icon svg { width: 22px; height: 22px; stroke: #fff; }
+
+/* about: the four numbered working steps */
+.working-flow-grid > :nth-child(1) { --tone: var(--t-blue); }
+.working-flow-grid > :nth-child(2) { --tone: var(--t-violet); }
+.working-flow-grid > :nth-child(3) { --tone: var(--t-orange); }
+.working-flow-grid > :nth-child(4) { --tone: var(--t-green); }
+.working-flow-grid .flow-icon { background: var(--tone); color: #fff; box-shadow: 0 8px 16px -8px var(--tone); }
+
+/* technology page: the stack icons */
+.tech-pills-list > :nth-child(6n+1) { --tone: var(--t-blue); }
+.tech-pills-list > :nth-child(6n+2) { --tone: var(--t-violet); }
+.tech-pills-list > :nth-child(6n+3) { --tone: var(--t-orange); }
+.tech-pills-list > :nth-child(6n+4) { --tone: var(--t-green); }
+.tech-pills-list > :nth-child(6n+5) { --tone: var(--t-rose); }
+.tech-pills-list > :nth-child(6n+6) { --tone: var(--t-teal); }
+.tech-pill .tech-icon-box, .tech-pill:hover .tech-icon-box { background: var(--tone, var(--t-blue)); border-color: transparent; color: #fff; }
 
 /* ---------- Footer ---------- */
 .sc-footer { position: relative; overflow: hidden; background: var(--sc-dark); color: #ffffff; padding: 72px 0 32px; font-family: var(--font-body, "Inter", system-ui, -apple-system, "Segoe UI", sans-serif); line-height: 1.5; }
