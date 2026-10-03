@@ -179,11 +179,11 @@ html.sc-lock { overflow: hidden; }
 :is(.sc-menu, .sc-acc-inner) a[href="/work/custom-erp-manufacturing"], :is(.sc-menu, .sc-acc-inner) a[href="/technology"] { --tone: var(--t-ink); }
 
 /* homepage */
-body.page-home .stat-item:nth-child(1) .stat-ico { --tone: var(--t-cyan); }
+body.page-home .stat-item:nth-child(1) .stat-ico { --tone: var(--t-blue); }
 body.page-home .stat-item:nth-child(2) .stat-ico { --tone: var(--t-orange); }
 body.page-home .stat-item:nth-child(3) .stat-ico { --tone: var(--t-violet); }
 body.page-home .stat-item:nth-child(4) .stat-ico { --tone: var(--t-rose); }
-body.page-home .stat-ico { background: var(--tone); box-shadow: 0 8px 18px -8px var(--tone), inset 0 0 0 1px rgba(255, 255, 255, 0.22); }
+body.page-home .stat-ico { background: var(--tone); box-shadow: 0 12px 22px -12px var(--tone); }
 
 .bento-services-grid > :nth-child(1) { --tone: var(--t-cyan); }
 .bento-services-grid > :nth-child(2) { --tone: var(--t-orange); }
@@ -200,12 +200,11 @@ body.page-home .blog-ico-grid { --tone: var(--t-ink); }
 body.page-home .blog-ico-phone { --tone: var(--t-blue); }
 body.page-home .blog-ico:not(.blog-ico-lg) { background: var(--tone); color: #fff; box-shadow: 0 10px 20px -10px var(--tone); }
 
-body.page-home .why2-item:nth-child(1) .why2-ico { --tone: var(--t-blue); }
-body.page-home .why2-item:nth-child(2) .why2-ico { --tone: var(--t-violet); }
-body.page-home .why2-item:nth-child(3) .why2-ico { --tone: var(--t-rose); }
-body.page-home .why2-item:nth-child(4) .why2-ico { --tone: var(--t-cyan); }
-body.page-home .why2-item:nth-child(5) .why2-ico { --tone: var(--t-orange); }
-body.page-home .why2-ico, body.page-home .why2-item:hover .why2-ico { color: var(--tone); }
+body.page-home .why2-item:nth-child(1) { --tone: var(--t-blue); }
+body.page-home .why2-item:nth-child(2) { --tone: var(--t-violet); }
+body.page-home .why2-item:nth-child(3) { --tone: var(--t-rose); }
+body.page-home .why2-item:nth-child(4) { --tone: var(--t-cyan); }
+body.page-home .why2-item:nth-child(5) { --tone: var(--t-orange); }
 
 /* service pages: capability icons come back as coloured tiles */
 .ed-page .cap-grid-6 > :nth-child(6n+1) { --tone: var(--t-blue); }

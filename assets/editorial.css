@@ -1434,19 +1434,6 @@ body.page-home .sec-sub { max-width: 60ch; margin: 0; font-size: 1.08rem; line-h
 body.page-home .ed-section { border-top: 0; padding: 96px 0; }
 
 /* ---------- Stats: a full-bleed green band, clearly separate from the hero ---------- */
-body.page-home .stats-band { position: relative; overflow: hidden; padding: 68px 0; color: #fff; background: linear-gradient(135deg, #0b0d12 0%, #1d4ed8 62%, #2563eb 100%); }
-body.page-home .stats-band::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.07) 1px, transparent 1px); background-size: 44px 44px; -webkit-mask-image: radial-gradient(ellipse at center, #000 10%, transparent 75%); mask-image: radial-gradient(ellipse at center, #000 10%, transparent 75%); }
-body.page-home .stats-band .wrap { position: relative; }
-body.page-home .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
-body.page-home .stat-item { padding: 6px 32px; border-left: 1px solid rgba(255,255,255,0.2); }
-body.page-home .stat-item:first-child { border-left: 0; padding-left: 0; }
-body.page-home .stat-ico { display: inline-flex; align-items: center; justify-content: center; width: 46px; height: 46px; border-radius: 10px; background: rgba(255,255,255,0.15); color: #fff; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.2); }
-body.page-home .stat-ico svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-body.page-home .stat-label { margin: 20px 0 10px; font-family: var(--mono); font-size: 11.5px; font-weight: 700; letter-spacing: 0.11em; text-transform: uppercase; color: rgba(255,255,255,0.72); }
-body.page-home .stat-value { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0; margin: 0 0 12px; font-family: 'Inter', system-ui, sans-serif; font-size: clamp(2.3rem, 3.6vw, 3.1rem); font-weight: 800; line-height: 1; letter-spacing: -0.035em; color: #fff; }
-body.page-home .stat-suffix { color: #93b4fa; }
-body.page-home .stat-unit { margin-left: 6px; font-size: 1.02rem; font-weight: 600; letter-spacing: 0; color: rgba(255,255,255,0.88); }
-body.page-home .stat-desc { max-width: 27ch; margin: 0; font-size: 13.5px; line-height: 1.55; color: rgba(255,255,255,0.74); }
 
 /* ---------- OpenAI Select Partner: tinted panel so the dark banner reads as its own object ---------- */
 body.page-home .ed-milestone { background: radial-gradient(ellipse 60% 80% at 88% 45%, rgba(96,165,250,0.34), transparent 62%), radial-gradient(ellipse 50% 60% at 0% 100%, rgba(29,78,216,0.28), transparent 60%), linear-gradient(160deg, #0b0d12 0%, #0b0d12 55%, #0b0d12 100%); }
@@ -1612,9 +1599,6 @@ body.page-home .ed-post-more { margin: 34px 0 0; }
 @media (max-width: 991px) {
   body.page-home .ed-section { padding: 72px 0; }
   body.page-home .sec-head { margin-bottom: 38px; }
-  body.page-home .stats-grid { grid-template-columns: 1fr 1fr; gap: 36px 0; }
-  body.page-home .stat-item:nth-child(3) { border-left: 0; padding-left: 0; }
-  body.page-home .stat-item { padding: 6px 24px; }
   body.page-home .why-3, body.page-home .why-4, body.page-home .why-5 { grid-column: span 6; }
   body.page-home .why-wide { grid-column: span 12; }
   body.page-home .why-4 { grid-column: span 6; }
@@ -1626,9 +1610,6 @@ body.page-home .ed-post-more { margin: 34px 0 0; }
 }
 @media (max-width: 640px) {
   body.page-home .ed-section { padding: 60px 0; }
-  body.page-home .stats-band { padding: 52px 0; }
-  body.page-home .stats-grid { grid-template-columns: 1fr; gap: 30px; }
-  body.page-home .stat-item, body.page-home .stat-item:nth-child(3) { border-left: 0; padding: 0; }
   body.page-home .why-3, body.page-home .why-4, body.page-home .why-5, body.page-home .why-wide { grid-column: span 12; }
   body.page-home .flow-grid { grid-template-columns: 1fr; }
   body.page-home .tst-feature { padding: 32px 24px 26px; }
@@ -1675,22 +1656,6 @@ body.page-home .partner-fig img { display: block; width: 100%; height: auto; }
 body.page-home .partner-fig figcaption { margin-top: 14px; font-size: 13px; color: var(--ink-3); }
 
 /* ---------- Why choose: numbered list, sticky heading ---------- */
-body.page-home .why2 { padding: 104px 0; background: #fff; }
-body.page-home .why2-grid { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: 80px; align-items: start; }
-body.page-home .why2-head { position: sticky; top: 112px; }
-body.page-home .why2-head h2 { max-width: 15ch; margin: 0 0 18px; font-family: var(--font-display); font-size: clamp(2rem, 3.2vw, 2.85rem); font-weight: 500; line-height: 1.1; letter-spacing: -0.02em; color: var(--ink); }
-body.page-home .why2-sub { max-width: 38ch; margin: 0 0 28px; font-size: 1.05rem; line-height: 1.6; color: var(--ink-2); }
-body.page-home .why2-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
-body.page-home .why2-item { display: grid; grid-template-columns: 56px minmax(0, 1fr) 44px; gap: 8px 24px; align-items: start; padding: 34px 0; border-bottom: 1px solid var(--hair); }
-body.page-home .why2-no { padding-top: 5px; font-family: var(--font-display); font-size: 1.05rem; color: var(--accent); }
-body.page-home .why2-body h3 { margin: 0 0 10px; font-family: 'Inter', system-ui, sans-serif; font-size: 1.4rem; font-weight: 600; line-height: 1.25; letter-spacing: -0.015em; color: var(--ink); }
-body.page-home .why2-body p { max-width: 56ch; margin: 0 0 14px; font-size: 1rem; line-height: 1.65; color: var(--ink-2); }
-body.page-home .why2-body .why2-proof { margin: 0; font-size: 13.5px; font-weight: 500; color: var(--ink-3); }
-body.page-home .why2-ico { width: 44px; height: 44px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; color: rgba(9, 13, 22, 0.42); transition: color 0.25s ease; }
-body.page-home .why2-item:hover .why2-ico { color: var(--accent); }
-body.page-home .why2-ico .draw { stroke-dasharray: 80; stroke-dashoffset: 0; }
-html.js body.page-home .why2-item:not(.is-in) .why2-ico .draw { stroke-dashoffset: 80; }
-body.page-home .why2-item.is-in .why2-ico .draw { animation: v10Draw 1.3s cubic-bezier(0.4, 0, 0.2, 1) 0.25s backwards; }
 @keyframes v10Draw { from { stroke-dashoffset: 80; } to { stroke-dashoffset: 0; } }
 
 /* ---------- How we work: a ruled table, one row per step ---------- */
@@ -1755,7 +1720,7 @@ body.page-home .contact2-note a { color: var(--accent); font-weight: 600; text-d
 @media (max-width: 991px) {
   body.page-home .partner, body.page-home .why2, body.page-home .flow2, body.page-home .faq2, body.page-home .contact2 { padding: 72px 0; }
   body.page-home .partner-grid, body.page-home .why2-grid, body.page-home .faq2-grid, body.page-home .contact2 .contact-grid { grid-template-columns: 1fr; gap: 44px; }
-  body.page-home .why2-head, body.page-home .faq2-head { position: static; }
+  body.page-home .faq2-head { position: static; }
   body.page-home .flow2-row { grid-template-columns: 48px 1fr; gap: 6px 16px; }
   body.page-home .flow2-desc, body.page-home .flow2-out { grid-column: 2; }
   body.page-home .flow2-out { margin-top: 14px; }
@@ -1763,8 +1728,6 @@ body.page-home .contact2-note a { color: var(--accent); font-weight: 600; text-d
   body.page-home .flow2-head { margin-bottom: 40px; }
 }
 @media (max-width: 640px) {
-  body.page-home .why2-item { grid-template-columns: 36px minmax(0, 1fr); gap: 6px 14px; padding: 28px 0; }
-  body.page-home .why2-ico { grid-column: 2; width: 36px; height: 36px; margin-top: 12px; }
   body.page-home .contact2 .contact-card-box { padding: 26px 20px; }
   body.page-home .contact2-meta > div { grid-template-columns: 80px 1fr; }
   body.page-home .faq2 .faq-answer-pane { padding-right: 0; }
@@ -1847,10 +1810,6 @@ body.page-home .think-list p { max-width: 50ch; margin: 0; font-size: 1rem; line
   body.page-home .think-list li { grid-template-columns: 36px minmax(0, 1fr); gap: 6px 12px; padding: 20px 0; }
 }
 
-/* Section rhythm: white and light grey alternate down the homepage (cards stay white) */
-body.page-home .services-section { background: var(--paper-2); }
-body.page-home .tool-band { background: #ffffff; }
-body.page-home .blog-section { background: var(--paper-2); }
 
 /* Hero: proof row under the buttons, "see work" link, and the phone layout.
    On phones the photo stays first (it is your face and the personal-brand signal) but is cropped
@@ -1876,4 +1835,66 @@ body.page-home .blog-section { background: var(--paper-2); }
   .hero-proof > div { padding-right: 12px; margin-right: 12px; }
   .hero-proof strong { font-size: 1.4rem; }
   .hero-proof span { font-size: 12px; }
+}
+
+/* ---------- Stats: four bordered cards on a light-grey band ---------- */
+body.page-home .stats-band { padding: 88px 0; background: var(--paper-2); color: var(--ink); }
+body.page-home .stats-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+body.page-home .stat-item { padding: 28px 26px 30px; background: #fff; border: 1px solid var(--hair); border-radius: 20px; transition: border-color 0.2s ease; }
+body.page-home .stat-item:hover { border-color: var(--ink); }
+body.page-home .stat-ico { display: inline-flex; align-items: center; justify-content: center; width: 54px; height: 54px; border-radius: 15px; color: #fff; }
+body.page-home .stat-ico svg { width: 26px; height: 26px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+body.page-home .stat-label { margin: 24px 0 10px; font-family: var(--mono); font-size: 11.5px; font-weight: 700; letter-spacing: 0.11em; text-transform: uppercase; color: var(--ink-3); }
+body.page-home .stat-value { display: flex; align-items: baseline; flex-wrap: wrap; margin: 0 0 12px; font-family: 'Inter', system-ui, sans-serif; font-size: clamp(2.3rem, 3.6vw, 3.1rem); font-weight: 800; line-height: 1; letter-spacing: -0.035em; color: var(--ink); }
+body.page-home .stat-suffix { color: var(--accent); }
+body.page-home .stat-unit { margin-left: 6px; font-size: 1.02rem; font-weight: 600; letter-spacing: 0; color: var(--ink-2); }
+body.page-home .stat-desc { max-width: 28ch; margin: 0; font-size: 14px; line-height: 1.55; color: var(--ink-2); }
+
+/* ---------- Why choose: five bordered cards with large icon tiles ---------- */
+body.page-home .why2 { padding: 104px 0; background: #fff; }
+body.page-home .why2-head { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: 20px 64px; align-items: end; margin: 0 0 52px; }
+body.page-home .why2-head h2 { max-width: 16ch; margin: 0; font-family: var(--font-display); font-size: clamp(2rem, 3.4vw, 3rem); font-weight: 500; line-height: 1.1; letter-spacing: -0.02em; color: var(--ink); }
+body.page-home .why2-sub { max-width: 46ch; margin: 0 0 20px; font-size: 1.08rem; line-height: 1.65; color: var(--ink-2); }
+body.page-home .why2-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 20px; }
+body.page-home .why2-item { position: relative; grid-column: span 2; display: flex; flex-direction: column; padding: 30px 28px 28px; background: var(--paper-2); border: 1px solid var(--hair); border-radius: 20px; transition: border-color 0.2s ease, background 0.2s ease; }
+body.page-home .why2-item:nth-child(n+4) { grid-column: span 3; }
+body.page-home .why2-item:hover { border-color: var(--ink); background: #fff; }
+body.page-home .why2-icon { display: inline-flex; align-items: center; justify-content: center; align-self: flex-start; width: 62px; height: 62px; margin: 0 0 26px; border-radius: 17px; background: var(--tone); box-shadow: 0 14px 26px -12px var(--tone); }
+body.page-home .why2-ico { width: 32px; height: 32px; fill: none; stroke: #fff; stroke-width: 2.1; stroke-linecap: round; stroke-linejoin: round; }
+body.page-home .why2-no { position: absolute; top: 28px; right: 28px; font-family: var(--font-display); font-size: 1.05rem; color: var(--ink-3); }
+body.page-home .why2-body h3 { margin: 0 0 10px; font-family: 'Inter', system-ui, sans-serif; font-size: 1.3rem; font-weight: 700; line-height: 1.25; letter-spacing: -0.015em; color: var(--ink); }
+body.page-home .why2-body p { margin: 0 0 14px; font-size: 1rem; line-height: 1.65; color: var(--ink-2); }
+body.page-home .why2-body .why2-proof { margin: 0; padding-top: 14px; border-top: 1px solid var(--hair); font-size: 13.5px; font-weight: 600; color: var(--ink-3); }
+body.page-home .why2-ico .draw { stroke-dasharray: 80; stroke-dashoffset: 0; }
+html.js body.page-home .why2-item:not(.is-in) .why2-ico .draw { stroke-dashoffset: 80; }
+body.page-home .why2-item.is-in .why2-ico .draw { animation: v10Draw 1.3s cubic-bezier(0.4, 0, 0.2, 1) 0.25s backwards; }
+
+/* ---------- Section rhythm: white and light grey alternate in this order ----------
+   hero W, stats G, logos W, OpenAI G, why W, services G, work W, testimonials G, principles W,
+   call-to-action G, process W, tools G, notes W, FAQ G, contact W */
+body.page-home .think { background: #fff; }
+body.page-home .services-section { background: var(--paper-2); }
+body.page-home .cta-wrap { background: var(--paper-2); }
+body.page-home .cta2-side { background: #fff; }
+body.page-home .flow2 { background: #fff; }
+body.page-home .tool-band { background: var(--paper-2); }
+body.page-home .blog-section { background: #fff; }
+body.page-home .faq2 { background: var(--paper-2); }
+body.page-home .contact2 { background: #fff; }
+
+@media (max-width: 991px) {
+  body.page-home .stats-band { padding: 64px 0; }
+  body.page-home .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+  body.page-home .why2 { padding: 72px 0; }
+  body.page-home .why2-head { grid-template-columns: 1fr; gap: 16px; margin-bottom: 36px; }
+  body.page-home .why2-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+  body.page-home .why2-item, body.page-home .why2-item:nth-child(n+4) { grid-column: span 1; }
+  body.page-home .why2-item:nth-child(5) { grid-column: span 2; }
+}
+@media (max-width: 640px) {
+  body.page-home .stats-band { padding: 52px 0; }
+  body.page-home .stats-grid { grid-template-columns: 1fr; gap: 14px; }
+  body.page-home .stat-item { padding: 24px 22px 26px; }
+  body.page-home .why2-list { grid-template-columns: 1fr; }
+  body.page-home .why2-item, body.page-home .why2-item:nth-child(n+4), body.page-home .why2-item:nth-child(5) { grid-column: span 1; padding: 26px 22px 24px; }
 }
