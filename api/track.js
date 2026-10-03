@@ -11,7 +11,8 @@ const ALLOWED_EVENTS = {
   call: 'Call',
   whatsapp: 'WhatsApp',
   book_call: 'Book a call',
-  email: 'Email'
+  email: 'Email',
+  picker: 'Hero picker'
 };
 const WINDOW_MS = 60 * 1000;
 const MAX_PER_WINDOW = 30;
