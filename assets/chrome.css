@@ -70,6 +70,56 @@ html.sc-lock { overflow: hidden; }
 .sc-drawer a { display: block; padding: 13px 0; font-size: 16px; font-weight: 600; color: var(--sc-ink); text-decoration: none; border-bottom: 1px solid var(--sc-rule); }
 .sc-drawer a.sc-drawer-cta { margin-top: 22px; padding: 15px; text-align: center; background: var(--sc-accent); color: #fff; border: 0; border-radius: 10px; }
 
+/* ---------- Header extras: AI item, call buttons, animated Book a Call ---------- */
+.sc-item-ai { margin-right: 6px; }
+.sc-item-ai:hover, .sc-item-ai:focus-within { background: none; }
+.sc-ai { position: relative; display: inline-flex; align-items: center; gap: 7px; padding: 9px 16px 9px 12px; border-radius: 10px; text-decoration: none; background: linear-gradient(135deg, #e9f6ef, #f7fcf9); border: 1px solid rgba(14, 124, 74, 0.28); font-size: 14.5px; font-weight: 800; line-height: 1; transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease; }
+.sc-ai:hover { border-color: var(--sc-accent); box-shadow: 0 8px 20px -8px rgba(14, 124, 74, 0.55); transform: translateY(-1px); }
+.sc-ai-txt { letter-spacing: 0.02em; background: linear-gradient(100deg, #0a5c37 0%, #20a468 30%, #0a5c37 50%, #3fae7c 75%, #0a5c37 100%); background-size: 220% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; animation: sc-ai-flow 4.5s linear infinite; }
+.sc-spark { fill: var(--sc-accent); pointer-events: none; }
+.sc-spark-main { width: 14px; height: 14px; animation: sc-spark-pulse 2.4s ease-in-out infinite; }
+.sc-spark-a, .sc-spark-b { position: absolute; fill: var(--sc-accent-bright); animation: sc-twinkle 2.8s ease-in-out infinite; }
+.sc-spark-a { top: -5px; right: 10px; width: 9px; height: 9px; }
+.sc-spark-b { bottom: -4px; right: -3px; width: 8px; height: 8px; animation-delay: 1.3s; }
+.sc-ai:hover .sc-spark-main { animation-duration: 1s; }
+.sc-ai:hover .sc-spark-a, .sc-ai:hover .sc-spark-b { animation-duration: 1.2s; }
+@keyframes sc-ai-flow { to { background-position: -220% 0; } }
+@keyframes sc-spark-pulse { 0%, 100% { transform: scale(0.85) rotate(0deg); } 50% { transform: scale(1.15) rotate(25deg); } }
+@keyframes sc-twinkle { 0%, 100% { transform: scale(0.3) rotate(0deg); opacity: 0.1; } 50% { transform: scale(1) rotate(90deg); opacity: 1; } }
+
+.sc-call, .sc-wa { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 38px; border-radius: 10px; border: 1px solid var(--sc-rule); background: #fff; color: var(--sc-ink); font-size: 14px; font-weight: 700; line-height: 1; text-decoration: none; white-space: nowrap; transition: border-color 0.18s ease, background 0.18s ease, color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease; }
+.sc-call { padding: 0 15px; }
+.sc-wa { width: 38px; color: #1fa855; }
+.sc-call svg { width: 17px; height: 17px; transform-origin: 50% 50%; animation: sc-ring 5s ease-in-out infinite; }
+.sc-wa svg { width: 20px; height: 20px; }
+.sc-call:hover { border-color: var(--sc-accent); color: var(--sc-accent); transform: translateY(-1px); }
+.sc-wa:hover { background: #25d366; border-color: #25d366; color: #fff; transform: translateY(-1px); box-shadow: 0 8px 18px -8px rgba(37, 211, 102, 0.7); }
+@keyframes sc-ring { 0%, 72%, 100% { transform: rotate(0); } 76% { transform: rotate(-14deg); } 80% { transform: rotate(12deg); } 84% { transform: rotate(-10deg); } 88% { transform: rotate(8deg); } 92% { transform: rotate(0); } }
+
+.sc-cta { position: relative; overflow: hidden; }
+.sc-cta::after { content: ''; position: absolute; top: 0; bottom: 0; left: -70%; width: 45%; background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.4), transparent); transform: skewX(-20deg); animation: sc-shine 5s ease-in-out infinite; pointer-events: none; }
+.sc-cta svg { animation: sc-fwd 2.2s cubic-bezier(0.5, 0, 0.2, 1) infinite; }
+.sc-cta:hover svg { animation-duration: 0.9s; }
+@keyframes sc-fwd { 0%, 45% { transform: translateX(0); opacity: 1; } 65% { transform: translateX(7px); opacity: 0; } 66% { transform: translateX(-7px); opacity: 0; } 85%, 100% { transform: translateX(0); opacity: 1; } }
+@keyframes sc-shine { 0%, 55% { left: -70%; } 85%, 100% { left: 130%; } }
+
+.sc-drawer a.sc-drawer-ai { display: inline-flex; align-items: center; gap: 9px; margin-top: 16px; padding: 12px 16px; border: 1px solid rgba(14, 124, 74, 0.28); border-radius: 10px; background: linear-gradient(135deg, #e9f6ef, #f7fcf9); font-weight: 800; }
+.sc-drawer a.sc-drawer-ai .sc-spark-main { width: 15px; height: 15px; }
+.sc-drawer-contact { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 22px; }
+.sc-drawer .sc-drawer-contact a { display: inline-flex; align-items: center; justify-content: center; gap: 9px; padding: 14px 10px; border: 1px solid var(--sc-rule); border-radius: 10px; font-size: 15px; font-weight: 700; }
+.sc-drawer .sc-drawer-contact svg { width: 18px; height: 18px; }
+.sc-drawer .sc-drawer-wa { background: #25d366; border-color: #25d366; color: #fff; }
+.sc-drawer a.sc-drawer-cta { margin-top: 12px; }
+
+@media (max-width: 1180px) { .sc-call { width: 38px; padding: 0; } .sc-call span { display: none; } }
+@media (max-width: 991px) { .sc-actions { gap: 8px; } }
+@media (max-width: 480px) { .sc-actions { gap: 6px; } .sc-call, .sc-wa { width: 36px; height: 36px; } }
+@media (max-width: 340px) { .sc-wa { display: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .sc-ai-txt, .sc-spark-main, .sc-spark-a, .sc-spark-b, .sc-call svg, .sc-cta svg, .sc-cta::after { animation: none; }
+  .sc-spark-a, .sc-spark-b { opacity: 0.7; }
+}
+
 /* ---------- Footer ---------- */
 .sc-footer { position: relative; overflow: hidden; background: var(--sc-dark); color: #ffffff; padding: 72px 0 32px; font-family: var(--font-body, "Inter", system-ui, -apple-system, "Segoe UI", sans-serif); line-height: 1.5; }
 .sc-footer::before { content: ''; position: absolute; left: 50%; top: -240px; width: 900px; height: 480px; transform: translateX(-50%); background: radial-gradient(ellipse at center, rgba(14, 124, 74, 0.34), transparent 68%); pointer-events: none; }
