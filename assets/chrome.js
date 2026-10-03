@@ -117,6 +117,36 @@
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
 
+  // Contact-button tracking: which button was tapped and where. Sends to /api/track (a no-op until
+  // CLICK_WEBHOOK_URL is set on the host) and also to dataLayer / gtag / plausible if one is ever added.
+  function whereOnPage(el) {
+    if (el.closest('#sc-drawer')) return 'mobile menu';
+    if (el.closest('.sc-header')) return 'nav';
+    if (el.closest('.sc-footer')) return 'footer';
+    if (el.closest('#hero')) return 'hero';
+    return 'page';
+  }
+  document.addEventListener('click', function (event) {
+    var link = event.target.closest && event.target.closest('a');
+    if (!link) return;
+    var href = link.getAttribute('href') || '';
+    var name = null;
+    if (href.indexOf('tel:') === 0) name = 'call';
+    else if (href.indexOf('wa.me') !== -1) name = 'whatsapp';
+    else if (link.hasAttribute('data-calendly')) name = 'book_call';
+    else if (href.indexOf('mailto:') === 0) name = 'email';
+    if (!name) return;
+    var where = whereOnPage(link);
+    try {
+      var payload = JSON.stringify({ event: name, where: where, page: location.pathname });
+      if (navigator.sendBeacon) navigator.sendBeacon('/api/track', new Blob([payload], { type: 'application/json' }));
+      var detail = { event: 'contact_click', contact_method: name, click_location: where, page_path: location.pathname };
+      if (window.dataLayer) window.dataLayer.push(detail);
+      if (typeof window.gtag === 'function') window.gtag('event', 'contact_click', { contact_method: name, click_location: where });
+      if (typeof window.plausible === 'function') window.plausible('contact_click', { props: { method: name, location: where } });
+    } catch (e) { /* tracking must never get in the way of the click */ }
+  }, true);
+
   document.querySelectorAll('[data-year]').forEach(function (el) {
     el.textContent = new Date().getFullYear();
   });

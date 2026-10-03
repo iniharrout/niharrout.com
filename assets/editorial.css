@@ -1296,7 +1296,7 @@ body.page-home .hero-section .wrap { position: relative; z-index: 1; padding-top
   background: #ffffff; border: 1px solid var(--rule);
   padding: 6px 16px 6px 12px; border-radius: 999px;
   font-size: 13px; font-weight: 600; color: var(--ink);
-  text-decoration: none; margin: 0 0 24px;
+  text-decoration: none; margin: 0;
   box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
   transition: border-color 0.2s ease, transform 0.2s ease;
 }
@@ -1395,60 +1395,6 @@ body.page-home .hero-sub {
 .hero-btn-secondary svg { transition: transform 0.2s ease; }
 .hero-btn-secondary:hover svg { transform: translateY(2px); }
 
-.hero-philosophy-band {
-  margin-top: 56px;
-  background: #ffffff;
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  border-left: 3px solid #1d4ed8;
-  border-radius: 10px;
-  padding: 30px 36px;
-  box-shadow: none;
-}
-
-.philosophy-content {
-  position: relative;
-}
-
-.philosophy-icon {
-  position: absolute;
-  top: -18px;
-  left: -10px;
-  font-size: 48px;
-  font-family: serif;
-  color: rgba(29, 78, 216, 0.12);
-  line-height: 1;
-  pointer-events: none;
-}
-
-.philosophy-quote {
-  margin: 0 0 12px;
-  font-family: var(--font-display);
-  font-size: clamp(1.25rem, 2.1vw, 1.6rem);
-  line-height: 1.35;
-  letter-spacing: -0.015em;
-  color: #090d16;
-  font-weight: 500;
-  border: 0;
-  padding: 0;
-}
-
-.philosophy-quote .pq-lead { display: block; margin: 0 0 10px; font-family: 'Inter', system-ui, sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; line-height: 1.5; color: #64748b; }
-.philosophy-quote .pq-line { display: block; }
-.philosophy-quote em {
-  font-style: normal;
-  color: #1d4ed8;
-  font-weight: 700;
-}
-
-.philosophy-author {
-  font-size: 13px;
-  color: #64748b;
-}
-
-.philosophy-author strong {
-  color: #090d16;
-}
-
 /* ---------- Responsive: hero ---------- */
 @media (max-width: 991px) {
   body.page-home .hero-section .wrap { padding-top: 48px; padding-bottom: 32px; }
@@ -1466,7 +1412,6 @@ body.page-home .hero-sub {
   .hero-actions-suite { flex-direction: column; align-items: stretch; }
   .hero-btn-primary, .hero-btn-secondary { justify-content: center; }
   .hero-trust { flex-direction: column; align-items: center; gap: 8px; }
-  .hero-philosophy-band { padding: 24px 20px; }
 }
 
 /* ---------- Milestone Announcement Title Constraint ---------- */
@@ -1906,3 +1851,29 @@ body.page-home .think-list p { max-width: 50ch; margin: 0; font-size: 1rem; line
 body.page-home .services-section { background: var(--paper-2); }
 body.page-home .tool-band { background: #ffffff; }
 body.page-home .blog-section { background: var(--paper-2); }
+
+/* Hero: proof row under the buttons, "see work" link, and the phone layout.
+   On phones the photo stays first (it is your face and the personal-brand signal) but is cropped
+   short so the headline and the main button still show on the first screen. */
+.hero-trust .hero-trust-more::before { display: none; }
+.hero-worklink { display: inline-flex; align-items: center; gap: 6px; color: var(--accent); font-weight: 700; text-decoration: none; }
+.hero-worklink:hover { color: var(--accent-deep); text-decoration: underline; text-underline-offset: 4px; }
+.hero-proof { display: flex; margin: 28px 0 22px; padding-top: 24px; border-top: 1px solid var(--hair); }
+.hero-proof > div { padding-right: 30px; margin-right: 30px; border-right: 1px solid var(--hair); }
+.hero-proof > div:last-child { padding-right: 0; margin-right: 0; border-right: 0; }
+.hero-proof strong { display: block; font-family: var(--font-display); font-size: 2rem; line-height: 1; font-weight: 500; color: var(--ink); }
+.hero-proof span { display: block; margin-top: 6px; font-size: 13px; color: var(--ink-3); }
+@media (max-width: 991px) {
+  .hero-split { gap: 26px; }
+  .hero-portrait { aspect-ratio: 16 / 10; max-height: 230px; }
+  .hero-portrait img { height: 100%; object-fit: cover; object-position: 50% 30%; }
+  .hero-proof { justify-content: center; margin: 22px 0 18px; padding-top: 20px; }
+  .hero-proof > div { padding-right: 18px; margin-right: 18px; text-align: left; }
+  .hero-proof strong { font-size: 1.6rem; }
+}
+@media (max-width: 560px) {
+  body.page-home .hero-section .wrap { padding-top: 28px; }
+  .hero-proof > div { padding-right: 12px; margin-right: 12px; }
+  .hero-proof strong { font-size: 1.4rem; }
+  .hero-proof span { font-size: 12px; }
+}
