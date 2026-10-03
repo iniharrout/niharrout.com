@@ -1,16 +1,15 @@
 /**
  * Lightweight Local Development Server for NiharRout.com
- * Serves static files AND executes /api/chat serverless handler locally.
+ * Serves static files AND executes the /api/lead serverless handler locally.
  * Zero npm dependencies needed - uses native Node.js http, fs, and path.
  */
 
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
-const chatHandler = require('./api/chat.js');
 const leadHandler = require('./api/lead.js');
 
-// Load .env (gitignored) so local runs pick up LEAD_WEBHOOK_URL and GEMINI_API_KEY like the host does.
+// Load .env (gitignored) so local runs pick up LEAD_WEBHOOK_URL like the host does.
 (function loadEnvFile() {
   try {
     const lines = fs.readFileSync(path.join(__dirname, '.env'), 'utf8').split('\n');
@@ -42,11 +41,6 @@ const MIME_TYPES = {
 const server = http.createServer(async (req, res) => {
   const parsedUrl = new URL(req.url, `http://${req.headers.host}`);
   const pathname = parsedUrl.pathname;
-
-  // Handle /api/chat
-  if (pathname === '/api/chat') {
-    return chatHandler(req, res);
-  }
 
   // Handle /api/lead
   if (pathname === '/api/lead') {
@@ -90,7 +84,7 @@ if (require.main === module) {
   server.listen(PORT, () => {
     console.log(`[Dev Server] running at http://localhost:${PORT}`);
     console.log(`[Dev Server] Serving static files from ${PUBLIC_DIR}`);
-    console.log(`[Dev Server] /api/chat and /api/lead active`);
+    console.log(`[Dev Server] /api/lead active`);
   });
 }
 

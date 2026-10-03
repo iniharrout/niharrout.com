@@ -2834,6 +2834,4 @@ p {
   .cl-button { max-width: 100%; white-space: normal; text-align: center; line-height: 1.25; }
   /* Floating buttons: smaller, and they never sit on top of each other */
   .calendly-badge-widget { right: 12px !important; bottom: 12px !important; }
-  body .nihar-chat-fab { bottom: 68px !important; right: 14px !important; width: 52px !important; height: 52px !important; }
-  body .nihar-chat-panel { bottom: 128px !important; right: 12px !important; }
 }
