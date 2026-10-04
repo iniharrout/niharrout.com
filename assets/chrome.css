@@ -357,3 +357,12 @@ body.page-home .sc-foot-grid { padding-top: 64px; }
 .nr-consent-btn:focus-visible { outline: 3px solid #60a5fa; outline-offset: 2px; }
 @media (max-width: 560px) { .nr-consent { left: 16px; right: 16px; bottom: 16px; width: auto; max-width: none; } }
 @media (prefers-reduced-motion: reduce) { .nr-consent { transition: none; } }
+
+/* ---------- Optional sound effects toggle (off by default) ---------- */
+.nr-sound { position: fixed; left: 20px; bottom: 20px; z-index: 900; display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; padding: 0; border: 1px solid rgba(9, 13, 22, 0.14); border-radius: 50%; background: rgba(255, 255, 255, 0.82); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); color: #6b7280; box-shadow: 0 10px 24px -14px rgba(9, 13, 22, 0.45); cursor: pointer; opacity: 1; transition: opacity 0.25s ease, color 0.15s ease, border-color 0.15s ease, background 0.15s ease, transform 0.15s ease; }
+.nr-sound:hover { color: #0b0d12; border-color: rgba(9, 13, 22, 0.3); transform: translateY(-1px); }
+.nr-sound.is-on { color: #fff; background: #1d4ed8; border-color: #1d4ed8; }
+.nr-sound.is-hidden { opacity: 0; pointer-events: none; }
+.nr-sound:focus-visible { outline: 3px solid #60a5fa; outline-offset: 2px; }
+@media (max-width: 767px) { .nr-sound { display: none; } }
+@media (prefers-reduced-motion: reduce) { .nr-sound { transition: none; } }

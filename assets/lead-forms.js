@@ -108,7 +108,13 @@ function initLeadForms() {
     try {
       sessionStorage.setItem('leadThanks', JSON.stringify({ name: lead.name, service: lead.service, city: lead.city }));
     } catch (e) { /* storage unavailable: the page still works without personalisation */ }
-    window.location.assign('/thank-you');
+    // with sound effects switched on, let the chime finish before the page changes
+    if (window.nrSound && window.nrSound.enabled()) {
+      window.nrSound.success();
+      setTimeout(function () { window.location.assign('/thank-you'); }, 520);
+    } else {
+      window.location.assign('/thank-you');
+    }
   }
 
   Array.prototype.forEach.call(forms, function (form) {

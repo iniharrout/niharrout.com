@@ -100,7 +100,7 @@ function footer() {
   <!-- /chrome:footer -->
 
   <script src="/assets/site-enhancements.js?v=blue4"></script>
-    <script src="/assets/lead-forms.js?v=blue4"></script>
+    <script src="/assets/lead-forms.js?v=blue5"></script>
 </body>
 </html>
 `;
