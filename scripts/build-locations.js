@@ -12,6 +12,7 @@
  * Content lives in scripts/locations/*.js. Zero dependencies.
  */
 
+const { bar: aiBar } = require('./ai-hero');
 const fs = require('fs');
 const path = require('path');
 
@@ -75,7 +76,7 @@ function head({ title, description, path: urlPath, ogType = 'website', graph, no
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap">
   <link rel="stylesheet" href="/assets/design-system.css?v=blue4">
-  <link rel="stylesheet" href="/assets/location-pages.css?v=blue4">${theme === 'ai' ? '\n  <link rel="stylesheet" href="/assets/ai-theme.css?v=ai4">' : ''}
+  <link rel="stylesheet" href="/assets/location-pages.css?v=blue4">${theme === 'ai' ? '\n  <link rel="stylesheet" href="/assets/ai-theme.css?v=ai7">' : ''}
 
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
@@ -468,6 +469,7 @@ function buildServicePage(c, svcKey) {
             <div class="hs-eyebrow"><span class="dot"></span>${esc(c.eyebrow)}</div>
             <h1>${esc(fill(svc.h1, c))}</h1>
             <p class="hero-sub">${esc(fill(svc.heroSub, c))}</p>
+            ${svcKey === 'ai' ? aiBar() : ''}
             <div class="hero-ctas">
               <a href="https://calendly.com/creuto/meet" data-calendly="true" class="cl-button -primary btn-book-call">Book a Free Call <span>→</span></a>
               <a href="#pricing" class="cl-button -secondary">See pricing ↓</a>
