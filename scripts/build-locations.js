@@ -57,7 +57,10 @@ function head({ title, description, path: urlPath, ogType = 'website', graph, no
   <meta name="author" content="Nihar Ranjan Rout">
   <meta name="robots" content="${noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large'}">
   <link rel="canonical" href="${canonical}">
-  <link rel="icon" href="/assets/nihar.jpg" type="image/jpeg">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
   <meta property="og:type" content="${ogType}">
   <meta property="og:site_name" content="Nihar Ranjan Rout | Creuto">
