@@ -8,6 +8,24 @@
 (function () {
   'use strict';
 
+  // The project-brief form is tucked away until someone asks for it.
+  var toggle = document.querySelector('.cx-brief-toggle');
+  var panel = document.getElementById('briefPanel');
+  function setBrief(open) {
+    if (!toggle || !panel) return;
+    panel.hidden = !open;
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.classList.toggle('is-open', open);
+  }
+  if (toggle && panel) {
+    toggle.addEventListener('click', function () { setBrief(panel.hidden); });
+    document.addEventListener('click', function (event) {
+      var link = event.target.closest && event.target.closest('a[data-open-brief]');
+      if (link) setBrief(true);
+    });
+    if (location.hash === '#brief') { setBrief(true); }
+  }
+
   var card = document.getElementById('liveCard');
   if (!card || typeof Intl === 'undefined' || !Intl.DateTimeFormat) return;
 
@@ -25,12 +43,6 @@
     var opts = { hour: 'numeric', minute: '2-digit', hour12: true };
     if (tz) opts.timeZone = tz;
     return new Intl.DateTimeFormat('en-US', opts);
-  }
-
-  function hourIn(tz) {
-    var o = { hour: 'numeric', hourCycle: 'h23' };
-    if (tz) o.timeZone = tz;
-    return parseInt(new Intl.DateTimeFormat('en-GB', o).format(new Date()), 10);
   }
 
   // Offset (minutes) of a zone from UTC at a given instant, derived from formatted parts.
@@ -56,16 +68,11 @@
     youEl.textContent = you.format(now);
 
     var diff = offsetMinutes(HOME_TZ, now) - offsetMinutes(visitorTz, now);
-    var hour = hourIn(HOME_TZ);
-    var night = hour >= 22 || hour < 7;
     var zone = '';
-    if (diff === 0) zone = 'We are in the same time zone.';
-    else if (diff > 0) zone = 'I am ' + gap(diff) + ' ahead of you.';
-    else zone = 'I am ' + gap(diff) + ' behind you.';
-    var state = night
-      ? 'It is night here, so a written brief is a good way to start. I reply within 24 hours.'
-      : 'It is daytime here. WhatsApp or a call is the quickest way to reach me.';
-    noteEl.textContent = zone + ' ' + state;
+    if (diff === 0) zone = 'same time zone as you';
+    else if (diff > 0) zone = gap(diff) + ' ahead of you';
+    else zone = gap(diff) + ' behind you';
+    noteEl.textContent = zone;
   }
 
   var WEATHER = {

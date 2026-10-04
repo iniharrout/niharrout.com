@@ -338,3 +338,7 @@ html.sc-lock .calendly-badge-widget { display: none !important; }
 /* Show the phone number itself in the header when there is room for it. */
 .sc-call .sc-call-num { display: none; }
 @media (min-width: 1360px) { .sc-call .sc-call-label { display: none; } .sc-call .sc-call-num { display: inline; font-variant-numeric: tabular-nums; } }
+
+/* Homepage: the contact section right above already offers call, WhatsApp and booking, so the footer does not repeat them. */
+body.page-home .sc-foot-top { display: none; }
+body.page-home .sc-foot-grid { padding-top: 64px; }
