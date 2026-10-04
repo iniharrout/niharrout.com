@@ -881,6 +881,9 @@ function buildThankYou() {
         var raw = sessionStorage.getItem('leadThanks');
         if (!raw) return;
         var lead = JSON.parse(raw) || {};
+        // count the enquiry once in Google Analytics, then clear it so a page refresh does not count it again
+        if (typeof gtag === 'function') gtag('event', 'generate_lead', { lead_type: lead.service || 'enquiry', lead_city: lead.city || '' });
+        sessionStorage.removeItem('leadThanks');
         var first = String(lead.name || '').trim().split(/\\s+/)[0];
         if (first) document.getElementById('ty-title').textContent = 'Thank you, ' + first;
         var topic = lead.service ? lead.service + ' ' : '';
