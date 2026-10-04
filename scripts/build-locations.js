@@ -67,11 +67,11 @@ function head({ title, description, path: urlPath, ogType = 'website', graph, no
   <meta property="og:url" content="${canonical}">
   <meta property="og:title" content="${esc(title)}">
   <meta property="og:description" content="${esc(description)}">
-  <meta property="og:image" content="${SITE}/assets/niharrout-og-image.png">
+  <meta property="og:image" content="${SITE}/assets/og/default.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${esc(title)}">
   <meta name="twitter:description" content="${esc(description)}">
-  <meta name="twitter:image" content="${SITE}/assets/niharrout-og-image.png">
+  <meta name="twitter:image" content="${SITE}/assets/og/default.jpg">
 
   ${graph ? jsonLd({ '@context': 'https://schema.org', '@graph': graph }) : ''}
 
