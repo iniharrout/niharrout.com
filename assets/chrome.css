@@ -179,11 +179,6 @@ html.sc-lock { overflow: hidden; }
 :is(.sc-menu, .sc-acc-inner) a[href="/work/custom-erp-manufacturing"], :is(.sc-menu, .sc-acc-inner) a[href="/technology"] { --tone: var(--t-ink); }
 
 /* homepage */
-body.page-home .stat-item:nth-child(1) .stat-ico { --tone: var(--t-blue); }
-body.page-home .stat-item:nth-child(2) .stat-ico { --tone: var(--t-orange); }
-body.page-home .stat-item:nth-child(3) .stat-ico { --tone: var(--t-violet); }
-body.page-home .stat-item:nth-child(4) .stat-ico { --tone: var(--t-rose); }
-body.page-home .stat-ico { background: var(--tone); box-shadow: 0 12px 22px -12px var(--tone); }
 
 .bento-services-grid > :nth-child(1) { --tone: var(--t-cyan); }
 .bento-services-grid > :nth-child(2) { --tone: var(--t-orange); }

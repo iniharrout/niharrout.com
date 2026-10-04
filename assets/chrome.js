@@ -124,6 +124,7 @@
     if (el.closest('.sc-header')) return 'nav';
     if (el.closest('.sc-footer')) return 'footer';
     if (el.closest('#hero')) return 'hero';
+    if (el.closest('#next')) return 'next steps';
     if (el.closest('#faq')) return 'faq';
     if (el.closest('#contact')) return 'contact section';
     return 'page';
