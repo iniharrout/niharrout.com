@@ -41,7 +41,7 @@ const pageUrl = (c, key) => `/locations/${c.slug}/${services[key].slug}`;
 
 /* ---------- Shared page chrome ---------- */
 
-function head({ title, description, path: urlPath, ogType = 'website', graph, noindex = false }) {
+function head({ title, description, path: urlPath, ogType = 'website', graph, noindex = false, theme = '' }) {
   if (title.length > 65) warnings.push(`title >65 chars (${title.length}): ${title}`);
   if (description.length > 165) warnings.push(`description >165 chars (${description.length}): ${urlPath}`);
   const canonical = SITE + urlPath;
@@ -75,13 +75,13 @@ function head({ title, description, path: urlPath, ogType = 'website', graph, no
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap">
   <link rel="stylesheet" href="/assets/design-system.css?v=blue4">
-  <link rel="stylesheet" href="/assets/location-pages.css?v=blue4">
+  <link rel="stylesheet" href="/assets/location-pages.css?v=blue4">${theme === 'ai' ? '\n  <link rel="stylesheet" href="/assets/ai-theme.css?v=ai4">' : ''}
 
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </head>
 
-<body>
+<body${theme === 'ai' ? ' class="ai-theme"' : ''}>
 `;
 }
 
@@ -119,7 +119,7 @@ const breadcrumbs = (trail) => `
 const proofStrip = () => `
         <div class="loc-proof" aria-label="Track record">
           <div><strong>8+</strong><span>years in product management</span></div>
-          <div><strong>14+</strong><span>production platforms shipped</span></div>
+          <div><strong>50+</strong><span>products shipped</span></div>
           <div><strong>100%</strong><span>in-house engineering squad</span></div>
           <div><strong>100%</strong><span>code and IP ownership</span></div>
         </div>`;
@@ -494,7 +494,7 @@ ${relatedSection(c, svcKey)}
 ${ctaBand(`Ready to start ${svc.nameLc} in ${c.name}?`, 'Book a discovery call with Nihar. We will scope features, timeline and budget before you commit to anything.')}
   </main>
 `;
-  return head({ title, description, path: urlPath, graph }) + body + footer(c);
+  return head({ title, description, path: urlPath, graph, theme: svcKey === 'ai' ? 'ai' : '' }) + body + footer(c);
 }
 
 /* ---------- Page: city hub ---------- */

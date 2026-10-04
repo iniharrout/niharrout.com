@@ -1,0 +1,90 @@
+/*
+ * AI pages: a dark "intelligence" hero and dark stack band, in the same palette as the rest of the site
+ * (Creuto blue on near-black, white and light grey). Applied with <body class="ai-theme"> on the AI service
+ * page, the Bhubaneswar AI page and every city AI page. Motion is slow and switches off for reduced-motion users.
+ */
+body.ai-theme { --ai-bg: #0b0d12; --ai-line: rgba(255, 255, 255, 0.13); --ai-text: #e8edf8; --ai-muted: #a9b6cf; --ai-blue: #60a5fa; }
+
+/* ---------- Hero ---------- */
+body.ai-theme :is(.service-hero,.ed-pagehero,.loc-hero) { position: relative; isolation: isolate; overflow: hidden; padding: 72px 0 88px; background: var(--ai-bg); color: var(--ai-text); border-bottom: 1px solid var(--ai-line); }
+body.ai-theme .loc-hero { padding: 44px 0 84px; }
+body.ai-theme :is(.service-hero,.ed-pagehero,.loc-hero)::before { content: ''; position: absolute; inset: 0; z-index: -2; background: radial-gradient(60% 70% at 88% 6%, rgba(59, 130, 246, 0.32), transparent 62%), radial-gradient(48% 58% at 6% 100%, rgba(29, 78, 216, 0.30), transparent 66%), radial-gradient(rgba(255, 255, 255, 0.075) 1px, transparent 1.3px) 0 0 / 28px 28px; animation: ai-glow 16s ease-in-out infinite alternate; }
+body.ai-theme :is(.service-hero,.ed-pagehero,.loc-hero)::after { content: ''; position: absolute; inset: -4% -2%; z-index: -1; background: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22640%22 height=%22420%22 viewBox=%220 0 640 420%22%3E%3Cg stroke=%22%2360a5fa%22 stroke-opacity=%220.34%22 stroke-width=%221%22 fill=%22none%22%3E%3Cpath d=%22M499 322L512 267%22/%3E%3Cpath d=%22M499 322L556 336%22/%3E%3Cpath d=%22M512 267L560 279%22/%3E%3Cpath d=%22M556 336L587 360%22/%3E%3Cpath d=%22M556 336L560 279%22/%3E%3Cpath d=%22M230 130L226 84%22/%3E%3Cpath d=%22M230 130L181 82%22/%3E%3Cpath d=%22M226 84L181 82%22/%3E%3Cpath d=%22M493 191L512 267%22/%3E%3Cpath d=%22M493 191L441 267%22/%3E%3Cpath d=%22M587 360L560 279%22/%3E%3Cpath d=%22M78 340L51 306%22/%3E%3Cpath d=%22M78 340L40 375%22/%3E%3Cpath d=%22M441 267L512 267%22/%3E%3Cpath d=%22M441 267L370 261%22/%3E%3Cpath d=%22M197 355L236 301%22/%3E%3Cpath d=%22M197 355L275 363%22/%3E%3Cpath d=%22M51 306L66 273%22/%3E%3Cpath d=%22M100 66L72 133%22/%3E%3Cpath d=%22M100 66L181 82%22/%3E%3Cpath d=%22M72 133L181 82%22/%3E%3Cpath d=%22M283 343L275 363%22/%3E%3Cpath d=%22M283 343L236 301%22/%3E%3Cpath d=%22M66 273L123 270%22/%3E%3Cpath d=%22M370 261L337 291%22/%3E%3Cpath d=%22M370 261L320 244%22/%3E%3Cpath d=%22M275 363L236 301%22/%3E%3Cpath d=%22M337 291L320 244%22/%3E%3Cpath d=%22M40 375L51 306%22/%3E%3Cpath d=%22M123 270L51 306%22/%3E%3Cpath d=%22M320 244L296 197%22/%3E%3Cpath d=%22M600 78L493 191%22/%3E%3Cpath d=%22M600 78L560 279%22/%3E%3Cpath d=%22M296 197L230 130%22/%3E%3C/g%3E%3Cg fill=%22%2393c5fd%22%3E%3Ccircle cx=%22499%22 cy=%22322%22 r=%223.2%22 fill-opacity=%220.9%22/%3E%3Ccircle cx=%22499%22 cy=%22322%22 r=%229%22 fill=%22none%22 stroke=%22%2360a5fa%22 stroke-opacity=%220.25%22/%3E%3Ccircle cx=%22512%22 cy=%22267%22 r=%222%22 fill-opacity=%220.55%22/%3E%3Ccircle cx=%22556%22 cy=%22336%22 r=%222%22 fill-opacity=%220.55%22/%3E%3Ccircle cx=%22230%22 cy=%22130%22 r=%222%22 fill-opacity=%220.55%22/%3E%3Ccircle cx=%22560%22 cy=%22279%22 r=%222%22 fill-opacity=%220.55%22/%3E%3Ccircle cx=%22226%22 cy=%2284%22 r=%223.2%22 fill-opacity=%220.9%22/%3E%3Ccircle cx=%22226%22 cy=%2284%22 r=%229%22 fill=%22none%22 stroke=%22%2360a5fa%22 stroke-opacity=%220.25%22/%3E%3Ccircle cx=%22493%22 cy=%22191%22 r=%222%22 fill-opacity=%220.55%22/%3E%3Ccircle cx=%22181%22 cy=%2282%22 r=%222%22 fill-opacity=%220.55%22/%3E%3Ccircle cx=%22587%22 cy=%22360%22 r=%222%22 fill-opacity=%220.55%22/%3E%3Ccircle cx=%2278%22 cy=%22340%22 r=%222%22 fill-opacity=%220.55%22/%3E%3Ccircle cx=%22441%22 cy=%22267%22 r=%223.2%22 fill-opacity=%220.9%22/%3E%3Ccircle cx=%22441%22 cy=%22267%22 r=%229%22 fill=%22none%22 stroke=%22%2360a5fa%22 stroke-opacity=%220.25%22/%3E%3Ccircle cx=%22197%22 cy=%22355%22 r=%222%22 fill-opacity=%220.55%22/%3E%3Ccircle cx=%2251%22 cy=%22306%22 r=%222%22 fill-opacity=%220.55%22/%3E%3Ccircle cx=%22100%22 cy=%2266%22 r=%222%22 fill-opacity=%220.55%22/%3E%3Ccircle cx=%2272%22 cy=%22133%22 r=%222%22 fill-opacity=%220.55%22/%3E%3Ccircle cx=%22283%22 cy=%22343%22 r=%223.2%22 fill-opacity=%220.9%22/%3E%3Ccircle cx=%22283%22 cy=%22343%22 r=%229%22 fill=%22none%22 stroke=%22%2360a5fa%22 stroke-opacity=%220.25%22/%3E%3Ccircle cx=%2266%22 cy=%22273%22 r=%222%22 fill-opacity=%220.55%22/%3E%3Ccircle cx=%22370%22 cy=%22261%22 r=%222%22 fill-opacity=%220.55%22/%3E%3Ccircle cx=%22236%22 cy=%22301%22 r=%222%22 fill-opacity=%220.55%22/%3E%3Ccircle cx=%22275%22 cy=%22363%22 r=%222%22 fill-opacity=%220.55%22/%3E%3Ccircle cx=%22337%22 cy=%22291%22 r=%223.2%22 fill-opacity=%220.9%22/%3E%3Ccircle cx=%22337%22 cy=%22291%22 r=%229%22 fill=%22none%22 stroke=%22%2360a5fa%22 stroke-opacity=%220.25%22/%3E%3Ccircle cx=%2240%22 cy=%22375%22 r=%222%22 fill-opacity=%220.55%22/%3E%3Ccircle cx=%22123%22 cy=%22270%22 r=%222%22 fill-opacity=%220.55%22/%3E%3Ccircle cx=%22320%22 cy=%22244%22 r=%222%22 fill-opacity=%220.55%22/%3E%3Ccircle cx=%22600%22 cy=%2278%22 r=%222%22 fill-opacity=%220.55%22/%3E%3Ccircle cx=%22296%22 cy=%22197%22 r=%223.2%22 fill-opacity=%220.9%22/%3E%3Ccircle cx=%22296%22 cy=%22197%22 r=%229%22 fill=%22none%22 stroke=%22%2360a5fa%22 stroke-opacity=%220.25%22/%3E%3C/g%3E%3C/svg%3E") 0 0 / 640px 420px repeat; opacity: 0.6; -webkit-mask-image: linear-gradient(100deg, transparent 8%, #000 52%); mask-image: linear-gradient(100deg, transparent 8%, #000 52%); animation: ai-drift 90s linear infinite; pointer-events: none; }
+@keyframes ai-glow { from { background-position: 0 0, 0 0, 0 0; } to { background-position: -50px 24px, 36px -24px, 28px 28px; } }
+@keyframes ai-drift { from { background-position: 0 0; } to { background-position: -640px 420px; } }
+
+body.ai-theme :is(.service-hero-title, .ed-page-title, .loc-hero h1) { color: #fff; }
+body.ai-theme :is(.service-hero-sub, .ed-lede, .loc-hero .hero-sub) { color: var(--ai-muted); }
+body.ai-theme :is(.service-hero,.ed-pagehero,.loc-hero) .ed-hero, body.ai-theme :is(.service-hero,.ed-pagehero,.loc-hero) .service-hero-grid { position: relative; z-index: 1; }
+
+/* AI chip: the same sparkle as the "AI" item in the navigation */
+body.ai-theme :is(.service-hero,.ed-pagehero,.loc-hero) :is(.hs-eyebrow, .ed-label) { display: inline-flex; align-items: center; gap: 8px; margin: 0 0 22px; padding: 7px 14px; border: 1px solid rgba(96, 165, 250, 0.4); border-radius: 999px; background: rgba(96, 165, 250, 0.12); font-family: var(--mono, 'JetBrains Mono', ui-monospace, monospace); font-size: 11.5px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #bfdbfe; }
+body.ai-theme :is(.service-hero,.ed-pagehero,.loc-hero) .hs-eyebrow .dot { display: none; }
+body.ai-theme :is(.service-hero,.ed-pagehero,.loc-hero) :is(.hs-eyebrow, .ed-label)::before { content: '\2726'; font-size: 13px; line-height: 1; color: var(--ai-blue); animation: ai-twinkle 3.2s ease-in-out infinite; }
+@keyframes ai-twinkle { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.45; transform: scale(0.82); } }
+
+/* Buttons and small print on dark */
+body.ai-theme :is(.service-hero,.ed-pagehero,.loc-hero) .cl-button.-primary { box-shadow: 0 14px 34px -14px rgba(59, 130, 246, 0.9); }
+body.ai-theme :is(.service-hero,.ed-pagehero,.loc-hero) .cl-button.-secondary { background: transparent; color: #fff; border-color: rgba(255, 255, 255, 0.4); box-shadow: none; }
+body.ai-theme :is(.service-hero,.ed-pagehero,.loc-hero) .cl-button.-secondary:hover { border-color: #fff; background: rgba(255, 255, 255, 0.08); color: #fff; }
+body.ai-theme .service-stat-strip { border-top-color: var(--ai-line); }
+body.ai-theme .service-stat-item, body.ai-theme .ed-page .service-stat-item { color: #cdd7ea; }
+body.ai-theme .loc-breadcrumbs, body.ai-theme .loc-breadcrumbs a { color: var(--ai-muted); }
+body.ai-theme .loc-breadcrumbs [aria-current] { color: #fff; }
+body.ai-theme .loc-proof { background: rgba(255, 255, 255, 0.05); border-color: var(--ai-line); }
+body.ai-theme .loc-proof > div { border-color: var(--ai-line); }
+body.ai-theme .loc-proof strong { color: #fff; }
+body.ai-theme .loc-proof span { color: var(--ai-muted); }
+body.ai-theme .loc-form-card { box-shadow: 0 40px 80px -40px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.08); }
+
+/* The "how a question becomes an answer" diagram, redrawn for dark */
+body.ai-theme :is(.service-hero-mockup-frame, .ed-figure-paper) { padding: 14px; border: 1px solid var(--ai-line); border-radius: 18px; background: rgba(255, 255, 255, 0.045); box-shadow: 0 40px 80px -48px rgba(0, 0, 0, 0.8); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+body.ai-theme .pipeline-diagram > rect:first-of-type { fill: transparent; }
+body.ai-theme .pipeline-diagram [fill="#6b665e"] { fill: #9fb0cc; }
+body.ai-theme .pipeline-diagram [fill="#1f1d1a"] { fill: #f1f5ff; }
+body.ai-theme .pipeline-diagram [fill="#1d4ed8"] { fill: var(--ai-blue); }
+body.ai-theme .pipeline-diagram [stroke="#1f1d1a"] { stroke: rgba(255, 255, 255, 0.42); }
+body.ai-theme .pipeline-diagram [stroke="#1d4ed8"] { stroke: var(--ai-blue); }
+body.ai-theme .pipeline-diagram g[stroke="#1d4ed8"] path { animation: ai-pulse 2.6s ease-in-out infinite; }
+body.ai-theme .pipeline-diagram g[stroke="#1d4ed8"] path:nth-child(2) { animation-delay: 0.45s; }
+body.ai-theme .pipeline-diagram g[stroke="#1d4ed8"] path:nth-child(3) { animation-delay: 0.9s; }
+@keyframes ai-pulse { 0%, 100% { opacity: 0.35; } 50% { opacity: 1; } }
+
+/* ---------- Dark stack band ---------- */
+body.ai-theme :is(.techstack-section, #models, #stack) { position: relative; background: var(--ai-bg); color: var(--ai-text); border-top: 1px solid var(--ai-line); border-bottom: 1px solid var(--ai-line); background-image: radial-gradient(60% 80% at 100% 0%, rgba(59, 130, 246, 0.18), transparent 60%), radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1.3px); background-size: auto, 28px 28px; }
+body.ai-theme :is(.techstack-section, #models, #stack) :is(h2, .section-title) { color: #fff; }
+body.ai-theme :is(.techstack-section, #models, #stack) :is(.section-sub, .ed-head p, .section-header p) { color: var(--ai-muted); }
+body.ai-theme :is(.techstack-section, #models, #stack) :is(.hs-eyebrow, .ed-label) { display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; border: 1px solid rgba(96, 165, 250, 0.4); border-radius: 999px; background: rgba(96, 165, 250, 0.12); color: #bfdbfe; }
+body.ai-theme :is(.techstack-section, #models, #stack) :is(.hs-eyebrow, .ed-label) { justify-self: start; align-self: start; width: fit-content; }
+body.ai-theme :is(.techstack-section, #models, #stack) .hs-eyebrow .dot { display: none; }
+body.ai-theme :is(.techstack-section, #models, #stack) :is(.hs-eyebrow, .ed-label)::before { content: '\2726'; color: var(--ai-blue); }
+body.ai-theme .techstack-group { border-top-color: var(--ai-line); }
+body.ai-theme .techstack-group:first-child { border-top-color: rgba(255, 255, 255, 0.4); }
+body.ai-theme .techstack-group h4 { color: var(--ai-blue); }
+body.ai-theme .techstack-pill, body.ai-theme .techstack-pill span { color: #e3eaf8; }
+body.ai-theme .loc-stack > div { background: rgba(255, 255, 255, 0.05); border-color: var(--ai-line); }
+body.ai-theme .loc-stack h3 { color: var(--ai-blue); }
+body.ai-theme .loc-stack p { color: #dbe4f5; }
+
+/* ---------- Light touches in the rest of the page ---------- */
+body.ai-theme .cap-card:hover, body.ai-theme .loc-card:hover { border-color: var(--accent, #1d4ed8); box-shadow: 0 18px 40px -26px rgba(29, 78, 216, 0.55); }
+
+/* Phone rules in design-system.css use !important, so the hero copy colour needs it too */
+body.ai-theme .loc-hero .hero-sub { color: var(--ai-muted) !important; }
+
+/* Bhubaneswar hero: the four facts become dark cards */
+body.ai-theme .ed-facts-rule { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin: 52px 0 0; padding: 0; border: 0; position: relative; z-index: 1; }
+body.ai-theme .ed-facts-rule > div { padding: 18px 20px; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--ai-line); border-radius: 14px; }
+body.ai-theme .ed-facts-rule dt { margin: 0 0 4px; font-size: 1.2rem; font-weight: 700; line-height: 1.25; color: #fff; }
+body.ai-theme .ed-facts-rule dd { margin: 0; font-size: 14px; line-height: 1.45; color: var(--ai-muted); }
+@media (max-width: 991px) { body.ai-theme .ed-facts-rule { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 36px; } }
+@media (max-width: 480px) { body.ai-theme .ed-facts-rule { grid-template-columns: 1fr; } }
+
+@media (max-width: 991px) {
+  body.ai-theme :is(.service-hero,.ed-pagehero,.loc-hero) { padding: 52px 0 60px; }
+  body.ai-theme .loc-hero { padding: 28px 0 56px; }
+  body.ai-theme :is(.service-hero,.ed-pagehero,.loc-hero)::after { opacity: 0.4; -webkit-mask-image: none; mask-image: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  body.ai-theme :is(.service-hero,.ed-pagehero,.loc-hero)::before, body.ai-theme :is(.service-hero,.ed-pagehero,.loc-hero)::after, body.ai-theme :is(.service-hero,.ed-pagehero,.loc-hero) :is(.hs-eyebrow, .ed-label)::before, body.ai-theme .pipeline-diagram g[stroke="#1d4ed8"] path, body.ai-theme .cap-card, body.ai-theme .loc-card { animation: none; transition: none; }
+}

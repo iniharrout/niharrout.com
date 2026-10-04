@@ -26,6 +26,7 @@
     rel="stylesheet">
   <link rel="stylesheet" href="/assets/design-system.css?v=blue4">
   <link rel="stylesheet" href="/assets/editorial.css?v=pick8">
+  <link rel="stylesheet" href="/assets/ai-theme.css?v=ai4">
 
   <!-- Calendly Widget CSS & JS -->
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
@@ -55,6 +56,54 @@
         {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Deterministic Guardrails & Output Validation"}}
       ]
     }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Will our company data or user data be used to train public models?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Never. We use enterprise zero-data-retention agreements for proprietary foundation APIs (such as Azure OpenAI or AWS Bedrock), or deploy open-weight models (Llama 3.1 / Mistral) entirely within your private VPC with no outbound network access. Your confidential intellectual property remains 100% under your ownership and perimeter."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you guarantee that the AI will not hallucinate incorrect information?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We implement a three-layer defense: (1) Strict Retrieval Grounding where models are instructed to answer only from verified chunk citations; (2) Pydantic/Zod structured schema output validation that rejects non-conforming responses; and (3) Automated RAG Triad evaluation pipelines that grade answers for groundedness before displaying them to end users."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the ongoing monthly costs to operate an enterprise RAG system?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "By using efficient vector indexing in PostgreSQL (pgvector) and intelligent prompt compression with Cohere Rerank, most business applications process tens of thousands of queries for under $150 to $300 per month in LLM API tokens. For high-volume use cases, self-hosted open-weight models on reserved GPU instances reduce token costs by up to 80%."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does it take to deploy a production AI product?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A focused Enterprise RAG pipeline and copilot interface typically ships in 6 to 8 weeks. Autonomous multi-step agent workflows with custom tool integrations and private VPC fine-tuning launch in 10 to 12 weeks."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can the AI interface integrate directly into our existing mobile or web apps?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We provide clean REST, GraphQL, or Server-Sent Event (SSE) streaming endpoints with drop-in React/TypeScript UI components that embed seamlessly into your existing mobile apps, CRM, or customer portal."
+        }
+      }
+    ]
   }
   </script>
   <meta name="twitter:card" content="summary_large_image">
@@ -92,7 +141,7 @@
   <script src="/assets/chrome.js?v=9" defer></script>
 </head>
 
-<body class="ed-page">
+<body class="ed-page ai-theme">
 
   <!-- ================= SITE HEADER ================= -->
   <!-- chrome:header -->
