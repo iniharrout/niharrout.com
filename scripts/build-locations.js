@@ -76,7 +76,7 @@ function head({ title, description, path: urlPath, ogType = 'website', graph, no
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap">
   <link rel="stylesheet" href="/assets/design-system.css?v=blue4">
-  <link rel="stylesheet" href="/assets/location-pages.css?v=blue4">${theme ? '\n  <link rel="stylesheet" href="/assets/hero-demo.css?v=hd1">' : ''}${theme === 'ai' ? '\n  <link rel="stylesheet" href="/assets/ai-theme.css?v=ai7">' : ''}
+  <link rel="stylesheet" href="/assets/location-pages.css?v=blue4">${theme ? '\n  <link rel="stylesheet" href="/assets/hero-demo.css?v=hd2">' : ''}${theme === 'ai' ? '\n  <link rel="stylesheet" href="/assets/ai-theme.css?v=ai7">' : ''}
 
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
@@ -426,9 +426,8 @@ function buildServicePage(c, svcKey) {
   const urlPath = pageUrl(c, svcKey);
   const fullUrl = SITE + urlPath;
   const trail = [['Home', '/'], ['Locations', '/locations'], [c.name, cityUrl(c)], [svc.name, urlPath]];
-  const startPrice = svc.tiers[0][1].split(' – ')[0];
   const title = `${fill(svc.titleLead, c)} | Creuto`;
-  const description = `${svc.name} for ${c.name} businesses: fixed-scope PRD, in-house engineers, full code ownership. Estimates from ${startPrice}. Free call with the founder.`;
+  const description = `${svc.name} for ${c.name} businesses: fixed-scope PRD, in-house engineers, full code ownership. Free call with the founder.`;
 
   const faqs = [
     [fill(svc.faqs[0][0], c), `${fill(svc.faqs[0][1], c)} ${c.costNote}`],
@@ -511,7 +510,7 @@ function buildCityHub(c) {
   const description = `Mobile app, AI product and custom software development for ${c.name} businesses. Founder-led Creuto team, fixed-scope PRDs, full code ownership. Free discovery call.`;
 
   const faqs = [
-    [`Do you have an office in ${c.name}?`, `No. Creuto is based in Bhubaneswar, Odisha, and serves ${c.name} clients remotely with fortnightly demos and shared test environments. We travel to ${c.name} for workshops and launches when in-person time is valuable, and quote any travel costs separately and up front.`],
+    [`Do you have an office in ${c.name}?`, `No. Creuto is based in Bhubaneswar, Odisha, and serves ${c.name} clients remotely with regular demos and shared test environments. We travel to ${c.name} for workshops and launches when in-person time is valuable, and quote any travel costs separately and up front.`],
     ...SERVICE_KEYS.map((k) => [fill(services[k].faqs[0][0], c), fill(services[k].faqs[0][1], c)]),
     c.services.mobile.faqs[0],
     c.services.ai.faqs[0]
@@ -700,7 +699,7 @@ function buildIndex() {
         ${sectionHeader('How we serve you', 'One process, wherever you are', 'The same discovery-led method applies in every city.')}
         <div class="loc-grid c3">
           <div class="loc-card"><span class="loc-num">01</span><h3>Discovery workshop</h3><p>We map goals, users and constraints, in person where practical, and produce a signed-off PRD.</p></div>
-          <div class="loc-card"><span class="loc-num">02</span><h3>Fortnightly demos</h3><p>Working builds every two weeks, shared boards and a single point of contact who is the founder.</p></div>
+          <div class="loc-card"><span class="loc-num">02</span><h3>Regular demos</h3><p>Working builds you can try at every milestone, shared boards and a single point of contact who is the founder.</p></div>
           <div class="loc-card"><span class="loc-num">03</span><h3>Launch and support</h3><p>Store or production launch, on-site training if needed, then a maintenance plan you can keep or end.</p></div>
         </div>
       </div>

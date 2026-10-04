@@ -22,7 +22,7 @@ module.exports = [
     ],
     ecosystem: ['Koramangala and HSR startup clusters', 'Manyata and Bagmane tech parks', 'IISc and IIIT Bangalore', 'Outer Ring Road product companies'],
     distance: 'Same time zone, regular direct flights from Bhubaneswar',
-    delivery: 'We work as a remote product squad in your time zone, with weekly status calls, fortnightly demos and shared boards. Bhubaneswar and Bengaluru are connected by regular direct flights, so we can join you in person for kick-offs and key workshops.',
+    delivery: 'We work as a remote product squad in your time zone, with weekly status calls, regular demos and shared boards. Bhubaneswar and Bengaluru are connected by regular direct flights, so we can join you in person for kick-offs and key workshops.',
     costNote: 'Our rates reflect Bhubaneswar operating costs, so comparable scope generally costs meaningfully less than a Bengaluru agency. Scope drives the number, so we give a fixed-scope estimate you can compare like for like.',
     services: {
       mobile: {
@@ -82,7 +82,7 @@ module.exports = [
     ],
     ecosystem: ['T-Hub', 'Genome Valley', 'HITEC City', 'ISB and IIIT Hyderabad'],
     distance: 'Same time zone, regular direct flights from Bhubaneswar',
-    delivery: 'We run engagements remotely with weekly status calls, fortnightly demos and shared test environments. Bhubaneswar and Hyderabad are linked by regular direct flights, so we travel for kick-off and discovery workshops when in-person time matters.',
+    delivery: 'We run engagements remotely with weekly status calls, regular demos and shared test environments. Bhubaneswar and Hyderabad are linked by regular direct flights, so we travel for kick-off and discovery workshops when in-person time matters.',
     costNote: 'Enterprise buyers in Hyderabad often need security documentation and vendor onboarding. We supply that up front, while keeping cost at Odisha rates rather than metro-agency rates.',
     services: {
       mobile: {
@@ -94,7 +94,7 @@ module.exports = [
         ],
         faqs: [
           ['Can your apps meet enterprise security reviews?', 'We design for the common checklist: encrypted storage and transport, SSO and OAuth, certificate pinning, role-based access and secure release pipelines. Formal certifications such as SOC 2 depend on your organisation’s own audit scope.'],
-          ['Do you offer on-site workshops in Hyderabad?', 'We can travel for kick-off and discovery workshops, and run everything else over video with fortnightly demos. Bhubaneswar and Hyderabad are linked by regular direct flights.']
+          ['Do you offer on-site workshops in Hyderabad?', 'We can travel for kick-off and discovery workshops, and run everything else over video with regular demos. Bhubaneswar and Hyderabad are linked by regular direct flights.']
         ]
       },
       ai: {
@@ -142,7 +142,7 @@ module.exports = [
     ],
     ecosystem: ['Hinjewadi IT Park', 'Chakan and Talegaon industrial belts', 'Pimpri-Chinchwad MIDC', 'COEP and MIT-WPU engineering community'],
     distance: 'Same time zone, regular direct flights from Bhubaneswar',
-    delivery: 'We work as a remote squad in your time zone with weekly status calls, shared boards and fortnightly demos. For manufacturers, we plan on-site visits to your plant or office for process workshops, pilots and go-live training.',
+    delivery: 'We work as a remote squad in your time zone with weekly status calls, shared boards and regular demos. For manufacturers, we plan on-site visits to your plant or office for process workshops, pilots and go-live training.',
     costNote: 'Pune’s manufacturers are cost-aware and quality-obsessed. We price at Odisha rates and structure milestones around a pilot on one line or department, so you see results before committing to the full rollout.',
     services: {
       mobile: {
@@ -154,7 +154,7 @@ module.exports = [
         ],
         faqs: [
           ['Can you build apps for tablets and rugged Android devices on the shop floor?', 'Yes. We build Android apps for tablets and rugged handhelds, including barcode and QR scanning, kiosk mode and offline sync.'],
-          ['How do we coordinate if our team is in Pune and yours is in Bhubaneswar?', 'There is no time-zone gap. We use fortnightly demos, shared boards and test builds, with visits to your plant or office for workshops and go-live. Regular direct flights connect the two cities.']
+          ['How do we coordinate if our team is in Pune and yours is in Bhubaneswar?', 'There is no time-zone gap. We use regular demos, shared boards and test builds, with visits to your plant or office for workshops and go-live. Regular direct flights connect the two cities.']
         ]
       },
       ai: {
@@ -202,7 +202,7 @@ module.exports = [
     ],
     ecosystem: ['Gurugram Cyber City', 'Noida Sector 62 and 125 IT hubs', 'Startup clusters in Gurugram and Noida', 'Corporate headquarters on Golf Course Road'],
     distance: 'Same time zone, regular direct flights from Bhubaneswar',
-    delivery: 'There is no time-zone gap. We run a weekly status call, fortnightly demos and shared team channels, and can meet you in Gurugram, Noida or Delhi for milestone workshops. Regular direct flights connect Bhubaneswar and Delhi.',
+    delivery: 'There is no time-zone gap. We run a weekly status call, regular demos and shared team channels, and can meet you in Gurugram, Noida or Delhi for milestone workshops. Regular direct flights connect Bhubaneswar and Delhi.',
     costNote: 'NCR buyers are used to premium agency pricing. Our rates reflect Bhubaneswar operating costs, so you get founder-led product discipline without paying for a Gurugram office in the estimate.',
     services: {
       mobile: {
@@ -214,7 +214,7 @@ module.exports = [
         ],
         faqs: [
           ['Do you have experience with on-demand and delivery apps?', 'Yes. FlashNow, a quick-commerce platform we built, delivers in 10 to 15 minutes from neighbourhood shops across a four-role platform, and Make My Look is an on-demand booking marketplace.'],
-          ['How do you handle communication with an NCR team?', 'There is no time-zone gap. We run a weekly status call, fortnightly demos and shared team channels, and can meet in Gurugram or Noida for milestone workshops.']
+          ['How do you handle communication with an NCR team?', 'There is no time-zone gap. We run a weekly status call, regular demos and shared team channels, and can meet in Gurugram or Noida for milestone workshops.']
         ]
       },
       ai: {

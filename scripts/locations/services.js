@@ -14,7 +14,7 @@ module.exports = {
     short: 'Mobile Apps',
     h1: 'Mobile App Development Company in {city}',
     titleLead: 'Mobile App Development Company in {city}',
-    heroSub: 'iOS, Android, Flutter and React Native apps for {city} businesses, built by a product-led in-house team. Fixed-scope PRD, fortnightly demos, and 100% code ownership.',
+    heroSub: 'iOS, Android, Flutter and React Native apps for {city} businesses, built by a product-led in-house team. Fixed-scope PRD, regular demos, and 100% code ownership.',
     formType: 'Mobile App',
     budgets: ['Under ₹5L', '₹5L – ₹12L', '₹12L – ₹25L', 'Above ₹25L', 'Still evaluating'],
     bhubaneswarPage: '/mobile-app-development-bhubaneswar',

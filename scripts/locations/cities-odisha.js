@@ -22,7 +22,7 @@ module.exports = [
     ],
     ecosystem: ['Ravenshaw University', 'SCB Medical College & Hospital', 'Orissa High Court', 'Choudwar Industrial Estate'],
     distance: 'About 30 km from our Bhubaneswar base',
-    delivery: 'Cuttack is close enough for same-day, in-person workshops and demo days. Between visits we work over video with fortnightly demos and shared test builds, so you get face-to-face time where it counts and fast iteration in between.',
+    delivery: 'Cuttack is close enough for same-day, in-person workshops and demo days. Between visits we work over video with regular demos and shared test builds, so you get face-to-face time where it counts and fast iteration in between.',
     costNote: 'Because delivery runs from Bhubaneswar, Cuttack clients get product-agency quality at Odisha operating costs, with no metro-agency overhead in the estimate.',
     services: {
       mobile: {
@@ -82,7 +82,7 @@ module.exports = [
     ],
     ecosystem: ['NIT Rourkela', 'Rourkela Steel Plant (SAIL)', 'Ispat General Hospital', 'Sundargarh mining belt'],
     distance: 'Roughly 330 km from our Bhubaneswar base',
-    delivery: 'Most delivery runs over video, with fortnightly demos and test builds shared through TestFlight and Play internal testing. Because Rourkela is a long trip, we plan on-site visits around milestones that benefit most from being in the room: discovery workshops, shop-floor observation and rollout training.',
+    delivery: 'Most delivery runs over video, with regular demos and test builds shared through TestFlight and Play internal testing. Because Rourkela is a long trip, we plan on-site visits around milestones that benefit most from being in the room: discovery workshops, shop-floor observation and rollout training.',
     costNote: 'Industrial buyers in Rourkela often compare us with metro vendors. Our costs reflect Odisha operating rates, and travel is quoted separately and up front so it never surprises you.',
     services: {
       mobile: {
@@ -142,7 +142,7 @@ module.exports = [
     ],
     ecosystem: ['Berhampur University', 'MKCG Medical College & Hospital', 'Gopalpur Port', 'Ganjam agri-trade network'],
     distance: 'Roughly 170 km from our Bhubaneswar base',
-    delivery: 'Most work runs over video with fortnightly demos. For discovery workshops and launch training we travel to Berhampur, and the Bhubaneswar–Berhampur road and rail links make a same-day visit practical.',
+    delivery: 'Most work runs over video with regular demos. For discovery workshops and launch training we travel to Berhampur, and the Bhubaneswar–Berhampur road and rail links make a same-day visit practical.',
     costNote: 'Berhampur businesses get a Bhubaneswar-based product team at Odisha rates, with a phased scope so you can start small and add modules as revenue grows.',
     services: {
       mobile: {
@@ -154,7 +154,7 @@ module.exports = [
         ],
         faqs: [
           ['Can the app support Odia and Telugu speaking users?', 'Yes. We build multilingual interfaces from the start: Odia, Hindi and English, plus Telugu if your buyers are across the border in Andhra Pradesh, with regional keyboards and fonts.'],
-          ['How do you handle meetings when Berhampur is 170 km away?', 'Most work runs over video with fortnightly demos. We travel for discovery workshops and launch training, and the road and rail links make a same-day visit practical.']
+          ['How do you handle meetings when Berhampur is 170 km away?', 'Most work runs over video with regular demos. We travel for discovery workshops and launch training, and the road and rail links make a same-day visit practical.']
         ]
       },
       ai: {
@@ -202,7 +202,7 @@ module.exports = [
     ],
     ecosystem: ['IIM Sambalpur', 'VSSUT Burla', 'VIMSAR', 'Sambalpur University', 'Mahanadi Coalfields Limited'],
     distance: 'Roughly 320 km from our Bhubaneswar base',
-    delivery: 'Discovery workshops and rollout training can be held on site in Sambalpur. Because the trip is long, we batch visits around milestones and cover the rest by video with fortnightly demos, and travel costs are quoted up front instead of folded into rates.',
+    delivery: 'Discovery workshops and rollout training can be held on site in Sambalpur. Because the trip is long, we batch visits around milestones and cover the rest by video with regular demos, and travel costs are quoted up front instead of folded into rates.',
     costNote: 'Western Odisha buyers often assume a good product team means a metro agency. We deliver the same discovery-led process at Odisha costs, with phased releases that match your budget cycle.',
     services: {
       mobile: {
