@@ -1966,3 +1966,14 @@ body.page-home .hero-right .hero-badge { align-self: flex-start; }
   body.page-home .hp { padding: 18px 16px; }
   body.page-home .hp-row { grid-template-columns: 70px 1fr auto; }
 }
+
+/* ---------- Commitments band (replaces the repeated counters) ---------- */
+body.page-home .stats-head { max-width: 720px; margin: 0 auto 44px; text-align: center; }
+body.page-home .stats-head .kicker { justify-content: center; }
+body.page-home .stats-head h2 { max-width: 22ch; margin: 0 auto; font-family: var(--font-display); font-size: clamp(1.9rem, 3.2vw, 2.8rem); font-weight: 500; line-height: 1.1; letter-spacing: -0.02em; color: var(--ink); }
+body.page-home .stats-assure { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 12px; margin: 36px 0 0; padding: 0; list-style: none; }
+body.page-home .stats-assure li { display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; background: #fff; border: 1px solid var(--hair); border-radius: 999px; font-size: 14px; font-weight: 500; line-height: 1.3; color: var(--ink-2); }
+body.page-home .stats-assure li::before { content: ''; flex: 0 0 auto; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+.hero-proof a { display: block; color: inherit; text-decoration: none; }
+.hero-proof a:hover span { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 640px) { body.page-home .stats-head { margin-bottom: 30px; } body.page-home .stats-assure { margin-top: 26px; justify-content: flex-start; } }
