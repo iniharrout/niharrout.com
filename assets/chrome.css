@@ -334,3 +334,7 @@ html.sc-lock .calendly-badge-widget { display: none !important; }
   .sc-toast-dot, .sc-modal-dot { animation: none; }
 }
 @media print { .sc-toast, .sc-modal { display: none; } }
+
+/* Show the phone number itself in the header when there is room for it. */
+.sc-call .sc-call-num { display: none; }
+@media (min-width: 1360px) { .sc-call .sc-call-label { display: none; } .sc-call .sc-call-num { display: inline; font-variant-numeric: tabular-nums; } }

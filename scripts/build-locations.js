@@ -147,7 +147,7 @@ function leadForm({ city, svc, heading, sub }) {
             </div>
             <div class="form-group"><label for="lf-message">What are you building?</label><textarea class="form-textarea" id="lf-message" name="message" placeholder="Two or three lines on the problem, users and timeline."></textarea></div>
             <button type="submit" class="cl-button -primary">Get a free estimate <span>→</span></button>
-            <p class="loc-form-note">Your idea is protected by an NDA. We reply within one working day.</p>
+            <p class="loc-form-note">Your idea is protected by an NDA. We reply within 24 hours.</p>
             <div class="loc-form-status" role="status" aria-live="polite"></div>
           </form>
         </div>`;
@@ -831,7 +831,7 @@ function buildThankYou() {
 
   return head({
     title: 'Thank you | Creuto',
-    description: 'Your enquiry has been received. Nihar’s team will reply within one working day.',
+    description: 'Your enquiry has been received. Nihar will reply within 24 hours.',
     path: '/thank-you',
     noindex: true
   }) + `${header()}
@@ -842,7 +842,7 @@ function buildThankYou() {
           <svg viewBox="0 0 52 52" width="52" height="52"><circle cx="26" cy="26" r="25" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15 27l8 8 15-17" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
         <h1 id="ty-title">Thank you</h1>
-        <p class="hero-sub" id="ty-sub">We have received your enquiry. Nihar’s team will reply within one working day.</p>
+        <p class="hero-sub" id="ty-sub">We have received your enquiry. Nihar will reply within 24 hours.</p>
         <div class="hero-ctas" style="justify-content:center;">
           <a href="https://calendly.com/creuto/meet" data-calendly="true" class="cl-button -primary btn-book-call">Book a call now <span>→</span></a>
           <a href="/" class="cl-button -secondary">Back to home</a>
@@ -855,7 +855,7 @@ function buildThankYou() {
         ${sectionHeader('What happens next', 'Here is how the next few days will go', 'No sales sequence. A person reads your brief and replies.')}
         <div class="loc-steps">
           <div><h3>We read your brief</h3><p>Nihar or a senior team member reviews your goals, users and constraints the same working day.</p></div>
-          <div><h3>You get a reply within one working day</h3><p>Expect a few sharp questions and suggested times for a 30-minute discovery call.</p></div>
+          <div><h3>You get a reply within 24 hours</h3><p>Expect a few sharp questions and suggested times for a 30-minute discovery call.</p></div>
           <div><h3>Scoped estimate after the call</h3><p>You receive a fixed-scope estimate and a short plan. An NDA is signed before anything sensitive is shared.</p></div>
         </div>
       </div>
@@ -881,7 +881,7 @@ function buildThankYou() {
         if (first) document.getElementById('ty-title').textContent = 'Thank you, ' + first;
         var topic = lead.service ? lead.service + ' ' : '';
         var where = lead.city ? ' in ' + lead.city : '';
-        document.getElementById('ty-sub').textContent = 'We have received your ' + topic + 'enquiry' + where + '. Nihar’s team will reply within one working day.';
+        document.getElementById('ty-sub').textContent = 'We have received your ' + topic + 'enquiry' + where + '. Nihar will reply within 24 hours.';
       } catch (e) { /* generic message stays */ }
     })();
   </script>

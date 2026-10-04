@@ -115,7 +115,15 @@ async function handler(req, res) {
     }
   }
 
-  if (!lead.name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(lead.email)) {
+  // "Call me back" requests carry only a phone number.
+  const isCallback = lead.service === 'Callback';
+  if (isCallback) {
+    const digits = lead.phone.replace(/\D/g, '');
+    if (digits.length < 8 || digits.length > 15) {
+      return send(res, 400, { ok: false, error: 'Please provide a valid phone number.' });
+    }
+    lead.name = lead.name || 'Callback request';
+  } else if (!lead.name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(lead.email)) {
     return send(res, 400, { ok: false, error: 'Please provide your name and a valid email address.' });
   }
 
@@ -144,7 +152,7 @@ async function handler(req, res) {
 
   // Google Chat Card and Fallback Text
   const googleCardMessage = {
-    text: `🎯 *${title}*\n*From:* ${lead.name} (${lead.email})${lead.phone ? ' | ' + lead.phone : ''}\n${lead.message ? '*Message:*\n' + lead.message : ''}`.trim(),
+    text: `🎯 *${title}*\n*From:* ${lead.name}${lead.email ? ' (' + lead.email + ')' : ''}${lead.phone ? ' | ' + lead.phone : ''}\n${lead.message ? '*Message:*\n' + lead.message : ''}`.trim(),
     cardsV2: [{
       cardId: 'siteLead',
       card: {
@@ -184,7 +192,7 @@ async function handler(req, res) {
 
   // Slack Block Kit Message
   const slackMessage = {
-    text: `🎯 *${title}:* ${lead.name} (${lead.email})`,
+    text: `🎯 *${title}:* ${lead.name}${lead.email ? ' (' + lead.email + ')' : ''}`,
     blocks: [
       {
         type: 'header',
@@ -198,7 +206,7 @@ async function handler(req, res) {
         type: 'section',
         fields: [
           { type: 'mrkdwn', text: `*Name:*\n${lead.name}` },
-          { type: 'mrkdwn', text: `*Email:*\n${lead.email}` },
+          { type: 'mrkdwn', text: `*Email:*\n${lead.email || 'Not provided'}` },
           { type: 'mrkdwn', text: `*Phone:*\n${lead.phone || 'Not provided'}` },
           { type: 'mrkdwn', text: `*Service / Category:*\n${lead.service || 'General Project'}` }
         ]

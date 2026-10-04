@@ -1978,3 +1978,64 @@ body.page-home .next-actions .faq2-btn { padding: 14px 22px; font-size: 15px; }
   body.page-home .next-actions { margin-top: 36px; }
 }
 @media (max-width: 640px) { body.page-home .next-band { padding: 52px 0; } body.page-home .next-actions .faq2-btn { flex: 1 1 100%; justify-content: center; } }
+
+/* ---------- Call-me-back mini form ---------- */
+body.page-home .hero-tel { color: inherit; text-decoration: none; font-variant-numeric: tabular-nums; }
+body.page-home .hero-tel:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+body.page-home .cb { max-width: 520px; margin: 28px auto 0; text-align: left; }
+body.page-home .cb[hidden] { display: none; }
+body.page-home .cb-label { display: block; margin: 0 0 8px; font-size: 14px; font-weight: 600; color: var(--ink); }
+body.page-home .cb-row { display: flex; gap: 8px; }
+body.page-home .cb-row input { flex: 1; min-width: 0; padding: 12px 14px; background: #fff; border: 1px solid rgba(9, 13, 22, 0.2); border-radius: 8px; font-family: 'Inter', system-ui, sans-serif; font-size: 15px; color: var(--ink); }
+body.page-home .cb-row input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.14); }
+body.page-home .cb-btn { flex: 0 0 auto; padding: 12px 18px; border: 0; border-radius: 8px; background: var(--ink); font-family: 'Inter', system-ui, sans-serif; font-size: 14.5px; font-weight: 600; color: #fff; cursor: pointer; transition: background 0.15s ease; }
+body.page-home .cb-btn:hover { background: var(--accent); }
+body.page-home .cb-btn:disabled { opacity: 0.6; cursor: default; }
+body.page-home .cb-hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+body.page-home .cb-note { margin: 8px 0 0; font-size: 12.5px; color: var(--ink-3); }
+body.page-home .cb-status { margin: 6px 0 0; font-size: 13px; color: var(--accent); }
+body.page-home .cb-status:empty { display: none; }
+body.page-home .cb-status.is-bad { color: #b42318; }
+body.page-home .cx-side .cb { max-width: none; margin: 0 0 18px; padding: 16px; background: var(--paper-2); border: 1px solid rgba(9, 13, 22, 0.1); border-radius: 14px; }
+@media (max-width: 480px) { body.page-home .cb-row { flex-direction: column; } body.page-home .cb-btn { width: 100%; } }
+
+/* ---------- Meet the founder ---------- */
+body.page-home .meet { padding: 104px 0; background: #fff; border-top: 1px solid var(--hair); }
+body.page-home .meet-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 72px; align-items: center; }
+body.page-home .meet-photo { margin: 0; overflow: hidden; border: 1px solid rgba(9, 13, 22, 0.14); border-radius: 18px; background: var(--paper-2); box-shadow: 0 30px 60px -40px rgba(9, 13, 22, 0.45); }
+body.page-home .meet-photo img { display: block; width: 100%; height: auto; }
+body.page-home .meet-copy h2 { max-width: 20ch; margin: 0 0 20px; font-family: var(--font-display); font-size: clamp(1.9rem, 3.2vw, 2.8rem); font-weight: 500; line-height: 1.1; letter-spacing: -0.02em; color: var(--ink); }
+body.page-home .meet-lead { margin: 0 0 20px; font-size: 1.05rem; line-height: 1.7; color: var(--ink-2); }
+body.page-home .meet-quote { margin: 0 0 24px; padding: 4px 0 4px 18px; border-left: 3px solid var(--accent); font-family: var(--font-display); font-size: 1.3rem; font-weight: 500; line-height: 1.35; color: var(--ink); }
+body.page-home .meet-facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 0 0 28px; padding: 0; list-style: none; }
+body.page-home .meet-facts li { padding: 14px 16px; background: var(--paper-2); border: 1px solid rgba(9, 13, 22, 0.1); border-radius: 12px; font-size: 14px; line-height: 1.45; color: var(--ink-2); }
+body.page-home .meet-facts strong { display: block; font-size: 15px; color: var(--ink); }
+body.page-home .meet-actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 20px; }
+body.page-home .meet-links { margin: 0; font-size: 14px; color: var(--ink-3); }
+body.page-home .meet-links a { color: var(--accent); font-weight: 600; text-decoration: none; }
+body.page-home .meet-links a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+/* ---------- Who I work best with ---------- */
+body.page-home .fit { padding: 96px 0; background: var(--paper-2); border-top: 1px solid var(--hair); }
+body.page-home .fit-head { max-width: 680px; margin: 0 auto 44px; text-align: center; }
+body.page-home .fit-head .kicker { justify-content: center; }
+body.page-home .fit-head h2 { margin: 0 0 14px; font-family: var(--font-display); font-size: clamp(1.9rem, 3.2vw, 2.8rem); font-weight: 500; line-height: 1.1; letter-spacing: -0.02em; color: var(--ink); }
+body.page-home .fit-sub { margin: 0; font-size: 1.05rem; line-height: 1.6; color: var(--ink-2); }
+body.page-home .fit-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; max-width: 960px; margin: 0 auto; }
+body.page-home .fit-card { padding: 30px 30px 32px; background: #fff; border: 1px solid rgba(9, 13, 22, 0.12); border-radius: 18px; }
+body.page-home .fit-card.is-yes { border-color: var(--accent); }
+body.page-home .fit-card h3 { margin: 0 0 20px; font-family: 'Inter', system-ui, sans-serif; font-size: 1.2rem; font-weight: 700; letter-spacing: -0.02em; color: var(--ink); }
+body.page-home .fit-card ul { display: flex; flex-direction: column; gap: 16px; margin: 0; padding: 0; list-style: none; }
+body.page-home .fit-card li { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; line-height: 1.55; color: var(--ink-2); }
+body.page-home .fit-card svg { flex: 0 0 auto; width: 22px; height: 22px; margin-top: 1px; padding: 4px; border-radius: 50%; }
+body.page-home .fit-card.is-yes svg { background: var(--accent); color: #fff; }
+body.page-home .fit-card.is-no svg { background: var(--paper-2); color: var(--ink-3); border: 1px solid rgba(9, 13, 22, 0.14); }
+body.page-home .fit-actions { display: flex; justify-content: center; margin-top: 36px; }
+body.page-home .fit-actions .faq2-btn { padding: 14px 24px; font-size: 15px; }
+@media (max-width: 991px) {
+  body.page-home .meet, body.page-home .fit { padding: 72px 0; }
+  body.page-home .meet-grid { grid-template-columns: 1fr; gap: 36px; }
+  body.page-home .meet-photo { max-width: 420px; }
+  body.page-home .fit-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) { body.page-home .meet, body.page-home .fit { padding: 56px 0; } body.page-home .meet-facts { grid-template-columns: 1fr; } body.page-home .fit-card { padding: 24px 20px 26px; } }
