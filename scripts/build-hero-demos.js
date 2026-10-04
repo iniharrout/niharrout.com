@@ -18,6 +18,10 @@ const PAGES = {
   'services/product-strategy-prd/index.html': { card: 'strategy', proof: { src: '/assets/img/modern-workshop.jpg', alt: 'A wall of paper app screens and user journeys during a product planning session', w: 1000, h: 667, label: 'From a real session', title: 'Product planning', sub: 'App screens and user journeys mapped on a wall' } },
   'mobile-app-development-bhubaneswar/index.html': { card: 'mobile', proof: { src: '/work/mml-card.jpg', alt: 'Make My Look, a salon booking app built by Creuto', w: 1024, h: 768, href: '/work/make-my-look', title: 'Make My Look', sub: 'Salon booking mobile app' } },
   'services/index.html': { bar: 'hub' },
+  'b2b-software-development-for-startups/index.html': { card: 'startup' },
+  'technology/index.html': { card: 'stack' },
+  'project-costs/index.html': { card: 'costs' },
+  'about/index.html': { card: 'startup' },
 };
 
 let changed = 0;

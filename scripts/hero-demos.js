@@ -15,11 +15,11 @@ const checks = (items) => `<ul class="aix-checks">${items.map((t, i) => `<li cla
 const rows = (items) => `<ul class="aix-rows">${items.map(([t, tag, later], i) => `<li class="aix-r${L[i]}"><span class="aix-dot"></span>${t}<span class="aix-tag${later ? ' is-later' : ''}">${tag}</span></li>`).join('')}</ul>`;
 const kv = (items) => `<ul class="aix-rows aix-kv">${items.map(([k, v], i) => `<li class="aix-r${L[i]}"><span class="aix-k">${k}</span><span class="aix-v">${v}</span></li>`).join('')}</ul>`;
 
-const phase = (n, no, pill, sub, body, done) => `<section class="aix-phase aix-p${n}">
+const phase = (n, no, pill, sub, body, done) => `<div class="aix-phase aix-p${n}">
                   <header><span class="aix-no">${no}</span><span class="aix-pill${done ? ' is-done' : ''}"><i></i>${pill}</span></header>
                   ${sub ? `<p class="aix-sub">${sub}</p>` : ''}
                   ${body}
-                </section>`;
+                </div>`;
 
 const shell = ({ label, text, phases, steps, caption }) => `<figure class="aix">
             <div class="aix-panel">
@@ -88,6 +88,39 @@ const demos = {
       phase(1, '/01 Define', 'Defining', 'Who it is for and the one thing it must do.', kv([['Users', 'Students and local tutors'], ['Core action', 'Book a lesson'], ['Success', 'Repeat bookings']])),
       phase(2, '/02 Prioritise', 'Prioritising', 'Build what proves demand first. Park the rest.', `<div class="aix-lanes"><div class="aix-lane"><h5>Build first</h5><div class="aix-chip aix-ra">Search tutors</div><div class="aix-chip aix-rb">Book and pay</div></div><div class="aix-lane is-later"><h5>Later (V2)</h5><div class="aix-chip aix-rc">Reviews</div><div class="aix-chip aix-rd">Group classes</div></div></div>`),
       phase(3, '/03 PRD ready', 'Ready', 'The plan your developers and investors can read.', checks(['Scope and user stories', 'Screens and flows', 'Milestones and estimate', 'Proposal within 24 hours']), true),
+    ],
+  }),
+  startup: () => shell({
+    label: 'Describe your product',
+    text: 'B2B tool for freight brokers',
+    caption: 'Illustration with sample data: how a startup idea becomes a first release.',
+    steps: ['Scope', 'Build', 'Demo', 'Launch'],
+    phases: [
+      phase(1, '/01 Scope', 'Scoping', 'Only what proves demand goes into the first release.', rows([['Broker dashboard', 'Launch'], ['Carrier onboarding', 'Launch'], ['Quote requests', 'Launch'], ['Analytics', 'Later', true]])),
+      phase(2, '/02 Build', 'Building', 'Short sprints, with working software after each one.', checks(['Sprint 1: sign-in and roles', 'Sprint 2: quotes and bookings', 'Sprint 3: carrier portal', 'Demo after every sprint'])),
+      phase(3, '/03 Launch', 'Live', 'The first release, in front of real customers.', checks(['First version in about 4 weeks', 'Code in your own GitHub from day one', 'Tested and deployed', '60-day post-launch warranty']), true),
+    ],
+  }),
+  stack: () => shell({
+    label: 'Ask about your stack',
+    text: 'Which stack fits my app?',
+    caption: 'Illustration with sample data: how technology choices are made.',
+    steps: ['Match', 'Compare', 'Prove', 'Run'],
+    phases: [
+      phase(1, '/01 Match', 'Matching', 'Tools picked for the problem, not the resume.', rows([['Web app', 'Next.js'], ['Mobile app', 'React Native'], ['Data', 'PostgreSQL'], ['AI features', 'Python and APIs']])),
+      phase(2, '/02 Check', 'Checking', 'Every choice checked against what you need.', checks(['Fast enough for your users', 'Easy to hire for later', 'Secure by default', 'Sensible running costs'])),
+      phase(3, '/03 Run', 'Live', 'Built, tested and watched in production.', checks(['Automated tests on every change', 'Automated deployments', 'Monitoring and alerts', 'Code you own']), true),
+    ],
+  }),
+  costs: () => shell({
+    label: 'Ask about cost',
+    text: 'What will my app cost?',
+    caption: 'Illustration with sample data: how a cost range is built.',
+    steps: ['List', 'Size', 'Plan', 'Range'],
+    phases: [
+      phase(1, '/01 List', 'Listing', 'Every feature written down, nothing assumed.', rows([['Sign-in and profiles', 'Core'], ['Payments', 'Core'], ['Admin dashboard', 'Core'], ['In-app chat', 'Later', true]])),
+      phase(2, '/02 Size', 'Sizing', 'Each feature sized by effort and risk.', `<ul class="aix-sizes">${[['Sign-in', '.35'], ['Payments', '.8'], ['Dashboard', '.6'], ['Chat', '.9']].map(([n, v], i) => `<li class="aix-r${L[i]}"><span>${n}</span><span class="aix-line"><i class="aix-fill" style="--v:${v}"></i></span></li>`).join('')}</ul>`),
+      phase(3, '/03 Range', 'Ready', 'A range you can plan around, with milestones.', checks(['Fixed scope, agreed upfront', 'Milestones tied to deliverables', 'Range, timeline and next steps']), true),
     ],
   }),
 };

@@ -30,14 +30,14 @@ function card() {
               </div>
               <span class="aix-wire" aria-hidden="true"><i></i></span>
               <div class="aix-stage">
-                <section class="aix-phase aix-p1">
+                <div class="aix-phase aix-p1">
                   <header><span class="aix-no">/01 Find</span><span class="aix-pill"><i></i>Retrieving</span></header>
                   <p class="aix-sub">Searching 6 documents. Only what this person is allowed to see.</p>
                   <ul class="aix-docs">
 ${docs.map(([n, v, s, k]) => `                    <li><span class="aix-doc-ico">${DOC}</span><span class="aix-doc-name">${n}</span><span class="aix-track"><i class="aix-${k}" style="--v:${v}"></i></span><span class="aix-score">${s}</span></li>`).join('\n')}
                   </ul>
-                </section>
-                <section class="aix-phase aix-p2">
+                </div>
+                <div class="aix-phase aix-p2">
                   <header><span class="aix-no">/02 Check</span><span class="aix-pill"><i></i>Checking</span></header>
                   <p class="aix-sub">Rules run before any answer is shown.</p>
                   <ul class="aix-checks">
@@ -45,13 +45,13 @@ ${docs.map(([n, v, s, k]) => `                    <li><span class="aix-doc-ico">
                     <li class="aix-k2"><span class="aix-tick">${TICK}</span>Every claim has a source</li>
                     <li class="aix-k3"><span class="aix-tick">${TICK}</span>Within the spend limit</li>
                   </ul>
-                </section>
-                <section class="aix-phase aix-p3">
+                </div>
+                <div class="aix-phase aix-p3">
                   <header><span class="aix-no">/03 Answer</span><span class="aix-pill is-done"><i></i>Answered</span></header>
                   <p class="aix-answer"><span class="aix-l1">Enterprise contracts can be refunded within 30 days of go-live.<sup class="aix-c1">1</sup></span> <span class="aix-l2">After that, the refund is issued as service credit.<sup class="aix-c2">2</sup></span></p>
                   <p class="aix-sources"><span>1 Contract_v3.pdf, p.12</span><span>2 Policy_2026.docx, p.4</span></p>
                   <p class="aix-logged"><span class="aix-tick">${TICK}</span>Saved to the audit log</p>
-                </section>
+                </div>
               </div>
               <ol class="aix-steps" aria-hidden="true">
                 <li class="aix-s1"><i></i><span>Find</span></li>
