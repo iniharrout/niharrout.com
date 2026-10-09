@@ -2042,3 +2042,4 @@ body.page-home .hero-oa:hover { transform: translateY(-1px); box-shadow: 0 20px 
 body.page-home .hero-oa-text b { display: inline-flex; align-items: center; gap: 7px; }
 body.page-home .hero-oa-text b::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: oa-dot 2.4s ease-out infinite; }
 @media (prefers-reduced-motion: reduce) { body.page-home .hero-oa::before, body.page-home .hero-oa::after, body.page-home .hero-oa-text b::before { animation: none; } body.page-home .hero-oa::after { display: none; } }
+body.page-home .blog-feature .blog-visual { flex: 1 1 auto; min-height: 250px; }
