@@ -28,5 +28,12 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    {
+      "source": "/tools/url-shortener",
+      "destination": "/tools",
+      "permanent": true
+    }
   ]
 }

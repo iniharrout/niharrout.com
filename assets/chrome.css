@@ -366,4 +366,3 @@ body.page-home .sc-foot-grid { padding-top: 64px; }
 .nr-sound:focus-visible { outline: 3px solid #60a5fa; outline-offset: 2px; }
 @media (max-width: 767px) { .nr-sound { display: none; } }
 @media (prefers-reduced-motion: reduce) { .nr-sound { transition: none; } }
-:is(.sc-menu, .sc-acc-inner) a[href="/tools/url-shortener"] { --tone: var(--t-rose); }
