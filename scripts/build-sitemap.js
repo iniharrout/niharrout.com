@@ -2,9 +2,12 @@
 /**
  * Regenerates sitemap.xml from the pages themselves: every HTML file that declares a
  * canonical URL and is not noindex is listed once, at its canonical URL.
- * <lastmod> is the file's last git commit date (today for uncommitted files).
+ * <lastmod> is the date the page's real content last changed. A fingerprint of each page's main content
+ * (not the shared header, footer, scripts or version strings) is kept in scripts/lastmod.json, and a page's date only
+ * moves when that fingerprint changes. Without a manifest entry the date is seeded from git history.
  *
  * Usage: node scripts/build-sitemap.js
+ *        node scripts/build-sitemap.js --seed   (rebuild the manifest from git history)
  */
 
 const fs = require('fs');
@@ -27,13 +30,52 @@ function walk(dir, out = []) {
   return out;
 }
 
-function lastmod(file) {
+const crypto = require('crypto');
+const MANIFEST = path.join(ROOT, 'scripts', 'lastmod.json');
+const SEED = process.argv.includes('--seed');
+let manifest = {};
+try { manifest = JSON.parse(fs.readFileSync(MANIFEST, 'utf8')); } catch (e) { manifest = {}; }
+
+// Fingerprint of what a reader or crawler actually sees as the page's content.
+function fingerprint(html) {
+  const title = (html.match(/<title>([\s\S]*?)<\/title>/) || [])[1] || '';
+  const desc = (html.match(/<meta\s+name="description"\s+content="([^"]*)"/) || [])[1] || '';
+  const main = (html.match(/<main[\s\S]*?<\/main>/) || [html.slice(html.indexOf('<body'))])[0];
+  const text = (title + '|' + desc + '|' + main)
+    .replace(/<!--[\s\S]*?-->/g, '')
+    .replace(/<script[\s\S]*?<\/script>/gi, '')
+    .replace(/<style[\s\S]*?<\/style>/gi, '')
+    .replace(/\?v=[a-z0-9]+/gi, '')
+    .replace(/\s+/g, ' ');
+  return crypto.createHash('sha1').update(text).digest('hex').slice(0, 16);
+}
+
+function git(args) { return execFileSync('git', args, { cwd: ROOT, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'], maxBuffer: 64 * 1024 * 1024 }); }
+
+// Date of the newest commit that introduced the page's current content (today if the working copy differs from HEAD).
+function seedDate(rel, current) {
   try {
-    const d = execFileSync('git', ['log', '-1', '--format=%cs', '--', file], { cwd: ROOT, encoding: 'utf8' }).trim();
-    return d || TODAY;
-  } catch (e) {
-    return TODAY;
-  }
+    const commits = git(['log', '--format=%H %cs', '--', rel]).trim().split('\n').filter(Boolean).map((l) => l.split(' '));
+    if (!commits.length) return TODAY;
+    let date = null;
+    for (const [hash, d] of commits) {
+      let past;
+      try { past = fingerprint(git(['show', `${hash}:${rel}`])); } catch (e) { break; }
+      if (past !== current) break;
+      date = d;
+    }
+    return date || TODAY;
+  } catch (e) { return TODAY; }
+}
+
+function lastmod(file, html) {
+  const rel = path.relative(ROOT, file);
+  const fp = fingerprint(html);
+  const known = manifest[rel];
+  if (known && known.hash === fp && !SEED) return known.date;
+  const date = !known || SEED ? seedDate(rel, fp) : TODAY;
+  manifest[rel] = { hash: fp, date };
+  return date;
 }
 
 // Pages that embed a video get a <video:video> entry so search engines can index it.
@@ -60,7 +102,7 @@ for (const file of walk(ROOT)) {
   const canonical = (html.match(/<link\s+rel="canonical"\s+href="([^"]+)"/i) || [])[1];
   const robots = (html.match(/<meta\s+name="robots"\s+content="([^"]+)"/i) || [])[1] || '';
   if (!canonical || /noindex/i.test(robots)) continue;
-  entries.push({ loc: canonical, lastmod: lastmod(path.relative(ROOT, file)) });
+  entries.push({ loc: canonical, lastmod: lastmod(file, html) });
 }
 
 const seen = new Set();
@@ -74,4 +116,7 @@ ${unique.map((e) => `  <url>\n    <loc>${e.loc}</loc>\n    <lastmod>${e.lastmod}
 </urlset>
 `;
 fs.writeFileSync(path.join(ROOT, 'sitemap.xml'), xml);
+const sorted = {};
+for (const k of Object.keys(manifest).sort()) sorted[k] = manifest[k];
+fs.writeFileSync(MANIFEST, JSON.stringify(sorted, null, 2) + '\n');
 console.log(`sitemap.xml: ${unique.length} URLs`);

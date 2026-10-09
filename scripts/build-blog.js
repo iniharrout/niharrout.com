@@ -93,7 +93,7 @@ function page(p) {
     description: p.description,
     image: [image],
     mainEntityOfPage: { '@type': 'WebPage', '@id': url },
-    author: { '@type': 'Person', name: 'Nihar Ranjan Rout', jobTitle: 'Founder & CEO, Creuto', url: `${SITE}/about`, sameAs: ['https://www.linkedin.com/in/iniharrout', 'https://x.com/iniharrout', 'https://github.com/iniharrout'] },
+    author: { '@type': 'Person', '@id': `${SITE}/#person`, name: 'Nihar Ranjan Rout', jobTitle: 'Founder & CEO, Creuto', url: `${SITE}/about`, sameAs: ['https://www.linkedin.com/in/iniharrout', 'https://x.com/iniharrout', 'https://github.com/iniharrout'] },
     publisher: { '@type': 'Organization', name: 'Creuto', url: 'https://creuto.com', logo: { '@type': 'ImageObject', url: `${SITE}/assets/nihar.jpg` } },
     datePublished: p.published,
     dateModified: p.published,

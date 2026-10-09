@@ -1,0 +1,55 @@
+# Nihar Ranjan Rout | Creuto
+
+> Nihar Ranjan Rout is the Founder and CEO of Creuto, a founder-led product and engineering company based in Bhubaneswar, India. He has 8+ years in product management and has led 50+ products: mobile apps, web apps, custom software and ERP, and AI products. Work is done by an in-house team, starts with a PRD and a clickable prototype, and uses fixed milestones. Clients own all code. Creuto is an OpenAI Select Partner and has a 5.0 rating from 16 verified Clutch reviews.
+
+## Start here
+- [Homepage](https://www.niharrout.com/): Founder-led mobile app, web app and custom software development by Nihar Ranjan Rout, Founder & CEO of Creuto. Product strategy and a 100% in-house team.
+- [About Nihar Ranjan Rout](https://www.niharrout.com/about): Meet Nihar Ranjan Rout, founder of Creuto: 8+ years in product management and a product-first approach to building B2B software with an in-house team.
+- [Company fact sheet](https://www.niharrout.com/about/facts): Verified facts about Creuto and founder Nihar Ranjan Rout: services, process, pricing model, code ownership, warranty, location and credentials in one page.
+- [Services overview](https://www.niharrout.com/services): Mobile app development, custom software and ERP, enterprise AI workflows and product strategy PRDs from Nihar Ranjan Rout and the Creuto team.
+
+## Services
+- [Mobile App Development Services: iOS, Android, Flutter](https://www.niharrout.com/services/mobile-app-development): Enterprise iOS, Android, React Native and Flutter apps with offline-first architecture and native UX, led by Nihar Ranjan Rout.
+- [Web Application Development Services](https://www.niharrout.com/services/web-application-development): Custom web application development for startups and enterprises: fast, SEO-friendly web apps built by an in-house engineering team, led by Nihar Ranjan Rout.
+- [Custom Software & ERP Development Services](https://www.niharrout.com/services/custom-software-development): Custom enterprise software, ERP and multi-tenant B2B SaaS built for operational resilience and staged, low-risk cutovers, led by Nihar Ranjan Rout.
+- [Enterprise AI & RAG Development Services](https://www.niharrout.com/services/ai-product-development): Production-grade enterprise AI: custom RAG pipelines, semantic search, agent workflows and private LLMs with guardrails, led by Nihar Ranjan Rout.
+- [Product Strategy & Technical PRD Services](https://www.niharrout.com/services/product-strategy-prd): Bridge founder vision and engineering: technical PRDs, Figma prototypes, scope control and feature-bloat triage from product leader Nihar Ranjan Rout.
+
+## Guides (written by Nihar Ranjan Rout)
+- [MVP Development Cost in 2026: Agency vs Freelancers vs Squad](https://www.niharrout.com/blog/cost-to-build-mvp-2026): A transparent 2026 breakdown of MVP costs: agency markups, freelancer risks and dedicated founder-led squads compared. By Nihar Ranjan Rout.
+- [Fixed Price vs Time and Materials: Which Contract Is Right?](https://www.niharrout.com/blog/fixed-price-vs-time-and-materials-software-development): Fixed price or time and materials? Compare both software contract models, learn the hybrid milestone approach and the clauses every buyer should insist on.
+- [How to Add AI to an Existing Product: A 6-Step Plan](https://www.niharrout.com/blog/how-to-add-ai-to-an-existing-product): Add AI to a product you already run without wasting budget. A 6-step plan: pick one workflow, check your data, choose an approach, add guardrails, pilot.
+- [How to Choose a Software Development Company: 12 Questions](https://www.niharrout.com/blog/how-to-choose-a-software-development-company): Hiring a software development company? Use these 12 questions, a proposal comparison table and a red-flag list to pick a team you can trust.
+- [Mobile App vs Web App: Which Should You Build First?](https://www.niharrout.com/blog/mobile-app-vs-web-app-which-to-build-first): Mobile app or web app first? Compare reach, cost drivers, speed and features, then use simple decision rules to choose the right start for your idea.
+- [Creuto Is Now an OpenAI Select Partner](https://www.niharrout.com/blog/openai-select-partner): Creuto, the product and AI engineering company led by Nihar Ranjan Rout, is now an OpenAI Select Partner. What it means for teams building AI that works in production.
+- [Enterprise AI That Works: LLMs and Vector Search Without Hype](https://www.niharrout.com/blog/pragmatic-enterprise-ai-workflows): How real enterprises deploy domain-specific RAG pipelines, triage agents and deterministic guardrails over company ERP data. By Nihar Ranjan Rout.
+- [Product Scoping Framework: Cut 50% of Feature Bloat Early](https://www.niharrout.com/blog/product-scoping-framework-kill-feature-bloat): The 4-step framework used across 50+ software products to challenge assumptions, cut feature bloat and protect engineering budgets. By Nihar Ranjan Rout.
+- [From PRD to App Store: The 10-Week React Native Playbook](https://www.niharrout.com/blog/react-native-mobile-app-playbook): A 10-week playbook for shipping iOS and Android apps: offline-first sync, geofencing, payment escrow and App Store approval. By Nihar Ranjan Rout.
+- [Web Application Development: Build vs. Buy in 2026](https://www.niharrout.com/blog/web-application-development-build-vs-buy): When custom web application development pays for itself versus another SaaS subscription, with a real cost comparison and a build framework. By Nihar Ranjan Rout.
+- [What Is a PRD? How to Write a Product Requirements Document](https://www.niharrout.com/blog/what-is-a-prd-how-to-write-a-product-requirements-document): A PRD (product requirements document) turns an idea into something a team can build. Learn the 10 sections, PRD vs BRD, and common mistakes.
+- [Why Custom ERP Implementations Fail, and the Fix](https://www.niharrout.com/blog/why-custom-erp-implementations-fail): Why multi-department ERP projects stall, how to replace spreadsheets, and the architecture playbook for zero-downtime ERP cutovers. By Nihar Ranjan Rout.
+
+## Case studies
+- [Custom ERP for Manufacturing: Case Study](https://www.niharrout.com/work/custom-erp-manufacturing): Replaced four disconnected departments with one real-time system of record. How Creuto built a custom ERP for manufacturing operations.
+- [FlashNow Quick-Commerce App: Case Study](https://www.niharrout.com/work/flashnow): 10-15 minute delivery powered by neighborhood stores, not warehouses. How Creuto built the FlashNow quick-commerce platform.
+- [Make My Look Salon Booking App: Case Study](https://www.niharrout.com/work/make-my-look): Took an offline beauty industry online for customers and salon owners. How Creuto built the Make My Look booking marketplace.
+- [Skribe Unified Team Chat: Case Study](https://www.niharrout.com/work/skribe): One chat layer across Slack-style channels, Google Chat, Google Workspace and Microsoft 365. How Creuto built Skribe.
+- [Sky1 Wedding & Event Booking App: Case Study](https://www.niharrout.com/work/sky1-event-booking): One app to book a venue and every vendor around it, with no phone calls. How Creuto built the Sky1 wedding and event booking platform.
+
+## Costs and tools
+- [Software Project Costs & Investment Guide 2026](https://www.niharrout.com/project-costs): Transparent cost ranges, timelines and cost drivers for ERPs, marketplaces, delivery apps and SaaS platforms, grounded in real production projects.
+- [Mobile App Development Cost & Timeline Calculator 2026](https://www.niharrout.com/tools/app-cost-calculator): Estimate mobile app development cost and timeline in INR (₹ lakhs) and USD. Compare benchmarks for marketplaces, on-demand apps and startup MVPs.
+- [LinkedIn Text Formatter & Hook Optimizer](https://www.niharrout.com/tools/linkedin-text-formatter): Free online LinkedIn text formatter. Convert your hooks & captions into Unicode bold, italic, custom fonts, lists, and emojis with a live desktop & mobile post preview.
+- [Startup & Project Name Generator (with Keyword Pinning)](https://www.niharrout.com/tools/startup-name-generator): Generate brandable startup and app names with keyword pinning. Anchor your seed keywords, explore 5 naming styles, check domains and save favorites.
+
+## Contact
+- Book a free 45-minute call: https://calendly.com/creuto/meet
+- Email: me@niharrout.com
+- Phone and WhatsApp: +91 76088 44995
+
+## Elsewhere
+- LinkedIn: https://www.linkedin.com/in/iniharrout
+- Clutch reviews: https://clutch.co/profile/creuto
+- Creuto: https://creuto.com
+- GitHub: https://github.com/iniharrout
+- YouTube: https://www.youtube.com/@niharroutofficial

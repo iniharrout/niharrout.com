@@ -83,31 +83,6 @@
   <meta name="twitter:description" content="Founder-led mobile app, web app and custom software development by Nihar Ranjan Rout, Founder &amp; CEO of Creuto. Product strategy and a 100% in-house team.">
 
   <!-- JSON-LD Structured Data for Executive SEO -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Nihar Ranjan Rout",
-    "jobTitle": "Founder & Chief Executive Officer",
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Creuto",
-      "url": "https://creuto.com"
-    },
-    "url": "https://www.niharrout.com",
-    "image": "https://www.niharrout.com/assets/nihar-hero.jpg",
-    "sameAs": [
-      "https://linkedin.com/in/iniharrout",
-      "https://github.com/iniharrout",
-      "https://twitter.com/iniharrout",
-      "https://www.youtube.com/@niharroutofficial",
-      "https://medium.com/@niharrout",
-      "https://substack.com/@niharrout",
-      "https://www.crunchbase.com/person/nihar-ranjan-rout-db7a"
-    ],
-    "description": "Founder & CEO of Creuto. Product strategist and leader specializing in custom ERPs, mobile application engineering, and scalable B2B software."
-  }
-  </script>
 
   <!-- Design System Stylesheet -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -115,7 +90,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap">
   <link rel="stylesheet" href="/assets/design-system.css?v=blue4">
   <link rel="stylesheet" href="/assets/editorial.css?v=pick26">
-  <link rel="stylesheet" href="/assets/chrome.css?v=28">
+  <link rel="stylesheet" href="/assets/chrome.css?v=29">
   <script>document.documentElement.classList.add('js')</script>
 
   <!-- Calendly Widget CSS & JS -->
@@ -130,19 +105,30 @@
         "@id": "https://www.niharrout.com/#website",
         "url": "https://www.niharrout.com/",
         "name": "Nihar Ranjan Rout",
-        "alternateName": "niharrout.com",
+        "alternateName": [
+          "niharrout.com",
+          "Creuto by Nihar Ranjan Rout"
+        ],
         "inLanguage": "en",
+        "publisher": {
+          "@id": "https://www.niharrout.com/#organization"
+        },
         "author": {
-          "@type": "Person",
-          "name": "Nihar Ranjan Rout",
-          "url": "https://www.niharrout.com/"
+          "@id": "https://www.niharrout.com/#person"
         }
       },
       {
-        "@type": "Organization",
-        "@id": "https://www.niharrout.com/#organization",
-        "name": "Creuto",
-        "url": "https://creuto.com",
+        "@type": "Person",
+        "@id": "https://www.niharrout.com/#person",
+        "name": "Nihar Ranjan Rout",
+        "url": "https://www.niharrout.com/about",
+        "mainEntityOfPage": "https://www.niharrout.com/about",
+        "image": "https://www.niharrout.com/assets/nihar-hero-900.jpg",
+        "jobTitle": "Founder & Chief Executive Officer",
+        "description": "Founder & CEO of Creuto. Product leader with 8+ years in product management who has led 50+ products across mobile apps, web apps, custom software and ERP, and AI.",
+        "worksFor": {
+          "@id": "https://www.niharrout.com/#organization"
+        },
         "email": "me@niharrout.com",
         "address": {
           "@type": "PostalAddress",
@@ -150,11 +136,71 @@
           "addressRegion": "Odisha",
           "addressCountry": "IN"
         },
-        "founder": {
-          "@type": "Person",
-          "name": "Nihar Ranjan Rout",
-          "url": "https://www.niharrout.com/"
+        "knowsAbout": [
+          "Product management",
+          "Product requirements documents (PRDs)",
+          "MVP scoping",
+          "Mobile app development",
+          "Web application development",
+          "Custom software and ERP development",
+          "AI product development",
+          "Software project estimation"
+        ],
+        "sameAs": [
+          "https://www.linkedin.com/in/iniharrout",
+          "https://x.com/iniharrout",
+          "https://github.com/iniharrout",
+          "https://www.youtube.com/@niharroutofficial",
+          "https://medium.com/@niharrout",
+          "https://substack.com/@niharrout",
+          "https://www.crunchbase.com/person/nihar-ranjan-rout-db7a"
+        ]
+      },
+      {
+        "@type": [
+          "Organization",
+          "ProfessionalService"
+        ],
+        "@id": "https://www.niharrout.com/#organization",
+        "name": "Creuto",
+        "url": "https://creuto.com",
+        "mainEntityOfPage": "https://www.niharrout.com/about/facts",
+        "description": "Founder-led product and engineering company in Bhubaneswar, India. Builds mobile apps, web apps, custom software and AI products with an in-house team, a PRD-first process and fixed milestones. Clients own all code. OpenAI Select Partner.",
+        "logo": "https://www.niharrout.com/assets/nihar.jpg",
+        "image": "https://www.niharrout.com/assets/og/default.jpg",
+        "email": "me@niharrout.com",
+        "telephone": "+91-76088-44995",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Bhubaneswar",
+          "addressRegion": "Odisha",
+          "addressCountry": "IN"
         },
+        "founder": {
+          "@id": "https://www.niharrout.com/#person"
+        },
+        "areaServed": "Worldwide",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "email": "me@niharrout.com",
+          "telephone": "+91-76088-44995",
+          "availableLanguage": [
+            "English"
+          ],
+          "url": "https://calendly.com/creuto/meet"
+        },
+        "knowsAbout": [
+          "Mobile app development",
+          "Web application development",
+          "Custom software and ERP development",
+          "AI product development",
+          "Product strategy and PRDs"
+        ],
+        "sameAs": [
+          "https://clutch.co/profile/creuto",
+          "https://www.linkedin.com/in/iniharrout"
+        ],
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
           "name": "Services",
@@ -1264,6 +1310,7 @@
         <h4>Connect</h4>
         <ul>
           <li><a href="/about">About Nihar &amp; Creuto</a></li>
+          <li><a href="/about/facts">Company fact sheet</a></li>
           <li><a href="https://www.linkedin.com/in/iniharrout" target="_blank" rel="noopener">LinkedIn</a></li>
           <li><a href="https://x.com/iniharrout" target="_blank" rel="noopener">X (Twitter)</a></li>
           <li><a href="https://github.com/iniharrout" target="_blank" rel="noopener">GitHub</a></li>

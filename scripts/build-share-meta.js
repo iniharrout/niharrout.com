@@ -73,7 +73,8 @@ for (const file of walk(ROOT)) {
   if (size > 300 * 1024) problems.push(`${rel}: ${url} is ${Math.round(size / 1024)} KB (WhatsApp prefers under 300 KB)`);
   const dims = /\.jpe?g$/i.test(url) ? jpegSize(local) : null;
   const title = (html.match(/<meta\s+property="og:title"\s+content="([^"]*)"/) || [])[1] || '';
-  const alt = replaceable ? SHARE[kind] : ((html.match(/<meta\s+property="og:image:alt"\s+content="([^"]*)"/) || [])[1] || title.replace(/&amp;/g, '&'));
+  const unesc = (t) => String(t).replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&');
+  const alt = replaceable ? SHARE[kind] : unesc((html.match(/<meta\s+property="og:image:alt"\s+content="([^"]*)"/) || [])[1] || title);
 
   // drop old image-detail tags, then rewrite the block right after og:image
   html = html.replace(/\s*<meta\s+property="og:image:(?:width|height|type|alt)"[^>]*>/g, '');
