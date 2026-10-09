@@ -1838,7 +1838,7 @@ body.page-home .tools-head { max-width: 640px; margin: 0 auto 40px; text-align: 
 body.page-home .tools-head .kicker { justify-content: center; }
 body.page-home .tools-head h2 { margin: 0 0 12px; font-family: var(--font-display); font-size: clamp(1.9rem, 3.2vw, 2.8rem); font-weight: 500; line-height: 1.1; letter-spacing: -0.02em; color: var(--ink); }
 body.page-home .tools-sub { margin: 0; font-size: 1.05rem; line-height: 1.6; color: var(--ink-2); }
-body.page-home .tools-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; max-width: 1040px; margin: 0 auto; }
+body.page-home .tools-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; max-width: 860px; margin: 0 auto; }
 body.page-home .tools-row .tool-row { padding: 20px 22px; background: #fff; border: 1px solid rgba(9, 13, 22, 0.12); border-radius: 16px; transition: border-color 0.18s ease, transform 0.18s ease; }
 body.page-home .tools-row .tool-row:hover { background: #fff; border-color: var(--accent); transform: translateY(-2px); }
 

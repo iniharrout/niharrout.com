@@ -9,6 +9,7 @@ const fs = require('fs');
 const path = require('path');
 const leadHandler = require('./api/lead.js');
 const trackHandler = require('./api/track.js');
+const shortenHandler = require('./api/shorten.js');
 
 // Load .env (gitignored) so local runs pick up LEAD_WEBHOOK_URL like the host does.
 (function loadEnvFile() {
@@ -46,6 +47,11 @@ const server = http.createServer(async (req, res) => {
   // Handle /api/lead
   if (pathname === '/api/lead') {
     return leadHandler(req, res);
+  }
+
+  // Handle /api/shorten
+  if (pathname === '/api/shorten') {
+    return shortenHandler(req, res);
   }
 
   // Handle /api/track
@@ -90,7 +96,7 @@ if (require.main === module) {
   server.listen(PORT, () => {
     console.log(`[Dev Server] running at http://localhost:${PORT}`);
     console.log(`[Dev Server] Serving static files from ${PUBLIC_DIR}`);
-    console.log(`[Dev Server] /api/lead and /api/track active`);
+    console.log(`[Dev Server] /api/lead, /api/track and /api/shorten active`);
   });
 }
 
