@@ -870,7 +870,7 @@ function buildThankYou() {
         ${sectionHeader('While you wait', 'Platforms we have shipped', 'A quick look at how we approach real projects.')}
         <div class="loc-grid c3">${cards}
         </div>
-        <p class="loc-note">Planning your budget? Read the <a href="/project-costs" style="color:var(--hs-brand); font-weight:600;">2026 project cost guide</a> or the <a href="/blog/cost-to-build-mvp-2026/" style="color:var(--hs-brand); font-weight:600;">MVP cost breakdown</a>.</p>
+        <p class="loc-note">Planning your budget? Read the <a href="/project-costs" style="color:var(--hs-brand); font-weight:600;">2026 project cost guide</a> or the <a href="/blog/cost-to-build-mvp-2026" style="color:var(--hs-brand); font-weight:600;">MVP cost breakdown</a>.</p>
       </div>
     </section>
   </main>

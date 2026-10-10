@@ -1,0 +1,8 @@
+# Build tooling, page fragments and local files. They are needed to build the site, not to serve it,
+# and serving them publicly only creates junk URLs for search engines to find.
+partials
+scripts
+dev-server.js
+.env.example
+.claude
+.DS_Store

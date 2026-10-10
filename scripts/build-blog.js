@@ -325,7 +325,7 @@ const listLd = {
   url: `${SITE}/blog`,
   mainEntity: { '@type': 'ItemList', itemListElement: allItems.map((it, i) => ({ '@type': 'ListItem', position: i + 1, url: it.url, name: it.name })) },
 };
-index = index.replace(/<!-- blog:ld -->[\s\S]*?<!-- \/blog:ld -->/, '');
+index = index.replace(/\n*[ \t]*<!-- blog:ld -->[\s\S]*?<!-- \/blog:ld -->\n*/, '\n');
 index = index.replace('</head>', `  <!-- blog:ld -->\n  <script type="application/ld+json">\n  ${JSON.stringify(listLd, null, 2).replace(/\n/g, '\n  ')}\n  </script>\n  <!-- /blog:ld -->\n</head>`);
 fs.writeFileSync(indexFile, index);
 
