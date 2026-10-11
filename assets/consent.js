@@ -21,7 +21,7 @@
     el.setAttribute('aria-describedby', 'nr-consent-text');
     el.innerHTML =
       '<p class="nr-consent-title" id="nr-consent-title">Cookies and analytics</p>' +
-      '<p class="nr-consent-text" id="nr-consent-text">I use Google Analytics to see which pages are useful. It only loads if you accept. ' +
+      '<p class="nr-consent-text" id="nr-consent-text">I use Google Analytics and Microsoft Clarity to see which pages are useful and where visitors get stuck. They only load if you accept. ' +
       '<a href="/privacy-policy">Privacy policy</a></p>' +
       '<div class="nr-consent-actions">' +
         '<button type="button" class="nr-consent-btn" data-choice="denied">Decline</button>' +

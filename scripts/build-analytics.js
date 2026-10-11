@@ -11,11 +11,12 @@ const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
 const ID = 'G-T5CTESZZN0';
+const CLARITY_ID = 'yw774wk1kg';
 const SKIP = new Set(['node_modules', '.git', '.claude', 'scripts', 'api', 'assets', 'partials']);
 
 const BLOCK = `<!-- ga4 -->
   <!-- Google Analytics (gtag.js) with Consent Mode. For visitors in Europe, the UK and nearby time zones Google's script
-       is only loaded after they accept (assets/consent.js shows the banner). Everyone else loads it straight away. -->
+       is only loaded after they accept (assets/consent.js shows the banner), and Microsoft Clarity loads with it. Everyone else loads both straight away. -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -35,6 +36,16 @@ const BLOCK = `<!-- ga4 -->
         s.async = true;
         s.src = 'https://www.googletagmanager.com/gtag/js?id=${ID}';
         document.head.appendChild(s);
+        loadClarity();
+      }
+      // Microsoft Clarity (session replay and heatmaps). Loaded together with Google Analytics, so under the same consent.
+      function loadClarity() {
+        (function (c, l, a, r, i, t, y) {
+          c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
+          if (/^(localhost|127\\.0\\.0\\.1)$/.test(location.hostname)) return;
+          t = l.createElement(r); t.async = 1; t.src = 'https://www.clarity.ms/tag/' + i;
+          y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, 'clarity', 'script', '${CLARITY_ID}');
       }
       function store(value) { try { localStorage.setItem('nr_consent', value); } catch (e) {} }
       function clearCookies() {
@@ -42,7 +53,7 @@ const BLOCK = `<!-- ga4 -->
         if (parts.length > 2) domains.push('.' + parts.slice(-2).join('.'));
         document.cookie.split(';').forEach(function (c) {
           var name = c.split('=')[0].trim();
-          if (name.indexOf('_ga') !== 0) return;
+          if (name.indexOf('_ga') !== 0 && name.indexOf('_cl') !== 0) return;
           domains.forEach(function (d) { document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=' + d; });
           document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
         });
@@ -51,7 +62,7 @@ const BLOCK = `<!-- ga4 -->
         required: required,
         saved: saved,
         accept: function () { store('granted'); gtag('consent', 'update', { analytics_storage: 'granted' }); load(); },
-        decline: function () { store('denied'); gtag('consent', 'update', { analytics_storage: 'denied' }); clearCookies(); }
+        decline: function () { store('denied'); gtag('consent', 'update', { analytics_storage: 'denied' }); try { if (typeof window.clarity === 'function') window.clarity('stop'); } catch (e) {} clearCookies(); }
       };
       if (/^(localhost|127\\.0\\.0\\.1)$/.test(location.hostname)) { window['ga-disable-${ID}'] = true; }
       gtag('consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: granted ? 'granted' : 'denied' });
@@ -60,7 +71,7 @@ const BLOCK = `<!-- ga4 -->
       if (granted) load();
     })();
   </script>
-  <script src="/assets/consent.js?v=c2" defer></script>
+  <script src="/assets/consent.js?v=c3" defer></script>
   <!-- /ga4 -->`;
 
 function walk(dir, out = []) {
