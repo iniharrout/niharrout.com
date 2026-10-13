@@ -303,7 +303,7 @@ function portfolioSection(c, svc) {
 
 const TESTIMONIALS = [
   ['Before Creuto, every department was running on its own disconnected spreadsheet. Nihar locked down our operational requirements in the PRD, and his team delivered a unified system that gave our management team real-time visibility for the first time.', 'Operations Director', 'Large-Scale Manufacturing Enterprise'],
-  ['Nihar is that rare breed of product leader who understands business levers just as well as software architecture. He stopped us from wasting budget on features our customers didn\'t want and delivered our marketplace ahead of our launch schedule.', 'Co-Founder', 'Skyeone Event Booking Marketplace'],
+  ['Nihar is that rare breed of product leader who understands business levers just as well as software architecture. He stopped us from wasting budget on features our customers didn\'t want and delivered our marketplace ahead of our launch schedule.', 'Co-Founder', 'SkyOne Event Booking Marketplace'],
   ['Finding an engineering team that doesn\'t disappear or cut corners is rare. Creuto\'s in-house squad was disciplined, delivered bi-weekly demos like clockwork, and launched our mobile apps cleanly to the App Store and Google Play.', 'Founder & CEO', 'Make My Look Beauty Platform']
 ];
 
@@ -429,7 +429,7 @@ function buildServicePage(c, svcKey) {
   const urlPath = pageUrl(c, svcKey);
   const fullUrl = SITE + urlPath;
   const trail = [['Home', '/'], ['Locations', '/locations'], [c.name, cityUrl(c)], [svc.name, urlPath]];
-  const title = `${fill(svc.titleLead, c)} | Creuto`;
+  const title = `${fill(svc.titleLead, c)} | Nihar Ranjan Rout`;
   const description = `${svc.name} for ${c.name} businesses: fixed-scope PRD, in-house engineers, full code ownership. Free call with the founder.`;
 
   const faqs = [
@@ -509,7 +509,7 @@ function buildCityHub(c) {
   const repSvcKey = SERVICE_KEYS[cities.indexOf(c) % SERVICE_KEYS.length];
   const repSvc = services[repSvcKey];
   const trail = [['Home', '/'], ['Locations', '/locations'], [c.name, urlPath]];
-  const title = `Software, App & AI Development in ${c.name} | Creuto`;
+  const title = `Software, App & AI Development in ${c.name} | Nihar Ranjan Rout`;
   const description = `Mobile app, AI product and custom software development for ${c.name} businesses. Founder-led Creuto team, fixed-scope PRDs, full code ownership. Free discovery call.`;
 
   const faqs = [
@@ -629,7 +629,7 @@ ${ctaBand(`Building something in ${c.name}?`, 'Book a discovery call with Nihar.
 function buildIndex() {
   const urlPath = '/locations';
   const trail = [['Home', '/'], ['Locations', urlPath]];
-  const title = 'Software, App & AI Development Across India | Creuto';
+  const title = 'Software, App & AI Development Across India | Nihar Ranjan Rout';
   const description = 'Creuto builds mobile apps, AI products and custom software for businesses across Odisha and India’s metros. Founder-led, fixed-scope, remote-first from Bhubaneswar.';
   const graph = [
     organizationSchema(),
@@ -740,7 +740,7 @@ function buildReference() {
   ].map(abs);
 
   const html = head({
-    title: 'Location pages: link reference | Creuto',
+    title: 'Location pages: link reference | Nihar Ranjan Rout',
     description: 'Internal reference listing every location landing page URL.',
     path: urlPath,
     noindex: true
@@ -834,7 +834,7 @@ function buildThankYou() {
           </a>`).join('');
 
   return head({
-    title: 'Thank you | Creuto',
+    title: 'Thank you | Nihar Ranjan Rout',
     description: 'Your enquiry has been received. Nihar will reply within 24 hours.',
     path: '/thank-you',
     noindex: true

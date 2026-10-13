@@ -34,11 +34,6 @@
       "source": "/tools/url-shortener",
       "destination": "/tools",
       "permanent": true
-    },
-    {
-      "source": "/work",
-      "destination": "/#portfolio",
-      "permanent": true
     }
   ]
 }

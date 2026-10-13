@@ -145,7 +145,7 @@ module.exports = {
     label: 'custom software',
     short: 'Custom Software',
     h1: 'Custom Software Development Company in {city}',
-    titleLead: 'Custom Software & ERP Development in {city}',
+    titleLead: 'Custom Software & ERP Company in {city}',
     heroSub: 'Custom ERP, B2B platforms and SaaS products for {city} companies that have outgrown spreadsheets and off-the-shelf tools. One system of record, built around your process.',
     formType: 'Custom Software',
     budgets: ['Under ₹7L', '₹7L – ₹18L', '₹18L – ₹40L', 'Above ₹40L', 'Still evaluating'],
@@ -157,7 +157,7 @@ module.exports = {
       ['B2B SaaS product development', 'Multi-tenant architecture, billing, admin consoles and onboarding.'],
       ['Workflow & approval automation', 'Multi-level approvals and audit logs replacing email and paper sign-offs.'],
       ['Customer, vendor & partner portals', 'Secure portals for orders, invoices and documents tied to your back office.'],
-      ['Marketplace & booking platforms', 'Vendor onboarding, availability, payments and payouts, proven on Sky1.'],
+      ['Marketplace & booking platforms', 'Vendor onboarding, availability, payments and payouts, proven on SkyOne.'],
       ['Integrations & data pipelines', 'Tally, Zoho, SAP, Salesforce, GST and payment gateways connected reliably.'],
       ['Dashboards & business intelligence', 'Live operational dashboards replacing month-end spreadsheet consolidation.'],
       ['Legacy modernisation & support', 'Staged re-platforming and maintenance plans with response-time commitments.']

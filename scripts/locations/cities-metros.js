@@ -237,7 +237,7 @@ module.exports = [
           ['Partner, dealer & agent portals', 'Onboarding, targets, commissions and payouts with transparent statements for partners.']
         ],
         faqs: [
-          ['Do you build marketplaces and multi-vendor platforms?', 'Yes. Sky1 (event and vendor booking), Make My Look (beauty booking) and FlashNow (hyperlocal delivery) are marketplace-style platforms with vendor onboarding, payouts and real-time availability.'],
+          ['Do you build marketplaces and multi-vendor platforms?', 'Yes. SkyOne (event and vendor booking), Make My Look (beauty booking) and FlashNow (hyperlocal delivery) are marketplace-style platforms with vendor onboarding, payouts and real-time availability.'],
           ['What does a typical B2B platform cost?', 'A first version usually falls between ₹7 lakh and ₹18 lakh, and larger multi-module systems between ₹18 lakh and ₹40 lakh or more. The detail depends on modules, integrations and scale, and we give a fixed-scope estimate after discovery.']
         ]
       }

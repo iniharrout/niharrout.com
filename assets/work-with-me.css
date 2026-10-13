@@ -182,6 +182,27 @@ html.wwm-lock { overflow: hidden; }
   .wwm-dlg-foot .wwm-btn { width: 100%; }
   .wwm-dlg-x { top: 12px; right: 12px; }
 }
+/* ---------- Work (case studies) index ---------- */
+.wwm-wcard { display: flex; flex-direction: column; height: 100%; border: 1px solid var(--rule); border-radius: 24px; background: #fff; text-decoration: none; overflow: hidden; box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 18px 40px -30px rgba(15, 23, 42, 0.22); transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+.wwm-wcard:hover { transform: translateY(-4px); border-color: rgba(29, 78, 216, 0.35); box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 28px 54px -28px rgba(29, 78, 216, 0.35); }
+.wwm-wcard-img { display: block; aspect-ratio: 3 / 2; background: var(--paper-2); overflow: hidden; }
+.wwm-wcard-img img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+.wwm-wcard:hover .wwm-wcard-img img { transform: scale(1.03); }
+.wwm-wcard-body { display: flex; flex-direction: column; flex: 1; padding: 26px 28px 26px; }
+.wwm-wcard-tag { align-self: flex-start; font-size: 12.5px; font-weight: 600; color: var(--accent-deep); background: var(--accent-tint); border-radius: 999px; padding: 6px 13px; }
+.wwm-wcard h3 { margin-top: 16px; font-family: var(--display); font-weight: 500; font-size: 25px; line-height: 1.2; letter-spacing: -0.015em; }
+.wwm-wcard p { margin-top: 10px; color: var(--ink-2); font-size: 16px; }
+.wwm-wcard .wwm-rcard-go { margin-top: auto; padding-top: 22px; }
+.wwm-wcard:hover .wwm-rcard-go svg { transform: translateX(4px); }
+.wwm-end { padding: 8px 0 96px; }
+.wwm-end-card { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px 40px; padding: 40px 44px; border-radius: 26px; background: var(--paper-2); }
+.wwm-end-card p { margin-top: 8px; color: var(--ink-2); font-size: 16.5px; max-width: 480px; }
+@media (max-width: 720px) {
+  .wwm-wcard-body { padding: 22px 20px; }
+  .wwm-end-card { padding: 28px 22px; }
+  .wwm-end-card .wwm-btn { width: 100%; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .wwm *, .wwm *::before, .wwm *::after, .wwm-dialog, .wwm-dialog::backdrop { transition: none !important; animation: none !important; }
 }
