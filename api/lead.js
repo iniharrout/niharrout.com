@@ -136,23 +136,27 @@ async function handler(req, res) {
     return send(res, 503, { ok: false, fallback: true });
   }
 
+  const isApplication = /^Application:/i.test(lead.service);
+  const label = (k) => { const t = k.replace(/_/g, ' '); return t.charAt(0).toUpperCase() + t.slice(1); };
   const contactFields = [
     ['Name', lead.name],
     ['Email', lead.email],
     ['Phone', lead.phone],
-    ['Service', lead.service],
-    ['City', lead.city],
+    [isApplication ? 'Role' : 'Service', isApplication ? lead.service.replace(/^Application:\s*/i, '') : lead.service],
+    [isApplication ? 'Location' : 'City', lead.city],
     ['Budget', lead.budget],
-    ...Object.entries(lead.extras).map(([k, v]) => [k.replace(/_/g, ' '), v])
+    ...Object.entries(lead.extras).map(([k, v]) => [label(k), v])
   ].filter(([, v]) => v);
 
   const allFields = [...contactFields, ...(lead.message ? [['Message', lead.message]] : [])];
 
-  const title = `New ${lead.service || 'project'} enquiry${lead.city ? ' (' + lead.city + ')' : ''}`;
+  const title = isApplication
+    ? `New job application: ${lead.service.replace(/^Application:\s*/i, '')}${lead.city ? ' (' + lead.city + ')' : ''}`
+    : `New ${lead.service || 'project'} enquiry${lead.city ? ' (' + lead.city + ')' : ''}`;
 
   // Google Chat Card and Fallback Text
   const googleCardMessage = {
-    text: `🎯 *${title}*\n*From:* ${lead.name}${lead.email ? ' (' + lead.email + ')' : ''}${lead.phone ? ' | ' + lead.phone : ''}\n${lead.message ? '*Message:*\n' + lead.message : ''}`.trim(),
+    text: `${isApplication ? '💼' : '🎯'} *${title}*\n*From:* ${lead.name}${lead.email ? ' (' + lead.email + ')' : ''}${lead.phone ? ' | ' + lead.phone : ''}\n${lead.message ? '*Message:*\n' + lead.message : ''}`.trim(),
     cardsV2: [{
       cardId: 'siteLead',
       card: {
@@ -173,7 +177,7 @@ async function handler(req, res) {
             }))
           },
           ...(lead.message ? [{
-            header: 'Project Details / Message',
+            header: isApplication ? 'Application note' : 'Project Details / Message',
             widgets: [
               {
                 textParagraph: {

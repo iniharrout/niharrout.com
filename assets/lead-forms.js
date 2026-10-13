@@ -84,7 +84,8 @@ function initLeadForms() {
     if (lead.budget) lines.push('Budget: ' + lead.budget);
     Object.keys(lead.extras).forEach(function (k) { lines.push(k.replace(/_/g, ' ') + ': ' + lead.extras[k]); });
     lines.push('', lead.message);
-    var subject = 'Enquiry: ' + (lead.service || 'Project') + (lead.city ? ' (' + lead.city + ')' : '') + ' - ' + lead.name;
+    var isApplication = /^Application:/.test(lead.service);
+    var subject = (isApplication ? '' : 'Enquiry: ') + (lead.service || 'Project') + (lead.city ? ' (' + lead.city + ')' : '') + ' - ' + lead.name;
     return 'mailto:me@niharrout.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
   }
 
@@ -126,10 +127,20 @@ function initLeadForms() {
       deliver(lead).then(function (result) {
         if (result.done) {
           form.reset();
+          // Job applications stay on the page and are not counted as client leads.
+          if (form.hasAttribute('data-inline-success')) {
+            if (typeof gtag === 'function') gtag('event', 'job_application', { role: lead.service.replace(/^Application:\s*/, '') });
+            var status = form.parentNode.querySelector('.lead-form-status');
+            if (status) status.style.display = 'none';
+            var done = document.getElementById('applyDone');
+            form.hidden = true;
+            if (done) { done.hidden = false; done.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+            return;
+          }
           goToThankYou(lead);
           return;
         }
-        show(form, false, result.error || 'We could not send your enquiry just now. Please try again, or', result.error ? null : mailtoHref(lead));
+        show(form, false, result.error || 'We could not send that just now. Please try again, or', result.error ? null : mailtoHref(lead));
         if (button) button.disabled = false;
       });
     });
