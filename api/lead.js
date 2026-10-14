@@ -137,6 +137,8 @@ async function handler(req, res) {
   }
 
   const isApplication = /^Application:/i.test(lead.service);
+  const isBooking = /^Call (booking request|request for review)/i.test(lead.service);
+  const isBookingReview = /^Call request for review/i.test(lead.service);
   const label = (k) => { const t = k.replace(/_/g, ' '); return t.charAt(0).toUpperCase() + t.slice(1); };
   const contactFields = [
     ['Name', lead.name],
@@ -152,11 +154,13 @@ async function handler(req, res) {
 
   const title = isApplication
     ? `New job application: ${lead.service.replace(/^Application:\s*/i, '')}${lead.city ? ' (' + lead.city + ')' : ''}`
-    : `New ${lead.service || 'project'} enquiry${lead.city ? ' (' + lead.city + ')' : ''}`;
+    : isBooking
+      ? (isBookingReview ? 'Call request to review (no slot held)' : 'New call booking request (confirm the slot)')
+      : `New ${lead.service || 'project'} enquiry${lead.city ? ' (' + lead.city + ')' : ''}`;
 
   // Google Chat Card and Fallback Text
   const googleCardMessage = {
-    text: `${isApplication ? '💼' : '🎯'} *${title}*\n*From:* ${lead.name}${lead.email ? ' (' + lead.email + ')' : ''}${lead.phone ? ' | ' + lead.phone : ''}\n${lead.message ? '*Message:*\n' + lead.message : ''}`.trim(),
+    text: `${isApplication ? '💼' : isBooking ? (isBookingReview ? '📥' : '📅') : '🎯'} *${title}*\n*From:* ${lead.name}${lead.email ? ' (' + lead.email + ')' : ''}${lead.phone ? ' | ' + lead.phone : ''}\n${lead.extras['Slot (IST)'] ? '*Slot:* ' + lead.extras['Slot (IST)'] + '\n' : ''}${lead.message ? '*Message:*\n' + lead.message : ''}`.trim(),
     cardsV2: [{
       cardId: 'siteLead',
       card: {
