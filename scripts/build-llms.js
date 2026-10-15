@@ -31,7 +31,7 @@ const out = [
   line('/project-costs'),
   ...dirs('tools').map((s) => line('/tools/' + s)), '',
   '## Contact',
-  '- Book a free 45-minute call: https://calendly.com/creuto/meet',
+  '- Book a free 45-minute call: https://calendar.app.google/HJ4ctVHEXLjUxCzp6',
   '- Email: me@niharrout.com',
   '- Phone and WhatsApp: +91 76088 44995', '',
   '## Elsewhere',

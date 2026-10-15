@@ -59,7 +59,7 @@ function ctaBox(c) {
   return `<div class="blog-cta-box">
   <h3>${esc(c.title)}</h3>
   <p>${esc(c.text)}</p>
-  <a href="https://calendly.com/creuto/meet" data-calendly="true" class="cl-button -primary btn-book-call">${esc(c.button)} <span style="margin-left:4px;">&rarr;</span></a>
+  <a href="https://calendar.app.google/HJ4ctVHEXLjUxCzp6" target="_blank" rel="noopener" data-calendly="true" class="cl-button -primary btn-book-call">${esc(c.button)} <span style="margin-left:4px;">&rarr;</span></a>
 </div>`;
 }
 
@@ -163,8 +163,6 @@ ${p.keywords.map((k) => `  <meta property="article:tag" content="${esc(k)}">`).j
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap">
   <link rel="stylesheet" href="/assets/design-system.css?v=blue4">
   <link rel="stylesheet" href="/assets/blog-post.css?v=bp2">
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </head>
 
 <body>
@@ -230,7 +228,7 @@ ${p.faq.map(([q, a]) => `          <h3>${esc(q)}</h3>\n          <p>${esc(a)}</p
           <h3>${esc(p.endCta.title)}</h3>
           <p>${esc(p.endCta.text)}</p>
           <div class="blog-cta-actions">
-            <a href="https://calendly.com/creuto/meet" data-calendly="true" class="cl-button -primary btn-book-call">Book a free strategy call <span style="margin-left:4px;">&rarr;</span></a>
+            <a href="https://calendar.app.google/HJ4ctVHEXLjUxCzp6" target="_blank" rel="noopener" data-calendly="true" class="cl-button -primary btn-book-call">Book a free strategy call <span style="margin-left:4px;">&rarr;</span></a>
             <a href="${p.endCta.service.href}" class="blog-cta-link">${esc(p.endCta.service.label)} ${ARROW}</a>
           </div>
         </div>

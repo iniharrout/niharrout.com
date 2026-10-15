@@ -261,15 +261,6 @@
     }
     if (sumFeat) sumFeat.textContent = `${state.features.length} core features`;
     if (sumTier) sumTier.textContent = DESIGN_TIERS[state.designTier].label;
-
-    // Update Calendly link with summary params
-    const bookBtn = document.getElementById('btn-book-calc');
-    if (bookBtn) {
-      const summaryText = encodeURIComponent(
-        `App Scope: ${arch.name} (${formatCurrency(result.minInr)} - ${formatCurrency(result.maxInr, true)}, ~${result.weeks} wks, ${DESIGN_TIERS[state.designTier].label})`
-      );
-      bookBtn.href = `https://calendly.com/creuto/meet?a1=${summaryText}`;
-    }
   }
 
   function init() {

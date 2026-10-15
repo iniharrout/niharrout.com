@@ -127,67 +127,6 @@
     });
   }
 
-  // 6. Calendly Integration
-  function initCalendly() {
-    function openCalendlyModal(e) {
-      if (e) e.preventDefault();
-      var isMobile = window.innerWidth <= 768 || /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-      if (isMobile) {
-        // On mobile devices, open Calendly's native mobile interface directly.
-        // This avoids iframe scroll traps, clipped time slots, and keyboard overlaps on mobile browsers.
-        window.open('https://calendly.com/creuto/meet', '_blank');
-        return;
-      }
-      if (window.Calendly && typeof window.Calendly.initPopupWidget === 'function') {
-        window.Calendly.initPopupWidget({
-          url: 'https://calendly.com/creuto/meet?primary_color=0b7a45&text_color=2d3e50'
-        });
-      } else {
-        window.open('https://calendly.com/creuto/meet', '_blank');
-      }
-    }
-
-    // Attach to all elements with data-calendly="true" or .btn-book-call
-    document.querySelectorAll('[data-calendly="true"], .btn-book-call, a[href="#calendly"]').forEach(function (btn) {
-      btn.addEventListener('click', openCalendlyModal);
-    });
-
-    // Initialize badge widget if script is loaded
-    function setupBadge() {
-      if (window.Calendly && typeof window.Calendly.initBadgeWidget === 'function') {
-        // Prevent duplicate badges
-        if (!document.querySelector('.calendly-badge-widget')) {
-          window.Calendly.initBadgeWidget({
-            url: 'https://calendly.com/creuto/meet?primary_color=0b7a45&text_color=2d3e50',
-            text: (window.innerWidth <= 768) ? 'Book a call' : 'Schedule a Call with Me',
-            color: '#1d4ed8',
-            textColor: '#ffffff',
-            branding: false
-          });
-
-          // Ensure reliable mobile experience when tapping the floating badge
-          setTimeout(function () {
-            var badge = document.querySelector('.calendly-badge-widget');
-            if (badge) {
-              badge.addEventListener('click', function (e) {
-                var isMobile = window.innerWidth <= 768 || /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-                if (isMobile) {
-                  e.stopPropagation();
-                  e.preventDefault();
-                  window.open('https://calendly.com/creuto/meet', '_blank');
-                }
-              }, true);
-            }
-          }, 450);
-        }
-      } else {
-        setTimeout(setupBadge, 400);
-      }
-    }
-    // Floating badge widget disabled to avoid overlapping hero elements
-    // setupBadge();
-  }
-
   // DOM Ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function () {
@@ -196,7 +135,6 @@
       initFAQ();
       initFooterYear();
       initSmoothScroll();
-      initCalendly();
     });
   } else {
     initStickyNav();
@@ -204,6 +142,5 @@
     initFAQ();
     initFooterYear();
     initSmoothScroll();
-    initCalendly();
   }
 })();
