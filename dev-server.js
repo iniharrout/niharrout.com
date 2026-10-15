@@ -9,8 +9,6 @@ const fs = require('fs');
 const path = require('path');
 const leadHandler = require('./api/lead.js');
 const trackHandler = require('./api/track.js');
-const slotsHandler = require('./api/slots.js');
-const bookHandler = require('./api/book.js');
 
 // Load .env (gitignored) so local runs pick up LEAD_WEBHOOK_URL like the host does.
 (function loadEnvFile() {
@@ -49,9 +47,6 @@ const server = http.createServer(async (req, res) => {
   if (pathname === '/api/lead') {
     return leadHandler(req, res);
   }
-
-  if (pathname === '/api/slots') return slotsHandler(req, res);
-  if (pathname === '/api/book') return bookHandler(req, res);
 
   // Handle /api/track
   if (pathname === '/api/track') {

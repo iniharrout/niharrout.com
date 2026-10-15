@@ -1,18 +1,15 @@
 /**
  * "Book a Call" pop-up. Takes over every Book a Call button on the site (they used to open Calendly) and runs a
  * three-step request: 1) pick a time, shown in the visitor's own time zone, 2) contact details,
- * 3) what the call is about. Real project requests are booked on the founder's Google Calendar through
- * /api/book (the invite goes to the visitor and to nihar@creuto.com), and only free slots are offered
- * (/api/slots). Every request is also posted to Google Chat through /api/lead. If the calendar is not
- * connected or does not answer, the request goes to Google Chat alone and the founder confirms by hand.
+ * 3) what the call is about. Frontend only: nothing is written to a calendar. The request is sent to
+ * /api/lead, which posts it to Google Chat, and the founder confirms the slot from there.
  *
  * Routing (decided in the browser, shown to the visitor, and labelled in the Chat message):
- *   - topic 1 or 2 and the message looks like a real project -> booked on the calendar ("Call booked"),
- *     or "Call booking request" (confirm by hand) when the calendar is not reachable
+ *   - topic 1 or 2 and the message looks like a real project -> "Call booking request" (needs a confirmation)
  *   - topic 3, or a message with job / vendor / marketing / partnership words -> "Call request for review"
  *     (no slot is held; the visitor is told the team will get back if it is a fit)
  *
- * The standard hours are the rule set in CONFIG below (keep api/_booking.js in step); the live calendar then removes taken times.
+ * Availability is a plain rule set in CONFIG below (no live calendar), so change the hours there.
  * Without JavaScript the buttons still open the Calendly page they link to.
  */
 (function () {
@@ -50,7 +47,7 @@
   var TZ_COUNTRY = { 'Asia/Kolkata': 'India', 'America/New_York': 'United States', 'America/Chicago': 'United States', 'America/Denver': 'United States', 'America/Los_Angeles': 'United States', 'America/Toronto': 'Canada', 'Europe/London': 'United Kingdom', 'Australia/Sydney': 'Australia', 'Australia/Melbourne': 'Australia', 'Australia/Perth': 'Australia', 'Asia/Singapore': 'Singapore', 'Asia/Dubai': 'United Arab Emirates', 'Asia/Ho_Chi_Minh': 'Vietnam', 'Europe/Berlin': 'Germany', 'Europe/Paris': 'France', 'Europe/Amsterdam': 'Netherlands', 'Pacific/Auckland': 'New Zealand' };
   var TZ_LIST = ['Asia/Kolkata', 'America/New_York', 'America/Chicago', 'America/Denver', 'America/Los_Angeles', 'America/Toronto', 'America/Sao_Paulo', 'Europe/London', 'Europe/Dublin', 'Europe/Paris', 'Europe/Berlin', 'Europe/Amsterdam', 'Europe/Madrid', 'Europe/Rome', 'Europe/Stockholm', 'Europe/Istanbul', 'Asia/Dubai', 'Asia/Riyadh', 'Asia/Dhaka', 'Asia/Bangkok', 'Asia/Ho_Chi_Minh', 'Asia/Singapore', 'Asia/Kuala_Lumpur', 'Asia/Manila', 'Asia/Hong_Kong', 'Asia/Tokyo', 'Asia/Seoul', 'Australia/Perth', 'Australia/Sydney', 'Pacific/Auckland', 'Africa/Lagos', 'Africa/Nairobi', 'Africa/Cairo', 'Africa/Johannesburg', 'UTC'];
 
-  var state = { tz: '', slot: 0, day: '', step: 1, sending: false, live: null, liveAt: 0, pending: null };
+  var state = { tz: '', slot: 0, day: '', step: 1, sending: false };
   var dlg = null;
   var els = {};
 
@@ -131,7 +128,6 @@
             '<section data-panel="1">' +
               '<h2 class="bk-title" id="bk-title">Pick a time</h2>' +
               '<p class="bk-sub">A free 45-minute call with Nihar.</p>' +
-              '<p class="bk-error" id="bk-notice" role="alert" hidden></p>' +
               '<label class="bk-label" for="bk-tz">Times shown in <span>(change if you are somewhere else)</span></label>' +
               '<select class="bk-tz" id="bk-tz"></select>' +
               '<label class="bk-label">Choose a day</label>' +
@@ -193,40 +189,12 @@
     if (TZ_COUNTRY[state.tz]) { els.country.value = TZ_COUNTRY[state.tz]; syncCode(); }
 
     bind();
-    loadLive(true);
+    renderDays();
   }
 
   // ---------- step 1: day and time ----------
-  function currentSlots() {
-    if (!state.live) return allSlots();
-    var earliest = Date.now() + CONFIG.leadHours * 3600000;
-    return state.live.filter(function (ts) { return ts >= earliest; });
-  }
-  // Ask the server which times are really free on the calendar. If it cannot say, the standard hours are offered.
-  function loadLive(force) {
-    if (state.pending) return state.pending;
-    if (!force && state.liveAt && Date.now() - state.liveAt < 60000) return Promise.resolve();
-    if (!window.fetch) { renderDays(); return Promise.resolve(); }
-    var ctl = window.AbortController ? new AbortController() : null;
-    var timer = ctl ? setTimeout(function () { ctl.abort(); }, 5000) : null;
-    els.days.innerHTML = '<p class="bk-empty">Checking my calendar…</p>';
-    els.times.innerHTML = '';
-    state.pending = fetch('/api/slots', { cache: 'no-store', signal: ctl ? ctl.signal : undefined })
-      .then(function (r) { return r.ok ? r.json() : null; })
-      .catch(function () { return null; })
-      .then(function (j) {
-        if (timer) clearTimeout(timer);
-        state.live = j && j.live && Array.isArray(j.slots) ? j.slots : null;
-        state.liveAt = Date.now();
-        state.pending = null;
-        renderDays();
-      });
-    return state.pending;
-  }
-
   function renderDays() {
-    var slots = currentSlots();
-    if (state.slot && slots.indexOf(state.slot) === -1) state.slot = 0;
+    var slots = allSlots();
     var byDay = {};
     var order = [];
     slots.forEach(function (ts) {
@@ -352,53 +320,14 @@
 
     state.sending = true; els.next.disabled = true; els.error.hidden = true;
     els.next.textContent = 'Sending…';
-
-    function sendLead() {
-      return fetch('/api/lead', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(lead) })
-        .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: !!j.ok, status: r.status, error: j.error }; }); })
-        .catch(function () { return { ok: false }; });
-    }
-    function finish(kind, res) {
-      state.sending = false;
-      if (!res.ok) { fail(lead, res); return; }
-      showResult(kind, verdict, lead);
-      track(kind === 'review' ? 'call_request_review' : 'generate_lead', { lead_type: kind === 'booked' ? 'call_booked' : 'call_booking', routing: kind });
-    }
-    function asReview(why) {
-      verdict = { route: 'review', why: why, hits: verdict.hits, topic: verdict.topic };
-      lead.service = 'Call request for review';
-      lead.extras['Routing'] = 'Review: job or vendor words, no slot held';
-    }
-
-    if (verdict.route !== 'project') { sendLead().then(function (res) { finish('review', res); }); return; }
-
-    // A real project: put it on the calendar first, then tell Google Chat what happened.
-    fetch('/api/book', {
-      method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ slot: state.slot, tz: state.tz, name: lead.name, email: lead.email, phone: lead.phone, country: els.country.value, company: v('#bk-company'), topic: v('#bk-topic'), message: lead.message, website: '' })
-    })
-      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { j.status = r.status; return j; }); })
-      .catch(function () { return { ok: false, reason: 'unavailable' }; })
-      .then(function (b) {
-        if (b.ok) {
-          lead.service = 'Call booked';
-          lead.extras['Routing'] = 'Booked on your calendar, invite sent to ' + lead.email + ' and nihar@creuto.com';
-          if (b.meetLink) lead.extras['Meet link'] = b.meetLink;
-          state.meet = !!b.meet;
-          sendLead().then(function (res) { res.ok = true; finish('booked', res); }); // the calendar already has it: show success even if Chat hiccups
-          return;
-        }
-        if (b.reason === 'taken') {
-          state.sending = false; state.slot = 0;
-          var note = dlg.querySelector('#bk-notice');
-          note.textContent = 'Sorry, that time was just taken. Please pick another one.';
-          note.hidden = false;
-          loadLive(true).then(function () { go(1); });
-          return;
-        }
-        if (b.route === 'review') { asReview('words'); sendLead().then(function (res) { finish('review', res); }); return; }
-        if (b.status === 400 && b.error) { state.sending = false; fail(lead, { status: 400, error: b.error }); return; }
-        sendLead().then(function (res) { finish('request', res); }); // calendar not connected or not answering: send it to Chat to confirm by hand
+    fetch('/api/lead', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(lead) })
+      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: !!j.ok, status: r.status, error: j.error }; }); })
+      .catch(function () { return { ok: false }; })
+      .then(function (res) {
+        state.sending = false;
+        if (!res.ok) { fail(lead, res); return; }
+        showResult(verdict, lead);
+        track(verdict.route === 'project' ? 'generate_lead' : 'call_request_review', { lead_type: 'call_booking', routing: verdict.route });
       });
   }
   function fail(lead, res) {
@@ -408,17 +337,12 @@
     els.error.hidden = false;
     els.error.innerHTML = (res.status === 400 && res.error ? esc(res.error) : 'We could not send that just now. Please try again, or') + (res.status === 400 && res.error ? '' : ' <a href="' + href + '">email your request instead</a>.');
   }
-  function showResult(kind, verdict, lead) {
+  function showResult(verdict, lead) {
     dlg.querySelector('.bk-head').hidden = true;
     ['1', '2', '3'].forEach(function (s) { dlg.querySelector('[data-panel="' + s + '"]').hidden = true; });
     dlg.querySelector('#bk-foot').hidden = true;
     var first = esc(lead.name.split(/\s+/)[0]);
-    if (kind === 'booked') {
-      els.done.innerHTML = CHECK_SVG + '<h3>You&rsquo;re booked</h3>' +
-        '<p>Thank you, ' + first + '. A calendar invite is on its way to ' + esc(lead.email) + (state.meet ? ', with a Google Meet link' : '') + '.</p>' +
-        '<div class="bk-slot"><b>' + esc(longTime(state.slot, state.tz)) + '</b>' + (state.tz === 'Asia/Kolkata' ? '' : esc(longTime(state.slot, 'Asia/Kolkata'))) + '</div>' +
-        '<div><button class="bk-btn is-primary" type="button" data-bk-close>Done</button></div>';
-    } else if (kind === 'request') {
+    if (verdict.route === 'project') {
       els.done.innerHTML = CHECK_SVG + '<h3>Call request received</h3>' +
         '<p>Thank you, ' + first + '. I will confirm this time with you by email.</p>' +
         '<div class="bk-slot"><b>' + esc(longTime(state.slot, state.tz)) + '</b>' + (state.tz === 'Asia/Kolkata' ? '' : esc(longTime(state.slot, 'Asia/Kolkata'))) + '</div>' +
@@ -443,8 +367,7 @@
     els.form.reset();
     var tzGuess = TZ_COUNTRY[state.tz]; if (tzGuess) els.country.value = tzGuess;
     syncCode(); updateCount(); els.error.hidden = true;
-    dlg.querySelector('#bk-notice').hidden = true;
-    loadLive(true); go(1);
+    renderDays(); go(1);
   }
   function open() {
     build();
@@ -452,7 +375,6 @@
     go(state.step === 1 ? 1 : state.step);
     if (!dlg.open) dlg.showModal();
     document.documentElement.classList.add('bk-lock');
-    loadLive(false);
     return true;
   }
   function updateCount() {
@@ -468,7 +390,7 @@
       if (!t) return;
       if (t.hasAttribute('data-bk-close')) { dlg.close(); return; }
       if (t.classList.contains('bk-day')) { state.day = t.getAttribute('data-day'); els.days.querySelectorAll('.bk-day').forEach(function (b) { b.setAttribute('aria-pressed', String(b === t)); }); renderTimes(); return; }
-      if (t.classList.contains('bk-time')) { dlg.querySelector('#bk-notice').hidden = true; state.slot = +t.getAttribute('data-ts'); els.times.querySelectorAll('.bk-time').forEach(function (b) { b.setAttribute('aria-pressed', String(b === t)); }); refreshFooter(); els.next.disabled = false; return; }
+      if (t.classList.contains('bk-time')) { state.slot = +t.getAttribute('data-ts'); els.times.querySelectorAll('.bk-time').forEach(function (b) { b.setAttribute('aria-pressed', String(b === t)); }); refreshFooter(); els.next.disabled = false; return; }
       if (t.id === 'bk-back') go(state.step - 1);
     });
     els.tz.addEventListener('change', function () { state.tz = els.tz.value; renderDays(); });
