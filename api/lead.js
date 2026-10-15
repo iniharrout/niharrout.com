@@ -137,7 +137,7 @@ async function handler(req, res) {
   }
 
   const isApplication = /^Application:/i.test(lead.service);
-  const isBooking = /^Call (booking request|request for review)/i.test(lead.service);
+  const isBooking = /^Call (booking request|booked|request for review)/i.test(lead.service);
   const isBookingReview = /^Call request for review/i.test(lead.service);
   const label = (k) => { const t = k.replace(/_/g, ' '); return t.charAt(0).toUpperCase() + t.slice(1); };
   const contactFields = [
@@ -155,7 +155,7 @@ async function handler(req, res) {
   const title = isApplication
     ? `New job application: ${lead.service.replace(/^Application:\s*/i, '')}${lead.city ? ' (' + lead.city + ')' : ''}`
     : isBooking
-      ? (isBookingReview ? 'Call request to review (no slot held)' : 'New call booking request (confirm the slot)')
+      ? (isBookingReview ? 'Call request to review (no slot held)' : /^Call booked/i.test(lead.service) ? 'Call booked on your calendar (invite sent)' : 'New call booking request (confirm the slot)')
       : `New ${lead.service || 'project'} enquiry${lead.city ? ' (' + lead.city + ')' : ''}`;
 
   // Google Chat Card and Fallback Text

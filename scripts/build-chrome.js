@@ -19,7 +19,7 @@ const CSS = '<link rel="stylesheet" href="/assets/chrome.css?v=30">';
 const JS = '<script src="/assets/chrome.js?v=9" defer></script>';
 // The Book a Call pop-up (assets/booking.js) replaces the old Calendly buttons on every page.
 const BK_CSS = '<link rel="stylesheet" href="/assets/booking.css?v=bk1">';
-const BK_JS = '<script src="/assets/booking.js?v=bk3" defer></script>';
+const BK_JS = '<script src="/assets/booking.js?v=bk4" defer></script>';
 
 const block = (name, body) => `<!-- chrome:${name} -->\n${body}\n<!-- /chrome:${name} -->`;
 const markerRe = (name) => new RegExp(`<!-- chrome:${name} -->[\\s\\S]*?<!-- /chrome:${name} -->`);
