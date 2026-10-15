@@ -1,0 +1,22 @@
+/* Book a Call pop-up: Google Calendar's appointment page inside a dialog (assets/schedule-popup.js). Standalone. */
+.sp-dialog { --sp-ink: #090d16; --sp-ink-3: #64748b; --sp-rule: rgba(15, 23, 42, 0.1); --sp-blue: #1d4ed8;
+  padding: 0; border: 0; border-radius: 26px; width: min(940px, calc(100vw - 48px)); max-width: none; height: min(90vh, 780px); background: #fff; color: var(--sp-ink); overflow: hidden;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif; box-shadow: 0 50px 120px -30px rgba(9, 13, 22, 0.55); }
+.sp-dialog[open] { display: flex; flex-direction: column; animation: sp-pop .26s cubic-bezier(.2, .8, .2, 1); }
+.sp-dialog::backdrop { background: rgba(9, 13, 22, 0.55); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); animation: sp-fade .2s ease; }
+@keyframes sp-pop { from { opacity: 0; transform: translateY(14px) scale(.98); } to { opacity: 1; transform: none; } }
+@keyframes sp-fade { from { opacity: 0; } to { opacity: 1; } }
+html.sp-lock { overflow: hidden; }
+.sp-dialog *, .sp-dialog *::before, .sp-dialog *::after { box-sizing: border-box; }
+.sp-head { flex: none; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 22px 16px 28px; border-bottom: 1px solid var(--sp-rule); }
+.sp-head h2 { margin: 0; font-family: var(--display, 'Fraunces', Georgia, serif); font-weight: 500; font-size: 24px; line-height: 1.15; letter-spacing: -0.02em; }
+.sp-head p { margin: 2px 0 0; font-size: 14px; color: var(--sp-ink-3); }
+.sp-x { flex: none; width: 40px; height: 40px; display: grid; place-items: center; border: 1px solid var(--sp-rule); border-radius: 50%; background: #fff; color: var(--sp-ink); cursor: pointer; transition: background .2s, color .2s; }
+.sp-x:hover { background: var(--sp-ink); color: #fff; }
+.sp-x svg { width: 17px; height: 17px; }
+.sp-body { position: relative; flex: 1; min-height: 0; background: #fff; }
+.sp-body iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: #fff; }
+.sp-loading { position: absolute; inset: 0; display: grid; place-items: center; font-size: 15px; color: var(--sp-ink-3); }
+.sp-foot { flex: none; display: flex; justify-content: space-between; gap: 12px; padding: 12px 28px 14px; border-top: 1px solid var(--sp-rule); font-size: 13.5px; color: var(--sp-ink-3); }
+.sp-foot a { color: var(--sp-blue); font-weight: 600; }
+@media (prefers-reduced-motion: reduce) { .sp-dialog, .sp-dialog::backdrop { animation: none !important; } }

@@ -203,6 +203,28 @@ html.wwm-lock { overflow: hidden; }
   .wwm-end-card .wwm-btn { width: 100%; }
 }
 
+/* ---------- /book: the calendar embedded in the page ---------- */
+.wwm-hero-tight { padding-bottom: 32px; }
+.wwm-book { padding: 8px 0 96px; }
+.wwm-embed { border: 1px solid var(--rule); border-radius: 26px; background: #fff; overflow: hidden; box-shadow: 0 30px 70px -40px rgba(15, 23, 42, 0.35); }
+.wwm-embed iframe { display: block; width: 100%; height: 760px; border: 0; }
+.wwm-embed-fallback { padding: 14px 24px 18px; border-top: 1px solid var(--rule); font-size: 14px; color: var(--ink-3); text-align: center; }
+.wwm-embed-fallback a { color: var(--accent); font-weight: 600; text-decoration: none; }
+.wwm-embed-fallback svg { display: inline-block; width: 14px; height: 14px; vertical-align: -2px; }
+.wwm-expect { margin-top: 44px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1.5px solid var(--ink); }
+.wwm-expect > div { padding: 26px 28px 8px 0; }
+.wwm-expect > div + div { padding-left: 28px; border-left: 1px solid var(--rule); }
+.wwm-expect h2 { font-family: var(--display); font-weight: 500; font-size: 24px; letter-spacing: -0.02em; }
+.wwm-expect p { margin-top: 8px; color: var(--ink-2); font-size: 15.5px; }
+.wwm-book-note { margin-top: 30px; padding: 18px 22px; border-radius: 16px; background: var(--paper-2); color: var(--ink-2); font-size: 15px; }
+.wwm-book-note a { color: var(--accent); font-weight: 600; }
+@media (max-width: 720px) {
+  .wwm-embed { border-radius: 18px; }
+  .wwm-embed iframe { height: 820px; }
+  .wwm-expect { grid-template-columns: minmax(0, 1fr); }
+  .wwm-expect > div, .wwm-expect > div + div { padding: 20px 0 6px; border-left: 0; border-bottom: 1px solid var(--rule); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .wwm *, .wwm *::before, .wwm *::after, .wwm-dialog, .wwm-dialog::backdrop { transition: none !important; animation: none !important; }
 }

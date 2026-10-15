@@ -1,0 +1,58 @@
+/**
+ * Book a Call pop-up. Every Book a Call button is a plain link to the Google Calendar appointment page (it works
+ * with no JavaScript and opens in a new tab). On desktop and tablet this script opens that same booking page
+ * inside a pop-up instead, so visitors stay on the site. The calendar only loads when the pop-up opens, so it costs
+ * nothing on page load. On phones the link keeps opening in a new tab: an embedded calendar is awkward to scroll
+ * and type in on a small screen.
+ */
+(function () {
+  'use strict';
+
+  var SHORT = 'https://calendar.app.google/HJ4ctVHEXLjUxCzp6';
+  var EMBED = 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ2_xXGxvkoPUq-EZu-9OFN59ehyVyKzMM5OMnc0RXBdI3W7EqVJnmpc_v7Zu2nkjmJhMjTI-YqN?gv=true';
+  var dlg = null;
+
+  function build() {
+    if (dlg) return;
+    dlg = document.createElement('dialog');
+    dlg.className = 'sp-dialog';
+    dlg.setAttribute('aria-labelledby', 'sp-title');
+    dlg.innerHTML =
+      '<div class="sp-head"><div><h2 id="sp-title">Book a free strategy call</h2><p>45 minutes with Nihar. Pick a time that suits you.</p></div>' +
+      '<button class="sp-x" type="button" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>' +
+      '<div class="sp-body"><p class="sp-loading">Loading the calendar…</p></div>' +
+      '<div class="sp-foot"><span>Times are shown in your own time zone.</span><a href="' + SHORT + '" target="_blank" rel="noopener">Open in a new tab</a></div>';
+    document.body.appendChild(dlg);
+    dlg.querySelector('.sp-x').addEventListener('click', function () { dlg.close(); });
+    dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); }); // click on the dimmed backdrop
+    dlg.addEventListener('close', function () { document.documentElement.classList.remove('sp-lock'); });
+  }
+
+  function open() {
+    build();
+    var body = dlg.querySelector('.sp-body');
+    if (!body.querySelector('iframe')) {
+      var f = document.createElement('iframe');
+      f.title = 'Book a call with Nihar: Google Calendar appointment page';
+      f.src = EMBED;
+      f.setAttribute('allow', 'payment');
+      f.addEventListener('load', function () { var l = body.querySelector('.sp-loading'); if (l) l.remove(); });
+      body.appendChild(f);
+    }
+    dlg.showModal();
+    document.documentElement.classList.add('sp-lock');
+  }
+
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href="' + SHORT + '"]');
+    if (!a || a.closest('.sp-dialog') || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    if (location.pathname.replace(/\/$/, '') === '/book') { // the calendar is already on this page: bring it into view
+      var embed = document.querySelector('.wwm-embed');
+      if (embed) { e.preventDefault(); embed.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+      return;
+    }
+    if (typeof HTMLDialogElement === 'undefined' || window.innerWidth <= 768) return; // phones and old browsers: the normal link
+    e.preventDefault();
+    open();
+  }, true);
+})();
