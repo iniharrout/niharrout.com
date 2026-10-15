@@ -17,9 +17,6 @@ const header = fs.readFileSync(path.join(ROOT, 'partials/header.html'), 'utf8').
 const footer = fs.readFileSync(path.join(ROOT, 'partials/footer.html'), 'utf8').trim();
 const CSS = '<link rel="stylesheet" href="/assets/chrome.css?v=30">';
 const JS = '<script src="/assets/chrome.js?v=9" defer></script>';
-// The Book a Call pop-up (assets/booking.js) replaces the old Calendly buttons on every page.
-const BK_CSS = '<link rel="stylesheet" href="/assets/booking.css?v=bk1">';
-const BK_JS = '<script src="/assets/booking.js?v=bk3" defer></script>';
 
 const block = (name, body) => `<!-- chrome:${name} -->\n${body}\n<!-- /chrome:${name} -->`;
 const markerRe = (name) => new RegExp(`<!-- chrome:${name} -->[\\s\\S]*?<!-- /chrome:${name} -->`);
@@ -72,8 +69,6 @@ for (const file of files) {
   html = html.replace(/<link rel="stylesheet" href="\/assets\/chrome\.css[^"]*">/, CSS);
   html = html.replace(/<script src="\/assets\/chrome\.js[^"]*" defer><\/script>/, JS);
   if (!html.includes('/assets/chrome.css')) html = html.replace('</head>', `  ${CSS}\n  ${JS}\n</head>`);
-  html = html.replace(/\s*<link rel="stylesheet" href="\/assets\/booking\.css[^"]*">/g, '').replace(/\s*<script src="\/assets\/booking\.js[^"]*" defer><\/script>/g, '');
-  html = html.replace('</head>', `  ${BK_CSS}\n  ${BK_JS}\n</head>`);
   if (html !== before) { fs.writeFileSync(file, html); changed++; }
 }
 console.log(`chrome: ${files.length} pages checked, ${changed} updated`);
