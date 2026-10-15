@@ -285,7 +285,6 @@ body.page-home .why2-item:nth-child(5) { --tone: var(--t-orange); }
 @media print { .sc-header, .sc-footer { display: none; } }
 
 /* the floating booking pill must not sit on top of the open mobile menu */
-html.sc-lock .calendly-badge-widget { display: none !important; }
 
 /* ---------- Announcement: a small slide-up card on every page and a one-time pop-up on the homepage ---------- */
 /* content and rules live in assets/chrome.js (ANNOUNCEMENT); set it to null there to retire this */

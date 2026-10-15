@@ -1,9 +1,8 @@
 /**
  * Book a Call pop-up. Every Book a Call button is a plain link to the Google Calendar appointment page (it works
- * with no JavaScript and opens in a new tab). On desktop and tablet this script opens that same booking page
- * inside a pop-up instead, so visitors stay on the site. The calendar only loads when the pop-up opens, so it costs
- * nothing on page load. On phones the link keeps opening in a new tab: an embedded calendar is awkward to scroll
- * and type in on a small screen.
+ * with no JavaScript and opens in a new tab). With JavaScript, this script opens that same booking page inside a
+ * pop-up instead (a bottom sheet on phones), so visitors stay on the site. The calendar only loads when the
+ * pop-up opens, so it costs nothing on page load.
  */
 (function () {
   'use strict';
@@ -43,16 +42,28 @@
     document.documentElement.classList.add('sp-lock');
   }
 
+  function track() {
+    try {
+      var detail = { event: 'contact_click', contact_method: 'book_call', click_location: 'popup', page_path: location.pathname };
+      if (window.dataLayer) window.dataLayer.push(detail);
+      if (typeof window.gtag === 'function') window.gtag('event', 'contact_click', { contact_method: 'book_call', click_location: 'popup' });
+      if (navigator.sendBeacon) navigator.sendBeacon('/api/track', new Blob([JSON.stringify({ event: 'book_call', where: 'popup', page: location.pathname })], { type: 'application/json' }));
+    } catch (err) { /* tracking must never block the pop-up */ }
+  }
+
+  // Runs first (capture phase) and stops the click there, so nothing else on the page can act on a Book a Call click.
   document.addEventListener('click', function (e) {
     var a = e.target.closest && e.target.closest('a[href="' + SHORT + '"]');
     if (!a || a.closest('.sp-dialog') || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    if (typeof HTMLDialogElement === 'undefined') return; // very old browser: the link opens the booking page in a new tab
+    e.preventDefault();
+    e.stopPropagation();
+    track();
     if (location.pathname.replace(/\/$/, '') === '/book') { // the calendar is already on this page: bring it into view
       var embed = document.querySelector('.wwm-embed');
-      if (embed) { e.preventDefault(); embed.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+      if (embed) embed.scrollIntoView({ behavior: 'smooth', block: 'center' });
       return;
     }
-    if (typeof HTMLDialogElement === 'undefined' || window.innerWidth <= 768) return; // phones and old browsers: the normal link
-    e.preventDefault();
     open();
   }, true);
 })();

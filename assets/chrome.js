@@ -136,7 +136,7 @@
     var name = null;
     if (href.indexOf('tel:') === 0) name = 'call';
     else if (href.indexOf('wa.me') !== -1) name = 'whatsapp';
-    else if (link.hasAttribute('data-calendly') || href.indexOf('calendar.app.google') !== -1) name = 'book_call';
+    else if (link.hasAttribute('data-book') || href.indexOf('calendar.app.google') !== -1) name = 'book_call';
     else if (href.indexOf('mailto:') === 0) name = 'email';
     if (!name) return;
     var where = whereOnPage(link);
