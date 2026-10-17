@@ -14,7 +14,7 @@ module.exports = {
     short: 'Mobile Apps',
     h1: 'Mobile App Development Company in {city}',
     titleLead: 'Mobile App Development Company in {city}',
-    heroSub: 'iOS, Android, Flutter and React Native apps for {city} businesses, built by a product-led in-house team. Fixed-scope PRD, regular demos, and 100% code ownership.',
+    heroSub: 'iOS, Android, Flutter and React Native apps for {city} businesses, built by a product-led in-house team. Fixed-scope PRD, regular demos, and your code in your own GitHub from day one.',
     formType: 'Mobile App',
     budgets: ['Under ₹5L', '₹5L – ₹12L', '₹12L – ₹25L', 'Above ₹25L', 'Still evaluating'],
     bhubaneswarPage: '/mobile-app-development-bhubaneswar',
@@ -67,7 +67,7 @@ module.exports = {
       ['How much does it cost to build a mobile app in {city}?', 'A focused MVP typically costs ₹1.5 to ₹5 lakh, a full product ₹5 to ₹12 lakh, and multi-role platforms such as marketplaces or delivery apps ₹12 lakh and above. The number depends on roles, integrations and the admin back end. You receive a fixed-scope estimate after a discovery workshop, with payment tied to milestones.'],
       ['How long does it take to launch an app?', 'A focused MVP takes 4 to 8 weeks from signed PRD to store submission. Full products take 8 to 14 weeks, and multi-role platforms 3 to 6 months. Store review adds a few days, which we plan for.'],
       ['Should we choose native or cross-platform?', 'For most startups and mid-market products, Flutter or React Native is the better choice: one team, one codebase and faster releases at lower cost. We recommend native when you need deep hardware access, heavy graphics or platform-specific features, and explain the trade-off in writing before you commit.'],
-      ['Do we own the source code and IP?', 'Yes, fully. You get repository access from the first sprint, we sign an NDA before discovery, and there is no lock-in to Creuto for hosting or maintenance.'],
+      ['Do we own the source code and IP?', 'Yes. Your code is built in repositories under your own accounts from the first sprint, and you own the custom work as each milestone is paid for. We sign an NDA before discovery, and there is no lock-in to Creuto for hosting or maintenance.'],
       ['Do you build apps that work offline?', 'Yes. Offline-first design stores actions on the device and syncs them safely when the connection returns, which suits field teams, deliveries and patchy networks.']
     ]
   },
@@ -199,7 +199,7 @@ module.exports = {
       ['How much does custom software cost in {city}?', 'A focused first version, such as one or two departments or a SaaS MVP, typically costs ₹7 to ₹18 lakh. Multi-module platforms run ₹18 to ₹40 lakh or more. We give a fixed-scope estimate after a discovery workshop and bill against approved milestones.'],
       ['How long does it take to build a custom ERP or business system?', 'A first release covering one or two departments takes 8 to 14 weeks. Larger multi-department systems take 3 to 6 months, and we release module by module so your team starts using it early.'],
       ['Can it integrate with Tally, Zoho, SAP or our existing tools?', 'Yes. We integrate through APIs, database connectors or scheduled exchange, and define data flows and failure handling in the PRD. Many clients keep their accounting package and add the missing modules around it.'],
-      ['Who owns the code and the data?', 'You do. You receive full repository access, documentation and your data in open formats, and we sign an NDA before discovery.'],
+      ['Who owns the code and the data?', 'You do. Your code lives in your own accounts from day one and you own the custom work as each milestone is paid for. You also receive documentation and your data in open formats, and we sign an NDA before discovery.'],
       ['What happens after launch?', 'We offer maintenance plans covering monitoring, bug fixes, security patches and enhancements, with response times agreed in writing. You can also move maintenance to your own team at any time.']
     ]
   }

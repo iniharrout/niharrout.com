@@ -1,6 +1,6 @@
 # Nihar Ranjan Rout | Creuto
 
-> Nihar Ranjan Rout is the Founder and CEO of Creuto, a founder-led product and engineering company based in Bhubaneswar, India. He has 8+ years in product management and has led 50+ products: mobile apps, web apps, custom software and ERP, and AI products. Work is done by an in-house team, starts with a PRD and a clickable prototype, and uses fixed milestones. Clients own all code. Creuto is an OpenAI Select Partner and has a 5.0 rating from 16 verified Clutch reviews.
+> Nihar Ranjan Rout is the Founder and CEO of Creuto, a founder-led product and engineering company based in Bhubaneswar, India. He has 8+ years in product management and has led 50+ products: mobile apps, web apps, custom software and ERP, and AI products. Work is done by an in-house team, starts with a PRD and a clickable prototype, and uses fixed milestones. Client code lives in the client's own accounts from day one. Creuto is an OpenAI Select Partner and has a 5.0 rating from 16 verified Clutch reviews.
 
 ## Start here
 - [Homepage](https://www.niharrout.com/): Founder-led software company in India. Nihar Ranjan Rout and Creuto build mobile apps, web apps, AI products and custom software, from PRD to launch.
@@ -71,7 +71,7 @@
 - [Startup & Project Name Generator](https://www.niharrout.com/tools/startup-name-generator): Generate brandable startup and app names with keyword pinning. Anchor your seed keywords, explore 5 naming styles, check domains and save favorites.
 
 ## Contact
-- Book a free 45-minute call: https://calendar.app.google/HJ4ctVHEXLjUxCzp6
+- Book a free 30-minute call: https://calendar.app.google/HJ4ctVHEXLjUxCzp6
 - Email: me@niharrout.com
 - Phone and WhatsApp: +91 76088 44995
 

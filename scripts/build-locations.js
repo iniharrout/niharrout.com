@@ -122,8 +122,8 @@ const proofStrip = () => `
         <div class="loc-proof" aria-label="Track record">
           <div><strong>8+</strong><span>years in product management</span></div>
           <div><strong>50+</strong><span>products shipped</span></div>
-          <div><strong>100%</strong><span>in-house engineering squad</span></div>
-          <div><strong>100%</strong><span>code and IP ownership</span></div>
+          <div><strong>In-house</strong><span>engineering team</span></div>
+          <div><strong>Day 1</strong><span>code in your own GitHub</span></div>
         </div>`;
 
 function leadForm({ city, svc, heading, sub }) {
@@ -428,7 +428,7 @@ function buildServicePage(c, svcKey) {
   const fullUrl = SITE + urlPath;
   const trail = [['Home', '/'], ['Locations', '/locations'], [c.name, cityUrl(c)], [svc.name, urlPath]];
   const title = `${fill(svc.titleLead, c)} | Nihar Ranjan Rout`;
-  const description = `${svc.name} for ${c.name} businesses: fixed-scope PRD, in-house engineers, full code ownership. Free call with the founder.`;
+  const description = `${svc.name} for ${c.name} businesses: fixed-scope PRD, in-house engineers, code in your own GitHub. Free call with the founder.`;
 
   const faqs = [
     [fill(svc.faqs[0][0], c), `${fill(svc.faqs[0][1], c)} ${c.costNote}`],
@@ -508,7 +508,7 @@ function buildCityHub(c) {
   const repSvc = services[repSvcKey];
   const trail = [['Home', '/'], ['Locations', '/locations'], [c.name, urlPath]];
   const title = `Software, App & AI Development in ${c.name} | Nihar Ranjan Rout`;
-  const description = `Mobile app, AI product and custom software development for ${c.name} businesses. Founder-led Creuto team, fixed-scope PRDs, full code ownership. Free discovery call.`;
+  const description = `Mobile app, AI product and custom software development for ${c.name} businesses. Founder-led Creuto team, fixed-scope PRDs, code in your own GitHub. Free discovery call.`;
 
   const faqs = [
     [`Do you have an office in ${c.name}?`, `No. Creuto is based in Bhubaneswar, Odisha, and serves ${c.name} clients remotely with regular demos and shared test environments. We travel to ${c.name} for workshops and launches when in-person time is valuable, and quote any travel costs separately and up front.`],

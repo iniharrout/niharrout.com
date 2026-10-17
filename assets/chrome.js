@@ -80,6 +80,20 @@
     });
   }
 
+  // "Call me" links that show a label instead of the number: on a computer the first click reveals the number
+  // (a second click still dials); on a phone the link dials at once.
+  document.addEventListener('click', function (event) {
+    var a = event.target.closest && event.target.closest('a[data-reveal-phone]');
+    if (!a || a.getAttribute('data-revealed')) return;
+    if (!(window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches)) return;
+    event.preventDefault();
+    var label = a.querySelector('[data-phone-text]');
+    if (label) label.textContent = a.getAttribute('data-reveal-phone');
+    a.setAttribute('data-revealed', '1');
+    a.setAttribute('data-pop', '1'); // not a call yet: keeps the click out of the contact-click count
+    setTimeout(function () { a.removeAttribute('data-pop'); }, 0);
+  }, true);
+
   // Mobile menu: built from the desktop menus above so the two never drift apart.
   var acc = drawer && drawer.querySelector('[data-sc-acc]');
   if (acc) {

@@ -12,7 +12,7 @@ module.exports = {
   icon: 'spark',
   lead: 'You do not need to rebuild your product around AI. You need to find one workflow where AI saves real time or money, prove it on a small scale and then ship it with safeguards. This six-step plan shows how to do that without burning budget on a demo that never reaches your customers.',
   cardDesc: 'A six-step plan for adding AI to a product you already run: pick one workflow, check your data, choose an approach, add guardrails, pilot and ship.',
-  cta: { title: 'Not sure where AI fits in your product?', text: 'Book a free 45-minute call. We look at your workflows, tell you honestly where AI helps and where it does not, and outline a small first pilot.', button: 'Book a free AI strategy call' },
+  cta: { title: 'Not sure where AI fits in your product?', text: 'Book a free 30-minute call. We look at your workflows, tell you honestly where AI helps and where it does not, and outline a small first pilot.', button: 'Book a free AI strategy call' },
   endCta: { title: 'Ready to scope a first AI feature?', text: 'Creuto is an OpenAI Select Partner. We start with one workflow, test it on your real data and ship only what passes.', service: { href: '/services/ai-product-development', label: 'Explore AI product development' } },
   related: ['pragmatic-enterprise-ai-workflows', 'openai-select-partner', 'product-scoping-framework-kill-feature-bloat'],
   faq: [

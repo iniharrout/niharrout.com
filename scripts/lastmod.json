@@ -1,43 +1,43 @@
 {
   "about/facts/index.html": {
-    "hash": "4691cff219df3e73",
-    "date": "2026-10-16"
+    "hash": "9dd02cc6ef4eb781",
+    "date": "2026-10-18"
   },
   "about/index.html": {
-    "hash": "f8eb6ef13c16b244",
-    "date": "2026-10-13"
+    "hash": "bec98ea78449f28d",
+    "date": "2026-10-18"
   },
   "ai-product-development-bhubaneswar/index.html": {
-    "hash": "5865945824077faa",
-    "date": "2026-10-16"
+    "hash": "5ca186da746eb2dc",
+    "date": "2026-10-18"
   },
   "b2b-software-development-for-startups/index.html": {
-    "hash": "bd9a45e81ac5aced",
-    "date": "2026-10-13"
+    "hash": "093fe2f23a7563ca",
+    "date": "2026-10-18"
   },
   "blog/cost-to-build-mvp-2026/index.html": {
-    "hash": "2eb10946cb452ea6",
-    "date": "2026-10-16"
+    "hash": "6d93ae00c83dd62d",
+    "date": "2026-10-18"
   },
   "blog/fixed-price-vs-time-and-materials-software-development/index.html": {
-    "hash": "ca6b314a434b9e4f",
-    "date": "2026-10-16"
+    "hash": "4cb2f0f9feb18f01",
+    "date": "2026-10-18"
   },
   "blog/how-to-add-ai-to-an-existing-product/index.html": {
-    "hash": "127216f79c99e982",
-    "date": "2026-10-16"
+    "hash": "e11b05204fad8158",
+    "date": "2026-10-18"
   },
   "blog/how-to-choose-a-software-development-company/index.html": {
-    "hash": "f3adb651607bbee6",
-    "date": "2026-10-16"
+    "hash": "01c5a156193c1d1f",
+    "date": "2026-10-18"
   },
   "blog/index.html": {
-    "hash": "da31c1ef0077f8b6",
-    "date": "2026-10-16"
+    "hash": "c8dcc77072dd4730",
+    "date": "2026-10-18"
   },
   "blog/mobile-app-vs-web-app-which-to-build-first/index.html": {
-    "hash": "f3e3827537c59ccd",
-    "date": "2026-10-16"
+    "hash": "8a09097d9e0b5f4f",
+    "date": "2026-10-18"
   },
   "blog/openai-select-partner/index.html": {
     "hash": "7c8d56f8614da434",
@@ -48,8 +48,8 @@
     "date": "2026-10-16"
   },
   "blog/product-scoping-framework-kill-feature-bloat/index.html": {
-    "hash": "b8b15fe749d67b1e",
-    "date": "2026-10-16"
+    "hash": "41b4ff0c071e4a49",
+    "date": "2026-10-18"
   },
   "blog/react-native-mobile-app-playbook/index.html": {
     "hash": "73d5711a50759eb0",
@@ -60,20 +60,20 @@
     "date": "2026-10-16"
   },
   "blog/what-is-a-prd-how-to-write-a-product-requirements-document/index.html": {
-    "hash": "f03b3522c2e91a1e",
-    "date": "2026-10-16"
+    "hash": "3034a11a077fe09a",
+    "date": "2026-10-18"
   },
   "blog/why-custom-erp-implementations-fail/index.html": {
     "hash": "19ed2454077de646",
     "date": "2026-10-16"
   },
   "book/index.html": {
-    "hash": "c70c193329b3daf7",
-    "date": "2026-10-16"
+    "hash": "2d8b34fa3eba4665",
+    "date": "2026-10-18"
   },
   "index.html": {
-    "hash": "1df05c6e5c506dcd",
-    "date": "2026-10-16"
+    "hash": "134e75b7305e07ae",
+    "date": "2026-10-18"
   },
   "industries/agriculture/index.html": {
     "hash": "45afae4a788242f5",
@@ -176,139 +176,139 @@
     "date": "2026-10-18"
   },
   "locations/bangalore/ai-product-development/index.html": {
-    "hash": "546ebd226b471aac",
-    "date": "2026-10-16"
+    "hash": "6f596d68e051b80d",
+    "date": "2026-10-18"
   },
   "locations/bangalore/custom-software-development/index.html": {
-    "hash": "fb09a8ede09d90be",
-    "date": "2026-10-16"
+    "hash": "e2d8bc1867fc64c3",
+    "date": "2026-10-18"
   },
   "locations/bangalore/index.html": {
-    "hash": "12d5c3073ce680c1",
-    "date": "2026-10-16"
+    "hash": "3a956835d8b1f0e1",
+    "date": "2026-10-18"
   },
   "locations/bangalore/mobile-app-development/index.html": {
-    "hash": "0473d7625e227064",
-    "date": "2026-10-16"
+    "hash": "2f5bdc922f75449b",
+    "date": "2026-10-18"
   },
   "locations/berhampur/ai-product-development/index.html": {
-    "hash": "23af68aed489056e",
-    "date": "2026-10-16"
+    "hash": "818ce4f44c8504d4",
+    "date": "2026-10-18"
   },
   "locations/berhampur/custom-software-development/index.html": {
-    "hash": "ab7efbacdb334760",
-    "date": "2026-10-16"
+    "hash": "d4775cd1e277525b",
+    "date": "2026-10-18"
   },
   "locations/berhampur/index.html": {
-    "hash": "708dad2b875e95f6",
-    "date": "2026-10-16"
+    "hash": "553db9d7326e943a",
+    "date": "2026-10-18"
   },
   "locations/berhampur/mobile-app-development/index.html": {
-    "hash": "6cf42d6df4216470",
-    "date": "2026-10-16"
+    "hash": "f980714da99065e5",
+    "date": "2026-10-18"
   },
   "locations/cuttack/ai-product-development/index.html": {
-    "hash": "f5718a10db3682bc",
-    "date": "2026-10-16"
+    "hash": "abaa12cd07bd65b3",
+    "date": "2026-10-18"
   },
   "locations/cuttack/custom-software-development/index.html": {
-    "hash": "a2872e679127a743",
-    "date": "2026-10-16"
+    "hash": "6176f72465e5ebf9",
+    "date": "2026-10-18"
   },
   "locations/cuttack/index.html": {
-    "hash": "006c76b5a072ad5a",
-    "date": "2026-10-16"
+    "hash": "4faed0dce970bea1",
+    "date": "2026-10-18"
   },
   "locations/cuttack/mobile-app-development/index.html": {
-    "hash": "e47ca9de75a9b545",
-    "date": "2026-10-16"
+    "hash": "d6f9b85c3b61b4ce",
+    "date": "2026-10-18"
   },
   "locations/delhi-ncr/ai-product-development/index.html": {
-    "hash": "f9bbd5f4f8b494e0",
-    "date": "2026-10-16"
+    "hash": "03d38c2dc17c5dc3",
+    "date": "2026-10-18"
   },
   "locations/delhi-ncr/custom-software-development/index.html": {
-    "hash": "83025345271583ff",
-    "date": "2026-10-16"
+    "hash": "ff16f8e74d4b6ac7",
+    "date": "2026-10-18"
   },
   "locations/delhi-ncr/index.html": {
-    "hash": "03b601ae785bfd77",
-    "date": "2026-10-16"
+    "hash": "8fc217b7554f668f",
+    "date": "2026-10-18"
   },
   "locations/delhi-ncr/mobile-app-development/index.html": {
-    "hash": "d1182e345d208e0e",
-    "date": "2026-10-16"
+    "hash": "0e73d7a1b3794eaf",
+    "date": "2026-10-18"
   },
   "locations/hyderabad/ai-product-development/index.html": {
-    "hash": "25bac983539e6b55",
-    "date": "2026-10-16"
+    "hash": "d04cfadf288bd76c",
+    "date": "2026-10-18"
   },
   "locations/hyderabad/custom-software-development/index.html": {
-    "hash": "3fec38982c649b05",
-    "date": "2026-10-16"
+    "hash": "ec534902253dafac",
+    "date": "2026-10-18"
   },
   "locations/hyderabad/index.html": {
-    "hash": "00c2ab982c8bcd33",
-    "date": "2026-10-16"
+    "hash": "e5b11ced27233cc7",
+    "date": "2026-10-18"
   },
   "locations/hyderabad/mobile-app-development/index.html": {
-    "hash": "fdd3c762123f3a6f",
-    "date": "2026-10-16"
+    "hash": "cfeeaaf90eb11ea3",
+    "date": "2026-10-18"
   },
   "locations/index.html": {
-    "hash": "c70d830db1fe6f6b",
-    "date": "2026-10-16"
+    "hash": "43fc48ad077a6c22",
+    "date": "2026-10-18"
   },
   "locations/pune/ai-product-development/index.html": {
-    "hash": "007b5431c18438a0",
-    "date": "2026-10-16"
+    "hash": "84d2dbd2c7b9c14c",
+    "date": "2026-10-18"
   },
   "locations/pune/custom-software-development/index.html": {
-    "hash": "1c72f31351f12786",
-    "date": "2026-10-16"
+    "hash": "536960b962155f95",
+    "date": "2026-10-18"
   },
   "locations/pune/index.html": {
-    "hash": "57337e37e9ce33f3",
-    "date": "2026-10-16"
+    "hash": "21af6198f70aa3b9",
+    "date": "2026-10-18"
   },
   "locations/pune/mobile-app-development/index.html": {
-    "hash": "e520d6a18d53056a",
-    "date": "2026-10-16"
+    "hash": "cff6a6069d8275fb",
+    "date": "2026-10-18"
   },
   "locations/rourkela/ai-product-development/index.html": {
-    "hash": "16735eb77e570418",
-    "date": "2026-10-16"
+    "hash": "1eb243ab4bdaae26",
+    "date": "2026-10-18"
   },
   "locations/rourkela/custom-software-development/index.html": {
-    "hash": "7c23835e5359585d",
-    "date": "2026-10-16"
+    "hash": "e4b415b876ac6fca",
+    "date": "2026-10-18"
   },
   "locations/rourkela/index.html": {
-    "hash": "0a87b680dccbdecc",
-    "date": "2026-10-16"
+    "hash": "442aee5bd032dcaf",
+    "date": "2026-10-18"
   },
   "locations/rourkela/mobile-app-development/index.html": {
-    "hash": "c6f04cf148b59eec",
-    "date": "2026-10-16"
+    "hash": "1aac330207dec05a",
+    "date": "2026-10-18"
   },
   "locations/sambalpur/ai-product-development/index.html": {
-    "hash": "2fed2b6b16bd89a9",
-    "date": "2026-10-16"
+    "hash": "9406f477d3b06556",
+    "date": "2026-10-18"
   },
   "locations/sambalpur/custom-software-development/index.html": {
-    "hash": "92d9e2acf14d14bd",
-    "date": "2026-10-16"
+    "hash": "ccbd147e3a262ad7",
+    "date": "2026-10-18"
   },
   "locations/sambalpur/index.html": {
-    "hash": "76118226b9c9001f",
-    "date": "2026-10-16"
+    "hash": "d129d34e250f4082",
+    "date": "2026-10-18"
   },
   "locations/sambalpur/mobile-app-development/index.html": {
-    "hash": "ccd4c6dc571a24b4",
-    "date": "2026-10-16"
+    "hash": "57db2357e7de7de8",
+    "date": "2026-10-18"
   },
   "mobile-app-development-bhubaneswar/index.html": {
-    "hash": "0b0a6898cdb19c25",
+    "hash": "41d51930160f2656",
     "date": "2026-10-18"
   },
   "privacy-policy/index.html": {
@@ -384,7 +384,7 @@
     "date": "2026-10-18"
   },
   "services/custom-software-development/index.html": {
-    "hash": "8144d371b618b170",
+    "hash": "25eba748f7cc45a8",
     "date": "2026-10-18"
   },
   "services/custom-software-development/legacy-application-modernization/index.html": {
@@ -436,7 +436,7 @@
     "date": "2026-10-18"
   },
   "services/mobile-app-development/index.html": {
-    "hash": "eb153baf6852c5c7",
+    "hash": "b189bcba8176da80",
     "date": "2026-10-18"
   },
   "services/mobile-app-development/ios-app-development/index.html": {
@@ -496,7 +496,7 @@
     "date": "2026-10-18"
   },
   "services/web-application-development/index.html": {
-    "hash": "934a0cc54ae431f8",
+    "hash": "b18f51793b09abea",
     "date": "2026-10-18"
   },
   "services/web-application-development/on-site-seo-development/index.html": {
@@ -560,8 +560,8 @@
     "date": "2026-10-10"
   },
   "work/index.html": {
-    "hash": "5db024ef95050838",
-    "date": "2026-10-16"
+    "hash": "848c5f1ee6920e6d",
+    "date": "2026-10-18"
   },
   "work/make-my-look/index.html": {
     "hash": "a1ec7b831c80eefd",

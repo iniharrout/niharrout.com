@@ -195,15 +195,15 @@ body.page-home, body.ed-page { background: var(--paper) !important; color: var(-
 /* ---------- 3. Services Bento Grid ---------- */
 .bento-services-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
 }
 
 .service-bento-card {
   background: #ffffff;
   border: 1px solid rgba(15, 23, 42, 0.08);
   border-radius: 14px;
-  padding: 36px 32px;
+  padding: 30px 26px;
   box-shadow: none;
   display: flex;
   flex-direction: column;
@@ -741,6 +741,9 @@ body.page-home, body.ed-page { background: var(--paper) !important; color: var(-
   .bento-steps-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
+@media (max-width: 1080px) {
+  .bento-services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
 @media (max-width: 991px) {
   .bento-services-grid { grid-template-columns: 1fr; }
   .bento-work-grid { grid-template-columns: 1fr; }

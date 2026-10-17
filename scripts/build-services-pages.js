@@ -105,6 +105,38 @@ function insertBlock(rel, block) {
   return false;
 }
 
+// ---------- homepage services section (same data as the menu) ----------
+const TAGS = { custom: 'Custom software', mobile: 'Mobile', web: 'Web', devops: 'Cloud and delivery', ai: 'AI, OpenAI Select Partner', startup: 'Product and startups' };
+const CHECK = '<svg width="15" height="15" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>';
+function homeServices() {
+  const cards = families.map((f) => `          <article class="service-bento-card">
+            <div class="service-card-top">
+              <div class="service-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${f.icon}</svg>
+              </div>
+              <span class="service-card-tag">${esc(TAGS[f.key])}</span>
+              <h3 class="service-card-title">${esc(f.name)}</h3>
+              <p class="service-card-desc">${esc(f.menu)}</p>
+              <ul class="service-feature-list">
+                ${f.items.slice(0, 3).map((it) => `<li>${CHECK}${esc(itemOf(f, it).name)}</li>`).join('\n                ')}
+              </ul>
+            </div>
+            <a href="${f.path}" class="service-card-action"><span>Explore ${esc(f.name)}</span> &rarr;</a>
+          </article>`).join('\n\n');
+  return `        <!-- home:services -->
+        <header class="ed-head">
+          <p class="ed-label">Services</p>
+          <h2 class="section-title">What we build.</h2>
+          <p>Six areas of work, one process: a clear PRD first, then an in-house team builds it and keeps improving it.</p>
+        </header>
+
+        <div class="bento-services-grid">
+${cards}
+        </div>
+        <p class="ed-post-more"><a href="/services" class="tool-link">See all services &rarr;</a></p>
+        <!-- /home:services -->`;
+}
+
 let pages = 0;
 for (const key of Object.keys(subs)) { write(subUrl(key).slice(1), subPage(key)); pages++; }
 const devops = famByKey.devops;
@@ -115,6 +147,12 @@ for (const fam of families.filter((f) => f.existing)) {
   const rel = `${fam.path.slice(1)}/index.html`;
   const block = dirBlock(`${fam.name}: what we offer`, `Every service in this area has its own page, with what we build, when it fits and the questions people ask.`, [{ items: fam.items.map((it) => itemOf(fam, it)) }]);
   if (insertBlock(rel, block)) updated++;
+}
+{
+  const file = path.join(ROOT, 'index.html');
+  let html = fs.readFileSync(file, 'utf8');
+  const next = html.replace(/[ \t]*<!-- home:services -->[\s\S]*?<!-- \/home:services -->/, () => homeServices());
+  if (next !== html) { fs.writeFileSync(file, next); updated++; }
 }
 const overview = dirBlock('All services', 'Six service families, from a first prototype to the cloud that keeps the product running.', families.map((f) => ({ heading: `<a href="${f.path}">${esc(f.name)}</a>`, items: f.items.map((it) => itemOf(f, it)) })));
 if (insertBlock('services/index.html', overview)) updated++;

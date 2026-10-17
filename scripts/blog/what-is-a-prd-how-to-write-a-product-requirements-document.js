@@ -12,7 +12,7 @@ module.exports = {
   icon: 'doc',
   lead: 'A PRD is the written plan that sits between your idea and the first line of code. It is the cheapest place to find mistakes, and the document that lets a team give you an honest estimate. This guide explains what goes in it and how to write one yourself.',
   cardDesc: 'What a PRD is, how it differs from a BRD, the ten sections to write, a worked example and the mistakes that make requirements useless.',
-  cta: { title: 'Have an idea but no PRD yet?', text: 'In a free 45-minute call we map your idea, cut it down to a first release and outline the PRD. A clear proposal follows within 24 hours.', button: 'Book a free strategy call' },
+  cta: { title: 'Have an idea but no PRD yet?', text: 'In a free 30-minute call we map your idea, cut it down to a first release and outline the PRD. A clear proposal follows within 24 hours.', button: 'Book a free strategy call' },
   endCta: { title: 'Want help turning your idea into a PRD?', text: 'I write PRDs with founders and teams, from first draft to a clickable prototype and a fixed-scope proposal.', service: { href: '/services/product-strategy-prd', label: 'See the product strategy and PRD service' } },
   related: ['product-scoping-framework-kill-feature-bloat', 'how-to-choose-a-software-development-company', 'cost-to-build-mvp-2026'],
   faq: [

@@ -83,7 +83,7 @@ html.sc-lock { overflow: hidden; }
 @keyframes sc-twinkle { 0%, 100% { transform: scale(0.3) rotate(0deg); opacity: 0.1; } 50% { transform: scale(1) rotate(90deg); opacity: 1; } }
 
 .sc-call, .sc-wa { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 38px; border-radius: 10px; border: 1px solid var(--sc-rule); background: #fff; color: var(--sc-ink); font-size: 14px; font-weight: 700; line-height: 1; text-decoration: none; white-space: nowrap; transition: border-color 0.18s ease, background 0.18s ease, color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease; }
-.sc-call { padding: 0 15px; }
+.sc-call { width: 38px; padding: 0; }
 .sc-wa { width: 38px; color: var(--sc-ink); }
 .sc-call svg { width: 17px; height: 17px; transform-origin: 50% 50%; animation: sc-ring 5s ease-in-out infinite; }
 .sc-wa svg { width: 20px; height: 20px; }
@@ -99,7 +99,7 @@ html.sc-lock { overflow: hidden; }
 @keyframes sc-shine { 0%, 55% { left: -70%; } 85%, 100% { left: 130%; } }
 
 
-@media (max-width: 1180px) { .sc-call { width: 38px; padding: 0; } .sc-call span { display: none; } }
+
 @media (max-width: 991px) { .sc-actions { gap: 8px; } }
 @media (max-width: 480px) { .sc-actions { gap: 6px; } .sc-call, .sc-wa { width: 36px; height: 36px; } }
 @media (max-width: 340px) { .sc-wa { display: none; } }
@@ -167,8 +167,16 @@ html.sc-lock { overflow: hidden; }
   .sc-acc-panel, .sc-acc-btn svg { transition: none; }
 }
 
+/* ---------- Service tile tones follow the family order ---------- */
+.bento-services-grid > :nth-child(6n+1) { --tone: var(--t-rose); }
+.bento-services-grid > :nth-child(6n+2) { --tone: var(--t-cyan); }
+.bento-services-grid > :nth-child(6n+3) { --tone: var(--t-blue); }
+.bento-services-grid > :nth-child(6n+4) { --tone: var(--t-orange); }
+.bento-services-grid > :nth-child(6n+5) { --tone: var(--t-violet); }
+.bento-services-grid > :nth-child(6n+6) { --tone: var(--t-ink); }
+
 /* ---------- Icon colours: solid, colour-coded tiles with white glyphs (same idea as the creuto.com menu) ---------- */
-:root { --t-blue: #2563eb; --t-cyan: #0891b2; --t-ink: #111827; --t-violet: #8b5cf6; --t-rose: #f43f5e; --t-orange: #ea580c; }
+:root { --t-blue: #2563eb; --t-cyan: #0369a1; --t-ink: #111827; --t-violet: #4338ca; --t-rose: #1d4ed8; --t-orange: #1e3a8a; } /* one blue family: sky, blue, indigo, navy */
 
 /* menus (desktop dropdowns and the mobile menu share these links) */
 :is(.sc-menu, .sc-acc-inner) a[href="/services/mobile-app-development"], :is(.sc-menu, .sc-acc-inner) a[href="/project-costs"], :is(.sc-menu, .sc-acc-inner) a[href="/tools/app-cost-calculator"] { --tone: var(--t-cyan); }
@@ -180,10 +188,6 @@ html.sc-lock { overflow: hidden; }
 
 /* homepage */
 
-.bento-services-grid > :nth-child(1) { --tone: var(--t-cyan); }
-.bento-services-grid > :nth-child(2) { --tone: var(--t-orange); }
-.bento-services-grid > :nth-child(3) { --tone: var(--t-violet); }
-.bento-services-grid > :nth-child(4) { --tone: var(--t-rose); }
 .service-bento-card .service-icon-box, .service-bento-card:hover .service-icon-box { background: var(--tone); color: #fff; box-shadow: 0 8px 18px -10px var(--tone); }
 
 body.page-home .tool-list > :nth-child(2) { --tone: var(--t-cyan); }
@@ -334,8 +338,6 @@ body.page-home .why2-item:nth-child(5) { --tone: var(--t-orange); }
 @media print { .sc-toast, .sc-modal { display: none; } }
 
 /* Show the phone number itself in the header when there is room for it. */
-.sc-call .sc-call-num { display: none; }
-@media (min-width: 1360px) { .sc-call .sc-call-label { display: none; } .sc-call .sc-call-num { display: inline; font-variant-numeric: tabular-nums; } }
 
 /* Homepage: the contact section right above already offers call, WhatsApp and booking, so the footer does not repeat them. */
 body.page-home .sc-foot-top { display: none; }

@@ -12,7 +12,7 @@ module.exports = {
   icon: 'check',
   lead: 'Most software projects do not fail because the code was bad. They fail because the wrong team was hired for the job. These 12 questions help you find out, before you sign, who will really build your product and how they will behave when things get hard.',
   cardDesc: 'Twelve questions to ask before you sign, what a good answer sounds like, a proposal comparison table and the red flags that should end the conversation.',
-  cta: { title: 'Comparing software teams right now?', text: 'Bring two or three proposals to a free 45-minute call. I will tell you honestly what is missing from each, even if you end up choosing someone else.', button: 'Book a free strategy call' },
+  cta: { title: 'Comparing software teams right now?', text: 'Bring two or three proposals to a free 30-minute call. I will tell you honestly what is missing from each, even if you end up choosing someone else.', button: 'Book a free strategy call' },
   endCta: { title: 'Want a straight answer to all 12 questions?', text: 'Talk to the founder who will lead your build. You get a clear proposal within 24 hours of the call.', service: { href: '/services/custom-software-development', label: 'See how we build custom software' } },
   related: ['cost-to-build-mvp-2026', 'fixed-price-vs-time-and-materials-software-development', 'what-is-a-prd-how-to-write-a-product-requirements-document'],
   faq: [
@@ -71,7 +71,7 @@ module.exports = {
 <p><strong>Red flag:</strong> a single number with no breakdown, or an hourly rate with no cap and no plan.</p>
 
 <h3>5. Who owns the code and the intellectual property?</h3>
-<p><strong>Good answer:</strong> you do, from day one, and the work lives in a repository under your own account. This should be written in the contract.</p>
+<p><strong>Good answer:</strong> you do, as each milestone is paid for, and the work lives in a repository under your own account from the first day. This should be written in the contract.</p>
 <p><strong>Red flag:</strong> the company keeps the repository, ownership transfers only after the final payment, or the contract is silent. Without the code you cannot switch teams.</p>
 
 <h3>6. Can I talk to past clients and try live products?</h3>
@@ -157,7 +157,7 @@ module.exports = {
   <li><strong>Planning first:</strong> we write the PRD, design a clickable prototype and send a fixed-scope proposal before development begins.</li>
   <li><strong>Visibility:</strong> you see working software on a test version after each sprint.</li>
   <li><strong>Pricing:</strong> fixed milestones tied to agreed deliverables, so there is no hourly surprise.</li>
-  <li><strong>Ownership:</strong> you own the source code, design files and infrastructure from day one, in your own accounts.</li>
+  <li><strong>Ownership:</strong> the work lives in your own accounts from day one, and you own the source code and design files as each milestone is paid for.</li>
   <li><strong>Speed:</strong> a clear proposal within 24 hours of the first call, and a first working version typically in about four weeks.</li>
   <li><strong>After launch:</strong> a 60-day warranty covering bug fixes, monitoring and performance tuning.</li>
   <li><strong>Confidentiality:</strong> a mutual NDA is available before discovery.</li>

@@ -17,7 +17,7 @@
     dlg.className = 'sp-dialog';
     dlg.setAttribute('aria-labelledby', 'sp-title');
     dlg.innerHTML =
-      '<div class="sp-head"><div><h2 id="sp-title">Book a free strategy call</h2><p>45 minutes with Nihar. Pick a time that suits you.</p></div>' +
+      '<div class="sp-head"><div><h2 id="sp-title">Book a free strategy call</h2><p>30 minutes with Nihar. Pick a time that suits you.</p></div>' +
       '<button class="sp-x" type="button" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>' +
       '<div class="sp-body"><p class="sp-loading">Loading the calendar…</p></div>' +
       '<div class="sp-foot"><span>Times are shown in your own time zone.</span><a href="' + SHORT + '" target="_blank" rel="noopener">Open in a new tab</a></div>';

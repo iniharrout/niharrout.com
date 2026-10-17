@@ -60,7 +60,7 @@ ${cards}
       <div class="wwm-end-card">
         <div>
           <h2 class="wwm-h2">Have a product in mind?</h2>
-          <p>Tell me what you want to build. The first call is free and takes 45 minutes.</p>
+          <p>Tell me what you want to build. The first call is free and takes 30 minutes.</p>
         </div>
         <a class="wwm-btn is-primary" href="https://calendar.app.google/HJ4ctVHEXLjUxCzp6" target="_blank" rel="noopener" data-book="true">Book a free strategy call ${ARROW}</a>
       </div>

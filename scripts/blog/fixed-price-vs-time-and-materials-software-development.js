@@ -12,7 +12,7 @@ module.exports = {
   icon: 'scales',
   lead: 'How you pay a software team shapes how the project behaves. Fixed price protects your budget but can punish change. Time and materials gives flexibility but can drift. Here is how each works, when to use it and the contract clauses that protect you either way.',
   cardDesc: 'Fixed price, time and materials or milestones? How each contract model works, when to use it and the clauses every buyer should insist on.',
-  cta: { title: 'Want a milestone-based proposal for your project?', text: 'Share your idea in a free 45-minute call. Within 24 hours you get a clear proposal with fixed scope tied to milestones you can check.', button: 'Book a free strategy call' },
+  cta: { title: 'Want a milestone-based proposal for your project?', text: 'Share your idea in a free 30-minute call. Within 24 hours you get a clear proposal with fixed scope tied to milestones you can check.', button: 'Book a free strategy call' },
   endCta: { title: 'Prefer to know the price before you commit?', text: 'We write the PRD and clickable prototype first, then agree fixed milestones against it. No hourly surprises.', service: { href: '/services/product-strategy-prd', label: 'See the product strategy and PRD service' } },
   related: ['how-to-choose-a-software-development-company', 'cost-to-build-mvp-2026', 'what-is-a-prd-how-to-write-a-product-requirements-document'],
   faq: [
@@ -149,7 +149,7 @@ module.exports = {
 
 <h2 id="clauses">Contract clauses that protect you with any model</h2>
 <ul>
-  <li><strong>Ownership:</strong> you own the source code, design files and infrastructure from the start, held in accounts you control.</li>
+  <li><strong>Ownership:</strong> the work lives in accounts you control from the start, and you own the source code and design files as each milestone is paid for.</li>
   <li><strong>Acceptance criteria:</strong> each milestone lists how you will decide it is done, in testable terms.</li>
   <li><strong>Change process:</strong> new requests are documented, estimated and approved in writing before work begins.</li>
   <li><strong>Warranty:</strong> a defined period after launch when bugs are fixed without a new charge.</li>

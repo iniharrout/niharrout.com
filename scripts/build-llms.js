@@ -17,7 +17,7 @@ const line = (p, name, d) => `- [${name || title(p)}](${S}${p === '/' ? '/' : p}
 
 const out = [
   '# Nihar Ranjan Rout | Creuto', '',
-  '> Nihar Ranjan Rout is the Founder and CEO of Creuto, a founder-led product and engineering company based in Bhubaneswar, India. He has 8+ years in product management and has led 50+ products: mobile apps, web apps, custom software and ERP, and AI products. Work is done by an in-house team, starts with a PRD and a clickable prototype, and uses fixed milestones. Clients own all code. Creuto is an OpenAI Select Partner and has a 5.0 rating from 16 verified Clutch reviews.', '',
+  '> Nihar Ranjan Rout is the Founder and CEO of Creuto, a founder-led product and engineering company based in Bhubaneswar, India. He has 8+ years in product management and has led 50+ products: mobile apps, web apps, custom software and ERP, and AI products. Work is done by an in-house team, starts with a PRD and a clickable prototype, and uses fixed milestones. Client code lives in the client\'s own accounts from day one. Creuto is an OpenAI Select Partner and has a 5.0 rating from 16 verified Clutch reviews.', '',
   '## Start here',
   line('/', 'Homepage'), line('/about', 'About Nihar Ranjan Rout'),
   line('/about/facts', 'Company fact sheet'), line('/services', 'Services overview'), '',
@@ -34,7 +34,7 @@ const out = [
   line('/project-costs'),
   ...dirs('tools').map((s) => line('/tools/' + s)), '',
   '## Contact',
-  '- Book a free 45-minute call: https://calendar.app.google/HJ4ctVHEXLjUxCzp6',
+  '- Book a free 30-minute call: https://calendar.app.google/HJ4ctVHEXLjUxCzp6',
   '- Email: me@niharrout.com',
   '- Phone and WhatsApp: +91 76088 44995', '',
   '## Elsewhere',

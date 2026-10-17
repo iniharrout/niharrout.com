@@ -14,7 +14,7 @@ const EMBED = 'https://calendar.google.com/calendar/appointments/schedules/AcZss
 
 const url = `${SITE}/book`;
 const title = 'Book a Free Strategy Call | Nihar Ranjan Rout';
-const description = 'Book a free 45-minute strategy call with Nihar Ranjan Rout, founder of Creuto. Talk through your app, web or AI product and what to build first.';
+const description = 'Book a free 30-minute strategy call with Nihar Ranjan Rout, founder of Creuto. Talk through your app, web or AI product and what to build first.';
 
 const graph = [
   { '@type': 'WebPage', '@id': `${url}#webpage`, url, name: 'Book a free strategy call', description, isPartOf: { '@id': `${SITE}/#website` }, about: { '@id': `${SITE}/#person` } },
@@ -25,7 +25,7 @@ const html = head({ title, description, canonical: url, graph }) + `
 <main id="top">
   <section class="wwm-hero wwm-hero-tight">
     <div class="wwm-wrap">
-      <p class="wwm-pill"><span class="wwm-dot"></span>Free &middot; 45 minutes &middot; with Nihar</p>
+      <p class="wwm-pill"><span class="wwm-dot"></span>Free &middot; 30 minutes &middot; with Nihar</p>
       <h1>Book a free strategy call.</h1>
       <p class="wwm-sub">Pick a time below. We will talk through your idea, what to build first and what it could take. You speak with me directly.</p>
     </div>
@@ -39,7 +39,7 @@ const html = head({ title, description, canonical: url, graph }) + `
       </div>
 
       <div class="wwm-expect">
-        <div><h2>45 minutes, free</h2><p>A focused conversation about your product, with no pitch deck and no obligation.</p></div>
+        <div><h2>30 minutes, free</h2><p>A focused conversation about your product, with no pitch deck and no obligation.</p></div>
         <div><h2>You talk to me</h2><p>The founder is on the call, not a sales team.</p></div>
         <div><h2>A clear proposal</h2><p>Within 24 hours of the call you get scope, priorities and next steps in writing.</p></div>
       </div>

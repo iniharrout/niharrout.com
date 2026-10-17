@@ -58,7 +58,7 @@ module.exports = [
         ],
         faqs: [
           ['Do you work with pre-seed founders who need a full product built?', 'Yes. That is our core B2B engagement: PRD, design, build and launch of a first version in 8 to 14 weeks. We help you cut scope to what proves your hypothesis first.'],
-          ['Who owns the IP and code?', 'You do, 100%. You get full repository access from day one with no vendor lock-in, and we sign an NDA before discussing your idea.']
+          ['Who owns the IP and code?', 'You do. Your code lives in your own accounts from day one, with no lock-in to Creuto, and you own the custom work as each milestone is paid for. We sign an NDA before discussing your idea.']
         ]
       }
     }

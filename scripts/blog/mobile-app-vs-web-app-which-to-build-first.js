@@ -12,7 +12,7 @@ module.exports = {
   icon: 'devices',
   lead: 'Founders often lose weeks arguing about iPhone versus Android versus website. The better question is who your first users are and what they must do. This guide compares mobile and web apps side by side and gives you simple rules to choose where to start.',
   cardDesc: 'Compare mobile and web apps on reach, speed, cost drivers and features, then use plain decision rules to choose the right first version.',
-  cta: { title: 'Still undecided between mobile and web?', text: 'Describe your idea in a free 45-minute call. I will tell you which to build first and what to leave out of version one.', button: 'Book a free strategy call' },
+  cta: { title: 'Still undecided between mobile and web?', text: 'Describe your idea in a free 30-minute call. I will tell you which to build first and what to leave out of version one.', button: 'Book a free strategy call' },
   endCta: { title: 'Ready to plan your first version?', text: 'We build both. Tell us who your first users are and we will recommend a starting point with a clear plan.', service: { href: '/services/mobile-app-development', label: 'See mobile app development' } },
   related: ['react-native-mobile-app-playbook', 'web-application-development-build-vs-buy', 'cost-to-build-mvp-2026'],
   faq: [
