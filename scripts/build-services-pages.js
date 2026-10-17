@@ -13,6 +13,7 @@ const { families, subs } = require('./site-data/services');
 const { industries } = require('./site-data/industries');
 const { SITE, ORG, esc, head, foot, crumbs } = require('./careers/shell');
 const R = require('./site-data/render');
+const approach = require('./site-data/approach');
 
 const ROOT = path.resolve(__dirname, '..');
 const famByKey = Object.fromEntries(families.map((f) => [f.key, f]));
@@ -43,9 +44,10 @@ function subPage(key) {
     pill: fam.name, h1: s.name, sub: s.intro, secondary: ['See our work', '/work'],
   })}
 ${R.section('build', 'What we build', R.cards(s.builds))}
-${R.section('fit', 'When this is a good fit', R.fits('A good fit when', s.fits), 'wwm-sec-alt')}
-${R.section('process', 'How an engagement works', R.process())}
-${R.section('related', 'Related services and industries', `<div class="wwm-rel"><div><h3>More in ${esc(fam.name)}</h3>${R.pills(related)}</div>${inds.length ? `<div><h3>Industries we build this for</h3>${R.pills(inds)}</div>` : ''}</div>`, 'wwm-sec-alt')}
+${R.section('approach', 'How we approach ' + s.name, R.prose(approach.subs[key]), 'wwm-sec-alt')}
+${R.section('fit', 'When this is a good fit', R.fits('A good fit when', s.fits))}
+${R.section('process', 'How an engagement works', R.process(), 'wwm-sec-alt')}
+${R.section('related', 'Related services and industries', `<div class="wwm-rel"><div><h3>More in ${esc(fam.name)}</h3>${R.pills(related)}</div>${inds.length ? `<div><h3>Industries we build this for</h3>${R.pills(inds)}</div>` : ''}</div>`)}
 ${R.section('faq', 'Questions about ' + s.name, R.faqHtml(s.faq))}
 ${R.endBand()}
 </main>
@@ -69,9 +71,10 @@ ${list.map((it, i) => `        <li class="wwm-c"><a href="${it.href}"><span clas
   return head({ title: p.title, description: p.description, canonical: url, graph }) + `
 <main id="top">${R.hero({ crumbs: [['Home', '/'], ['Services', '/services'], [fam.name, fam.path]], pill: 'Service family', h1: p.h1, sub: p.lead, secondary: ['See our work', '/work'] })}
 ${R.section('includes', 'What this covers', `<ul class="wwm-pills wwm-plain">${p.points.map((t) => `<li><span>${esc(t)}</span></li>`).join('')}</ul>`)}
-${R.section('services', 'Services in ' + fam.name, grid, 'wwm-sec-alt')}
-${R.section('process', 'How an engagement works', R.process())}
-${R.section('faq', 'Questions about DevOps and cloud', R.faqHtml(p.faq), 'wwm-sec-alt')}
+${R.section('approach', 'How we approach DevOps and cloud', R.prose(approach.families.devops), 'wwm-sec-alt')}
+${R.section('services', 'Services in ' + fam.name, grid)}
+${R.section('process', 'How an engagement works', R.process(), 'wwm-sec-alt')}
+${R.section('faq', 'Questions about DevOps and cloud', R.faqHtml(p.faq))}
 ${R.endBand()}
 </main>
 ` + foot();

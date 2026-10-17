@@ -38,14 +38,16 @@ ${list.map(([t, d], i) => `        <li class="wwm-c"><span class="wwm-c-n" aria-
 const fits = (title, list) => `<div class="wwm-fitbox"><h3>${esc(title)}</h3><ul>${list.map((t) => `<li>${esc(t)}</li>`).join('')}</ul></div>`;
 
 const STEPS = [
-  ['Scope', 'A free strategy call to understand what you need, then a clear proposal with scope and priorities.'],
-  ['Plan', 'A PRD and, where useful, a clickable prototype, so you see what will be built before it is built.'],
-  ['Build', 'An in-house team builds against the plan, with demos along the way so there are no surprises.'],
-  ['Launch and improve', 'Release, then keep improving with the same people who built it.'],
+  ['Scope', 'A free strategy call, then a clear proposal with scope and priorities.'],
+  ['Plan', 'A PRD and, where useful, a clickable prototype before building starts.'],
+  ['Build', 'An in-house team builds in stages, with demos along the way.'],
+  ['Launch and improve', 'Release, then keep improving with the people who built it.'],
 ];
 const process = () => `<ol class="wwm-flow">
 ${STEPS.map(([t, d], i) => `        <li><span class="wwm-flow-n">0${i + 1}</span><h3>${t}</h3><p>${d}</p></li>`).join('\n')}
       </ol>`;
+
+const prose = (text) => `<p class="wwm-prose">${esc(text)}</p>`;
 
 const pills = (list) => `<ul class="wwm-pills">${list.map(([label, href]) => `<li><a href="${href}">${esc(label)}</a></li>`).join('')}</ul>`;
 
@@ -67,4 +69,4 @@ const endBand = (title = 'Have a product in mind?', text = 'Tell me what you wan
     </div>
   </section>`;
 
-module.exports = { BOOK, bookBtn, hero, section, cards, fits, process, pills, faqHtml, faqLd, endBand, crumbsHtml };
+module.exports = { BOOK, bookBtn, hero, section, cards, fits, process, prose, pills, faqHtml, faqLd, endBand, crumbsHtml };

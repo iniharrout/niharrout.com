@@ -278,8 +278,8 @@ body.hero-demo .ed-facts-rule dd { margin: 0; font-size: 14px; color: var(--ai-m
 .aix-lanes { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .aix-lane { display: flex; flex-direction: column; gap: 8px; padding: 10px; border-radius: 12px; background: #f3f6ff; }
 .aix-lane.is-later { background: #f4f5f7; }
-.aix-lane h5 { margin: 0 0 2px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ai-blue); }
-.aix-lane.is-later h5 { color: var(--ai-muted); }
+.aix-lane h5, .aix-lane .aix-lane-h { margin: 0 0 2px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ai-blue); }
+.aix-lane.is-later h5, .aix-lane.is-later .aix-lane-h { color: var(--ai-muted); }
 .aix-chip { padding: 9px 11px; border: 1px solid rgba(9, 13, 22, 0.08); border-radius: 10px; background: #fff; font-size: 13px; font-weight: 600; color: var(--ai-ink); }
 .aix-note { margin: 10px 0 0; font-size: 12.5px; font-weight: 600; color: var(--ai-muted); }
 

@@ -57,6 +57,29 @@
     });
   });
 
+  // Call button: on a computer, show the number and the options (there may be no calling app); on phones the link dials at once.
+  var callBtn = header.querySelector('.sc-call');
+  var callPop = header.querySelector('.sc-callpop');
+  if (callBtn && callPop && window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    callBtn.setAttribute('data-pop', '1');
+    callBtn.setAttribute('aria-haspopup', 'dialog');
+    callBtn.setAttribute('aria-expanded', 'false');
+    var setPop = function (open) { callPop.hidden = !open; callBtn.setAttribute('aria-expanded', String(open)); };
+    callBtn.addEventListener('click', function (event) { event.preventDefault(); setPop(callPop.hidden); });
+    document.addEventListener('click', function (event) {
+      if (!callPop.hidden && !callPop.contains(event.target) && !callBtn.contains(event.target)) setPop(false);
+    });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && !callPop.hidden) { setPop(false); callBtn.focus(); }
+    });
+    var copyBtn = callPop.querySelector('[data-copy]');
+    if (copyBtn) copyBtn.addEventListener('click', function () {
+      var done = function () { copyBtn.textContent = 'Copied'; setTimeout(function () { copyBtn.textContent = 'Copy number'; }, 1800); };
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText('+917608844995').then(done, done);
+      else done();
+    });
+  }
+
   // Mobile menu: built from the desktop menus above so the two never drift apart.
   var acc = drawer && drawer.querySelector('[data-sc-acc]');
   if (acc) {
@@ -104,6 +127,8 @@
       var mobileLinks = menu.classList.contains('sc-mega') ? menu.querySelectorAll('a.sc-fam, a.sc-ind, a.sc-menu-all') : menu.querySelectorAll('a');
       mobileLinks.forEach(function (a) {
         var copy = a.cloneNode(true);
+        var famName = a.querySelector('.sc-fam-t');
+        if (famName) copy.textContent = famName.textContent;
         if (a.classList.contains('sc-menu-all')) copy.className = 'sc-acc-all';
         inner.appendChild(copy);
       });
@@ -159,6 +184,7 @@
   document.addEventListener('click', function (event) {
     var link = event.target.closest && event.target.closest('a');
     if (!link) return;
+    if (link.hasAttribute('data-pop')) return; // opens the number pop-over; the Call now button inside it is what counts
     var href = link.getAttribute('href') || '';
     var name = null;
     if (href.indexOf('tel:') === 0) name = 'call';

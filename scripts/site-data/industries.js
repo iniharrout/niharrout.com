@@ -619,4 +619,12 @@ const industries = [
   },
 ];
 
-module.exports = { industries, WORK };
+// Themes used for the Industries menu and for "related industries" links
+const groups = [
+  ['Commerce and services', ['ecommerce', 'restaurant', 'on-demand', 'travel-hospitality', 'events', 'fitness-wellness']],
+  ['Industry and infrastructure', ['manufacturing', 'construction', 'logistics', 'automotive', 'electric-vehicles', 'energy', 'agriculture', 'aviation']],
+  ['Technology and media', ['saas', 'telecom', 'media-entertainment', 'gaming-sports', 'social-networking']],
+  ['Finance, health and public', ['fintech', 'healthcare', 'education', 'real-estate', 'government']],
+];
+
+module.exports = { industries, WORK, groups };

@@ -36,7 +36,7 @@ const families = [
     items: ['cloud-consulting', 'ci-cd-implementation', 'kubernetes-implementation', 'serverless-architecture', 'cloud-cost-optimisation', 'infrastructure-monitoring'],
     page: {
       title: 'DevOps & Cloud Engineering Company | Nihar Ranjan Rout',
-      description: 'DevOps and cloud engineering by Nihar Ranjan Rout and the Creuto team: AWS, GCP and Azure setup, CI/CD, Kubernetes, serverless, cost control and monitoring.',
+      description: 'DevOps and cloud engineering by Nihar Ranjan Rout and Creuto: AWS, GCP and Azure setup, CI/CD, Kubernetes, serverless, cost control and monitoring.',
       h1: 'DevOps and cloud engineering for products that have to stay up.',
       lead: 'Good infrastructure is quiet. Releases go out without drama, the system scales when traffic does, and the monthly cloud bill is no surprise. We set that up, or fix it where it has grown messy.',
       points: ['Cloud setup and migration on AWS, Google Cloud and Azure', 'Automated build, test and release pipelines', 'Containers, Kubernetes and serverless where they fit', 'Cost control, monitoring and on-call readiness'],
@@ -106,7 +106,7 @@ const subs = {
   },
   'enterprise-application-development': {
     family: 'custom', name: 'Enterprise Application Development', short: 'Secure internal systems for larger organisations',
-    seoTitle: 'Enterprise Application Development Company | Nihar Ranjan Rout',
+    seoTitle: 'Enterprise Application Development | Nihar Ranjan Rout',
     seoDesc: 'Enterprise application development by Nihar Ranjan Rout and the Creuto team: secure, scalable internal platforms with roles, audit trails and integrations.',
     intro: 'Enterprise software is judged by what happens at scale: many users, many roles, many integrations and strict security. We design for those from the first sprint, not as an afterthought.',
     builds: [
@@ -127,7 +127,7 @@ const subs = {
   'software-consulting': {
     family: 'custom', name: 'Software Consulting Services', short: 'Independent advice before you build or buy',
     seoTitle: 'Software Consulting Services | Nihar Ranjan Rout',
-    seoDesc: 'Software consulting by Nihar Ranjan Rout, a product leader with 8+ years in product management: scoping, build-or-buy decisions, architecture and vendor review.',
+    seoDesc: 'Software consulting by Nihar Ranjan Rout, a product leader with 8+ years in product: scoping, build-or-buy choices, architecture and vendor review.',
     intro: 'Before spending on development, it helps to have an experienced second opinion. We review your idea, your plan or your vendor proposal and tell you plainly what to build, what to buy and what to leave out.',
     builds: [
       ['Scoping and prioritisation', 'Turn a long wish list into a short first release that proves the idea.'],
@@ -146,8 +146,8 @@ const subs = {
   },
   'legacy-application-modernization': {
     family: 'custom', name: 'Legacy Application Modernization', short: 'Move old systems onto a modern, supportable base',
-    seoTitle: 'Legacy Application Modernization Services | Nihar Ranjan Rout',
-    seoDesc: 'Legacy application modernization by Nihar Ranjan Rout and the Creuto team: staged migration of old systems to modern, supportable software without a risky big bang.',
+    seoTitle: 'Legacy Application Modernization | Nihar Ranjan Rout',
+    seoDesc: 'Legacy application modernization by Nihar Ranjan Rout and Creuto: move old systems to modern, supportable software in safe stages, not a risky big bang.',
     intro: 'Old systems keep businesses running, and also slow them down. We modernise them in stages: understand what the system really does, keep what works, and move to a modern base without stopping the business.',
     builds: [
       ['System discovery', 'Document what the old system does, who depends on it and where the hidden rules live.'],
@@ -167,7 +167,7 @@ const subs = {
   'ecommerce-solutions': {
     family: 'custom', name: 'E-commerce Solutions', short: 'Stores, marketplaces and quick-commerce platforms',
     seoTitle: 'E-commerce Development Company | Nihar Ranjan Rout',
-    seoDesc: 'E-commerce development by Nihar Ranjan Rout and the Creuto team: custom stores, multi-vendor marketplaces and quick-commerce platforms with web and mobile apps.',
+    seoDesc: 'E-commerce development by Nihar Ranjan Rout and Creuto: custom stores, multi-vendor marketplaces and quick-commerce platforms with web and mobile apps.',
     intro: 'Some businesses fit a standard store builder. Others need a custom storefront, a marketplace with many sellers, or a delivery platform. We build the second kind: commerce that matches how you actually sell.',
     builds: [
       ['Custom storefronts', 'Fast web and mobile shopping experiences with your own catalogue and checkout logic.'],
@@ -209,7 +209,7 @@ const subs = {
   'ios-app-development': {
     family: 'mobile', name: 'iOS App Development', short: 'Native iPhone and iPad apps in Swift',
     seoTitle: 'iOS App Development Company | Nihar Ranjan Rout',
-    seoDesc: 'iOS app development by Nihar Ranjan Rout and the Creuto team: native Swift apps for iPhone and iPad, designed to App Store standards and built to be maintained.',
+    seoDesc: 'iOS app development by Nihar Ranjan Rout and Creuto: native Swift apps for iPhone and iPad, built to App Store standards and easy to maintain.',
     intro: 'iPhone users expect apps that feel polished and follow Apple conventions. We build native iOS apps in Swift that meet those expectations and pass App Store review.',
     builds: [
       ['Native Swift and SwiftUI apps', 'Clean, current code that feels at home on iPhone and iPad.'],
@@ -249,7 +249,7 @@ const subs = {
   'flutter-app-development': {
     family: 'mobile', name: 'Flutter App Development', short: 'Consistent, polished apps for iOS, Android and web',
     seoTitle: 'Flutter App Development Company | Nihar Ranjan Rout',
-    seoDesc: 'Flutter app development by Nihar Ranjan Rout and the Creuto team: polished, consistent apps for iOS and Android from one codebase, with web and desktop options.',
+    seoDesc: 'Flutter app development by Nihar Ranjan Rout and Creuto: polished, consistent apps for iOS and Android from one codebase, with web and desktop options.',
     intro: 'Flutter draws its own interface, so an app looks and behaves the same on every device. That consistency and speed of development make it a strong choice for products that need a distinctive design on both platforms.',
     builds: [
       ['iOS and Android from one codebase', 'A single Dart codebase delivering polished apps for both stores.'],
@@ -269,7 +269,7 @@ const subs = {
   'mobile-app-qa-testing': {
     family: 'mobile', name: 'Mobile App QA and Testing', short: 'Test plans, automation and real-device checks',
     seoTitle: 'Mobile App QA and Testing Services | Nihar Ranjan Rout',
-    seoDesc: 'Mobile app QA and testing by Nihar Ranjan Rout and the Creuto team: test plans, automated tests, real-device checks and release readiness for iOS and Android.',
+    seoDesc: 'Mobile app QA and testing by Nihar Ranjan Rout and Creuto: test plans, automation, real-device checks and release readiness for iOS and Android.',
     intro: 'Most app-store complaints are problems that testing should have caught. We test mobile apps the way real users use them, on real devices and real networks, before they reach your customers.',
     builds: [
       ['Test planning', 'Test cases built from your user journeys and the riskiest parts of the app.'],
@@ -289,7 +289,7 @@ const subs = {
   'mobile-app-modernization': {
     family: 'mobile', name: 'Mobile App Modernization', short: 'Update ageing apps without losing your users',
     seoTitle: 'Mobile App Modernization Services | Nihar Ranjan Rout',
-    seoDesc: 'Mobile app modernization by Nihar Ranjan Rout and the Creuto team: upgrade outdated iOS and Android apps, fix performance and bring them to current platform standards.',
+    seoDesc: 'Mobile app modernization by Nihar Ranjan Rout and Creuto: upgrade outdated iOS and Android apps, fix performance and meet current platform standards.',
     intro: 'Apps age. Operating systems change, libraries go out of support and users expect more. We bring older apps up to date step by step, keeping the features and users you already have.',
     builds: [
       ['App audit', 'A review of code, dependencies, performance and store compliance, with a prioritised list.'],
@@ -311,7 +311,7 @@ const subs = {
   'customized-web-development': {
     family: 'web', name: 'Customized Web Development', short: 'Websites and web apps built around your needs',
     seoTitle: 'Custom Web Development Company | Nihar Ranjan Rout',
-    seoDesc: 'Custom web development by Nihar Ranjan Rout and the Creuto team: websites and web applications built around your workflow, fast, accessible and easy to maintain.',
+    seoDesc: 'Custom web development by Nihar Ranjan Rout and Creuto: websites and web apps built around your workflow, fast, accessible and easy to maintain.',
     intro: 'When a template will not do, we build web products from your requirements: fast to load, clear to use and structured so your team can keep changing them.',
     builds: [
       ['Marketing and product sites', 'Fast, search-friendly sites that explain what you do and convert visitors.'],
@@ -331,7 +331,7 @@ const subs = {
   'enterprise-web-development': {
     family: 'web', name: 'Enterprise Web Development', short: 'Large-scale portals and platforms with strict requirements',
     seoTitle: 'Enterprise Web Development Company | Nihar Ranjan Rout',
-    seoDesc: 'Enterprise web development by Nihar Ranjan Rout and the Creuto team: secure, scalable portals and platforms with single sign-on, roles, audit trails and integrations.',
+    seoDesc: 'Enterprise web development by Nihar Ranjan Rout and Creuto: secure, scalable portals with single sign-on, roles, audit trails and integrations.',
     intro: 'Enterprise web platforms have many users, strict security and a long list of integrations. We build them with clear architecture, strong access control and the observability to run them calmly.',
     builds: [
       ['Customer and partner portals', 'Secure self-service for clients, dealers or suppliers.'],
@@ -351,7 +351,7 @@ const subs = {
   'cross-platform-development': {
     family: 'web', name: 'Cross-Platform Development', short: 'One product across web, mobile and desktop',
     seoTitle: 'Cross-Platform App Development Company | Nihar Ranjan Rout',
-    seoDesc: 'Cross-platform development by Nihar Ranjan Rout and Creuto: shared code and one back end across web, mobile and desktop to cut cost and keep products consistent.',
+    seoDesc: 'Cross-platform development by Nihar Ranjan Rout and Creuto: shared code and one back end across web, mobile and desktop to cut cost and stay consistent.',
     intro: 'Building the same product three times is expensive. Cross-platform development shares code, design and a back end across web, mobile and desktop, so features arrive everywhere together.',
     builds: [
       ['Shared design system', 'One set of components and rules used on every platform.'],
@@ -370,8 +370,8 @@ const subs = {
   },
   'pwa-development': {
     family: 'web', name: 'PWA Development', short: 'Web apps that install and work offline',
-    seoTitle: 'PWA Development Company | Progressive Web Apps | Nihar Ranjan Rout',
-    seoDesc: 'Progressive web app development by Nihar Ranjan Rout and the Creuto team: installable, fast web apps with offline support and push notifications, without an app store.',
+    seoTitle: 'PWA Development Company | Nihar Ranjan Rout',
+    seoDesc: 'Progressive web app development by Nihar Ranjan Rout and Creuto: installable, fast web apps with offline support and push notifications, no app store.',
     intro: 'A progressive web app is a website that behaves like an app: it installs on the home screen, loads fast and keeps working on a poor connection. It reaches users without an app store and without two separate builds.',
     builds: [
       ['Installable web apps', 'Add to home screen, full-screen launch and app-like navigation.'],
@@ -391,7 +391,7 @@ const subs = {
   'on-site-seo-development': {
     family: 'web', name: 'On-site SEO Development', short: 'Technical SEO built into the site itself',
     seoTitle: 'On-site SEO Development Services | Nihar Ranjan Rout',
-    seoDesc: 'Technical SEO development by Nihar Ranjan Rout and Creuto: fast pages, clean structure, structured data and sites that search engines can crawl and understand.',
+    seoDesc: 'Technical SEO development by Nihar Ranjan Rout and Creuto: fast pages, clean structure and structured data that search engines can crawl and understand.',
     intro: 'Much of SEO is engineering: how fast pages load, how they are structured and whether search engines can read them. We build that into the site, so content work pays off.',
     builds: [
       ['Technical audit', 'Crawl, indexing, speed and structure problems found and ranked by impact.'],
@@ -433,7 +433,7 @@ const subs = {
   'cloud-consulting': {
     family: 'devops', name: 'AWS, GCP and Azure Consulting', short: 'Cloud architecture, setup and migration',
     seoTitle: 'AWS, GCP and Azure Consulting | Nihar Ranjan Rout',
-    seoDesc: 'Cloud consulting by Nihar Ranjan Rout and the Creuto team: architecture, setup and migration on AWS, Google Cloud and Azure, chosen to fit your product and budget.',
+    seoDesc: 'Cloud consulting by Nihar Ranjan Rout and Creuto: architecture, setup and migration on AWS, Google Cloud and Azure, chosen to fit your product and budget.',
     intro: 'The cloud offers endless options, and most of them are wrong for any given product. We help you choose a sensible architecture, set it up securely and move to it without surprises.',
     builds: [
       ['Architecture design', 'A clear design for compute, storage, networking and data that fits your product and budget.'],
@@ -473,7 +473,7 @@ const subs = {
   'kubernetes-implementation': {
     family: 'devops', name: 'Kubernetes Implementation', short: 'Container orchestration when it earns its keep',
     seoTitle: 'Kubernetes Implementation Services | Nihar Ranjan Rout',
-    seoDesc: 'Kubernetes implementation by Nihar Ranjan Rout and the Creuto team: containerisation, managed clusters on EKS, GKE or AKS, deployments and day-two operations.',
+    seoDesc: 'Kubernetes implementation by Nihar Ranjan Rout and Creuto: containerisation, managed clusters on EKS, GKE or AKS, deployments and day-two operations.',
     intro: 'Kubernetes is powerful and complicated. We use it when you have the scale or the number of services to justify it, and we set it up so your team can actually run it.',
     builds: [
       ['Containerisation', 'Package your applications into reliable, reproducible containers.'],
@@ -493,7 +493,7 @@ const subs = {
   'serverless-architecture': {
     family: 'devops', name: 'Serverless Architecture', short: 'Pay for use, with no servers to manage',
     seoTitle: 'Serverless Architecture Development | Nihar Ranjan Rout',
-    seoDesc: 'Serverless architecture by Nihar Ranjan Rout and the Creuto team: event-driven back ends on AWS Lambda, Google Cloud Functions and Azure Functions that scale with demand.',
+    seoDesc: 'Serverless architecture by Nihar Ranjan Rout and Creuto: event-driven back ends on AWS Lambda, Cloud Functions and Azure Functions that scale with demand.',
     intro: 'Serverless means you run code without managing servers and pay for what is used. It suits spiky traffic, event-driven work and small teams who would rather build features than maintain machines.',
     builds: [
       ['Function-based back ends', 'APIs and background jobs on Lambda, Cloud Functions or Azure Functions.'],
@@ -513,7 +513,7 @@ const subs = {
   'cloud-cost-optimisation': {
     family: 'devops', name: 'Cloud Consulting and Cost Optimisation', short: 'Understand and reduce your cloud bill',
     seoTitle: 'Cloud Cost Optimisation Services | Nihar Ranjan Rout',
-    seoDesc: 'Cloud cost optimisation by Nihar Ranjan Rout and the Creuto team: find waste, right-size resources and set up cost visibility on AWS, Google Cloud and Azure.',
+    seoDesc: 'Cloud cost optimisation by Nihar Ranjan Rout and Creuto: find waste, right-size resources and set up cost visibility on AWS, Google Cloud and Azure.',
     intro: 'Cloud bills creep up quietly. We review where the money goes, remove what you do not need, right-size what you do, and set up visibility so costs stay explainable.',
     builds: [
       ['Cost review', 'A breakdown of spend by service, environment and team, with the biggest items first.'],
@@ -533,7 +533,7 @@ const subs = {
   'infrastructure-monitoring': {
     family: 'devops', name: 'Infrastructure Management and Monitoring', short: 'Know about problems before your customers do',
     seoTitle: 'Infrastructure Management and Monitoring | Nihar Ranjan Rout',
-    seoDesc: 'Infrastructure management and monitoring by Nihar Ranjan Rout and the Creuto team: metrics, logs, alerts, backups and incident readiness so you hear about problems first.',
+    seoDesc: 'Infrastructure monitoring by Nihar Ranjan Rout and Creuto: metrics, logs, alerts and tested backups so you hear about problems before your customers do.',
     intro: 'Customers should not be the first to tell you the system is down. We set up the monitoring, alerting and backups that turn surprises into manageable events.',
     builds: [
       ['Metrics and dashboards', 'Clear views of load, errors, latency and the health of key services.'],
@@ -615,7 +615,7 @@ const subs = {
   'machine-learning-analytics': {
     family: 'ai', name: 'Machine Learning and Analytics', short: 'Forecasts, scoring and insight from your data',
     seoTitle: 'Machine Learning and Analytics Services | Nihar Ranjan Rout',
-    seoDesc: 'Machine learning and analytics by Nihar Ranjan Rout and the Creuto team: forecasting, classification, anomaly detection and dashboards built on your own data.',
+    seoDesc: 'Machine learning and analytics by Nihar Ranjan Rout and Creuto: forecasting, classification, anomaly detection and dashboards on your own data.',
     intro: 'Your data holds answers that dashboards alone do not show. We build the pipelines, models and reporting that turn it into forecasts, scores and alerts people can act on.',
     builds: [
       ['Data pipelines', 'Collect, clean and organise data from your systems into one reliable place.'],
@@ -635,7 +635,7 @@ const subs = {
   'generative-ai': {
     family: 'ai', name: 'Generative AI', short: 'Text, image and content generation done responsibly',
     seoTitle: 'Generative AI Development Company | Nihar Ranjan Rout',
-    seoDesc: 'Generative AI development by Nihar Ranjan Rout and the Creuto team: content generation, summarisation, assistants and RAG systems with guardrails and cost control.',
+    seoDesc: 'Generative AI development by Nihar Ranjan Rout and Creuto: drafting, summarisation, assistants and RAG systems with guardrails and cost control.',
     intro: 'Generative AI can draft, summarise, translate and answer. Used carelessly it also invents things. We build generative features with the checks, sources and limits that make them safe to put in front of customers.',
     builds: [
       ['Content and drafting tools', 'Generate first drafts of emails, reports, listings or descriptions for people to review.'],
@@ -655,7 +655,7 @@ const subs = {
   'chatgpt-solutions': {
     family: 'ai', name: 'ChatGPT Solutions', short: 'ChatGPT and OpenAI-powered assistants and tools',
     seoTitle: 'ChatGPT and OpenAI Solutions | Nihar Ranjan Rout',
-    seoDesc: 'ChatGPT and OpenAI solutions by Nihar Ranjan Rout and the Creuto team, an OpenAI Select Partner: custom GPTs, assistants and integrations built into your tools.',
+    seoDesc: 'ChatGPT and OpenAI solutions by Nihar Ranjan Rout and Creuto, an OpenAI Select Partner: custom assistants and integrations built into your tools.',
     intro: 'ChatGPT is a good starting point for many businesses. We turn it into something useful for your team or customers: assistants that know your content, integrations with your tools and safe ways to use it at work.',
     builds: [
       ['Custom assistants', 'Assistants trained on your content and instructions to answer questions or complete tasks.'],
@@ -697,7 +697,7 @@ const subs = {
   'rapid-prototyping': {
     family: 'startup', name: 'Rapid Prototyping', short: 'Clickable prototypes before you commit to code',
     seoTitle: 'Rapid Prototyping Services for Startups | Nihar Ranjan Rout',
-    seoDesc: 'Rapid prototyping by Nihar Ranjan Rout and the Creuto team: clickable Figma prototypes and working proofs of concept to test ideas with users before you build.',
+    seoDesc: 'Rapid prototyping by Nihar Ranjan Rout and Creuto: clickable Figma prototypes and proofs of concept to test ideas with users before you build.',
     intro: 'The cheapest time to change a product is before it is built. A clickable prototype lets users, partners and investors experience your idea, so you find what is wrong while it is still easy to fix.',
     builds: [
       ['Clickable Figma prototypes', 'Realistic screens and flows you can put in front of users in days, not months.'],
@@ -716,7 +716,7 @@ const subs = {
   },
   'technical-architecture': {
     family: 'startup', name: 'Technical Architecture', short: 'Foundations that will not need replacing at your first success',
-    seoTitle: 'Technical Architecture Consulting for Startups | Nihar Ranjan Rout',
+    seoTitle: 'Startup Technical Architecture | Nihar Ranjan Rout',
     seoDesc: 'Technical architecture for startups by Nihar Ranjan Rout and Creuto: pragmatic system design, stack choices and data models that support growth.',
     intro: 'Early architecture decisions are hard to undo. We design foundations that are simple enough to build quickly and solid enough to carry the first thousands of users without a rewrite.',
     builds: [
@@ -736,8 +736,8 @@ const subs = {
   },
   'investor-ready-demos': {
     family: 'startup', name: 'Investor-Ready Demos', short: 'A product story investors can click through',
-    seoTitle: 'Investor-Ready Product Demos for Startups | Nihar Ranjan Rout',
-    seoDesc: 'Investor-ready demos by Nihar Ranjan Rout and the Creuto team: polished, working demos and prototypes that show your product, your plan and your team\'s ability to deliver.',
+    seoTitle: 'Investor-Ready Product Demos | Nihar Ranjan Rout',
+    seoDesc: 'Investor-ready demos by Nihar Ranjan Rout and Creuto: polished, working demos that show your product, your plan and your ability to deliver.',
     intro: 'Investors back what they can see. A working demo shows that your idea is real and that you can build. We help you create a focused, reliable demo that tells your story in a few minutes.',
     builds: [
       ['Demo scope', 'Decide which flows to show so the story is clear and nothing breaks on stage.'],
@@ -757,7 +757,7 @@ const subs = {
   'post-launch-iteration': {
     family: 'startup', name: 'Post-Launch Iteration', short: 'Keep improving after the first release',
     seoTitle: 'Post-Launch Product Iteration Services | Nihar Ranjan Rout',
-    seoDesc: 'Post-launch product iteration by Nihar Ranjan Rout and the Creuto team: use real user data to decide what to build next, fix what hurts and release improvements steadily.',
+    seoDesc: 'Post-launch product iteration by Nihar Ranjan Rout and Creuto: use real user data to decide what to build next and release improvements steadily.',
     intro: 'Launch is where learning starts. We stay with the product after release: measure real use, fix the issues that matter and plan the next versions based on evidence, not opinion.',
     builds: [
       ['Usage and feedback review', 'Analytics, recordings and user conversations turned into a clear list of what to improve.'],

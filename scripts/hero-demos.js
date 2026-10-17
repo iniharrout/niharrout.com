@@ -86,7 +86,7 @@ const demos = {
     steps: ['Define', 'Prioritise', 'Write', 'Estimate'],
     phases: [
       phase(1, '/01 Define', 'Defining', 'Who it is for and the one thing it must do.', kv([['Users', 'Students and local tutors'], ['Core action', 'Book a lesson'], ['Success', 'Repeat bookings']])),
-      phase(2, '/02 Prioritise', 'Prioritising', 'Build what proves demand first. Park the rest.', `<div class="aix-lanes"><div class="aix-lane"><h5>Build first</h5><div class="aix-chip aix-ra">Search tutors</div><div class="aix-chip aix-rb">Book and pay</div></div><div class="aix-lane is-later"><h5>Later (V2)</h5><div class="aix-chip aix-rc">Reviews</div><div class="aix-chip aix-rd">Group classes</div></div></div>`),
+      phase(2, '/02 Prioritise', 'Prioritising', 'Build what proves demand first. Park the rest.', `<div class="aix-lanes"><div class="aix-lane"><p class="aix-lane-h">Build first</p><div class="aix-chip aix-ra">Search tutors</div><div class="aix-chip aix-rb">Book and pay</div></div><div class="aix-lane is-later"><p class="aix-lane-h">Later (V2)</p><div class="aix-chip aix-rc">Reviews</div><div class="aix-chip aix-rd">Group classes</div></div></div>`),
       phase(3, '/03 PRD ready', 'Ready', 'The plan your developers and investors can read.', checks(['Scope and user stories', 'Screens and flows', 'Milestones and estimate', 'Proposal within 24 hours']), true),
     ],
   }),
