@@ -43,11 +43,36 @@
     });
   });
 
+  // Mega menus: pointing at (or tabbing to) a service family shows its services.
+  header.querySelectorAll('.sc-mega').forEach(function (mega) {
+    var fams = mega.querySelectorAll('.sc-fam');
+    var panels = mega.querySelectorAll('.sc-mega-panel');
+    function show(key) {
+      fams.forEach(function (f) { f.classList.toggle('is-active', f.getAttribute('data-fam') === key); });
+      panels.forEach(function (p) { p.classList.toggle('is-active', p.getAttribute('data-fam') === key); });
+    }
+    fams.forEach(function (f) {
+      f.addEventListener('mouseenter', function () { show(f.getAttribute('data-fam')); });
+      f.addEventListener('focus', function () { show(f.getAttribute('data-fam')); });
+    });
+  });
+
   // Mobile menu: built from the desktop menus above so the two never drift apart.
   var acc = drawer && drawer.querySelector('[data-sc-acc]');
   if (acc) {
     var chevron = '<svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-    header.querySelectorAll('.sc-links > .sc-item:not(.sc-item-ai)').forEach(function (li, index) {
+    header.querySelectorAll('.sc-links > .sc-item').forEach(function (li, index) {
+      if (li.classList.contains('sc-item-ai')) { // the sparkle AI link becomes the first, plain entry in the phone menu
+        var aiLink = li.querySelector('a.sc-ai');
+        if (aiLink) {
+          var plainAi = document.createElement('a');
+          plainAi.className = 'sc-acc-link';
+          plainAi.href = aiLink.getAttribute('href');
+          plainAi.textContent = 'AI';
+          acc.appendChild(plainAi);
+        }
+        return;
+      }
       var link = li.querySelector('.sc-link');
       var menu = li.querySelector('.sc-menu');
       if (!link) return;
@@ -75,7 +100,9 @@
       panel.id = panelId;
       var inner = document.createElement('div');
       inner.className = 'sc-acc-inner';
-      menu.querySelectorAll('a').forEach(function (a) {
+      // mega menus list dozens of links; the phone menu shows only the top level (families, industries) and the "all" link
+      var mobileLinks = menu.classList.contains('sc-mega') ? menu.querySelectorAll('a.sc-fam, a.sc-ind, a.sc-menu-all') : menu.querySelectorAll('a');
+      mobileLinks.forEach(function (a) {
         var copy = a.cloneNode(true);
         if (a.classList.contains('sc-menu-all')) copy.className = 'sc-acc-all';
         inner.appendChild(copy);

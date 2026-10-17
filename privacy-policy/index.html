@@ -336,8 +336,8 @@
     ]
   }
   </script>
-  <link rel="stylesheet" href="/assets/chrome.css?v=31">
-  <script src="/assets/chrome.js?v=10" defer></script>
+  <link rel="stylesheet" href="/assets/chrome.css?v=32">
+  <script src="/assets/chrome.js?v=12" defer></script>
   <link rel="stylesheet" href="/assets/schedule-popup.css?v=sp3">
   <script src="/assets/schedule-popup.js?v=sp4" defer></script>
 </head>
@@ -353,20 +353,162 @@
 
     <nav class="sc-nav" aria-label="Primary">
       <ul class="sc-links">
-        <li class="sc-item sc-has-menu">
+        <li class="sc-item sc-item-ai">
+          <a class="sc-ai" href="/services/ai-product-development" aria-label="AI product development">
+            <svg class="sc-spark sc-spark-main" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 0c.5 5.5 4.5 9.5 10 10-5.5.5-9.5 4.5-10 10-.5-5.5-4.5-9.5-10-10C5.5 9.5 9.5 5.5 10 0z"/></svg>
+            <span class="sc-ai-txt">AI</span>
+            <svg class="sc-spark sc-spark-a" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 0c.5 5.5 4.5 9.5 10 10-5.5.5-9.5 4.5-10 10-.5-5.5-4.5-9.5-10-10C5.5 9.5 9.5 5.5 10 0z"/></svg>
+            <svg class="sc-spark sc-spark-b" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 0c.5 5.5 4.5 9.5 10 10-5.5.5-9.5 4.5-10 10-.5-5.5-4.5-9.5-10-10C5.5 9.5 9.5 5.5 10 0z"/></svg>
+          </a>
+        </li>
+        <li class="sc-item sc-has-menu sc-mega-item">
           <a class="sc-link" href="/services">Services</a>
           <button class="sc-toggle" type="button" aria-expanded="false" aria-label="Show services menu"><svg viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <div class="sc-menu">
-            <a href="/services/mobile-app-development"><i class="sc-mi"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.2"/><path d="M11 18.5h2"/></svg></i><span class="sc-mt"><strong>Mobile App Development</strong><span>React Native, Flutter, Swift and Kotlin</span></span></a>
-            <a href="/services/web-application-development"><i class="sc-mi"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5"/></svg></i><span class="sc-mt"><strong>Web Application Development</strong><span>Portals, dashboards and real-time web apps</span></span></a>
-            <a href="/services/custom-software-development"><i class="sc-mi"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></svg></i><span class="sc-mt"><strong>Custom Software &amp; ERP</strong><span>Enterprise operations and multi-tenant SaaS</span></span></a>
-            <a href="/services/ai-product-development"><i class="sc-mi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 3l1.9 4.6L17.5 9.5l-4.6 1.9L11 16l-1.9-4.6L4.5 9.5l4.6-1.9z"/><path d="M18.5 14.5l.8 1.9 1.9.8-1.9.8-.8 1.9-.8-1.9-1.9-.8 1.9-.8z"/></svg></i><span class="sc-mt"><strong>AI Product Development</strong><span>RAG pipelines and task agents</span></span></a>
-            <a href="/services/product-strategy-prd"><i class="sc-mi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7.5A2.5 2.5 0 0 0 5 5.5v13A2.5 2.5 0 0 0 7.5 21h9a2.5 2.5 0 0 0 2.5-2.5V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></i><span class="sc-mt"><strong>Product Strategy &amp; PRDs</strong><span>Scope, roadmaps and clickable prototypes</span></span></a>
-            <a class="sc-menu-all" href="/services">All services &rarr;</a>
+          <div class="sc-menu sc-mega sc-mega-services">
+            <div class="sc-mega-rail">
+              <p class="sc-mega-h"><span>Services</span><a class="sc-mega-all" href="/services">View all</a></p>
+          <a class="sc-fam is-active" href="/services/custom-software-development" data-fam="custom"><i class="sc-mi" style="--tone:#1d4ed8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6l-5 6 5 6M16 6l5 6-5 6"/></svg></i><span class="sc-mt"><strong>Custom Software Development</strong><span>8 services</span></span></a>
+          <a class="sc-fam" href="/services/mobile-app-development" data-fam="mobile"><i class="sc-mi" style="--tone:#2563eb"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.2"/><path d="M11 18.5h2"/></svg></i><span class="sc-mt"><strong>Mobile App Development</strong><span>7 services</span></span></a>
+          <a class="sc-fam" href="/services/web-application-development" data-fam="web"><i class="sc-mi" style="--tone:#0284c7"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5"/></svg></i><span class="sc-mt"><strong>Web Development</strong><span>6 services</span></span></a>
+          <a class="sc-fam" href="/services/devops-cloud-engineering" data-fam="devops"><i class="sc-mi" style="--tone:#475569"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a4 4 0 0 1-.5-7.97A5.5 5.5 0 0 1 17 8.5a4 4 0 0 1 .5 9.5z"/></svg></i><span class="sc-mt"><strong>DevOps &amp; Cloud Engineering</strong><span>6 services</span></span></a>
+          <a class="sc-fam" href="/services/ai-product-development" data-fam="ai"><i class="sc-mi" style="--tone:#4f46e5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 3l1.9 4.6L17.5 9.5l-4.6 1.9L11 16l-1.9-4.6L4.5 9.5l4.6-1.9z"/><path d="M18.5 14.5l.8 1.9 1.9.8-1.9.8-.8 1.9-.8-1.9-1.9-.8 1.9-.8z"/></svg></i><span class="sc-mt"><strong>AI Engineering Services</strong><span>6 services</span></span></a>
+          <a class="sc-fam" href="/services/product-strategy-prd" data-fam="startup"><i class="sc-mi" style="--tone:#0f172a"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 15c-1.5 1.5-2 4-2 4s2.5-.5 4-2M14 4c3 0 6 3 6 6l-6 6-6-6c0-3 3-6 6-6zM9 11l4 4"/><circle cx="15" cy="9" r="1.2"/></svg></i><span class="sc-mt"><strong>Startup Product Engineering</strong><span>6 services</span></span></a>
+            </div>
+            <div class="sc-mega-body">
+        <div class="sc-mega-panel is-active" data-fam="custom">
+          <div class="sc-mega-top"><div><p class="sc-mega-eyebrow">Service family</p><h3>Custom Software Development</h3></div><a class="sc-mega-over" href="/services/custom-software-development">Overview &rarr;</a></div>
+          <p class="sc-mega-desc">Your business is unique, and your software should be too. ERP, CRM and internal systems built around how you work.</p>
+          <div class="sc-mega-grid">
+            <a class="sc-sub" href="/services/custom-software-development/custom-erp-development"><i class="sc-mi" style="--tone:#1d4ed8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6l-5 6 5 6M16 6l5 6-5 6"/></svg></i><span>Custom ERP Development</span></a>
+            <a class="sc-sub" href="/services/web-application-development"><i class="sc-mi" style="--tone:#1d4ed8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6l-5 6 5 6M16 6l5 6-5 6"/></svg></i><span>Web App Development</span></a>
+            <a class="sc-sub" href="/services/custom-software-development/crm-development"><i class="sc-mi" style="--tone:#1d4ed8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6l-5 6 5 6M16 6l5 6-5 6"/></svg></i><span>CRM Development</span></a>
+            <a class="sc-sub" href="/services/product-strategy-prd/mvp-development"><i class="sc-mi" style="--tone:#1d4ed8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6l-5 6 5 6M16 6l5 6-5 6"/></svg></i><span>MVP Development</span></a>
+            <a class="sc-sub" href="/services/custom-software-development/enterprise-application-development"><i class="sc-mi" style="--tone:#1d4ed8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6l-5 6 5 6M16 6l5 6-5 6"/></svg></i><span>Enterprise Application Development</span></a>
+            <a class="sc-sub" href="/services/custom-software-development/software-consulting"><i class="sc-mi" style="--tone:#1d4ed8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6l-5 6 5 6M16 6l5 6-5 6"/></svg></i><span>Software Consulting Services</span></a>
+            <a class="sc-sub" href="/services/custom-software-development/legacy-application-modernization"><i class="sc-mi" style="--tone:#1d4ed8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6l-5 6 5 6M16 6l5 6-5 6"/></svg></i><span>Legacy Application Modernization</span></a>
+            <a class="sc-sub" href="/services/custom-software-development/ecommerce-solutions"><i class="sc-mi" style="--tone:#1d4ed8"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6l-5 6 5 6M16 6l5 6-5 6"/></svg></i><span>E-commerce Solutions</span></a>
+          </div>
+          <a class="sc-mega-cta" href="/services/custom-software-development">Explore Custom Software Development &rarr;</a>
+        </div>
+        <div class="sc-mega-panel" data-fam="mobile">
+          <div class="sc-mega-top"><div><p class="sc-mega-eyebrow">Service family</p><h3>Mobile App Development</h3></div><a class="sc-mega-over" href="/services/mobile-app-development">Overview &rarr;</a></div>
+          <p class="sc-mega-desc">iOS and Android apps built for real users, from a first release to a product that keeps improving.</p>
+          <div class="sc-mega-grid">
+            <a class="sc-sub" href="/services/mobile-app-development/android-app-development"><i class="sc-mi" style="--tone:#2563eb"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.2"/><path d="M11 18.5h2"/></svg></i><span>Android App Development</span></a>
+            <a class="sc-sub" href="/services/mobile-app-development/ios-app-development"><i class="sc-mi" style="--tone:#2563eb"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.2"/><path d="M11 18.5h2"/></svg></i><span>iOS App Development</span></a>
+            <a class="sc-sub" href="/services/mobile-app-development/react-native-app-development"><i class="sc-mi" style="--tone:#2563eb"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.2"/><path d="M11 18.5h2"/></svg></i><span>React Native App Development</span></a>
+            <a class="sc-sub" href="/services/mobile-app-development/flutter-app-development"><i class="sc-mi" style="--tone:#2563eb"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.2"/><path d="M11 18.5h2"/></svg></i><span>Flutter App Development</span></a>
+            <a class="sc-sub" href="/services/mobile-app-development/mobile-app-qa-testing"><i class="sc-mi" style="--tone:#2563eb"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.2"/><path d="M11 18.5h2"/></svg></i><span>Mobile App QA and Testing</span></a>
+            <a class="sc-sub" href="/services/mobile-app-development/mobile-app-modernization"><i class="sc-mi" style="--tone:#2563eb"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.2"/><path d="M11 18.5h2"/></svg></i><span>Mobile App Modernization</span></a>
+            <a class="sc-sub" href="/services/custom-software-development/legacy-application-modernization"><i class="sc-mi" style="--tone:#2563eb"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.2"/><path d="M11 18.5h2"/></svg></i><span>Legacy Application Modernization</span></a>
+          </div>
+          <a class="sc-mega-cta" href="/services/mobile-app-development">Explore Mobile App Development &rarr;</a>
+        </div>
+        <div class="sc-mega-panel" data-fam="web">
+          <div class="sc-mega-top"><div><p class="sc-mega-eyebrow">Service family</p><h3>Web Development</h3></div><a class="sc-mega-over" href="/services/web-application-development">Overview &rarr;</a></div>
+          <p class="sc-mega-desc">Fast, maintainable websites and web applications, from marketing sites to enterprise portals.</p>
+          <div class="sc-mega-grid">
+            <a class="sc-sub" href="/services/web-application-development/customized-web-development"><i class="sc-mi" style="--tone:#0284c7"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5"/></svg></i><span>Customized Web Development</span></a>
+            <a class="sc-sub" href="/services/web-application-development/enterprise-web-development"><i class="sc-mi" style="--tone:#0284c7"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5"/></svg></i><span>Enterprise Web Development</span></a>
+            <a class="sc-sub" href="/services/web-application-development/cross-platform-development"><i class="sc-mi" style="--tone:#0284c7"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5"/></svg></i><span>Cross-Platform Development</span></a>
+            <a class="sc-sub" href="/services/web-application-development/pwa-development"><i class="sc-mi" style="--tone:#0284c7"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5"/></svg></i><span>PWA Development</span></a>
+            <a class="sc-sub" href="/services/web-application-development/on-site-seo-development"><i class="sc-mi" style="--tone:#0284c7"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5"/></svg></i><span>On-site SEO Development</span></a>
+            <a class="sc-sub" href="/services/web-application-development/cms-development"><i class="sc-mi" style="--tone:#0284c7"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5"/></svg></i><span>CMS Development</span></a>
+          </div>
+          <a class="sc-mega-cta" href="/services/web-application-development">Explore Web Development &rarr;</a>
+        </div>
+        <div class="sc-mega-panel" data-fam="devops">
+          <div class="sc-mega-top"><div><p class="sc-mega-eyebrow">Service family</p><h3>DevOps &amp; Cloud Engineering</h3></div><a class="sc-mega-over" href="/services/devops-cloud-engineering">Overview &rarr;</a></div>
+          <p class="sc-mega-desc">Reliable infrastructure, automated releases and cloud bills you can explain.</p>
+          <div class="sc-mega-grid">
+            <a class="sc-sub" href="/services/devops-cloud-engineering/cloud-consulting"><i class="sc-mi" style="--tone:#475569"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a4 4 0 0 1-.5-7.97A5.5 5.5 0 0 1 17 8.5a4 4 0 0 1 .5 9.5z"/></svg></i><span>AWS, GCP and Azure Consulting</span></a>
+            <a class="sc-sub" href="/services/devops-cloud-engineering/ci-cd-implementation"><i class="sc-mi" style="--tone:#475569"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a4 4 0 0 1-.5-7.97A5.5 5.5 0 0 1 17 8.5a4 4 0 0 1 .5 9.5z"/></svg></i><span>CI/CD Implementation</span></a>
+            <a class="sc-sub" href="/services/devops-cloud-engineering/kubernetes-implementation"><i class="sc-mi" style="--tone:#475569"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a4 4 0 0 1-.5-7.97A5.5 5.5 0 0 1 17 8.5a4 4 0 0 1 .5 9.5z"/></svg></i><span>Kubernetes Implementation</span></a>
+            <a class="sc-sub" href="/services/devops-cloud-engineering/serverless-architecture"><i class="sc-mi" style="--tone:#475569"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a4 4 0 0 1-.5-7.97A5.5 5.5 0 0 1 17 8.5a4 4 0 0 1 .5 9.5z"/></svg></i><span>Serverless Architecture</span></a>
+            <a class="sc-sub" href="/services/devops-cloud-engineering/cloud-cost-optimisation"><i class="sc-mi" style="--tone:#475569"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a4 4 0 0 1-.5-7.97A5.5 5.5 0 0 1 17 8.5a4 4 0 0 1 .5 9.5z"/></svg></i><span>Cloud Consulting and Cost Optimisation</span></a>
+            <a class="sc-sub" href="/services/devops-cloud-engineering/infrastructure-monitoring"><i class="sc-mi" style="--tone:#475569"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18a4 4 0 0 1-.5-7.97A5.5 5.5 0 0 1 17 8.5a4 4 0 0 1 .5 9.5z"/></svg></i><span>Infrastructure Management and Monitoring</span></a>
+          </div>
+          <a class="sc-mega-cta" href="/services/devops-cloud-engineering">Explore DevOps &amp; Cloud Engineering &rarr;</a>
+        </div>
+        <div class="sc-mega-panel" data-fam="ai">
+          <div class="sc-mega-top"><div><p class="sc-mega-eyebrow">Service family</p><h3>AI Engineering Services</h3></div><a class="sc-mega-over" href="/services/ai-product-development">Overview &rarr;</a></div>
+          <p class="sc-mega-desc">AI that does real work: assistants that answer from your documents, automation, analytics and generative products.</p>
+          <div class="sc-mega-grid">
+            <a class="sc-sub" href="/services/ai-product-development/ai-development"><i class="sc-mi" style="--tone:#4f46e5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 3l1.9 4.6L17.5 9.5l-4.6 1.9L11 16l-1.9-4.6L4.5 9.5l4.6-1.9z"/><path d="M18.5 14.5l.8 1.9 1.9.8-1.9.8-.8 1.9-.8-1.9-1.9-.8 1.9-.8z"/></svg></i><span>Artificial Intelligence Development</span></a>
+            <a class="sc-sub" href="/services/ai-product-development/ai-consulting"><i class="sc-mi" style="--tone:#4f46e5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 3l1.9 4.6L17.5 9.5l-4.6 1.9L11 16l-1.9-4.6L4.5 9.5l4.6-1.9z"/><path d="M18.5 14.5l.8 1.9 1.9.8-1.9.8-.8 1.9-.8-1.9-1.9-.8 1.9-.8z"/></svg></i><span>AI Consulting</span></a>
+            <a class="sc-sub" href="/services/ai-product-development/ai-powered-mobile-app-development"><i class="sc-mi" style="--tone:#4f46e5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 3l1.9 4.6L17.5 9.5l-4.6 1.9L11 16l-1.9-4.6L4.5 9.5l4.6-1.9z"/><path d="M18.5 14.5l.8 1.9 1.9.8-1.9.8-.8 1.9-.8-1.9-1.9-.8 1.9-.8z"/></svg></i><span>AI-Powered Mobile App Development</span></a>
+            <a class="sc-sub" href="/services/ai-product-development/machine-learning-analytics"><i class="sc-mi" style="--tone:#4f46e5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 3l1.9 4.6L17.5 9.5l-4.6 1.9L11 16l-1.9-4.6L4.5 9.5l4.6-1.9z"/><path d="M18.5 14.5l.8 1.9 1.9.8-1.9.8-.8 1.9-.8-1.9-1.9-.8 1.9-.8z"/></svg></i><span>Machine Learning and Analytics</span></a>
+            <a class="sc-sub" href="/services/ai-product-development/generative-ai"><i class="sc-mi" style="--tone:#4f46e5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 3l1.9 4.6L17.5 9.5l-4.6 1.9L11 16l-1.9-4.6L4.5 9.5l4.6-1.9z"/><path d="M18.5 14.5l.8 1.9 1.9.8-1.9.8-.8 1.9-.8-1.9-1.9-.8 1.9-.8z"/></svg></i><span>Generative AI</span></a>
+            <a class="sc-sub" href="/services/ai-product-development/chatgpt-solutions"><i class="sc-mi" style="--tone:#4f46e5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 3l1.9 4.6L17.5 9.5l-4.6 1.9L11 16l-1.9-4.6L4.5 9.5l4.6-1.9z"/><path d="M18.5 14.5l.8 1.9 1.9.8-1.9.8-.8 1.9-.8-1.9-1.9-.8 1.9-.8z"/></svg></i><span>ChatGPT Solutions</span></a>
+          </div>
+          <a class="sc-mega-cta" href="/services/ai-product-development">Explore AI Engineering Services &rarr;</a>
+        </div>
+        <div class="sc-mega-panel" data-fam="startup">
+          <div class="sc-mega-top"><div><p class="sc-mega-eyebrow">Service family</p><h3>Startup Product Engineering</h3></div><a class="sc-mega-over" href="/services/product-strategy-prd">Overview &rarr;</a></div>
+          <p class="sc-mega-desc">From idea to a launched product: strategy, a clear PRD, prototypes and a first version people can use.</p>
+          <div class="sc-mega-grid">
+            <a class="sc-sub" href="/services/product-strategy-prd/mvp-development"><i class="sc-mi" style="--tone:#0f172a"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 15c-1.5 1.5-2 4-2 4s2.5-.5 4-2M14 4c3 0 6 3 6 6l-6 6-6-6c0-3 3-6 6-6zM9 11l4 4"/><circle cx="15" cy="9" r="1.2"/></svg></i><span>MVP Development</span></a>
+            <a class="sc-sub" href="/services/product-strategy-prd"><i class="sc-mi" style="--tone:#0f172a"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 15c-1.5 1.5-2 4-2 4s2.5-.5 4-2M14 4c3 0 6 3 6 6l-6 6-6-6c0-3 3-6 6-6zM9 11l4 4"/><circle cx="15" cy="9" r="1.2"/></svg></i><span>Product Strategy &amp; Roadmapping</span></a>
+            <a class="sc-sub" href="/services/product-strategy-prd/rapid-prototyping"><i class="sc-mi" style="--tone:#0f172a"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 15c-1.5 1.5-2 4-2 4s2.5-.5 4-2M14 4c3 0 6 3 6 6l-6 6-6-6c0-3 3-6 6-6zM9 11l4 4"/><circle cx="15" cy="9" r="1.2"/></svg></i><span>Rapid Prototyping</span></a>
+            <a class="sc-sub" href="/services/product-strategy-prd/technical-architecture"><i class="sc-mi" style="--tone:#0f172a"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 15c-1.5 1.5-2 4-2 4s2.5-.5 4-2M14 4c3 0 6 3 6 6l-6 6-6-6c0-3 3-6 6-6zM9 11l4 4"/><circle cx="15" cy="9" r="1.2"/></svg></i><span>Technical Architecture</span></a>
+            <a class="sc-sub" href="/services/product-strategy-prd/investor-ready-demos"><i class="sc-mi" style="--tone:#0f172a"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 15c-1.5 1.5-2 4-2 4s2.5-.5 4-2M14 4c3 0 6 3 6 6l-6 6-6-6c0-3 3-6 6-6zM9 11l4 4"/><circle cx="15" cy="9" r="1.2"/></svg></i><span>Investor-Ready Demos</span></a>
+            <a class="sc-sub" href="/services/product-strategy-prd/post-launch-iteration"><i class="sc-mi" style="--tone:#0f172a"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 15c-1.5 1.5-2 4-2 4s2.5-.5 4-2M14 4c3 0 6 3 6 6l-6 6-6-6c0-3 3-6 6-6zM9 11l4 4"/><circle cx="15" cy="9" r="1.2"/></svg></i><span>Post-Launch Iteration</span></a>
+          </div>
+          <a class="sc-mega-cta" href="/services/product-strategy-prd">Explore Startup Product Engineering &rarr;</a>
+        </div>
+            </div>
+            <a class="sc-menu-all sc-m-only" href="/services">All services &rarr;</a>
+          </div>
+        </li>
+        <li class="sc-item sc-has-menu sc-mega-item">
+          <a class="sc-link" href="/industries">Industries</a>
+          <button class="sc-toggle" type="button" aria-expanded="false" aria-label="Show industries menu"><svg viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="sc-menu sc-mega sc-mega-industries">
+            <div class="sc-mega-body sc-mega-wide">
+              <div class="sc-mega-top"><div><p class="sc-mega-eyebrow">Industries we serve</p><h3>Software built around how your sector actually works</h3></div><a class="sc-mega-over" href="/industries">All industries &rarr;</a></div>
+              <div class="sc-ind-grid">
+              <a class="sc-ind" href="/industries/healthcare"><span>Healthcare</span></a>
+              <a class="sc-ind" href="/industries/fintech"><span>Banking &amp; Financial Services</span></a>
+              <a class="sc-ind" href="/industries/ecommerce"><span>eCommerce &amp; Retail</span></a>
+              <a class="sc-ind" href="/industries/logistics"><span>Logistics &amp; Supply Chain</span></a>
+              <a class="sc-ind" href="/industries/education"><span>Education &amp; EdTech</span></a>
+              <a class="sc-ind" href="/industries/real-estate"><span>Real Estate &amp; PropTech</span></a>
+              <a class="sc-ind" href="/industries/travel-hospitality"><span>Travel &amp; Hospitality</span></a>
+              <a class="sc-ind" href="/industries/restaurant"><span>Restaurants &amp; Food Service</span></a>
+              <a class="sc-ind" href="/industries/on-demand"><span>On-Demand Services</span></a>
+              <a class="sc-ind" href="/industries/automotive"><span>Automotive</span></a>
+              <a class="sc-ind" href="/industries/electric-vehicles"><span>Electric Vehicles &amp; eMobility</span></a>
+              <a class="sc-ind" href="/industries/energy"><span>Energy &amp; Utilities</span></a>
+              <a class="sc-ind" href="/industries/manufacturing"><span>Manufacturing</span></a>
+              <a class="sc-ind" href="/industries/construction"><span>Construction</span></a>
+              <a class="sc-ind" href="/industries/agriculture"><span>Agriculture</span></a>
+              <a class="sc-ind" href="/industries/aviation"><span>Aviation</span></a>
+              <a class="sc-ind" href="/industries/telecom"><span>Telecommunications</span></a>
+              <a class="sc-ind" href="/industries/media-entertainment"><span>Media &amp; Entertainment</span></a>
+              <a class="sc-ind" href="/industries/gaming-sports"><span>Gaming &amp; Sports</span></a>
+              <a class="sc-ind" href="/industries/social-networking"><span>Social Networking</span></a>
+              <a class="sc-ind" href="/industries/fitness-wellness"><span>Fitness &amp; Wellness</span></a>
+              <a class="sc-ind" href="/industries/events"><span>Events &amp; Conferences</span></a>
+              <a class="sc-ind" href="/industries/government"><span>Government &amp; Public Sector</span></a>
+              <a class="sc-ind" href="/industries/saas"><span>SaaS</span></a>
+              </div>
+            </div>
+            <a class="sc-menu-all sc-m-only" href="/industries">All industries &rarr;</a>
           </div>
         </li>
         <li class="sc-item"><a class="sc-link" href="/work">Work</a></li>
-        <li class="sc-item"><a class="sc-link" href="/blog">Guides</a></li>
+        <li class="sc-item sc-has-menu">
+          <a class="sc-link" href="/blog">Resources</a>
+          <button class="sc-toggle" type="button" aria-expanded="false" aria-label="Show resources menu"><svg viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="sc-menu">
+            <a href="/blog"><i class="sc-mi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6.5C10.3 5 7.5 4.5 3.5 4.5v14c4 0 6.8.5 8.5 2 1.7-1.5 4.5-2 8.5-2v-14c-4 0-6.8.5-8.5 2z"/><path d="M12 6.5v14"/></svg></i><span class="sc-mt"><strong>Blog &amp; Guides</strong><span>Practical guides on MVPs, ERP, mobile and AI</span></span></a>
+            <a href="/project-costs"><i class="sc-mi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5v19M16.5 6.5H10a3 3 0 0 0 0 6h4a3 3 0 0 1 0 6H7"/></svg></i><span class="sc-mt"><strong>Project Costs Guide</strong><span>What production software typically costs</span></span></a>
+            <a href="/tools/app-cost-calculator"><i class="sc-mi"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="2.5" width="15" height="19" rx="2.2"/><path d="M8 7h8M8 12h.01M12 12h.01M16 12h.01M8 16h.01M12 16h.01M16 16h.01"/></svg></i><span class="sc-mt"><strong>App Cost Calculator</strong><span>Realistic build budgets and timelines</span></span></a>
+            <a href="/b2b-software-development-for-startups"><i class="sc-mi"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.3"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.8a3.3 3.3 0 0 1 0 6.4M18.5 14.3A6.5 6.5 0 0 1 21.5 20"/></svg></i><span class="sc-mt"><strong>B2B Startup Playbook</strong><span>Working with a remote-first product team</span></span></a>
+            <a href="/technology"><i class="sc-mi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 4.8-9 4.8-9-4.8z"/><path d="M3 12.2l9 4.8 9-4.8M3 16.6l9 4.8 9-4.8"/></svg></i><span class="sc-mt"><strong>Technology Stack</strong><span>The tools we build with</span></span></a>
+            <a class="sc-menu-all" href="/tools">All free tools &rarr;</a>
+          </div>
+        </li>
         <li class="sc-item"><a class="sc-link" href="/about">About</a></li>
         <li class="sc-item sc-item-hire"><a class="sc-link sc-hire" href="/work-with-me"><i aria-hidden="true"></i>Work with me</a></li>
       </ul>
@@ -517,28 +659,34 @@
       <div class="sc-foot-col">
         <h4>Services</h4>
         <ul>
+          <li><a href="/services/custom-software-development">Custom Software Development</a></li>
           <li><a href="/services/mobile-app-development">Mobile App Development</a></li>
-          <li><a href="/services/web-application-development">Web Application Development</a></li>
-          <li><a href="/services/custom-software-development">Custom Software &amp; ERP</a></li>
-          <li><a href="/services/ai-product-development">AI Product Development</a></li>
-          <li><a href="/services/product-strategy-prd">Product Strategy &amp; PRDs</a></li>
+          <li><a href="/services/web-application-development">Web Development</a></li>
+          <li><a href="/services/devops-cloud-engineering">DevOps &amp; Cloud Engineering</a></li>
+          <li><a href="/services/ai-product-development">AI Engineering Services</a></li>
+          <li><a href="/services/product-strategy-prd">Startup Product Engineering</a></li>
+          <li><a href="/services">All services</a></li>
         </ul>
       </div>
       <div class="sc-foot-col">
-        <h4>Work</h4>
+        <h4>Industries</h4>
         <ul>
-          <li><a href="/work">All case studies</a></li>
-          <li><a href="/work/custom-erp-manufacturing">Manufacturing ERP</a></li>
-          <li><a href="/work/sky1-event-booking">SkyOne Event Booking</a></li>
-          <li><a href="/work/make-my-look">Make My Look</a></li>
-          <li><a href="/work/flashnow">FlashNow</a></li>
-          <li><a href="/work/skribe">Skribe</a></li>
+          <li><a href="/industries/healthcare">Healthcare</a></li>
+          <li><a href="/industries/fintech">Banking &amp; Financial Services</a></li>
+          <li><a href="/industries/ecommerce">eCommerce &amp; Retail</a></li>
+          <li><a href="/industries/logistics">Logistics &amp; Supply Chain</a></li>
+          <li><a href="/industries/education">Education &amp; EdTech</a></li>
+          <li><a href="/industries/real-estate">Real Estate &amp; PropTech</a></li>
+          <li><a href="/industries/manufacturing">Manufacturing</a></li>
+          <li><a href="/industries/saas">SaaS</a></li>
+          <li><a href="/industries">All industries</a></li>
         </ul>
       </div>
       <div class="sc-foot-col">
         <h4>Resources</h4>
         <ul>
-          <li><a href="/blog">Blog &amp; Playbooks</a></li>
+          <li><a href="/work">Case studies</a></li>
+          <li><a href="/blog">Blog &amp; Guides</a></li>
           <li><a href="/project-costs">Project Costs Guide</a></li>
           <li><a href="/tools/app-cost-calculator">App Cost Calculator</a></li>
           <li><a href="/b2b-software-development-for-startups">B2B Startup Playbook</a></li>
