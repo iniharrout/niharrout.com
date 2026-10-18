@@ -24,12 +24,12 @@ for (const [key, cfg] of Object.entries(PAGES)) {
   const svc = services[key];
   const links = [];
   if (cfg.home) links.push(`<a href="${cfg.home.href}">${cfg.home.label}</a>`);
-  for (const c of cities) links.push(`<a href="/locations/${c.slug}/${svc.slug}">${c.name}</a>`);
+  for (const c of cities) links.push(`<a href="/locations/${c.slug}">${c.name}</a>`);
   const block = `<!-- city:links -->
     <section class="city-links" aria-labelledby="city-links-title">
       <div class="wrap">
-        <h2 id="city-links-title">${svc.name} by location</h2>
-        <p>Based in Bhubaneswar, working with teams across India and worldwide. See how we deliver ${svc.nameLc} in your city.</p>
+        <h2 id="city-links-title">${svc.name}: where we work</h2>
+        <p>Based in Bhubaneswar, working with teams across India and worldwide. See how we work with teams in your city.</p>
         <ul>
           ${links.map((l) => `<li>${l}</li>`).join('\n          ')}
         </ul>

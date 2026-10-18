@@ -31,6 +31,8 @@ const roles = [
       'Comfort with open-ended problems',
       'Curiosity about software, product and AI',
     ],
+    about: 'Founder’s Office is a generalist role close to the founder. The work changes week to week: one day it is preparing a client brief, the next it is untangling a hiring plan or chasing a project that has stalled. You will see how the company really runs, and you will be trusted with the follow-through.',
+    success: ['Priorities set on Monday have an owner, a date and a status by Tuesday', 'Meetings end with written next steps that actually get done', 'The founder spends time on decisions, not on chasing details', 'Clients and partners get quick, clear replies'],
     icon: '<path d="M4 8.5A2.5 2.5 0 0 1 6.5 6h11A2.5 2.5 0 0 1 20 8.5v9a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 17.5z"/><path d="M9 6V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v1M4 12.5h16"/>',
   },
   {
@@ -54,6 +56,8 @@ const roles = [
       'An understanding of B2B and tech audiences',
       'Links to posts you have written',
     ],
+    about: 'Most of the work is turning real experience into posts people want to read. You will sit with me for ideas, draft in my voice, publish on a steady schedule and keep the conversation going in the comments. Good writing, patience and a feel for what B2B readers care about matter more than any tool.',
+    success: ['A steady posting rhythm that does not depend on my mood', 'Posts that sound like me and teach something', 'Comments and messages answered quickly and thoughtfully', 'A simple monthly view of what worked and what to try next'],
     icon: '<path d="M20.5 15a2.2 2.2 0 0 1-2.2 2.2H8L3.5 21V6.2A2.2 2.2 0 0 1 5.7 4h12.6a2.2 2.2 0 0 1 2.2 2.2z"/><path d="M8 9h8M8 12.5h5"/>',
   },
   {
@@ -77,6 +81,8 @@ const roles = [
       'The ability to keep up with a steady flow of work',
       'Openness to feedback and quick revisions',
     ],
+    about: 'You will design for a founder who publishes often, so consistency matters as much as creativity. Expect a mix of single graphics, carousels and announcement visuals, plus the occasional piece for a case study or a talk. A clear visual system, set up once and applied every time, is the real deliverable.',
+    success: ['Every post looks like it belongs to the same brand', 'Carousels are easy to read on a phone', 'Turnaround is predictable, so posts never wait on design', 'Source files are organised so anyone can edit them later'],
     icon: '<path d="M12 3l2.4 5.1 5.6.7-4.1 3.9 1 5.5L12 15.5 7.1 18.2l1-5.5L4 8.8l5.6-.7z"/>',
   },
   {
@@ -100,6 +106,8 @@ const roles = [
       'Comfort with Premiere Pro, Final Cut, DaVinci Resolve or similar',
       'Reliable delivery',
     ],
+    about: 'Raw footage arrives from a phone or camera: talking-head clips, product walkthroughs and event recordings. Your job is to find the story, cut it tight, add captions and sound that make it watchable with the sound off, and package it with a thumbnail. Pace and clarity are the craft.',
+    success: ['Videos hold attention in the first few seconds', 'Captions are accurate and easy to read on mobile', 'Thumbnails are clear and consistent across channels', 'Files are delivered in the right format for each platform, on time'],
     icon: '<rect x="3" y="5.5" width="18" height="13" rx="2.6"/><path d="M10.2 9.4v5.2l4.4-2.6z"/>',
   },
 ];

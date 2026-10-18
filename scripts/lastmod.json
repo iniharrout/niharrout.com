@@ -68,7 +68,7 @@
     "date": "2026-10-16"
   },
   "book/index.html": {
-    "hash": "2d8b34fa3eba4665",
+    "hash": "e65fcf95dbbd2ccf",
     "date": "2026-10-18"
   },
   "index.html": {
@@ -184,7 +184,7 @@
     "date": "2026-10-18"
   },
   "locations/bangalore/index.html": {
-    "hash": "3a956835d8b1f0e1",
+    "hash": "746519af41af4609",
     "date": "2026-10-18"
   },
   "locations/bangalore/mobile-app-development/index.html": {
@@ -200,7 +200,7 @@
     "date": "2026-10-18"
   },
   "locations/berhampur/index.html": {
-    "hash": "553db9d7326e943a",
+    "hash": "ec9381eed8c92946",
     "date": "2026-10-18"
   },
   "locations/berhampur/mobile-app-development/index.html": {
@@ -216,7 +216,7 @@
     "date": "2026-10-18"
   },
   "locations/cuttack/index.html": {
-    "hash": "4faed0dce970bea1",
+    "hash": "a179c150ef339360",
     "date": "2026-10-18"
   },
   "locations/cuttack/mobile-app-development/index.html": {
@@ -232,7 +232,7 @@
     "date": "2026-10-18"
   },
   "locations/delhi-ncr/index.html": {
-    "hash": "8fc217b7554f668f",
+    "hash": "8ae837fd8418f75f",
     "date": "2026-10-18"
   },
   "locations/delhi-ncr/mobile-app-development/index.html": {
@@ -248,7 +248,7 @@
     "date": "2026-10-18"
   },
   "locations/hyderabad/index.html": {
-    "hash": "e5b11ced27233cc7",
+    "hash": "01e6a2f5f60b2fb3",
     "date": "2026-10-18"
   },
   "locations/hyderabad/mobile-app-development/index.html": {
@@ -256,7 +256,7 @@
     "date": "2026-10-18"
   },
   "locations/index.html": {
-    "hash": "43fc48ad077a6c22",
+    "hash": "a3b9d4d7a3699c9f",
     "date": "2026-10-18"
   },
   "locations/pune/ai-product-development/index.html": {
@@ -268,7 +268,7 @@
     "date": "2026-10-18"
   },
   "locations/pune/index.html": {
-    "hash": "21af6198f70aa3b9",
+    "hash": "305bfd69a3f6254c",
     "date": "2026-10-18"
   },
   "locations/pune/mobile-app-development/index.html": {
@@ -284,7 +284,7 @@
     "date": "2026-10-18"
   },
   "locations/rourkela/index.html": {
-    "hash": "442aee5bd032dcaf",
+    "hash": "61f892b19782d5b3",
     "date": "2026-10-18"
   },
   "locations/rourkela/mobile-app-development/index.html": {
@@ -300,7 +300,7 @@
     "date": "2026-10-18"
   },
   "locations/sambalpur/index.html": {
-    "hash": "d129d34e250f4082",
+    "hash": "45c99b8f3d2653f3",
     "date": "2026-10-18"
   },
   "locations/sambalpur/mobile-app-development/index.html": {
@@ -360,7 +360,7 @@
     "date": "2026-10-18"
   },
   "services/ai-product-development/index.html": {
-    "hash": "440b36d37adee0e5",
+    "hash": "a7a23bbe604a5fa2",
     "date": "2026-10-18"
   },
   "services/ai-product-development/machine-learning-analytics/index.html": {
@@ -384,7 +384,7 @@
     "date": "2026-10-18"
   },
   "services/custom-software-development/index.html": {
-    "hash": "25eba748f7cc45a8",
+    "hash": "c18d79b4964e80ef",
     "date": "2026-10-18"
   },
   "services/custom-software-development/legacy-application-modernization/index.html": {
@@ -436,7 +436,7 @@
     "date": "2026-10-18"
   },
   "services/mobile-app-development/index.html": {
-    "hash": "b189bcba8176da80",
+    "hash": "30ee893ca0313417",
     "date": "2026-10-18"
   },
   "services/mobile-app-development/ios-app-development/index.html": {
@@ -528,28 +528,28 @@
     "date": "2026-10-10"
   },
   "tools/startup-name-generator/index.html": {
-    "hash": "19448d53a4e9b972",
-    "date": "2026-10-13"
+    "hash": "b3fdf3e8f3943c63",
+    "date": "2026-10-18"
   },
   "work-with-me/founders-office/index.html": {
-    "hash": "06c604ad7cde5afd",
-    "date": "2026-10-13"
+    "hash": "bc24404ef69654a4",
+    "date": "2026-10-18"
   },
   "work-with-me/graphic-designer/index.html": {
-    "hash": "197f0059f54d31a4",
-    "date": "2026-10-13"
+    "hash": "99f28cacbef52257",
+    "date": "2026-10-18"
   },
   "work-with-me/index.html": {
     "hash": "239f451e3f0a0b3b",
     "date": "2026-10-13"
   },
   "work-with-me/linkedin-content-manager/index.html": {
-    "hash": "65a45e14817478b5",
-    "date": "2026-10-13"
+    "hash": "8f18dc221fc11ca0",
+    "date": "2026-10-18"
   },
   "work-with-me/video-editor/index.html": {
-    "hash": "540b28f53e192fb1",
-    "date": "2026-10-13"
+    "hash": "05a617b87e9de211",
+    "date": "2026-10-18"
   },
   "work/custom-erp-manufacturing/index.html": {
     "hash": "cddaf28009ad6154",
@@ -560,7 +560,7 @@
     "date": "2026-10-10"
   },
   "work/index.html": {
-    "hash": "848c5f1ee6920e6d",
+    "hash": "cde9e542bdae080a",
     "date": "2026-10-18"
   },
   "work/make-my-look/index.html": {

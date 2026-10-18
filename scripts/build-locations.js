@@ -3,7 +3,8 @@
  * Builds the location landing pages:
  *   /locations                           index of all locations
  *   /locations/<city>                    city hub (links to the three service pages)
- *   /locations/<city>/<service>          city x service landing page
+ *   (no city x service pages: they were a city-swapped template and Google would not index them, so they are not
+ *    generated and /locations/<city>/<service> is redirected to the hub in vercel.json)
  *   /location                            internal link reference (noindex)
  *   /thank-you                           shown after any enquiry form (noindex)
  * Then run `node scripts/build-chrome.js` (shared header/footer) and `node scripts/build-sitemap.js`.
@@ -38,7 +39,8 @@ const fill = (text, city) => String(text).replace(/\{city\}/g, city.name);
 const jsonLd = (obj) => `<script type="application/ld+json">\n${JSON.stringify(obj, null, 2).replace(/</g, '\\u003c')}\n  </script>`;
 
 const cityUrl = (c) => `/locations/${c.slug}`;
-const pageUrl = (c, key) => `/locations/${c.slug}/${services[key].slug}`;
+const pageUrl = (c, key) => `/locations/${c.slug}/${services[key].slug}`; // only used to remove the retired pages
+const NATIONAL = { mobile: '/services/mobile-app-development', ai: '/services/ai-product-development', software: '/services/custom-software-development' };
 
 /* ---------- Shared page chrome ---------- */
 
@@ -527,17 +529,16 @@ function buildCityHub(c) {
       description,
       about: areaServed(c),
       publisher: { '@id': `${SITE}/#organization` },
-      hasPart: SERVICE_KEYS.map((k) => ({ '@type': 'WebPage', name: `${services[k].name} in ${c.name}`, url: SITE + pageUrl(c, k) }))
     },
     breadcrumbSchema(trail),
     faqSchema(faqs)
   ];
 
   const serviceCards = SERVICE_KEYS.map((k) => `
-          <a class="loc-card" href="${pageUrl(c, k)}">
+          <a class="loc-card" href="${NATIONAL[k]}">
             <h3>${esc(services[k].name)} in ${esc(c.name)}</h3>
             <p>${esc(c.services[k].angle)}</p>
-            <div class="loc-more">See scope, pricing and FAQs →</div>
+            <div class="loc-more">Read about the service →</div>
           </a>`).join('');
 
   const otherCities = cities.filter((x) => x.slug !== c.slug);
@@ -604,7 +605,7 @@ ${faqSection(faqs, { heading: `${c.name}: common questions`, sub: `How we work w
         <div class="loc-related">
           <div>
             <h3>Services in ${esc(c.name)}</h3>
-            <ul class="loc-links">${SERVICE_KEYS.map((k) => `<li><a href="${pageUrl(c, k)}">${esc(services[k].name)} in ${esc(c.name)}</a></li>`).join('')}</ul>
+            <ul class="loc-links">${SERVICE_KEYS.map((k) => `<li><a href="${NATIONAL[k]}">${esc(services[k].name)}</a></li>`).join('')}</ul>
           </div>
           <div>
             <h3>Other locations</h3>
@@ -648,7 +649,7 @@ function buildIndex() {
             <h3><a href="${cityUrl(c)}" style="color:inherit; text-decoration:none;">${esc(c.name)}</a></h3>
             <div class="loc-region">${esc(c.state)} · ${esc(c.distance)}</div>
             <p>${esc(c.overview.split('. ')[0])}.</p>
-            <ul class="loc-links">${SERVICE_KEYS.map((k) => `<li><a href="${pageUrl(c, k)}">${esc(services[k].name)}</a></li>`).join('')}</ul>
+            <p class="loc-more"><a href="${cityUrl(c)}">Software, app and AI development in ${esc(c.name)} →</a></p>
           </div>`;
   const group = (region) => cities.filter((c) => c.region === region).map(cityCard).join('');
 
@@ -722,7 +723,7 @@ function buildReference() {
             <tr data-search="${esc((c.name + ' ' + c.state + ' ' + c.region).toLowerCase())}">
               <th scope="row"><strong>${esc(c.name)}</strong><span>${esc(c.state)}</span></th>
               <td>${link(cityUrl(c), cityUrl(c), c.name, 'hub')}</td>
-              ${SERVICE_KEYS.map((k) => `<td>${link(pageUrl(c, k), pageUrl(c, k), c.name, services[k].slug)}</td>`).join('\n              ')}
+              ${SERVICE_KEYS.map(() => `<td><span class="ref-muted">merged into hub</span></td>`).join('\n              ')}
             </tr>`).join('');
 
   const bhubaneswar = `
@@ -734,7 +735,7 @@ function buildReference() {
 
   const allUrls = [
     '/locations',
-    ...cities.flatMap((c) => [cityUrl(c), ...SERVICE_KEYS.map((k) => pageUrl(c, k))])
+    ...cities.map((c) => cityUrl(c))
   ].map(abs);
 
   const html = head({
@@ -911,9 +912,9 @@ function main() {
   for (const c of cities) {
     write(`locations/${c.slug}/index.html`, buildCityHub(c));
     count += 1;
+    // retired: city x service pages (see the header note). Remove any left over from earlier builds.
     for (const key of SERVICE_KEYS) {
-      write(`locations/${c.slug}/${services[key].slug}/index.html`, buildServicePage(c, key));
-      count += 1;
+      fs.rmSync(path.join(ROOT, `locations/${c.slug}/${services[key].slug}`), { recursive: true, force: true });
     }
   }
 

@@ -188,7 +188,7 @@ ${templates}
 function rolePage(role) {
   const url = `${SITE}/work-with-me/${role.slug}`;
   const description = [role.seoDescription].join('');
-  const html = `<p>${role.summary}</p><h3>What you’ll do</h3><ul>${role.does.map((t) => `<li>${t}</li>`).join('')}</ul><h3>Who I’m looking for</h3><ul>${role.looks.map((t) => `<li>${t}</li>`).join('')}</ul>`;
+  const html = `<p>${role.summary}</p><p>${role.about}</p><h3>What you’ll do</h3><ul>${role.does.map((t) => `<li>${t}</li>`).join('')}</ul><h3>Who I’m looking for</h3><ul>${role.looks.map((t) => `<li>${t}</li>`).join('')}</ul><h3>What success looks like</h3><ul>${role.success.map((t) => `<li>${t}</li>`).join('')}</ul>`;
   const graph = [
     {
       '@type': 'JobPosting',
@@ -217,6 +217,18 @@ function rolePage(role) {
     <div class="wwm-rp-grid">
       <article>
         ${detail(role, 1).replace(/\n/g, '\n        ')}
+        <div class="wwm-d-cols">
+          <section>
+            <h2>The work in practice</h2>
+            <p class="wwm-about">${esc(role.about)}</p>
+          </section>
+          <section>
+            <h2>What success looks like</h2>
+            <ul>
+${role.success.map((t) => `              <li>${esc(t)}</li>`).join('\n')}
+            </ul>
+          </section>
+        </div>
         <p class="wwm-rp-note">This is a full-time remote role open to people based anywhere in India. Applications are sent to me directly, and I get in touch if one looks like a fit.</p>
       </article>
       <aside class="wwm-card" id="apply" aria-labelledby="apply-title">

@@ -27,12 +27,81 @@
           "value": "public, max-age=604800, stale-while-revalidate=86400"
         }
       ]
+    },
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
     }
   ],
   "redirects": [
     {
       "source": "/tools/url-shortener",
       "destination": "/tools",
+      "permanent": true
+    },
+    {
+      "source": "/careers",
+      "destination": "/work-with-me",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "/#contact",
+      "permanent": true
+    },
+    {
+      "source": "/about-us",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio",
+      "destination": "/work",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies",
+      "destination": "/work",
+      "permanent": true
+    },
+    {
+      "source": "/faqs",
+      "destination": "/#faq",
+      "permanent": true
+    },
+    {
+      "source": "/news",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/privacy",
+      "destination": "/privacy-policy",
+      "permanent": true
+    },
+    {
+      "source": "/terms-and-conditions",
+      "destination": "/terms",
+      "permanent": true
+    },
+    {
+      "source": "/locations/:city/mobile-app-development",
+      "destination": "/locations/:city",
+      "permanent": true
+    },
+    {
+      "source": "/locations/:city/ai-product-development",
+      "destination": "/locations/:city",
+      "permanent": true
+    },
+    {
+      "source": "/locations/:city/custom-software-development",
+      "destination": "/locations/:city",
       "permanent": true
     }
   ]

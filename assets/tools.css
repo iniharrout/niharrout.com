@@ -2091,3 +2091,14 @@
 .faq-item.open .faq-answer {
   display: block;
 }
+
+/* ---------- Help content under a tool: tips and questions ---------- */
+.tool-help { margin: 56px 0 8px; max-width: 760px; }
+.tool-help h2 { margin: 0 0 12px; font-size: clamp(1.4rem, 2.4vw, 1.8rem); letter-spacing: -0.02em; }
+.tool-help h3 { margin: 32px 0 12px; font-size: 1.1rem; }
+.tool-help p { margin: 0 0 14px; color: var(--tool-ink-2, #475569); line-height: 1.7; }
+.tool-help ul { margin: 0; padding-left: 20px; color: var(--tool-ink-2, #475569); line-height: 1.7; }
+.tool-help li { margin-bottom: 8px; }
+.tool-q { border-bottom: 1px solid rgba(15, 23, 42, 0.1); padding: 4px 0; }
+.tool-q summary { cursor: pointer; padding: 12px 0; font-weight: 600; }
+.tool-q p { margin: 0 0 14px; }

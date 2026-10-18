@@ -8,6 +8,7 @@
 const fs = require('fs');
 const path = require('path');
 const { SITE, esc, ARROW, head, foot, crumbs } = require('./careers/shell');
+const { industries } = require('./site-data/industries');
 
 const ROOT = path.resolve(__dirname, '..');
 const projects = new Function(`${fs.readFileSync(path.join(ROOT, 'assets/work-data.js'), 'utf8')}; return portfolioProjects;`)();
@@ -52,6 +53,15 @@ const html = head({ title, description, canonical: url, graph }) + `
       <ul class="wwm-grid wwm-grid-work">
 ${cards}
       </ul>
+    </div>
+  </section>
+
+  <section class="wwm-sec wwm-sec-alt" aria-labelledby="how-title">
+    <div class="wwm-wrap">
+      <h2 class="wwm-h2" id="how-title">How the case studies are written</h2>
+      <p class="wwm-prose">Each one follows the same shape: the problem the client had, the decision that mattered, how the product was built and what changed afterwards. Where a client asked us not to name them, we say so rather than invent a name. If a project is close to what you want to build, mention it on the call and I will walk you through how it was done.</p>
+      <h3 class="wwm-rel-h">Browse by industry</h3>
+      <ul class="wwm-pills">${['manufacturing', 'events', 'travel-hospitality', 'fitness-wellness', 'on-demand', 'ecommerce', 'logistics', 'saas'].map((slug) => { const i = industries.find((x) => x.slug === slug); return `<li><a href="/industries/${slug}">${esc(i.name)}</a></li>`; }).join('')}</ul>
     </div>
   </section>
 
