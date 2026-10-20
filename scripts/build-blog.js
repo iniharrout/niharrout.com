@@ -24,30 +24,15 @@ const ORDER = [
 const posts = ORDER.map((slug) => require(path.join(__dirname, 'blog', slug + '.js')));
 
 // Older guides, used for "keep reading" links and the blog index schema.
-const OLD = {
-  'cost-to-build-mvp-2026': { title: 'The True Cost of Building an MVP in 2026', tag: 'Product Strategy', min: 9, blurb: 'Agency, freelancers or a dedicated squad: where MVP budgets actually go.' },
-  'product-scoping-framework-kill-feature-bloat': { title: "The Product Owner's Scoping Framework", tag: 'Product Leadership', min: 8, blurb: 'A step-by-step method to cut feature bloat before you write code.' },
-  'pragmatic-enterprise-ai-workflows': { title: 'Pragmatic Enterprise AI: LLMs and Vector Search Without the Hype', tag: 'Enterprise AI', min: 8, blurb: 'How real businesses get measurable return from AI with sensible safeguards.' },
-  'openai-select-partner': { title: 'Creuto Is Now an OpenAI Select Partner', tag: 'Company News', min: 3, blurb: 'What the OpenAI Select Partner status means for clients.' },
-  'react-native-mobile-app-playbook': { title: 'From PRD to App Store: The React Native and Flutter Playbook', tag: 'Mobile Engineering', min: 10, blurb: 'A production blueprint for consumer and B2B mobile apps.' },
-  'web-application-development-build-vs-buy': { title: 'Web Application Development: When Build Beats Buy in 2026', tag: 'Web Application Development', min: 8, blurb: 'A real comparison of stacked subscriptions and a custom web application.' },
-  'why-custom-erp-implementations-fail': { title: 'Why Custom ERP Implementations Fail, and How to Prevent It', tag: 'Enterprise ERP', min: 11, blurb: 'Modular cutovers, access control and clean data for ERP projects.' },
-};
+const OLD = require('./blog/older');
+const { scene, doodle, BLOG_ART } = require('./site-data/doodles');
 
 const esc = (t) => String(t).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const stripTags = (h) => h.replace(/<[^>]+>/g, ' ').replace(/&amp;/g, '&').replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ').trim();
 const fmtDate = (iso) => new Date(iso + 'T00:00:00Z').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
 const ARROW = '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
-const ICONS = {
-  check: '<svg viewBox="0 0 48 48"><rect x="9" y="6" width="30" height="36" rx="4"/><path d="M16 17l3 3 5-6M16 28l3 3 5-6M29 18h5M29 29h5"/></svg>',
-  doc: '<svg viewBox="0 0 48 48"><path d="M13 5h16l8 8v28a2 2 0 0 1-2 2H13a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/><path d="M29 5v8h8M17 22h14M17 29h14M17 36h8"/></svg>',
-  spark: '<svg viewBox="0 0 48 48"><path d="M22 6l4.4 11.6L38 22l-11.6 4.4L22 38l-4.4-11.6L6 22l11.6-4.4z"/><path d="M37 30l1.6 4.4L43 36l-4.4 1.6L37 42l-1.6-4.4L31 36l4.4-1.6z"/></svg>',
-  devices: '<svg viewBox="0 0 48 48"><rect x="4" y="10" width="28" height="20" rx="3"/><path d="M10 36h16M18 30v6"/><rect x="34" y="18" width="10" height="20" rx="2.5"/><path d="M37.5 34h3"/></svg>',
-  scales: '<svg viewBox="0 0 48 48"><path d="M24 7v34M14 41h20M10 14h28"/><path d="M10 14l-6 13a6 6 0 0 0 12 0zM38 14l-6 13a6 6 0 0 0 12 0z"/></svg>',
-};
 
-const TONES = { check: 'var(--t-blue)', doc: 'var(--t-orange)', spark: 'var(--t-violet)', devices: 'var(--t-cyan)', scales: 'var(--t-rose)' };
 
 function tocFromBody(body) {
   const items = [];
@@ -69,6 +54,7 @@ function relatedCards(slugs) {
     const t = own ? { title: own.title, tag: own.category, min: own.readMinutes, blurb: own.cardDesc } : OLD[slug];
     if (!t) throw new Error('unknown related slug: ' + slug);
     return `<a class="related-card" href="/blog/${slug}">
+        <span class="related-art" aria-hidden="true">${scene(slug)}</span>
         <span class="related-tag">${esc(t.tag)} &middot; ${t.min} min read</span>
         <strong>${esc(t.title)}</strong>
         <span class="related-blurb">${esc(t.blurb)}</span>
@@ -162,7 +148,7 @@ ${p.keywords.map((k) => `  <meta property="article:tag" content="${esc(k)}">`).j
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&amp;family=Inter:wght@400;500;600;700&amp;display=swap">
   <link rel="stylesheet" href="/assets/design-system.css?v=blue7">
-  <link rel="stylesheet" href="/assets/blog-post.css?v=bp3">
+  <link rel="stylesheet" href="/assets/blog-post.css?v=bp4">
 </head>
 
 <body>
@@ -263,6 +249,7 @@ ${p.faq.map(([q, a]) => `          <h3>${esc(q)}</h3>\n          <p>${esc(a)}</p
 
 function indexCard(p) {
   return `        <a class="ed-post" href="/blog/${p.slug}">
+          <span class="ed-post-art" data-scene="${p.slug}" aria-hidden="true">${scene(p.slug)}</span>
           <div><p class="ed-tag">${esc(p.category)} &middot; ${p.readMinutes} min read</p><h2>${esc(p.headline)}</h2></div>
           <div><p>${esc(p.cardDesc)}</p><span class="ed-link">Read the guide &rarr;</span></div>
         </a>`;
@@ -271,15 +258,12 @@ function indexCard(p) {
 function homeBlock() {
   const [first, ...rest] = posts;
   const mini = (p) => `          <a class="blog-mini" href="/blog/${p.slug}">
-            <span class="blog-ico" style="--tone:${TONES[p.icon]}" aria-hidden="true">${ICONS[p.icon]}</span>
+            <span class="blog-doodle" aria-hidden="true">${doodle(BLOG_ART[p.slug][0])}</span>
             <div><p class="blog-tag">${esc(p.category)} &middot; ${p.readMinutes} min read</p><h3>${esc(p.title)}</h3><span class="blog-more">Read the guide <i>&rarr;</i></span></div>
           </a>`;
   return `<div class="blog-layout">
         <a class="blog-feature" href="/blog/${first.slug}">
-          <div class="blog-visual" aria-hidden="true">
-            <span class="blog-orb o1"></span><span class="blog-orb o2"></span>
-            <span class="blog-ico blog-ico-lg">${ICONS[first.icon]}</span>
-          </div>
+          <div class="blog-visual" aria-hidden="true">${scene(first.slug)}</div>
           <div class="blog-body">
             <p class="blog-tag">${esc(first.category)} &middot; ${first.readMinutes} min read</p>
             <h3>${esc(first.headline)}</h3>

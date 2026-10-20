@@ -272,3 +272,13 @@ html.wwm-lock { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   .wwm *, .wwm *::before, .wwm *::after, .wwm-dialog, .wwm-dialog::backdrop { transition: none !important; animation: none !important; }
 }
+
+/* ---------- Doodle art (scripts/site-data/doodles.js) ---------- */
+.wwm-hero-grid { display: block; }
+.wwm-hero.has-art .wwm-hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 48px; align-items: center; }
+.wwm-hero-art { width: 260px; height: 260px; }
+.wwm-c-art { display: block; width: 72px; height: 72px; margin: -4px 0 14px -4px; }
+@media (max-width: 860px) {
+  .wwm-hero.has-art .wwm-hero-grid { grid-template-columns: 1fr; gap: 8px; }
+  .wwm-hero-art { order: -1; width: 112px; height: 112px; margin-left: -6px; }
+}

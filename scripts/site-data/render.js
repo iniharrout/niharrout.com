@@ -3,6 +3,7 @@
  * Markup uses the wwm- classes in assets/work-with-me.css.
  */
 const { esc, ARROW } = require('../careers/shell');
+const { doodle } = require('./doodles');
 
 const BOOK = 'https://calendar.app.google/HJ4ctVHEXLjUxCzp6';
 const bookBtn = (label = 'Book a free strategy call', cls = 'is-primary') =>
@@ -12,14 +13,20 @@ const crumbsHtml = (items) => `<nav class="wwm-crumbs" aria-label="Breadcrumb">
       ${items.map(([label, href], i) => (i === items.length - 1 ? `<span aria-current="page">${esc(label)}</span>` : `<a href="${href}">${esc(label)}</a><span aria-hidden="true">/</span>`)).join('')}
     </nav>`;
 
-const hero = ({ crumbs, pill, h1, sub, secondary }) => `
-  <section class="wwm-hero wwm-hero-page">
+// `art` names a doodle (scripts/site-data/doodles.js) drawn beside the heading.
+const hero = ({ crumbs, pill, h1, sub, secondary, art }) => `
+  <section class="wwm-hero wwm-hero-page${art ? ' has-art' : ''}">
     <div class="wwm-wrap">
       ${crumbsHtml(crumbs)}
-      <p class="wwm-pill"><span class="wwm-dot"></span>${esc(pill)}</p>
-      <h1>${esc(h1)}</h1>
-      <p class="wwm-sub">${esc(sub)}</p>
-      <div class="wwm-cta-row">${bookBtn()}${secondary ? `<a class="wwm-btn" href="${secondary[1]}">${esc(secondary[0])}</a>` : ''}</div>
+      <div class="wwm-hero-grid">
+        <div>
+          <p class="wwm-pill"><span class="wwm-dot"></span>${esc(pill)}</p>
+          <h1>${esc(h1)}</h1>
+          <p class="wwm-sub">${esc(sub)}</p>
+          <div class="wwm-cta-row">${bookBtn()}${secondary ? `<a class="wwm-btn" href="${secondary[1]}">${esc(secondary[0])}</a>` : ''}</div>
+        </div>${art ? `
+        <div class="wwm-hero-art">${doodle(art)}</div>` : ''}
+      </div>
     </div>
   </section>`;
 

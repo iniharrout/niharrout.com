@@ -10,6 +10,7 @@
 const fs = require('fs');
 const path = require('path');
 const { families, subs } = require('./site-data/services');
+const { doodle } = require('./site-data/doodles');
 const { industries } = require('./site-data/industries');
 const { SITE, ORG, esc, head, foot, crumbs } = require('./careers/shell');
 const R = require('./site-data/render');
@@ -41,7 +42,7 @@ function subPage(key) {
   return head({ title: s.seoTitle, description: s.seoDesc, canonical: url, graph }) + `
 <main id="top">${R.hero({
     crumbs: [['Home', '/'], ['Services', '/services'], [fam.name, fam.path], [s.name, subUrl(key)]],
-    pill: fam.name, h1: s.name, sub: s.intro, secondary: ['See our work', '/work'],
+    pill: fam.name, h1: s.name, sub: s.intro, secondary: ['See our work', '/work'], art: SUB_DOODLE[key] || DOODLE[fam.key],
   })}
 ${R.section('build', 'What we build', R.cards(s.builds))}
 ${R.section('approach', 'How we approach ' + s.name, R.prose(approach.subs[key]), 'wwm-sec-alt')}
@@ -69,7 +70,7 @@ function familyPage(fam) {
 ${list.map((it, i) => `        <li class="wwm-c"><a href="${it.href}"><span class="wwm-c-n" aria-hidden="true">0${i + 1}</span><h3>${esc(it.name)}</h3><p>${esc(it.short)}</p><span class="wwm-c-go">Learn more</span></a></li>`).join('\n')}
       </ul>`;
   return head({ title: p.title, description: p.description, canonical: url, graph }) + `
-<main id="top">${R.hero({ crumbs: [['Home', '/'], ['Services', '/services'], [fam.name, fam.path]], pill: 'Service family', h1: p.h1, sub: p.lead, secondary: ['See our work', '/work'] })}
+<main id="top">${R.hero({ crumbs: [['Home', '/'], ['Services', '/services'], [fam.name, fam.path]], pill: 'Service family', h1: p.h1, sub: p.lead, secondary: ['See our work', '/work'], art: DOODLE[fam.key] })}
 ${R.section('includes', 'What this covers', `<ul class="wwm-pills wwm-plain">${p.points.map((t) => `<li><span>${esc(t)}</span></li>`).join('')}</ul>`)}
 ${R.section('approach', 'How we approach DevOps and cloud', R.prose(approach.families.devops), 'wwm-sec-alt')}
 ${R.section('services', 'Services in ' + fam.name, grid)}
@@ -106,14 +107,28 @@ function insertBlock(rel, block) {
 }
 
 // ---------- homepage services section (same data as the menu) ----------
+// Doodle drawn for each family (scripts/site-data/doodles.js).
+// Doodle for each sub-service hero; anything not listed uses its family's doodle.
+const SUB_DOODLE = {
+  'custom-erp-development': 'erp', 'crm-development': 'portal', 'enterprise-application-development': 'dashboard', 'software-consulting': 'question',
+  'legacy-application-modernization': 'legacy', 'ecommerce-solutions': 'ecommerce',
+  'android-app-development': 'android', 'ios-app-development': 'ios', 'react-native-app-development': 'cross-platform', 'flutter-app-development': 'layers',
+  'mobile-app-qa-testing': 'check', 'mobile-app-modernization': 'offline-sync',
+  'customized-web-development': 'web', 'enterprise-web-development': 'dashboard', 'cross-platform-development': 'pwa', 'pwa-development': 'pwa',
+  'on-site-seo-development': 'seo', 'cms-development': 'portal',
+  'cloud-consulting': 'cloud', 'ci-cd-implementation': 'roadmap', 'kubernetes-implementation': 'saas', 'serverless-architecture': 'realtime',
+  'cloud-cost-optimisation': 'pricing', 'infrastructure-monitoring': 'analytics',
+  'ai-development': 'ai', 'ai-consulting': 'question', 'ai-powered-mobile-app-development': 'agent', 'machine-learning-analytics': 'growth',
+  'generative-ai': 'design', 'chatgpt-solutions': 'chat',
+  'mvp-development': 'rocket', 'rapid-prototyping': 'prototype', 'technical-architecture': 'stack', 'investor-ready-demos': 'growth', 'post-launch-iteration': 'metrics',
+};
+const DOODLE = { custom: 'custom-software', mobile: 'mobile', web: 'web', devops: 'cloud', ai: 'ai', startup: 'rocket' };
 const TAGS = { custom: 'Custom software', mobile: 'Mobile', web: 'Web', devops: 'Cloud and delivery', ai: 'AI, OpenAI Select Partner', startup: 'Product and startups' };
 const CHECK = '<svg width="15" height="15" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>';
 function homeServices() {
   const cards = families.map((f) => `          <article class="service-bento-card">
             <div class="service-card-top">
-              <div class="service-icon-box">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${f.icon}</svg>
-              </div>
+              <span class="doodle-wrap service-doodle">${doodle(DOODLE[f.key])}</span>
               <span class="service-card-tag">${esc(TAGS[f.key])}</span>
               <h3 class="service-card-title">${esc(f.name)}</h3>
               <p class="service-card-desc">${esc(f.menu)}</p>

@@ -9,6 +9,7 @@ const { families, subs } = require('./site-data/services');
 const { industries, WORK, groups } = require('./site-data/industries');
 const { SITE, esc, head, foot, crumbs } = require('./careers/shell');
 const R = require('./site-data/render');
+const { doodle } = require('./site-data/doodles');
 const approach = require('./site-data/approach');
 
 const ROOT = path.resolve(__dirname, '..');
@@ -59,7 +60,7 @@ ${i.work.map((k, n) => `        <li class="wwm-c"><a href="${WORK[k].href}"><spa
       </ul>`, 'wwm-sec-alt') : '';
   const svc = R.pills(i.services.map((k) => [subs[k].name, subHref(k)]));
   return head({ title, description, canonical: url, graph }) + `
-<main id="top">${R.hero({ crumbs: [['Home', '/'], ['Industries', '/industries'], [i.name, `/industries/${i.slug}`]], pill: 'Industry', h1: `${i.name} software development`, sub: i.intro, secondary: ['See our work', '/work'] })}
+<main id="top">${R.hero({ crumbs: [['Home', '/'], ['Industries', '/industries'], [i.name, `/industries/${i.slug}`]], pill: 'Industry', h1: `${i.name} software development`, sub: i.intro, secondary: ['See our work', '/work'], art: i.slug })}
 ${R.section('build', `What we build for ${i.name}`, R.cards(i.builds))}
 ${R.section('approach', `How we approach ${i.name} projects`, R.prose(approach.industries[i.slug]), 'wwm-sec-alt')}
 ${R.section('matters', `What matters in ${i.name}`, R.cards(i.matters).replace('wwm-cards', 'wwm-cards wwm-cards-4'))}
@@ -84,7 +85,7 @@ function indexPage() {
     R.faqLd(INDEX_FAQ),
   ];
   const grid = `<ul class="wwm-cards wwm-cards-links">
-${industries.map((i, n) => `        <li class="wwm-c"><a href="/industries/${i.slug}"><span class="wwm-c-n" aria-hidden="true">${String(n + 1).padStart(2, '0')}</span><h3>${esc(i.name)}</h3><p>${esc(i.short)}</p><span class="wwm-c-go">Explore</span></a></li>`).join('\n')}
+${industries.map((i) => `        <li class="wwm-c"><a href="/industries/${i.slug}"><span class="wwm-c-art" aria-hidden="true">${doodle(i.slug)}</span><h3>${esc(i.name)}</h3><p>${esc(i.short)}</p><span class="wwm-c-go">Explore</span></a></li>`).join('\n')}
       </ul>`;
   return head({ title, description, canonical: url, graph }) + `
 <main id="top">${R.hero({ crumbs: [['Home', '/'], ['Industries', '/industries']], pill: `${industries.length} industries`, h1: 'Industries we serve.', sub: 'Software built around how your sector actually works. Pick your industry to see what we build, what matters in your field and how we approach it.', secondary: ['See our work', '/work'] })}

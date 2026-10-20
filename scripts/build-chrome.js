@@ -16,7 +16,7 @@ const ROOT = path.resolve(__dirname, '..');
 const SKIP = new Set(['node_modules', '.git', '.claude', 'scripts', 'partials', 'api']);
 const header = fs.readFileSync(path.join(ROOT, 'partials/header.html'), 'utf8').trim();
 const footer = fs.readFileSync(path.join(ROOT, 'partials/footer.html'), 'utf8').trim();
-const CSS = '<link rel="stylesheet" href="/assets/chrome.css?v=37">';
+const CSS = '<link rel="stylesheet" href="/assets/chrome.css?v=38">';
 const JS = '<script src="/assets/chrome.js?v=15" defer></script>';
 // Book a Call pop-up (Google Calendar appointment page inside a dialog), stamped on every page.
 const SP_CSS = '<link rel="stylesheet" href="/assets/schedule-popup.css?v=sp3">';
@@ -27,7 +27,7 @@ const FONT_FAMILIES = 'family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;
 const fontLink = (extra) => `<link rel="stylesheet" href="https://fonts.googleapis.com/css2?${extra}${FONT_FAMILIES}&amp;display=swap">`;
 const FONT_LINK_RE = /[ \t]*<link\b[^>]*\bhref="https:\/\/fonts\.googleapis\.com\/css2\?[^"]*"[^>]*>\n?/g;
 // Shared buttons, section labels and type, loaded last so it wins over older page styles.
-const PRIM_CSS = '<link rel="stylesheet" href="/assets/primitives.css?v=p2">';
+const PRIM_CSS = '<link rel="stylesheet" href="/assets/primitives.css?v=p3">';
 
 const block = (name, body) => `<!-- chrome:${name} -->\n${body}\n<!-- /chrome:${name} -->`;
 const markerRe = (name) => new RegExp(`<!-- chrome:${name} -->[\\s\\S]*?<!-- /chrome:${name} -->`);
