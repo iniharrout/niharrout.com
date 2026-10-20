@@ -8,6 +8,7 @@
 const fs = require('fs');
 const path = require('path');
 const { SITE, ARROW, head, foot, crumbs } = require('./careers/shell');
+const { doodle } = require('./site-data/doodles');
 
 const ROOT = path.resolve(__dirname, '..');
 const SHORT = 'https://calendar.app.google/HJ4ctVHEXLjUxCzp6';
@@ -50,9 +51,9 @@ const html = head({ title, description, canonical: url, graph }) + `
       </div>
 
       <div class="wwm-expect">
-        <div><h2>30 minutes, free</h2><p>A focused conversation about your product, with no pitch deck and no obligation.</p></div>
-        <div><h2>You talk to me</h2><p>The founder is on the call, not a sales team.</p></div>
-        <div><h2>A clear proposal</h2><p>Within 24 hours of the call you get scope, priorities and next steps in writing.</p></div>
+        <div><span class="wwm-expect-art" aria-hidden="true">${doodle('calendar')}</span><h2>30 minutes, free</h2><p>A focused conversation about your product, with no pitch deck and no obligation.</p></div>
+        <div><span class="wwm-expect-art" aria-hidden="true">${doodle('call')}</span><h2>You talk to me</h2><p>The founder is on the call, not a sales team.</p></div>
+        <div><span class="wwm-expect-art" aria-hidden="true">${doodle('prd')}</span><h2>A clear proposal</h2><p>Within 24 hours of the call you get scope, priorities and next steps in writing.</p></div>
       </div>
 
       <p class="wwm-book-note">Calls are for new software projects. Looking for a job? See <a href="/work-with-me">Work with me</a>. Prefer to write first? Message me on <a href="https://wa.me/917608844995" target="_blank" rel="noopener">WhatsApp</a> or email <a href="mailto:me@niharrout.com">me@niharrout.com</a>.</p>

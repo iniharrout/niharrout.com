@@ -282,3 +282,35 @@ html.wwm-lock { overflow: hidden; }
   .wwm-hero.has-art .wwm-hero-grid { grid-template-columns: 1fr; gap: 8px; }
   .wwm-hero-art { order: -1; width: 112px; height: 112px; margin-left: -6px; }
 }
+
+/* ---------- Careers: hero art, perks, role cards with a tinted art panel, hiring steps ---------- */
+.wwm-careers-grid { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 56px; align-items: center; }
+.wwm-hero-careers .wwm-cta-row { margin-top: 30px; }
+.wwm-hero-careers .wwm-hero-art { width: 340px; height: 340px; }
+.wwm-perks { padding: 8px 0 64px; }
+.wwm-perk-list { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.wwm-perk-list li { display: flex; gap: 18px; align-items: flex-start; padding: 24px; border: 1px solid var(--rule); border-radius: 20px; background: #fff; }
+.wwm-perk-art { flex: none; width: 72px; height: 72px; margin: -6px 0 0 -6px; }
+.wwm-perk-list h3 { font-family: var(--display); font-weight: 500; font-size: 20px; line-height: 1.2; letter-spacing: -0.01em; }
+.wwm-perk-list p { margin-top: 6px; color: var(--ink-2); font-size: 15px; line-height: 1.55; }
+.wwm-rcard { padding: 0; overflow: hidden; }
+.wwm-rcard-top { position: relative; display: grid; place-items: center; height: 168px; background: var(--tint, var(--d-sky)); border-bottom: 1px solid var(--rule); }
+.wwm-rcard-top .doodle { width: 128px; height: 128px; transition: transform .3s ease; }
+.wwm-rcard:hover .wwm-rcard-top .doodle { transform: translateY(-4px) rotate(-2deg); }
+.wwm-rcard-top .wwm-rcard-no { top: 18px; right: 20px; }
+.wwm-rcard-body { display: flex; flex: 1; flex-direction: column; padding: 4px 30px 24px; }
+.wwm-steps { padding: 72px 0; background: var(--paper-2, #f3f4f6); }
+.wwm-step-list { list-style: none; padding: 0; margin-top: 28px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; counter-reset: none; }
+.wwm-step-list li { padding: 26px; border: 1px solid var(--rule); border-radius: 20px; background: #fff; }
+.wwm-step-art { display: block; width: 84px; height: 84px; margin: -8px 0 8px -8px; }
+.wwm-step-n { display: block; font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+.wwm-step-list h3 { margin-top: 6px; font-family: var(--display); font-weight: 500; font-size: 22px; line-height: 1.2; }
+.wwm-step-list p { margin-top: 8px; color: var(--ink-2); font-size: 15px; line-height: 1.55; }
+.wwm-steps + .wwm-faq { padding-top: 72px; }
+.wwm-d-art { display: block; width: 88px; height: 88px; margin: 0 0 6px -8px; }
+@media (max-width: 991px) {
+  .wwm-careers-grid { grid-template-columns: 1fr; gap: 8px; }
+  .wwm-hero-careers .wwm-hero-art { order: -1; width: 132px; height: 132px; margin-left: -8px; }
+  .wwm-perk-list, .wwm-step-list { grid-template-columns: 1fr; }
+}
+.wwm-expect-art { display: block; width: 76px; height: 76px; margin: -6px 0 6px -6px; }

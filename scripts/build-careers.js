@@ -14,7 +14,17 @@ const { POSTED, roles, faq } = require('./careers/roles');
 
 const ROOT = path.resolve(__dirname, '..');
 const OUT = path.join(ROOT, 'work-with-me');
-const { SITE, JS, esc, svg, ARROW, ORG, head, foot, crumbs } = require('./careers/shell');
+const { SITE, JS, esc, ARROW, ORG, head, foot, crumbs } = require('./careers/shell');
+const { doodle } = require('./site-data/doodles');
+
+// Doodle and card tint for each role (scripts/site-data/doodles.js).
+const ROLE_ART = {
+  'founders-office': ['roadmap', 'sky'],
+  'linkedin-content-manager': ['social', 'sun'],
+  'graphic-designer': ['design', 'peach'],
+  'video-editor': ['media', 'sky'],
+};
+const art = (slug) => (ROLE_ART[slug] || ['team', 'sky']);
 
 const chips = () => '<ul class="wwm-chips"><li>Remote</li><li>India</li><li>Full-time</li></ul>';
 
@@ -22,6 +32,7 @@ function detail(role, level) {
   const h = level;
   const sub = level + 1;
   return `<div class="wwm-detail">
+  <span class="wwm-d-art" aria-hidden="true">${doodle(art(role.slug)[0])}</span>
   ${chips()}
   <h${h} class="wwm-d-title"${level === 2 ? ' id="dlgTitle"' : ''}>${esc(role.title)}</h${h}>
   <p class="wwm-d-sum">${esc(role.summary)}</p>
@@ -108,11 +119,12 @@ function listing() {
 
   const cards = roles.map((r, i) => `        <li>
           <a class="wwm-rcard" href="/work-with-me/${r.slug}" data-slug="${r.slug}" data-apply="${esc(r.apply)}">
-            <span class="wwm-rcard-ic">${svg(r.icon)}</span>
-            <span class="wwm-rcard-no" aria-hidden="true">0${i + 1}</span>
-            <h3>${esc(r.title)}</h3>
-            <p>${esc(r.short)}</p>
-            <span class="wwm-rcard-foot"><span class="wwm-rcard-meta">Remote &middot; Full-time</span><span class="wwm-rcard-go">View role ${ARROW}</span></span>
+            <span class="wwm-rcard-top" style="--tint:var(--d-${art(r.slug)[1]})" aria-hidden="true">${doodle(art(r.slug)[0])}<span class="wwm-rcard-no">0${i + 1}</span></span>
+            <span class="wwm-rcard-body">
+              <h3>${esc(r.title)}</h3>
+              <p>${esc(r.short)}</p>
+              <span class="wwm-rcard-foot"><span class="wwm-rcard-meta">Remote &middot; Full-time</span><span class="wwm-rcard-go">View role ${ARROW}</span></span>
+            </span>
           </a>
         </li>`).join('\n');
 
@@ -148,15 +160,31 @@ ${detail(r, 2)}
 
   return head({ title, description, canonical: url, graph }) + `
 <main id="top">
-  <section class="wwm-hero">
-    <div class="wwm-wrap">
-      <p class="wwm-pill"><span class="wwm-dot"></span>Careers at Creuto &middot; 4 open roles</p>
-      <h1>Work with me.</h1>
-      <p class="wwm-sub">Four full-time remote roles are open to people across India. Each one works directly with me, from product and operations to the content that goes out under my name.</p>
-      <div class="wwm-by">
-        <img src="/assets/nihar-avatar.jpg" width="96" height="96" alt="Nihar Ranjan Rout">
-        <span><strong>Nihar Ranjan Rout</strong>Founder &amp; CEO, Creuto</span>
+  <section class="wwm-hero wwm-hero-careers">
+    <div class="wwm-wrap wwm-careers-grid">
+      <div>
+        <p class="wwm-pill"><span class="wwm-dot"></span>Careers at Creuto &middot; ${roles.length} open roles</p>
+        <h1>Work with me.</h1>
+        <p class="wwm-sub">Four full-time remote roles are open to people across India. Each one works directly with me, from product and operations to the content that goes out under my name.</p>
+        <div class="wwm-cta-row"><a class="wwm-btn is-primary" href="#roles">See open roles ${ARROW}</a></div>
+        <div class="wwm-by">
+          <img src="/assets/nihar-avatar.jpg" width="96" height="96" alt="Nihar Ranjan Rout">
+          <span><strong>Nihar Ranjan Rout</strong>Founder &amp; CEO, Creuto</span>
+        </div>
       </div>
+      <div class="wwm-hero-art" aria-hidden="true">${doodle('team')}</div>
+    </div>
+  </section>
+
+  <section class="wwm-perks" aria-label="What working here looks like">
+    <div class="wwm-wrap">
+      <ul class="wwm-perk-list">
+${[
+    ['remote', 'Remote, anywhere in India', 'Work from your own city. Every role is open to people based anywhere in India.'],
+    ['calendar', 'Full-time roles', 'All four are full-time positions, not freelance gigs or short contracts.'],
+    ['chat', 'Work directly with me', 'No layers in between: you work with me, from product and operations to what goes out under my name.'],
+  ].map(([d, t, p]) => `        <li><span class="wwm-perk-art" aria-hidden="true">${doodle(d)}</span><div><h3>${t}</h3><p>${p}</p></div></li>`).join('\n')}
+      </ul>
     </div>
   </section>
 
@@ -166,6 +194,19 @@ ${detail(r, 2)}
       <ul class="wwm-grid">
 ${cards}
       </ul>
+    </div>
+  </section>
+
+  <section class="wwm-steps" aria-labelledby="steps-title">
+    <div class="wwm-wrap">
+      <h2 class="wwm-h2" id="steps-title">How hiring works</h2>
+      <ol class="wwm-step-list">
+${[
+    ['prd', 'Pick a role', 'Open a role and read what you would do and who I am looking for.'],
+    ['email', 'Apply on the page', 'The form asks for your contact details, your LinkedIn profile and a link to your work.'],
+    ['call', 'I get in touch', 'Applications come to me directly. If one looks like a fit, I reach out by email or WhatsApp.'],
+  ].map(([d, t, p], i) => `        <li><span class="wwm-step-art" aria-hidden="true">${doodle(d)}</span><span class="wwm-step-n">Step ${i + 1}</span><h3>${t}</h3><p>${p}</p></li>`).join('\n')}
+      </ol>
     </div>
   </section>
 

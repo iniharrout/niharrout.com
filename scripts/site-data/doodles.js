@@ -163,6 +163,11 @@ const D = {
   government: blob(80, 84, 56, 'sun') + path('M24 60L80 30l56 30Z', 'blue') + `<path d="M38 66v46M60 66v46M100 66v46M122 66v46" fill="none" ${ink}/>` + rect(24, 112, 112, 16, 4, 'paper') + circ(80, 48, 6, 'yellow'),
   'saas-industry': blob(80, 84, 56) + cloud(34, 28, 0.95, 'paper') + win(40, 80, 80, 54, 'paper', 'blue') + line(52, 112, 108, 112) + star(130, 44, 9),
 
+  // careers
+  team: blob(80, 86, 58, 'peach') + path('M18 132v-8a26 26 0 0 1 52 0v8Z', 'blue') + circ(44, 78, 17, 'peach') + path('M27 74a17 17 0 0 1 34 0c-8-6-26-6-34 0Z', 'ink') +
+    path('M90 132v-8a26 26 0 0 1 52 0v8Z', 'yellow') + circ(116, 78, 17, 'peach') + path('M99 76a17 17 0 0 1 34 0c-4-10-30-12-34 0Z', 'coral') + star(80, 40, 11) + spark(30, 34, 6) + spark(136, 40, 5),
+  remote: blob(80, 84, 56) + rect(26, 46, 92, 62, 8, 'paper') + rect(34, 54, 76, 46, 4, 'sky') + path('M16 116h112l-8 10H24Z', 'blue') + pin(122, 50, 0.8, 'coral') + spark(40, 32, 6),
+
   // misc
   check: blob(80, 80, 52) + badge(80, 80, 34) + spark(124, 36) + spark(36, 124, 5),
   question: blob(80, 82, 56, 'sun') + bubble(30, 36, 100, 70, 'yellow') + `<path d="M68 60a12 12 0 1 1 18 10c-4 3-6 6-6 10" fill="none" ${ink}/>` + dot(80, 92, 3.8),

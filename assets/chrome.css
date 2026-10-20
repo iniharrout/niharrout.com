@@ -430,3 +430,18 @@ body.page-home .sc-foot-grid { padding-top: 64px; }
   .sc-mega-body { padding: 22px 24px 24px; }
 }
 @media (max-width: 991px) { .sc-callpop { display: none !important; } }
+
+/* ---------- Top bar: quick links above the main navigation (scrolls away; the header below stays sticky) ---------- */
+.sc-topbar { background: #0b0d12; color: rgba(255, 255, 255, 0.78); font-family: 'Inter', system-ui, -apple-system, sans-serif; font-size: 13px; line-height: 1; }
+.sc-topbar-in { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: 40px; }
+.sc-topbar-note { display: flex; align-items: center; gap: 10px; margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.sc-topbar-dot { flex: none; width: 7px; height: 7px; border-radius: 50%; background: #60a5fa; box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.18); }
+.sc-topbar-links { display: flex; align-items: center; gap: 22px; margin: 0; padding: 0; list-style: none; white-space: nowrap; }
+.sc-topbar-links a { display: inline-flex; align-items: center; gap: 7px; color: rgba(255, 255, 255, 0.78); text-decoration: none; transition: color .15s ease; }
+.sc-topbar-links a:hover, .sc-topbar-links a:focus-visible { color: #fff; }
+.sc-topbar-links .sc-topbar-book { color: #93c5fd; font-weight: 600; }
+.sc-topbar-links .sc-topbar-book:hover { color: #bfdbfe; }
+.sc-topbar-sep { width: 1px; height: 16px; background: rgba(255, 255, 255, 0.2); }
+@media (max-width: 1100px) { .sc-topbar-note { display: none; } .sc-topbar-in { justify-content: flex-end; } }
+@media (max-width: 760px) { .sc-topbar { display: none; } }
+@media print { .sc-topbar { display: none; } }

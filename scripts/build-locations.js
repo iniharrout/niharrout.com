@@ -840,9 +840,7 @@ function buildThankYou() {
   <main id="top">
     <section class="ty-hero">
       <div class="wrap">
-        <div class="ty-icon" aria-hidden="true">
-          <svg viewBox="0 0 52 52" width="52" height="52"><circle cx="26" cy="26" r="25" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15 27l8 8 15-17" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
+        <div class="ty-icon doodle-slot" data-doodle="check" aria-hidden="true"></div>
         <h1 id="ty-title">Thank you</h1>
         <p class="hero-sub" id="ty-sub">We have received your enquiry. Nihar will reply within 24 hours.</p>
         <div class="hero-ctas" style="justify-content:center;">

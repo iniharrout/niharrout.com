@@ -166,3 +166,16 @@ html body:not(#_) :is(.hero-proofline span, .work-tech-tags li) { color: #475569
   html body:not(#_) :is(.sc-footer, footer) li a { display: inline-block; padding: 5px 0; }
   html body:not(#_) .wwm-crumbs a { display: inline-block; padding: 6px 0; }
 }
+
+/* Doodle sizes on single-purpose pages (thank-you, 404, tools). */
+html body:not(#_) .ty-icon.doodle-slot { width: 128px; height: 128px; margin: 0 auto 12px; color: inherit; }
+html body:not(#_) .notfound-art { display: block; width: 128px; height: 128px; margin: 0 auto 12px; }
+html body:not(#_) .tool-card-art { display: block; width: 88px; height: 88px; margin: -8px 0 10px -8px; }
+
+/* Guides: the cover image fits its column on every guide, and wide tables scroll sideways on
+   small screens instead of pushing the page wider than the phone. */
+.article-figure { margin: 0 0 36px; }
+.article-figure img { display: block; width: 100%; max-width: 100%; height: auto; border-radius: 18px; border: 1px solid rgba(9, 13, 22, 0.08); }
+@media (max-width: 760px) {
+  html body:not(#_) article table { display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
