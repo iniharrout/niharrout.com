@@ -140,9 +140,11 @@
       // mega menus list dozens of links; the phone menu shows only the top level (families, industries) and the "all" link
       var mobileLinks = menu.classList.contains('sc-mega') ? menu.querySelectorAll('a.sc-fam, a.sc-ind, a.sc-menu-all') : menu.querySelectorAll('a');
       mobileLinks.forEach(function (a) {
+        if (a.closest('.sc-mega-strip')) return; // the desktop promo strip is not repeated in the phone menu
         var copy = a.cloneNode(true);
-        var famName = a.querySelector('.sc-fam-t');
-        if (famName) copy.textContent = famName.textContent;
+        // desktop entries carry an icon and a description; the phone menu shows just the name
+        var name = a.querySelector('.sc-fam-t') || a.querySelector('.sc-entry-t strong');
+        if (name) copy.textContent = name.textContent;
         if (a.classList.contains('sc-menu-all')) copy.className = 'sc-acc-all';
         inner.appendChild(copy);
       });
