@@ -12,8 +12,9 @@
 :root {
   /* Typography */
   --font-display: 'Fraunces', Georgia, serif;
-  --font-body: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  /* Labels, tags and small numbers use the body sans; true monospace is kept only for the product mock-ups (hero-demo.css, blueprint.css). */
+  --font-mono: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
   /* Palette */
   --hs-brand: #1d4ed8;

@@ -1,0 +1,130 @@
+/**
+ * Shared primitives: section labels and buttons.
+ *
+ * Pages grew their own label and button styles over time (six label looks, a dozen button
+ * classes with corners from 0 to 999px). This file is the one definition of both. It is
+ * stamped last into every page by scripts/build-chrome.js. Selectors start with
+ * `html body:not(#_)`: the :not(#_) adds ID-level weight, so these rules outrank older
+ * page-scoped rules like `body.page-home .cta2 .btn-solid` without needing !important.
+ *
+ * Type: Fraunces for headings, Inter for everything else (font link also set by build-chrome).
+ */
+
+:root {
+  --prim-accent: #1d4ed8;
+  --prim-accent-hover: #1e40af;
+  --prim-ink: #0b0d12;
+  --prim-label: #475569;
+  --prim-line: #d1d5db;
+  --prim-radius: 10px;
+  --prim-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* ================= Section label =================
+   A short accent rule and small spaced capitals, above a section heading. */
+html body:not(#_) :is(.kicker, .hero-eyebrow, .ed-label, .sec-eyebrow, .hs-eyebrow, .badge-pill,
+  .narrative-badge, .blog-category-badge, .tool-hero-label, .wwm-pill, .sc-foot-eyebrow) {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  width: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  backdrop-filter: none;
+  font-family: var(--prim-sans);
+  font-size: 12px;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 1.4;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--prim-label);
+}
+html body:not(#_) :is(.kicker, .hero-eyebrow, .ed-label, .sec-eyebrow, .hs-eyebrow, .badge-pill,
+  .narrative-badge, .blog-category-badge, .tool-hero-label, .wwm-pill, .sc-foot-eyebrow)::before {
+  content: '';
+  position: static;
+  flex: none;
+  width: 24px;
+  height: 1.5px;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  background: var(--prim-accent);
+  box-shadow: none;
+  animation: none;
+  transform: none;
+  opacity: 1;
+}
+html body:not(#_) :is(.kicker, .hero-eyebrow, .ed-label, .sec-eyebrow, .hs-eyebrow, .badge-pill,
+  .narrative-badge, .blog-category-badge, .tool-hero-label, .wwm-pill, .sc-foot-eyebrow) > :is(.dot, .wwm-dot, svg) {
+  display: none;
+}
+
+/* On dark bands the label text lightens and the rule turns light blue. */
+html body:not(#_) :is(.sc-footer, .partner-calm, .ai-dark, .is-dark, .dark-band, .cta-dark) :is(.kicker, .hero-eyebrow, .ed-label,
+  .sec-eyebrow, .hs-eyebrow, .badge-pill, .narrative-badge, .tool-hero-label, .wwm-pill, .sc-foot-eyebrow) {
+  color: rgba(255, 255, 255, 0.72);
+}
+html body:not(#_) :is(.sc-footer, .partner-calm, .ai-dark, .is-dark, .dark-band, .cta-dark) :is(.kicker, .hero-eyebrow, .ed-label,
+  .sec-eyebrow, .hs-eyebrow, .badge-pill, .narrative-badge, .tool-hero-label, .wwm-pill, .sc-foot-eyebrow)::before {
+  background: #93c5fd;
+}
+
+/* ================= Buttons =================
+   Main (blue), outlined (white) and the arrow text link (.link-arrow, styled per page).
+   Same height, corners and type everywhere. */
+html body:not(#_) :is(.hero-btn-primary, .hero-btn-secondary, .btn-solid, .hire-btn, .faq2-btn, .cl-button,
+  .wwm-btn, .btn, .btn-cta-banner, .btn-cta-white, .btn-calc-cta, .btn-calc-secondary, .cx-brief-toggle,
+  .btn-step-next, .btn-step-prev) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 46px;
+  padding: 0 20px;
+  border-radius: var(--prim-radius);
+  font-family: var(--prim-sans);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0;
+  text-transform: none;
+}
+html body:not(#_) :is(.cl-button.-small, .faq2-btn, .btn-step-next, .btn-step-prev) { min-height: 40px; padding: 0 16px; font-size: 14px; }
+html body:not(#_) .sc-cta { border-radius: var(--prim-radius); font-family: var(--prim-sans); }
+
+/* Main button */
+html body:not(#_) :is(.hero-btn-primary, .btn-solid:not(.btn-light), .hire-btn, .faq2-btn.is-primary, .cl-button.-primary,
+  .wwm-btn.is-primary, .btn-dark, .btn-primary, .btn-cta-banner, .btn-calc-cta, .btn-step-next) {
+  border: 1px solid var(--prim-accent);
+  background: var(--prim-accent);
+  color: #fff;
+}
+html body:not(#_) :is(.hero-btn-primary, .btn-solid:not(.btn-light), .hire-btn, .faq2-btn.is-primary, .cl-button.-primary,
+  .wwm-btn.is-primary, .btn-dark, .btn-primary, .btn-cta-banner, .btn-calc-cta, .btn-step-next):hover {
+  border-color: var(--prim-accent-hover);
+  background: var(--prim-accent-hover);
+  color: #fff;
+}
+
+/* Outlined button */
+html body:not(#_) :is(.hero-btn-secondary, .faq2-btn:not(.is-primary), .cl-button.-secondary, .wwm-btn:not(.is-primary),
+  .btn-outline, .btn-calc-secondary, .btn-step-prev) {
+  border: 1px solid var(--prim-line);
+  background: #fff;
+  color: var(--prim-ink);
+}
+html body:not(#_) :is(.hero-btn-secondary, .faq2-btn:not(.is-primary), .cl-button.-secondary, .wwm-btn:not(.is-primary),
+  .btn-outline, .btn-calc-secondary, .btn-step-prev):hover {
+  border-color: var(--prim-ink);
+  background: #fff;
+  color: var(--prim-ink);
+}
+html body:not(#_) .btn-block { display: flex; width: 100%; }
+
+/* Form controls take the page font instead of the browser default (Arial). */
+button, input, select, textarea { font-family: inherit; }

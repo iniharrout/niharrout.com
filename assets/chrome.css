@@ -234,8 +234,8 @@ body.page-home .why2-item:nth-child(5) { --tone: var(--t-orange); }
 /* ---------- Footer: flat black, three zones (call to action, link grid, legal) ---------- */
 .sc-footer { background: var(--sc-dark); color: #ffffff; padding: 0 0 28px; font-family: var(--font-body, "Inter", system-ui, -apple-system, "Segoe UI", sans-serif); line-height: 1.5; }
 .sc-foot-top { display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 32px 48px; padding: 76px 0 56px; border-bottom: 1px solid rgba(255, 255, 255, 0.12); }
-.sc-foot-eyebrow { margin: 0 0 14px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #8c95a6; }
-.sc-foot-top h2 { margin: 0; max-width: 18ch; font-family: var(--font-display, Georgia, serif); font-size: clamp(1.9rem, 3.4vw, 2.9rem); font-weight: 400; line-height: 1.12; letter-spacing: -0.015em; color: #fff; }
+.sc-foot-eyebrow { margin: 0 0 14px; font-family: 'Inter', system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #8c95a6; }
+.sc-foot-top h2 { margin: 0; max-width: 18ch; font-family: var(--font-display, 'Fraunces', Georgia, serif); font-size: clamp(1.9rem, 3.4vw, 2.9rem); font-weight: 400; line-height: 1.12; letter-spacing: -0.015em; color: #fff; }
 .sc-foot-top-copy p:last-child { margin: 14px 0 0; max-width: 46ch; font-size: 15.5px; line-height: 1.6; color: #a9b1c0; }
 .sc-foot-top-actions { display: flex; flex-wrap: wrap; gap: 12px; }
 .sc-foot-btn { display: inline-flex; align-items: center; gap: 9px; padding: 14px 20px; border: 1px solid rgba(255, 255, 255, 0.24); border-radius: 10px; color: #fff; font-size: 15px; font-weight: 700; line-height: 1; text-decoration: none; white-space: nowrap; transition: border-color 0.18s ease, background 0.18s ease; }
@@ -250,7 +250,7 @@ body.page-home .why2-item:nth-child(5) { --tone: var(--t-orange); }
 .sc-foot-address { margin: 0 0 20px; font-style: normal; font-size: 14px; line-height: 1.75; color: #d4d9e3; }
 .sc-foot-address a { color: #fff; text-decoration: underline; text-decoration-color: rgba(255, 255, 255, 0.35); text-underline-offset: 4px; }
 .sc-foot-address a:hover { text-decoration-color: #fff; }
-.sc-foot-col h4 { margin: 0 0 18px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #8c95a6; }
+.sc-foot-col h4 { margin: 0 0 18px; font-family: 'Inter', system-ui, -apple-system, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #8c95a6; }
 .sc-foot-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 11px; }
 .sc-foot-col a { font-size: 14.5px; line-height: 1.4; color: #d4d9e3; text-decoration: none; transition: color 0.15s ease; }
 .sc-foot-col a:hover { color: #ffffff; text-decoration: underline; text-decoration-color: rgba(255, 255, 255, 0.4); text-underline-offset: 4px; }
@@ -370,14 +370,14 @@ body.page-home .sc-foot-grid { padding-top: 64px; }
 .sc-menu.sc-mega { width: min(960px, calc(100vw - 48px)); padding: 0; display: grid; grid-template-columns: 290px minmax(0, 1fr); overflow: hidden; border-radius: 14px; }
 .sc-menu.sc-mega-industries { grid-template-columns: minmax(0, 1fr); }
 .sc-mega-rail { display: flex; flex-direction: column; padding: 20px 0 18px; background-color: #f7f9fd; background-image: linear-gradient(rgba(29, 78, 216, 0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(29, 78, 216, 0.06) 1px, transparent 1px); background-size: 24px 24px; border-right: 1px solid var(--sc-rule); }
-.sc-mega-h, .sc-list-h, .sc-ind-h, .sc-mega-eyebrow { margin: 0; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sc-ink-2); }
+.sc-mega-h, .sc-list-h, .sc-ind-h, .sc-mega-eyebrow { margin: 0; font-family: 'Inter', system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sc-ink-2); }
 .sc-mega-h { margin: 0 24px 10px; }
 .sc-menu .sc-fam { position: relative; display: flex; align-items: baseline; gap: 14px; padding: 11px 24px; border-radius: 0; font-size: 15px; font-weight: 600; line-height: 1.3; color: var(--sc-ink); }
 .sc-menu .sc-fam:hover { background: rgba(255, 255, 255, 0.7); }
 .sc-fam::before { content: ''; position: absolute; left: 0; top: 7px; bottom: 7px; width: 3px; background: var(--sc-accent); transform: scaleY(0); transition: transform 0.2s ease; }
 .sc-menu .sc-fam.is-active { background: #fff; color: var(--sc-accent); }
 .sc-fam.is-active::before { transform: scaleY(1); }
-.sc-fam-n { flex: none; min-width: 20px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 11.5px; font-weight: 500; color: var(--sc-ink-2); }
+.sc-fam-n { flex: none; min-width: 20px; font-family: 'Inter', system-ui, -apple-system, sans-serif; font-size: 11.5px; font-weight: 500; color: var(--sc-ink-2); }
 .sc-fam.is-active .sc-fam-n { color: var(--sc-accent); }
 .sc-menu .sc-mega-all { display: inline-block; margin: 14px 24px 0; padding: 0; border-radius: 0; background: none; font-size: 13.5px; font-weight: 700; color: var(--sc-accent); }
 .sc-menu .sc-mega-all:hover { background: none; color: var(--sc-accent-deep); text-decoration: underline; text-underline-offset: 3px; }
@@ -391,7 +391,7 @@ body.page-home .sc-foot-grid { padding-top: 64px; }
 .sc-mega-list li { border-bottom: 1px solid var(--sc-rule); }
 .sc-menu .sc-sub { display: flex; align-items: baseline; gap: 12px; padding: 11px 2px; border-radius: 0; font-size: 14.5px; font-weight: 600; line-height: 1.3; color: var(--sc-ink); }
 .sc-menu .sc-sub:hover { background: none; color: var(--sc-accent); }
-.sc-sub-n { flex: none; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 11px; font-weight: 500; color: #94a3b8; }
+.sc-sub-n { flex: none; font-family: 'Inter', system-ui, -apple-system, sans-serif; font-size: 11px; font-weight: 500; color: #94a3b8; }
 .sc-sub::after { content: '\2192'; margin-left: auto; color: var(--sc-accent); opacity: 0; transform: translateX(-5px); transition: opacity 0.18s ease, transform 0.18s ease; }
 .sc-sub:hover::after { opacity: 1; transform: none; }
 .sc-menu .sc-mega-cta { display: inline-block; margin-top: 20px; padding: 0 0 2px; border-radius: 0; border-bottom: 1.5px solid currentColor; background: none; font-size: 14.5px; font-weight: 700; color: var(--sc-accent); }

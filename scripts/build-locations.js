@@ -77,9 +77,9 @@ function head({ title, description, path: urlPath, ogType = 'website', graph, no
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap">
-  <link rel="stylesheet" href="/assets/design-system.css?v=blue6">
-  <link rel="stylesheet" href="/assets/location-pages.css?v=blue4">${theme ? '\n  <link rel="stylesheet" href="/assets/hero-demo.css?v=hd7">' : ''}${theme === 'ai' ? '\n  <link rel="stylesheet" href="/assets/ai-theme.css?v=ai7">' : ''}
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&amp;family=Inter:wght@400;500;600;700&amp;display=swap">
+  <link rel="stylesheet" href="/assets/design-system.css?v=blue7">
+  <link rel="stylesheet" href="/assets/location-pages.css?v=blue4">${theme ? '\n  <link rel="stylesheet" href="/assets/hero-demo.css?v=hd8">' : ''}${theme === 'ai' ? '\n  <link rel="stylesheet" href="/assets/ai-theme.css?v=ai8">' : ''}
 
 </head>
 

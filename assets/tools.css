@@ -16,7 +16,8 @@
   --tool-accent-tint: #e8effe;
   --tool-accent-hover: #1e40af;
   --tool-radius: 4px;
-  --tool-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  /* Labels, tags and small numbers use the body sans; true monospace is kept only for the product mock-ups (hero-demo.css, blueprint.css). */
+  --tool-mono: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 /* Base wrap for tools */
