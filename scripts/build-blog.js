@@ -161,7 +161,7 @@ ${p.keywords.map((k) => `  <meta property="article:tag" content="${esc(k)}">`).j
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap">
-  <link rel="stylesheet" href="/assets/design-system.css?v=blue5">
+  <link rel="stylesheet" href="/assets/design-system.css?v=blue6">
   <link rel="stylesheet" href="/assets/blog-post.css?v=bp2">
 </head>
 

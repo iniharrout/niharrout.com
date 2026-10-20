@@ -1,40 +1,18 @@
 /**
  * NiharRout.com - Official Design System Architecture (2025/2026)
- * Brand: Authentic HubSpot Precision + Excited.agency Editorial Portfolio Aesthetics
  * Palette: Emerald (#1d4ed8), Warm Porcelain (#f3f4f6),
  *          Warm Alabaster (#f3f4f6), Pure White (#ffffff), Deep Charcoal (#18181a)
  * Typography: Modern Geometric Sans + Clean Editorial Serif
  */
 
 /* ================= 1. FONTS & TYPOGRAPHY ================= */
-@font-face {
-  font-family: "HubSpot Sans";
-  font-weight: 300 400;
-  font-display: swap;
-  src: url("https://www.hubspot.com/hubfs/assets/hs-components/v4/fonts/hubspot-2025/HubSpotSans-Book.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "HubSpot Sans";
-  font-weight: 500 600;
-  font-display: swap;
-  src: url("https://www.hubspot.com/hubfs/assets/hs-components/v4/fonts/hubspot-2025/HubSpotSans-Medium.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "HubSpot Serif";
-  font-weight: 400 500;
-  font-display: swap;
-  src: url("https://www.hubspot.com/hubfs/assets/hs-components/v4/fonts/hubspot-2025/HubSpotSerif-Book.woff2") format("woff2");
-}
-
 /* Fallback & Web Fonts */
 
 /* ================= 2. DESIGN TOKENS ================= */
 :root {
   /* Typography */
-  --font-display: 'HubSpot Serif', 'Fraunces', Georgia, serif;
-  --font-body: 'HubSpot Sans', 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
   /* Palette */

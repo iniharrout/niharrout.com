@@ -42,7 +42,7 @@
       <text x="16" y="17" font-family="monospace" font-size="11" font-weight="700" fill="#2563eb">CASE STUDY</text>
       
       <text x="0" y="70" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="32" font-weight="800" fill="#FFFFFF">Multi-Vendor Service Bundling Flow</text>
-      <text x="0" y="105" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="500" fill="#94A3B8">Auto-Conflict Scheduling & Single Checkout</text>
+      <text x="0" y="105" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="500" fill="#94A3B8">Auto-Conflict Scheduling &amp; Single Checkout</text>
 
       <!-- Mockup UI Elements / Dashboard Preview -->
       <g transform="translate(0, 140)">

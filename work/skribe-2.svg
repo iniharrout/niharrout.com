@@ -42,7 +42,7 @@
       <text x="16" y="17" font-family="monospace" font-size="11" font-weight="700" fill="#2563eb">CASE STUDY</text>
       
       <text x="0" y="70" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="32" font-weight="800" fill="#FFFFFF">Cross-Platform Ecosystem Connector</text>
-      <text x="0" y="105" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="500" fill="#94A3B8">Two-Way Sync: Google Chat & Microsoft 365</text>
+      <text x="0" y="105" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="500" fill="#94A3B8">Two-Way Sync: Google Chat &amp; Microsoft 365</text>
 
       <!-- Mockup UI Elements / Dashboard Preview -->
       <g transform="translate(0, 140)">
