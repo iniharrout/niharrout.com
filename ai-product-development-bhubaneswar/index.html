@@ -111,11 +111,11 @@
   <link rel="stylesheet" href="/assets/hero-demo.css?v=hd8">
   <link rel="stylesheet" href="/assets/ai-theme.css?v=ai8">
 
-  <link rel="stylesheet" href="/assets/chrome.css?v=40">
+  <link rel="stylesheet" href="/assets/chrome.css?v=41">
   <script src="/assets/chrome.js?v=15" defer></script>
   <link rel="stylesheet" href="/assets/schedule-popup.css?v=sp3">
   <script src="/assets/schedule-popup.js?v=sp4" defer></script>
-  <link rel="stylesheet" href="/assets/primitives.css?v=p6">
+  <link rel="stylesheet" href="/assets/primitives.css?v=p7">
 </head>
 
 <body class="ed-page hero-demo ai-theme">
@@ -597,7 +597,7 @@
         <div class="ed-faqs">
           <details class="ed-faq" open><summary>How much does it cost to build a custom AI product or MVP in Bhubaneswar?</summary><div class="ed-faq-a">A production-ready AI MVP (such as an Enterprise RAG chatbot, custom document processing engine, or AI agent workflow) typically ranges between ₹2.5 Lakhs to ₹7 Lakhs ($3,000 - $8,500 USD). Large-scale enterprise AI software with custom fine-tuning, multi-agent pipelines, and multi-tenant billing ranges between ₹8 Lakhs to ₹20+ Lakhs. We offer fixed milestone pricing after an initial architecture review.</div></details>
           <details class="ed-faq"><summary>How do you prevent hallucinations in generative AI systems?</summary><div class="ed-faq-a">We implement multi-stage verification: strictly grounded Retrieval-Augmented Generation (RAG) with citation mapping, low-temperature prompt constraints, Guardrails (NeMo &amp; LlamaGuard), and self-reflection loops where the model audits its own response against the retrieved source passages before displaying it to the user.</div></details>
-          <details class="ed-faq"><summary>Is my proprietary company data safe from training public models?</summary><div class="ed-faq-a">Yes. We strictly use enterprise API endpoints (OpenAI Enterprise, AWS Bedrock, Anthropic Claude Commercial) which legally guarantee that your data is never used to train foundational models. For highly sensitive requirements (banking, defense, healthcare), we deploy private, self-hosted open-weight models (Llama 3, Mistral) inside your own dedicated cloud VPC.</div></details>
+          <details class="ed-faq"><summary>Is my proprietary company data safe from training public models?</summary><div class="ed-faq-a">Yes. We strictly use enterprise API endpoints (OpenAI Enterprise, AWS Bedrock, Anthropic Claude Commercial) whose enterprise terms commit that your data is not used to train foundation models. For highly sensitive requirements (banking, defense, healthcare), we deploy private, self-hosted open-weight models (Llama 3, Mistral) inside your own dedicated cloud VPC.</div></details>
           <details class="ed-faq"><summary>How fast can we launch an AI MVP?</summary><div class="ed-faq-a">Most AI MVPs are scoped, designed, built, benchmarked, and deployed in 4 to 8 weeks. We leverage modular backend accelerators (FastAPI, LangGraph, Vector DB adapters) so you don't spend months reinventing the wheel.</div></details>
           <details class="ed-faq"><summary>Can we meet in Bhubaneswar for an in-person AI discovery session?</summary><div class="ed-faq-a">Yes. We frequently meet founders, CTOs, and innovation heads across Bhubaneswar in Infocity, Patia, Chandrasekharpur, Jayadev Vihar, Saheed Nagar, and O-Hub. You can also book a virtual video session right away.</div></details>
         </div>
@@ -614,7 +614,7 @@
             <p>Share what you want to automate or build. We evaluate technical feasibility, model selection, token economics, and provide a clear PRD roadmap within 24 hours.</p>
             <ul class="contact-points">
               <li class="contact-point-item"><div class="contact-point-icon">–</div><div class="contact-point-text"><strong>Free 30-Min AI Feasibility Review:</strong><span>Identify the right model, vector strategy, and architectural trade-offs.</span></div></li>
-              <li class="contact-point-item"><div class="contact-point-icon">–</div><div class="contact-point-text"><strong>Standard NDA Included:</strong><span>Your business models, proprietary workflows, and data are protected with 100% confidentiality.</span></div></li>
+              <li class="contact-point-item"><div class="contact-point-icon">–</div><div class="contact-point-text"><strong>Standard NDA Included:</strong><span>Your business models, proprietary workflows, and data are kept confidential under NDA.</span></div></li>
               <li class="contact-point-item"><div class="contact-point-icon">–</div><div class="contact-point-text"><strong>Token Cost &amp; Latency Modeling:</strong><span>Exact calculation of expected inference costs so there are no cloud bill surprises.</span></div></li>
               <li class="contact-point-item"><div class="contact-point-icon">–</div><div class="contact-point-text"><strong>Bhubaneswar In-Person Leadership:</strong><span>Direct interaction with Nihar Ranjan Rout (AI Strategist &amp; Creuto Founder).</span></div></li>
             </ul>
@@ -635,7 +635,7 @@
                 <div class="form-group"><label for="f2">Estimated Budget Range</label><select class="form-select" id="f2" name="budget"><option value="₹2.5L - ₹5L ($3k - $6k)">₹2.5L - ₹5L ($3k - $6k)</option><option value="₹5L - ₹10L ($6k - $12k)">₹5L - ₹10L ($6k - $12k)</option><option value="₹10L - ₹25L+ ($12k - $30k+)">₹10L - ₹25L+ ($12k - $30k+)</option><option value="Enterprise / Undecided">Enterprise / Undecided</option></select></div>
                 <div class="form-group"><label for="f-details">Tell Us About Your AI Project &amp; Data Source</label><textarea class="form-textarea" id="f-details" name="details" placeholder="What task should the AI solve? What data do you have (PDFs, SQL, APIs)? Any specific models you prefer?" required></textarea></div>
               <button type="submit" class="cl-button -primary" style="width:100%; justify-content:center;">Submit For Free AI Feasibility &amp; Estimate <span>&rarr;</span></button>
-              <p class="loc-form-note">100% Confidentiality &amp; NDA Assured · Response in 24 Hours</p>
+              <p class="loc-form-note">Confidential, NDA available · Response in 24 Hours</p>
               <div class="loc-form-status" role="status" aria-live="polite"></div>
             </form>
           </div>
@@ -859,7 +859,7 @@
         "name": "Is my proprietary company data safe from training public models?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. We strictly use enterprise API endpoints which legally guarantee that your data is never used to train foundational models. For highly sensitive requirements, we deploy private, self-hosted open-weight models (Llama 3, Mistral) inside your own dedicated cloud VPC."
+          "text": "Yes. We strictly use enterprise API endpoints whose enterprise terms commit that your data is not used to train foundation models. For highly sensitive requirements, we deploy private, self-hosted open-weight models (Llama 3, Mistral) inside your own dedicated cloud VPC."
         }
       },
       {

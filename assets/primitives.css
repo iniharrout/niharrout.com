@@ -179,3 +179,6 @@ html body:not(#_) .tool-card-art { display: block; width: 88px; height: 88px; ma
 @media (max-width: 760px) {
   html body:not(#_) article table { display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
 }
+
+/* Top bar text stays white over page-level paragraph colours (the homepage styles every <p>). */
+html body:not(#_) .sc-topbar-note { margin: 0; font-size: 13px; line-height: 1; color: rgba(255, 255, 255, 0.92); }

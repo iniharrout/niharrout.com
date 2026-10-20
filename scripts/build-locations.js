@@ -301,7 +301,7 @@ function portfolioSection(c, svc) {
 
 const TESTIMONIALS = [
   ['Before Creuto, every department was running on its own disconnected spreadsheet. Nihar locked down our operational requirements in the PRD, and his team delivered a unified system that gave our management team real-time visibility for the first time.', 'Operations Director', 'Large-Scale Manufacturing Enterprise'],
-  ['Nihar is that rare breed of product leader who understands business levers just as well as software architecture. He stopped us from wasting budget on features our customers didn\'t want and delivered our marketplace ahead of our launch schedule.', 'Co-Founder', 'SkyOne Event Booking Marketplace'],
+  ['Nihar is that rare breed of product leader who understands business levers just as well as software architecture. He stopped us from wasting budget on features our customers didn\'t want and delivered our marketplace ahead of our launch schedule.', 'Co-Founder', 'SkyeOne Event Booking Marketplace'],
   ['Finding an engineering team that doesn\'t disappear or cut corners is rare. Creuto\'s in-house squad was disciplined … and launched our mobile apps cleanly to the App Store and Google Play.', 'Founder & CEO', 'Make My Look Beauty Platform']
 ];
 
@@ -739,7 +739,7 @@ function buildReference() {
 
   const html = head({
     title: 'Location pages: link reference | Nihar Ranjan Rout',
-    description: 'Internal reference listing every location landing page URL.',
+    description: 'Internal reference page listing every city and service location landing page URL on niharrout.com.',
     path: urlPath,
     noindex: true
   }) + `${header()}
@@ -833,7 +833,7 @@ function buildThankYou() {
 
   return head({
     title: 'Thank you | Nihar Ranjan Rout',
-    description: 'Your enquiry has been received. Nihar will reply within 24 hours.',
+    description: 'Thank you, your enquiry has been received. Nihar Ranjan Rout reads every message personally and replies within 24 hours.',
     path: '/thank-you',
     noindex: true
   }) + `${header()}

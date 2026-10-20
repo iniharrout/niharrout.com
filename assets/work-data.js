@@ -21,9 +21,9 @@ var portfolioProjects = [
     link: "/work/custom-erp-manufacturing"
   },
   {
-    title: "SkyOne: End-to-End Wedding & Event Booking Platform",
+    title: "SkyeOne: End-to-End Wedding & Event Booking Platform",
     slug: "sky1-event-booking",
-    client: "SkyOne",
+    client: "SkyeOne",
     industry: "Event Technology / Venue & Vendor Booking",
     tags: ["Consumer Marketplace", "Events", "Mobile"],
     description: "One app to book a venue and every vendor around it, no phone calls required.",

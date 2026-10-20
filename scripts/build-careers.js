@@ -1,11 +1,10 @@
 #!/usr/bin/env node
 /**
  * Generates the "Work with me" pages from scripts/careers/roles.js:
- *   work-with-me/index.html            listing: four role cards, a pop-up with details and the application form, FAQ
+ *   work-with-me/index.html            listing: four role cards (each links to its own page), hiring steps, FAQ
  *   work-with-me/<slug>/index.html     one page per role, with the full description, the form and JobPosting markup
  *
- * The role pages exist so each job has its own crawlable address (links, search results and Google Jobs need that);
- * the pop-up on the listing is a faster way to read the same content (assets/work-with-me.js).
+ * Every role has its own page so each job has a crawlable address for search results and Google Jobs.
  * Run through `node scripts/build-all.js`, which also stamps the shared header, footer, analytics and share tags.
  */
 const fs = require('fs');
@@ -14,7 +13,7 @@ const { POSTED, roles, faq } = require('./careers/roles');
 
 const ROOT = path.resolve(__dirname, '..');
 const OUT = path.join(ROOT, 'work-with-me');
-const { SITE, JS, esc, ARROW, ORG, head, foot, crumbs } = require('./careers/shell');
+const { SITE, esc, ARROW, ORG, head, foot, crumbs } = require('./careers/shell');
 const { doodle } = require('./site-data/doodles');
 
 // Doodle and card tint for each role (scripts/site-data/doodles.js).
@@ -28,29 +27,24 @@ const art = (slug) => (ROLE_ART[slug] || ['team', 'sky']);
 
 const chips = () => '<ul class="wwm-chips"><li>Remote</li><li>India</li><li>Full-time</li></ul>';
 
-function detail(role, level) {
-  const h = level;
-  const sub = level + 1;
-  return `<div class="wwm-detail">
-  <span class="wwm-d-art" aria-hidden="true">${doodle(art(role.slug)[0])}</span>
-  ${chips()}
-  <h${h} class="wwm-d-title"${level === 2 ? ' id="dlgTitle"' : ''}>${esc(role.title)}</h${h}>
-  <p class="wwm-d-sum">${esc(role.summary)}</p>
-  <div class="wwm-d-cols">
-    <section>
-      <h${sub}>What you’ll do</h${sub}>
+// The two lists on a role page: what the job involves and who fits it.
+function detail(role) {
+  return `<div class="wwm-d-cols">
+    <section class="wwm-d-card">
+      <span class="wwm-d-ico" aria-hidden="true">${doodle('roadmap', 'doodle', 'blue')}</span>
+      <h2>What you’ll do</h2>
       <ul>
 ${role.does.map((t) => `        <li>${esc(t)}</li>`).join('\n')}
       </ul>
     </section>
-    <section>
-      <h${sub}>Who I’m looking for</h${sub}>
+    <section class="wwm-d-card">
+      <span class="wwm-d-ico" aria-hidden="true">${doodle('senior', 'doodle', 'coral')}</span>
+      <h2>Who I’m looking for</h2>
       <ul>
 ${role.looks.map((t) => `        <li>${esc(t)}</li>`).join('\n')}
       </ul>
     </section>
-  </div>
-</div>`;
+  </div>`;
 }
 
 function form(roleValue) {
@@ -118,7 +112,7 @@ function listing() {
   ];
 
   const cards = roles.map((r, i) => `        <li>
-          <a class="wwm-rcard" href="/work-with-me/${r.slug}" data-slug="${r.slug}" data-apply="${esc(r.apply)}">
+          <a class="wwm-rcard" href="/work-with-me/${r.slug}">
             <span class="wwm-rcard-top" style="--tint:var(--d-${art(r.slug)[1]})" aria-hidden="true">${doodle(art(r.slug)[0])}<span class="wwm-rcard-no">0${i + 1}</span></span>
             <span class="wwm-rcard-body">
               <h3>${esc(r.title)}</h3>
@@ -128,30 +122,6 @@ function listing() {
           </a>
         </li>`).join('\n');
 
-  const templates = roles.map((r) => `<template id="tpl-${r.slug}">
-${detail(r, 2)}
-</template>`).join('\n');
-
-  const dialog = `<dialog class="wwm-dialog" id="roleDialog" aria-labelledby="dlgTitle">
-  <div class="wwm-dlg-shell">
-    <button class="wwm-dlg-x" type="button" data-close aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
-    <div class="wwm-pane" data-pane="details">
-      <div class="wwm-scroll" id="dlgBody"></div>
-      <div class="wwm-dlg-foot">
-        <button class="wwm-btn is-primary" type="button" data-apply-btn>Apply for this role ${ARROW}</button>
-        <a class="wwm-dlg-page" id="dlgPage" href="/work-with-me">Open as a full page</a>
-      </div>
-    </div>
-    <div class="wwm-pane" data-pane="form" hidden>
-      <div class="wwm-scroll">
-        <button class="wwm-back" type="button" data-back><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Back to the role</button>
-        <h2 class="wwm-dlg-h" id="dlgFormTitle">Apply</h2>
-        <p class="wwm-dlg-sub">Your application is sent to me directly.</p>
-        ${form('').replace(/\n/g, '\n        ')}
-      </div>
-    </div>
-  </div>
-</dialog>`;
 
   const faqHtml = faq.map(([q, a]) => `        <details class="wwm-q">
           <summary>${esc(q)}</summary>
@@ -219,10 +189,7 @@ ${faqHtml}
     </div>
   </section>
 </main>
-
-${dialog}
-${templates}
-` + foot([JS, '/assets/lead-forms.js?v=blue7']);
+` + foot();
 }
 
 // ---------- Role pages ----------
@@ -251,13 +218,24 @@ function rolePage(role) {
 
   return head({ title: role.seoTitle, description, canonical: url, graph }) + `
 <main id="top">
+  <section class="wwm-rp-hero" style="--tint:var(--d-${art(role.slug)[1]})">
+    <div class="wwm-wrap wwm-rp-hero-grid">
+      <div>
+        <nav class="wwm-crumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a><span aria-hidden="true">/</span><a href="/work-with-me">Work with me</a><span aria-hidden="true">/</span><span aria-current="page">${esc(role.title)}</span>
+        </nav>
+        ${chips()}
+        <h1 class="wwm-d-title">${esc(role.title)}</h1>
+        <p class="wwm-d-sum">${esc(role.summary)}</p>
+        <div class="wwm-cta-row"><a class="wwm-btn is-primary" href="#apply">Apply for this role ${ARROW}</a><a class="wwm-btn" href="/work-with-me">All open roles</a></div>
+      </div>
+      <div class="wwm-rp-art" aria-hidden="true">${doodle(art(role.slug)[0])}</div>
+    </div>
+  </section>
   <div class="wwm-wrap wwm-rp">
-    <nav class="wwm-crumbs" aria-label="Breadcrumb">
-      <a href="/">Home</a><span aria-hidden="true">/</span><a href="/work-with-me">Work with me</a><span aria-hidden="true">/</span><span aria-current="page">${esc(role.title)}</span>
-    </nav>
     <div class="wwm-rp-grid">
       <article>
-        ${detail(role, 1).replace(/\n/g, '\n        ')}
+        ${detail(role).replace(/\n/g, '\n        ')}
         <p class="wwm-rp-note">This is a full-time remote role open to people based anywhere in India. Applications are sent to me directly, and I get in touch if one looks like a fit.</p>
       </article>
       <aside class="wwm-card" id="apply" aria-labelledby="apply-title">
@@ -275,7 +253,7 @@ ${others}
     </section>
   </div>
 </main>
-` + foot([JS, '/assets/lead-forms.js?v=blue7']);
+` + foot(['/assets/lead-forms.js?v=blue7']);
 }
 
 fs.mkdirSync(OUT, { recursive: true });

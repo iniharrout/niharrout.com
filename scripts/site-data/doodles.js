@@ -181,11 +181,25 @@ const ALIAS = {
   'gaming-sports': 'gaming', 'social-networking': 'social', 'fitness-wellness': 'fitness', saas: 'saas-industry',
 };
 
+// Colour tones. Each doodle's main fill (--d-blue) and pale blob (--d-sky) are swapped per tone,
+// with the warm accents adjusted so they stay visible. Doodles take tones in turn as they are listed
+// above, so neighbours in a group (services, capabilities, industries) always differ.
+const TONES = {
+  blue: '',
+  coral: '--d-blue:#ff8f6b;--d-sky:#ffeee6;--d-coral:#ffc94d',
+  yellow: '--d-blue:#ffc94d;--d-sky:#fff4d6;--d-yellow:#7ea6ff',
+  violet: '--d-blue:#a78bfa;--d-sky:#f1ecff',
+  green: '--d-blue:#5fd39a;--d-sky:#e6f6ee',
+};
+const ORDER = ['blue', 'coral', 'yellow', 'violet', 'green'];
+const toneOf = (name) => ORDER[Math.max(0, Object.keys(D).indexOf(ALIAS[name] || name)) % ORDER.length];
+const toneStyle = (tone) => (TONES[tone] ? ` style="${TONES[tone]}"` : '');
+
 const has = (name) => Boolean(D[ALIAS[name] || name]);
-function doodle(name, cls = 'doodle') {
+function doodle(name, cls = 'doodle', tone = toneOf(name)) {
   const body = D[ALIAS[name] || name];
   if (!body) throw new Error('unknown doodle: ' + name);
-  return `<svg class="${cls}" viewBox="0 0 160 160" aria-hidden="true" focusable="false">${body}</svg>`;
+  return `<svg class="${cls}" viewBox="0 0 160 160" aria-hidden="true" focusable="false"${toneStyle(tone)}>${body}</svg>`;
 }
 
 // ---- blog cover scenes: a main doodle and a smaller supporting one on a soft panel (480 x 300 canvas)
@@ -212,9 +226,9 @@ function scene(slug, cls = 'doodle-scene') {
     `<rect x="0" y="0" width="480" height="300" rx="24" ${f(tone)}/>` +
     `<g opacity=".55">${[0, 1, 2, 3, 4, 5, 6, 7].map((c) => [0, 1, 2, 3, 4].map((r) => `<circle cx="${40 + c * 57}" cy="${34 + r * 58}" r="2.2" fill="var(--d-ink)" opacity=".18"/>`).join('')).join('')}</g>` +
     `<circle cx="202" cy="152" r="106" fill="var(--d-paper)" opacity=".7"/>` +
-    `<g transform="translate(78 28) scale(1.55)">${body(main)}</g>` +
-    `<g transform="translate(300 128) scale(.95)">${body(side)}</g>` +
+    `<g transform="translate(78 28) scale(1.55)"${toneStyle(toneOf(main))}>${body(main)}</g>` +
+    `<g transform="translate(300 128) scale(.95)"${toneStyle(toneOf(side) === toneOf(main) ? 'coral' : toneOf(side))}>${body(side)}</g>` +
     `<g>${spark(52, 60, 9)}${spark(430, 52, 8)}${star(440, 250, 11)}</g></svg>`;
 }
 
-module.exports = { doodle, has, scene, BLOG_ART, names: Object.keys(D), D };
+module.exports = { doodle, has, scene, BLOG_ART, TONES, names: Object.keys(D), D };

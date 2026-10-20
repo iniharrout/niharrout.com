@@ -157,7 +157,7 @@ module.exports = {
       ['B2B SaaS product development', 'Multi-tenant architecture, billing, admin consoles and onboarding.'],
       ['Workflow & approval automation', 'Multi-level approvals and audit logs replacing email and paper sign-offs.'],
       ['Customer, vendor & partner portals', 'Secure portals for orders, invoices and documents tied to your back office.'],
-      ['Marketplace & booking platforms', 'Vendor onboarding, availability, payments and payouts, proven on SkyOne.'],
+      ['Marketplace & booking platforms', 'Vendor onboarding, availability, payments and payouts, proven on SkyeOne.'],
       ['Integrations & data pipelines', 'Tally, Zoho, SAP, Salesforce, GST and payment gateways connected reliably.'],
       ['Dashboards & business intelligence', 'Live operational dashboards replacing month-end spreadsheet consolidation.'],
       ['Legacy modernisation & support', 'Staged re-platforming and maintenance plans with response-time commitments.']

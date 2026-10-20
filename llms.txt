@@ -3,7 +3,7 @@
 > Nihar Ranjan Rout is the Founder and CEO of Creuto, a founder-led product and engineering company based in Bhubaneswar, India. He has 8+ years in product management and has led 50+ products: mobile apps, web apps, custom software and ERP, and AI products. Work is done by an in-house team, starts with a PRD and a clickable prototype, and uses fixed milestones. Client code lives in the client's own accounts from day one. Creuto is an OpenAI Select Partner and has a 5.0 rating from 16 verified Clutch reviews.
 
 ## Start here
-- [Homepage](https://www.niharrout.com/): Nihar Ranjan Rout is the founder and CEO of Creuto in Bhubaneswar, India. He and his team build mobile apps, web apps and AI products, from PRD to launch.
+- [Homepage](https://www.niharrout.com/): Nihar Ranjan Rout is the founder and CEO of Creuto in Bhubaneswar, India, building mobile apps, web apps and AI products from PRD to launch.
 - [About Nihar Ranjan Rout](https://www.niharrout.com/about): Meet Nihar Ranjan Rout, founder of Creuto: 8+ years in product management and a product-first approach to building B2B software with an in-house team.
 - [Company fact sheet](https://www.niharrout.com/about/facts): Verified facts about Creuto and founder Nihar Ranjan Rout: services, process, pricing model, code ownership, warranty, location and credentials in one page.
 - [Services overview](https://www.niharrout.com/services): Mobile app development, custom software and ERP, enterprise AI workflows and product strategy PRDs from Nihar Ranjan Rout and the Creuto team.
@@ -62,7 +62,7 @@
 - [FlashNow Quick-Commerce App: Case Study](https://www.niharrout.com/work/flashnow): 10-15 minute delivery powered by neighborhood stores, not warehouses. How Creuto built the FlashNow quick-commerce platform.
 - [Make My Look Salon Booking App: Case Study](https://www.niharrout.com/work/make-my-look): Took an offline beauty industry online for customers and salon owners. How Creuto built the Make My Look booking marketplace.
 - [Skribe Unified Team Chat: Case Study](https://www.niharrout.com/work/skribe): One chat layer across Slack-style channels, Google Chat, Google Workspace and Microsoft 365. How Creuto built Skribe.
-- [SkyOne Wedding & Event Booking App: Case Study](https://www.niharrout.com/work/sky1-event-booking): One app to book a venue and every vendor around it, with no phone calls. How Creuto built the SkyOne wedding and event booking platform.
+- [SkyeOne Wedding & Event Booking App: Case Study](https://www.niharrout.com/work/sky1-event-booking): One app to book a venue and every vendor around it, with no phone calls. How Creuto built the SkyeOne wedding and event booking platform.
 
 ## Costs and tools
 - [Software Project Costs & Investment Guide 2026](https://www.niharrout.com/project-costs): Transparent cost ranges, timelines and cost drivers for ERPs, marketplaces, delivery apps and SaaS platforms, grounded in real production projects.

@@ -314,3 +314,22 @@ html.wwm-lock { overflow: hidden; }
   .wwm-perk-list, .wwm-step-list { grid-template-columns: 1fr; }
 }
 .wwm-expect-art { display: block; width: 76px; height: 76px; margin: -6px 0 6px -6px; }
+
+/* ---------- Role pages: tinted hero band with the role's doodle, detail cards beside the sticky form ---------- */
+.wwm-rp-hero { padding: 36px 0 56px; background: linear-gradient(180deg, var(--tint, var(--d-sky)) 0%, #fff 100%); border-bottom: 1px solid var(--rule); }
+.wwm-rp-hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 48px; align-items: center; }
+.wwm-rp-hero .wwm-chips { margin-top: 28px; }
+.wwm-rp-hero .wwm-d-title { font-size: clamp(40px, 5.6vw, 64px); letter-spacing: -0.03em; }
+.wwm-rp-hero .wwm-d-sum { max-width: 56ch; margin-top: 14px; font-size: 18px; color: var(--ink-2); }
+.wwm-rp-hero .wwm-cta-row { margin-top: 28px; }
+.wwm-rp-art { width: 300px; height: 300px; }
+.wwm-rp { padding-top: 0; }
+.wwm-rp .wwm-d-cols { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; }
+.wwm-d-card { padding: 26px 28px; border: 1px solid var(--rule); border-radius: 20px; background: #fff; }
+.wwm-d-ico { display: block; width: 64px; height: 64px; margin: -6px 0 6px -6px; }
+.wwm-d-card h2 { margin-bottom: 0; font-family: var(--display); font-weight: 500; font-size: 24px; letter-spacing: -0.015em; text-transform: none; color: var(--ink); }
+.wwm-d-card ul { margin-top: 14px; }
+@media (max-width: 860px) {
+  .wwm-rp-hero-grid { grid-template-columns: 1fr; gap: 0; }
+  .wwm-rp-art { order: -1; width: 120px; height: 120px; margin: 8px 0 -8px -6px; }
+}

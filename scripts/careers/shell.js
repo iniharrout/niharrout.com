@@ -3,8 +3,7 @@
  * header/footer markers and the closing scripts. Used by scripts/build-careers.js and scripts/build-work-index.js.
  */
 const SITE = 'https://www.niharrout.com';
-const CSS = '/assets/work-with-me.css?v=w12';
-const JS = '/assets/work-with-me.js?v=w5';
+const CSS = '/assets/work-with-me.css?v=w13';
 
 const esc = (t) => String(t).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const ld = (obj) => JSON.stringify(obj, null, 2).replace(/<\//g, '<\\/');
@@ -48,7 +47,7 @@ function head({ title, description, canonical, graph }) {
   <script type="application/ld+json">
 ${ld({ '@context': 'https://schema.org', '@graph': graph })}
   </script>
-  <link rel="stylesheet" href="/assets/chrome.css?v=40">
+  <link rel="stylesheet" href="/assets/chrome.css?v=41">
   <script src="/assets/chrome.js?v=15" defer></script>
 </head>
 <body class="wwm">
@@ -71,4 +70,4 @@ const crumbs = (items) => ({
 });
 
 
-module.exports = { SITE, CSS, JS, esc, ld, svg, ARROW, ORG, head, foot, crumbs };
+module.exports = { SITE, CSS, esc, ld, svg, ARROW, ORG, head, foot, crumbs };
