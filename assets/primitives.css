@@ -147,3 +147,22 @@ button, input, select, textarea { font-family: inherit; }
 .doodle-wrap { display: block; flex: none; width: 76px; height: 76px; }
 html body:not(#_) .doodle-slot { display: inline-flex; flex: none; padding: 0; border: 0; border-radius: 0; background: none; box-shadow: none; }
 html body:not(#_) .doodle-slot > .doodle { width: 100%; height: 100%; }
+
+/* ================= Readability =================
+   Nothing readable goes below 12px, and secondary text stays at or above 4.5:1 contrast on white. */
+html body:not(#_) :is(.ed-logos-label, .service-card-tag, .work-outcome-badge, .work-category-tag, .work-tech-tags li,
+  .blog-tag, .tag-pill, .meta-lbl, .ed-tag, .hero-oa-text b, .step-tab-num, .step-tab-label, .calc-step-num,
+  .calc-option-tag, .sidebar-eyebrow, .sidebar-standard-badge, .sidebar-summary-title, .summary-edit-link, .team-chip) {
+  font-size: 12px;
+}
+html body:not(#_) :is(.hero-proofline span, .work-tech-tags li) { color: #475569; }
+
+/* ================= Touch targets (phones) =================
+   Controls people tap on purpose get 44px; dense link lists get at least 24px (WCAG 2.5.8). */
+@media (max-width: 760px) {
+  html body:not(#_) :is(.sc-call, .sc-wa, .sc-cta) { min-height: 44px; }
+  html body:not(#_) :is(.sc-call, .sc-wa) { min-width: 44px; }
+  html body:not(#_) :is(.link-arrow, .service-card-action, .testi-case-link, .blog-filter-btn) { display: inline-flex; align-items: center; min-height: 44px; }
+  html body:not(#_) :is(.sc-footer, footer) li a { display: inline-block; padding: 5px 0; }
+  html body:not(#_) .wwm-crumbs a { display: inline-block; padding: 6px 0; }
+}

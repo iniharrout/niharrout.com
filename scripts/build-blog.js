@@ -147,7 +147,7 @@ ${p.keywords.map((k) => `  <meta property="article:tag" content="${esc(k)}">`).j
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&amp;family=Inter:wght@400;500;600;700&amp;display=swap">
-  <link rel="stylesheet" href="/assets/design-system.css?v=blue7">
+  <link rel="stylesheet" href="/assets/design-system.css?v=blue8">
   <link rel="stylesheet" href="/assets/blog-post.css?v=bp4">
 </head>
 
