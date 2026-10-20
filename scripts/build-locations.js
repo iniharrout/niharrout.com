@@ -302,7 +302,7 @@ function portfolioSection(c, svc) {
 const TESTIMONIALS = [
   ['Before Creuto, every department was running on its own disconnected spreadsheet. Nihar locked down our operational requirements in the PRD, and his team delivered a unified system that gave our management team real-time visibility for the first time.', 'Operations Director', 'Large-Scale Manufacturing Enterprise'],
   ['Nihar is that rare breed of product leader who understands business levers just as well as software architecture. He stopped us from wasting budget on features our customers didn\'t want and delivered our marketplace ahead of our launch schedule.', 'Co-Founder', 'SkyOne Event Booking Marketplace'],
-  ['Finding an engineering team that doesn\'t disappear or cut corners is rare. Creuto\'s in-house squad was disciplined, delivered bi-weekly demos like clockwork, and launched our mobile apps cleanly to the App Store and Google Play.', 'Founder & CEO', 'Make My Look Beauty Platform']
+  ['Finding an engineering team that doesn\'t disappear or cut corners is rare. Creuto\'s in-house squad was disciplined … and launched our mobile apps cleanly to the App Store and Google Play.', 'Founder & CEO', 'Make My Look Beauty Platform']
 ];
 
 function testimonialsSection(c, svcKey) {
