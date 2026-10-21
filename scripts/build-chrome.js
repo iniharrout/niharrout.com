@@ -16,8 +16,8 @@ const ROOT = path.resolve(__dirname, '..');
 const SKIP = new Set(['node_modules', '.git', '.claude', 'scripts', 'partials', 'api']);
 const header = fs.readFileSync(path.join(ROOT, 'partials/header.html'), 'utf8').trim();
 const footer = fs.readFileSync(path.join(ROOT, 'partials/footer.html'), 'utf8').trim();
-const CSS = '<link rel="stylesheet" href="/assets/chrome.css?v=45">';
-const JS = '<script src="/assets/chrome.js?v=17" defer></script>';
+const CSS = '<link rel="stylesheet" href="/assets/chrome.css?v=48">';
+const JS = '<script src="/assets/chrome.js?v=18" defer></script>';
 // Book a Call pop-up (Google Calendar appointment page inside a dialog), stamped on every page.
 const SP_CSS = '<link rel="stylesheet" href="/assets/schedule-popup.css?v=sp3">';
 const SP_JS = '<script src="/assets/schedule-popup.js?v=sp5" defer></script>';

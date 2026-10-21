@@ -180,64 +180,95 @@ const ind = (slug) => { const i = industries.find((x) => x.slug === slug); retur
 const sub = (fam, key) => [`${families.find((f) => f.key === fam).path}/${key}`, esc(subs[key].name)];
 
 const PHONE = '+91 76088 44995';
+const WA = 'https://wa.me/917608844995?text=Hi%20Nihar%2C%20I%20found%20your%20website%20and%20I%27m%20interested%20in%20discussing%20a%20project.';
+const ARR = '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const UP = '<svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 const footer = `<footer class="sc-footer">
-  <div class="sc-foot-band">
-    <div class="sc-wrap sc-foot-band-in">
-      <div>
-        <p class="sc-foot-eyebrow">Free 30-minute strategy call</p>
-        <h2>Have a product in mind? Let&rsquo;s scope it together.</h2>
-        <p>Talk to the founder directly. You leave with a clear read on scope and budget, and a written proposal within 24 hours.</p>
-      </div>
+  <div class="sc-wrap">
+    <div class="sc-foot-cta">
+      <p class="sc-foot-eyebrow">Free 30-minute strategy call</p>
+      <h2>Have a product in mind? Let&rsquo;s scope it together.</h2>
+      <p>Talk to the founder directly. You leave with a clear read on scope and budget, and a written proposal within 24 hours.</p>
       <div class="sc-foot-top-actions">
-        <a class="sc-foot-btn is-primary" href="${BOOK}" target="_blank" rel="noopener" data-book="true"><span>Book a free strategy call</span><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <a class="sc-foot-btn" href="https://wa.me/917608844995?text=Hi%20Nihar%2C%20I%20found%20your%20website%20and%20I%27m%20interested%20in%20discussing%20a%20project." target="_blank" rel="noopener"><span>Message on WhatsApp</span></a>
+        <a class="sc-foot-btn is-primary" href="${BOOK}" target="_blank" rel="noopener" data-book="true"><span>Book a free strategy call</span>${ARR}</a>
+        <a class="sc-foot-btn" href="${WA}" target="_blank" rel="noopener"><span>Message on WhatsApp</span></a>
       </div>
     </div>
   </div>
 
-  <div class="sc-wrap">
-    <div class="sc-foot-grid">
-      <div class="sc-foot-brand">
-        <a class="sc-brand" href="/" aria-label="Nihar Ranjan Rout, home"><span class="sc-brand-text">nihar<span class="sc-dot">.</span></span></a>
-        <p>Nihar Ranjan Rout is the founder and CEO of Creuto, a founder-led product and engineering company. Mobile apps, web apps, custom software and AI products, built from a clear PRD to launch with a senior in-house team.</p>
-        <div class="sc-foot-badges">
-          <a class="sc-badge" href="/blog/openai-select-partner"><img src="/assets/openai-symbol.png" alt="" width="20" height="20" loading="lazy" decoding="async"><span><strong>OpenAI</strong>Select Partner</span></a>
-          <a class="sc-badge" href="https://clutch.co/profile/creuto" target="_blank" rel="noopener"><span class="sc-badge-star" aria-hidden="true">&#9733;</span><span><strong>5.0 on Clutch</strong>16 verified reviews</span></a>
+  <div class="sc-foot-body">
+    <div class="sc-wrap">
+      <div class="sc-foot-intro">
+        <div class="sc-foot-brand">
+          <a class="sc-brand" href="/" aria-label="Nihar Ranjan Rout, home"><span class="sc-brand-text">nihar<span class="sc-dot">.</span></span></a>
+          <p>Founder and CEO of Creuto, a founder-led product and engineering company. Mobile apps, web apps, custom software and AI products, built from a clear PRD to launch, with you talking to me directly the whole way.</p>
+          <div class="sc-foot-badges">
+            <a class="sc-badge" href="/blog/openai-select-partner"><img src="/assets/openai-symbol.png" alt="" width="20" height="20" loading="lazy" decoding="async"><span><strong>OpenAI</strong>Select Partner</span></a>
+            <a class="sc-badge" href="https://clutch.co/profile/creuto" target="_blank" rel="noopener"><span class="sc-badge-star" aria-hidden="true">&#9733;</span><span><strong>5.0 on Clutch</strong>16 verified reviews</span></a>
+          </div>
+          <div class="sc-foot-social">${socialRow}</div>
         </div>
-        <ul class="sc-foot-contact">
-          <li>${glyph('mail', 'sc-fc-ico')}<a href="mailto:me@niharrout.com">me@niharrout.com</a></li>
-          <li>${glyph('phone', 'sc-fc-ico')}<a href="tel:+917608844995" data-reveal-phone="${PHONE}"><span data-phone-text>Call me</span></a></li>
-          <li>${glyph('calendar', 'sc-fc-ico')}<a href="/book">Book a free 30-minute call</a></li>
-          <li>${glyph('pin', 'sc-fc-ico')}<span>Bhubaneswar, Odisha, India</span></li>
-        </ul>
-        <div class="sc-foot-social">${socialRow}</div>
+        <div class="sc-foot-card">
+          <p class="sc-foot-label">Not ready for a call?</p>
+          <h3>Estimate your app&rsquo;s cost and timeline in two minutes.</h3>
+          <p>Pick your platforms and features to see an estimated budget and timeline, then read the guides at your own pace.</p>
+          <div class="sc-foot-card-row">
+            <a class="sc-foot-card-btn" href="/tools/app-cost-calculator">Open the calculator ${ARR}</a>
+            <a class="sc-foot-card-mail" href="/blog">Read the guides</a>
+          </div>
+        </div>
       </div>
-      <div class="sc-foot-cols">${column(
-    group('Services', [...families.map((f) => [f.path, esc(f.name)]), ['/services', 'All services']]),
-  )}${column(
-    group('Popular services', [sub('custom', 'custom-erp-development'), sub('mobile', 'ios-app-development'), sub('mobile', 'android-app-development'), sub('mobile', 'react-native-app-development'), sub('startup', 'mvp-development'), sub('ai', 'ai-development')]),
-    group('Free tools', [['/tools/app-cost-calculator', 'App Cost Calculator'], ['/tools/startup-name-generator', 'Startup Name Generator'], ['/tools/linkedin-text-formatter', 'LinkedIn Text Formatter']]),
-  )}${column(
-    group('Industries', [...['healthcare', 'fintech', 'ecommerce', 'logistics', 'education', 'real-estate', 'manufacturing', 'saas'].map(ind), ['/industries', 'All industries']]),
-  )}${column(
-    group('Company', [['/about', 'About Nihar &amp; Creuto'], ['/work', 'Case studies'], ['/work-with-me', 'Careers'], ['/about/facts', 'Company fact sheet'], ['https://creuto.com', 'Creuto.com']]),
-    group('Resources', [['/blog', 'Blog &amp; Guides'], ['/project-costs', 'Project Costs Guide'], ['/technology', 'Technology Stack'], ['/b2b-software-development-for-startups', 'B2B Startup Playbook']]),
-  )}${column(
-    group('Locations', [['/mobile-app-development-bhubaneswar', 'Bhubaneswar'], ['/locations/bangalore', 'Bangalore'], ['/locations/hyderabad', 'Hyderabad'], ['/locations/pune', 'Pune'], ['/locations/delhi-ncr', 'Delhi NCR'], ['/locations', 'All locations']]),
-  )}
-      </div>
-    </div>
 
-    <div class="sc-foot-bottom">
-      <div>&copy; <span id="yr" data-year>2026</span> Nihar Ranjan Rout &middot; Founder &amp; CEO, Creuto. All rights reserved.</div>
-      <div class="sc-foot-legal">
-        <a href="/privacy-policy">Privacy Policy</a>
-        <a href="/terms">Terms of Service</a>
-        <a href="#cookie-settings" data-cookie-settings>Cookie settings</a>
-        <a href="/sitemap.xml">Sitemap</a>
-        <a href="#top">Back to top &uarr;</a>
+      <div class="sc-foot-links">${[
+    group('Services', [...families.map((f) => [f.path, esc(f.name)]), ['/services', 'All services']]),
+    group('Popular services', [sub('custom', 'custom-erp-development'), sub('mobile', 'ios-app-development'), sub('mobile', 'android-app-development'), sub('mobile', 'react-native-app-development'), sub('startup', 'mvp-development'), sub('ai', 'ai-development')]),
+    group('Industries', [...['healthcare', 'fintech', 'ecommerce', 'logistics', 'education', 'real-estate', 'manufacturing', 'saas'].map(ind), ['/industries', 'All industries']]),
+    group('Resources', [['/blog', 'Guides for founders'], ['/project-costs', 'Project costs guide'], ['/technology', 'Technology stack'], ['/b2b-software-development-for-startups', 'B2B startup playbook'], ['/tools/app-cost-calculator', 'App cost calculator'], ['/tools/startup-name-generator', 'Startup name generator'], ['/tools/linkedin-text-formatter', 'LinkedIn text formatter']]),
+    group('Company', [['/about', 'About Nihar &amp; Creuto'], ['/work', 'Case studies'], ['/work-with-me', 'Careers'], ['/about/facts', 'Company fact sheet'], ['/book', 'Book a call'], ['https://creuto.com', 'Creuto.com']]),
+  ].join('')}
+      </div>
+
+      <div class="sc-foot-places">
+        <div class="sc-foot-places-head">
+          <p class="sc-foot-label">Where I work</p>
+          <h3>Based in Bhubaneswar. Building with founders across India and abroad.</h3>
+        </div>
+        <div class="sc-place-row">
+          <a class="sc-place is-home" href="/mobile-app-development-bhubaneswar">
+            <span class="sc-place-top"><span class="sc-place-flag" aria-hidden="true">IN</span><span><strong>Bhubaneswar</strong><small>Odisha, India &middot; Home base</small></span></span>
+            <span class="sc-place-foot"><span class="sc-place-go">See the city page ${UP}</span><span class="sc-place-time"><i aria-hidden="true"></i><span data-foot-time>IST</span></span></span>
+          </a>
+${[['/locations/bangalore', 'Bangalore', 'Karnataka'], ['/locations/hyderabad', 'Hyderabad', 'Telangana'], ['/locations/pune', 'Pune', 'Maharashtra'], ['/locations/delhi-ncr', 'Delhi NCR', 'Delhi and nearby']].map(([href, city, region]) => `          <a class="sc-place" href="${href}"><span class="sc-place-top"><span class="sc-place-flag" aria-hidden="true">${glyph('pin')}</span><span><strong>${city}</strong><small>${region}</small></span></span><span class="sc-place-foot"><span class="sc-place-go">Learn more ${UP}</span></span></a>`).join('\n')}
+        </div>
+        <a class="sc-foot-more" href="/locations">All locations ${ARR}</a>
+      </div>
+
+      <div class="sc-foot-contacts">
+        <div class="sc-fc">
+          <span class="sc-fc-ico">${glyph('mail')}</span>
+          <div><p class="sc-foot-label">Email</p><a href="mailto:me@niharrout.com">me@niharrout.com</a><span>Projects, partnerships and anything else. I reply within 24 hours.</span></div>
+        </div>
+        <div class="sc-fc">
+          <span class="sc-fc-ico">${glyph('phone')}</span>
+          <div><p class="sc-foot-label">Call or WhatsApp</p><a href="tel:+917608844995" data-reveal-phone="${PHONE}"><span data-phone-text>Call me</span></a><span>Talk to me directly, or <a class="sc-fc-inline" href="${WA}" target="_blank" rel="noopener">message on WhatsApp</a>.</span></div>
+        </div>
+        <div class="sc-fc">
+          <span class="sc-fc-ico">${glyph('briefcase')}</span>
+          <div><p class="sc-foot-label">Careers</p><a href="/work-with-me">Open roles</a><span>Remote, full-time roles across India, working with me directly.</span></div>
+        </div>
+      </div>
+
+      <div class="sc-foot-bottom">
+        <div>&copy; <span id="yr" data-year>2026</span> Nihar Ranjan Rout &middot; Founder &amp; CEO, Creuto. All rights reserved.</div>
+        <div class="sc-foot-legal">
+          <a href="/privacy-policy">Privacy Policy</a>
+          <a href="/terms">Terms of Service</a>
+          <a href="#cookie-settings" data-cookie-settings>Cookie settings</a>
+          <a href="/sitemap.xml">Sitemap</a>
+        </div>
       </div>
     </div>
+    <div class="sc-foot-mark" aria-hidden="true">nihar<span>.</span></div>
   </div>
 </footer>
 `;

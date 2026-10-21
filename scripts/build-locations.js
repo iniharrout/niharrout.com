@@ -78,7 +78,7 @@ function head({ title, description, path: urlPath, ogType = 'website', graph, no
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&amp;family=Inter:wght@400;500;600;700&amp;display=swap">
-  <link rel="stylesheet" href="/assets/design-system.css?v=blue8">
+  <link rel="stylesheet" href="/assets/design-system.css?v=blue9">
   <link rel="stylesheet" href="/assets/location-pages.css?v=blue4">${theme ? '\n  <link rel="stylesheet" href="/assets/hero-demo.css?v=hd8">' : ''}${theme === 'ai' ? '\n  <link rel="stylesheet" href="/assets/ai-theme.css?v=ai8">' : ''}
 
 </head>
@@ -507,8 +507,8 @@ function buildCityHub(c) {
   const repSvcKey = SERVICE_KEYS[cities.indexOf(c) % SERVICE_KEYS.length];
   const repSvc = services[repSvcKey];
   const trail = [['Home', '/'], ['Locations', '/locations'], [c.name, urlPath]];
-  const title = `Software, App & AI Development in ${c.name} | Nihar Ranjan Rout`;
-  const description = `Mobile app, AI product and custom software development for ${c.name} businesses. Founder-led Creuto team, fixed-scope PRDs, code in your own GitHub. Free discovery call.`;
+  const title = `Software & App Development in ${c.name} | Nihar Ranjan Rout`;
+  const description = `Mobile app, AI and custom software development for ${c.name} businesses. Founder-led team, fixed-scope PRDs, code in your own GitHub. Free discovery call.`;
 
   const faqs = [
     [`Do you have an office in ${c.name}?`, `No. Creuto is based in Bhubaneswar, Odisha, and serves ${c.name} clients remotely with regular demos and shared test environments. We travel to ${c.name} for workshops and launches when in-person time is valuable, and quote any travel costs separately and up front.`],
@@ -627,7 +627,7 @@ ${ctaBand(`Building something in ${c.name}?`, 'Book a discovery call with Nihar.
 function buildIndex() {
   const urlPath = '/locations';
   const trail = [['Home', '/'], ['Locations', urlPath]];
-  const title = 'Software, App & AI Development Across India | Nihar Ranjan Rout';
+  const title = 'Software & App Development Across India | Nihar Ranjan Rout';
   const description = 'Creuto builds mobile apps, AI products and custom software for businesses across Odisha and India’s metros. Founder-led, fixed-scope, remote-first from Bhubaneswar.';
   const graph = [
     organizationSchema(),

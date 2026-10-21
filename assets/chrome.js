@@ -222,6 +222,15 @@
   document.querySelectorAll('[data-year]').forEach(function (el) {
     el.textContent = new Date().getFullYear();
   });
+
+  // footer: live local time in Bhubaneswar
+  var clocks = document.querySelectorAll('[data-foot-time]');
+  function tick() {
+    var t;
+    try { t = new Date().toLocaleTimeString('en-IN', { timeZone: 'Asia/Kolkata', hour: 'numeric', minute: '2-digit', hour12: true }); } catch (e) { return; }
+    clocks.forEach(function (el) { el.textContent = t.replace(/\s?(am|pm)$/i, function (m) { return ' ' + m.trim().toUpperCase(); }) + ' IST'; });
+  }
+  if (clocks.length) { tick(); setInterval(tick, 30000); }
 })();
 
 /**

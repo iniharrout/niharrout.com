@@ -94,6 +94,10 @@ module.exports = {
   Any two of these usually mean a proper system will pay for itself. Our article on <a href="/blog/does-your-business-need-software">whether your business needs software</a> goes deeper.
 </p>
 
+<p>
+  Planning an ERP budget? See the <a href="/project-costs/enterprise-erp">cost to build an enterprise ERP system</a>.
+</p>
+
 <h2 id="rollout">How to roll out without disruption</h2>
 <p>
   Introduce one module or department at a time, run the old and new systems side by side for a short period, and train the people who use it every day before switching over. This staged approach is what kept the operation running throughout our <a href="/work/custom-erp-manufacturing">manufacturing ERP</a> project.

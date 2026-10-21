@@ -77,6 +77,10 @@ module.exports = {
   A WhatsApp chatbot can answer common questions, check order status and book appointments, then hand over to a person when needed. If it answers from your documents, the approach in <a href="/blog/how-to-build-an-ai-chatbot-for-business">how to build an AI chatbot for your business</a> applies.
 </p>
 
+<p>
+  Building your own team messaging instead? See the <a href="/project-costs/team-communication-platform">cost to build a team communication platform</a>.
+</p>
+
 <h2 id="data">Customer data</h2>
 <p>
   Phone numbers and conversations are personal data. Record opt-in, store conversations securely, limit staff access and follow the <a href="/blog/dpdp-act-guide-for-app-founders">DPDP Act</a>.

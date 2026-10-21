@@ -8,6 +8,8 @@
 const fs = require('fs');
 const path = require('path');
 const { SITE, esc, ARROW, head, foot, crumbs } = require('./careers/shell');
+const R = require('./site-data/render');
+const G = require('./site-data/guides');
 
 const ROOT = path.resolve(__dirname, '..');
 const projects = new Function(`${fs.readFileSync(path.join(ROOT, 'assets/work-data.js'), 'utf8')}; return portfolioProjects;`)();
@@ -54,6 +56,9 @@ ${cards}
       </ul>
     </div>
   </section>
+
+${R.section('process', 'How every one of these projects ran', R.process(), 'wwm-sec-alt')}
+${R.section('guides', 'Planning something similar?', R.guides(['how-long-does-it-take-to-build-an-app', 'app-development-cost-factors-india', 'how-to-choose-a-software-development-company'].map(G.guide)))}
 
   <section class="wwm-end">
     <div class="wwm-wrap">

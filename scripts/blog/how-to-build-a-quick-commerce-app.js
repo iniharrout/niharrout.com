@@ -96,6 +96,10 @@ module.exports = {
   If your model includes many independent sellers rather than your own stores, read <a href="/blog/how-to-build-a-multi-vendor-marketplace-app">how to build a multi-vendor marketplace app</a>.
 </p>
 
+<p>
+  For a breakdown of where the budget goes, see the <a href="/project-costs/quick-commerce-delivery-app">cost to build a quick-commerce delivery app</a>.
+</p>
+
 <h2 id="launch">Launch small</h2>
 <ul>
   <li>One dark store or partner store.</li>

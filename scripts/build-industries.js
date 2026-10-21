@@ -69,7 +69,7 @@ ${work}
 ${R.section('services', 'Services we use', `<p class="wwm-lead">The services behind most ${esc(i.name)} projects:</p>${svc}`)}
 ${R.section('process', 'How an engagement works', R.process(), 'wwm-sec-alt')}
 ${R.section('faq', `Questions about ${i.name} software`, R.faqHtml(i.faq))}
-${R.section('guides', 'Guides on this topic', R.guides(G.forTheme(groups.find(([, list]) => list.includes(i.slug))[0])))}
+${R.section('guides', 'Guides on this topic', R.guides(G.forIndustry(i.slug, groups.find(([, list]) => list.includes(i.slug))[0])))}
 ${R.section('related', 'Related industries', R.pills(relatedOf(i.slug).map((s) => [bySlug[s].name, `/industries/${s}`])), 'wwm-sec-alt')}
 ${R.endBand()}
 </main>

@@ -134,7 +134,7 @@ function page(p) {
   const image = `${SITE}/assets/blog/${p.slug}-share.jpg`;
   const toc = tocFromBody(p.body);
   if (p.faq.length) toc.push(['faq', 'Frequently asked questions']);
-  const body = p.body.replace('{{cta}}', ctaBox(p.cta)).replace(/<table>/g, '<div class="reader-table" tabindex="0" role="region" aria-label="Table"><table>').replace(/<\/table>/g, '</table></div>');
+  const body = p.body.replace('{{cta}}', ctaBox(p.cta)).replace(/<div class="blog-callout">(\s*)<h4>([\s\S]*?)<\/h4>/g, '<div class="blog-callout">$1<p class="blog-callout-title">$2</p>').replace(/<table>/g, '<div class="reader-table" tabindex="0" role="region" aria-label="Table"><table>').replace(/<\/table>/g, '</table></div>');
   const words = stripTags(p.body + ' ' + p.lead + ' ' + p.faq.map((f) => f.join(' ')).join(' ')).split(' ').length;
   const alt = `${p.headline}: guide by Nihar Ranjan Rout`;
 
@@ -213,8 +213,8 @@ ${p.keywords.map((k) => `  <meta property="article:tag" content="${esc(k)}">`).j
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&amp;family=Inter:wght@400;500;600;700&amp;display=swap">
-  <link rel="stylesheet" href="/assets/design-system.css?v=blue8">
-  <link rel="stylesheet" href="/assets/blog-post.css?v=bp5">
+  <link rel="stylesheet" href="/assets/design-system.css?v=blue9">
+  <link rel="stylesheet" href="/assets/blog-post.css?v=bp6">
 </head>
 
 <body>
@@ -508,6 +508,8 @@ for (const t of TOPICS) {
 const homeFile = path.join(ROOT, 'index.html');
 let home = fs.readFileSync(homeFile, 'utf8');
 home = replaceRegion(home, 'blog:home', '      ' + homeBlock());
+home = home.replace(/Explore all (?:guides &amp; playbooks|\d+ guides)/, `Explore all ${entries.length} guides`);
+home = home.replace(/<p class="sec-sub">Plain-English guides on hiring a software team[^<]*<\/p>/, '<p class="sec-sub">Plain-English guides on app costs, MVPs, mobile and web, ERP and CRM, AI and industry products, written for founders and operators.</p>');
 fs.writeFileSync(homeFile, home);
 
 console.log(`blog: ${posts.length} guides built, blog index and homepage updated`);

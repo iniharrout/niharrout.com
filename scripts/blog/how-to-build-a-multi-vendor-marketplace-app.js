@@ -67,6 +67,10 @@ module.exports = {
   Everything else, such as loyalty, advanced search and vendor analytics, waits until the core flow works. Our <a href="/blog/product-scoping-framework-kill-feature-bloat">scoping framework</a> helps decide what waits, and <a href="/blog/cost-to-build-mvp-2026">the cost of an MVP</a> explains where budget goes.
 </p>
 
+<p>
+  For budget breakdowns, see the cost to build a <a href="/project-costs/multi-vendor-booking-marketplace">multi-vendor booking marketplace</a> and a <a href="/project-costs/two-sided-service-marketplace">two-sided service marketplace</a>.
+</p>
+
 <h2 id="trust">Trust and quality</h2>
 <p>
   Reviews only from real transactions, clear refund rules, verified vendors and fast support. Real-time availability matters too: in SkyeOne it removed the back-and-forth phone calls that slow event bookings.

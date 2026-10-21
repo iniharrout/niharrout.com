@@ -106,6 +106,11 @@ module.exports = {
   <li><strong>Review every milestone quickly</strong> so changes are caught while they are cheap.</li>
 </ol>
 
+<h2 id="examples">Cost breakdowns for common products</h2>
+<p>
+  To see how these factors add up for real product types, read the breakdowns for an <a href="/project-costs/enterprise-erp">enterprise ERP</a>, a <a href="/project-costs/quick-commerce-delivery-app">quick-commerce delivery app</a>, a <a href="/project-costs/multi-vendor-booking-marketplace">multi-vendor booking marketplace</a>, a <a href="/project-costs/two-sided-service-marketplace">two-sided service marketplace</a> and a <a href="/project-costs/team-communication-platform">team communication platform</a>.
+</p>
+
 <h2 id="compare-quotes">How to compare quotes fairly</h2>
 <ul>
   <li><strong>Same scope:</strong> send every company the same written feature list.</li>

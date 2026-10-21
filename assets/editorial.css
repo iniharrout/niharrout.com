@@ -2093,3 +2093,16 @@ a.blog-pager-step:hover { color: var(--accent); }
   .blog-pager { justify-content: center; }
   .blog-pager ol { order: -1; width: 100%; justify-content: center; }
 }
+
+/* Homepage hero on phones: a shorter photo so the name, headline and booking button sit on the first screen */
+@media (max-width: 991px) {
+  body.page-home .hero-section .wrap { padding-top: 20px; }
+  body.page-home .hero-split { gap: 22px; }
+  body.page-home .hero-portrait img { aspect-ratio: 16 / 10; object-position: 50% 22%; }
+  body.page-home .hero-name { display: none; }
+}
+@media (max-width: 991px) and (min-width: 600px) {
+  body.page-home .hero-portrait img { aspect-ratio: 16 / 8; }
+}
+/* headline: avoid a lone word at the end of a line */
+body.page-home .hero-title { text-wrap: balance; }

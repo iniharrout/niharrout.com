@@ -51,7 +51,7 @@ ${R.section('fit', 'When this is a good fit', R.fits('A good fit when', s.fits))
 ${R.section('process', 'How an engagement works', R.process(), 'wwm-sec-alt')}
 ${R.section('related', 'Related services and industries', `<div class="wwm-rel"><div><h3>More in ${esc(fam.name)}</h3>${R.pills(related)}</div>${inds.length ? `<div><h3>Industries we build this for</h3>${R.pills(inds)}</div>` : ''}</div>`)}
 ${R.section('faq', 'Questions about ' + s.name, R.faqHtml(s.faq))}
-${R.section('guides', 'Guides on this topic', R.guides(G.forFamily(fam.key)), 'wwm-sec-alt')}
+${R.section('guides', 'Guides on this topic', R.guides(G.forSub(key, fam.key)), 'wwm-sec-alt')}
 ${R.endBand()}
 </main>
 ` + foot();
