@@ -3,7 +3,7 @@
  * header/footer markers and the closing scripts. Used by scripts/build-careers.js and scripts/build-work-index.js.
  */
 const SITE = 'https://www.niharrout.com';
-const CSS = '/assets/work-with-me.css?v=w13';
+const CSS = '/assets/work-with-me.css?v=w14';
 
 const esc = (t) => String(t).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const ld = (obj) => JSON.stringify(obj, null, 2).replace(/<\//g, '<\\/');

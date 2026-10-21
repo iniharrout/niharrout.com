@@ -11,6 +11,7 @@ const fs = require('fs');
 const path = require('path');
 const { families, subs } = require('./site-data/services');
 const { doodle } = require('./site-data/doodles');
+const G = require('./site-data/guides');
 const { industries } = require('./site-data/industries');
 const { SITE, ORG, esc, head, foot, crumbs } = require('./careers/shell');
 const R = require('./site-data/render');
@@ -50,6 +51,7 @@ ${R.section('fit', 'When this is a good fit', R.fits('A good fit when', s.fits))
 ${R.section('process', 'How an engagement works', R.process(), 'wwm-sec-alt')}
 ${R.section('related', 'Related services and industries', `<div class="wwm-rel"><div><h3>More in ${esc(fam.name)}</h3>${R.pills(related)}</div>${inds.length ? `<div><h3>Industries we build this for</h3>${R.pills(inds)}</div>` : ''}</div>`)}
 ${R.section('faq', 'Questions about ' + s.name, R.faqHtml(s.faq))}
+${R.section('guides', 'Guides on this topic', R.guides(G.forFamily(fam.key)), 'wwm-sec-alt')}
 ${R.endBand()}
 </main>
 ` + foot();
@@ -76,6 +78,7 @@ ${R.section('approach', 'How we approach DevOps and cloud', R.prose(approach.fam
 ${R.section('services', 'Services in ' + fam.name, grid)}
 ${R.section('process', 'How an engagement works', R.process(), 'wwm-sec-alt')}
 ${R.section('faq', 'Questions about DevOps and cloud', R.faqHtml(p.faq))}
+${R.section('guides', 'Guides on this topic', R.guides(G.forFamily(fam.key)), 'wwm-sec-alt')}
 ${R.endBand()}
 </main>
 ` + foot();

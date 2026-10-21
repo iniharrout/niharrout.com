@@ -333,3 +333,10 @@ html.wwm-lock { overflow: hidden; }
   .wwm-rp-hero-grid { grid-template-columns: 1fr; gap: 0; }
   .wwm-rp-art { order: -1; width: 120px; height: 120px; margin: 8px 0 -8px -6px; }
 }
+
+/* ---------- Guides on this topic: the founder link under the guide cards ---------- */
+.wwm-founder { display: flex; align-items: center; gap: 16px; margin-top: 18px; padding: 16px 20px; border: 1px solid var(--rule); border-radius: 18px; background: #fff; color: var(--ink-2); text-decoration: none; font-size: 15px; line-height: 1.5; }
+.wwm-founder img { flex: none; width: 56px; height: 56px; border-radius: 50%; object-fit: cover; }
+.wwm-founder strong { display: block; color: var(--ink); font-size: 16px; }
+.wwm-founder svg { display: inline-block; width: 14px; height: 14px; vertical-align: -2px; margin-left: 4px; }
+.wwm-founder:hover { border-color: rgba(29, 78, 216, 0.4); }

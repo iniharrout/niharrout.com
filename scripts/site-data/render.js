@@ -63,6 +63,13 @@ ${faq.map(([q, a]) => `        <details class="wwm-q"><summary>${esc(q)}</summar
       </div>`;
 const faqLd = (faq) => ({ '@type': 'FAQPage', mainEntity: faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) });
 
+// Three guide cards and a link to the founder page: internal links that help search engines find
+// and value the guides and About page (see scripts/site-data/guides.js for which guides go where).
+const guides = (list) => `<ul class="wwm-cards wwm-cards-links">
+${list.map((g) => `        <li class="wwm-c"><a href="/blog/${g.slug}"><span class="wwm-c-n">${esc(g.tag)}</span><h3>${esc(g.title)}</h3><p>${esc(g.text)}</p><span class="wwm-c-go">Read the guide</span></a></li>`).join('\n')}
+      </ul>
+      <a class="wwm-founder" href="/about"><img src="/assets/nihar-avatar.jpg" width="56" height="56" alt="" loading="lazy" decoding="async"><span><strong>Who you&rsquo;ll work with: Nihar Ranjan Rout</strong>Founder &amp; CEO of Creuto. 8+ years in product, 50+ products shipped. Read the story ${ARROW}</span></a>`;
+
 const endBand = (title = 'Have a product in mind?', text = 'Tell me what you want to build. The first call is free, and you speak with me directly.') => `
   <section class="wwm-end">
     <div class="wwm-wrap">
@@ -76,4 +83,4 @@ const endBand = (title = 'Have a product in mind?', text = 'Tell me what you wan
     </div>
   </section>`;
 
-module.exports = { BOOK, bookBtn, hero, section, cards, fits, process, prose, pills, faqHtml, faqLd, endBand, crumbsHtml };
+module.exports = { BOOK, bookBtn, hero, section, cards, fits, process, prose, pills, faqHtml, faqLd, endBand, crumbsHtml, guides };
