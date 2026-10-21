@@ -224,12 +224,18 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&amp;family=Inter:wght@400;500;600;700&amp;display=swap">
   <link rel="stylesheet" href="/assets/design-system.css?v=blue8">
-  <link rel="stylesheet" href="/assets/blog-post.css?v=bp4">
+  <link rel="stylesheet" href="/assets/blog-post.css?v=bp5">
   <link rel="stylesheet" href="/assets/chrome.css?v=45">
   <script src="/assets/chrome.js?v=17" defer></script>
   <link rel="stylesheet" href="/assets/schedule-popup.css?v=sp3">
   <script src="/assets/schedule-popup.js?v=sp5" defer></script>
   <link rel="stylesheet" href="/assets/primitives.css?v=p8">
+  <!-- pwa -->
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="apple-mobile-web-app-title" content="Nihar">
+  <script src="/assets/pwa.js?v=pw1" defer></script>
+  <!-- /pwa -->
 </head>
 
 <body>
@@ -470,60 +476,95 @@
 </header>
 <!-- /chrome:header -->
 
-  <main id="top">
+  <div class="reader-progress" aria-hidden="true"><span></span></div>
+  <main id="top" class="reader">
     <article>
-      <header class="article-header">
-        <div class="wrap" style="max-width:920px;">
-          <nav class="article-breadcrumbs" aria-label="Breadcrumb">
-            <a href="/">Home</a>
-            <span>/</span>
-            <a href="/blog">Blog</a>
-            <span>/</span>
-            <span>Product Strategy</span>
-          </nav>
+      <header class="article-header reader-header">
+        <div class="reader-head">
+          <div class="reader-head-text">
+            <nav class="article-breadcrumbs" aria-label="Breadcrumb">
+              <a href="/">Home</a>
+              <span>/</span>
+              <a href="/blog">Blog</a>
+              <span>/</span>
+              <a href="/blog/topic/product">Product &amp; MVP</a>
+            </nav>
 
-          <div class="blog-category-badge" style="display:inline-block; margin-bottom:16px;">PRODUCT STRATEGY</div>
+            <div class="blog-category-badge">PRODUCT STRATEGY</div>
 
-          <h1 class="article-headline">MVP vs Prototype vs Proof of Concept: What Each One Is and Which to Build First</h1>
+            <h1 class="article-headline">MVP vs Prototype vs Proof of Concept: What Each One Is and Which to Build First</h1>
 
-          <p class="article-lead">A proof of concept, a prototype and an MVP answer three different questions: can it be built, will people understand it, and will people use and pay for it. Building the wrong one first is one of the most common ways founders waste their first budget.</p>
+            <p class="article-lead">A proof of concept, a prototype and an MVP answer three different questions: can it be built, will people understand it, and will people use and pay for it. Building the wrong one first is one of the most common ways founders waste their first budget.</p>
 
-          <div class="article-meta-bar">
-            <div class="article-author-info">
-              <img src="/assets/nihar-avatar.jpg" alt="Nihar Ranjan Rout" class="article-author-avatar" width="96" height="96" decoding="async">
-              <div>
-                <div class="article-author-name">Nihar Ranjan Rout</div>
-                <div class="article-author-title">Founder &amp; CEO, Creuto &middot; 8+ Years in Product Leadership</div>
+            <div class="article-meta-bar">
+              <div class="article-author-info">
+                <img src="/assets/nihar-avatar.jpg" alt="Nihar Ranjan Rout" class="article-author-avatar" width="96" height="96" decoding="async">
+                <div>
+                  <div class="article-author-name">Nihar Ranjan Rout</div>
+                  <div class="article-author-title">Founder &amp; CEO, Creuto</div>
+                </div>
+              </div>
+              <div class="reader-meta">
+                <time datetime="2026-10-22">October 22, 2026</time><span aria-hidden="true">&middot;</span><span>7 min read</span>
               </div>
             </div>
-            <div style="font-size:13.5px; color:var(--hs-text-03);">
-              <time datetime="2026-10-22">Published October 22, 2026</time> &middot; 7 min read
-            </div>
           </div>
+          <figure class="article-figure reader-cover">
+            <img src="/assets/blog/mvp-vs-prototype-vs-proof-of-concept-banner.jpg" alt="MVP vs Prototype vs Proof of Concept: What Each One Is and Which to Build First: guide by Nihar Ranjan Rout" width="1200" height="630" fetchpriority="high" decoding="async">
+          </figure>
         </div>
       </header>
 
-      <div class="article-body-container">
-        <figure class="article-figure">
-          <img src="/assets/blog/mvp-vs-prototype-vs-proof-of-concept-banner.jpg" alt="MVP vs Prototype vs Proof of Concept: What Each One Is and Which to Build First: guide by Nihar Ranjan Rout" width="1200" height="630" fetchpriority="high" decoding="async">
-        </figure>
+      <div class="reader-layout">
+        <aside class="reader-side" aria-label="Guide tools">
+          <div class="reader-side-inner">
+            <nav class="article-toc" aria-label="In this guide">
+              <p class="article-toc-title">In this guide</p>
+              <ol>
+                <li><a href="#comparison">The three side by side</a></li>
+                <li><a href="#poc">Proof of concept</a></li>
+                <li><a href="#prototype">Prototype</a></li>
+                <li><a href="#mvp">Minimum viable product</a></li>
+                <li><a href="#which-first">Which one should you build first?</a></li>
+                <li><a href="#example">A worked example</a></li>
+                <li><a href="#mistakes">Mistakes founders make</a></li>
+                <li><a href="#creuto">How we help</a></li>
+                <li><a href="#faq">Frequently asked questions</a></li>
+              </ol>
+            </nav>
+            <div class="reader-share">
+              <p class="article-toc-title">Share this guide</p>
+              <div class="reader-share-row">
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.niharrout.com%2Fblog%2Fmvp-vs-prototype-vs-proof-of-concept" target="_blank" rel="noopener" aria-label="Share on LinkedIn"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg></a>
+                <a href="https://x.com/intent/post?url=https%3A%2F%2Fwww.niharrout.com%2Fblog%2Fmvp-vs-prototype-vs-proof-of-concept&amp;text=MVP%20vs%20Prototype%20vs%20Proof%20of%20Concept%3A%20What%20to%20Build%20First" target="_blank" rel="noopener" aria-label="Share on X"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l16 16M20 4L4 20"/></svg></a>
+                <a href="https://wa.me/?text=MVP%20vs%20Prototype%20vs%20Proof%20of%20Concept%3A%20What%20to%20Build%20First%20https%3A%2F%2Fwww.niharrout.com%2Fblog%2Fmvp-vs-prototype-vs-proof-of-concept" target="_blank" rel="noopener" aria-label="Share on WhatsApp"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.5a8.5 8.5 0 0 1-12.6 7.4L3.5 20l1.2-3.7A8.5 8.5 0 1 1 20 11.5z"/><path d="M9 9.5c.3 1.8 2.2 3.8 4 4.2l1.2-1.1 1.8.9-.4 1.4c-3 .4-7.1-3.4-7.1-6.6l1.3-.6 1 1.7z"/></svg></a>
+                <button type="button" class="reader-copy" data-copy="https://www.niharrout.com/blog/mvp-vs-prototype-vs-proof-of-concept" aria-label="Copy link"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><span class="reader-copy-done" role="status"></span></button>
+              </div>
+            </div>
+            <a class="reader-side-cta" href="https://calendly.com/creuto/meet" target="_blank" rel="noopener" data-book="true">
+              <strong>Talk it through with Nihar</strong>
+              <span>Free 30-minute call &rarr;</span>
+            </a>
+          </div>
+        </aside>
 
-        <nav class="article-toc" aria-label="In this guide">
-          <p class="article-toc-title">In this guide</p>
-          <ol>
-            <li><a href="#comparison">The three side by side</a></li>
-            <li><a href="#poc">Proof of concept</a></li>
-            <li><a href="#prototype">Prototype</a></li>
-            <li><a href="#mvp">Minimum viable product</a></li>
-            <li><a href="#which-first">Which one should you build first?</a></li>
-            <li><a href="#example">A worked example</a></li>
-            <li><a href="#mistakes">Mistakes founders make</a></li>
-            <li><a href="#creuto">How we help</a></li>
-            <li><a href="#faq">Frequently asked questions</a></li>
-          </ol>
-        </nav>
+        <div class="reader-main">
+          <details class="reader-toc-mobile">
+            <summary>In this guide <span>9 sections</span></summary>
+            <ol>
+              <li><a href="#comparison">The three side by side</a></li>
+              <li><a href="#poc">Proof of concept</a></li>
+              <li><a href="#prototype">Prototype</a></li>
+              <li><a href="#mvp">Minimum viable product</a></li>
+              <li><a href="#which-first">Which one should you build first?</a></li>
+              <li><a href="#example">A worked example</a></li>
+              <li><a href="#mistakes">Mistakes founders make</a></li>
+              <li><a href="#creuto">How we help</a></li>
+              <li><a href="#faq">Frequently asked questions</a></li>
+            </ol>
+          </details>
 
-        <div class="prose">
+          <div class="prose">
 
 <p>
   Founders use these three words interchangeably, and that confusion costs money. Here is what each one is for, in plain terms.
@@ -537,7 +578,7 @@
 </div>
 
 <h2 id="comparison">The three side by side</h2>
-<table>
+<div class="reader-table" tabindex="0" role="region" aria-label="Table"><table>
   <thead><tr><th></th><th>Proof of concept</th><th>Prototype</th><th>MVP</th></tr></thead>
   <tbody>
     <tr><td>Question</td><td>Is it technically possible?</td><td>Is the flow clear?</td><td>Will people use and pay?</td></tr>
@@ -545,7 +586,7 @@
     <tr><td>Real code?</td><td>Partial, throwaway</td><td>Usually none</td><td>Yes, production-ready</td></tr>
     <tr><td>Output</td><td>Yes or no on feasibility</td><td>Feedback on the experience</td><td>Usage and revenue data</td></tr>
   </tbody>
-</table>
+</table></div>
 
 <h2 id="poc">Proof of concept</h2>
 <p>
@@ -608,34 +649,58 @@
   At <a href="https://creuto.com" target="_blank" rel="noopener">Creuto</a> we start every engagement by deciding which of the three a founder actually needs. Sometimes the right answer is a two-week prototype test, not a full build.
 </p>
 
-        </div>
+          </div>
 
-        <section class="article-faq" id="faq" aria-labelledby="faq-title">
-          <h2 id="faq-title">Frequently asked questions</h2>
-          <h3>What is the difference between a prototype and an MVP?</h3>
-          <p>A prototype shows how the product will look and flow, usually without real data or working code behind it. An MVP is a real, working product with the smallest set of features that lets users complete the core job.</p>
-          <h3>When do I need a proof of concept?</h3>
-          <p>When there is real technical uncertainty, for example whether an AI model can answer accurately from your documents or whether two systems can be integrated. If the technology is well proven, skip it.</p>
-          <h3>Can a prototype raise investment?</h3>
-          <p>A clickable prototype can help you explain the idea and gather early interest. Many investors will still want evidence of real usage, which an MVP provides.</p>
-          <h3>How long does each take?</h3>
-          <p>A proof of concept or clickable prototype can take days to a couple of weeks. A focused MVP takes longer because it is real software. At Creuto the first working version typically takes about 4 weeks.</p>
-          <h3>Should I always build an MVP?</h3>
-          <p>Not always first. If you are unsure whether users understand the idea, a prototype test is cheaper. If the technology is uncertain, a proof of concept comes first.</p>
-        </section>
+          <section class="article-faq" id="faq" aria-labelledby="faq-title">
+            <h2 id="faq-title">Frequently asked questions</h2>
+            <details class="reader-faq" open>
+              <summary><h3>What is the difference between a prototype and an MVP?</h3></summary>
+              <p>A prototype shows how the product will look and flow, usually without real data or working code behind it. An MVP is a real, working product with the smallest set of features that lets users complete the core job.</p>
+            </details>
+            <details class="reader-faq">
+              <summary><h3>When do I need a proof of concept?</h3></summary>
+              <p>When there is real technical uncertainty, for example whether an AI model can answer accurately from your documents or whether two systems can be integrated. If the technology is well proven, skip it.</p>
+            </details>
+            <details class="reader-faq">
+              <summary><h3>Can a prototype raise investment?</h3></summary>
+              <p>A clickable prototype can help you explain the idea and gather early interest. Many investors will still want evidence of real usage, which an MVP provides.</p>
+            </details>
+            <details class="reader-faq">
+              <summary><h3>How long does each take?</h3></summary>
+              <p>A proof of concept or clickable prototype can take days to a couple of weeks. A focused MVP takes longer because it is real software. At Creuto the first working version typically takes about 4 weeks.</p>
+            </details>
+            <details class="reader-faq">
+              <summary><h3>Should I always build an MVP?</h3></summary>
+              <p>Not always first. If you are unsure whether users understand the idea, a prototype test is cheaper. If the technology is uncertain, a proof of concept comes first.</p>
+            </details>
+          </section>
 
-        <div class="blog-cta-box blog-cta-end">
-          <h3>Ready to build your MVP?</h3>
-          <p>We turn ideas into a first working version, typically in about 4 weeks, starting from a clear PRD.</p>
-          <div class="blog-cta-actions">
-            <a href="https://calendly.com/creuto/meet" target="_blank" rel="noopener" data-book="true" class="cl-button -primary btn-book-call">Book a free strategy call <span style="margin-left:4px;">&rarr;</span></a>
-            <a href="/services/product-strategy-prd/mvp-development" class="blog-cta-link">See MVP development <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="blog-cta-box blog-cta-end">
+            <h3>Ready to build your MVP?</h3>
+            <p>We turn ideas into a first working version, typically in about 4 weeks, starting from a clear PRD.</p>
+            <div class="blog-cta-actions">
+              <a href="https://calendly.com/creuto/meet" target="_blank" rel="noopener" data-book="true" class="cl-button -primary btn-book-call">Book a free strategy call <span style="margin-left:4px;">&rarr;</span></a>
+              <a href="/services/product-strategy-prd/mvp-development" class="blog-cta-link">See MVP development <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+          </div>
+
+          <div class="article-author-card">
+            <img src="/assets/nihar-avatar.jpg" alt="Nihar Ranjan Rout" width="96" height="96" loading="lazy" decoding="async">
+            <div>
+              <h4>About Nihar Ranjan Rout</h4>
+              <p>Founder &amp; CEO of Creuto. Over the past 8+ years Nihar has led product strategy and engineering for 50+ products, including mobile apps, custom ERPs and B2B platforms. Creuto is an OpenAI Select Partner. He works directly with founders to turn an idea into a clear plan and a launched product.</p>
+              <a href="/about">More about Nihar</a> &middot; <a href="https://www.linkedin.com/in/iniharrout" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
           </div>
         </div>
+      </div>
 
-        <section class="related-posts" aria-labelledby="related-title">
+      <section class="related-posts reader-related" aria-labelledby="related-title">
+        <div class="reader-related-head">
           <h2 id="related-title">Keep reading</h2>
-          <div class="related-grid">
+          <a href="/blog/topic/product">More Product &amp; MVP guides <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="related-grid">
       <a class="related-card" href="/blog/cost-to-build-mvp-2026">
         <span class="related-art" aria-hidden="true"><svg class="doodle-scene" viewBox="0 0 480 300" aria-hidden="true" focusable="false"><rect x="0" y="0" width="480" height="300" rx="24" fill="var(--d-peach)"/><g opacity=".55"><circle cx="40" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="40" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="40" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="40" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="40" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="97" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="97" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="97" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="97" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="97" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="154" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="154" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="154" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="154" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="154" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="211" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="211" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="211" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="211" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="211" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="268" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="268" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="268" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="268" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="268" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="325" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="325" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="325" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="325" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="325" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="382" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="382" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="382" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="382" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="382" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="439" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="439" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="439" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="439" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="439" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/></g><circle cx="202" cy="152" r="106" fill="var(--d-paper)" opacity=".7"/><g transform="translate(78 28) scale(1.55)"><circle cx="80" cy="84" r="58" fill="var(--d-sky)"/><path d="M80 22c22 14 30 40 22 70H58C50 62 58 36 80 22Z" fill="var(--d-paper)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="80" cy="58" r="10" fill="var(--d-blue)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M58 92l-16 18 20-4M102 92l16 18-20-4" fill="var(--d-coral)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M68 98c0 16 6 26 12 34 6-8 12-18 12-34Z" fill="var(--d-yellow)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M124 27V41M117 34H131" fill="none" stroke="var(--d-ink)" stroke-width="3" stroke-linecap="round"/><path d="M32 39V49M27 44H37" fill="none" stroke="var(--d-ink)" stroke-width="3" stroke-linecap="round"/></g><g transform="translate(300 128) scale(.95)" style="--d-blue:#a78bfa;--d-sky:#f1ecff"><circle cx="80" cy="84" r="56" fill="var(--d-sky)"/><path d="M32 66l34-34h46v46l-34 34a8 8 0 0 1-11 0L32 77a8 8 0 0 1 0-11Z" fill="var(--d-yellow)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="96" cy="48" r="7" fill="var(--d-paper)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M64 76l18 18M58 92l10 10" fill="none" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="120" cy="118" r="15" fill="var(--d-yellow)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M116 112h9M116 118h9M116 112c8 0 8 12 0 12l7 6" fill="none" stroke="var(--d-ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g><g><path d="M52 51V69M43 60H61" fill="none" stroke="var(--d-ink)" stroke-width="3" stroke-linecap="round"/><path d="M430 44V60M422 52H438" fill="none" stroke="var(--d-ink)" stroke-width="3" stroke-linecap="round"/><path d="M440 239C442.2 247.8 442.2 247.8 451 250C442.2 252.2 442.2 252.2 440 261C437.8 252.2 437.8 252.2 429 250C437.8 247.8 437.8 247.8 440 239Z" fill="var(--d-yellow)" stroke="var(--d-ink)" stroke-width="3" stroke-linejoin="round"/></g></svg></span>
         <span class="related-tag">Product Strategy &middot; 9 min read</span>
@@ -657,18 +722,8 @@
         <span class="related-blurb">What a PRD is, how it differs from a BRD, the ten sections to write, a worked example and the mistakes that make requirements useless.</span>
         <span class="related-go">Read the guide <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       </a>
-          </div>
-        </section>
-
-        <div class="article-author-card">
-          <img src="/assets/nihar-avatar.jpg" alt="Nihar Ranjan Rout" width="96" height="96" loading="lazy" decoding="async">
-          <div>
-            <h4>About Nihar Ranjan Rout</h4>
-            <p>Founder &amp; CEO of Creuto. Over the past 8+ years Nihar has led product strategy and engineering for 50+ products, including mobile apps, custom ERPs and B2B platforms. Creuto is an OpenAI Select Partner. He works directly with founders to turn an idea into a clear plan and a launched product.</p>
-            <a href="/about">More about Nihar</a> &middot; <a href="https://www.linkedin.com/in/iniharrout" target="_blank" rel="noopener">LinkedIn</a>
-          </div>
         </div>
-      </div>
+      </section>
     </article>
   </main>
 
@@ -809,5 +864,6 @@
 <!-- /chrome:footer -->
 
   <script src="/assets/site-enhancements.js?v=blue5"></script>
+  <script src="/assets/blog-reader.js?v=br1" defer></script>
 </body>
 </html>

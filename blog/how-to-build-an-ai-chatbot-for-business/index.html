@@ -224,12 +224,18 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&amp;family=Inter:wght@400;500;600;700&amp;display=swap">
   <link rel="stylesheet" href="/assets/design-system.css?v=blue8">
-  <link rel="stylesheet" href="/assets/blog-post.css?v=bp4">
+  <link rel="stylesheet" href="/assets/blog-post.css?v=bp5">
   <link rel="stylesheet" href="/assets/chrome.css?v=45">
   <script src="/assets/chrome.js?v=17" defer></script>
   <link rel="stylesheet" href="/assets/schedule-popup.css?v=sp3">
   <script src="/assets/schedule-popup.js?v=sp5" defer></script>
   <link rel="stylesheet" href="/assets/primitives.css?v=p8">
+  <!-- pwa -->
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="apple-mobile-web-app-title" content="Nihar">
+  <script src="/assets/pwa.js?v=pw1" defer></script>
+  <!-- /pwa -->
 </head>
 
 <body>
@@ -470,62 +476,99 @@
 </header>
 <!-- /chrome:header -->
 
-  <main id="top">
+  <div class="reader-progress" aria-hidden="true"><span></span></div>
+  <main id="top" class="reader">
     <article>
-      <header class="article-header">
-        <div class="wrap" style="max-width:920px;">
-          <nav class="article-breadcrumbs" aria-label="Breadcrumb">
-            <a href="/">Home</a>
-            <span>/</span>
-            <a href="/blog">Blog</a>
-            <span>/</span>
-            <span>Enterprise AI</span>
-          </nav>
+      <header class="article-header reader-header">
+        <div class="reader-head">
+          <div class="reader-head-text">
+            <nav class="article-breadcrumbs" aria-label="Breadcrumb">
+              <a href="/">Home</a>
+              <span>/</span>
+              <a href="/blog">Blog</a>
+              <span>/</span>
+              <a href="/blog/topic/ai">AI</a>
+            </nav>
 
-          <div class="blog-category-badge" style="display:inline-block; margin-bottom:16px;">AI PRODUCT DEVELOPMENT</div>
+            <div class="blog-category-badge">AI PRODUCT DEVELOPMENT</div>
 
-          <h1 class="article-headline">How to Build an AI Chatbot for Your Business That Answers From Your Own Data</h1>
+            <h1 class="article-headline">How to Build an AI Chatbot for Your Business That Answers From Your Own Data</h1>
 
-          <p class="article-lead">An AI chatbot that answers from your own documents can take pressure off support, sales and internal teams. A badly built one confidently gives wrong answers. The difference is in the preparation, the design of the answers and the guardrails, not in which model you pick.</p>
+            <p class="article-lead">An AI chatbot that answers from your own documents can take pressure off support, sales and internal teams. A badly built one confidently gives wrong answers. The difference is in the preparation, the design of the answers and the guardrails, not in which model you pick.</p>
 
-          <div class="article-meta-bar">
-            <div class="article-author-info">
-              <img src="/assets/nihar-avatar.jpg" alt="Nihar Ranjan Rout" class="article-author-avatar" width="96" height="96" decoding="async">
-              <div>
-                <div class="article-author-name">Nihar Ranjan Rout</div>
-                <div class="article-author-title">Founder &amp; CEO, Creuto &middot; 8+ Years in Product Leadership</div>
+            <div class="article-meta-bar">
+              <div class="article-author-info">
+                <img src="/assets/nihar-avatar.jpg" alt="Nihar Ranjan Rout" class="article-author-avatar" width="96" height="96" decoding="async">
+                <div>
+                  <div class="article-author-name">Nihar Ranjan Rout</div>
+                  <div class="article-author-title">Founder &amp; CEO, Creuto</div>
+                </div>
+              </div>
+              <div class="reader-meta">
+                <time datetime="2026-10-22">October 22, 2026</time><span aria-hidden="true">&middot;</span><span>9 min read</span>
               </div>
             </div>
-            <div style="font-size:13.5px; color:var(--hs-text-03);">
-              <time datetime="2026-10-22">Published October 22, 2026</time> &middot; 9 min read
-            </div>
           </div>
+          <figure class="article-figure reader-cover">
+            <img src="/assets/blog/how-to-build-an-ai-chatbot-for-business-banner.jpg" alt="How to Build an AI Chatbot for Your Business That Answers From Your Own Data: guide by Nihar Ranjan Rout" width="1200" height="630" fetchpriority="high" decoding="async">
+          </figure>
         </div>
       </header>
 
-      <div class="article-body-container">
-        <figure class="article-figure">
-          <img src="/assets/blog/how-to-build-an-ai-chatbot-for-business-banner.jpg" alt="How to Build an AI Chatbot for Your Business That Answers From Your Own Data: guide by Nihar Ranjan Rout" width="1200" height="630" fetchpriority="high" decoding="async">
-        </figure>
+      <div class="reader-layout">
+        <aside class="reader-side" aria-label="Guide tools">
+          <div class="reader-side-inner">
+            <nav class="article-toc" aria-label="In this guide">
+              <p class="article-toc-title">In this guide</p>
+              <ol>
+                <li><a href="#use-case">Step 1: Pick one job</a></li>
+                <li><a href="#content">Step 2: Prepare your source content</a></li>
+                <li><a href="#approach">Step 3: Choose the approach</a></li>
+                <li><a href="#guardrails">Step 4: Design the guardrails</a></li>
+                <li><a href="#test">Step 5: Test with real questions</a></li>
+                <li><a href="#launch">Step 6: Launch small and measure</a></li>
+                <li><a href="#use-cases">Good first use cases</a></li>
+                <li><a href="#mistakes">Mistakes to avoid</a></li>
+                <li><a href="#maintain">Keeping it accurate after launch</a></li>
+                <li><a href="#where">Where to deploy it</a></li>
+                <li><a href="#faq">Frequently asked questions</a></li>
+              </ol>
+            </nav>
+            <div class="reader-share">
+              <p class="article-toc-title">Share this guide</p>
+              <div class="reader-share-row">
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.niharrout.com%2Fblog%2Fhow-to-build-an-ai-chatbot-for-business" target="_blank" rel="noopener" aria-label="Share on LinkedIn"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg></a>
+                <a href="https://x.com/intent/post?url=https%3A%2F%2Fwww.niharrout.com%2Fblog%2Fhow-to-build-an-ai-chatbot-for-business&amp;text=How%20to%20Build%20an%20AI%20Chatbot%20for%20Your%20Business%3A%20Step%20by%20Step" target="_blank" rel="noopener" aria-label="Share on X"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l16 16M20 4L4 20"/></svg></a>
+                <a href="https://wa.me/?text=How%20to%20Build%20an%20AI%20Chatbot%20for%20Your%20Business%3A%20Step%20by%20Step%20https%3A%2F%2Fwww.niharrout.com%2Fblog%2Fhow-to-build-an-ai-chatbot-for-business" target="_blank" rel="noopener" aria-label="Share on WhatsApp"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.5a8.5 8.5 0 0 1-12.6 7.4L3.5 20l1.2-3.7A8.5 8.5 0 1 1 20 11.5z"/><path d="M9 9.5c.3 1.8 2.2 3.8 4 4.2l1.2-1.1 1.8.9-.4 1.4c-3 .4-7.1-3.4-7.1-6.6l1.3-.6 1 1.7z"/></svg></a>
+                <button type="button" class="reader-copy" data-copy="https://www.niharrout.com/blog/how-to-build-an-ai-chatbot-for-business" aria-label="Copy link"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><span class="reader-copy-done" role="status"></span></button>
+              </div>
+            </div>
+            <a class="reader-side-cta" href="https://calendly.com/creuto/meet" target="_blank" rel="noopener" data-book="true">
+              <strong>Talk it through with Nihar</strong>
+              <span>Free 30-minute call &rarr;</span>
+            </a>
+          </div>
+        </aside>
 
-        <nav class="article-toc" aria-label="In this guide">
-          <p class="article-toc-title">In this guide</p>
-          <ol>
-            <li><a href="#use-case">Step 1: Pick one job</a></li>
-            <li><a href="#content">Step 2: Prepare your source content</a></li>
-            <li><a href="#approach">Step 3: Choose the approach</a></li>
-            <li><a href="#guardrails">Step 4: Design the guardrails</a></li>
-            <li><a href="#test">Step 5: Test with real questions</a></li>
-            <li><a href="#launch">Step 6: Launch small and measure</a></li>
-            <li><a href="#use-cases">Good first use cases</a></li>
-            <li><a href="#mistakes">Mistakes to avoid</a></li>
-            <li><a href="#maintain">Keeping it accurate after launch</a></li>
-            <li><a href="#where">Where to deploy it</a></li>
-            <li><a href="#faq">Frequently asked questions</a></li>
-          </ol>
-        </nav>
+        <div class="reader-main">
+          <details class="reader-toc-mobile">
+            <summary>In this guide <span>11 sections</span></summary>
+            <ol>
+              <li><a href="#use-case">Step 1: Pick one job</a></li>
+              <li><a href="#content">Step 2: Prepare your source content</a></li>
+              <li><a href="#approach">Step 3: Choose the approach</a></li>
+              <li><a href="#guardrails">Step 4: Design the guardrails</a></li>
+              <li><a href="#test">Step 5: Test with real questions</a></li>
+              <li><a href="#launch">Step 6: Launch small and measure</a></li>
+              <li><a href="#use-cases">Good first use cases</a></li>
+              <li><a href="#mistakes">Mistakes to avoid</a></li>
+              <li><a href="#maintain">Keeping it accurate after launch</a></li>
+              <li><a href="#where">Where to deploy it</a></li>
+              <li><a href="#faq">Frequently asked questions</a></li>
+            </ol>
+          </details>
 
-        <div class="prose">
+          <div class="prose">
 
 <p>
   At Creuto we are an OpenAI Select Partner, and chatbot requests are some of the most common we get. The ones that succeed start small, with one clear job and good source material.
@@ -582,7 +625,7 @@
 
 
 <h2 id="use-cases">Good first use cases</h2>
-<table>
+<div class="reader-table" tabindex="0" role="region" aria-label="Table"><table>
   <thead><tr><th>Use case</th><th>Why it works</th></tr></thead>
   <tbody>
     <tr><td>Customer FAQs and policies</td><td>Frequent questions with documented answers</td></tr>
@@ -590,7 +633,7 @@
     <tr><td>Internal HR and IT questions</td><td>Policies and guides already exist</td></tr>
     <tr><td>Product information for sales teams</td><td>Specifications and brochures in one place</td></tr>
   </tbody>
-</table>
+</table></div>
 
 <h2 id="mistakes">Mistakes to avoid</h2>
 <ul>
@@ -614,34 +657,58 @@
   At <a href="https://creuto.com" target="_blank" rel="noopener">Creuto</a> we build these through our <a href="/services/ai-product-development">AI product development</a> practice, starting with a small pilot on your real data.
 </p>
 
-        </div>
+          </div>
 
-        <section class="article-faq" id="faq" aria-labelledby="faq-title">
-          <h2 id="faq-title">Frequently asked questions</h2>
-          <h3>Can a chatbot answer from my company's documents?</h3>
-          <p>Yes. The usual approach, called retrieval-augmented generation, finds the relevant passages in your documents and gives them to the AI model to answer from, so answers stay grounded in your content.</p>
-          <h3>Will the chatbot make things up?</h3>
-          <p>It can if it is not designed carefully. Grounding answers in your documents, showing sources, limiting it to known topics and letting it say &quot;I don't know&quot; and hand over to a person reduce this a lot.</p>
-          <h3>Is my data used to train public AI models?</h3>
-          <p>Business and enterprise API terms from major providers generally keep your data out of model training, and private deployment options exist. Check the terms of the provider you choose.</p>
-          <h3>Where can I put the chatbot?</h3>
-          <p>On your website, inside your app, in WhatsApp, in Slack or Microsoft Teams for internal use, or inside your CRM or helpdesk.</p>
-          <h3>How do I know if the chatbot is working?</h3>
-          <p>Track how many questions it answers without a hand-over, how often users rate answers as helpful, and review a sample of conversations every week.</p>
-        </section>
+          <section class="article-faq" id="faq" aria-labelledby="faq-title">
+            <h2 id="faq-title">Frequently asked questions</h2>
+            <details class="reader-faq" open>
+              <summary><h3>Can a chatbot answer from my company's documents?</h3></summary>
+              <p>Yes. The usual approach, called retrieval-augmented generation, finds the relevant passages in your documents and gives them to the AI model to answer from, so answers stay grounded in your content.</p>
+            </details>
+            <details class="reader-faq">
+              <summary><h3>Will the chatbot make things up?</h3></summary>
+              <p>It can if it is not designed carefully. Grounding answers in your documents, showing sources, limiting it to known topics and letting it say &quot;I don't know&quot; and hand over to a person reduce this a lot.</p>
+            </details>
+            <details class="reader-faq">
+              <summary><h3>Is my data used to train public AI models?</h3></summary>
+              <p>Business and enterprise API terms from major providers generally keep your data out of model training, and private deployment options exist. Check the terms of the provider you choose.</p>
+            </details>
+            <details class="reader-faq">
+              <summary><h3>Where can I put the chatbot?</h3></summary>
+              <p>On your website, inside your app, in WhatsApp, in Slack or Microsoft Teams for internal use, or inside your CRM or helpdesk.</p>
+            </details>
+            <details class="reader-faq">
+              <summary><h3>How do I know if the chatbot is working?</h3></summary>
+              <p>Track how many questions it answers without a hand-over, how often users rate answers as helpful, and review a sample of conversations every week.</p>
+            </details>
+          </section>
 
-        <div class="blog-cta-box blog-cta-end">
-          <h3>Want a chatbot that cites its sources?</h3>
-          <p>We build AI assistants that answer from your documents, show where each answer came from and hand over to a person when unsure.</p>
-          <div class="blog-cta-actions">
-            <a href="https://calendly.com/creuto/meet" target="_blank" rel="noopener" data-book="true" class="cl-button -primary btn-book-call">Book a free strategy call <span style="margin-left:4px;">&rarr;</span></a>
-            <a href="/services/ai-product-development/chatgpt-solutions" class="blog-cta-link">See ChatGPT solutions <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="blog-cta-box blog-cta-end">
+            <h3>Want a chatbot that cites its sources?</h3>
+            <p>We build AI assistants that answer from your documents, show where each answer came from and hand over to a person when unsure.</p>
+            <div class="blog-cta-actions">
+              <a href="https://calendly.com/creuto/meet" target="_blank" rel="noopener" data-book="true" class="cl-button -primary btn-book-call">Book a free strategy call <span style="margin-left:4px;">&rarr;</span></a>
+              <a href="/services/ai-product-development/chatgpt-solutions" class="blog-cta-link">See ChatGPT solutions <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+          </div>
+
+          <div class="article-author-card">
+            <img src="/assets/nihar-avatar.jpg" alt="Nihar Ranjan Rout" width="96" height="96" loading="lazy" decoding="async">
+            <div>
+              <h4>About Nihar Ranjan Rout</h4>
+              <p>Founder &amp; CEO of Creuto. Over the past 8+ years Nihar has led product strategy and engineering for 50+ products, including mobile apps, custom ERPs and B2B platforms. Creuto is an OpenAI Select Partner. He works directly with founders to turn an idea into a clear plan and a launched product.</p>
+              <a href="/about">More about Nihar</a> &middot; <a href="https://www.linkedin.com/in/iniharrout" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
           </div>
         </div>
+      </div>
 
-        <section class="related-posts" aria-labelledby="related-title">
+      <section class="related-posts reader-related" aria-labelledby="related-title">
+        <div class="reader-related-head">
           <h2 id="related-title">Keep reading</h2>
-          <div class="related-grid">
+          <a href="/blog/topic/ai">More AI guides <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="related-grid">
       <a class="related-card" href="/blog/how-to-add-ai-to-an-existing-product">
         <span class="related-art" aria-hidden="true"><svg class="doodle-scene" viewBox="0 0 480 300" aria-hidden="true" focusable="false"><rect x="0" y="0" width="480" height="300" rx="24" fill="var(--d-peach)"/><g opacity=".55"><circle cx="40" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="40" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="40" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="40" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="40" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="97" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="97" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="97" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="97" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="97" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="154" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="154" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="154" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="154" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="154" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="211" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="211" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="211" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="211" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="211" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="268" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="268" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="268" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="268" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="268" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="325" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="325" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="325" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="325" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="325" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="382" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="382" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="382" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="382" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="382" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="439" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="439" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="439" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="439" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="439" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/></g><circle cx="202" cy="152" r="106" fill="var(--d-paper)" opacity=".7"/><g transform="translate(78 28) scale(1.55)" style="--d-blue:#5fd39a;--d-sky:#e6f6ee"><circle cx="80" cy="82" r="58" fill="var(--d-peach)"/><rect x="42" y="42" width="76" height="76" rx="14" fill="var(--d-blue)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><rect x="56" y="56" width="48" height="48" rx="8" fill="var(--d-paper)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M56 30v12M80 30v12M104 30v12M56 118v12M80 118v12M104 118v12M30 58h12M30 80h12M30 102h12M118 58h12M118 80h12M118 102h12" fill="none" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M80 67C82.6 77.4 82.6 77.4 93 80C82.6 82.6 82.6 82.6 80 93C77.4 82.6 77.4 82.6 67 80C77.4 77.4 77.4 77.4 80 67Z" fill="var(--d-yellow)" stroke="var(--d-ink)" stroke-width="3" stroke-linejoin="round"/></g><g transform="translate(300 128) scale(.95)"><circle cx="80" cy="84" r="56" fill="var(--d-sun)"/><rect x="22" y="34" width="116" height="90" rx="9" fill="var(--d-paper)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M24 54H136V43a7 7 0 0 0-7-7H31a7 7 0 0 0-7 7Z" fill="var(--d-sky)"/><path d="M22 54 L138 54" fill="none" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="33" cy="45" r="2.6" fill="var(--d-ink)"/><circle cx="42" cy="45" r="2.6" fill="var(--d-ink)"/><circle cx="51" cy="45" r="2.6" fill="var(--d-ink)"/><rect x="32" y="64" width="30" height="50" rx="5" fill="var(--d-blue)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><rect x="70" y="64" width="58" height="22" rx="5" fill="var(--d-paper)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><rect x="74" y="102" width="10" height="10" rx="3" fill="var(--d-sky)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><rect x="90" y="94" width="10" height="18" rx="3" fill="var(--d-blue)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><rect x="106" y="98" width="10" height="14" rx="3" fill="var(--d-deep)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="116" cy="101" r="9" fill="var(--d-coral)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></g><g><path d="M52 51V69M43 60H61" fill="none" stroke="var(--d-ink)" stroke-width="3" stroke-linecap="round"/><path d="M430 44V60M422 52H438" fill="none" stroke="var(--d-ink)" stroke-width="3" stroke-linecap="round"/><path d="M440 239C442.2 247.8 442.2 247.8 451 250C442.2 252.2 442.2 252.2 440 261C437.8 252.2 437.8 252.2 429 250C437.8 247.8 437.8 247.8 440 239Z" fill="var(--d-yellow)" stroke="var(--d-ink)" stroke-width="3" stroke-linejoin="round"/></g></svg></span>
         <span class="related-tag">Enterprise AI &middot; 10 min read</span>
@@ -663,18 +730,8 @@
         <span class="related-blurb">How real businesses get measurable return from AI with sensible safeguards.</span>
         <span class="related-go">Read the guide <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       </a>
-          </div>
-        </section>
-
-        <div class="article-author-card">
-          <img src="/assets/nihar-avatar.jpg" alt="Nihar Ranjan Rout" width="96" height="96" loading="lazy" decoding="async">
-          <div>
-            <h4>About Nihar Ranjan Rout</h4>
-            <p>Founder &amp; CEO of Creuto. Over the past 8+ years Nihar has led product strategy and engineering for 50+ products, including mobile apps, custom ERPs and B2B platforms. Creuto is an OpenAI Select Partner. He works directly with founders to turn an idea into a clear plan and a launched product.</p>
-            <a href="/about">More about Nihar</a> &middot; <a href="https://www.linkedin.com/in/iniharrout" target="_blank" rel="noopener">LinkedIn</a>
-          </div>
         </div>
-      </div>
+      </section>
     </article>
   </main>
 
@@ -815,5 +872,6 @@
 <!-- /chrome:footer -->
 
   <script src="/assets/site-enhancements.js?v=blue5"></script>
+  <script src="/assets/blog-reader.js?v=br1" defer></script>
 </body>
 </html>

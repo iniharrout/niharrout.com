@@ -177,12 +177,18 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&amp;family=Inter:wght@400;500;600;700&amp;display=swap">
   <link rel="stylesheet" href="/assets/design-system.css?v=blue8">
-  <link rel="stylesheet" href="/assets/blog-post.css?v=bp4">
+  <link rel="stylesheet" href="/assets/blog-post.css?v=bp5">
   <link rel="stylesheet" href="/assets/chrome.css?v=45">
   <script src="/assets/chrome.js?v=17" defer></script>
   <link rel="stylesheet" href="/assets/schedule-popup.css?v=sp3">
   <script src="/assets/schedule-popup.js?v=sp5" defer></script>
   <link rel="stylesheet" href="/assets/primitives.css?v=p8">
+  <!-- pwa -->
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="apple-mobile-web-app-title" content="Nihar">
+  <script src="/assets/pwa.js?v=pw1" defer></script>
+  <!-- /pwa -->
 </head>
 
 <body>
@@ -423,46 +429,67 @@
 </header>
 <!-- /chrome:header -->
 
-  <main id="top">
+  <div class="reader-progress" aria-hidden="true"><span></span></div>
+  <main id="top" class="reader">
     <article>
-      <header class="article-header">
-        <div class="wrap" style="max-width:920px;">
-          <nav class="article-breadcrumbs" aria-label="Breadcrumb">
-            <a href="/">Home</a>
-            <span>/</span>
-            <a href="/blog">Blog</a>
-            <span>/</span>
-            <span>Business Software</span>
-          </nav>
+      <header class="article-header reader-header">
+        <div class="reader-head">
+          <div class="reader-head-text">
+            <nav class="article-breadcrumbs" aria-label="Breadcrumb">
+              <a href="/">Home</a>
+              <span>/</span>
+              <a href="/blog">Blog</a>
+              <span>/</span>
+              <a href="/blog/topic/software-and-cloud">Software &amp; Cloud</a>
+            </nav>
 
-          <div class="blog-category-badge" style="display:inline-block; margin-bottom:16px;">BUSINESS GROWTH</div>
+            <div class="blog-category-badge">BUSINESS GROWTH</div>
 
-          <h1 class="article-headline">Investing in Technology: A Smart Strategy for Growth</h1>
+            <h1 class="article-headline">Investing in Technology: A Smart Strategy for Growth</h1>
 
-          <p class="article-lead">Technology has become an integral part of modern business. It has revolutionized the way we work and live, and those who fail to embrace it risk falling behind their competitors. As a business owner or entrepreneur, it's crucial to invest in technology to manage day-to-day operations efficiently and minimize the risk of human error.</p>
+            <p class="article-lead">Technology has become an integral part of modern business. It has revolutionized the way we work and live, and those who fail to embrace it risk falling behind their competitors. As a business owner or entrepreneur, it's crucial to invest in technology to manage day-to-day operations efficiently and minimize the risk of human error.</p>
 
-          <div class="article-meta-bar">
-            <div class="article-author-info">
-              <img src="/assets/nihar-avatar.jpg" alt="Nihar Ranjan Rout" class="article-author-avatar" width="96" height="96" decoding="async">
-              <div>
-                <div class="article-author-name">Nihar Ranjan Rout</div>
-                <div class="article-author-title">Founder &amp; CEO, Creuto &middot; 8+ Years in Product Leadership</div>
+            <div class="article-meta-bar">
+              <div class="article-author-info">
+                <img src="/assets/nihar-avatar.jpg" alt="Nihar Ranjan Rout" class="article-author-avatar" width="96" height="96" decoding="async">
+                <div>
+                  <div class="article-author-name">Nihar Ranjan Rout</div>
+                  <div class="article-author-title">Founder &amp; CEO, Creuto</div>
+                </div>
+              </div>
+              <div class="reader-meta">
+                <time datetime="2023-05-03">May 3, 2023</time><span aria-hidden="true">&middot;</span><span>2 min read</span>
               </div>
             </div>
-            <div style="font-size:13.5px; color:var(--hs-text-03);">
-              <time datetime="2023-05-03">Published May 3, 2023</time> &middot; 2 min read
-            </div>
           </div>
+          <figure class="article-figure reader-cover">
+            <img src="/assets/blog/investing-in-technology-a-smart-strategy-for-business-growth-banner.jpg" alt="Investing in Technology: A Smart Strategy for Growth: guide by Nihar Ranjan Rout" width="1200" height="630" fetchpriority="high" decoding="async">
+          </figure>
         </div>
       </header>
 
-      <div class="article-body-container">
-        <figure class="article-figure">
-          <img src="/assets/blog/investing-in-technology-a-smart-strategy-for-business-growth-banner.jpg" alt="Investing in Technology: A Smart Strategy for Growth: guide by Nihar Ranjan Rout" width="1200" height="630" fetchpriority="high" decoding="async">
-        </figure>
+      <div class="reader-layout">
+        <aside class="reader-side" aria-label="Guide tools">
+          <div class="reader-side-inner">
+            <div class="reader-share">
+              <p class="article-toc-title">Share this guide</p>
+              <div class="reader-share-row">
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.niharrout.com%2Fblog%2Finvesting-in-technology-a-smart-strategy-for-business-growth" target="_blank" rel="noopener" aria-label="Share on LinkedIn"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg></a>
+                <a href="https://x.com/intent/post?url=https%3A%2F%2Fwww.niharrout.com%2Fblog%2Finvesting-in-technology-a-smart-strategy-for-business-growth&amp;text=Investing%20in%20Technology%3A%20A%20Smart%20Strategy%20for%20Growth" target="_blank" rel="noopener" aria-label="Share on X"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l16 16M20 4L4 20"/></svg></a>
+                <a href="https://wa.me/?text=Investing%20in%20Technology%3A%20A%20Smart%20Strategy%20for%20Growth%20https%3A%2F%2Fwww.niharrout.com%2Fblog%2Finvesting-in-technology-a-smart-strategy-for-business-growth" target="_blank" rel="noopener" aria-label="Share on WhatsApp"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.5a8.5 8.5 0 0 1-12.6 7.4L3.5 20l1.2-3.7A8.5 8.5 0 1 1 20 11.5z"/><path d="M9 9.5c.3 1.8 2.2 3.8 4 4.2l1.2-1.1 1.8.9-.4 1.4c-3 .4-7.1-3.4-7.1-6.6l1.3-.6 1 1.7z"/></svg></a>
+                <button type="button" class="reader-copy" data-copy="https://www.niharrout.com/blog/investing-in-technology-a-smart-strategy-for-business-growth" aria-label="Copy link"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><span class="reader-copy-done" role="status"></span></button>
+              </div>
+            </div>
+            <a class="reader-side-cta" href="https://calendly.com/creuto/meet" target="_blank" rel="noopener" data-book="true">
+              <strong>Talk it through with Nihar</strong>
+              <span>Free 30-minute call &rarr;</span>
+            </a>
+          </div>
+        </aside>
 
+        <div class="reader-main">
 
-        <div class="prose">
+          <div class="prose">
 
 <p>The benefits of technology in business are numerous. By automating repetitive tasks such as data entry and record-keeping, you can focus on more critical tasks, such as growing your business and serving your customers. Technology can also optimize your processes, allowing you to track inventory, manage finances, and handle customer data with ease.</p>
 <p>Moreover, technology can help you stay ahead of your competitors. By using the latest tools and techniques, you can offer your customers a better experience and more value than your competitors. This can help you attract more customers and grow your business faster.</p>
@@ -477,21 +504,35 @@
 <p><em>Ready to take your online presence to the next level? Contact me today to learn how technology can help your business succeed. Don't miss out on the opportunity to stand out from the competition and reach your full potential online."</em></p>
 <p class="blog-origin"><em>Originally published on my earlier blog in May 2023.</em></p>
 
-        </div>
+          </div>
 
 
-        <div class="blog-cta-box blog-cta-end">
-          <h3>Ready to put technology to work?</h3>
-          <p>Creuto builds custom software, mobile apps and AI products around your business.</p>
-          <div class="blog-cta-actions">
-            <a href="https://calendly.com/creuto/meet" target="_blank" rel="noopener" data-book="true" class="cl-button -primary btn-book-call">Book a free strategy call <span style="margin-left:4px;">&rarr;</span></a>
-            <a href="/services" class="blog-cta-link">See what we build <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="blog-cta-box blog-cta-end">
+            <h3>Ready to put technology to work?</h3>
+            <p>Creuto builds custom software, mobile apps and AI products around your business.</p>
+            <div class="blog-cta-actions">
+              <a href="https://calendly.com/creuto/meet" target="_blank" rel="noopener" data-book="true" class="cl-button -primary btn-book-call">Book a free strategy call <span style="margin-left:4px;">&rarr;</span></a>
+              <a href="/services" class="blog-cta-link">See what we build <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+          </div>
+
+          <div class="article-author-card">
+            <img src="/assets/nihar-avatar.jpg" alt="Nihar Ranjan Rout" width="96" height="96" loading="lazy" decoding="async">
+            <div>
+              <h4>About Nihar Ranjan Rout</h4>
+              <p>Founder &amp; CEO of Creuto. Over the past 8+ years Nihar has led product strategy and engineering for 50+ products, including mobile apps, custom ERPs and B2B platforms. Creuto is an OpenAI Select Partner. He works directly with founders to turn an idea into a clear plan and a launched product.</p>
+              <a href="/about">More about Nihar</a> &middot; <a href="https://www.linkedin.com/in/iniharrout" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
           </div>
         </div>
+      </div>
 
-        <section class="related-posts" aria-labelledby="related-title">
+      <section class="related-posts reader-related" aria-labelledby="related-title">
+        <div class="reader-related-head">
           <h2 id="related-title">Keep reading</h2>
-          <div class="related-grid">
+          <a href="/blog/topic/software-and-cloud">More Software &amp; Cloud guides <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="related-grid">
       <a class="related-card" href="/blog/does-your-business-need-software">
         <span class="related-art" aria-hidden="true"><svg class="doodle-scene" viewBox="0 0 480 300" aria-hidden="true" focusable="false"><rect x="0" y="0" width="480" height="300" rx="24" fill="var(--d-sun)"/><g opacity=".55"><circle cx="40" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="40" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="40" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="40" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="40" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="97" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="97" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="97" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="97" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="97" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="154" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="154" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="154" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="154" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="154" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="211" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="211" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="211" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="211" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="211" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="268" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="268" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="268" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="268" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="268" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="325" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="325" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="325" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="325" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="325" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="382" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="382" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="382" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="382" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="382" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="439" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="439" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="439" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="439" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="439" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/></g><circle cx="202" cy="152" r="106" fill="var(--d-paper)" opacity=".7"/><g transform="translate(78 28) scale(1.55)" style="--d-blue:#ff8f6b;--d-sky:#ffeee6;--d-coral:#ffc94d"><circle cx="80" cy="84" r="56" fill="var(--d-sky)"/><rect x="30" y="34" width="46" height="40" rx="8" fill="var(--d-blue)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><rect x="84" y="34" width="46" height="40" rx="8" fill="var(--d-paper)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><rect x="30" y="82" width="46" height="40" rx="8" fill="var(--d-paper)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><rect x="84" y="82" width="46" height="40" rx="8" fill="var(--d-yellow)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="80" cy="78" r="10" fill="var(--d-coral)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(300 128) scale(.95)" style="--d-blue:#5fd39a;--d-sky:#e6f6ee"><circle cx="80" cy="84" r="56" fill="var(--d-sun)"/><rect x="30" y="36" width="100" height="92" rx="12" fill="var(--d-paper)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><rect x="44" y="98" width="14" height="18" rx="3" fill="var(--d-sky)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><rect x="67" y="82" width="14" height="34" rx="3" fill="var(--d-blue)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><rect x="90" y="64" width="14" height="52" rx="3" fill="var(--d-deep)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M44 76l24-16 18 10 30-26" fill="none" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M104 44h12v12" fill="none" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M128 21C129.8 28.2 129.8 28.2 137 30C129.8 31.8 129.8 31.8 128 39C126.2 31.8 126.2 31.8 119 30C126.2 28.2 126.2 28.2 128 21Z" fill="var(--d-yellow)" stroke="var(--d-ink)" stroke-width="3" stroke-linejoin="round"/></g><g><path d="M52 51V69M43 60H61" fill="none" stroke="var(--d-ink)" stroke-width="3" stroke-linecap="round"/><path d="M430 44V60M422 52H438" fill="none" stroke="var(--d-ink)" stroke-width="3" stroke-linecap="round"/><path d="M440 239C442.2 247.8 442.2 247.8 451 250C442.2 252.2 442.2 252.2 440 261C437.8 252.2 437.8 252.2 429 250C437.8 247.8 437.8 247.8 440 239Z" fill="var(--d-yellow)" stroke="var(--d-ink)" stroke-width="3" stroke-linejoin="round"/></g></svg></span>
         <span class="related-tag">Business Software &middot; 2 min read</span>
@@ -513,18 +554,8 @@
         <span class="related-blurb">Fixed price, time and materials or milestones? How each contract model works, when to use it and the clauses every buyer should insist on.</span>
         <span class="related-go">Read the guide <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       </a>
-          </div>
-        </section>
-
-        <div class="article-author-card">
-          <img src="/assets/nihar-avatar.jpg" alt="Nihar Ranjan Rout" width="96" height="96" loading="lazy" decoding="async">
-          <div>
-            <h4>About Nihar Ranjan Rout</h4>
-            <p>Founder &amp; CEO of Creuto. Over the past 8+ years Nihar has led product strategy and engineering for 50+ products, including mobile apps, custom ERPs and B2B platforms. Creuto is an OpenAI Select Partner. He works directly with founders to turn an idea into a clear plan and a launched product.</p>
-            <a href="/about">More about Nihar</a> &middot; <a href="https://www.linkedin.com/in/iniharrout" target="_blank" rel="noopener">LinkedIn</a>
-          </div>
         </div>
-      </div>
+      </section>
     </article>
   </main>
 
@@ -665,5 +696,6 @@
 <!-- /chrome:footer -->
 
   <script src="/assets/site-enhancements.js?v=blue5"></script>
+  <script src="/assets/blog-reader.js?v=br1" defer></script>
 </body>
 </html>

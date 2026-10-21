@@ -224,12 +224,18 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&amp;family=Inter:wght@400;500;600;700&amp;display=swap">
   <link rel="stylesheet" href="/assets/design-system.css?v=blue8">
-  <link rel="stylesheet" href="/assets/blog-post.css?v=bp4">
+  <link rel="stylesheet" href="/assets/blog-post.css?v=bp5">
   <link rel="stylesheet" href="/assets/chrome.css?v=45">
   <script src="/assets/chrome.js?v=17" defer></script>
   <link rel="stylesheet" href="/assets/schedule-popup.css?v=sp3">
   <script src="/assets/schedule-popup.js?v=sp5" defer></script>
   <link rel="stylesheet" href="/assets/primitives.css?v=p8">
+  <!-- pwa -->
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="apple-mobile-web-app-title" content="Nihar">
+  <script src="/assets/pwa.js?v=pw1" defer></script>
+  <!-- /pwa -->
 </head>
 
 <body>
@@ -470,61 +476,97 @@
 </header>
 <!-- /chrome:header -->
 
-  <main id="top">
+  <div class="reader-progress" aria-hidden="true"><span></span></div>
+  <main id="top" class="reader">
     <article>
-      <header class="article-header">
-        <div class="wrap" style="max-width:920px;">
-          <nav class="article-breadcrumbs" aria-label="Breadcrumb">
-            <a href="/">Home</a>
-            <span>/</span>
-            <a href="/blog">Blog</a>
-            <span>/</span>
-            <span>Mobile &amp; Web</span>
-          </nav>
+      <header class="article-header reader-header">
+        <div class="reader-head">
+          <div class="reader-head-text">
+            <nav class="article-breadcrumbs" aria-label="Breadcrumb">
+              <a href="/">Home</a>
+              <span>/</span>
+              <a href="/blog">Blog</a>
+              <span>/</span>
+              <a href="/blog/topic/mobile">Mobile Apps</a>
+            </nav>
 
-          <div class="blog-category-badge" style="display:inline-block; margin-bottom:16px;">MOBILE &amp; WEB APPLICATIONS</div>
+            <div class="blog-category-badge">MOBILE &amp; WEB APPLICATIONS</div>
 
-          <h1 class="article-headline">Mobile App vs Web App: Which Should You Build First? A Decision Guide for Founders</h1>
+            <h1 class="article-headline">Mobile App vs Web App: Which Should You Build First? A Decision Guide for Founders</h1>
 
-          <p class="article-lead">Founders often lose weeks arguing about iPhone versus Android versus website. The better question is who your first users are and what they must do. This guide compares mobile and web apps side by side and gives you simple rules to choose where to start.</p>
+            <p class="article-lead">Founders often lose weeks arguing about iPhone versus Android versus website. The better question is who your first users are and what they must do. This guide compares mobile and web apps side by side and gives you simple rules to choose where to start.</p>
 
-          <div class="article-meta-bar">
-            <div class="article-author-info">
-              <img src="/assets/nihar-avatar.jpg" alt="Nihar Ranjan Rout" class="article-author-avatar" width="96" height="96" decoding="async">
-              <div>
-                <div class="article-author-name">Nihar Ranjan Rout</div>
-                <div class="article-author-title">Founder &amp; CEO, Creuto &middot; 8+ Years in Product Leadership</div>
+            <div class="article-meta-bar">
+              <div class="article-author-info">
+                <img src="/assets/nihar-avatar.jpg" alt="Nihar Ranjan Rout" class="article-author-avatar" width="96" height="96" decoding="async">
+                <div>
+                  <div class="article-author-name">Nihar Ranjan Rout</div>
+                  <div class="article-author-title">Founder &amp; CEO, Creuto</div>
+                </div>
+              </div>
+              <div class="reader-meta">
+                <time datetime="2026-10-10">October 10, 2026</time><span aria-hidden="true">&middot;</span><span>9 min read</span>
               </div>
             </div>
-            <div style="font-size:13.5px; color:var(--hs-text-03);">
-              <time datetime="2026-10-10">Published October 10, 2026</time> &middot; 9 min read
-            </div>
           </div>
+          <figure class="article-figure reader-cover">
+            <img src="/assets/blog/mobile-app-vs-web-app-which-to-build-first-banner.jpg" alt="Mobile App vs Web App: Which Should You Build First? A Decision Guide for Founders: guide by Nihar Ranjan Rout" width="1200" height="630" fetchpriority="high" decoding="async">
+          </figure>
         </div>
       </header>
 
-      <div class="article-body-container">
-        <figure class="article-figure">
-          <img src="/assets/blog/mobile-app-vs-web-app-which-to-build-first-banner.jpg" alt="Mobile App vs Web App: Which Should You Build First? A Decision Guide for Founders: guide by Nihar Ranjan Rout" width="1200" height="630" fetchpriority="high" decoding="async">
-        </figure>
+      <div class="reader-layout">
+        <aside class="reader-side" aria-label="Guide tools">
+          <div class="reader-side-inner">
+            <nav class="article-toc" aria-label="In this guide">
+              <p class="article-toc-title">In this guide</p>
+              <ol>
+                <li><a href="#the-basic-difference">The basic difference</a></li>
+                <li><a href="#comparison">Side-by-side comparison</a></li>
+                <li><a href="#decision-rules">Simple decision rules</a></li>
+                <li><a href="#native-vs-cross-platform">Native or cross-platform, if you choose mobile</a></li>
+                <li><a href="#sequencing">How to sequence them if you need both</a></li>
+                <li><a href="#examples">Where would these products start?</a></li>
+                <li><a href="#questions-to-ask">Five questions to settle it</a></li>
+                <li><a href="#launch-basics">What launch looks like on each side</a></li>
+                <li><a href="#mistakes">Mistakes to avoid</a></li>
+                <li><a href="#faq">Frequently asked questions</a></li>
+              </ol>
+            </nav>
+            <div class="reader-share">
+              <p class="article-toc-title">Share this guide</p>
+              <div class="reader-share-row">
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.niharrout.com%2Fblog%2Fmobile-app-vs-web-app-which-to-build-first" target="_blank" rel="noopener" aria-label="Share on LinkedIn"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg></a>
+                <a href="https://x.com/intent/post?url=https%3A%2F%2Fwww.niharrout.com%2Fblog%2Fmobile-app-vs-web-app-which-to-build-first&amp;text=Mobile%20App%20vs%20Web%20App%3A%20Which%20Should%20You%20Build%20First%3F" target="_blank" rel="noopener" aria-label="Share on X"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l16 16M20 4L4 20"/></svg></a>
+                <a href="https://wa.me/?text=Mobile%20App%20vs%20Web%20App%3A%20Which%20Should%20You%20Build%20First%3F%20https%3A%2F%2Fwww.niharrout.com%2Fblog%2Fmobile-app-vs-web-app-which-to-build-first" target="_blank" rel="noopener" aria-label="Share on WhatsApp"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.5a8.5 8.5 0 0 1-12.6 7.4L3.5 20l1.2-3.7A8.5 8.5 0 1 1 20 11.5z"/><path d="M9 9.5c.3 1.8 2.2 3.8 4 4.2l1.2-1.1 1.8.9-.4 1.4c-3 .4-7.1-3.4-7.1-6.6l1.3-.6 1 1.7z"/></svg></a>
+                <button type="button" class="reader-copy" data-copy="https://www.niharrout.com/blog/mobile-app-vs-web-app-which-to-build-first" aria-label="Copy link"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><span class="reader-copy-done" role="status"></span></button>
+              </div>
+            </div>
+            <a class="reader-side-cta" href="https://calendly.com/creuto/meet" target="_blank" rel="noopener" data-book="true">
+              <strong>Talk it through with Nihar</strong>
+              <span>Free 30-minute call &rarr;</span>
+            </a>
+          </div>
+        </aside>
 
-        <nav class="article-toc" aria-label="In this guide">
-          <p class="article-toc-title">In this guide</p>
-          <ol>
-            <li><a href="#the-basic-difference">The basic difference</a></li>
-            <li><a href="#comparison">Side-by-side comparison</a></li>
-            <li><a href="#decision-rules">Simple decision rules</a></li>
-            <li><a href="#native-vs-cross-platform">Native or cross-platform, if you choose mobile</a></li>
-            <li><a href="#sequencing">How to sequence them if you need both</a></li>
-            <li><a href="#examples">Where would these products start?</a></li>
-            <li><a href="#questions-to-ask">Five questions to settle it</a></li>
-            <li><a href="#launch-basics">What launch looks like on each side</a></li>
-            <li><a href="#mistakes">Mistakes to avoid</a></li>
-            <li><a href="#faq">Frequently asked questions</a></li>
-          </ol>
-        </nav>
+        <div class="reader-main">
+          <details class="reader-toc-mobile">
+            <summary>In this guide <span>10 sections</span></summary>
+            <ol>
+              <li><a href="#the-basic-difference">The basic difference</a></li>
+              <li><a href="#comparison">Side-by-side comparison</a></li>
+              <li><a href="#decision-rules">Simple decision rules</a></li>
+              <li><a href="#native-vs-cross-platform">Native or cross-platform, if you choose mobile</a></li>
+              <li><a href="#sequencing">How to sequence them if you need both</a></li>
+              <li><a href="#examples">Where would these products start?</a></li>
+              <li><a href="#questions-to-ask">Five questions to settle it</a></li>
+              <li><a href="#launch-basics">What launch looks like on each side</a></li>
+              <li><a href="#mistakes">Mistakes to avoid</a></li>
+              <li><a href="#faq">Frequently asked questions</a></li>
+            </ol>
+          </details>
 
-        <div class="prose">
+          <div class="prose">
 
 <p>
   "Should we build an app or a website?" is one of the first questions I hear from founders. It sounds like a technology question, but it is really a question about your users: where they are, what device is in their hand and what they must do. Get that right and the technology choice becomes simple.
@@ -539,7 +581,7 @@
 </p>
 
 <h2 id="comparison">Side-by-side comparison</h2>
-<table>
+<div class="reader-table" tabindex="0" role="region" aria-label="Table"><table>
   <thead>
     <tr><th>Factor</th><th>Web app</th><th>Mobile app</th></tr>
   </thead>
@@ -552,7 +594,7 @@
     <tr><td><strong>Search visibility</strong></td><td>Pages can rank in Google.</td><td>Content inside an app is not searchable on the web.</td></tr>
     <tr><td><strong>Everyday habit</strong></td><td>Good for occasional or desk-based tasks.</td><td>Good for frequent, on-the-go use.</td></tr>
   </tbody>
-</table>
+</table></div>
 <p>
   Notice that cost does not appear as a deciding factor. What you pay depends mostly on how many features, screens and integrations you build. For a rough estimate, use the free <a href="/tools/app-cost-calculator">app cost calculator</a> and read the <a href="/project-costs">project costs guide</a>.
 </p>
@@ -617,7 +659,7 @@
 <p>
   A few hypothetical examples show how the rules play out:
 </p>
-<table>
+<div class="reader-table" tabindex="0" role="region" aria-label="Table"><table>
   <thead>
     <tr><th>Idea</th><th>Likely first version</th><th>Why</th></tr>
   </thead>
@@ -628,7 +670,7 @@
     <tr><td>Field inspection tool for engineers on site</td><td>Mobile app with offline mode</td><td>Camera, location and poor connectivity</td></tr>
     <tr><td>Two-sided marketplace</td><td>Web admin plus the side with the most volume</td><td>Different users, different devices</td></tr>
   </tbody>
-</table>
+</table></div>
 
 <h2 id="questions-to-ask">Five questions to settle it</h2>
 <ol>
@@ -662,34 +704,58 @@
   If your product is a business tool, our guide to <a href="/blog/web-application-development-build-vs-buy">when to build a custom web application</a> may also help.
 </p>
 
-        </div>
+          </div>
 
-        <section class="article-faq" id="faq" aria-labelledby="faq-title">
-          <h2 id="faq-title">Frequently asked questions</h2>
-          <h3>Should my startup build a mobile app or a website first?</h3>
-          <p>Build whichever your first users will naturally reach for. Business tools and dashboards usually start on the web. Consumer products that rely on the phone, such as location, camera or push notifications, usually start on mobile. When in doubt, test the core idea on the cheapest surface first.</p>
-          <h3>Is a web app cheaper than a mobile app?</h3>
-          <p>A single web app is usually less work than separate iPhone and Android apps, because there is one codebase and no store review. Cross-platform mobile frameworks narrow the gap. The real cost driver is the number of features and integrations, not the platform.</p>
-          <h3>What is a progressive web app, and is it enough?</h3>
-          <p>A progressive web app is a website that can be installed on a phone and works partly offline. It is a good fit for many content and tool products. Some device features and store visibility are more limited than in a native app, so check your must-have features first.</p>
-          <h3>Do I need both iOS and Android at launch?</h3>
-          <p>Not always. If your first users clearly favour one platform, launch there. If you must reach both, a cross-platform framework lets one team build for both from a shared codebase.</p>
-          <h3>Can I start with a web app and add a mobile app later?</h3>
-          <p>Yes, and it is a common path. Design the back end and data model once so a mobile app can reuse them. Planning that shared foundation from the start avoids rebuilding later.</p>
-        </section>
+          <section class="article-faq" id="faq" aria-labelledby="faq-title">
+            <h2 id="faq-title">Frequently asked questions</h2>
+            <details class="reader-faq" open>
+              <summary><h3>Should my startup build a mobile app or a website first?</h3></summary>
+              <p>Build whichever your first users will naturally reach for. Business tools and dashboards usually start on the web. Consumer products that rely on the phone, such as location, camera or push notifications, usually start on mobile. When in doubt, test the core idea on the cheapest surface first.</p>
+            </details>
+            <details class="reader-faq">
+              <summary><h3>Is a web app cheaper than a mobile app?</h3></summary>
+              <p>A single web app is usually less work than separate iPhone and Android apps, because there is one codebase and no store review. Cross-platform mobile frameworks narrow the gap. The real cost driver is the number of features and integrations, not the platform.</p>
+            </details>
+            <details class="reader-faq">
+              <summary><h3>What is a progressive web app, and is it enough?</h3></summary>
+              <p>A progressive web app is a website that can be installed on a phone and works partly offline. It is a good fit for many content and tool products. Some device features and store visibility are more limited than in a native app, so check your must-have features first.</p>
+            </details>
+            <details class="reader-faq">
+              <summary><h3>Do I need both iOS and Android at launch?</h3></summary>
+              <p>Not always. If your first users clearly favour one platform, launch there. If you must reach both, a cross-platform framework lets one team build for both from a shared codebase.</p>
+            </details>
+            <details class="reader-faq">
+              <summary><h3>Can I start with a web app and add a mobile app later?</h3></summary>
+              <p>Yes, and it is a common path. Design the back end and data model once so a mobile app can reuse them. Planning that shared foundation from the start avoids rebuilding later.</p>
+            </details>
+          </section>
 
-        <div class="blog-cta-box blog-cta-end">
-          <h3>Ready to plan your first version?</h3>
-          <p>We build both. Tell us who your first users are and we will recommend a starting point with a clear plan.</p>
-          <div class="blog-cta-actions">
-            <a href="https://calendly.com/creuto/meet" target="_blank" rel="noopener" data-book="true" class="cl-button -primary btn-book-call">Book a free strategy call <span style="margin-left:4px;">&rarr;</span></a>
-            <a href="/services/mobile-app-development" class="blog-cta-link">See mobile app development <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="blog-cta-box blog-cta-end">
+            <h3>Ready to plan your first version?</h3>
+            <p>We build both. Tell us who your first users are and we will recommend a starting point with a clear plan.</p>
+            <div class="blog-cta-actions">
+              <a href="https://calendly.com/creuto/meet" target="_blank" rel="noopener" data-book="true" class="cl-button -primary btn-book-call">Book a free strategy call <span style="margin-left:4px;">&rarr;</span></a>
+              <a href="/services/mobile-app-development" class="blog-cta-link">See mobile app development <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+          </div>
+
+          <div class="article-author-card">
+            <img src="/assets/nihar-avatar.jpg" alt="Nihar Ranjan Rout" width="96" height="96" loading="lazy" decoding="async">
+            <div>
+              <h4>About Nihar Ranjan Rout</h4>
+              <p>Founder &amp; CEO of Creuto. Over the past 8+ years Nihar has led product strategy and engineering for 50+ products, including mobile apps, custom ERPs and B2B platforms. Creuto is an OpenAI Select Partner. He works directly with founders to turn an idea into a clear plan and a launched product.</p>
+              <a href="/about">More about Nihar</a> &middot; <a href="https://www.linkedin.com/in/iniharrout" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
           </div>
         </div>
+      </div>
 
-        <section class="related-posts" aria-labelledby="related-title">
+      <section class="related-posts reader-related" aria-labelledby="related-title">
+        <div class="reader-related-head">
           <h2 id="related-title">Keep reading</h2>
-          <div class="related-grid">
+          <a href="/blog/topic/mobile">More Mobile Apps guides <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="related-grid">
       <a class="related-card" href="/blog/react-native-mobile-app-playbook">
         <span class="related-art" aria-hidden="true"><svg class="doodle-scene" viewBox="0 0 480 300" aria-hidden="true" focusable="false"><rect x="0" y="0" width="480" height="300" rx="24" fill="var(--d-peach)"/><g opacity=".55"><circle cx="40" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="40" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="40" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="40" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="40" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="97" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="97" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="97" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="97" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="97" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="154" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="154" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="154" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="154" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="154" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="211" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="211" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="211" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="211" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="211" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="268" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="268" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="268" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="268" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="268" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="325" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="325" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="325" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="325" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="325" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="382" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="382" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="382" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="382" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="382" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="439" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="439" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="439" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="439" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="439" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/></g><circle cx="202" cy="152" r="106" fill="var(--d-paper)" opacity=".7"/><g transform="translate(78 28) scale(1.55)" style="--d-blue:#5fd39a;--d-sky:#e6f6ee"><circle cx="80" cy="84" r="56" fill="var(--d-sky)"/><rect x="26" y="34" width="48" height="94" rx="10" fill="var(--d-blue)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><rect x="32" y="48" width="36" height="68" rx="4" fill="var(--d-paper)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M44 41 L56 41" fill="none" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><rect x="86" y="34" width="48" height="94" rx="10" fill="var(--d-paper)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><rect x="92" y="48" width="36" height="68" rx="4" fill="var(--d-sky)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M104 41 L116 41" fill="none" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M64 20c10-8 22-8 32 0M92 14l4 6-7 2" fill="none" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M110 71C111.8 78.2 111.8 78.2 119 80C111.8 81.8 111.8 81.8 110 89C108.2 81.8 108.2 81.8 101 80C108.2 78.2 108.2 78.2 110 71Z" fill="var(--d-yellow)" stroke="var(--d-ink)" stroke-width="3" stroke-linejoin="round"/></g><g transform="translate(300 128) scale(.95)"><circle cx="80" cy="84" r="56" fill="var(--d-peach)"/><rect x="50" y="26" width="60" height="110" rx="10" fill="var(--d-paper)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><rect x="56" y="40" width="48" height="84" rx="4" fill="var(--d-sky)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M74 33 L86 33" fill="none" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><rect x="60" y="52" width="40" height="14" rx="4" fill="var(--d-blue)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><rect x="60" y="72" width="40" height="14" rx="4" fill="var(--d-yellow)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><rect x="60" y="92" width="40" height="14" rx="4" fill="var(--d-coral)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></g><g><path d="M52 51V69M43 60H61" fill="none" stroke="var(--d-ink)" stroke-width="3" stroke-linecap="round"/><path d="M430 44V60M422 52H438" fill="none" stroke="var(--d-ink)" stroke-width="3" stroke-linecap="round"/><path d="M440 239C442.2 247.8 442.2 247.8 451 250C442.2 252.2 442.2 252.2 440 261C437.8 252.2 437.8 252.2 429 250C437.8 247.8 437.8 247.8 440 239Z" fill="var(--d-yellow)" stroke="var(--d-ink)" stroke-width="3" stroke-linejoin="round"/></g></svg></span>
         <span class="related-tag">Mobile Engineering &middot; 10 min read</span>
@@ -711,18 +777,8 @@
         <span class="related-blurb">Agency, freelancers or a dedicated squad: where MVP budgets actually go.</span>
         <span class="related-go">Read the guide <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       </a>
-          </div>
-        </section>
-
-        <div class="article-author-card">
-          <img src="/assets/nihar-avatar.jpg" alt="Nihar Ranjan Rout" width="96" height="96" loading="lazy" decoding="async">
-          <div>
-            <h4>About Nihar Ranjan Rout</h4>
-            <p>Founder &amp; CEO of Creuto. Over the past 8+ years Nihar has led product strategy and engineering for 50+ products, including mobile apps, custom ERPs and B2B platforms. Creuto is an OpenAI Select Partner. He works directly with founders to turn an idea into a clear plan and a launched product.</p>
-            <a href="/about">More about Nihar</a> &middot; <a href="https://www.linkedin.com/in/iniharrout" target="_blank" rel="noopener">LinkedIn</a>
-          </div>
         </div>
-      </div>
+      </section>
     </article>
   </main>
 
@@ -863,5 +919,6 @@
 <!-- /chrome:footer -->
 
   <script src="/assets/site-enhancements.js?v=blue5"></script>
+  <script src="/assets/blog-reader.js?v=br1" defer></script>
 </body>
 </html>

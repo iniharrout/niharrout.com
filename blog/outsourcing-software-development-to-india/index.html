@@ -224,12 +224,18 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&amp;family=Inter:wght@400;500;600;700&amp;display=swap">
   <link rel="stylesheet" href="/assets/design-system.css?v=blue8">
-  <link rel="stylesheet" href="/assets/blog-post.css?v=bp4">
+  <link rel="stylesheet" href="/assets/blog-post.css?v=bp5">
   <link rel="stylesheet" href="/assets/chrome.css?v=45">
   <script src="/assets/chrome.js?v=17" defer></script>
   <link rel="stylesheet" href="/assets/schedule-popup.css?v=sp3">
   <script src="/assets/schedule-popup.js?v=sp5" defer></script>
   <link rel="stylesheet" href="/assets/primitives.css?v=p8">
+  <!-- pwa -->
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="apple-mobile-web-app-title" content="Nihar">
+  <script src="/assets/pwa.js?v=pw1" defer></script>
+  <!-- /pwa -->
 </head>
 
 <body>
@@ -470,61 +476,97 @@
 </header>
 <!-- /chrome:header -->
 
-  <main id="top">
+  <div class="reader-progress" aria-hidden="true"><span></span></div>
+  <main id="top" class="reader">
     <article>
-      <header class="article-header">
-        <div class="wrap" style="max-width:920px;">
-          <nav class="article-breadcrumbs" aria-label="Breadcrumb">
-            <a href="/">Home</a>
-            <span>/</span>
-            <a href="/blog">Blog</a>
-            <span>/</span>
-            <span>Hiring a Team</span>
-          </nav>
+      <header class="article-header reader-header">
+        <div class="reader-head">
+          <div class="reader-head-text">
+            <nav class="article-breadcrumbs" aria-label="Breadcrumb">
+              <a href="/">Home</a>
+              <span>/</span>
+              <a href="/blog">Blog</a>
+              <span>/</span>
+              <a href="/blog/topic/cost-and-hiring">Cost &amp; Hiring</a>
+            </nav>
 
-          <div class="blog-category-badge" style="display:inline-block; margin-bottom:16px;">HIRING A TEAM</div>
+            <div class="blog-category-badge">HIRING A TEAM</div>
 
-          <h1 class="article-headline">Outsourcing Software Development to India: A Practical Guide for US, UK and Australian Companies</h1>
+            <h1 class="article-headline">Outsourcing Software Development to India: A Practical Guide for US, UK and Australian Companies</h1>
 
-          <p class="article-lead">India is one of the most common places for companies abroad to build software, and for good reason: deep engineering talent, strong English, and teams used to working across time zones. The difference between a smooth project and a painful one comes down to a handful of decisions you make before you sign.</p>
+            <p class="article-lead">India is one of the most common places for companies abroad to build software, and for good reason: deep engineering talent, strong English, and teams used to working across time zones. The difference between a smooth project and a painful one comes down to a handful of decisions you make before you sign.</p>
 
-          <div class="article-meta-bar">
-            <div class="article-author-info">
-              <img src="/assets/nihar-avatar.jpg" alt="Nihar Ranjan Rout" class="article-author-avatar" width="96" height="96" decoding="async">
-              <div>
-                <div class="article-author-name">Nihar Ranjan Rout</div>
-                <div class="article-author-title">Founder &amp; CEO, Creuto &middot; 8+ Years in Product Leadership</div>
+            <div class="article-meta-bar">
+              <div class="article-author-info">
+                <img src="/assets/nihar-avatar.jpg" alt="Nihar Ranjan Rout" class="article-author-avatar" width="96" height="96" decoding="async">
+                <div>
+                  <div class="article-author-name">Nihar Ranjan Rout</div>
+                  <div class="article-author-title">Founder &amp; CEO, Creuto</div>
+                </div>
+              </div>
+              <div class="reader-meta">
+                <time datetime="2026-10-22">October 22, 2026</time><span aria-hidden="true">&middot;</span><span>9 min read</span>
               </div>
             </div>
-            <div style="font-size:13.5px; color:var(--hs-text-03);">
-              <time datetime="2026-10-22">Published October 22, 2026</time> &middot; 9 min read
-            </div>
           </div>
+          <figure class="article-figure reader-cover">
+            <img src="/assets/blog/outsourcing-software-development-to-india-banner.jpg" alt="Outsourcing Software Development to India: A Practical Guide for US, UK and Australian Companies: guide by Nihar Ranjan Rout" width="1200" height="630" fetchpriority="high" decoding="async">
+          </figure>
         </div>
       </header>
 
-      <div class="article-body-container">
-        <figure class="article-figure">
-          <img src="/assets/blog/outsourcing-software-development-to-india-banner.jpg" alt="Outsourcing Software Development to India: A Practical Guide for US, UK and Australian Companies: guide by Nihar Ranjan Rout" width="1200" height="630" fetchpriority="high" decoding="async">
-        </figure>
+      <div class="reader-layout">
+        <aside class="reader-side" aria-label="Guide tools">
+          <div class="reader-side-inner">
+            <nav class="article-toc" aria-label="In this guide">
+              <p class="article-toc-title">In this guide</p>
+              <ol>
+                <li><a href="#why-india">Why companies build in India</a></li>
+                <li><a href="#time-zones">Making time zones work</a></li>
+                <li><a href="#contracts">Contracts and IP</a></li>
+                <li><a href="#choosing">How to choose the right Indian partner</a></li>
+                <li><a href="#models">Engagement models</a></li>
+                <li><a href="#first-90-days">What the first 90 days should look like</a></li>
+                <li><a href="#communication">Communication habits that work across borders</a></li>
+                <li><a href="#mistakes">Mistakes to avoid</a></li>
+                <li><a href="#creuto">How we work with clients abroad</a></li>
+                <li><a href="#faq">Frequently asked questions</a></li>
+              </ol>
+            </nav>
+            <div class="reader-share">
+              <p class="article-toc-title">Share this guide</p>
+              <div class="reader-share-row">
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.niharrout.com%2Fblog%2Foutsourcing-software-development-to-india" target="_blank" rel="noopener" aria-label="Share on LinkedIn"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg></a>
+                <a href="https://x.com/intent/post?url=https%3A%2F%2Fwww.niharrout.com%2Fblog%2Foutsourcing-software-development-to-india&amp;text=Outsourcing%20Software%20Development%20to%20India%3A%20A%202026%20Guide" target="_blank" rel="noopener" aria-label="Share on X"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l16 16M20 4L4 20"/></svg></a>
+                <a href="https://wa.me/?text=Outsourcing%20Software%20Development%20to%20India%3A%20A%202026%20Guide%20https%3A%2F%2Fwww.niharrout.com%2Fblog%2Foutsourcing-software-development-to-india" target="_blank" rel="noopener" aria-label="Share on WhatsApp"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.5a8.5 8.5 0 0 1-12.6 7.4L3.5 20l1.2-3.7A8.5 8.5 0 1 1 20 11.5z"/><path d="M9 9.5c.3 1.8 2.2 3.8 4 4.2l1.2-1.1 1.8.9-.4 1.4c-3 .4-7.1-3.4-7.1-6.6l1.3-.6 1 1.7z"/></svg></a>
+                <button type="button" class="reader-copy" data-copy="https://www.niharrout.com/blog/outsourcing-software-development-to-india" aria-label="Copy link"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><span class="reader-copy-done" role="status"></span></button>
+              </div>
+            </div>
+            <a class="reader-side-cta" href="https://calendly.com/creuto/meet" target="_blank" rel="noopener" data-book="true">
+              <strong>Talk it through with Nihar</strong>
+              <span>Free 30-minute call &rarr;</span>
+            </a>
+          </div>
+        </aside>
 
-        <nav class="article-toc" aria-label="In this guide">
-          <p class="article-toc-title">In this guide</p>
-          <ol>
-            <li><a href="#why-india">Why companies build in India</a></li>
-            <li><a href="#time-zones">Making time zones work</a></li>
-            <li><a href="#contracts">Contracts and IP</a></li>
-            <li><a href="#choosing">How to choose the right Indian partner</a></li>
-            <li><a href="#models">Engagement models</a></li>
-            <li><a href="#first-90-days">What the first 90 days should look like</a></li>
-            <li><a href="#communication">Communication habits that work across borders</a></li>
-            <li><a href="#mistakes">Mistakes to avoid</a></li>
-            <li><a href="#creuto">How we work with clients abroad</a></li>
-            <li><a href="#faq">Frequently asked questions</a></li>
-          </ol>
-        </nav>
+        <div class="reader-main">
+          <details class="reader-toc-mobile">
+            <summary>In this guide <span>10 sections</span></summary>
+            <ol>
+              <li><a href="#why-india">Why companies build in India</a></li>
+              <li><a href="#time-zones">Making time zones work</a></li>
+              <li><a href="#contracts">Contracts and IP</a></li>
+              <li><a href="#choosing">How to choose the right Indian partner</a></li>
+              <li><a href="#models">Engagement models</a></li>
+              <li><a href="#first-90-days">What the first 90 days should look like</a></li>
+              <li><a href="#communication">Communication habits that work across borders</a></li>
+              <li><a href="#mistakes">Mistakes to avoid</a></li>
+              <li><a href="#creuto">How we work with clients abroad</a></li>
+              <li><a href="#faq">Frequently asked questions</a></li>
+            </ol>
+          </details>
 
-        <div class="prose">
+          <div class="prose">
 
 <p>
   At Creuto, a good share of our clients are outside India: in the US, the UK, Australia and Vietnam. These are the questions they ask before starting, and the setup that makes cross-border projects work.
@@ -579,14 +621,14 @@
 </p>
 
 <h2 id="models">Engagement models</h2>
-<table>
+<div class="reader-table" tabindex="0" role="region" aria-label="Table"><table>
   <thead><tr><th>Model</th><th>Fits</th></tr></thead>
   <tbody>
     <tr><td>Fixed-scope milestones</td><td>A defined MVP or first release</td></tr>
     <tr><td>Time and materials</td><td>Evolving products with changing priorities</td></tr>
     <tr><td>Dedicated team</td><td>Long-term product development</td></tr>
   </tbody>
-</table>
+</table></div>
 
 
 <h2 id="first-90-days">What the first 90 days should look like</h2>
@@ -621,34 +663,58 @@
   <a href="https://creuto.com" target="_blank" rel="noopener">Creuto</a> is a founder-led company in Bhubaneswar, India and an OpenAI Select Partner, rated 5.0 on Clutch from 16 verified reviews. You speak with me directly, the PRD comes first, your code lives in your accounts from day one and every launch includes a 60-day warranty. Explore <a href="/services">our services</a> or <a href="/work">the products we have shipped</a>.
 </p>
 
-        </div>
+          </div>
 
-        <section class="article-faq" id="faq" aria-labelledby="faq-title">
-          <h2 id="faq-title">Frequently asked questions</h2>
-          <h3>Is it safe to outsource software development to India?</h3>
-          <p>Yes, when the contract and setup protect you: code in your own repositories, clear IP ownership clauses, an NDA, milestone payments and a team you can speak with directly.</p>
-          <h3>How do time zones work with an Indian team?</h3>
-          <p>India Standard Time overlaps with the UK morning, the Australian afternoon and the US late evening or early morning. Good teams plan a few overlap hours each week for calls and handle the rest through written updates.</p>
-          <h3>Who owns the intellectual property?</h3>
-          <p>Agree it in writing before work starts. A clean setup keeps the code in your own GitHub and cloud accounts and transfers ownership of custom work as each milestone is paid.</p>
-          <h3>What engagement model should I choose?</h3>
-          <p>Fixed-scope milestones for a defined first release, time and materials or a dedicated team for ongoing product development.</p>
-          <h3>How do I avoid communication problems?</h3>
-          <p>One accountable contact, a written scope, regular demos of working software and a shared channel for questions. Avoid setups where requirements pass through several people before reaching the developers.</p>
-        </section>
+          <section class="article-faq" id="faq" aria-labelledby="faq-title">
+            <h2 id="faq-title">Frequently asked questions</h2>
+            <details class="reader-faq" open>
+              <summary><h3>Is it safe to outsource software development to India?</h3></summary>
+              <p>Yes, when the contract and setup protect you: code in your own repositories, clear IP ownership clauses, an NDA, milestone payments and a team you can speak with directly.</p>
+            </details>
+            <details class="reader-faq">
+              <summary><h3>How do time zones work with an Indian team?</h3></summary>
+              <p>India Standard Time overlaps with the UK morning, the Australian afternoon and the US late evening or early morning. Good teams plan a few overlap hours each week for calls and handle the rest through written updates.</p>
+            </details>
+            <details class="reader-faq">
+              <summary><h3>Who owns the intellectual property?</h3></summary>
+              <p>Agree it in writing before work starts. A clean setup keeps the code in your own GitHub and cloud accounts and transfers ownership of custom work as each milestone is paid.</p>
+            </details>
+            <details class="reader-faq">
+              <summary><h3>What engagement model should I choose?</h3></summary>
+              <p>Fixed-scope milestones for a defined first release, time and materials or a dedicated team for ongoing product development.</p>
+            </details>
+            <details class="reader-faq">
+              <summary><h3>How do I avoid communication problems?</h3></summary>
+              <p>One accountable contact, a written scope, regular demos of working software and a shared channel for questions. Avoid setups where requirements pass through several people before reaching the developers.</p>
+            </details>
+          </section>
 
-        <div class="blog-cta-box blog-cta-end">
-          <h3>Looking for a founder-led team in India?</h3>
-          <p>We work with clients in the US, UK, Australia, Vietnam and India, with your code in your own accounts from day one.</p>
-          <div class="blog-cta-actions">
-            <a href="https://calendly.com/creuto/meet" target="_blank" rel="noopener" data-book="true" class="cl-button -primary btn-book-call">Book a free strategy call <span style="margin-left:4px;">&rarr;</span></a>
-            <a href="/services/custom-software-development" class="blog-cta-link">See custom software development <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="blog-cta-box blog-cta-end">
+            <h3>Looking for a founder-led team in India?</h3>
+            <p>We work with clients in the US, UK, Australia, Vietnam and India, with your code in your own accounts from day one.</p>
+            <div class="blog-cta-actions">
+              <a href="https://calendly.com/creuto/meet" target="_blank" rel="noopener" data-book="true" class="cl-button -primary btn-book-call">Book a free strategy call <span style="margin-left:4px;">&rarr;</span></a>
+              <a href="/services/custom-software-development" class="blog-cta-link">See custom software development <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+          </div>
+
+          <div class="article-author-card">
+            <img src="/assets/nihar-avatar.jpg" alt="Nihar Ranjan Rout" width="96" height="96" loading="lazy" decoding="async">
+            <div>
+              <h4>About Nihar Ranjan Rout</h4>
+              <p>Founder &amp; CEO of Creuto. Over the past 8+ years Nihar has led product strategy and engineering for 50+ products, including mobile apps, custom ERPs and B2B platforms. Creuto is an OpenAI Select Partner. He works directly with founders to turn an idea into a clear plan and a launched product.</p>
+              <a href="/about">More about Nihar</a> &middot; <a href="https://www.linkedin.com/in/iniharrout" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
           </div>
         </div>
+      </div>
 
-        <section class="related-posts" aria-labelledby="related-title">
+      <section class="related-posts reader-related" aria-labelledby="related-title">
+        <div class="reader-related-head">
           <h2 id="related-title">Keep reading</h2>
-          <div class="related-grid">
+          <a href="/blog/topic/cost-and-hiring">More Cost &amp; Hiring guides <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="related-grid">
       <a class="related-card" href="/blog/how-to-choose-a-software-development-company">
         <span class="related-art" aria-hidden="true"><svg class="doodle-scene" viewBox="0 0 480 300" aria-hidden="true" focusable="false"><rect x="0" y="0" width="480" height="300" rx="24" fill="var(--d-sky)"/><g opacity=".55"><circle cx="40" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="40" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="40" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="40" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="40" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="97" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="97" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="97" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="97" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="97" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="154" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="154" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="154" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="154" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="154" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="211" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="211" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="211" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="211" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="211" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="268" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="268" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="268" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="268" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="268" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="325" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="325" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="325" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="325" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="325" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="382" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="382" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="382" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="382" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="382" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="439" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="439" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="439" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="439" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="439" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/></g><circle cx="202" cy="152" r="106" fill="var(--d-paper)" opacity=".7"/><g transform="translate(78 28) scale(1.55)"><circle cx="78" cy="86" r="56" fill="var(--d-sky)"/><path d="M42 132v-10a36 36 0 0 1 72 0v10Z" fill="var(--d-blue)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="78" cy="64" r="24" fill="var(--d-peach)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M54 60a24 24 0 0 1 48 0c-10-8-36-8-48 0Z" fill="var(--d-ink)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="118" cy="104" r="15" fill="var(--d-yellow)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M118 97C119.4 102.6 119.4 102.6 125 104C119.4 105.4 119.4 105.4 118 111C116.6 105.4 116.6 105.4 111 104C116.6 102.6 116.6 102.6 118 97Z" fill="var(--d-paper)" stroke="var(--d-ink)" stroke-width="3" stroke-linejoin="round"/><path d="M32 33V47M25 40H39" fill="none" stroke="var(--d-ink)" stroke-width="3" stroke-linecap="round"/></g><g transform="translate(300 128) scale(.95)" style="--d-blue:#ff8f6b;--d-sky:#ffeee6;--d-coral:#ffc94d"><circle cx="80" cy="82" r="56" fill="var(--d-sun)"/><path d="M40 36H120a10 10 0 0 1 10 10V96a10 10 0 0 1-10 10H40a10 10 0 0 1-10-10V46a10 10 0 0 1 10-10Z" fill="var(--d-yellow)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M44 106l-6 14 18-14" fill="var(--d-yellow)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M68 60a12 12 0 1 1 18 10c-4 3-6 6-6 10" fill="none" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="80" cy="92" r="3.8" fill="var(--d-ink)"/></g><g><path d="M52 51V69M43 60H61" fill="none" stroke="var(--d-ink)" stroke-width="3" stroke-linecap="round"/><path d="M430 44V60M422 52H438" fill="none" stroke="var(--d-ink)" stroke-width="3" stroke-linecap="round"/><path d="M440 239C442.2 247.8 442.2 247.8 451 250C442.2 252.2 442.2 252.2 440 261C437.8 252.2 437.8 252.2 429 250C437.8 247.8 437.8 247.8 440 239Z" fill="var(--d-yellow)" stroke="var(--d-ink)" stroke-width="3" stroke-linejoin="round"/></g></svg></span>
         <span class="related-tag">Hiring a Team &middot; 10 min read</span>
@@ -670,18 +736,8 @@
         <span class="related-blurb">Freelancers, agencies or a product team: how to hire app developers in India, where to look, how to vet them and the red flags that should end the conversation.</span>
         <span class="related-go">Read the guide <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       </a>
-          </div>
-        </section>
-
-        <div class="article-author-card">
-          <img src="/assets/nihar-avatar.jpg" alt="Nihar Ranjan Rout" width="96" height="96" loading="lazy" decoding="async">
-          <div>
-            <h4>About Nihar Ranjan Rout</h4>
-            <p>Founder &amp; CEO of Creuto. Over the past 8+ years Nihar has led product strategy and engineering for 50+ products, including mobile apps, custom ERPs and B2B platforms. Creuto is an OpenAI Select Partner. He works directly with founders to turn an idea into a clear plan and a launched product.</p>
-            <a href="/about">More about Nihar</a> &middot; <a href="https://www.linkedin.com/in/iniharrout" target="_blank" rel="noopener">LinkedIn</a>
-          </div>
         </div>
-      </div>
+      </section>
     </article>
   </main>
 
@@ -822,5 +878,6 @@
 <!-- /chrome:footer -->
 
   <script src="/assets/site-enhancements.js?v=blue5"></script>
+  <script src="/assets/blog-reader.js?v=br1" defer></script>
 </body>
 </html>

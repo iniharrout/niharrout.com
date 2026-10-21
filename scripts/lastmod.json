@@ -15,16 +15,28 @@
     "hash": "def9ef2406bd5415",
     "date": "2026-10-21"
   },
+  "blog/agile-vs-waterfall-software-development/index.html": {
+    "hash": "b14ddc24dfdafe02",
+    "date": "2026-10-22"
+  },
   "blog/ai-agents-for-business/index.html": {
-    "hash": "762e0ebb510aa3d1",
+    "hash": "a016ed738127678b",
     "date": "2026-10-22"
   },
   "blog/app-development-cost-factors-india/index.html": {
-    "hash": "2042b4666c51cbe8",
+    "hash": "3a714f37366f25bd",
     "date": "2026-10-22"
   },
   "blog/app-store-and-google-play-approval-guide/index.html": {
-    "hash": "f101840af802e686",
+    "hash": "07a70fa4bbe15ed9",
+    "date": "2026-10-22"
+  },
+  "blog/app-store-optimization-guide/index.html": {
+    "hash": "5aa624c0f883e4a0",
+    "date": "2026-10-22"
+  },
+  "blog/aws-vs-azure-vs-google-cloud-for-startups/index.html": {
+    "hash": "8c94b5a2271f2b7f",
     "date": "2026-10-22"
   },
   "blog/cost-to-build-mvp-2026/index.html": {
@@ -32,79 +44,127 @@
     "date": "2026-10-21"
   },
   "blog/custom-crm-vs-salesforce-hubspot-zoho/index.html": {
-    "hash": "b1e6fda25a40afed",
+    "hash": "4a0c5395994c1250",
     "date": "2026-10-22"
   },
   "blog/does-your-business-need-software/index.html": {
-    "hash": "4d6468fd600a70cf",
+    "hash": "10fd5f0cec6c852d",
     "date": "2026-10-22"
   },
   "blog/dpdp-act-guide-for-app-founders/index.html": {
-    "hash": "16507535fadee5b0",
+    "hash": "54b00afd6b9ac2c3",
     "date": "2026-10-22"
   },
   "blog/erp-vs-crm-difference/index.html": {
-    "hash": "1614dc2c32f35be4",
+    "hash": "36b040eb28b1ee72",
     "date": "2026-10-22"
   },
   "blog/fixed-price-vs-time-and-materials-software-development/index.html": {
-    "hash": "5dcdc1b4275922e2",
-    "date": "2026-10-21"
+    "hash": "66b18306fda98263",
+    "date": "2026-10-22"
+  },
+  "blog/freelancer-vs-agency-for-app-development/index.html": {
+    "hash": "856ee380fb3e5612",
+    "date": "2026-10-22"
+  },
+  "blog/generative-ai-use-cases-for-business/index.html": {
+    "hash": "8334b78e18743365",
+    "date": "2026-10-22"
   },
   "blog/how-long-does-it-take-to-build-an-app/index.html": {
-    "hash": "e89909230b94003b",
+    "hash": "2a4024740eb0b049",
     "date": "2026-10-22"
   },
   "blog/how-to-add-ai-to-an-existing-product/index.html": {
-    "hash": "d3ec989871167c12",
-    "date": "2026-10-21"
+    "hash": "5ab09394b531b393",
+    "date": "2026-10-22"
+  },
+  "blog/how-to-build-a-fintech-app-in-india/index.html": {
+    "hash": "a56c8a5dbd454f9c",
+    "date": "2026-10-22"
+  },
+  "blog/how-to-build-a-food-delivery-app/index.html": {
+    "hash": "fb23fa10fd8730db",
+    "date": "2026-10-22"
   },
   "blog/how-to-build-a-multi-vendor-marketplace-app/index.html": {
-    "hash": "f61e6590175173f2",
+    "hash": "fc4b389f5699944b",
     "date": "2026-10-22"
   },
   "blog/how-to-build-a-quick-commerce-app/index.html": {
-    "hash": "25e47e049a698363",
+    "hash": "a20642f08e8287d2",
+    "date": "2026-10-22"
+  },
+  "blog/how-to-build-a-real-estate-app/index.html": {
+    "hash": "cde3c92f13aacb19",
+    "date": "2026-10-22"
+  },
+  "blog/how-to-build-a-saas-product/index.html": {
+    "hash": "26f4afba903a9ad4",
+    "date": "2026-10-22"
+  },
+  "blog/how-to-build-a-telemedicine-app/index.html": {
+    "hash": "9bf3e4e29db72be7",
     "date": "2026-10-22"
   },
   "blog/how-to-build-an-ai-chatbot-for-business/index.html": {
-    "hash": "d38622c032eae7aa",
+    "hash": "a4c7573ecba8c2e5",
+    "date": "2026-10-22"
+  },
+  "blog/how-to-build-an-edtech-app/index.html": {
+    "hash": "c44e2b2a8324486d",
     "date": "2026-10-22"
   },
   "blog/how-to-choose-a-software-development-company/index.html": {
-    "hash": "f8da613a5da85c52",
-    "date": "2026-10-21"
+    "hash": "13e66aa0bb409560",
+    "date": "2026-10-22"
+  },
+  "blog/how-to-choose-a-tech-stack-for-your-startup/index.html": {
+    "hash": "b7be72f9fa916181",
+    "date": "2026-10-22"
   },
   "blog/how-to-hire-app-developers-in-india/index.html": {
-    "hash": "4f4298360b6d9869",
+    "hash": "198483f54c09ad82",
+    "date": "2026-10-22"
+  },
+  "blog/how-to-reduce-ai-hallucinations/index.html": {
+    "hash": "623d9771d7008a63",
     "date": "2026-10-22"
   },
   "blog/how-to-validate-a-startup-idea/index.html": {
-    "hash": "364476bbd8df024b",
+    "hash": "1f59c55739249f44",
+    "date": "2026-10-22"
+  },
+  "blog/how-to-write-user-stories/index.html": {
+    "hash": "2bcc052474a4e7c8",
     "date": "2026-10-22"
   },
   "blog/index.html": {
-    "hash": "cdfccf8535249e26",
+    "hash": "e7c439658c196492",
     "date": "2026-10-22"
   },
   "blog/investing-in-technology-a-smart-strategy-for-business-growth/index.html": {
-    "hash": "1256ac4cf32a3764",
+    "hash": "7ac040c3ec6642ab",
+    "date": "2026-10-22"
+  },
+  "blog/legacy-software-modernization-guide/index.html": {
+    "hash": "1d0890d903fe3587",
     "date": "2026-10-22"
   },
   "blog/mobile-app-security-checklist/index.html": {
-    "hash": "9f796958715a4be5",
+    "hash": "5c65bc09596a8fb6",
     "date": "2026-10-22"
   },
   "blog/mobile-app-vs-web-app-which-to-build-first/index.html": {
-    "hash": "f56cae3b7acfdf55",
-    "date": "2026-10-21"
+    "hash": "e33ba5ca60415f53",
+    "date": "2026-10-22"
   },
   "blog/mvp-vs-prototype-vs-proof-of-concept/index.html": {
-    "hash": "653289c726700d12",
+    "hash": "70daa446c1b185b1",
     "date": "2026-10-22"
   },
   "blog/native-vs-cross-platform-app-development/index.html": {
-    "hash": "915379734fbc4d95",
+    "hash": "cbc62907a58416be",
     "date": "2026-10-22"
   },
   "blog/openai-select-partner/index.html": {
@@ -112,7 +172,23 @@
     "date": "2026-10-21"
   },
   "blog/outsourcing-software-development-to-india/index.html": {
-    "hash": "ee8f0f829fe4e33e",
+    "hash": "caa61f29a2320f0c",
+    "date": "2026-10-22"
+  },
+  "blog/page/2/index.html": {
+    "hash": "c9de9c455e975328",
+    "date": "2026-10-22"
+  },
+  "blog/page/3/index.html": {
+    "hash": "6b6c3feea90e331d",
+    "date": "2026-10-22"
+  },
+  "blog/page/4/index.html": {
+    "hash": "0ff822747ef5aba6",
+    "date": "2026-10-22"
+  },
+  "blog/page/5/index.html": {
+    "hash": "96226a30695e8107",
     "date": "2026-10-22"
   },
   "blog/pragmatic-enterprise-ai-workflows/index.html": {
@@ -123,8 +199,12 @@
     "hash": "5c8edc9ff234722f",
     "date": "2026-10-21"
   },
+  "blog/pwa-vs-native-app/index.html": {
+    "hash": "321e0eea44c614d1",
+    "date": "2026-10-22"
+  },
   "blog/rag-vs-fine-tuning/index.html": {
-    "hash": "e8841ef5a3367d7e",
+    "hash": "4a44c566271d4b40",
     "date": "2026-10-22"
   },
   "blog/react-native-mobile-app-playbook/index.html": {
@@ -132,19 +212,55 @@
     "date": "2026-10-21"
   },
   "blog/react-native-vs-flutter/index.html": {
-    "hash": "7f1c39b01fbc48d2",
+    "hash": "474ec17983ec42bc",
     "date": "2026-10-22"
   },
   "blog/salon-booking-app-development/index.html": {
-    "hash": "6885e2e95eb421e2",
+    "hash": "96eaae226fbdbb63",
+    "date": "2026-10-22"
+  },
+  "blog/software-maintenance-cost-and-planning/index.html": {
+    "hash": "e6486e2e2222dcce",
     "date": "2026-10-22"
   },
   "blog/the-essential-ingredients-for-a-successful-product-launch-by-nihar-ranjan-rout/index.html": {
-    "hash": "709dab3769739814",
+    "hash": "deb34cdaff7f47f9",
     "date": "2026-10-22"
   },
   "blog/the-future-of-digital-india-is-homegrown/index.html": {
-    "hash": "08baf2305af0c566",
+    "hash": "ea614dcc9832e608",
+    "date": "2026-10-22"
+  },
+  "blog/topic/ai/index.html": {
+    "hash": "6df4526be5d4c71b",
+    "date": "2026-10-22"
+  },
+  "blog/topic/cost-and-hiring/index.html": {
+    "hash": "1aa2640092c76c2f",
+    "date": "2026-10-22"
+  },
+  "blog/topic/industries/index.html": {
+    "hash": "32803e6719a9cacc",
+    "date": "2026-10-22"
+  },
+  "blog/topic/mobile/index.html": {
+    "hash": "651342656f2e4619",
+    "date": "2026-10-22"
+  },
+  "blog/topic/product/index.html": {
+    "hash": "6058a5fc51c3052f",
+    "date": "2026-10-22"
+  },
+  "blog/topic/software-and-cloud/index.html": {
+    "hash": "6149aad7ca4ca112",
+    "date": "2026-10-22"
+  },
+  "blog/ui-vs-ux-design-difference/index.html": {
+    "hash": "8da684bf86a36cc4",
+    "date": "2026-10-22"
+  },
+  "blog/upi-payment-integration-for-apps/index.html": {
+    "hash": "b09390e21de6e31a",
     "date": "2026-10-22"
   },
   "blog/web-application-development-build-vs-buy/index.html": {
@@ -152,12 +268,16 @@
     "date": "2026-10-21"
   },
   "blog/website-vs-web-app-difference/index.html": {
-    "hash": "9bb4b38f0a962fa0",
+    "hash": "935b88c8307e61d1",
     "date": "2026-10-22"
   },
   "blog/what-is-a-prd-how-to-write-a-product-requirements-document/index.html": {
-    "hash": "cd614d446b116fe9",
-    "date": "2026-10-21"
+    "hash": "c5bc8192332e2fe8",
+    "date": "2026-10-22"
+  },
+  "blog/whatsapp-business-api-guide/index.html": {
+    "hash": "7abb9953e4f86ad5",
+    "date": "2026-10-22"
   },
   "blog/why-custom-erp-implementations-fail/index.html": {
     "hash": "b7e0e721a04e31d0",
@@ -168,7 +288,7 @@
     "date": "2026-10-21"
   },
   "index.html": {
-    "hash": "63c3583edbabf217",
+    "hash": "e2e569403a698f4f",
     "date": "2026-10-22"
   },
   "industries/agriculture/index.html": {

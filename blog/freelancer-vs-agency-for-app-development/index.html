@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- ga4 -->
+  <!-- Google Analytics (gtag.js) with Consent Mode. For visitors in Europe, the UK and nearby time zones Google's script
+       is only loaded after they accept (assets/consent.js shows the banner), and Microsoft Clarity loads with it. Everyone else loads both straight away. -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    (function () {
+      var tz = '';
+      try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) {}
+      var forced = /[?&]cc=(eu|row)\b/.exec(location.search);
+      var required = forced ? forced[1] === 'eu' : /^(Europe\/|Atlantic\/(Reykjavik|Canary|Madeira|Azores|Faroe)|Africa\/Ceuta|Arctic\/Longyearbyen)/.test(tz);
+      var saved = null;
+      try { saved = localStorage.getItem('nr_consent'); } catch (e) {}
+      var granted = saved === 'granted' || (!required && saved !== 'denied');
+      var loaded = false;
+      function load() {
+        if (loaded) return;
+        loaded = true;
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-T5CTESZZN0';
+        document.head.appendChild(s);
+        loadClarity();
+      }
+      // Microsoft Clarity (session replay and heatmaps). Loaded together with Google Analytics, so under the same consent.
+      function loadClarity() {
+        (function (c, l, a, r, i, t, y) {
+          c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
+          if (/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) return;
+          t = l.createElement(r); t.async = 1; t.src = 'https://www.clarity.ms/tag/' + i;
+          y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, 'clarity', 'script', 'yw774wk1kg');
+      }
+      function store(value) { try { localStorage.setItem('nr_consent', value); } catch (e) {} }
+      function clearCookies() {
+        var host = location.hostname, parts = host.split('.'), domains = [host, '.' + host];
+        if (parts.length > 2) domains.push('.' + parts.slice(-2).join('.'));
+        document.cookie.split(';').forEach(function (c) {
+          var name = c.split('=')[0].trim();
+          if (name.indexOf('_ga') !== 0 && name.indexOf('_cl') !== 0) return;
+          domains.forEach(function (d) { document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=' + d; });
+          document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/';
+        });
+      }
+      window.nrConsent = {
+        required: required,
+        saved: saved,
+        accept: function () { store('granted'); gtag('consent', 'update', { analytics_storage: 'granted' }); load(); },
+        decline: function () { store('denied'); gtag('consent', 'update', { analytics_storage: 'denied' }); try { if (typeof window.clarity === 'function') window.clarity('stop'); } catch (e) {} clearCookies(); }
+      };
+      if (/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) { window['ga-disable-G-T5CTESZZN0'] = true; }
+      gtag('consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: granted ? 'granted' : 'denied' });
+      gtag('js', new Date());
+      gtag('config', 'G-T5CTESZZN0');
+      if (granted) load();
+    })();
+  </script>
+  <script src="/assets/consent.js?v=c3" defer></script>
+  <!-- /ga4 -->
+  <title>Freelancer vs Agency vs In-House Team for App Development</title>
+  <meta name="description" content="Freelancer vs agency vs in-house team for app development: cost, speed, risk, quality and ownership compared, with when each option makes sense.">
+  <meta name="author" content="Nihar Ranjan Rout">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://www.niharrout.com/blog/freelancer-vs-agency-for-app-development">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Nihar Ranjan Rout | Creuto">
+  <meta property="og:url" content="https://www.niharrout.com/blog/freelancer-vs-agency-for-app-development">
+  <meta property="og:title" content="Freelancer vs Agency vs In-House Team for App Development">
+  <meta property="og:description" content="Freelancer vs agency vs in-house team for app development: cost, speed, risk, quality and ownership compared, with when each option makes sense.">
+  <meta property="og:image" content="https://www.niharrout.com/assets/blog/freelancer-vs-agency-for-app-development-share.jpg">
+  <meta property="og:image:secure_url" content="https://www.niharrout.com/assets/blog/freelancer-vs-agency-for-app-development-share.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:alt" content="Freelancer vs Agency vs In-House Team: Who Should Build Your App?: guide by Nihar Ranjan Rout">
+  <meta property="article:published_time" content="2026-10-22">
+  <meta property="article:modified_time" content="2026-10-22">
+  <meta property="article:author" content="https://www.niharrout.com/about">
+  <meta property="article:section" content="Hiring a Team">
+  <meta property="article:tag" content="freelancer vs agency app development">
+  <meta property="article:tag" content="hire freelancer or agency">
+  <meta property="article:tag" content="in-house vs outsourced development">
+  <meta property="article:tag" content="app development agency vs freelancer">
+  <meta property="article:tag" content="who should build my app">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://www.niharrout.com/assets/blog/freelancer-vs-agency-for-app-development-share.jpg">
+  <meta name="twitter:image:alt" content="Freelancer vs Agency vs In-House Team: Who Should Build Your App?: guide by Nihar Ranjan Rout">
+  <meta name="twitter:title" content="Freelancer vs Agency vs In-House Team for App Development">
+  <meta name="twitter:description" content="Freelancer vs agency vs in-house team for app development: cost, speed, risk, quality and ownership compared, with when each option makes sense.">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Freelancer vs Agency vs In-House Team: Who Should Build Your App?",
+    "description": "Freelancer vs agency vs in-house team for app development: cost, speed, risk, quality and ownership compared, with when each option makes sense.",
+    "image": [
+      "https://www.niharrout.com/assets/blog/freelancer-vs-agency-for-app-development-share.jpg"
+    ],
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.niharrout.com/blog/freelancer-vs-agency-for-app-development"
+    },
+    "author": {
+      "@type": "Person",
+      "@id": "https://www.niharrout.com/#person",
+      "name": "Nihar Ranjan Rout",
+      "jobTitle": "Founder & CEO, Creuto",
+      "url": "https://www.niharrout.com/about",
+      "sameAs": [
+        "https://www.linkedin.com/in/iniharrout",
+        "https://x.com/iniharrout",
+        "https://github.com/iniharrout"
+      ]
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Creuto",
+      "url": "https://creuto.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.niharrout.com/assets/nihar.jpg"
+      }
+    },
+    "datePublished": "2026-10-22",
+    "dateModified": "2026-10-22",
+    "articleSection": "Hiring a Team",
+    "keywords": "freelancer vs agency app development, hire freelancer or agency, in-house vs outsourced development, app development agency vs freelancer, who should build my app",
+    "wordCount": 608,
+    "inLanguage": "en",
+    "isAccessibleForFree": true
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.niharrout.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://www.niharrout.com/blog"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Freelancer vs agency",
+        "item": "https://www.niharrout.com/blog/freelancer-vs-agency-for-app-development"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is a freelancer cheaper than an agency?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Usually per hour, yes. But a single freelancer rarely covers design, frontend, backend, testing and project management, so you either hire several or take on that coordination yourself."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When should I build an in-house team?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "When software is the core of your business, you have product-market fit and you can hire or already have a technical leader. Before that, the cost and time of hiring often slows you down."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the risks of hiring a freelancer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Availability and continuity. If the freelancer becomes busy or unavailable, work can stop. Make sure code is in your own repository from day one and documentation is part of the work."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should an agency provide that a freelancer does not?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A complete team, a defined process, backup if someone is unavailable, testing and a single point of accountability."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I combine these options?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. A common path is an agency for the first version, then a gradual hand-over to an in-house team, with the agency supporting during the transition."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Fonts & Design System -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&amp;family=Inter:wght@400;500;600;700&amp;display=swap">
+  <link rel="stylesheet" href="/assets/design-system.css?v=blue8">
+  <link rel="stylesheet" href="/assets/blog-post.css?v=bp5">
+  <link rel="stylesheet" href="/assets/chrome.css?v=45">
+  <script src="/assets/chrome.js?v=17" defer></script>
+  <link rel="stylesheet" href="/assets/schedule-popup.css?v=sp3">
+  <script src="/assets/schedule-popup.js?v=sp5" defer></script>
+  <link rel="stylesheet" href="/assets/primitives.css?v=p8">
+  <!-- pwa -->
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="apple-mobile-web-app-title" content="Nihar">
+  <script src="/assets/pwa.js?v=pw1" defer></script>
+  <!-- /pwa -->
+</head>
+
+<body>
+
+  <!-- chrome:header -->
+<div class="sc-topbar" role="region" aria-label="Free strategy call">
+  <div class="sc-wrap sc-topbar-in">
+    <div class="sc-tb-offer">
+      <span class="sc-tb-tag">Free</span>
+      <strong class="sc-tb-title">30-minute strategy call<span class="sc-tb-who"> with Nihar</span></strong>
+      <span class="sc-tb-text">Scope, budget and a written proposal within 24 hours.</span>
+      <a class="sc-tb-btn" href="https://calendly.com/creuto/meet" target="_blank" rel="noopener" data-book="true">Book now <span aria-hidden="true">&rarr;</span></a>
+    </div>
+    <div class="sc-tb-proof">
+      <a href="https://clutch.co/profile/creuto" target="_blank" rel="noopener"><span class="sc-tb-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>5.0 on Clutch</a>
+      <a href="/blog/openai-select-partner"><img src="/assets/openai-symbol.png" alt="" width="16" height="16" decoding="async">OpenAI Select Partner</a>
+    </div>
+  </div>
+</div>
+<header class="sc-header" id="site-header">
+  <div class="sc-wrap sc-bar">
+    <a class="sc-brand" href="/" aria-label="Nihar Ranjan Rout, home">
+      <span class="sc-brand-text">nihar<span class="sc-dot">.</span></span>
+    </a>
+
+    <nav class="sc-nav" aria-label="Primary">
+      <ul class="sc-links">
+        <li class="sc-item sc-item-ai">
+          <a class="sc-ai" href="/services/ai-product-development" aria-label="AI product development">
+            <svg class="sc-spark sc-spark-main" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 0c.5 5.5 4.5 9.5 10 10-5.5.5-9.5 4.5-10 10-.5-5.5-4.5-9.5-10-10C5.5 9.5 9.5 5.5 10 0z"/></svg>
+            <span class="sc-ai-txt">AI</span>
+            <svg class="sc-spark sc-spark-a" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 0c.5 5.5 4.5 9.5 10 10-5.5.5-9.5 4.5-10 10-.5-5.5-4.5-9.5-10-10C5.5 9.5 9.5 5.5 10 0z"/></svg>
+            <svg class="sc-spark sc-spark-b" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 0c.5 5.5 4.5 9.5 10 10-5.5.5-9.5 4.5-10 10-.5-5.5-4.5-9.5-10-10C5.5 9.5 9.5 5.5 10 0z"/></svg>
+          </a>
+        </li>
+        <li class="sc-item sc-has-menu sc-mega-item">
+          <a class="sc-link" href="/services">Services</a>
+          <button class="sc-toggle" type="button" aria-expanded="false" aria-label="Show services menu"><svg viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="sc-menu sc-mega sc-mega-services">
+            <div class="sc-mega-rail">
+              <p class="sc-mega-h">What we build</p>
+              <a class="sc-fam is-active" href="/services/custom-software-development" data-fam="custom"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 8 4.5 12l4 4M15.5 8l4 4-4 4M13.5 5.5l-3 13"/></svg></span><span class="sc-fam-t">Custom Software Development</span></a>
+              <a class="sc-fam" href="/services/mobile-app-development" data-fam="mobile"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></span><span class="sc-fam-t">Mobile App Development</span></a>
+              <a class="sc-fam" href="/services/web-application-development" data-fam="web"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="15" rx="2.5"/><path d="M3 9h18M6.5 6.8h.01M9 6.8h.01"/></svg></span><span class="sc-fam-t">Web Development</span></a>
+              <a class="sc-fam" href="/services/devops-cloud-engineering" data-fam="devops"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7.5 18.5h9.5a4.2 4.2 0 0 0 .6-8.36A6 6 0 0 0 6.2 9.4a4.6 4.6 0 0 0 1.3 9.1z"/></svg></span><span class="sc-fam-t">DevOps &amp; Cloud Engineering</span></a>
+              <a class="sc-fam" href="/services/ai-product-development" data-fam="ai"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 13.8 8.6 19 10.5 13.8 12.4 12 17.5 10.2 12.4 5 10.5 10.2 8.6Z"/><path d="M18.5 16v4M16.5 18h4"/></svg></span><span class="sc-fam-t">AI Engineering Services</span></a>
+              <a class="sc-fam" href="/services/product-strategy-prd" data-fam="startup"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.8c3 2.2 4.6 6 3.8 10.7H8.2C7.4 8.8 9 5 12 2.8Z"/><path d="M8.6 12.2 6 16.5l3.4-1M15.4 12.2 18 16.5l-3.4-1M10.5 17.5 12 21l1.5-3.5"/><circle cx="12" cy="8.5" r="1.4"/></svg></span><span class="sc-fam-t">Startup Product Engineering</span></a>
+              <a class="sc-mega-all" href="/services">All 35 services <span aria-hidden="true">&rarr;</span></a>
+            </div>
+            <div class="sc-mega-body">
+            <div class="sc-mega-panel is-active" data-fam="custom">
+              <div class="sc-mega-top"><div><p class="sc-mega-eyebrow">Custom Software Development</p><p class="sc-mega-desc">Your business is unique, and your software should be too. ERP, CRM and internal systems built around how you work.</p></div><a class="sc-mega-over" href="/services/custom-software-development">Explore all <span aria-hidden="true">&rarr;</span></a></div>
+              <ul class="sc-mega-list">
+                <li><a class="sc-sub" href="/services/custom-software-development/custom-erp-development"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></svg></span><span class="sc-entry-t"><strong>Custom ERP Development</strong><span>One system for operations, finance, HR and inventory</span></span></a></li>
+                <li><a class="sc-sub" href="/services/web-application-development"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 8 4.5 12l4 4M15.5 8l4 4-4 4M13.5 5.5l-3 13"/></svg></span><span class="sc-entry-t"><strong>Web App Development</strong><span>Portals, dashboards and real-time web products</span></span></a></li>
+                <li><a class="sc-sub" href="/services/custom-software-development/crm-development"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20a6 6 0 0 1 12 0"/><circle cx="17" cy="9" r="2.4"/><path d="M15.5 14.2A5 5 0 0 1 21 19"/></svg></span><span class="sc-entry-t"><strong>CRM Development</strong><span>A CRM shaped around your sales process</span></span></a></li>
+                <li><a class="sc-sub" href="/services/product-strategy-prd/mvp-development"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 8 4.5 12l4 4M15.5 8l4 4-4 4M13.5 5.5l-3 13"/></svg></span><span class="sc-entry-t"><strong>MVP Development</strong><span>A first working version, built to learn from</span></span></a></li>
+                <li><a class="sc-sub" href="/services/custom-software-development/enterprise-application-development"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 21V5.5a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2V21M15.5 9.5h2a2 2 0 0 1 2 2V21M3 21h18M8 7.5h4M8 11h4M8 14.5h4"/></svg></span><span class="sc-entry-t"><strong>Enterprise Application Development</strong><span>Secure internal systems for larger organisations</span></span></a></li>
+                <li><a class="sc-sub" href="/services/custom-software-development/software-consulting"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 14.5a2 2 0 0 1-2 2H8.5l-4 3.5V6.5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2z"/><path d="M8.5 9h8M8.5 12.2h5"/></svg></span><span class="sc-entry-t"><strong>Software Consulting Services</strong><span>Independent advice before you build or buy</span></span></a></li>
+                <li><a class="sc-sub" href="/services/custom-software-development/legacy-application-modernization"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 0 0-14.2-4.6L4 8.5M4 4v4.5h4.5M4 13a8 8 0 0 0 14.2 4.6L20 15.5M20 20v-4.5h-4.5"/></svg></span><span class="sc-entry-t"><strong>Legacy Application Modernization</strong><span>Move old systems onto a modern, supportable base</span></span></a></li>
+                <li><a class="sc-sub" href="/services/custom-software-development/ecommerce-solutions"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2.4l2 11h10.2l2-7.5H6.3"/><circle cx="9" cy="19.2" r="1.3"/><circle cx="16.5" cy="19.2" r="1.3"/></svg></span><span class="sc-entry-t"><strong>E-commerce Solutions</strong><span>Stores, marketplaces and quick-commerce platforms</span></span></a></li>
+              </ul>
+            </div>
+            <div class="sc-mega-panel" data-fam="mobile">
+              <div class="sc-mega-top"><div><p class="sc-mega-eyebrow">Mobile App Development</p><p class="sc-mega-desc">iOS and Android apps built for real users, from a first release to a product that keeps improving.</p></div><a class="sc-mega-over" href="/services/mobile-app-development">Explore all <span aria-hidden="true">&rarr;</span></a></div>
+              <ul class="sc-mega-list">
+                <li><a class="sc-sub" href="/services/mobile-app-development/android-app-development"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="8" width="15" height="11" rx="3"/><path d="M12 8V4.5M9 13h.01M15 13h.01M2.5 13h2M19.5 13h2"/><circle cx="12" cy="3.8" r="1"/></svg></span><span class="sc-entry-t"><strong>Android App Development</strong><span>Native Android apps in Kotlin</span></span></a></li>
+                <li><a class="sc-sub" href="/services/mobile-app-development/ios-app-development"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></span><span class="sc-entry-t"><strong>iOS App Development</strong><span>Native iPhone and iPad apps in Swift</span></span></a></li>
+                <li><a class="sc-sub" href="/services/mobile-app-development/react-native-app-development"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 21 8.2l-9 4.7-9-4.7Z"/><path d="m3 12.5 9 4.7 9-4.7M3 16.6l9 4.7 9-4.7"/></svg></span><span class="sc-entry-t"><strong>React Native App Development</strong><span>One JavaScript codebase for iOS and Android</span></span></a></li>
+                <li><a class="sc-sub" href="/services/mobile-app-development/flutter-app-development"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 21 8.2l-9 4.7-9-4.7Z"/><path d="m3 12.5 9 4.7 9-4.7M3 16.6l9 4.7 9-4.7"/></svg></span><span class="sc-entry-t"><strong>Flutter App Development</strong><span>Consistent, polished apps for iOS, Android and web</span></span></a></li>
+                <li><a class="sc-sub" href="/services/mobile-app-development/mobile-app-qa-testing"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="m8.3 12.2 2.5 2.5 5-5.2"/></svg></span><span class="sc-entry-t"><strong>Mobile App QA and Testing</strong><span>Test plans, automation and real-device checks</span></span></a></li>
+                <li><a class="sc-sub" href="/services/mobile-app-development/mobile-app-modernization"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 0 0-14.2-4.6L4 8.5M4 4v4.5h4.5M4 13a8 8 0 0 0 14.2 4.6L20 15.5M20 20v-4.5h-4.5"/></svg></span><span class="sc-entry-t"><strong>Mobile App Modernization</strong><span>Update ageing apps without losing your users</span></span></a></li>
+                <li><a class="sc-sub" href="/services/custom-software-development/legacy-application-modernization"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></span><span class="sc-entry-t"><strong>Legacy Application Modernization</strong><span>Move old systems onto a modern base</span></span></a></li>
+              </ul>
+            </div>
+            <div class="sc-mega-panel" data-fam="web">
+              <div class="sc-mega-top"><div><p class="sc-mega-eyebrow">Web Development</p><p class="sc-mega-desc">Fast, maintainable websites and web applications, from marketing sites to enterprise portals.</p></div><a class="sc-mega-over" href="/services/web-application-development">Explore all <span aria-hidden="true">&rarr;</span></a></div>
+              <ul class="sc-mega-list">
+                <li><a class="sc-sub" href="/services/web-application-development/customized-web-development"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="15" rx="2.5"/><path d="M3 9h18M6.5 6.8h.01M9 6.8h.01"/></svg></span><span class="sc-entry-t"><strong>Customized Web Development</strong><span>Websites and web apps built around your needs</span></span></a></li>
+                <li><a class="sc-sub" href="/services/web-application-development/enterprise-web-development"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 21V5.5a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2V21M15.5 9.5h2a2 2 0 0 1 2 2V21M3 21h18M8 7.5h4M8 11h4M8 14.5h4"/></svg></span><span class="sc-entry-t"><strong>Enterprise Web Development</strong><span>Large-scale portals and platforms with strict requirements</span></span></a></li>
+                <li><a class="sc-sub" href="/services/web-application-development/cross-platform-development"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="14" height="10" rx="1.8"/><path d="M6 18.5h6M9.5 14.5v4"/><rect x="16.5" y="8.5" width="5" height="11" rx="1.4"/></svg></span><span class="sc-entry-t"><strong>Cross-Platform Development</strong><span>One product across web, mobile and desktop</span></span></a></li>
+                <li><a class="sc-sub" href="/services/web-application-development/pwa-development"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M12 7.5v7M9 11.5l3 3 3-3"/></svg></span><span class="sc-entry-t"><strong>PWA Development</strong><span>Web apps that install and work offline</span></span></a></li>
+                <li><a class="sc-sub" href="/services/web-application-development/on-site-seo-development"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg></span><span class="sc-entry-t"><strong>On-site SEO Development</strong><span>Technical SEO built into the site itself</span></span></a></li>
+                <li><a class="sc-sub" href="/services/web-application-development/cms-development"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9a2.8 2.8 0 0 0-4-4L4 16Z"/><path d="m13.5 6.5 4 4"/></svg></span><span class="sc-entry-t"><strong>CMS Development</strong><span>Content you can update without a developer</span></span></a></li>
+              </ul>
+            </div>
+            <div class="sc-mega-panel" data-fam="devops">
+              <div class="sc-mega-top"><div><p class="sc-mega-eyebrow">DevOps &amp; Cloud Engineering</p><p class="sc-mega-desc">Reliable infrastructure, automated releases and cloud bills you can explain.</p></div><a class="sc-mega-over" href="/services/devops-cloud-engineering">Explore all <span aria-hidden="true">&rarr;</span></a></div>
+              <ul class="sc-mega-list">
+                <li><a class="sc-sub" href="/services/devops-cloud-engineering/cloud-consulting"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4" width="17" height="7" rx="1.8"/><rect x="3.5" y="13" width="17" height="7" rx="1.8"/><path d="M7 7.5h.01M7 16.5h.01M11 7.5h6M11 16.5h6"/></svg></span><span class="sc-entry-t"><strong>AWS, GCP and Azure Consulting</strong><span>Cloud architecture, setup and migration</span></span></a></li>
+                <li><a class="sc-sub" href="/services/devops-cloud-engineering/ci-cd-implementation"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="6" r="2.3"/><circle cx="18.5" cy="6" r="2.3"/><circle cx="12" cy="18" r="2.3"/><path d="M7.8 6h8.4M6.8 8l4 7.8M17.2 8l-4 7.8"/></svg></span><span class="sc-entry-t"><strong>CI/CD Implementation</strong><span>Automated testing and releases</span></span></a></li>
+                <li><a class="sc-sub" href="/services/devops-cloud-engineering/kubernetes-implementation"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.8 20 7.4v9.2l-8 4.6-8-4.6V7.4Z"/><path d="m4 7.4 8 4.6 8-4.6M12 12v9.2"/></svg></span><span class="sc-entry-t"><strong>Kubernetes Implementation</strong><span>Container orchestration when it earns its keep</span></span></a></li>
+                <li><a class="sc-sub" href="/services/devops-cloud-engineering/serverless-architecture"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2.5 4.5 13.5H11l-1 8 8.5-11H12Z"/></svg></span><span class="sc-entry-t"><strong>Serverless Architecture</strong><span>Pay for use, with no servers to manage</span></span></a></li>
+                <li><a class="sc-sub" href="/services/devops-cloud-engineering/cloud-cost-optimisation"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M9 8.5h6M9 11.5h6M9 8.5c4.2 0 4.2 6 0 6l5 3.5"/></svg></span><span class="sc-entry-t"><strong>Cloud Consulting and Cost Optimisation</strong><span>Understand and reduce your cloud bill</span></span></a></li>
+                <li><a class="sc-sub" href="/services/devops-cloud-engineering/infrastructure-monitoring"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12.5h3.8l2.4-6 4.4 12 2.6-6H21"/></svg></span><span class="sc-entry-t"><strong>Infrastructure Management and Monitoring</strong><span>Know about problems before your customers do</span></span></a></li>
+              </ul>
+            </div>
+            <div class="sc-mega-panel" data-fam="ai">
+              <div class="sc-mega-top"><div><p class="sc-mega-eyebrow">AI Engineering Services</p><p class="sc-mega-desc">AI that does real work: assistants that answer from your documents, automation, analytics and generative products.</p></div><a class="sc-mega-over" href="/services/ai-product-development">Explore all <span aria-hidden="true">&rarr;</span></a></div>
+              <ul class="sc-mega-list">
+                <li><a class="sc-sub" href="/services/ai-product-development/ai-development"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 13.8 8.6 19 10.5 13.8 12.4 12 17.5 10.2 12.4 5 10.5 10.2 8.6Z"/><path d="M18.5 16v4M16.5 18h4"/></svg></span><span class="sc-entry-t"><strong>Artificial Intelligence Development</strong><span>Custom AI products and features</span></span></a></li>
+                <li><a class="sc-sub" href="/services/ai-product-development/ai-consulting"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 14.5a2 2 0 0 1-2 2H8.5l-4 3.5V6.5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2z"/><path d="M8.5 9h8M8.5 12.2h5"/></svg></span><span class="sc-entry-t"><strong>AI Consulting</strong><span>Find where AI genuinely pays off</span></span></a></li>
+                <li><a class="sc-sub" href="/services/ai-product-development/ai-powered-mobile-app-development"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></span><span class="sc-entry-t"><strong>AI-Powered Mobile App Development</strong><span>Smart features inside iOS and Android apps</span></span></a></li>
+                <li><a class="sc-sub" href="/services/ai-product-development/machine-learning-analytics"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M21 20H3"/></svg></span><span class="sc-entry-t"><strong>Machine Learning and Analytics</strong><span>Forecasts, scoring and insight from your data</span></span></a></li>
+                <li><a class="sc-sub" href="/services/ai-product-development/generative-ai"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m4 20 11-11M14 4l1 2.2 2.2 1-2.2 1-1 2.2-1-2.2-2.2-1 2.2-1ZM19 12.5l.6 1.4 1.4.6-1.4.6-.6 1.4-.6-1.4-1.4-.6 1.4-.6Z"/></svg></span><span class="sc-entry-t"><strong>Generative AI</strong><span>Text, image and content generation done responsibly</span></span></a></li>
+                <li><a class="sc-sub" href="/services/ai-product-development/chatgpt-solutions"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 14.5a2 2 0 0 1-2 2H8.5l-4 3.5V6.5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2z"/><path d="M8.5 9h8M8.5 12.2h5"/></svg></span><span class="sc-entry-t"><strong>ChatGPT Solutions</strong><span>ChatGPT and OpenAI-powered assistants and tools</span></span></a></li>
+              </ul>
+            </div>
+            <div class="sc-mega-panel" data-fam="startup">
+              <div class="sc-mega-top"><div><p class="sc-mega-eyebrow">Startup Product Engineering</p><p class="sc-mega-desc">From idea to a launched product: strategy, a clear PRD, prototypes and a first version people can use.</p></div><a class="sc-mega-over" href="/services/product-strategy-prd">Explore all <span aria-hidden="true">&rarr;</span></a></div>
+              <ul class="sc-mega-list">
+                <li><a class="sc-sub" href="/services/product-strategy-prd/mvp-development"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.8c3 2.2 4.6 6 3.8 10.7H8.2C7.4 8.8 9 5 12 2.8Z"/><path d="M8.6 12.2 6 16.5l3.4-1M15.4 12.2 18 16.5l-3.4-1M10.5 17.5 12 21l1.5-3.5"/><circle cx="12" cy="8.5" r="1.4"/></svg></span><span class="sc-entry-t"><strong>MVP Development</strong><span>A first working version, built to learn from</span></span></a></li>
+                <li><a class="sc-sub" href="/services/product-strategy-prd"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.8c3 2.2 4.6 6 3.8 10.7H8.2C7.4 8.8 9 5 12 2.8Z"/><path d="M8.6 12.2 6 16.5l3.4-1M15.4 12.2 18 16.5l-3.4-1M10.5 17.5 12 21l1.5-3.5"/><circle cx="12" cy="8.5" r="1.4"/></svg></span><span class="sc-entry-t"><strong>Product Strategy &amp; Roadmapping</strong><span>Scope, priorities and a roadmap you can act on</span></span></a></li>
+                <li><a class="sc-sub" href="/services/product-strategy-prd/rapid-prototyping"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="2.5"/><path d="M3.5 9h17M9 9v11.5"/></svg></span><span class="sc-entry-t"><strong>Rapid Prototyping</strong><span>Clickable prototypes before you commit to code</span></span></a></li>
+                <li><a class="sc-sub" href="/services/product-strategy-prd/technical-architecture"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="5.5" r="2.2"/><circle cx="6" cy="18.5" r="2.2"/><circle cx="18" cy="8" r="2.2"/><path d="M6 7.7v8.6M18 10.2c0 4.3-6 3.3-12 6.1"/></svg></span><span class="sc-entry-t"><strong>Technical Architecture</strong><span>Foundations that will not need replacing at your first success</span></span></a></li>
+                <li><a class="sc-sub" href="/services/product-strategy-prd/investor-ready-demos"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="1.8"/><path d="M12 16v4M8.5 20h7M10 8v4.5l3.8-2.2Z"/></svg></span><span class="sc-entry-t"><strong>Investor-Ready Demos</strong><span>A product story investors can click through</span></span></a></li>
+                <li><a class="sc-sub" href="/services/product-strategy-prd/post-launch-iteration"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m3 17 6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span><span class="sc-entry-t"><strong>Post-Launch Iteration</strong><span>Keep improving after the first release</span></span></a></li>
+              </ul>
+            </div>
+            </div>
+            <div class="sc-mega-strip"><span>Not sure which service fits? Talk it through with Nihar.</span><a href="https://calendly.com/creuto/meet" target="_blank" rel="noopener" data-book="true">Book a free 30-minute call <span aria-hidden="true">&rarr;</span></a></div>
+            <a class="sc-menu-all sc-m-only" href="/services">All services &rarr;</a>
+          </div>
+        </li>
+        <li class="sc-item sc-has-menu sc-mega-item">
+          <a class="sc-link" href="/industries">Industries</a>
+          <button class="sc-toggle" type="button" aria-expanded="false" aria-label="Show industries menu"><svg viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="sc-menu sc-mega sc-mega-industries">
+            <div class="sc-mega-body sc-mega-wide">
+              <div class="sc-ind-cols">
+              <div class="sc-ind-group">
+                <p class="sc-ind-h">Commerce and services</p>
+                <ul>
+                  <li><a class="sc-ind" href="/industries/ecommerce"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2.4l2 11h10.2l2-7.5H6.3"/><circle cx="9" cy="19.2" r="1.3"/><circle cx="16.5" cy="19.2" r="1.3"/></svg></span><span class="sc-entry-t"><strong>eCommerce &amp; Retail</strong><span>Stores, marketplaces and quick-commerce platforms</span></span></a></li>
+                  <li><a class="sc-ind" href="/industries/restaurant"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v7a2.5 2.5 0 0 0 5 0V3M9.5 3v18M17 21V3c-2 1.5-3 4-3 7v4h3"/></svg></span><span class="sc-entry-t"><strong>Restaurants &amp; Food Service</strong><span>Ordering, delivery and kitchen operations</span></span></a></li>
+                  <li><a class="sc-ind" href="/industries/on-demand"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.5-6-6.5-11a6.5 6.5 0 0 1 13 0c0 5-6.5 11-6.5 11Z"/><circle cx="12" cy="10" r="2.4"/></svg></span><span class="sc-entry-t"><strong>On-Demand Services</strong><span>Two-sided apps that connect customers with providers</span></span></a></li>
+                  <li><a class="sc-ind" href="/industries/travel-hospitality"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="7" width="14" height="13" rx="2.5"/><path d="M9 7V4.5h6V7M9 11v5M15 11v5"/></svg></span><span class="sc-entry-t"><strong>Travel &amp; Hospitality</strong><span>Booking, itineraries and guest experience</span></span></a></li>
+                  <li><a class="sc-ind" href="/industries/events"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 7.5h17v3a1.8 1.8 0 0 0 0 3v3h-17v-3a1.8 1.8 0 0 0 0-3Z"/><path d="M14.5 7.5v9" stroke-dasharray="1.5 2"/></svg></span><span class="sc-entry-t"><strong>Events &amp; Conferences</strong><span>Venue, vendor and ticketing platforms</span></span></a></li>
+                  <li><a class="sc-ind" href="/industries/fitness-wellness"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 7v10M17.5 7v10M3.5 9.5v5M20.5 9.5v5M6.5 12h11"/></svg></span><span class="sc-entry-t"><strong>Fitness &amp; Wellness</strong><span>Booking, coaching and wellness apps</span></span></a></li>
+                </ul>
+              </div>
+              <div class="sc-ind-group">
+                <p class="sc-ind-h">Industry and infrastructure</p>
+                <ul>
+                  <li><a class="sc-ind" href="/industries/manufacturing"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20.5V9l5.5 3.5V9l5.5 3.5V4.5h5V20.5Z"/><path d="M3 20.5h18M7 16.5h2M12 16.5h2"/></svg></span><span class="sc-entry-t"><strong>Manufacturing</strong><span>ERP, production tracking and factory-floor tools</span></span></a></li>
+                  <li><a class="sc-ind" href="/industries/construction"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 6.5 9.5 11l7.5 9 2.5-2.5-9-7.5L15 6M12.5 4l6.5 6.5-1.5 1.5-6.5-6.5Z"/></svg></span><span class="sc-entry-t"><strong>Construction</strong><span>Project, site and subcontractor management</span></span></a></li>
+                  <li><a class="sc-ind" href="/industries/logistics"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.5h11v10h-11zM13.5 10h4l3 3.5v3h-7"/><circle cx="6.5" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg></span><span class="sc-entry-t"><strong>Logistics &amp; Supply Chain</strong><span>Tracking, dispatch and warehouse systems</span></span></a></li>
+                  <li><a class="sc-ind" href="/industries/automotive"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16.5v-4l2-5h12l2 5v4"/><path d="M3.5 12.5h17M4 16.5h16"/><circle cx="7.5" cy="16.8" r="1.6"/><circle cx="16.5" cy="16.8" r="1.6"/></svg></span><span class="sc-entry-t"><strong>Automotive</strong><span>Dealer, service and connected-vehicle software</span></span></a></li>
+                  <li><a class="sc-ind" href="/industries/electric-vehicles"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="7" width="16" height="10" rx="2"/><path d="M21 10.5v3M11 9l-2 3h3l-2 3"/></svg></span><span class="sc-entry-t"><strong>Electric Vehicles &amp; eMobility</strong><span>Charging, fleet and EV owner apps</span></span></a></li>
+                  <li><a class="sc-ind" href="/industries/energy"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></svg></span><span class="sc-entry-t"><strong>Energy &amp; Utilities</strong><span>Monitoring, billing and field-operations software</span></span></a></li>
+                  <li><a class="sc-ind" href="/industries/agriculture"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c0-8 5-13 15-14 0 10-5 15-13 15"/><path d="M5 19c3-5 6-7.5 9.5-9"/></svg></span><span class="sc-entry-t"><strong>Agriculture</strong><span>Farm, supply-chain and marketplace platforms</span></span></a></li>
+                  <li><a class="sc-ind" href="/industries/aviation"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 4.5c0-1 .7-2 1.5-2s1.5 1 1.5 2V10l7.5 4.5V17l-7.5-2.5v3.8l2.3 1.7v2l-3.8-1-3.8 1v-2l2.3-1.7v-3.8L3 17v-2.5L10.5 10Z"/></svg></span><span class="sc-entry-t"><strong>Aviation</strong><span>Operations, maintenance and passenger tools</span></span></a></li>
+                </ul>
+              </div>
+              <div class="sc-ind-group">
+                <p class="sc-ind-h">Technology and media</p>
+                <ul>
+                  <li><a class="sc-ind" href="/industries/saas"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7.5 18.5h9.5a4.2 4.2 0 0 0 .6-8.36A6 6 0 0 0 6.2 9.4a4.6 4.6 0 0 0 1.3 9.1z"/></svg></span><span class="sc-entry-t"><strong>SaaS</strong><span>Product engineering for software companies</span></span></a></li>
+                  <li><a class="sc-ind" href="/industries/telecom"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 11 8 21M12 11l4 10M9.4 17.5h5.2"/><circle cx="12" cy="9.5" r="1.6"/><path d="M8.2 6a5.4 5.4 0 0 0 0 7M15.8 6a5.4 5.4 0 0 1 0 7"/></svg></span><span class="sc-entry-t"><strong>Telecommunications</strong><span>Customer portals, billing and network tools</span></span></a></li>
+                  <li><a class="sc-ind" href="/industries/media-entertainment"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="13" rx="2.2"/><path d="M10 8v6l5-3ZM8 21h8"/></svg></span><span class="sc-entry-t"><strong>Media &amp; Entertainment</strong><span>Streaming, publishing and creator platforms</span></span></a></li>
+                  <li><a class="sc-ind" href="/industries/gaming-sports"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7.5h10a4.5 4.5 0 0 1 4.4 5.4l-.8 4a2.5 2.5 0 0 1-4.2 1.3L14.5 16h-5l-1.9 2.2a2.5 2.5 0 0 1-4.2-1.3l-.8-4A4.5 4.5 0 0 1 7 7.5Z"/><path d="M8 10.5v3M6.5 12h3M15.5 11h.01M17.5 13h.01"/></svg></span><span class="sc-entry-t"><strong>Gaming &amp; Sports</strong><span>Fan apps, fantasy platforms and game back ends</span></span></a></li>
+                  <li><a class="sc-ind" href="/industries/social-networking"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="6" r="2.6"/><circle cx="18" cy="18" r="2.6"/><path d="m8.3 10.8 7.4-3.6M8.3 13.2l7.4 3.6"/></svg></span><span class="sc-entry-t"><strong>Social Networking</strong><span>Communities, messaging and content platforms</span></span></a></li>
+                </ul>
+              </div>
+              <div class="sc-ind-group">
+                <p class="sc-ind-h">Finance, health and public</p>
+                <ul>
+                  <li><a class="sc-ind" href="/industries/fintech"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7.5V18a2 2 0 0 0 2 2h13.5a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1H6A2 2 0 0 1 4 7Zm0 0a2 2 0 0 1 2-2h11.5"/><path d="M16.5 14h.01"/></svg></span><span class="sc-entry-t"><strong>Banking &amp; Financial Services</strong><span>Payments, lending, wallets and finance tools</span></span></a></li>
+                  <li><a class="sc-ind" href="/industries/healthcare"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.3a4.3 4.3 0 0 1 7.5 2.5C19.5 15.4 12 20 12 20Z"/><path d="M7.5 12h2.4l1.3-2.3 1.8 4.3 1.2-2h2.3"/></svg></span><span class="sc-entry-t"><strong>Healthcare</strong><span>Patient apps, clinical tools and hospital systems</span></span></a></li>
+                  <li><a class="sc-ind" href="/industries/education"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.5 22 9l-10 4.5L2 9Z"/><path d="M6 11v4.5c3.5 2.6 8.5 2.6 12 0V11M22 9v5"/></svg></span><span class="sc-entry-t"><strong>Education &amp; EdTech</strong><span>Learning platforms, school systems and tutoring apps</span></span></a></li>
+                  <li><a class="sc-ind" href="/industries/real-estate"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 11 12 4l8.5 7"/><path d="M5.5 9.5V20h13V9.5M10 20v-5.5h4V20"/></svg></span><span class="sc-entry-t"><strong>Real Estate &amp; PropTech</strong><span>Listings, property management and buyer journeys</span></span></a></li>
+                  <li><a class="sc-ind" href="/industries/government"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5 12 4l9 5.5ZM5 9.5v8M9.7 9.5v8M14.3 9.5v8M19 9.5v8M3 20.5h18"/></svg></span><span class="sc-entry-t"><strong>Government &amp; Public Sector</strong><span>Citizen services and internal systems</span></span></a></li>
+                </ul>
+              </div>
+              </div>
+            </div>
+            <div class="sc-mega-strip"><span>Software built around how your sector works. <a class="sc-strip-link" href="/industries">See all 24 industries</a></span><a href="https://calendly.com/creuto/meet" target="_blank" rel="noopener" data-book="true">Book a free 30-minute call <span aria-hidden="true">&rarr;</span></a></div>
+            <a class="sc-menu-all sc-m-only" href="/industries">All industries &rarr;</a>
+          </div>
+        </li>
+        <li class="sc-item"><a class="sc-link" href="/work">Work</a></li>
+        <li class="sc-item sc-has-menu">
+          <a class="sc-link" href="/blog">Resources</a>
+          <button class="sc-toggle" type="button" aria-expanded="false" aria-label="Show resources menu"><svg viewBox="0 0 10 6" width="10" height="6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="sc-menu sc-list sc-list-wide">
+            <div class="sc-list-cols">
+              <div>
+                <p class="sc-list-h">Company</p>
+                <a class="" href="/about"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.8"/><path d="M4.5 20.5a7.5 7.5 0 0 1 15 0"/></svg></span><span class="sc-entry-t"><strong>About Nihar &amp; Creuto</strong><span>The founder and the company behind the work</span></span></a>
+                <a class="" href="/work"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4.5l2 2.5H19a2 2 0 0 1 2 2V18a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg></span><span class="sc-entry-t"><strong>Case studies</strong><span>Products we have built and shipped</span></span></a>
+                <a class="" href="/work-with-me"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2.2"/><path d="M8.5 7V5a1.5 1.5 0 0 1 1.5-1.5h4A1.5 1.5 0 0 1 15.5 5v2M3 12.5h18"/></svg></span><span class="sc-entry-t"><strong>Careers</strong><span>Four full-time remote roles in India</span></span></a>
+                <a class="" href="/about/facts"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 3h8l4 4v13a1 1 0 0 1-1 1h-11a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M14.5 3v4h4M9 12h6M9 15.5h6"/></svg></span><span class="sc-entry-t"><strong>Company fact sheet</strong><span>Services, process and ownership in one page</span></span></a>
+              </div>
+              <div>
+                <p class="sc-list-h">Learn</p>
+                <a class="" href="/blog"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 5.5A2 2 0 0 1 5.5 4H11v16H5.5a2 2 0 0 0-2 2ZM20.5 5.5A2 2 0 0 0 18.5 4H13v16h5.5a2 2 0 0 1 2 2Z"/></svg></span><span class="sc-entry-t"><strong>Blog &amp; Guides</strong><span>Practical guides on MVPs, ERP, mobile and AI</span></span></a>
+                <a class="" href="/project-costs"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M9 8.5h6M9 11.5h6M9 8.5c4.2 0 4.2 6 0 6l5 3.5"/></svg></span><span class="sc-entry-t"><strong>Project Costs Guide</strong><span>What production software typically costs</span></span></a>
+                <a class="" href="/tools/app-cost-calculator"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2.5" width="14" height="19" rx="2.2"/><path d="M8.5 6.5h7M8.5 11h.01M12 11h.01M15.5 11h.01M8.5 14.5h.01M12 14.5h.01M15.5 14.5h.01M8.5 18h.01M12 18h3.5"/></svg></span><span class="sc-entry-t"><strong>App Cost Calculator</strong><span>Realistic build budgets and timelines</span></span></a>
+                <a class="" href="/technology"><span class="sc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9.5 9.5h5v5h-5zM9 2.5V6M15 2.5V6M9 18v3.5M15 18v3.5M2.5 9H6M2.5 15H6M18 9h3.5M18 15h3.5"/></svg></span><span class="sc-entry-t"><strong>Technology Stack</strong><span>The tools we build with</span></span></a>
+              </div>
+            </div>
+            <div class="sc-mega-strip"><span>Free tools for founders: cost calculator, name generator and more. <a class="sc-strip-link" href="/tools">Open the tools</a></span><a href="https://calendly.com/creuto/meet" target="_blank" rel="noopener" data-book="true">Book a free 30-minute call <span aria-hidden="true">&rarr;</span></a></div>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="sc-actions">
+      <a class="sc-call" href="tel:+917608844995" aria-label="Call Nihar" title="Call Nihar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a class="sc-wa" href="https://wa.me/917608844995?text=Hi%20Nihar%2C%20I%20found%20your%20website%20and%20I%27m%20interested%20in%20discussing%20a%20project.%20When%20would%20be%20a%20good%20time%20to%20talk%3F" target="_blank" rel="noopener" aria-label="Message Nihar on WhatsApp" title="Chat on WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35M12.05 21.78h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88M20.46 3.49A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.48-8.42"/></svg></a>
+      <a class="sc-cta" href="https://calendly.com/creuto/meet" target="_blank" rel="noopener" data-book="true"><span>Book a Call</span><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <div class="sc-callpop" id="sc-callpop" role="dialog" aria-label="Call Nihar" hidden>
+        <p class="sc-callpop-l">Call Nihar</p>
+        <a class="sc-callpop-num" href="tel:+917608844995">+91 76088 44995</a>
+        <div class="sc-callpop-row"><a class="sc-callpop-btn is-primary" href="tel:+917608844995">Call now</a><button class="sc-callpop-btn" type="button" data-copy>Copy number</button></div>
+        <a class="sc-callpop-wa" href="https://wa.me/917608844995?text=Hi%20Nihar%2C%20I%20found%20your%20website%20and%20I%27m%20interested%20in%20discussing%20a%20project.%20When%20would%20be%20a%20good%20time%20to%20talk%3F" target="_blank" rel="noopener">Or message on WhatsApp</a>
+      </div>
+      <button class="sc-burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="sc-drawer"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+
+  <div class="sc-drawer" id="sc-drawer" hidden>
+    <div class="sc-drawer-scroll">
+      <div class="sc-wrap">
+        <nav class="sc-acc" data-sc-acc aria-label="Site menu"></nav>
+      </div>
+    </div>
+    <div class="sc-drawer-dock">
+      <div class="sc-wrap">
+        <div class="sc-dock-row">
+          <a class="sc-dock-call" href="tel:+917608844995"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>Call now</a>
+          <a class="sc-dock-wa" href="https://wa.me/917608844995?text=Hi%20Nihar%2C%20I%20found%20your%20website%20and%20I%27m%20interested%20in%20discussing%20a%20project.%20When%20would%20be%20a%20good%20time%20to%20talk%3F" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35M12.05 21.78h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88M20.46 3.49A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.48-8.42"/></svg>WhatsApp</a>
+        </div>
+        <a class="sc-dock-cta" href="https://calendly.com/creuto/meet" target="_blank" rel="noopener" data-book="true"><span>Book a free strategy call</span><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- /chrome:header -->
+
+  <div class="reader-progress" aria-hidden="true"><span></span></div>
+  <main id="top" class="reader">
+    <article>
+      <header class="article-header reader-header">
+        <div class="reader-head">
+          <div class="reader-head-text">
+            <nav class="article-breadcrumbs" aria-label="Breadcrumb">
+              <a href="/">Home</a>
+              <span>/</span>
+              <a href="/blog">Blog</a>
+              <span>/</span>
+              <a href="/blog/topic/cost-and-hiring">Cost &amp; Hiring</a>
+            </nav>
+
+            <div class="blog-category-badge">HIRING A TEAM</div>
+
+            <h1 class="article-headline">Freelancer vs Agency vs In-House Team: Who Should Build Your App?</h1>
+
+            <p class="article-lead">Freelancers, agencies and in-house teams can all build good software. They differ in cost, how much management they need from you and how much risk sits on your side. The right choice depends on your stage, your budget and whether you have technical leadership.</p>
+
+            <div class="article-meta-bar">
+              <div class="article-author-info">
+                <img src="/assets/nihar-avatar.jpg" alt="Nihar Ranjan Rout" class="article-author-avatar" width="96" height="96" decoding="async">
+                <div>
+                  <div class="article-author-name">Nihar Ranjan Rout</div>
+                  <div class="article-author-title">Founder &amp; CEO, Creuto</div>
+                </div>
+              </div>
+              <div class="reader-meta">
+                <time datetime="2026-10-22">October 22, 2026</time><span aria-hidden="true">&middot;</span><span>8 min read</span>
+              </div>
+            </div>
+          </div>
+          <figure class="article-figure reader-cover">
+            <img src="/assets/blog/freelancer-vs-agency-for-app-development-banner.jpg" alt="Freelancer vs Agency vs In-House Team: Who Should Build Your App?: guide by Nihar Ranjan Rout" width="1200" height="630" fetchpriority="high" decoding="async">
+          </figure>
+        </div>
+      </header>
+
+      <div class="reader-layout">
+        <aside class="reader-side" aria-label="Guide tools">
+          <div class="reader-side-inner">
+            <nav class="article-toc" aria-label="In this guide">
+              <p class="article-toc-title">In this guide</p>
+              <ol>
+                <li><a href="#comparison">The three options compared</a></li>
+                <li><a href="#freelancer">When a freelancer makes sense</a></li>
+                <li><a href="#agency">When an agency makes sense</a></li>
+                <li><a href="#in-house">When an in-house team makes sense</a></li>
+                <li><a href="#ownership">Protect yourself in every option</a></li>
+                <li><a href="#path">A common path for startups</a></li>
+                <li><a href="#creuto">How we work</a></li>
+                <li><a href="#faq">Frequently asked questions</a></li>
+              </ol>
+            </nav>
+            <div class="reader-share">
+              <p class="article-toc-title">Share this guide</p>
+              <div class="reader-share-row">
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.niharrout.com%2Fblog%2Ffreelancer-vs-agency-for-app-development" target="_blank" rel="noopener" aria-label="Share on LinkedIn"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg></a>
+                <a href="https://x.com/intent/post?url=https%3A%2F%2Fwww.niharrout.com%2Fblog%2Ffreelancer-vs-agency-for-app-development&amp;text=Freelancer%20vs%20Agency%20vs%20In-House%20Team%20for%20App%20Development" target="_blank" rel="noopener" aria-label="Share on X"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l16 16M20 4L4 20"/></svg></a>
+                <a href="https://wa.me/?text=Freelancer%20vs%20Agency%20vs%20In-House%20Team%20for%20App%20Development%20https%3A%2F%2Fwww.niharrout.com%2Fblog%2Ffreelancer-vs-agency-for-app-development" target="_blank" rel="noopener" aria-label="Share on WhatsApp"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.5a8.5 8.5 0 0 1-12.6 7.4L3.5 20l1.2-3.7A8.5 8.5 0 1 1 20 11.5z"/><path d="M9 9.5c.3 1.8 2.2 3.8 4 4.2l1.2-1.1 1.8.9-.4 1.4c-3 .4-7.1-3.4-7.1-6.6l1.3-.6 1 1.7z"/></svg></a>
+                <button type="button" class="reader-copy" data-copy="https://www.niharrout.com/blog/freelancer-vs-agency-for-app-development" aria-label="Copy link"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><span class="reader-copy-done" role="status"></span></button>
+              </div>
+            </div>
+            <a class="reader-side-cta" href="https://calendly.com/creuto/meet" target="_blank" rel="noopener" data-book="true">
+              <strong>Talk it through with Nihar</strong>
+              <span>Free 30-minute call &rarr;</span>
+            </a>
+          </div>
+        </aside>
+
+        <div class="reader-main">
+          <details class="reader-toc-mobile">
+            <summary>In this guide <span>8 sections</span></summary>
+            <ol>
+              <li><a href="#comparison">The three options compared</a></li>
+              <li><a href="#freelancer">When a freelancer makes sense</a></li>
+              <li><a href="#agency">When an agency makes sense</a></li>
+              <li><a href="#in-house">When an in-house team makes sense</a></li>
+              <li><a href="#ownership">Protect yourself in every option</a></li>
+              <li><a href="#path">A common path for startups</a></li>
+              <li><a href="#creuto">How we work</a></li>
+              <li><a href="#faq">Frequently asked questions</a></li>
+            </ol>
+          </details>
+
+          <div class="prose">
+
+<p>
+  I run an agency, so I will be upfront: an agency is not always the right answer. I have advised founders to hire a freelancer or their own developer when that fitted better. Here is how I think about the choice.
+</p>
+
+<div class="blog-callout">
+  <h4>The short version</h4>
+  <p>
+    Small, well-defined task: a freelancer. A full product without in-house technical leadership: an agency. Software as your long-term core with a technical leader in place: build your own team.
+  </p>
+</div>
+
+<h2 id="comparison">The three options compared</h2>
+<div class="reader-table" tabindex="0" role="region" aria-label="Table"><table>
+  <thead><tr><th></th><th>Freelancer</th><th>Agency</th><th>In-house team</th></tr></thead>
+  <tbody>
+    <tr><td>Cost per hour</td><td>Lowest</td><td>Medium</td><td>Salaries plus hiring and benefits</td></tr>
+    <tr><td>Skills covered</td><td>Usually one or two</td><td>Full team</td><td>Whatever you hire</td></tr>
+    <tr><td>Management needed from you</td><td>High</td><td>Low to medium</td><td>High, needs a technical leader</td></tr>
+    <tr><td>Time to start</td><td>Fast</td><td>Fast</td><td>Slow, hiring takes months</td></tr>
+    <tr><td>Continuity risk</td><td>High</td><td>Low</td><td>Medium, people leave</td></tr>
+  </tbody>
+</table></div>
+
+<h2 id="freelancer">When a freelancer makes sense</h2>
+<ul>
+  <li>A clear, contained task: a landing page, a bug fix, an integration.</li>
+  <li>You or someone on your team can review the technical work.</li>
+  <li>You can handle design, testing and planning yourself.</li>
+</ul>
+
+<h2 id="agency">When an agency makes sense</h2>
+<ul>
+  <li>You need a complete product: design, mobile, web, backend and testing.</li>
+  <li>There is no technical co-founder or CTO on your side.</li>
+  <li>Speed matters and you cannot wait months to hire.</li>
+</ul>
+<p>
+  Choosing well matters. Our guide on <a href="/blog/how-to-choose-a-software-development-company">how to choose a software development company</a> lists the questions to ask.
+</p>
+
+<div class="blog-cta-box">
+  <h3>Weighing your options?</h3>
+  <p>Book a free 30-minute call. I will tell you honestly whether an agency, a freelancer or your own hire suits your project.</p>
+  <a href="https://calendly.com/creuto/meet" target="_blank" rel="noopener" data-book="true" class="cl-button -primary btn-book-call">Book a free 30-minute call <span style="margin-left:4px;">&rarr;</span></a>
+</div>
+
+<h2 id="in-house">When an in-house team makes sense</h2>
+<ul>
+  <li>The product is your business and will need continuous work for years.</li>
+  <li>You have product-market fit and stable funding.</li>
+  <li>You have, or can hire, a technical leader to run the team.</li>
+</ul>
+
+<h2 id="ownership">Protect yourself in every option</h2>
+<ul>
+  <li>Code in a repository you own, for example a <a href="https://docs.github.com/en/organizations" target="_blank" rel="noopener">GitHub organisation</a> in your company's name.</li>
+  <li>Cloud, domain and app store accounts in your name.</li>
+  <li>A written scope and milestones before work starts.</li>
+  <li>Documentation and a hand-over plan as part of the deliverables.</li>
+</ul>
+
+<h2 id="path">A common path for startups</h2>
+<ol>
+  <li>Validate the idea and write the scope.</li>
+  <li>Build the first version with an agency.</li>
+  <li>Hire a technical lead once there is traction.</li>
+  <li>Grow the in-house team, with the agency supporting the hand-over.</li>
+</ol>
+<p>
+  If you are hiring in India specifically, read <a href="/blog/how-to-hire-app-developers-in-india">how to hire app developers in India</a>.
+</p>
+
+<h2 id="creuto">How we work</h2>
+<p>
+  At <a href="https://creuto.com" target="_blank" rel="noopener">Creuto</a> I work directly with founders, the code lives in their accounts from day one, and we plan the hand-over to an in-house team when the time comes.
+</p>
+
+          </div>
+
+          <section class="article-faq" id="faq" aria-labelledby="faq-title">
+            <h2 id="faq-title">Frequently asked questions</h2>
+            <details class="reader-faq" open>
+              <summary><h3>Is a freelancer cheaper than an agency?</h3></summary>
+              <p>Usually per hour, yes. But a single freelancer rarely covers design, frontend, backend, testing and project management, so you either hire several or take on that coordination yourself.</p>
+            </details>
+            <details class="reader-faq">
+              <summary><h3>When should I build an in-house team?</h3></summary>
+              <p>When software is the core of your business, you have product-market fit and you can hire or already have a technical leader. Before that, the cost and time of hiring often slows you down.</p>
+            </details>
+            <details class="reader-faq">
+              <summary><h3>What are the risks of hiring a freelancer?</h3></summary>
+              <p>Availability and continuity. If the freelancer becomes busy or unavailable, work can stop. Make sure code is in your own repository from day one and documentation is part of the work.</p>
+            </details>
+            <details class="reader-faq">
+              <summary><h3>What should an agency provide that a freelancer does not?</h3></summary>
+              <p>A complete team, a defined process, backup if someone is unavailable, testing and a single point of accountability.</p>
+            </details>
+            <details class="reader-faq">
+              <summary><h3>Can I combine these options?</h3></summary>
+              <p>Yes. A common path is an agency for the first version, then a gradual hand-over to an in-house team, with the agency supporting during the transition.</p>
+            </details>
+          </section>
+
+          <div class="blog-cta-box blog-cta-end">
+            <h3>Want a team without hiring one?</h3>
+            <p>We give founders a product team: product thinking, design, development and testing, with the code in your accounts.</p>
+            <div class="blog-cta-actions">
+              <a href="https://calendly.com/creuto/meet" target="_blank" rel="noopener" data-book="true" class="cl-button -primary btn-book-call">Book a free strategy call <span style="margin-left:4px;">&rarr;</span></a>
+              <a href="/services/product-strategy-prd" class="blog-cta-link">See product strategy and PRD <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+          </div>
+
+          <div class="article-author-card">
+            <img src="/assets/nihar-avatar.jpg" alt="Nihar Ranjan Rout" width="96" height="96" loading="lazy" decoding="async">
+            <div>
+              <h4>About Nihar Ranjan Rout</h4>
+              <p>Founder &amp; CEO of Creuto. Over the past 8+ years Nihar has led product strategy and engineering for 50+ products, including mobile apps, custom ERPs and B2B platforms. Creuto is an OpenAI Select Partner. He works directly with founders to turn an idea into a clear plan and a launched product.</p>
+              <a href="/about">More about Nihar</a> &middot; <a href="https://www.linkedin.com/in/iniharrout" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="related-posts reader-related" aria-labelledby="related-title">
+        <div class="reader-related-head">
+          <h2 id="related-title">Keep reading</h2>
+          <a href="/blog/topic/cost-and-hiring">More Cost &amp; Hiring guides <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="related-grid">
+      <a class="related-card" href="/blog/how-to-hire-app-developers-in-india">
+        <span class="related-art" aria-hidden="true"><svg class="doodle-scene" viewBox="0 0 480 300" aria-hidden="true" focusable="false"><rect x="0" y="0" width="480" height="300" rx="24" fill="var(--d-sun)"/><g opacity=".55"><circle cx="40" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="40" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="40" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="40" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="40" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="97" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="97" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="97" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="97" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="97" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="154" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="154" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="154" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="154" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="154" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="211" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="211" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="211" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="211" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="211" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="268" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="268" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="268" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="268" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="268" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="325" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="325" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="325" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="325" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="325" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="382" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="382" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="382" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="382" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="382" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="439" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="439" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="439" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="439" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="439" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/></g><circle cx="202" cy="152" r="106" fill="var(--d-paper)" opacity=".7"/><g transform="translate(78 28) scale(1.55)" style="--d-blue:#a78bfa;--d-sky:#f1ecff"><circle cx="80" cy="86" r="58" fill="var(--d-peach)"/><path d="M18 132v-8a26 26 0 0 1 52 0v8Z" fill="var(--d-blue)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="44" cy="78" r="17" fill="var(--d-peach)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M27 74a17 17 0 0 1 34 0c-8-6-26-6-34 0Z" fill="var(--d-ink)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M90 132v-8a26 26 0 0 1 52 0v8Z" fill="var(--d-yellow)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="116" cy="78" r="17" fill="var(--d-peach)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M99 76a17 17 0 0 1 34 0c-4-10-30-12-34 0Z" fill="var(--d-coral)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M80 29C82.2 37.8 82.2 37.8 91 40C82.2 42.2 82.2 42.2 80 51C77.8 42.2 77.8 42.2 69 40C77.8 37.8 77.8 37.8 80 29Z" fill="var(--d-yellow)" stroke="var(--d-ink)" stroke-width="3" stroke-linejoin="round"/><path d="M30 28V40M24 34H36" fill="none" stroke="var(--d-ink)" stroke-width="3" stroke-linecap="round"/><path d="M136 35V45M131 40H141" fill="none" stroke="var(--d-ink)" stroke-width="3" stroke-linecap="round"/></g><g transform="translate(300 128) scale(.95)" style="--d-blue:#ff8f6b;--d-sky:#ffeee6;--d-coral:#ffc94d"><circle cx="80" cy="82" r="56" fill="var(--d-sun)"/><path d="M40 36H120a10 10 0 0 1 10 10V96a10 10 0 0 1-10 10H40a10 10 0 0 1-10-10V46a10 10 0 0 1 10-10Z" fill="var(--d-yellow)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M44 106l-6 14 18-14" fill="var(--d-yellow)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M68 60a12 12 0 1 1 18 10c-4 3-6 6-6 10" fill="none" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="80" cy="92" r="3.8" fill="var(--d-ink)"/></g><g><path d="M52 51V69M43 60H61" fill="none" stroke="var(--d-ink)" stroke-width="3" stroke-linecap="round"/><path d="M430 44V60M422 52H438" fill="none" stroke="var(--d-ink)" stroke-width="3" stroke-linecap="round"/><path d="M440 239C442.2 247.8 442.2 247.8 451 250C442.2 252.2 442.2 252.2 440 261C437.8 252.2 437.8 252.2 429 250C437.8 247.8 437.8 247.8 440 239Z" fill="var(--d-yellow)" stroke="var(--d-ink)" stroke-width="3" stroke-linejoin="round"/></g></svg></span>
+        <span class="related-tag">Hiring a Team &middot; 9 min read</span>
+        <strong>How to Hire App Developers in India: A Founder's Guide</strong>
+        <span class="related-blurb">Freelancers, agencies or a product team: how to hire app developers in India, where to look, how to vet them and the red flags that should end the conversation.</span>
+        <span class="related-go">Read the guide <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a class="related-card" href="/blog/how-to-choose-a-software-development-company">
+        <span class="related-art" aria-hidden="true"><svg class="doodle-scene" viewBox="0 0 480 300" aria-hidden="true" focusable="false"><rect x="0" y="0" width="480" height="300" rx="24" fill="var(--d-sky)"/><g opacity=".55"><circle cx="40" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="40" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="40" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="40" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="40" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="97" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="97" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="97" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="97" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="97" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="154" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="154" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="154" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="154" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="154" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="211" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="211" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="211" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="211" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="211" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="268" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="268" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="268" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="268" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="268" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="325" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="325" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="325" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="325" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="325" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="382" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="382" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="382" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="382" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="382" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="439" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="439" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="439" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="439" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="439" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/></g><circle cx="202" cy="152" r="106" fill="var(--d-paper)" opacity=".7"/><g transform="translate(78 28) scale(1.55)"><circle cx="78" cy="86" r="56" fill="var(--d-sky)"/><path d="M42 132v-10a36 36 0 0 1 72 0v10Z" fill="var(--d-blue)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="78" cy="64" r="24" fill="var(--d-peach)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M54 60a24 24 0 0 1 48 0c-10-8-36-8-48 0Z" fill="var(--d-ink)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="118" cy="104" r="15" fill="var(--d-yellow)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M118 97C119.4 102.6 119.4 102.6 125 104C119.4 105.4 119.4 105.4 118 111C116.6 105.4 116.6 105.4 111 104C116.6 102.6 116.6 102.6 118 97Z" fill="var(--d-paper)" stroke="var(--d-ink)" stroke-width="3" stroke-linejoin="round"/><path d="M32 33V47M25 40H39" fill="none" stroke="var(--d-ink)" stroke-width="3" stroke-linecap="round"/></g><g transform="translate(300 128) scale(.95)" style="--d-blue:#ff8f6b;--d-sky:#ffeee6;--d-coral:#ffc94d"><circle cx="80" cy="82" r="56" fill="var(--d-sun)"/><path d="M40 36H120a10 10 0 0 1 10 10V96a10 10 0 0 1-10 10H40a10 10 0 0 1-10-10V46a10 10 0 0 1 10-10Z" fill="var(--d-yellow)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M44 106l-6 14 18-14" fill="var(--d-yellow)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M68 60a12 12 0 1 1 18 10c-4 3-6 6-6 10" fill="none" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="80" cy="92" r="3.8" fill="var(--d-ink)"/></g><g><path d="M52 51V69M43 60H61" fill="none" stroke="var(--d-ink)" stroke-width="3" stroke-linecap="round"/><path d="M430 44V60M422 52H438" fill="none" stroke="var(--d-ink)" stroke-width="3" stroke-linecap="round"/><path d="M440 239C442.2 247.8 442.2 247.8 451 250C442.2 252.2 442.2 252.2 440 261C437.8 252.2 437.8 252.2 429 250C437.8 247.8 437.8 247.8 440 239Z" fill="var(--d-yellow)" stroke="var(--d-ink)" stroke-width="3" stroke-linejoin="round"/></g></svg></span>
+        <span class="related-tag">Hiring a Team &middot; 10 min read</span>
+        <strong>How to Choose a Software Development Company: 12 Questions</strong>
+        <span class="related-blurb">Twelve questions to ask before you sign, what a good answer sounds like, a proposal comparison table and the red flags that should end the conversation.</span>
+        <span class="related-go">Read the guide <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a class="related-card" href="/blog/cost-to-build-mvp-2026">
+        <span class="related-art" aria-hidden="true"><svg class="doodle-scene" viewBox="0 0 480 300" aria-hidden="true" focusable="false"><rect x="0" y="0" width="480" height="300" rx="24" fill="var(--d-peach)"/><g opacity=".55"><circle cx="40" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="40" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="40" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="40" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="40" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="97" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="97" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="97" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="97" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="97" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="154" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="154" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="154" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="154" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="154" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="211" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="211" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="211" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="211" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="211" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="268" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="268" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="268" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="268" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="268" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="325" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="325" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="325" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="325" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="325" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="382" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="382" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="382" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="382" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="382" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="439" cy="34" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="439" cy="92" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="439" cy="150" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="439" cy="208" r="2.2" fill="var(--d-ink)" opacity=".18"/><circle cx="439" cy="266" r="2.2" fill="var(--d-ink)" opacity=".18"/></g><circle cx="202" cy="152" r="106" fill="var(--d-paper)" opacity=".7"/><g transform="translate(78 28) scale(1.55)"><circle cx="80" cy="84" r="58" fill="var(--d-sky)"/><path d="M80 22c22 14 30 40 22 70H58C50 62 58 36 80 22Z" fill="var(--d-paper)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="80" cy="58" r="10" fill="var(--d-blue)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M58 92l-16 18 20-4M102 92l16 18-20-4" fill="var(--d-coral)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M68 98c0 16 6 26 12 34 6-8 12-18 12-34Z" fill="var(--d-yellow)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M124 27V41M117 34H131" fill="none" stroke="var(--d-ink)" stroke-width="3" stroke-linecap="round"/><path d="M32 39V49M27 44H37" fill="none" stroke="var(--d-ink)" stroke-width="3" stroke-linecap="round"/></g><g transform="translate(300 128) scale(.95)" style="--d-blue:#a78bfa;--d-sky:#f1ecff"><circle cx="80" cy="84" r="56" fill="var(--d-sky)"/><path d="M32 66l34-34h46v46l-34 34a8 8 0 0 1-11 0L32 77a8 8 0 0 1 0-11Z" fill="var(--d-yellow)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="96" cy="48" r="7" fill="var(--d-paper)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M64 76l18 18M58 92l10 10" fill="none" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="120" cy="118" r="15" fill="var(--d-yellow)" stroke="var(--d-ink)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M116 112h9M116 118h9M116 112c8 0 8 12 0 12l7 6" fill="none" stroke="var(--d-ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g><g><path d="M52 51V69M43 60H61" fill="none" stroke="var(--d-ink)" stroke-width="3" stroke-linecap="round"/><path d="M430 44V60M422 52H438" fill="none" stroke="var(--d-ink)" stroke-width="3" stroke-linecap="round"/><path d="M440 239C442.2 247.8 442.2 247.8 451 250C442.2 252.2 442.2 252.2 440 261C437.8 252.2 437.8 252.2 429 250C437.8 247.8 437.8 247.8 440 239Z" fill="var(--d-yellow)" stroke="var(--d-ink)" stroke-width="3" stroke-linejoin="round"/></g></svg></span>
+        <span class="related-tag">Product Strategy &middot; 9 min read</span>
+        <strong>The True Cost of Building an MVP in 2026</strong>
+        <span class="related-blurb">Agency, freelancers or a dedicated squad: where MVP budgets actually go.</span>
+        <span class="related-go">Read the guide <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <!-- chrome:footer -->
+<footer class="sc-footer">
+  <div class="sc-foot-band">
+    <div class="sc-wrap sc-foot-band-in">
+      <div>
+        <p class="sc-foot-eyebrow">Free 30-minute strategy call</p>
+        <h2>Have a product in mind? Let&rsquo;s scope it together.</h2>
+        <p>Talk to the founder directly. You leave with a clear read on scope and budget, and a written proposal within 24 hours.</p>
+      </div>
+      <div class="sc-foot-top-actions">
+        <a class="sc-foot-btn is-primary" href="https://calendly.com/creuto/meet" target="_blank" rel="noopener" data-book="true"><span>Book a free strategy call</span><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="sc-foot-btn" href="https://wa.me/917608844995?text=Hi%20Nihar%2C%20I%20found%20your%20website%20and%20I%27m%20interested%20in%20discussing%20a%20project." target="_blank" rel="noopener"><span>Message on WhatsApp</span></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="sc-wrap">
+    <div class="sc-foot-grid">
+      <div class="sc-foot-brand">
+        <a class="sc-brand" href="/" aria-label="Nihar Ranjan Rout, home"><span class="sc-brand-text">nihar<span class="sc-dot">.</span></span></a>
+        <p>Nihar Ranjan Rout is the founder and CEO of Creuto, a founder-led product and engineering company. Mobile apps, web apps, custom software and AI products, built from a clear PRD to launch with a senior in-house team.</p>
+        <div class="sc-foot-badges">
+          <a class="sc-badge" href="/blog/openai-select-partner"><img src="/assets/openai-symbol.png" alt="" width="20" height="20" loading="lazy" decoding="async"><span><strong>OpenAI</strong>Select Partner</span></a>
+          <a class="sc-badge" href="https://clutch.co/profile/creuto" target="_blank" rel="noopener"><span class="sc-badge-star" aria-hidden="true">&#9733;</span><span><strong>5.0 on Clutch</strong>16 verified reviews</span></a>
+        </div>
+        <ul class="sc-foot-contact">
+          <li><span class="sc-fc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg></span><a href="mailto:me@niharrout.com">me@niharrout.com</a></li>
+          <li><span class="sc-fc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></span><a href="tel:+917608844995" data-reveal-phone="+91 76088 44995"><span data-phone-text>Call me</span></a></li>
+          <li><span class="sc-fc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="2.2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg></span><a href="/book">Book a free 30-minute call</a></li>
+          <li><span class="sc-fc-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.5-6-6.5-11a6.5 6.5 0 0 1 13 0c0 5-6.5 11-6.5 11Z"/><circle cx="12" cy="10" r="2.4"/></svg></span><span>Bhubaneswar, Odisha, India</span></li>
+        </ul>
+        <div class="sc-foot-social"><a class="sc-social" href="https://www.linkedin.com/in/iniharrout" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 9.5v8M6.5 6.5v.01M10.5 17.5v-8M10.5 13a3 3 0 0 1 6 0v4.5"/><rect x="3" y="3" width="18" height="18" rx="3"/></svg></a><a class="sc-social" href="https://x.com/iniharrout" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 4.5 19.5 19.5M19.5 4.5l-15 15"/></svg></a><a class="sc-social" href="https://github.com/iniharrout" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4 1.3-4-2-6-2.5M15 21v-3.4a3 3 0 0 0-.8-2.3c2.7-.3 5.5-1.3 5.5-6a4.7 4.7 0 0 0-1.3-3.2 4.3 4.3 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.5 11.5 0 0 0-6 0C6.5 2.6 5.5 2.9 5.5 2.9a4.3 4.3 0 0 0-.1 3.2A4.7 4.7 0 0 0 4.1 9.3c0 4.6 2.8 5.6 5.5 6a3 3 0 0 0-.8 2.3V21"/></svg></a><a class="sc-social" href="https://www.youtube.com/@niharroutofficial" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="m10 9 5 3-5 3Z"/></svg></a><a class="sc-social" href="https://medium.com/@niharrout" target="_blank" rel="noopener" aria-label="Medium"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="7.5" cy="12" rx="4.5" ry="5"/><ellipse cx="16" cy="12" rx="2" ry="4.6"/><path d="M20.5 7.5v9"/></svg></a><a class="sc-social" href="https://substack.com/@niharrout" target="_blank" rel="noopener" aria-label="Substack"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4.5h14M5 8.5h14M5 12.5h14v8l-7-4-7 4Z"/></svg></a></div>
+      </div>
+      <div class="sc-foot-cols">
+        <div class="sc-foot-col">
+          <div class="sc-foot-group">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="/services/custom-software-development">Custom Software Development</a></li>
+              <li><a href="/services/mobile-app-development">Mobile App Development</a></li>
+              <li><a href="/services/web-application-development">Web Development</a></li>
+              <li><a href="/services/devops-cloud-engineering">DevOps &amp; Cloud Engineering</a></li>
+              <li><a href="/services/ai-product-development">AI Engineering Services</a></li>
+              <li><a href="/services/product-strategy-prd">Startup Product Engineering</a></li>
+              <li><a href="/services">All services</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="sc-foot-col">
+          <div class="sc-foot-group">
+            <h4>Popular services</h4>
+            <ul>
+              <li><a href="/services/custom-software-development/custom-erp-development">Custom ERP Development</a></li>
+              <li><a href="/services/mobile-app-development/ios-app-development">iOS App Development</a></li>
+              <li><a href="/services/mobile-app-development/android-app-development">Android App Development</a></li>
+              <li><a href="/services/mobile-app-development/react-native-app-development">React Native App Development</a></li>
+              <li><a href="/services/product-strategy-prd/mvp-development">MVP Development</a></li>
+              <li><a href="/services/ai-product-development/ai-development">Artificial Intelligence Development</a></li>
+            </ul>
+          </div>
+          <div class="sc-foot-group">
+            <h4>Free tools</h4>
+            <ul>
+              <li><a href="/tools/app-cost-calculator">App Cost Calculator</a></li>
+              <li><a href="/tools/startup-name-generator">Startup Name Generator</a></li>
+              <li><a href="/tools/linkedin-text-formatter">LinkedIn Text Formatter</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="sc-foot-col">
+          <div class="sc-foot-group">
+            <h4>Industries</h4>
+            <ul>
+              <li><a href="/industries/healthcare">Healthcare</a></li>
+              <li><a href="/industries/fintech">Banking &amp; Financial Services</a></li>
+              <li><a href="/industries/ecommerce">eCommerce &amp; Retail</a></li>
+              <li><a href="/industries/logistics">Logistics &amp; Supply Chain</a></li>
+              <li><a href="/industries/education">Education &amp; EdTech</a></li>
+              <li><a href="/industries/real-estate">Real Estate &amp; PropTech</a></li>
+              <li><a href="/industries/manufacturing">Manufacturing</a></li>
+              <li><a href="/industries/saas">SaaS</a></li>
+              <li><a href="/industries">All industries</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="sc-foot-col">
+          <div class="sc-foot-group">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="/about">About Nihar &amp; Creuto</a></li>
+              <li><a href="/work">Case studies</a></li>
+              <li><a href="/work-with-me">Careers</a></li>
+              <li><a href="/about/facts">Company fact sheet</a></li>
+              <li><a href="https://creuto.com" target="_blank" rel="noopener">Creuto.com</a></li>
+            </ul>
+          </div>
+          <div class="sc-foot-group">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="/blog">Blog &amp; Guides</a></li>
+              <li><a href="/project-costs">Project Costs Guide</a></li>
+              <li><a href="/technology">Technology Stack</a></li>
+              <li><a href="/b2b-software-development-for-startups">B2B Startup Playbook</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="sc-foot-col">
+          <div class="sc-foot-group">
+            <h4>Locations</h4>
+            <ul>
+              <li><a href="/mobile-app-development-bhubaneswar">Bhubaneswar</a></li>
+              <li><a href="/locations/bangalore">Bangalore</a></li>
+              <li><a href="/locations/hyderabad">Hyderabad</a></li>
+              <li><a href="/locations/pune">Pune</a></li>
+              <li><a href="/locations/delhi-ncr">Delhi NCR</a></li>
+              <li><a href="/locations">All locations</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sc-foot-bottom">
+      <div>&copy; <span id="yr" data-year>2026</span> Nihar Ranjan Rout &middot; Founder &amp; CEO, Creuto. All rights reserved.</div>
+      <div class="sc-foot-legal">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms">Terms of Service</a>
+        <a href="#cookie-settings" data-cookie-settings>Cookie settings</a>
+        <a href="/sitemap.xml">Sitemap</a>
+        <a href="#top">Back to top &uarr;</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- /chrome:footer -->
+
+  <script src="/assets/site-enhancements.js?v=blue5"></script>
+  <script src="/assets/blog-reader.js?v=br1" defer></script>
+</body>
+</html>

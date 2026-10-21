@@ -1,0 +1,25 @@
+{
+  "name": "Nihar Ranjan Rout | Creuto",
+  "short_name": "Nihar",
+  "description": "Guides and services for founders: mobile apps, web apps, ERP, CRM and AI products, from Nihar Ranjan Rout, founder of Creuto.",
+  "id": "/",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "lang": "en",
+  "categories": ["business", "productivity", "education"],
+  "icons": [
+    { "src": "/assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/icons/icon-512-any.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/icons/icon-192-maskable.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "/assets/icons/icon-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Guides", "short_name": "Guides", "url": "/blog?source=pwa", "icons": [{ "src": "/assets/icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Book a free call", "short_name": "Book a call", "url": "/book?source=pwa", "icons": [{ "src": "/assets/icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "App cost calculator", "short_name": "Cost calculator", "url": "/tools/app-cost-calculator?source=pwa", "icons": [{ "src": "/assets/icons/icon-192.png", "sizes": "192x192" }] }
+  ]
+}
