@@ -20,6 +20,11 @@ const ORDER = [
   'how-to-add-ai-to-an-existing-product',
   'mobile-app-vs-web-app-which-to-build-first',
   'fixed-price-vs-time-and-materials-software-development',
+  // moved from the earlier blog at blog.niharrout.com (original dates kept)
+  'the-future-of-digital-india-is-homegrown',
+  'does-your-business-need-software',
+  'the-essential-ingredients-for-a-successful-product-launch-by-nihar-ranjan-rout',
+  'investing-in-technology-a-smart-strategy-for-business-growth',
 ];
 const posts = ORDER.map((slug) => require(path.join(__dirname, 'blog', slug + '.js')));
 
@@ -67,7 +72,7 @@ function page(p) {
   const url = `${SITE}/blog/${p.slug}`;
   const image = `${SITE}/assets/blog/${p.slug}-share.jpg`;
   const toc = tocFromBody(p.body);
-  toc.push(['faq', 'Frequently asked questions']);
+  if (p.faq.length) toc.push(['faq', 'Frequently asked questions']);
   const body = p.body.replace('{{cta}}', ctaBox(p.cta));
   const words = stripTags(p.body + ' ' + p.lead + ' ' + p.faq.map((f) => f.join(' ')).join(' ')).split(' ').length;
   const alt = `${p.headline}: guide by Nihar Ranjan Rout`;
@@ -141,7 +146,7 @@ ${p.keywords.map((k) => `  <meta property="article:tag" content="${esc(k)}">`).j
   <!-- Structured data -->
   ${ld(blogPosting)}
   ${ld(breadcrumb)}
-  ${ld(faqLd)}
+  ${p.faq.length ? ld(faqLd) : ''}
 
   <!-- Fonts & Design System -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -194,22 +199,22 @@ ${p.keywords.map((k) => `  <meta property="article:tag" content="${esc(k)}">`).j
           <img src="/assets/blog/${p.slug}-banner.jpg" alt="${esc(alt)}" width="1200" height="630" fetchpriority="high" decoding="async">
         </figure>
 
-        <nav class="article-toc" aria-label="In this guide">
+${toc.length > 1 ? `        <nav class="article-toc" aria-label="In this guide">
           <p class="article-toc-title">In this guide</p>
           <ol>
 ${toc.map(([id, t]) => `            <li><a href="#${id}">${esc(t)}</a></li>`).join('\n')}
           </ol>
         </nav>
-
+` : ''}
         <div class="prose">
 ${body}
         </div>
 
-        <section class="article-faq" id="faq" aria-labelledby="faq-title">
+${p.faq.length ? `        <section class="article-faq" id="faq" aria-labelledby="faq-title">
           <h2 id="faq-title">Frequently asked questions</h2>
 ${p.faq.map(([q, a]) => `          <h3>${esc(q)}</h3>\n          <p>${esc(a)}</p>`).join('\n')}
         </section>
-
+` : ''}
         <div class="blog-cta-box blog-cta-end">
           <h3>${esc(p.endCta.title)}</h3>
           <p>${esc(p.endCta.text)}</p>
@@ -256,7 +261,8 @@ function indexCard(p) {
 }
 
 function homeBlock() {
-  const [first, ...rest] = posts;
+  // the homepage shows the five newest guides; ORDER lists newest first
+  const [first, ...rest] = posts.slice(0, 5);
   const mini = (p) => `          <a class="blog-mini" href="/blog/${p.slug}">
             <span class="blog-doodle" aria-hidden="true">${doodle(BLOG_ART[p.slug][0])}</span>
             <div><p class="blog-tag">${esc(p.category)} &middot; ${p.readMinutes} min read</p><h3>${esc(p.title)}</h3><span class="blog-more">Read the guide <i>&rarr;</i></span></div>

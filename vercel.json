@@ -35,6 +35,171 @@
   ],
   "redirects": [
     {
+      "source": "/about-nihar",
+      "has": [
+        {
+          "type": "host",
+          "value": "blog.niharrout.com"
+        }
+      ],
+      "destination": "https://www.niharrout.com/about",
+      "permanent": true
+    },
+    {
+      "source": "/page/about-nihar-ranjan-rout",
+      "has": [
+        {
+          "type": "host",
+          "value": "blog.niharrout.com"
+        }
+      ],
+      "destination": "https://www.niharrout.com/about",
+      "permanent": true
+    },
+    {
+      "source": "/page/startup-technology-consulting",
+      "has": [
+        {
+          "type": "host",
+          "value": "blog.niharrout.com"
+        }
+      ],
+      "destination": "https://www.niharrout.com/services/product-strategy-prd",
+      "permanent": true
+    },
+    {
+      "source": "/page/custom-software-development",
+      "has": [
+        {
+          "type": "host",
+          "value": "blog.niharrout.com"
+        }
+      ],
+      "destination": "https://www.niharrout.com/services/custom-software-development",
+      "permanent": true
+    },
+    {
+      "source": "/page/mobile-app-development",
+      "has": [
+        {
+          "type": "host",
+          "value": "blog.niharrout.com"
+        }
+      ],
+      "destination": "https://www.niharrout.com/services/mobile-app-development",
+      "permanent": true
+    },
+    {
+      "source": "/page/mobile-app-development-in-bhubaneswar",
+      "has": [
+        {
+          "type": "host",
+          "value": "blog.niharrout.com"
+        }
+      ],
+      "destination": "https://www.niharrout.com/mobile-app-development-bhubaneswar",
+      "permanent": true
+    },
+    {
+      "source": "/mobile-app-development-in-bhubaneswar-cost-process-and-timeline-2026-guide",
+      "has": [
+        {
+          "type": "host",
+          "value": "blog.niharrout.com"
+        }
+      ],
+      "destination": "https://www.niharrout.com/mobile-app-development-bhubaneswar",
+      "permanent": true
+    },
+    {
+      "source": "/pre-built-solutions-vs-custom-app-development",
+      "has": [
+        {
+          "type": "host",
+          "value": "blog.niharrout.com"
+        }
+      ],
+      "destination": "https://www.niharrout.com/blog/web-application-development-build-vs-buy",
+      "permanent": true
+    },
+    {
+      "source": "/feeling-lost-in-the-coding-jungle-not-everyone-loves-it-and-thats-okay",
+      "has": [
+        {
+          "type": "host",
+          "value": "blog.niharrout.com"
+        }
+      ],
+      "destination": "https://www.niharrout.com/blog",
+      "permanent": true
+    },
+    {
+      "source": "/finding-solace-in-lifes-uncertainties",
+      "has": [
+        {
+          "type": "host",
+          "value": "blog.niharrout.com"
+        }
+      ],
+      "destination": "https://www.niharrout.com/about",
+      "permanent": true
+    },
+    {
+      "source": "/the-future-of-digital-india-is-homegrown",
+      "has": [
+        {
+          "type": "host",
+          "value": "blog.niharrout.com"
+        }
+      ],
+      "destination": "https://www.niharrout.com/blog/the-future-of-digital-india-is-homegrown",
+      "permanent": true
+    },
+    {
+      "source": "/does-your-business-need-software",
+      "has": [
+        {
+          "type": "host",
+          "value": "blog.niharrout.com"
+        }
+      ],
+      "destination": "https://www.niharrout.com/blog/does-your-business-need-software",
+      "permanent": true
+    },
+    {
+      "source": "/the-essential-ingredients-for-a-successful-product-launch-by-nihar-ranjan-rout",
+      "has": [
+        {
+          "type": "host",
+          "value": "blog.niharrout.com"
+        }
+      ],
+      "destination": "https://www.niharrout.com/blog/the-essential-ingredients-for-a-successful-product-launch-by-nihar-ranjan-rout",
+      "permanent": true
+    },
+    {
+      "source": "/investing-in-technology-a-smart-strategy-for-business-growth",
+      "has": [
+        {
+          "type": "host",
+          "value": "blog.niharrout.com"
+        }
+      ],
+      "destination": "https://www.niharrout.com/blog/investing-in-technology-a-smart-strategy-for-business-growth",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "blog.niharrout.com"
+        }
+      ],
+      "destination": "https://www.niharrout.com/blog",
+      "permanent": true
+    },
+    {
       "source": "/tools/url-shortener",
       "destination": "/tools",
       "permanent": true

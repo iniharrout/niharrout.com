@@ -216,6 +216,11 @@ const BLOG_ART = {
   'react-native-mobile-app-playbook': ['cross-platform', 'layers', 'peach'],
   'web-application-development-build-vs-buy': ['web', 'saas', 'sun'],
   'why-custom-erp-implementations-fail': ['erp', 'guardrails', 'sky'],
+  // moved from the earlier blog
+  'the-future-of-digital-india-is-homegrown': ['cloud', 'government', 'sky'],
+  'does-your-business-need-software': ['erp', 'growth', 'sun'],
+  'the-essential-ingredients-for-a-successful-product-launch-by-nihar-ranjan-rout': ['rocket', 'roadmap', 'peach'],
+  'investing-in-technology-a-smart-strategy-for-business-growth': ['growth', 'pricing', 'sky'],
 };
 const body = (name) => { const b = D[ALIAS[name] || name]; if (!b) throw new Error('unknown doodle: ' + name); return b; };
 function scene(slug, cls = 'doodle-scene') {
