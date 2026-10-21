@@ -15,41 +15,105 @@
     "hash": "def9ef2406bd5415",
     "date": "2026-10-21"
   },
+  "blog/ai-agents-for-business/index.html": {
+    "hash": "762e0ebb510aa3d1",
+    "date": "2026-10-22"
+  },
+  "blog/app-development-cost-factors-india/index.html": {
+    "hash": "2042b4666c51cbe8",
+    "date": "2026-10-22"
+  },
+  "blog/app-store-and-google-play-approval-guide/index.html": {
+    "hash": "f101840af802e686",
+    "date": "2026-10-22"
+  },
   "blog/cost-to-build-mvp-2026/index.html": {
     "hash": "85f8abcc72bad349",
     "date": "2026-10-21"
   },
+  "blog/custom-crm-vs-salesforce-hubspot-zoho/index.html": {
+    "hash": "b1e6fda25a40afed",
+    "date": "2026-10-22"
+  },
   "blog/does-your-business-need-software/index.html": {
     "hash": "4d6468fd600a70cf",
+    "date": "2026-10-22"
+  },
+  "blog/dpdp-act-guide-for-app-founders/index.html": {
+    "hash": "16507535fadee5b0",
+    "date": "2026-10-22"
+  },
+  "blog/erp-vs-crm-difference/index.html": {
+    "hash": "1614dc2c32f35be4",
     "date": "2026-10-22"
   },
   "blog/fixed-price-vs-time-and-materials-software-development/index.html": {
     "hash": "5dcdc1b4275922e2",
     "date": "2026-10-21"
   },
+  "blog/how-long-does-it-take-to-build-an-app/index.html": {
+    "hash": "e89909230b94003b",
+    "date": "2026-10-22"
+  },
   "blog/how-to-add-ai-to-an-existing-product/index.html": {
     "hash": "d3ec989871167c12",
     "date": "2026-10-21"
+  },
+  "blog/how-to-build-a-multi-vendor-marketplace-app/index.html": {
+    "hash": "f61e6590175173f2",
+    "date": "2026-10-22"
+  },
+  "blog/how-to-build-a-quick-commerce-app/index.html": {
+    "hash": "25e47e049a698363",
+    "date": "2026-10-22"
+  },
+  "blog/how-to-build-an-ai-chatbot-for-business/index.html": {
+    "hash": "d38622c032eae7aa",
+    "date": "2026-10-22"
   },
   "blog/how-to-choose-a-software-development-company/index.html": {
     "hash": "f8da613a5da85c52",
     "date": "2026-10-21"
   },
+  "blog/how-to-hire-app-developers-in-india/index.html": {
+    "hash": "4f4298360b6d9869",
+    "date": "2026-10-22"
+  },
+  "blog/how-to-validate-a-startup-idea/index.html": {
+    "hash": "364476bbd8df024b",
+    "date": "2026-10-22"
+  },
   "blog/index.html": {
-    "hash": "ba633da5562dfc64",
+    "hash": "cdfccf8535249e26",
     "date": "2026-10-22"
   },
   "blog/investing-in-technology-a-smart-strategy-for-business-growth/index.html": {
     "hash": "1256ac4cf32a3764",
     "date": "2026-10-22"
   },
+  "blog/mobile-app-security-checklist/index.html": {
+    "hash": "9f796958715a4be5",
+    "date": "2026-10-22"
+  },
   "blog/mobile-app-vs-web-app-which-to-build-first/index.html": {
     "hash": "f56cae3b7acfdf55",
     "date": "2026-10-21"
   },
+  "blog/mvp-vs-prototype-vs-proof-of-concept/index.html": {
+    "hash": "653289c726700d12",
+    "date": "2026-10-22"
+  },
+  "blog/native-vs-cross-platform-app-development/index.html": {
+    "hash": "915379734fbc4d95",
+    "date": "2026-10-22"
+  },
   "blog/openai-select-partner/index.html": {
     "hash": "ce14058cf5c64415",
     "date": "2026-10-21"
+  },
+  "blog/outsourcing-software-development-to-india/index.html": {
+    "hash": "ee8f0f829fe4e33e",
+    "date": "2026-10-22"
   },
   "blog/pragmatic-enterprise-ai-workflows/index.html": {
     "hash": "144dad28280d6368",
@@ -59,21 +123,37 @@
     "hash": "5c8edc9ff234722f",
     "date": "2026-10-21"
   },
+  "blog/rag-vs-fine-tuning/index.html": {
+    "hash": "e8841ef5a3367d7e",
+    "date": "2026-10-22"
+  },
   "blog/react-native-mobile-app-playbook/index.html": {
     "hash": "7dfc6f85943df700",
     "date": "2026-10-21"
+  },
+  "blog/react-native-vs-flutter/index.html": {
+    "hash": "7f1c39b01fbc48d2",
+    "date": "2026-10-22"
+  },
+  "blog/salon-booking-app-development/index.html": {
+    "hash": "6885e2e95eb421e2",
+    "date": "2026-10-22"
   },
   "blog/the-essential-ingredients-for-a-successful-product-launch-by-nihar-ranjan-rout/index.html": {
     "hash": "709dab3769739814",
     "date": "2026-10-22"
   },
   "blog/the-future-of-digital-india-is-homegrown/index.html": {
-    "hash": "f75145398dec3c14",
+    "hash": "08baf2305af0c566",
     "date": "2026-10-22"
   },
   "blog/web-application-development-build-vs-buy/index.html": {
     "hash": "6cc51b9ad3a00865",
     "date": "2026-10-21"
+  },
+  "blog/website-vs-web-app-difference/index.html": {
+    "hash": "9bb4b38f0a962fa0",
+    "date": "2026-10-22"
   },
   "blog/what-is-a-prd-how-to-write-a-product-requirements-document/index.html": {
     "hash": "cd614d446b116fe9",
@@ -88,7 +168,7 @@
     "date": "2026-10-21"
   },
   "index.html": {
-    "hash": "93a7ec78eec57547",
+    "hash": "63c3583edbabf217",
     "date": "2026-10-22"
   },
   "industries/agriculture/index.html": {
