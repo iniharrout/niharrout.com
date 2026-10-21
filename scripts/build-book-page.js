@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Generates /book: the Google Calendar appointment page embedded in the site, with a short "what to expect"
+ * Generates /book: the Calendly booking page embedded in the site, with a short "what to expect"
  * and a "Before the call" FAQ.
  * Same booking page as the Book a Call pop-up and buttons (see assets/schedule-popup.js), here shown inline.
  * Run through `node scripts/build-all.js`, which also stamps the shared header, footer, analytics and share tags.
@@ -11,8 +11,8 @@ const { SITE, ARROW, head, foot, crumbs } = require('./careers/shell');
 const { doodle } = require('./site-data/doodles');
 
 const ROOT = path.resolve(__dirname, '..');
-const SHORT = 'https://calendar.app.google/HJ4ctVHEXLjUxCzp6';
-const EMBED = 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ2_xXGxvkoPUq-EZu-9OFN59ehyVyKzMM5OMnc0RXBdI3W7EqVJnmpc_v7Zu2nkjmJhMjTI-YqN?gv=true';
+const SHORT = 'https://calendly.com/creuto/meet';
+const EMBED = 'https://calendly.com/creuto/meet?embed_type=Inline&amp;embed_domain=www.niharrout.com&amp;hide_gdpr_banner=1&amp;primary_color=1d4ed8';
 
 const url = `${SITE}/book`;
 const title = 'Book a Free Strategy Call | Nihar Ranjan Rout';
@@ -46,7 +46,7 @@ const html = head({ title, description, canonical: url, graph }) + `
   <section class="wwm-book" aria-label="Choose a time">
     <div class="wwm-wrap">
       <div class="wwm-embed">
-        <iframe src="${EMBED}" title="Book a call with Nihar: Google Calendar appointment page" width="100%" height="760"></iframe>
+        <iframe src="${EMBED}" title="Book a call with Nihar: Calendly booking page" width="100%" height="760"></iframe>
         <p class="wwm-embed-fallback">Calendar not showing? <a href="${SHORT}" target="_blank" rel="noopener">Open it in a new tab ${ARROW}</a></p>
       </div>
 

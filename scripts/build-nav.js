@@ -46,7 +46,7 @@ const IND_GLYPH = {
   manufacturing: 'factory', construction: 'hammer', agriculture: 'leaf', aviation: 'plane', telecom: 'antenna', 'media-entertainment': 'play',
   'gaming-sports': 'gamepad', 'social-networking': 'share', 'fitness-wellness': 'dumbbell', events: 'ticket', government: 'landmark', saas: 'cloud',
 };
-const BOOK = 'https://calendar.app.google/HJ4ctVHEXLjUxCzp6';
+const BOOK = 'https://calendly.com/creuto/meet';
 
 // One menu entry: icon, title, one-line description.
 const entry = (cls, href, icon, title, text) => `<a class="${cls}" href="${href}">${glyph(icon)}<span class="sc-entry-t"><strong>${title}</strong><span>${text}</span></span></a>`;

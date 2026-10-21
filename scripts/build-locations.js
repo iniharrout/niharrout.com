@@ -160,7 +160,7 @@ const inlineCta = (title, sub) => `
       <div class="wrap">
         <div class="loc-card" style="flex-direction:row; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; padding:28px 32px;">
           <div><h3 style="font-size:20px; margin-bottom:6px;">${esc(title)}</h3><p>${esc(sub)}</p></div>
-          <a href="https://calendar.app.google/HJ4ctVHEXLjUxCzp6" target="_blank" rel="noopener" data-book="true" class="cl-button -primary btn-book-call">Book a free call <span>→</span></a>
+          <a href="https://calendly.com/creuto/meet" target="_blank" rel="noopener" data-book="true" class="cl-button -primary btn-book-call">Book a free call <span>→</span></a>
         </div>
       </div>
     </section>`;
@@ -171,7 +171,7 @@ const ctaBand = (title, sub) => `
         <h2>${esc(title)}</h2>
         <p>${esc(sub)}</p>
         <div class="hero-ctas">
-          <a href="https://calendar.app.google/HJ4ctVHEXLjUxCzp6" target="_blank" rel="noopener" data-book="true" class="cl-button -primary btn-book-call">Book a Discovery Call <span>→</span></a>
+          <a href="https://calendly.com/creuto/meet" target="_blank" rel="noopener" data-book="true" class="cl-button -primary btn-book-call">Book a Discovery Call <span>→</span></a>
           <a href="mailto:me@niharrout.com" class="cl-button -secondary">Email me@niharrout.com</a>
         </div>
       </div>
@@ -471,7 +471,7 @@ function buildServicePage(c, svcKey) {
             <p class="hero-sub">${esc(fill(svc.heroSub, c))}</p>
             ${heroBar(svcKey === 'ai' ? 'ai' : svcKey === 'mobile' ? 'mobile' : 'software')}
             <div class="hero-ctas">
-              <a href="https://calendar.app.google/HJ4ctVHEXLjUxCzp6" target="_blank" rel="noopener" data-book="true" class="cl-button -primary btn-book-call">Book a Free Call <span>→</span></a>
+              <a href="https://calendly.com/creuto/meet" target="_blank" rel="noopener" data-book="true" class="cl-button -primary btn-book-call">Book a Free Call <span>→</span></a>
               <a href="#pricing" class="cl-button -secondary">See pricing ↓</a>
             </div>
             ${proofStrip()}
@@ -553,7 +553,7 @@ function buildCityHub(c) {
             <h1>Software, Mobile App &amp; AI Development in ${esc(c.name)}</h1>
             <p class="hero-sub">${esc(c.overview)}</p>
             <div class="hero-ctas">
-              <a href="https://calendar.app.google/HJ4ctVHEXLjUxCzp6" target="_blank" rel="noopener" data-book="true" class="cl-button -primary btn-book-call">Book a Free Call <span>→</span></a>
+              <a href="https://calendly.com/creuto/meet" target="_blank" rel="noopener" data-book="true" class="cl-button -primary btn-book-call">Book a Free Call <span>→</span></a>
               <a href="#services" class="cl-button -secondary">Explore services ↓</a>
             </div>
             ${proofStrip()}
@@ -662,7 +662,7 @@ function buildIndex() {
           <h1>Software, Mobile App &amp; AI Development Across India</h1>
           <p class="hero-sub">Creuto is a founder-led product and engineering team based in Bhubaneswar. We build mobile apps, AI products and custom software for businesses across Odisha and India’s major metros, working remotely in your time zone and visiting for the moments that matter.</p>
           <div class="hero-ctas">
-            <a href="https://calendar.app.google/HJ4ctVHEXLjUxCzp6" target="_blank" rel="noopener" data-book="true" class="cl-button -primary btn-book-call">Book a Free Call <span>→</span></a>
+            <a href="https://calendly.com/creuto/meet" target="_blank" rel="noopener" data-book="true" class="cl-button -primary btn-book-call">Book a Free Call <span>→</span></a>
             <a href="#odisha" class="cl-button -secondary">Browse locations ↓</a>
           </div>
         </div>
@@ -844,7 +844,7 @@ function buildThankYou() {
         <h1 id="ty-title">Thank you</h1>
         <p class="hero-sub" id="ty-sub">We have received your enquiry. Nihar will reply within 24 hours.</p>
         <div class="hero-ctas" style="justify-content:center;">
-          <a href="https://calendar.app.google/HJ4ctVHEXLjUxCzp6" target="_blank" rel="noopener" data-book="true" class="cl-button -primary btn-book-call">Book a call now <span>→</span></a>
+          <a href="https://calendly.com/creuto/meet" target="_blank" rel="noopener" data-book="true" class="cl-button -primary btn-book-call">Book a call now <span>→</span></a>
           <a href="/" class="cl-button -secondary">Back to home</a>
         </div>
       </div>

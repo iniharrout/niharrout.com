@@ -5,7 +5,7 @@
 const { esc, ARROW } = require('../careers/shell');
 const { doodle } = require('./doodles');
 
-const BOOK = 'https://calendar.app.google/HJ4ctVHEXLjUxCzp6';
+const BOOK = 'https://calendly.com/creuto/meet';
 const bookBtn = (label = 'Book a free strategy call', cls = 'is-primary') =>
   `<a class="wwm-btn ${cls}" href="${BOOK}" target="_blank" rel="noopener" data-book="true">${esc(label)} ${ARROW}</a>`;
 

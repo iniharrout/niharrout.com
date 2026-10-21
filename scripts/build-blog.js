@@ -44,7 +44,7 @@ function ctaBox(c) {
   return `<div class="blog-cta-box">
   <h3>${esc(c.title)}</h3>
   <p>${esc(c.text)}</p>
-  <a href="https://calendar.app.google/HJ4ctVHEXLjUxCzp6" target="_blank" rel="noopener" data-book="true" class="cl-button -primary btn-book-call">${esc(c.button)} <span style="margin-left:4px;">&rarr;</span></a>
+  <a href="https://calendly.com/creuto/meet" target="_blank" rel="noopener" data-book="true" class="cl-button -primary btn-book-call">${esc(c.button)} <span style="margin-left:4px;">&rarr;</span></a>
 </div>`;
 }
 
@@ -214,7 +214,7 @@ ${p.faq.map(([q, a]) => `          <h3>${esc(q)}</h3>\n          <p>${esc(a)}</p
           <h3>${esc(p.endCta.title)}</h3>
           <p>${esc(p.endCta.text)}</p>
           <div class="blog-cta-actions">
-            <a href="https://calendar.app.google/HJ4ctVHEXLjUxCzp6" target="_blank" rel="noopener" data-book="true" class="cl-button -primary btn-book-call">Book a free strategy call <span style="margin-left:4px;">&rarr;</span></a>
+            <a href="https://calendly.com/creuto/meet" target="_blank" rel="noopener" data-book="true" class="cl-button -primary btn-book-call">Book a free strategy call <span style="margin-left:4px;">&rarr;</span></a>
             <a href="${p.endCta.service.href}" class="blog-cta-link">${esc(p.endCta.service.label)} ${ARROW}</a>
           </div>
         </div>
