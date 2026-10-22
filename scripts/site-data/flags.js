@@ -23,6 +23,7 @@ const BODY = {
   au: `<rect width="90" height="60" fill="#012169"/>${UNION(45, 30)}${star(22.5, 45, 7)}${star(68, 46, 4)}${star(60, 30, 4)}${star(68, 12, 4)}${star(77, 25, 4)}`,
   sg: `<rect width="90" height="30" fill="#EF3340"/><rect y="30" width="90" height="30" fill="#fff"/><circle cx="20" cy="15" r="9" fill="#fff"/><circle cx="24" cy="15" r="9" fill="#EF3340"/>${star(30, 9, 2.2)}${star(36, 13, 2.2)}${star(34, 20, 2.2)}${star(26, 20, 2.2)}${star(24, 13, 2.2)}`,
   vn: `<rect width="90" height="60" fill="#DA251D"/>${star(45, 31, 17, '#FFFF00')}`,
+  nz: `<rect width="90" height="60" fill="#012169"/>${UNION(45, 30)}${[[68, 46, 5.2], [60, 27, 4.4], [77, 23, 4.4], [68, 11, 4.4]].map(([x, y, r]) => star(x, y, r + 1.4) + star(x, y, r, '#C8102E')).join('')}`,
 };
 
 const flag = (code, cls = 'cty-flag') => `<svg class="${cls}" viewBox="0 0 90 60" aria-hidden="true" focusable="false">${BODY[code]}</svg>`;

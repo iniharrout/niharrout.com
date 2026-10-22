@@ -74,7 +74,7 @@ ${c.home ? R.endBand('Building something for India?', 'Tell me what you want to 
 function hubPage() {
   const url = `${SITE}/countries`;
   const title = 'Countries We Build Software For | Nihar Ranjan Rout';
-  const description = 'Mobile apps, web apps and AI products for businesses in India, the USA, UK, Canada, UAE, Australia, Singapore and Vietnam.';
+  const description = 'Mobile apps, web apps and AI products for businesses in India, the USA, UK, Canada, UAE, Australia, New Zealand and Asia.';
   const graph = [
     { '@type': 'CollectionPage', '@id': `${url}#webpage`, url, name: 'Countries we build software for', description, isPartOf: { '@id': `${SITE}/#website` }, about: { '@id': `${SITE}/#person` } },
     crumbs([['Home', `${SITE}/`], ['Countries', url]]),
