@@ -301,8 +301,6 @@ body.page-home .why2-item:nth-child(5) { --tone: var(--t-orange); }
 /* Show the phone number itself in the header when there is room for it. */
 
 /* Homepage: the contact section right above already offers call, WhatsApp and booking, so the footer does not repeat them. */
-body.page-home .sc-foot-cta { display: none; }
-body.page-home .sc-footer { background: #f3f6ff; border-top: 1px solid #dfe6f5; }
 
 /* ---------- Cookie consent banner (only shown to visitors who need to choose) ---------- */
 .nr-consent { position: fixed; right: 24px; bottom: 24px; z-index: 1500; width: 380px; max-width: calc(100vw - 32px); padding: 20px 20px 18px; background: #fff; color: #0b0d12; border: 1px solid rgba(9, 13, 22, 0.14); border-radius: 16px; box-shadow: 0 24px 54px -22px rgba(9, 13, 22, 0.5); font-family: 'Inter', system-ui, sans-serif; opacity: 0; transform: translateY(14px); transition: opacity 0.28s ease, transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1); }
@@ -425,7 +423,7 @@ body.page-home .sc-footer { background: #f3f6ff; border-top: 1px solid #dfe6f5; 
 .sc-menu.sc-list .sc-mega-strip { padding: 12px 24px; }
 
 /* ---------- Footer: blue call panel, soft blue body, roomy link groups, places, contact cards, wordmark ---------- */
-.sc-footer { position: relative; background: linear-gradient(180deg, #fff 0, #fff 120px, #f3f6ff 120px); color: var(--sc-ink); font-family: var(--font-body, 'Inter', system-ui, sans-serif); }
+.sc-footer { position: relative; background: #f3f6ff; border-top: 1px solid #dfe6f5; color: var(--sc-ink); font-family: var(--font-body, 'Inter', system-ui, sans-serif); }
 .sc-foot-cta { position: relative; z-index: 1; overflow: hidden; display: grid; justify-items: center; text-align: center; padding: 64px 32px; border-radius: 28px; color: #fff; background: radial-gradient(90% 120% at 50% 0%, #3b6cf0 0%, #1d4ed8 45%, #1638a8 100%); box-shadow: 0 30px 60px -30px rgba(29, 78, 216, 0.55); }
 .sc-foot-cta::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(rgba(255, 255, 255, 0.16) 1px, transparent 1.2px); background-size: 22px 22px; mask-image: linear-gradient(180deg, #000, transparent 85%); -webkit-mask-image: linear-gradient(180deg, #000, transparent 85%); pointer-events: none; }
 .sc-foot-cta > * { position: relative; }
@@ -468,7 +466,7 @@ body.page-home .sc-footer { background: #f3f6ff; border-top: 1px solid #dfe6f5; 
 
 .sc-foot-places { padding: 48px 0; border-bottom: 1px solid #dfe6f5; }
 .sc-foot-places-head { display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 12px 24px; margin-bottom: 24px; }
-.sc-foot-places-head h3 { margin: 0; max-width: 30ch; font-family: var(--font-display, 'Fraunces', Georgia, serif); font-size: clamp(1.4rem, 2.2vw, 1.85rem); font-weight: 500; line-height: 1.2; letter-spacing: -0.015em; color: var(--sc-ink); }
+.sc-foot-places-head h3 { margin: 0; max-width: 36ch; font-family: var(--font-display, 'Fraunces', Georgia, serif); font-size: clamp(1.4rem, 2.2vw, 1.85rem); font-weight: 500; line-height: 1.2; letter-spacing: -0.015em; color: var(--sc-ink); }
 .sc-place-row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
 .sc-place { display: flex; flex-direction: column; justify-content: space-between; gap: 18px; padding: 16px 16px 14px; border: 1px solid #dfe6f5; border-radius: 16px; background: #fff; color: inherit; text-decoration: none; transition: border-color .15s ease, transform .15s ease, box-shadow .15s ease; }
 .sc-place:hover { border-color: rgba(29, 78, 216, 0.45); transform: translateY(-2px); box-shadow: 0 14px 30px -22px rgba(15, 35, 95, 0.45); }
@@ -520,7 +518,6 @@ body.page-home .sc-footer { background: #f3f6ff; border-top: 1px solid #dfe6f5; 
   .sc-fc + .sc-fc { border-left: 0; border-top: 1px solid #edf1f8; padding: 16px 10px 6px; }
 }
 @media (max-width: 720px) {
-  .sc-footer { background: linear-gradient(180deg, #fff 0, #fff 90px, #f3f6ff 90px); }
   .sc-foot-cta { padding: 44px 20px; border-radius: 22px; }
   .sc-foot-top-actions, .sc-foot-btn { width: 100%; justify-content: center; }
   .sc-foot-body { padding-top: 52px; }
@@ -582,3 +579,6 @@ a.sc-cta.sc-cta { color: #fff; }
   .wwm-hero-art.wwm-hero-art-html { order: 0; width: 100%; height: auto; margin: 0; justify-content: flex-start; }
   .cty-clock { max-width: 460px; }
 }
+.cty-city-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 12px; padding: 14px 0 0; list-style: none; border-top: 1px solid #edf1f8; }
+.cty-city-list a { display: inline-flex; align-items: center; min-height: 32px; padding: 0 12px; border: 1px solid #dfe6f5; border-radius: 999px; font-size: 13px; font-weight: 600; color: #0b0d12; text-decoration: none; }
+.cty-city-list a:hover { border-color: #1d4ed8; color: #1d4ed8; }

@@ -6,9 +6,41 @@
  * Fields: code (flag), city + tz (live clock), offset (hours vs IST, for the static text), overlap (when working
  * hours meet), and the page copy. Titles stay under 60 characters and descriptions under 155.
  */
-const HOME = { code: 'in', name: 'India', city: 'Bhubaneswar', tz: 'Asia/Kolkata', href: '/locations', note: 'Home base', card: 'Home base in Bhubaneswar, working with founders across India.' };
+// the India row used for comparison on the other country pages
+const HOME = { code: 'in', name: 'India', city: 'India', tz: 'Asia/Kolkata', href: '/countries/india' };
 
 const countries = [
+  {
+    slug: 'india', code: 'in', name: 'India', short: 'India', adj: 'Indian', city: 'India', tz: 'Asia/Kolkata', tzLabel: 'India Standard Time', home: true,
+    card: 'Software, mobile app and AI development for businesses across India.',
+    title: 'Software Development Company in India | Nihar Ranjan Rout',
+    description: 'Software, mobile app and AI development company in India. Founder-led team building apps, web platforms, ERPs and AI products for Indian businesses.',
+    h1: 'Software, mobile app and AI development company in India',
+    intro: 'Creuto is a founder-led software, mobile app and AI development company in India. We build mobile apps, web platforms, custom ERPs and AI products for startups and businesses across the country, with a written plan first and working software at every milestone.',
+    cities: [['Bangalore', '/locations/bangalore'], ['Hyderabad', '/locations/hyderabad'], ['Pune', '/locations/pune'], ['Delhi NCR', '/locations/delhi-ncr'], ['Bhubaneswar', '/mobile-app-development-bhubaneswar'], ['Cuttack', '/locations/cuttack'], ['Rourkela', '/locations/rourkela'], ['Sambalpur', '/locations/sambalpur'], ['Berhampur', '/locations/berhampur']],
+    overlap: 'We work with founders and businesses across India, remotely by default and in person when workshops or launches benefit from it. Our team is headquartered in Bhubaneswar, Odisha, which keeps the work senior and focused without big-city agency overheads. Being in the same time zone means calls, reviews and quick decisions all happen in normal working hours, in English or Hindi.',
+    rules: [
+      ['DPDP Act, 2023', 'We design for India’s Digital Personal Data Protection Act: clear notices, recorded consent, user rights and security safeguards, from the first screen.'],
+      ['Payments and fintech', 'For payment and lending products we build the audit trails, limits and security that RBI guidelines and your regulated partners expect.'],
+      ['Health records', 'Healthcare products can integrate with the Ayushman Bharat Digital Mission for health IDs and records, with role-based access and audit logs.'],
+      ['Indian languages', 'Interfaces in English, Hindi and regional languages, so products work for customers well beyond the metros.'],
+    ],
+    payments: 'UPI, cards, net banking and wallets through Razorpay, Cashfree, PayU and similar gateways, UPI autopay for subscriptions, split payments for marketplaces and cash on delivery where customers expect it.',
+    why: [
+      ['Founder-led', 'You work with me directly, from the first call to launch, not through an account manager.'],
+      ['Same time zone', 'Calls, reviews and fixes happen in your working hours, in English or Hindi.'],
+      ['Built for India', 'UPI, Indian languages, low-end phones and patchy networks planned in from the start.'],
+      ['Your code, your accounts', 'Code, cloud and app store accounts in your company’s name.'],
+    ],
+    faq: [
+      ['Are you a software development company in India?', 'Yes. Creuto is a founder-led software, mobile app and AI development company in India, headquartered in Bhubaneswar, Odisha, and working with businesses across the country.'],
+      ['Which cities do you work with?', 'Businesses across India, including Bangalore, Hyderabad, Pune, Delhi NCR and cities across Odisha. We work remotely by default and meet in person when it helps.'],
+      ['Do you build apps that support UPI and Indian languages?', 'Yes. UPI and Indian payment gateways, Indian languages and performance on budget phones and slower networks are part of how we plan every product for India.'],
+      ['Do you design for the DPDP Act?', 'Yes. Notices, consent, user rights and security safeguards are planned in from the start. Your legal adviser confirms the final position.'],
+      ['How quickly can we see a first version?', 'At Creuto the first working version typically takes about 4 weeks after the PRD is agreed, followed by milestones with working demos.'],
+    ],
+    guides: ['app-development-cost-factors-india', 'dpdp-act-guide-for-app-founders', 'how-to-hire-app-developers-in-india'],
+  },
   {
     slug: 'united-states', card: 'Calls on your mornings, with HIPAA and SOC 2 ready builds.', code: 'us', name: 'United States', short: 'USA', adj: 'US', city: 'New York', tz: 'America/New_York', tzLabel: 'Eastern Time',
     title: 'Software Development for US Startups | Nihar Ranjan Rout',

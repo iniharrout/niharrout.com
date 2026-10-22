@@ -31,6 +31,14 @@ const clockCard = (c) => `<div class="cty-clock" aria-label="Local time in ${esc
           <p class="cty-clock-diff"><span data-clock-diff data-tz="${c.tz}">${esc(c.city)} and India</span></p>
         </div>`;
 
+const indiaCard = (c) => `<div class="cty-clock" aria-label="Working across India">
+          <p class="cty-clock-head">Working across India</p>
+          ${clock({ code: 'in', city: 'India', tz: c.tz }, 'India Standard Time')}
+          <ul class="cty-city-list">${c.cities.map(([n, href]) => `<li><a href="${href}">${esc(n)}</a></li>`).join('')}</ul>
+          <p class="cty-clock-diff">Same time zone, same working hours</p>
+        </div>`;
+const nameFor = (c) => ({ 'United States': 'US', 'United Kingdom': 'UK', 'United Arab Emirates': 'UAE', India: 'Indian' }[c.name] || c.name);
+
 function countryPage(c) {
   const url = `${SITE}/countries/${c.slug}`;
   const graph = [
@@ -40,12 +48,14 @@ function countryPage(c) {
     R.faqLd(c.faq),
   ];
   const others = countries.filter((x) => x.slug !== c.slug);
-  const otherPills = `<ul class="cty-pills">${others.map((x) => `<li><a href="/countries/${x.slug}">${flag(x.code)}<span>${esc(x.name)}</span></a></li>`).join('')}<li><a href="${HOME.href}">${flag(HOME.code)}<span>India</span></a></li></ul>`;
+  const otherPills = `<ul class="cty-pills">${others.map((x) => `<li><a href="/countries/${x.slug}">${flag(x.code)}<span>${esc(x.name)}</span></a></li>`).join('')}</ul>`;
   return head({ title: c.title, description: c.description, canonical: url, graph }) + `
-<main id="top">${R.hero({ crumbs: [['Home', '/'], ['Countries', '/countries'], [c.name, `/countries/${c.slug}`]], pill: `${c.name} · ${c.tzLabel}`, h1: c.h1, sub: c.intro, secondary: ['See our work', '/work'], artHtml: clockCard(c) })}
+<main id="top">${R.hero({ crumbs: [['Home', '/'], ['Countries', '/countries'], [c.name, `/countries/${c.slug}`]], pill: `${c.name} · ${c.tzLabel}`, h1: c.h1, sub: c.intro, secondary: ['See our work', '/work'], artHtml: c.home ? indiaCard(c) : clockCard(c) })}
 ${R.section('why', `Why ${c.adj} teams work with us`, R.cards(c.why).replace('wwm-cards', 'wwm-cards wwm-cards-4'))}
-${R.section('hours', 'Working hours that overlap', R.prose(c.overlap), 'wwm-sec-alt')}
-${R.section('rules', `Built for ${c.name === 'United States' ? 'US' : c.name === 'United Kingdom' ? 'UK' : c.name === 'United Arab Emirates' ? 'UAE' : c.name} rules and users`, `${R.cards(c.rules).replace('wwm-cards', 'wwm-cards wwm-cards-4')}
+${c.home ? R.section('cities', 'Working with businesses across India', `${R.prose(c.overlap)}
+      ${R.pills(c.cities)}
+      <p class="cty-note"><a href="/locations">See all Indian cities we work with</a></p>`, 'wwm-sec-alt') : R.section('hours', 'Working hours that overlap', R.prose(c.overlap), 'wwm-sec-alt')}
+${R.section('rules', `Built for ${nameFor(c)} rules and users`, `${R.cards(c.rules).replace('wwm-cards', 'wwm-cards wwm-cards-4')}
       <p class="wwm-lead cty-pay"><strong>Payments we integrate:</strong> ${esc(c.payments)}</p>
       <p class="cty-note">We design for these requirements and support your review; your legal and compliance advisers confirm what applies to your business.</p>`)}
 ${R.section('services', 'What we build', R.pills(families.map((f) => [f.name, f.path])), 'wwm-sec-alt')}
@@ -55,8 +65,8 @@ ${Object.values(WORK).map((w, n) => `        <li class="wwm-c"><a href="${w.href
 ${R.section('process', 'How an engagement works', R.process(), 'wwm-sec-alt')}
 ${R.section('faq', `Questions from ${c.adj} founders`, R.faqHtml(c.faq))}
 ${R.section('guides', 'Guides for planning your build', R.guides(c.guides.map(G.guide)), 'wwm-sec-alt')}
-${R.section('countries', 'Other countries we build for', otherPills)}
-${R.endBand(`Building for the ${c.short === 'USA' ? 'US' : c.short} market?`, 'Tell me what you want to build. The first call is free, and we will pick a time that suits your time zone.')}
+${R.section('countries', c.home ? 'Countries we build for' : 'Other countries we build for', otherPills)}
+${c.home ? R.endBand('Building something for India?', 'Tell me what you want to build. The first call is free, and you speak with me directly.') : R.endBand(`Building for the ${c.short === 'USA' ? 'US' : c.short} market?`, 'Tell me what you want to build. The first call is free, and we will pick a time that suits your time zone.')}
 </main>
 ` + foot();
 }
@@ -64,7 +74,7 @@ ${R.endBand(`Building for the ${c.short === 'USA' ? 'US' : c.short} market?`, 'T
 function hubPage() {
   const url = `${SITE}/countries`;
   const title = 'Countries We Build Software For | Nihar Ranjan Rout';
-  const description = 'Mobile apps, web apps and AI products for founders in the USA, UK, Canada, UAE, Australia, Singapore and Vietnam, from a founder-led team in India.';
+  const description = 'Mobile apps, web apps and AI products for businesses in India, the USA, UK, Canada, UAE, Australia, Singapore and Vietnam.';
   const graph = [
     { '@type': 'CollectionPage', '@id': `${url}#webpage`, url, name: 'Countries we build software for', description, isPartOf: { '@id': `${SITE}/#website` }, about: { '@id': `${SITE}/#person` } },
     crumbs([['Home', `${SITE}/`], ['Countries', url]]),
@@ -77,11 +87,10 @@ function hubPage() {
         </a></li>`;
   const grid = `<ul class="cty-grid">
 ${countries.map((c) => card(c, `/countries/${c.slug}`, c.card)).join('\n')}
-${card(HOME, HOME.href, HOME.card)}
       </ul>`;
   const prose = 'Every project runs the same way wherever you are: a free call, a written proposal, a PRD before any code and working software at every milestone. What changes by country is the working rhythm and the rules. We agree a daily overlap window that suits your time zone, plan for your privacy and payment requirements, and keep decisions in writing so nothing waits on a meeting.';
   return head({ title, description, canonical: url, graph }) + `
-<main id="top">${R.hero({ crumbs: [['Home', '/'], ['Countries', '/countries']], pill: `${countries.length + 1} countries, one team`, h1: 'Building with founders across time zones.', sub: 'Based in Bhubaneswar, India, and set up to work with startups and businesses abroad. Pick your country to see how the hours overlap and what we plan for.', secondary: ['See our work', '/work'] })}
+<main id="top">${R.hero({ crumbs: [['Home', '/'], ['Countries', '/countries']], pill: `${countries.length} countries, one team`, h1: 'Building with founders across time zones.', sub: 'A founder-led software, mobile app and AI development company in India, set up to work with startups and businesses at home and abroad. Pick your country to see how we work with you.', secondary: ['See our work', '/work'] })}
 ${R.section('all', 'Choose your country', grid)}
 ${R.section('how', 'How we work across countries', R.prose(prose), 'wwm-sec-alt')}
 ${R.section('process', 'How an engagement works', R.process())}
