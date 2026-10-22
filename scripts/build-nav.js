@@ -219,19 +219,10 @@ const footer = `<footer class="sc-footer">
       </div>
 
       <div class="sc-foot-places">
-        <div class="sc-foot-places-head">
-          <div>
-            <p class="sc-foot-label">Where I work</p>
-            <h3>A software and AI development company in India, building with founders across time zones.</h3>
-          </div>
-          <a class="sc-foot-more" href="/countries">All countries ${ARR}</a>
-        </div>
-        <div class="sc-place-row">
-${countries.map((c) => ({ ...c, href: `/countries/${c.slug}`, label: c.home ? 'Pan-India \u00b7 IST' : c.city })).map((c) => `          <a class="sc-place${c.home ? ' is-home' : ''}" href="${c.href}">
-            <span class="sc-place-top">${flag(c.code, 'sc-place-flag')}<span><strong>${esc(c.short || c.name)}</strong><small>${esc(c.label)}</small></span></span>
-            <span class="sc-place-foot"><span class="sc-place-time"><i aria-hidden="true"></i><span data-clock data-tz="${c.tz}">&nbsp;</span></span><span class="sc-place-diff" data-clock-diff data-tz="${c.tz}" data-short></span></span>
-          </a>`).join('\n')}
-        </div>
+        <div class="sc-foot-places-head"><p class="sc-foot-label">Where I work</p><a class="sc-foot-more" href="/countries">All countries ${ARR}</a></div>
+        <ul class="sc-chips">
+${countries.map((c) => `          <li><a class="sc-chip" href="/countries/${c.slug}" title="${esc(c.home ? 'India Standard Time' : `${c.city}, ${c.name}`)}">${flag(c.code, 'sc-chip-flag')}<strong>${esc(c.short)}</strong><span class="sc-chip-time" data-clock data-tz="${c.tz}"></span></a></li>`).join('\n')}
+        </ul>
       </div>
 
       <div class="sc-foot-contacts">

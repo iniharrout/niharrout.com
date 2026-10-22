@@ -464,23 +464,18 @@ body.page-home .why2-item:nth-child(5) { --tone: var(--t-orange); }
 .sc-foot-group a { font-size: 14.5px; line-height: 1.4; color: #1e293b; text-decoration: none; transition: color .15s ease; }
 .sc-foot-group a:hover { color: #1d4ed8; }
 
-.sc-foot-places { padding: 48px 0; border-bottom: 1px solid #dfe6f5; }
-.sc-foot-places-head { display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 12px 24px; margin-bottom: 24px; }
-.sc-foot-places-head h3 { margin: 0; max-width: 36ch; font-family: var(--font-display, 'Fraunces', Georgia, serif); font-size: clamp(1.4rem, 2.2vw, 1.85rem); font-weight: 500; line-height: 1.2; letter-spacing: -0.015em; color: var(--sc-ink); }
-.sc-place-row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
-.sc-place { display: flex; flex-direction: column; justify-content: space-between; gap: 18px; padding: 16px 16px 14px; border: 1px solid #dfe6f5; border-radius: 16px; background: #fff; color: inherit; text-decoration: none; transition: border-color .15s ease, transform .15s ease, box-shadow .15s ease; }
-.sc-place:hover { border-color: rgba(29, 78, 216, 0.45); transform: translateY(-2px); box-shadow: 0 14px 30px -22px rgba(15, 35, 95, 0.45); }
-.sc-place.is-home { background: linear-gradient(160deg, #fff 0%, #eef3ff 100%); }
-.sc-place-top { display: flex; align-items: center; gap: 12px; min-width: 0; }
-.sc-place-top > span { min-width: 0; }
-.sc-place-top strong { display: block; font-size: 15px; color: var(--sc-ink); }
-.sc-place-top small { display: block; margin-top: 1px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 12.5px; color: #64748b; }
-.sc-place-flag { flex: none; width: 36px; height: 24px; border-radius: 4px; box-shadow: 0 0 0 1px rgba(9, 13, 22, 0.12); overflow: hidden; }
-.sc-place-foot { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
-.sc-place-time { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 999px; background: #e7f6ec; color: #166534; font-size: 12px; font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
-.sc-place-time i { width: 6px; height: 6px; border-radius: 50%; background: #22c55e; }
-.sc-place-diff { font-size: 11.5px; font-weight: 600; color: #64748b; white-space: nowrap; }
-.sc-foot-more { display: inline-flex; align-items: center; gap: 6px; font-size: 14.5px; font-weight: 600; color: #1d4ed8; text-decoration: none; }
+.sc-foot-places { padding: 28px 0; border-bottom: 1px solid #dfe6f5; }
+.sc-foot-places-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+.sc-foot-places-head .sc-foot-label { margin: 0; }
+.sc-chips { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin: 0; padding: 0; list-style: none; }
+.sc-chip { display: flex; align-items: center; gap: 9px; height: 40px; padding: 0 14px 0 10px; border: 1px solid #dfe6f5; border-radius: 10px; background: #fff; color: var(--sc-ink); font-size: 13.5px; text-decoration: none; transition: border-color .15s ease; }
+.sc-chip:hover { border-color: #1d4ed8; }
+.sc-chip:hover strong { color: #1d4ed8; }
+.sc-chip-flag { flex: none; width: 21px; height: 14px; border-radius: 3px; box-shadow: 0 0 0 1px rgba(9, 13, 22, 0.12); overflow: hidden; }
+.sc-chip strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 600; }
+.sc-chip-time { margin-left: auto; color: #64748b; font-size: 12.5px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.sc-chip-time:empty { display: none; }
+.sc-foot-more { display: inline-flex; align-items: center; gap: 6px; font-size: 13.5px; font-weight: 600; color: #1d4ed8; text-decoration: none; }
 .sc-foot-more:hover { text-decoration: underline; text-underline-offset: 3px; }
 
 .sc-foot-contacts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin: 40px 0; padding: 22px; border: 1px solid #dfe6f5; border-radius: 20px; background: #fff; }
@@ -509,22 +504,17 @@ body.page-home .why2-item:nth-child(5) { --tone: var(--t-orange); }
 @media (max-width: 1180px) {
   .sc-foot-links { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
-@media (max-width: 1000px) {
-  .sc-place-row { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-}
 @media (max-width: 860px) {
   .sc-foot-intro { grid-template-columns: 1fr; gap: 28px; }
   .sc-foot-contacts { grid-template-columns: 1fr; }
   .sc-fc + .sc-fc { border-left: 0; border-top: 1px solid #edf1f8; padding: 16px 10px 6px; }
 }
 @media (max-width: 720px) {
+  .sc-chips { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .sc-foot-cta { padding: 44px 20px; border-radius: 22px; }
   .sc-foot-top-actions, .sc-foot-btn { width: 100%; justify-content: center; }
   .sc-foot-body { padding-top: 52px; }
   .sc-foot-links { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 20px; }
-  .sc-place-row { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
-  .sc-place { padding: 14px 12px 12px; }
-  .sc-place-foot { flex-direction: column; align-items: flex-start; gap: 6px; }
   .sc-foot-bottom { flex-direction: column; align-items: flex-start; }
 }
 @media (prefers-reduced-motion: reduce) { .sc-ico, .sc-tb-btn, .sc-social { transition: none; } }
@@ -582,3 +572,10 @@ a.sc-cta.sc-cta { color: #fff; }
 .cty-city-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 12px; padding: 14px 0 0; list-style: none; border-top: 1px solid #edf1f8; }
 .cty-city-list a { display: inline-flex; align-items: center; min-height: 32px; padding: 0 12px; border: 1px solid #dfe6f5; border-radius: 999px; font-size: 13px; font-weight: 600; color: #0b0d12; text-decoration: none; }
 .cty-city-list a:hover { border-color: #1d4ed8; color: #1d4ed8; }
+/* the mobile touch-target rule in primitives.css turns footer links into padded inline blocks; keep the country pills intact */
+html body:not(#_) .sc-footer li a.sc-chip { display: flex; padding: 0 14px 0 10px; }
+@media (max-width: 480px) {
+  html body:not(#_) .sc-footer li a.sc-chip { gap: 6px; padding: 0 9px 0 8px; font-size: 12.5px; }
+  .sc-chip-flag { width: 18px; height: 12px; }
+  .sc-chip-time { font-size: 11px; }
+}
