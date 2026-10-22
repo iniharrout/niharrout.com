@@ -1,0 +1,217 @@
+/**
+ * Countries we build for from Bhubaneswar, India: the footer country cards and the /countries/<slug> landing pages.
+ * Facts only: no offices, clients or prices are claimed in these countries. Regulations are named so buyers see we
+ * plan for them; their own legal advisers confirm what applies.
+ *
+ * Fields: code (flag), city + tz (live clock), offset (hours vs IST, for the static text), overlap (when working
+ * hours meet), and the page copy. Titles stay under 60 characters and descriptions under 155.
+ */
+const HOME = { code: 'in', name: 'India', city: 'Bhubaneswar', tz: 'Asia/Kolkata', href: '/locations', note: 'Home base', card: 'Home base in Bhubaneswar, working with founders across India.' };
+
+const countries = [
+  {
+    slug: 'united-states', card: 'Calls on your mornings, with HIPAA and SOC 2 ready builds.', code: 'us', name: 'United States', short: 'USA', adj: 'US', city: 'New York', tz: 'America/New_York', tzLabel: 'Eastern Time',
+    title: 'Software Development for US Startups | Nihar Ranjan Rout',
+    description: 'Mobile apps, web apps and AI products for US startups and companies, built by a founder-led team in India with daily overlap on US mornings.',
+    h1: 'App and software development for US startups and companies',
+    intro: 'Build your mobile app, web platform or AI product with a founder-led team in India. You talk to me directly, get a written plan before any code, and see working software at every milestone, with our evenings overlapping your mornings.',
+    overlap: 'India is 9.5 to 10.5 hours ahead of US Eastern Time, depending on daylight saving. Our evening, roughly 6 pm to 10 pm IST, meets your morning on the East Coast, which is when we hold calls and demos. For the West Coast we agree a fixed early-morning or late-evening slot. Work continues while you sleep, so feedback you give in the afternoon is usually acted on by your next morning.',
+    rules: [
+      ['HIPAA for health products', 'If your app handles protected health information, we design for HIPAA safeguards: access control, audit logs, encryption and hosting with providers that sign a business associate agreement.'],
+      ['SOC 2 readiness', 'B2B buyers often ask for SOC 2. We build with the controls auditors look for, such as role-based access, change history and monitored infrastructure, so your audit is easier.'],
+      ['State privacy laws', 'California’s CCPA and similar state laws give users rights over their data. We build consent, data export and deletion into the product from the start.'],
+      ['Accessibility', 'We design to WCAG 2.1 AA so your product works for everyone and stands up to accessibility review.'],
+    ],
+    payments: 'Card payments and subscriptions through Stripe, Apple Pay and Google Pay in the apps, and ACH bank payments for B2B invoicing.',
+    why: [
+      ['Founder-led, not account-managed', 'You work with me directly from the first call, not through a sales layer.'],
+      ['A written plan first', 'Every project starts with a PRD, so scope and priorities are clear before you commit to the build.'],
+      ['Overlap on your mornings', 'Calls and demos happen at the start of your day, with progress waiting for you each morning.'],
+      ['Your code, your accounts', 'Code, cloud and app store accounts sit in your company’s name.'],
+    ],
+    faq: [
+      ['Can an India-based team work well with a US startup?', 'Yes, if the working rhythm is set up deliberately. We agree a daily overlap window on your mornings, write decisions down the same day and demo working software at every milestone, so the time difference becomes an advantage rather than a delay.'],
+      ['Which US time zones do you cover?', 'Eastern Time overlaps most naturally with our evening. For Central, Mountain and Pacific clients we agree a fixed call slot early in your morning or late in your evening, and keep the rest of the communication written.'],
+      ['Can you sign an NDA and a US-style contract?', 'Yes. We sign an NDA before detailed discussions and agree the contract terms, milestones and ownership in writing before work starts.'],
+      ['Do you build HIPAA or SOC 2 ready products?', 'We build with the technical safeguards these frameworks require, such as access control, audit logging and encryption, and use hosting that supports them. Certification and legal sign-off stay with your compliance advisers.'],
+      ['How quickly can we see a first version?', 'At Creuto the first working version typically takes about 4 weeks, starting from a clear PRD. Larger products are built in milestones after that.'],
+    ],
+    guides: ['outsourcing-software-development-to-india', 'how-to-build-a-saas-product', 'freelancer-vs-agency-for-app-development'],
+  },
+  {
+    slug: 'united-kingdom', card: 'Three to four shared hours a day, built for UK GDPR.', code: 'gb', name: 'United Kingdom', short: 'UK', adj: 'UK', city: 'London', tz: 'Europe/London', tzLabel: 'UK time',
+    title: 'Software Development for UK Businesses | Nihar Ranjan Rout',
+    description: 'Apps, web platforms and AI products for UK startups and businesses, built by a founder-led team in India with a full afternoon of overlap.',
+    h1: 'App and software development for UK businesses',
+    intro: 'A founder-led product team in India for UK startups and growing businesses. Your morning and our afternoon overlap every working day, so calls, reviews and quick decisions fit into normal UK hours.',
+    overlap: 'India is 4.5 hours ahead of the UK in summer and 5.5 hours ahead in winter. Your whole morning overlaps with our afternoon, which gives us three to four shared working hours every day. Most UK clients keep a short daily or twice-weekly call and handle the rest in writing.',
+    rules: [
+      ['UK GDPR', 'We design for UK GDPR and the Data Protection Act 2018: lawful basis, consent records, data subject requests and clear retention rules.'],
+      ['ICO expectations', 'Security, breach handling and privacy notices are planned in, in line with guidance from the Information Commissioner’s Office.'],
+      ['Financial services', 'For fintech products we work alongside your FCA-regulated partners and build the audit trails and access controls they expect.'],
+      ['Accessibility', 'WCAG 2.1 AA as standard, which public sector buyers in the UK require and every user benefits from.'],
+    ],
+    payments: 'Stripe for cards and subscriptions, Apple Pay and Google Pay, Open Banking payments and Direct Debit for recurring billing.',
+    why: [
+      ['Real working overlap', 'Your morning is our afternoon, so issues are discussed and resolved the same day.'],
+      ['A written plan first', 'A PRD before the build, so budget and priorities are agreed up front.'],
+      ['Founder on every call', 'You speak with me, not a project coordinator relaying messages.'],
+      ['Ownership from day one', 'Code, cloud and app store accounts in your company’s name.'],
+    ],
+    faq: [
+      ['How much working overlap do we get with the UK?', 'Usually three to four hours every working day: your morning overlaps with our afternoon. That is enough for daily calls, reviews and quick decisions.'],
+      ['Do you build for UK GDPR?', 'Yes. We plan consent, data subject requests, retention and security from the first design. Your data protection officer or legal adviser confirms the final position.'],
+      ['Can you work with our in-house team?', 'Yes. We can build the product end to end or work alongside your developers, with shared repositories and a clear split of responsibilities.'],
+      ['Which technologies do you use?', 'Typically React and Next.js for the web, React Native or Flutter for mobile, Node.js or Python on the backend and PostgreSQL, on AWS, Azure or Google Cloud.'],
+      ['How do we start?', 'Book a free 30-minute call. If we are a fit, you get a written proposal within 24 hours, followed by a PRD and the first milestone.'],
+    ],
+    guides: ['agile-vs-waterfall-software-development', 'how-to-choose-a-software-development-company', 'mvp-vs-prototype-vs-proof-of-concept'],
+  },
+  {
+    slug: 'canada', card: 'English and French apps, built for PIPEDA and Law 25.', code: 'ca', name: 'Canada', short: 'Canada', adj: 'Canadian', city: 'Toronto', tz: 'America/Toronto', tzLabel: 'Eastern Time',
+    title: 'App Development for Canadian Startups | Nihar Ranjan Rout',
+    description: 'Mobile apps, web platforms and AI products for Canadian startups, built by a founder-led team in India with overlap on your mornings.',
+    h1: 'App and software development for Canadian startups and companies',
+    intro: 'Build your product with a founder-led team in India that plans in writing, demos often and overlaps with your mornings. From Toronto to Vancouver, you work with me directly from the first call.',
+    overlap: 'India is 9.5 to 10.5 hours ahead of Toronto and 12.5 to 13.5 hours ahead of Vancouver, depending on daylight saving. Our evening meets the start of your day in Eastern Time; for Pacific Time we agree a fixed slot. Feedback you send during your day is usually acted on by your next morning.',
+    rules: [
+      ['PIPEDA', 'We design for Canada’s federal privacy law: meaningful consent, limited collection, user access to their data and safeguards suited to its sensitivity.'],
+      ['Quebec Law 25', 'If you serve users in Quebec, we plan for its stricter privacy requirements, such as privacy by default and records of consent.'],
+      ['Health data', 'Provincial health privacy laws, such as Ontario’s PHIPA, shape how health apps store and share records. We build the access controls and audit logs they call for.'],
+      ['Accessibility', 'WCAG 2.1 AA as standard, which also supports Ontario’s AODA requirements.'],
+    ],
+    payments: 'Stripe for cards and subscriptions, Apple Pay and Google Pay, and Interac for bank payments where your payment provider supports it.',
+    why: [
+      ['Founder-led', 'You talk to the person responsible for the product, every time.'],
+      ['Mornings that overlap', 'Calls and demos at the start of your day, progress ready each morning.'],
+      ['Bilingual-ready', 'We can plan English and French interfaces from the start.'],
+      ['Your code, your accounts', 'Code and accounts in your company’s name from day one.'],
+    ],
+    faq: [
+      ['Can you build bilingual English and French apps?', 'Yes. We plan for translation from the first design, so text, layouts and app store listings work in both languages.'],
+      ['Do you work with Pacific Time clients?', 'Yes. We agree a fixed call slot early in your morning or late in your evening and keep everything else written, with progress shared daily.'],
+      ['Do you design for PIPEDA?', 'Yes. Consent, data access, retention and security are planned in from the start. Your privacy adviser confirms the final position.'],
+      ['Who owns the code?', 'You do. Code, cloud and app store accounts are set up in your company’s name.'],
+      ['How quickly can we see a first version?', 'At Creuto the first working version typically takes about 4 weeks after the PRD is agreed.'],
+    ],
+    guides: ['outsourcing-software-development-to-india', 'react-native-vs-flutter', 'how-to-validate-a-startup-idea'],
+  },
+  {
+    slug: 'uae', card: 'Almost a full shared day, with Arabic and English interfaces.', code: 'ae', name: 'United Arab Emirates', short: 'UAE', adj: 'UAE', city: 'Dubai', tz: 'Asia/Dubai', tzLabel: 'Gulf Standard Time',
+    title: 'Software Development for UAE Businesses | Nihar Ranjan Rout',
+    description: 'Mobile apps, web platforms and AI products for businesses in Dubai, Abu Dhabi and across the UAE, built by a founder-led team in India.',
+    h1: 'App and software development for businesses in the UAE',
+    intro: 'For businesses in Dubai, Abu Dhabi and across the Emirates: a founder-led team just 1.5 hours ahead, with almost a full shared working day, Arabic and English interfaces and a written plan before any code.',
+    overlap: 'India is 1.5 hours ahead of the UAE all year, with no daylight saving on either side. That means almost the whole working day overlaps: calls, workshops and quick decisions happen in normal office hours for both teams. A flight from Dubai to Bhubaneswar or other Indian cities is short when in-person sessions help.',
+    rules: [
+      ['UAE data protection', 'We design for the UAE Personal Data Protection Law, with consent, purpose limits and user rights built into the product.'],
+      ['Free zone rules', 'If you operate in DIFC or ADGM, their own data protection regulations apply. We plan data handling to match where your company is set up.'],
+      ['Arabic and right-to-left', 'Interfaces that switch cleanly between English and Arabic, with right-to-left layouts, fonts and app store listings in both.'],
+      ['Data location', 'Where you need data kept in the region, we deploy on cloud regions in the UAE that the major providers offer.'],
+    ],
+    payments: 'Cards, Apple Pay and Google Pay through regional payment gateways, plus cash on delivery flows where your customers still expect them.',
+    why: [
+      ['Almost a full shared day', 'Just 1.5 hours apart, so your team and ours work the same hours.'],
+      ['Arabic and English', 'Bilingual, right-to-left interfaces planned from the first design.'],
+      ['Founder-led', 'You work with me directly, from scoping to launch.'],
+      ['Short travel', 'In-person workshops are a short flight away when they add value.'],
+    ],
+    faq: [
+      ['Do you build Arabic and right-to-left apps?', 'Yes. We plan bilingual English and Arabic interfaces from the start, including right-to-left layouts, Arabic fonts and translated app store listings.'],
+      ['How much working time overlaps with the UAE?', 'Almost all of it. India is 1.5 hours ahead of the UAE all year, so both teams share nearly the full working day.'],
+      ['Can our data stay in the UAE?', 'Yes. The major cloud providers have UAE regions, and we can deploy your product there when data location matters.'],
+      ['Can you meet in person?', 'When workshops or launches benefit from it, we can plan in-person sessions. Travel is agreed and quoted up front.'],
+      ['How do we start?', 'Book a free 30-minute call. If we are a fit, you get a written proposal within 24 hours.'],
+    ],
+    guides: ['how-to-build-a-multi-vendor-marketplace-app', 'how-to-build-a-food-delivery-app', 'how-to-build-a-real-estate-app'],
+  },
+  {
+    slug: 'australia', card: 'Our morning meets your afternoon, built for the APPs.', code: 'au', name: 'Australia', short: 'Australia', adj: 'Australian', city: 'Sydney', tz: 'Australia/Sydney', tzLabel: 'Sydney time',
+    title: 'Software Development for Australia | Nihar Ranjan Rout',
+    description: 'Apps, web platforms and AI products for Australian startups and businesses, built by a founder-led team in India with overlap on your afternoons.',
+    h1: 'App and software development for Australian businesses',
+    intro: 'A founder-led product team in India for startups and businesses in Sydney, Melbourne, Brisbane and beyond. Our morning meets your afternoon every working day, with a written plan and working demos along the way.',
+    overlap: 'Sydney is 4.5 hours ahead of India in the Australian winter and 5.5 hours ahead in summer. Our morning overlaps with your afternoon, giving three to four shared working hours each day. Perth is only 2.5 hours ahead, so West Australian clients share most of the day with us.',
+    rules: [
+      ['Privacy Act and APPs', 'We design for the Privacy Act 1988 and the Australian Privacy Principles: clear collection notices, consent, access and correction.'],
+      ['Data breach readiness', 'Logging, monitoring and an incident plan that support the Notifiable Data Breaches scheme.'],
+      ['Consumer Data Right', 'For banking and energy products, we build with the data-sharing and consent flows the CDR expects, alongside your accredited partners.'],
+      ['Accessibility', 'WCAG 2.1 AA as standard, which government and many enterprise buyers in Australia require.'],
+    ],
+    payments: 'Stripe for cards and subscriptions, Apple Pay and Google Pay, PayID and real-time bank payments, and buy-now-pay-later options where they suit your customers.',
+    why: [
+      ['Afternoon overlap', 'Our morning is your afternoon, so issues are handled the same day.'],
+      ['A written plan first', 'A PRD before the build, with priorities agreed together.'],
+      ['Founder-led', 'You talk to me directly from the first call to launch.'],
+      ['Your code, your accounts', 'Code, cloud and app store accounts in your company’s name.'],
+    ],
+    faq: [
+      ['How much overlap do we get with Australia?', 'Three to four hours every working day with Sydney and Melbourne, as our morning meets your afternoon. Perth shares most of the working day.'],
+      ['Do you design for the Australian Privacy Principles?', 'Yes. Collection notices, consent, access and security are planned in from the start. Your legal adviser confirms the final position.'],
+      ['Can you host our product in Australia?', 'Yes. AWS, Azure and Google Cloud all have Australian regions, and we deploy there when data location matters.'],
+      ['Do you build for both iOS and Android?', 'Yes. Most products use one cross-platform codebase with React Native or Flutter, with native work where a feature needs it.'],
+      ['How quickly can we see a first version?', 'At Creuto the first working version typically takes about 4 weeks after the PRD is agreed.'],
+    ],
+    guides: ['react-native-vs-flutter', 'how-long-does-it-take-to-build-an-app', 'salon-booking-app-development'],
+  },
+  {
+    slug: 'singapore', card: 'Five or more shared hours, PDPA-ready, with PayNow.', code: 'sg', name: 'Singapore', short: 'Singapore', adj: 'Singapore', city: 'Singapore', tz: 'Asia/Singapore', tzLabel: 'Singapore time',
+    title: 'App Development for Singapore Businesses | Nihar Ranjan Rout',
+    description: 'Mobile apps, web platforms and AI products for Singapore startups and SMEs, built by a founder-led team in India just 2.5 hours behind.',
+    h1: 'App and software development for Singapore startups and businesses',
+    intro: 'A founder-led product team in India, 2.5 hours behind Singapore, for startups, SMEs and regional businesses. Most of the working day overlaps, so calls, reviews and launches happen in normal office hours.',
+    overlap: 'Singapore is 2.5 hours ahead of India all year, with no daylight saving. Your late morning and afternoon overlap with our working day, giving five or more shared hours. That makes daily stand-ups, live reviews and same-day fixes straightforward.',
+    rules: [
+      ['PDPA', 'We design for the Personal Data Protection Act: consent, purpose limits, access and correction requests, and protection of personal data.'],
+      ['Financial services', 'For fintech products we build the access controls, audit trails and resilience that MAS technology risk guidelines expect, working with your regulated partners.'],
+      ['Singpass and Myinfo', 'Where your users verify their identity, we plan integration with the national digital identity services through approved channels.'],
+      ['Regional rollout', 'Multi-currency, multi-language and multi-country setups for products that expand across Southeast Asia.'],
+    ],
+    payments: 'PayNow and bank QR payments, cards through Stripe or regional gateways, and popular wallets for consumer apps.',
+    why: [
+      ['Most of the day overlaps', 'Only 2.5 hours apart, with five or more shared hours daily.'],
+      ['Built to expand', 'Products planned for regional rollout from the first release.'],
+      ['Founder-led', 'You work with me directly at every stage.'],
+      ['Your code, your accounts', 'Code and accounts in your company’s name from day one.'],
+    ],
+    faq: [
+      ['How much working time overlaps with Singapore?', 'Five or more hours every working day. Singapore is 2.5 hours ahead of India all year.'],
+      ['Do you design for the PDPA?', 'Yes. Consent, purpose limits, access requests and security are built in. Your data protection officer confirms the final position.'],
+      ['Can the product expand to other Southeast Asian markets?', 'Yes. We plan currencies, languages, payment methods and data rules so new countries can be added without a rebuild.'],
+      ['Can you integrate PayNow?', 'Yes, through payment providers that support PayNow and bank QR payments, alongside cards and wallets.'],
+      ['How do we start?', 'Book a free 30-minute call. If we are a fit, you get a written proposal within 24 hours.'],
+    ],
+    guides: ['upi-payment-integration-for-apps', 'how-to-build-a-fintech-app-in-india', 'how-to-build-a-saas-product'],
+  },
+  {
+    slug: 'vietnam', card: 'Almost a full shared day, with MoMo, ZaloPay and VNPay.', code: 'vn', name: 'Vietnam', short: 'Vietnam', adj: 'Vietnamese', city: 'Ho Chi Minh City', tz: 'Asia/Ho_Chi_Minh', tzLabel: 'Indochina Time',
+    title: 'App Development for Vietnam Businesses | Nihar Ranjan Rout',
+    description: 'Mobile apps, web platforms and AI products for businesses in Vietnam, built by a founder-led team in India just 1.5 hours behind.',
+    h1: 'App and software development for businesses in Vietnam',
+    intro: 'For startups and companies in Ho Chi Minh City, Hanoi and Da Nang: a founder-led product team in India, only 1.5 hours apart, building mobile apps, web platforms and AI products with a written plan first.',
+    overlap: 'Vietnam is 1.5 hours ahead of India all year, with no daylight saving on either side. Almost the whole working day overlaps, so planning sessions, reviews and launches happen in normal office hours for both teams.',
+    rules: [
+      ['Personal data protection', 'We design for Vietnam’s personal data protection rules, with consent records, purpose limits and user rights built into the product.'],
+      ['Vietnamese language', 'Interfaces, notifications and app store listings in Vietnamese and English, with correct fonts and formatting.'],
+      ['Local messaging', 'Customer updates and support through the channels people use, including Zalo, alongside email and push notifications.'],
+      ['Data location', 'Hosting and data storage planned around where your users are and what your sector requires.'],
+    ],
+    payments: 'Bank QR payments, popular wallets such as MoMo, ZaloPay and VNPay through local gateways, and cards for international customers.',
+    why: [
+      ['Almost a full shared day', 'Just 1.5 hours apart, so both teams work the same hours.'],
+      ['Local payments and messaging', 'Wallets, bank QR and Zalo planned in from the start.'],
+      ['Founder-led', 'You work with me directly from scoping to launch.'],
+      ['Your code, your accounts', 'Code and accounts in your company’s name from day one.'],
+    ],
+    faq: [
+      ['How much working time overlaps with Vietnam?', 'Almost all of it. Vietnam is 1.5 hours ahead of India all year.'],
+      ['Can you build apps in Vietnamese?', 'Yes. We plan Vietnamese and English interfaces from the first design, including notifications and app store listings.'],
+      ['Can you integrate MoMo, ZaloPay or VNPay?', 'Yes, through the payment gateways that support them, alongside bank QR payments and cards.'],
+      ['Who owns the code?', 'You do. Code, cloud and app store accounts are set up in your company’s name.'],
+      ['How quickly can we see a first version?', 'At Creuto the first working version typically takes about 4 weeks after the PRD is agreed.'],
+    ],
+    guides: ['how-to-build-a-quick-commerce-app', 'how-to-build-a-food-delivery-app', 'native-vs-cross-platform-app-development'],
+  },
+];
+
+module.exports = { HOME, countries };

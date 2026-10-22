@@ -14,8 +14,8 @@ const crumbsHtml = (items) => `<nav class="wwm-crumbs" aria-label="Breadcrumb">
     </nav>`;
 
 // `art` names a doodle (scripts/site-data/doodles.js) drawn beside the heading.
-const hero = ({ crumbs, pill, h1, sub, secondary, art }) => `
-  <section class="wwm-hero wwm-hero-page${art ? ' has-art' : ''}">
+const hero = ({ crumbs, pill, h1, sub, secondary, art, artHtml }) => `
+  <section class="wwm-hero wwm-hero-page${art || artHtml ? ' has-art' : ''}">
     <div class="wwm-wrap">
       ${crumbsHtml(crumbs)}
       <div class="wwm-hero-grid">
@@ -25,7 +25,8 @@ const hero = ({ crumbs, pill, h1, sub, secondary, art }) => `
           <p class="wwm-sub">${esc(sub)}</p>
           <div class="wwm-cta-row">${bookBtn()}${secondary ? `<a class="wwm-btn" href="${secondary[1]}">${esc(secondary[0])}</a>` : ''}</div>
         </div>${art ? `
-        <div class="wwm-hero-art">${doodle(art)}</div>` : ''}
+        <div class="wwm-hero-art">${doodle(art)}</div>` : ''}${artHtml ? `
+        <div class="wwm-hero-art wwm-hero-art-html">${artHtml}</div>` : ''}
       </div>
     </div>
   </section>`;

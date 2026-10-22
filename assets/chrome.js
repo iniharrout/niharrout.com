@@ -223,14 +223,31 @@
     el.textContent = new Date().getFullYear();
   });
 
-  // footer: live local time in Bhubaneswar
-  var clocks = document.querySelectorAll('[data-foot-time]');
-  function tick() {
-    var t;
-    try { t = new Date().toLocaleTimeString('en-IN', { timeZone: 'Asia/Kolkata', hour: 'numeric', minute: '2-digit', hour12: true }); } catch (e) { return; }
-    clocks.forEach(function (el) { el.textContent = t.replace(/\s?(am|pm)$/i, function (m) { return ' ' + m.trim().toUpperCase(); }) + ' IST'; });
+  // live local times (footer country cards, country pages): [data-clock data-tz] shows the time there,
+  // [data-clock-diff data-tz] the gap to India (data-short gives "IST +1:30", otherwise a sentence)
+  var clocks = document.querySelectorAll('[data-clock]');
+  var diffs = document.querySelectorAll('[data-clock-diff]');
+  function offsetMin(tz, d) {
+    return Math.round((new Date(d.toLocaleString('en-US', { timeZone: tz })) - new Date(d.toLocaleString('en-US', { timeZone: 'UTC' }))) / 60000);
   }
-  if (clocks.length) { tick(); setInterval(tick, 30000); }
+  function span(m) { var h = Math.floor(m / 60), r = m % 60; return h + (r ? ':' + (r < 10 ? '0' : '') + r : '') ; }
+  function words(m) { var h = Math.floor(m / 60), r = m % 60; return (h ? h + (h === 1 ? ' hour' : ' hours') : '') + (r ? (h ? ' ' : '') + r + ' minutes' : ''); }
+  function tick() {
+    var now = new Date();
+    clocks.forEach(function (el) {
+      try { el.textContent = now.toLocaleTimeString('en-US', { timeZone: el.getAttribute('data-tz'), hour: 'numeric', minute: '2-digit' }); } catch (e) { /* unknown zone: keep the label */ }
+    });
+    diffs.forEach(function (el) {
+      var tz = el.getAttribute('data-tz'), m;
+      try { m = offsetMin(tz, now) - offsetMin('Asia/Kolkata', now); } catch (e) { return; }
+      if (el.hasAttribute('data-short')) {
+        el.textContent = m === 0 ? 'Home' : 'IST ' + (m > 0 ? '+' : '\u2212') + span(Math.abs(m));
+      } else {
+        el.textContent = m === 0 ? 'Same time as India' : 'India is ' + words(Math.abs(m)) + (m > 0 ? ' behind' : ' ahead') + ' right now';
+      }
+    });
+  }
+  if (clocks.length || diffs.length) { tick(); setInterval(tick, 30000); }
 })();
 
 /**

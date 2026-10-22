@@ -47,8 +47,8 @@ function head({ title, description, canonical, graph }) {
   <script type="application/ld+json">
 ${ld({ '@context': 'https://schema.org', '@graph': graph })}
   </script>
-  <link rel="stylesheet" href="/assets/chrome.css?v=48">
-  <script src="/assets/chrome.js?v=18" defer></script>
+  <link rel="stylesheet" href="/assets/chrome.css?v=50">
+  <script src="/assets/chrome.js?v=19" defer></script>
 </head>
 <body class="wwm">
 <!-- chrome:header -->

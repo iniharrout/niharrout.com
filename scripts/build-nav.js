@@ -26,6 +26,8 @@ function resolveItem(fam, item) {
 // solid round icon, a title and a one-line description. Service items that live in two families
 // point at one page.
 const { glyph } = require('./site-data/glyphs');
+const { flag } = require('./site-data/flags');
+const { HOME, countries } = require('./site-data/countries');
 const FAMILY_GLYPH = { custom: 'code', mobile: 'phone', web: 'browser', devops: 'cloud', ai: 'spark', startup: 'rocket' };
 const SUB_GLYPH = {
   'custom-erp-development': 'grid', 'crm-development': 'users', 'enterprise-application-development': 'building', 'software-consulting': 'chat',
@@ -230,17 +232,18 @@ const footer = `<footer class="sc-footer">
 
       <div class="sc-foot-places">
         <div class="sc-foot-places-head">
-          <p class="sc-foot-label">Where I work</p>
-          <h3>Based in Bhubaneswar. Building with founders across India and abroad.</h3>
+          <div>
+            <p class="sc-foot-label">Where I work</p>
+            <h3>Based in India. Building with founders across time zones.</h3>
+          </div>
+          <a class="sc-foot-more" href="/countries">All countries ${ARR}</a>
         </div>
         <div class="sc-place-row">
-          <a class="sc-place is-home" href="/mobile-app-development-bhubaneswar">
-            <span class="sc-place-top"><span class="sc-place-flag" aria-hidden="true">IN</span><span><strong>Bhubaneswar</strong><small>Odisha, India &middot; Home base</small></span></span>
-            <span class="sc-place-foot"><span class="sc-place-go">See the city page ${UP}</span><span class="sc-place-time"><i aria-hidden="true"></i><span data-foot-time>IST</span></span></span>
-          </a>
-${[['/locations/bangalore', 'Bangalore', 'Karnataka'], ['/locations/hyderabad', 'Hyderabad', 'Telangana'], ['/locations/pune', 'Pune', 'Maharashtra'], ['/locations/delhi-ncr', 'Delhi NCR', 'Delhi and nearby']].map(([href, city, region]) => `          <a class="sc-place" href="${href}"><span class="sc-place-top"><span class="sc-place-flag" aria-hidden="true">${glyph('pin')}</span><span><strong>${city}</strong><small>${region}</small></span></span><span class="sc-place-foot"><span class="sc-place-go">Learn more ${UP}</span></span></a>`).join('\n')}
+${[{ ...HOME, slug: null, label: 'Bhubaneswar \u00b7 Home base' }, ...countries.map((c) => ({ ...c, href: `/countries/${c.slug}`, label: c.city }))].map((c) => `          <a class="sc-place${c.slug ? '' : ' is-home'}" href="${c.href}">
+            <span class="sc-place-top">${flag(c.code, 'sc-place-flag')}<span><strong>${esc(c.short || c.name)}</strong><small>${esc(c.label)}</small></span></span>
+            <span class="sc-place-foot"><span class="sc-place-time"><i aria-hidden="true"></i><span data-clock data-tz="${c.tz}">${c.slug ? '&nbsp;' : 'IST'}</span></span><span class="sc-place-diff" data-clock-diff data-tz="${c.tz}" data-short></span></span>
+          </a>`).join('\n')}
         </div>
-        <a class="sc-foot-more" href="/locations">All locations ${ARR}</a>
       </div>
 
       <div class="sc-foot-contacts">
