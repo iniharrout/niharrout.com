@@ -15,6 +15,16 @@ const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const SITE = 'https://www.niharrout.com';
 const ORDER = [
+  'how-to-build-a-ride-hailing-app',
+  'how-to-build-a-dating-app',
+  'how-to-build-a-fitness-app',
+  'how-to-build-a-hospital-management-system',
+  'inventory-management-software-development',
+  'fleet-management-software-development',
+  'shopify-vs-custom-ecommerce-development',
+  'software-development-contract-checklist',
+  'ai-voice-agents-for-business',
+  'ios-vs-android-which-to-build-first',
   'hire-development-team-in-india-from-usa',
   'ai-app-development-cost',
   'custom-erp-vs-off-the-shelf-erp',

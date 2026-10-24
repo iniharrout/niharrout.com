@@ -27,6 +27,10 @@
     "hash": "3514c4480e9a1427",
     "date": "2026-10-23"
   },
+  "blog/ai-voice-agents-for-business/index.html": {
+    "hash": "6402332d2fb3d16f",
+    "date": "2026-10-24"
+  },
   "blog/app-development-cost-factors-india/index.html": {
     "hash": "68f608ed8bd8df95",
     "date": "2026-10-22"
@@ -71,6 +75,10 @@
     "hash": "e6975e2ccece73a2",
     "date": "2026-10-22"
   },
+  "blog/fleet-management-software-development/index.html": {
+    "hash": "ce5f73ca002f57a8",
+    "date": "2026-10-24"
+  },
   "blog/freelancer-vs-agency-for-app-development/index.html": {
     "hash": "15ebee24e2301aa7",
     "date": "2026-10-22"
@@ -91,13 +99,25 @@
     "hash": "c25d9b19abaa27bd",
     "date": "2026-10-22"
   },
+  "blog/how-to-build-a-dating-app/index.html": {
+    "hash": "194059ca3e1ed2eb",
+    "date": "2026-10-24"
+  },
   "blog/how-to-build-a-fintech-app-in-india/index.html": {
     "hash": "22ccfdae9c8aa2c0",
     "date": "2026-10-22"
   },
+  "blog/how-to-build-a-fitness-app/index.html": {
+    "hash": "fd3004d58145977c",
+    "date": "2026-10-24"
+  },
   "blog/how-to-build-a-food-delivery-app/index.html": {
     "hash": "1bd541fbe3e7d5f3",
     "date": "2026-10-22"
+  },
+  "blog/how-to-build-a-hospital-management-system/index.html": {
+    "hash": "0f1d3ad500ba83eb",
+    "date": "2026-10-24"
   },
   "blog/how-to-build-a-multi-vendor-marketplace-app/index.html": {
     "hash": "e299319b3ecbb88c",
@@ -110,6 +130,10 @@
   "blog/how-to-build-a-real-estate-app/index.html": {
     "hash": "ce5b9d51d953e0c6",
     "date": "2026-10-22"
+  },
+  "blog/how-to-build-a-ride-hailing-app/index.html": {
+    "hash": "4d3798aff00a1d99",
+    "date": "2026-10-24"
   },
   "blog/how-to-build-a-saas-product/index.html": {
     "hash": "11709c3aab55f823",
@@ -152,12 +176,20 @@
     "date": "2026-10-22"
   },
   "blog/index.html": {
-    "hash": "a20a5954692c70e0",
+    "hash": "e37b3da99ab3da5b",
+    "date": "2026-10-24"
+  },
+  "blog/inventory-management-software-development/index.html": {
+    "hash": "85f161e07fa87dfe",
     "date": "2026-10-24"
   },
   "blog/investing-in-technology-a-smart-strategy-for-business-growth/index.html": {
     "hash": "7ac040c3ec6642ab",
     "date": "2026-10-22"
+  },
+  "blog/ios-vs-android-which-to-build-first/index.html": {
+    "hash": "fd907aea3f751a02",
+    "date": "2026-10-24"
   },
   "blog/legacy-software-modernization-guide/index.html": {
     "hash": "e052541d964ee65f",
@@ -188,19 +220,23 @@
     "date": "2026-10-22"
   },
   "blog/page/2/index.html": {
-    "hash": "71a20daad1ea2be2",
+    "hash": "1d0d4119f3fba4bf",
     "date": "2026-10-24"
   },
   "blog/page/3/index.html": {
-    "hash": "0a58d6592f660b69",
+    "hash": "1080b0e5ce6fe045",
     "date": "2026-10-24"
   },
   "blog/page/4/index.html": {
-    "hash": "a6e6ad3fd0bb3305",
+    "hash": "9527ffd9def39112",
     "date": "2026-10-24"
   },
   "blog/page/5/index.html": {
-    "hash": "6746b8441e5fdd56",
+    "hash": "a59b60e3cc44902d",
+    "date": "2026-10-24"
+  },
+  "blog/page/6/index.html": {
+    "hash": "020ee6a703daec9a",
     "date": "2026-10-24"
   },
   "blog/pragmatic-enterprise-ai-workflows/index.html": {
@@ -231,6 +267,14 @@
     "hash": "51d7f6d0c7db7e64",
     "date": "2026-10-22"
   },
+  "blog/shopify-vs-custom-ecommerce-development/index.html": {
+    "hash": "4523b3dd1d84cda0",
+    "date": "2026-10-24"
+  },
+  "blog/software-development-contract-checklist/index.html": {
+    "hash": "7bbada5b722967f2",
+    "date": "2026-10-24"
+  },
   "blog/software-maintenance-cost-and-planning/index.html": {
     "hash": "3beb3a35018d7767",
     "date": "2026-10-22"
@@ -244,27 +288,27 @@
     "date": "2026-10-22"
   },
   "blog/topic/ai/index.html": {
-    "hash": "cfafa7f5ee430545",
+    "hash": "fc782d55a344da50",
     "date": "2026-10-24"
   },
   "blog/topic/cost-and-hiring/index.html": {
-    "hash": "e8a806ea157c40b3",
+    "hash": "fa7be0fc8c96891c",
     "date": "2026-10-24"
   },
   "blog/topic/industries/index.html": {
-    "hash": "40e70034f3022e2a",
+    "hash": "0b6bbdc43b0f1622",
     "date": "2026-10-24"
   },
   "blog/topic/mobile/index.html": {
-    "hash": "6a013ab95828d37b",
+    "hash": "9a65584a92beb8a8",
     "date": "2026-10-24"
   },
   "blog/topic/product/index.html": {
-    "hash": "d8782adf90e25494",
+    "hash": "0e444f126045a0be",
     "date": "2026-10-24"
   },
   "blog/topic/software-and-cloud/index.html": {
-    "hash": "cd59a00cc39cad89",
+    "hash": "57343a3458eefab6",
     "date": "2026-10-24"
   },
   "blog/ui-vs-ux-design-difference/index.html": {
@@ -340,7 +384,7 @@
     "date": "2026-10-22"
   },
   "index.html": {
-    "hash": "dc0a67cac734547a",
+    "hash": "cc4bf175da852ce4",
     "date": "2026-10-24"
   },
   "industries/agriculture/index.html": {

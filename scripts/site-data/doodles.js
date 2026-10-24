@@ -204,6 +204,16 @@ function doodle(name, cls = 'doodle', tone = toneOf(name)) {
 
 // ---- blog cover scenes: a main doodle and a smaller supporting one on a soft panel (480 x 300 canvas)
 const BLOG_ART = {
+  'how-to-build-a-ride-hailing-app': ['automotive', 'realtime', 'sky'],
+  'how-to-build-a-dating-app': ['social', 'chat', 'peach'],
+  'how-to-build-a-fitness-app': ['fitness', 'mobile', 'sun'],
+  'how-to-build-a-hospital-management-system': ['healthcare', 'dashboard', 'sky'],
+  'inventory-management-software-development': ['manufacturing', 'analytics', 'sun'],
+  'fleet-management-software-development': ['logistics', 'dashboard', 'peach'],
+  'shopify-vs-custom-ecommerce-development': ['ecommerce', 'stack', 'sky'],
+  'software-development-contract-checklist': ['doc-scan', 'check', 'sun'],
+  'ai-voice-agents-for-business': ['call', 'agent', 'peach'],
+  'ios-vs-android-which-to-build-first': ['android', 'ios', 'sun'],
   'hire-development-team-in-india-from-usa': ['remote', 'team', 'sky'],
   'ai-app-development-cost': ['ai', 'pricing', 'peach'],
   'custom-erp-vs-off-the-shelf-erp': ['erp', 'layers', 'sun'],
