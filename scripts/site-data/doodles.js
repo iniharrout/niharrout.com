@@ -204,6 +204,7 @@ function doodle(name, cls = 'doodle', tone = toneOf(name)) {
 
 // ---- blog cover scenes: a main doodle and a smaller supporting one on a soft panel (480 x 300 canvas)
 const BLOG_ART = {
+  'hire-development-team-in-india-from-usa': ['remote', 'team', 'sky'],
   'ai-app-development-cost': ['ai', 'pricing', 'peach'],
   'custom-erp-vs-off-the-shelf-erp': ['erp', 'layers', 'sun'],
   'how-to-choose-a-software-development-company': ['senior', 'question', 'sky'],
