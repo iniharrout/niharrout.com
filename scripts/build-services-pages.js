@@ -168,8 +168,8 @@ function homeServices() {
   return `        <!-- home:services -->
         <header class="ed-head">
           <p class="ed-label">Services</p>
-          <h2 class="section-title">What we build.</h2>
-          <p>Six areas of work, one process: a clear PRD first, then an in-house team builds it and keeps improving it.</p>
+          <h2 class="section-title">Software, mobile app and AI development services.</h2>
+          <p>Six areas of work for startups and businesses in India and abroad, one process: a clear PRD first, then an in-house team builds it and keeps improving it.</p>
         </header>
 
         <div class="bento-services-grid">

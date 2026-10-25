@@ -2106,3 +2106,78 @@ a.blog-pager-step:hover { color: var(--accent); }
 }
 /* headline: avoid a lone word at the end of a line */
 body.page-home .hero-title { text-wrap: balance; }
+
+/* =====================================================================
+   Homepage SEO sections (scripts/build-home-seo.js): industries, technology, founder, where we work
+   ===================================================================== */
+/* white and grey alternate down the page in this order */
+html body.page-home main > #services, html body.page-home main > #technology, html body.page-home main > #testimonials, html body.page-home main > #fit, html body.page-home main > #insights, html body.page-home main > #faq { background: #f3f4f6; }
+html body.page-home main > #industries, html body.page-home main > #portfolio, html body.page-home main > #about-nihar, html body.page-home main > #how-i-think, html body.page-home main > #where-we-work, html body.page-home main > #contact { background: #fff; }
+body.page-home .home-ind, body.page-home .home-founder, body.page-home .home-where { padding: 96px 0; }
+body.page-home .home-tech { padding: 72px 0; }
+body.page-home .home-more { margin: 28px 0 0; }
+
+/* industries */
+body.page-home .home-ind-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin: 0; padding: 0; list-style: none; }
+body.page-home .home-ind-grid a { display: flex; align-items: flex-start; gap: 14px; height: 100%; padding: 18px; border: 1px solid var(--line); border-radius: 14px; background: #fff; color: inherit; text-decoration: none; transition: border-color .15s ease, transform .15s ease, box-shadow .15s ease; }
+body.page-home .home-ind-grid a:hover { border-color: rgba(29, 78, 216, 0.4); transform: translateY(-2px); box-shadow: 0 14px 30px -24px rgba(15, 35, 95, 0.45); }
+body.page-home .home-ind-art { flex: none; width: 52px; height: 52px; margin: -4px 0 0 -4px; }
+body.page-home .home-ind-art svg { width: 100%; height: 100%; }
+body.page-home .home-ind-grid strong { display: block; margin: 2px 0 4px; font-size: 15px; font-weight: 600; line-height: 1.3; color: var(--ink); }
+body.page-home .home-ind-grid a:hover strong { color: var(--accent); }
+body.page-home .home-ind-grid small { display: block; font-size: 13px; line-height: 1.5; color: #64748b; }
+
+/* technology */
+body.page-home .home-tech-in { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 32px 64px; align-items: center; }
+body.page-home .home-tech .ed-head { margin-bottom: 0; }
+body.page-home .home-tech-list { display: flex; flex-wrap: wrap; gap: 10px; margin: 0; padding: 0; list-style: none; }
+body.page-home .home-tech-list a { display: inline-flex; align-items: center; min-height: 42px; padding: 0 16px; border: 1px solid var(--line); border-radius: 999px; background: #fff; color: var(--ink); font-size: 14.5px; font-weight: 600; text-decoration: none; transition: border-color .15s ease, color .15s ease; }
+body.page-home .home-tech-list a:hover { border-color: var(--accent); color: var(--accent); }
+
+/* founder */
+body.page-home .home-founder-in { display: grid; grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr); gap: 64px; align-items: center; }
+body.page-home .home-founder-photo { margin: 0; }
+body.page-home .home-founder-photo img { display: block; width: 100%; height: auto; border-radius: 22px; box-shadow: 0 40px 70px -40px rgba(9, 13, 22, 0.45); }
+body.page-home .home-founder-copy .section-title { margin: 0 0 18px; }
+body.page-home .home-founder-copy > p:not(.ed-label):not(.home-founder-links) { margin: 0 0 14px; max-width: 58ch; font-size: 1.05rem; line-height: 1.7; color: #374151; }
+body.page-home .home-founder-facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 24px 0; padding: 20px 0; list-style: none; border-top: 1px solid var(--hair); border-bottom: 1px solid var(--hair); }
+body.page-home .home-founder-facts strong { display: block; font-family: var(--font-display, 'Fraunces', Georgia, serif); font-size: 1.6rem; font-weight: 500; line-height: 1.1; color: var(--ink); }
+body.page-home .home-founder-facts span { display: block; margin-top: 4px; font-size: 13px; color: #64748b; }
+body.page-home .home-founder-links { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; margin: 0; }
+body.page-home .home-founder-links a:not(.link-arrow) { font-size: 15px; font-weight: 600; color: var(--ink); text-decoration: underline; text-decoration-color: rgba(9, 13, 22, 0.25); text-underline-offset: 4px; }
+body.page-home .home-founder-links a:not(.link-arrow):hover { color: var(--accent); }
+
+/* where we work */
+body.page-home .home-where-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+body.page-home .home-where-col { padding: 24px; border: 1px solid var(--line); border-radius: 16px; background: #fff; }
+body.page-home .home-where-col h3 { margin: 0 0 14px; font-size: 1.15rem; }
+body.page-home .home-where-col > p { margin: 0 0 14px; font-size: 14.5px; line-height: 1.6; color: #475569; }
+body.page-home .home-where-col > p a { color: var(--accent); font-weight: 600; }
+body.page-home .home-where-links { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+body.page-home .home-where-links a { font-size: 14.5px; font-weight: 500; color: var(--ink); text-decoration: none; }
+body.page-home .home-where-links a::before { content: '\2192'; margin-right: 8px; color: var(--accent); }
+body.page-home .home-where-links a:hover { color: var(--accent); }
+body.page-home .home-where-pills { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+body.page-home .home-where-pills a { display: inline-flex; align-items: center; min-height: 34px; padding: 0 12px; border: 1px solid var(--line); border-radius: 999px; font-size: 13.5px; font-weight: 600; color: var(--ink); text-decoration: none; }
+body.page-home .home-where-pills a:hover, body.page-home .home-where-countries a:hover { border-color: var(--accent); color: var(--accent); }
+body.page-home .home-where-countries { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin: 0; padding: 0; list-style: none; }
+body.page-home .home-where-countries a { display: flex; align-items: center; gap: 9px; min-height: 38px; padding: 0 10px; border: 1px solid var(--line); border-radius: 10px; font-size: 13.5px; font-weight: 600; color: var(--ink); text-decoration: none; }
+body.page-home .home-flag { flex: none; width: 21px; height: 14px; border-radius: 3px; box-shadow: 0 0 0 1px rgba(9, 13, 22, 0.12); overflow: hidden; }
+
+@media (max-width: 1080px) {
+  body.page-home .home-ind-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  body.page-home .home-where-grid { grid-template-columns: 1fr 1fr; }
+  body.page-home .home-where-col:last-child { grid-column: span 2; }
+  body.page-home .home-where-countries { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@media (max-width: 860px) {
+  body.page-home .home-tech-in, body.page-home .home-founder-in { grid-template-columns: 1fr; gap: 28px; }
+  body.page-home .home-founder-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  body.page-home .home-ind, body.page-home .home-founder, body.page-home .home-where { padding: 64px 0; }
+  body.page-home .home-tech { padding: 56px 0; }
+}
+@media (max-width: 640px) {
+  body.page-home .home-ind-grid, body.page-home .home-where-grid { grid-template-columns: 1fr; }
+  body.page-home .home-where-col:last-child { grid-column: auto; }
+  body.page-home .home-where-countries { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
