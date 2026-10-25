@@ -6,15 +6,15 @@
 - [Homepage](https://www.niharrout.com/): Nihar Ranjan Rout is the founder and CEO of Creuto in Bhubaneswar, India, building mobile apps, web apps and AI products from PRD to launch.
 - [About Nihar Ranjan Rout](https://www.niharrout.com/about): Meet Nihar Ranjan Rout, founder of Creuto: 8+ years in product management and a product-first approach to building B2B software with an in-house team.
 - [Company fact sheet](https://www.niharrout.com/about/facts): Verified facts about Creuto and founder Nihar Ranjan Rout: services, process, pricing model, code ownership, warranty, location and credentials in one page.
-- [Services overview](https://www.niharrout.com/services): Mobile app development, custom software and ERP, enterprise AI workflows and product strategy PRDs from Nihar Ranjan Rout and the Creuto team.
+- [Services overview](https://www.niharrout.com/services): Software development services in India: mobile apps, web applications, custom software and ERP, AI products and DevOps from a founder-led team.
 
 ## Service families
-- [Custom Software & ERP Development Company](https://www.niharrout.com/services/custom-software-development): Custom enterprise software, ERP and multi-tenant B2B SaaS built for operational resilience and staged, low-risk cutovers, led by Nihar Ranjan Rout.
-- [Mobile App Development Company](https://www.niharrout.com/services/mobile-app-development): Mobile app development company for startups and enterprises: iOS, Android, React Native and Flutter apps, led by Nihar Ranjan Rout, founder of Creuto.
-- [Web Application Development Company](https://www.niharrout.com/services/web-application-development): Custom web application development for startups and enterprises: fast, SEO-friendly web apps built by an in-house team, led by Nihar Ranjan Rout.
-- [DevOps & Cloud Engineering Company](https://www.niharrout.com/services/devops-cloud-engineering): DevOps and cloud engineering by Nihar Ranjan Rout and Creuto: AWS, GCP and Azure setup, CI/CD, Kubernetes, serverless, cost control and monitoring.
-- [AI Product Development Company: RAG & Agents](https://www.niharrout.com/services/ai-product-development): Production-grade enterprise AI: custom RAG pipelines, semantic search, agent workflows and private LLMs with guardrails, led by Nihar Ranjan Rout.
-- [Product Strategy & PRD Services for Startups](https://www.niharrout.com/services/product-strategy-prd): Bridge founder vision and engineering: technical PRDs, Figma prototypes, scope control and feature-bloat triage from product leader Nihar Ranjan Rout.
+- [Custom Software Development Company in India](https://www.niharrout.com/services/custom-software-development): Custom software development company in India: ERP, CRM, enterprise apps and ecommerce built around your process by a founder-led team. Free strategy call.
+- [Mobile App Development Company in India](https://www.niharrout.com/services/mobile-app-development): Mobile app development company in India building Android, iOS, React Native and Flutter apps from PRD to App Store launch. Founder-led team, free call.
+- [Web Application Development Company in India](https://www.niharrout.com/services/web-application-development): Web application development company in India: custom web apps, portals, PWAs and CMS websites built fast and SEO-friendly. Founder-led team, free call.
+- [DevOps and Cloud Consulting Company in India](https://www.niharrout.com/services/devops-cloud-engineering): DevOps and cloud consulting company in India: AWS, Azure and Google Cloud setup, CI/CD, Kubernetes, monitoring and cloud cost optimization.
+- [AI Development Company in India: RAG & Agents](https://www.niharrout.com/services/ai-product-development): AI development company in India and OpenAI Select Partner: AI apps, chatbots, RAG, agents and generative AI built on your data, from pilot to production.
+- [Startup App and MVP Development Company](https://www.niharrout.com/services/product-strategy-prd): Startup app and MVP development company in India: PRD, prototype, first working version in about 4 weeks, then launch and iteration. Free strategy call.
 
 ## Industries
 - [Industries overview](https://www.niharrout.com/industries): Software built around how your sector works: healthcare, fintech, retail, logistics, education, SaaS and more, by Nihar Ranjan Rout and Creuto.

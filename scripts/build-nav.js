@@ -214,7 +214,7 @@ const footer = `<footer class="sc-footer">
     group('Popular services', [sub('custom', 'custom-erp-development'), sub('mobile', 'ios-app-development'), sub('mobile', 'android-app-development'), sub('mobile', 'react-native-app-development'), sub('startup', 'mvp-development'), sub('ai', 'ai-development')]),
     group('Industries', [...['healthcare', 'fintech', 'ecommerce', 'logistics', 'education', 'real-estate', 'manufacturing', 'saas'].map(ind), ['/industries', 'All industries']]),
     group('Resources', [['/blog', 'Guides for founders'], ['/project-costs', 'Project costs guide'], ['/technology', 'Technology stack'], ['/b2b-software-development-for-startups', 'B2B startup playbook'], ['/tools/app-cost-calculator', 'App cost calculator'], ['/tools/startup-name-generator', 'Startup name generator'], ['/tools/linkedin-text-formatter', 'LinkedIn text formatter']]),
-    group('Company', [['/about', 'About Nihar &amp; Creuto'], ['/work', 'Case studies'], ['/work-with-me', 'Careers'], ['/about/facts', 'Company fact sheet'], ['/book', 'Book a call'], ['https://creuto.com', 'Creuto.com']]),
+    group('Company', [['/about', 'About Nihar &amp; Creuto'], ['/work', 'Case studies'], ['/work-with-me', 'Careers'], ['/about/facts', 'Company fact sheet'], ['/software-development-company-bhubaneswar', 'Software company in Bhubaneswar'], ['/book', 'Book a call'], ['https://creuto.com', 'Creuto.com']]),
   ].join('')}
       </div>
 

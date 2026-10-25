@@ -507,14 +507,16 @@ function buildCityHub(c) {
   const repSvcKey = SERVICE_KEYS[cities.indexOf(c) % SERVICE_KEYS.length];
   const repSvc = services[repSvcKey];
   const trail = [['Home', '/'], ['Locations', '/locations'], [c.name, urlPath]];
-  const title = `Software & App Development in ${c.name} | Nihar Ranjan Rout`;
-  const description = `Mobile app, AI and custom software development for ${c.name} businesses. Founder-led team, fixed-scope PRDs, code in your own GitHub. Free discovery call.`;
+  const title = `App & Software Development Company in ${c.name} | Nihar Ranjan Rout`;
+  const description = `Mobile app and software development company for ${c.name} businesses: Android, iOS, web, ERP and AI products by a founder-led team. Free strategy call.`;
 
   const faqs = [
     [`Do you have an office in ${c.name}?`, `No. Creuto is based in Bhubaneswar, Odisha, and serves ${c.name} clients remotely with regular demos and shared test environments. We travel to ${c.name} for workshops and launches when in-person time is valuable, and quote any travel costs separately and up front.`],
     ...SERVICE_KEYS.map((k) => [fill(services[k].faqs[0][0], c), fill(services[k].faqs[0][1], c)]),
     c.services.mobile.faqs[0],
-    c.services.ai.faqs[0]
+    c.services.ai.faqs[0],
+    [`Can you work as our app development company for a ${c.name} business?`, `Yes. We work as a founder-led mobile app and software development team for ${c.name} startups and businesses: Android, iOS, React Native and Flutter apps, web applications, ERPs and AI products, with a written proposal within 24 hours of a free call.`],
+    [`How do I choose a software development company in ${c.name}?`, `Look for a written scope before any quote, working software at every milestone, code in your own accounts from day one, and the chance to speak with the person responsible for your product. Our guide on choosing a software development company lists the questions to ask.`],
   ];
 
   const graph = [
@@ -550,7 +552,7 @@ function buildCityHub(c) {
           <div>
             ${breadcrumbs(trail)}
             <div class="hs-eyebrow"><span class="dot"></span>${esc(c.eyebrow)}</div>
-            <h1>Software, Mobile App &amp; AI Development in ${esc(c.name)}</h1>
+            <h1>Mobile App &amp; Software Development Company in ${esc(c.name)}</h1>
             <p class="hero-sub">${esc(c.overview)}</p>
             <div class="hero-ctas">
               <a href="https://calendly.com/creuto/meet" target="_blank" rel="noopener" data-book="true" class="cl-button -primary btn-book-call">Book a Free Call <span>→</span></a>
@@ -674,7 +676,13 @@ function buildIndex() {
       <div class="wrap">
         ${sectionHeader('Home base', 'Bhubaneswar, Odisha', 'Where our team works. Meet us in person at Infocity, Patia or across the city.')}
         <div class="loc-grid c3">
-          ${SERVICE_KEYS.map((k) => `<a class="loc-card" href="${services[k].bhubaneswarPage}"><h3>${esc(services[k].name)} in Bhubaneswar</h3><p>${esc(services[k].servicesSub)}</p><div class="loc-more">View the Bhubaneswar page →</div></a>`).join('\n          ')}
+          ${[
+            ['Software development company in Bhubaneswar', 'Apps, websites, ERP and AI products from a founder-led team based in the city.', '/software-development-company-bhubaneswar'],
+            ['App development company in Bhubaneswar', 'Android, iOS, React Native and Flutter apps from PRD to launch.', '/mobile-app-development-bhubaneswar'],
+            ['Web development company in Bhubaneswar', 'Fast, SEO-friendly websites, ecommerce stores and web apps.', '/web-development-company-bhubaneswar'],
+            ['ERP software development in Bhubaneswar', 'Custom ERP for manufacturing, distribution and retail in Odisha.', '/erp-software-development-bhubaneswar'],
+            ['AI development company in Bhubaneswar', 'Chatbots, assistants and AI features built on your own data.', '/ai-product-development-bhubaneswar'],
+          ].map(([h, p, href]) => `<a class="loc-card" href="${href}"><h3>${esc(h)}</h3><p>${esc(p)}</p><div class="loc-more">View the page →</div></a>`).join('\n          ')}
         </div>
       </div>
     </section>

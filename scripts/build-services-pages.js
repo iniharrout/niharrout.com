@@ -12,6 +12,7 @@ const path = require('path');
 const { families, subs } = require('./site-data/services');
 const { doodle } = require('./site-data/doodles');
 const G = require('./site-data/guides');
+const KW = require('./site-data/keywords');
 const { industries } = require('./site-data/industries');
 const { SITE, ORG, esc, head, foot, crumbs } = require('./careers/shell');
 const R = require('./site-data/render');
@@ -25,32 +26,54 @@ const write = (rel, html) => { const f = path.join(ROOT, rel, 'index.html'); fs.
 const itemOf = (fam, it) => (typeof it === 'object' ? { name: it.name, href: it.href, short: it.short } : { name: subs[it].name, href: `${fam.path}/${it}`, short: subs[it].short });
 
 // ---------- one page per service ----------
+// keyword-led title, H1, description and two FAQs per service page (see scripts/site-data/keywords.js)
+const cap = (x) => x.charAt(0).toUpperCase() + x.slice(1);
+function seoFor(key, s) {
+  const k = KW.SUB[key];
+  if (!k) return { title: s.seoTitle, h1: s.name, desc: s.seoDesc, faq: s.faq };
+  const lead = s.short.charAt(0).toLowerCase() + s.short.slice(1);
+  const options = [
+    `${cap(k.kw)}: ${lead}, built by a founder-led team from PRD to launch. Free strategy call.`,
+    `${cap(k.kw)}: ${lead}, from PRD to launch. Free 30-minute strategy call.`,
+    `${cap(k.kw)}: ${lead}. Founder-led team, free strategy call.`,
+  ];
+  const desc = options.find((d) => d.length <= 158 && d.length >= 110) || options.find((d) => d.length <= 158) || options[2];
+  const base = k.alt[0];
+  const faq = [
+    [/company/.test(k.kw) ? `Are you ${/^([aeiou]|MVP|SEO|AI|ML)/i.test(k.kw) ? 'an' : 'a'} ${k.kw}?` : `Do you offer ${k.kw}?`, `Yes. Creuto is a founder-led software, mobile app and AI development company in India, headquartered in Bhubaneswar. We provide ${base} for startups and businesses across India and abroad, and you work with Nihar Ranjan Rout directly, starting with a free 30-minute call.`],
+    ...s.faq,
+    [`How much ${/s$/.test(base) ? 'do' : 'does'} ${base} cost?`, `It depends on scope, platforms and integrations. Use the free app cost calculator for a first estimate or read the project cost breakdowns. After a free 30-minute call you get a written proposal within 24 hours.`],
+  ];
+  return { title: k.title, h1: k.h1, desc, faq, k };
+}
+
 function subPage(key) {
   const s = subs[key];
   const fam = famByKey[s.family];
+  const seo = seoFor(key, s);
   const url = `${SITE}${subUrl(key)}`;
   const siblings = fam.items.map((it) => itemOf(fam, it)).filter((it) => it.href !== subUrl(key));
   const graph = [
-    { '@type': 'Service', '@id': `${url}#service`, name: s.name, serviceType: s.name, description: s.seoDesc, url, provider: { '@id': `${SITE}/#organization` }, areaServed: 'Worldwide' },
-    { '@type': 'WebPage', '@id': `${url}#webpage`, url, name: s.seoTitle, description: s.seoDesc, isPartOf: { '@id': `${SITE}/#website` }, about: { '@id': `${url}#service` } },
+    { '@type': 'Service', '@id': `${url}#service`, name: seo.h1, serviceType: s.name, description: seo.desc, url, provider: { '@id': `${SITE}/#organization` }, areaServed: [{ '@type': 'Country', name: 'India' }, 'Worldwide'] },
+    { '@type': 'WebPage', '@id': `${url}#webpage`, url, name: seo.title, description: seo.desc, isPartOf: { '@id': `${SITE}/#website` }, about: { '@id': `${url}#service` } },
     crumbs([['Home', `${SITE}/`], ['Services', `${SITE}/services`], [fam.name, `${SITE}${fam.path}`], [s.name, url]]),
-    R.faqLd(s.faq),
+    R.faqLd(seo.faq),
   ];
   const related = [
     ...siblings.map((it) => [it.name, it.href]),
   ];
   const inds = (s.industries || []).map((slug) => [indBySlug[slug].name, `/industries/${slug}`]);
-  return head({ title: s.seoTitle, description: s.seoDesc, canonical: url, graph }) + `
+  return head({ title: seo.title, description: seo.desc, canonical: url, graph }) + `
 <main id="top">${R.hero({
     crumbs: [['Home', '/'], ['Services', '/services'], [fam.name, fam.path], [s.name, subUrl(key)]],
-    pill: fam.name, h1: s.name, sub: s.intro, secondary: ['See our work', '/work'], art: SUB_DOODLE[key] || DOODLE[fam.key],
+    pill: fam.name, h1: seo.h1, sub: s.intro, secondary: ['See our work', '/work'], art: SUB_DOODLE[key] || DOODLE[fam.key],
   })}
-${R.section('build', 'What we build', R.cards(s.builds))}
+${R.section('build', seo.k ? `What our ${seo.k.alt[0]} cover` : 'What we build', R.cards(s.builds))}
 ${R.section('approach', 'How we approach ' + s.name, R.prose(approach.subs[key]), 'wwm-sec-alt')}
 ${R.section('fit', 'When this is a good fit', R.fits('A good fit when', s.fits))}
 ${R.section('process', 'How an engagement works', R.process(), 'wwm-sec-alt')}
 ${R.section('related', 'Related services and industries', `<div class="wwm-rel"><div><h3>More in ${esc(fam.name)}</h3>${R.pills(related)}</div>${inds.length ? `<div><h3>Industries we build this for</h3>${R.pills(inds)}</div>` : ''}</div>`)}
-${R.section('faq', 'Questions about ' + s.name, R.faqHtml(s.faq))}
+${R.section('faq', 'Questions about ' + s.name, R.faqHtml(seo.faq))}
 ${R.section('guides', 'Guides on this topic', R.guides(G.forSub(key, fam.key)), 'wwm-sec-alt')}
 ${R.endBand()}
 </main>
@@ -59,7 +82,8 @@ ${R.endBand()}
 
 // ---------- the DevOps family page ----------
 function familyPage(fam) {
-  const p = fam.page;
+  const fk = KW.FAMILY[fam.key];
+  const p = fk ? { ...fam.page, title: fk.title, description: fk.desc, h1: fk.h1, lead: `${fam.page.h1} ${fam.page.lead}` } : fam.page;
   const url = `${SITE}${fam.path}`;
   const graph = [
     { '@type': 'Service', '@id': `${url}#service`, name: fam.name, serviceType: fam.name, description: p.description, url, provider: { '@id': `${SITE}/#organization` }, areaServed: 'Worldwide' },
