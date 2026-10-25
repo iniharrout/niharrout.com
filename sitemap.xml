@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
     <loc>https://www.niharrout.com/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <video:video>
       <video:thumbnail_loc>https://www.niharrout.com/assets/video/openai-select-partner-poster.webp</video:thumbnail_loc>
       <video:title>Creuto is now an OpenAI Select Partner | Nihar Ranjan Rout</video:title>
@@ -31,7 +31,7 @@
   </url>
   <url>
     <loc>https://www.niharrout.com/blog</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-26</lastmod>
   </url>
   <url>
     <loc>https://www.niharrout.com/blog/agile-vs-waterfall-software-development</loc>
@@ -102,6 +102,10 @@
     <lastmod>2026-10-24</lastmod>
   </url>
   <url>
+    <loc>https://www.niharrout.com/blog/flutter-interview-questions</loc>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
     <loc>https://www.niharrout.com/blog/freelancer-vs-agency-for-app-development</loc>
     <lastmod>2026-10-22</lastmod>
   </url>
@@ -120,6 +124,14 @@
   <url>
     <loc>https://www.niharrout.com/blog/how-to-add-ai-to-an-existing-product</loc>
     <lastmod>2026-10-22</lastmod>
+  </url>
+  <url>
+    <loc>https://www.niharrout.com/blog/how-to-become-a-product-manager</loc>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
+    <loc>https://www.niharrout.com/blog/how-to-become-an-ai-engineer</loc>
+    <lastmod>2026-10-26</lastmod>
   </url>
   <url>
     <loc>https://www.niharrout.com/blog/how-to-build-a-dating-app</loc>
@@ -182,6 +194,14 @@
     <lastmod>2026-10-22</lastmod>
   </url>
   <url>
+    <loc>https://www.niharrout.com/blog/how-to-get-a-remote-software-job-from-india</loc>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
+    <loc>https://www.niharrout.com/blog/how-to-get-a-software-internship-in-india</loc>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
     <loc>https://www.niharrout.com/blog/how-to-hire-app-developers-in-india</loc>
     <lastmod>2026-10-22</lastmod>
   </url>
@@ -230,6 +250,10 @@
     <lastmod>2026-10-22</lastmod>
   </url>
   <url>
+    <loc>https://www.niharrout.com/blog/node-js-interview-questions</loc>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
     <loc>https://www.niharrout.com/blog/openai-select-partner</loc>
     <lastmod>2026-10-21</lastmod>
     <video:video>
@@ -248,23 +272,27 @@
   </url>
   <url>
     <loc>https://www.niharrout.com/blog/page/2</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-26</lastmod>
   </url>
   <url>
     <loc>https://www.niharrout.com/blog/page/3</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-26</lastmod>
   </url>
   <url>
     <loc>https://www.niharrout.com/blog/page/4</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-26</lastmod>
   </url>
   <url>
     <loc>https://www.niharrout.com/blog/page/5</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-26</lastmod>
   </url>
   <url>
     <loc>https://www.niharrout.com/blog/page/6</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
+    <loc>https://www.niharrout.com/blog/page/7</loc>
+    <lastmod>2026-10-26</lastmod>
   </url>
   <url>
     <loc>https://www.niharrout.com/blog/pragmatic-enterprise-ai-workflows</loc>
@@ -283,6 +311,14 @@
     <lastmod>2026-10-22</lastmod>
   </url>
   <url>
+    <loc>https://www.niharrout.com/blog/react-interview-questions</loc>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
+    <loc>https://www.niharrout.com/blog/react-native-interview-questions</loc>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
     <loc>https://www.niharrout.com/blog/react-native-mobile-app-playbook</loc>
     <lastmod>2026-10-22</lastmod>
   </url>
@@ -297,6 +333,10 @@
   <url>
     <loc>https://www.niharrout.com/blog/shopify-vs-custom-ecommerce-development</loc>
     <lastmod>2026-10-24</lastmod>
+  </url>
+  <url>
+    <loc>https://www.niharrout.com/blog/software-developer-resume-for-freshers</loc>
+    <lastmod>2026-10-26</lastmod>
   </url>
   <url>
     <loc>https://www.niharrout.com/blog/software-development-contract-checklist</loc>
@@ -316,27 +356,35 @@
   </url>
   <url>
     <loc>https://www.niharrout.com/blog/topic/ai</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
+    <loc>https://www.niharrout.com/blog/topic/careers</loc>
+    <lastmod>2026-10-26</lastmod>
   </url>
   <url>
     <loc>https://www.niharrout.com/blog/topic/cost-and-hiring</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-26</lastmod>
   </url>
   <url>
     <loc>https://www.niharrout.com/blog/topic/industries</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-26</lastmod>
   </url>
   <url>
     <loc>https://www.niharrout.com/blog/topic/mobile</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-26</lastmod>
   </url>
   <url>
     <loc>https://www.niharrout.com/blog/topic/product</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-26</lastmod>
   </url>
   <url>
     <loc>https://www.niharrout.com/blog/topic/software-and-cloud</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
+    <loc>https://www.niharrout.com/blog/ui-ux-designer-portfolio-tips</loc>
+    <lastmod>2026-10-26</lastmod>
   </url>
   <url>
     <loc>https://www.niharrout.com/blog/ui-vs-ux-design-difference</loc>
@@ -884,23 +932,83 @@
   </url>
   <url>
     <loc>https://www.niharrout.com/work-with-me</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
+    <loc>https://www.niharrout.com/work-with-me/ai-engineer</loc>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
+    <loc>https://www.niharrout.com/work-with-me/business-analyst</loc>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
+    <loc>https://www.niharrout.com/work-with-me/business-development-executive</loc>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
+    <loc>https://www.niharrout.com/work-with-me/content-writer</loc>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
+    <loc>https://www.niharrout.com/work-with-me/devops-engineer</loc>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
+    <loc>https://www.niharrout.com/work-with-me/digital-marketing-executive</loc>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
+    <loc>https://www.niharrout.com/work-with-me/digital-marketing-intern</loc>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
+    <loc>https://www.niharrout.com/work-with-me/flutter-developer</loc>
+    <lastmod>2026-10-26</lastmod>
   </url>
   <url>
     <loc>https://www.niharrout.com/work-with-me/founders-office</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
+    <loc>https://www.niharrout.com/work-with-me/full-stack-developer</loc>
+    <lastmod>2026-10-26</lastmod>
   </url>
   <url>
     <loc>https://www.niharrout.com/work-with-me/graphic-designer</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-26</lastmod>
   </url>
   <url>
     <loc>https://www.niharrout.com/work-with-me/linkedin-content-manager</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
+    <loc>https://www.niharrout.com/work-with-me/product-manager</loc>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
+    <loc>https://www.niharrout.com/work-with-me/qa-engineer</loc>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
+    <loc>https://www.niharrout.com/work-with-me/react-native-developer</loc>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
+    <loc>https://www.niharrout.com/work-with-me/software-development-intern</loc>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
+    <loc>https://www.niharrout.com/work-with-me/ui-ux-design-intern</loc>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
+    <loc>https://www.niharrout.com/work-with-me/ui-ux-designer</loc>
+    <lastmod>2026-10-26</lastmod>
   </url>
   <url>
     <loc>https://www.niharrout.com/work-with-me/video-editor</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-26</lastmod>
   </url>
   <url>
     <loc>https://www.niharrout.com/work/custom-erp-manufacturing</loc>

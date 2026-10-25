@@ -340,3 +340,8 @@ html.wwm-lock { overflow: hidden; }
 .wwm-founder strong { display: block; color: var(--ink); font-size: 16px; }
 .wwm-founder svg { display: inline-block; width: 14px; height: 14px; vertical-align: -2px; margin-left: 4px; }
 .wwm-founder:hover { border-color: rgba(29, 78, 216, 0.4); }
+
+/* Careers listing: roles grouped by team */
+.wwm-roles .wwm-dept { display: flex; align-items: baseline; gap: 10px; margin: 40px 0 16px; font-family: var(--font-display, 'Fraunces', Georgia, serif); font-size: 1.35rem; font-weight: 500; letter-spacing: -0.01em; color: #0b0d12; }
+.wwm-roles .wwm-h2 + .wwm-dept { margin-top: 8px; }
+.wwm-roles .wwm-dept span { font-family: var(--font-body, 'Inter', system-ui, sans-serif); font-size: 13px; font-weight: 600; color: #64748b; }

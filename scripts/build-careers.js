@@ -22,10 +22,31 @@ const ROLE_ART = {
   'linkedin-content-manager': ['social', 'sun'],
   'graphic-designer': ['design', 'peach'],
   'video-editor': ['media', 'sky'],
+  'react-native-developer': ['cross-platform', 'peach'],
+  'flutter-developer': ['mobile', 'sky'],
+  'full-stack-developer': ['web', 'sun'],
+  'ai-engineer': ['ai', 'peach'],
+  'qa-engineer': ['check', 'sky'],
+  'devops-engineer': ['cloud', 'sun'],
+  'ui-ux-designer': ['design', 'sky'],
+  'product-manager': ['prd', 'sun'],
+  'business-analyst': ['analytics', 'peach'],
+  'business-development-executive': ['growth', 'sky'],
+  'digital-marketing-executive': ['seo', 'sun'],
+  'content-writer': ['doc-scan', 'peach'],
+  'software-development-intern': ['custom-software', 'sky'],
+  'ui-ux-design-intern': ['prototype', 'sun'],
+  'digital-marketing-intern': ['social', 'peach'],
 };
 const art = (slug) => (ROLE_ART[slug] || ['team', 'sky']);
 
-const chips = () => '<ul class="wwm-chips"><li>Remote</li><li>India</li><li>Full-time</li></ul>';
+const kind = (r) => (r.type === 'INTERN' ? 'Internship' : 'Full-time');
+const chips = (r) => `<ul class="wwm-chips"><li>Remote</li><li>India</li><li>${kind(r)}</li></ul>`;
+// a role stays listed for 90 days from when it was posted; reposting (a new date in roles.js) extends it
+const validThrough = (d) => { const x = new Date(d + 'T00:00:00Z'); x.setUTCDate(x.getUTCDate() + 90); return x.toISOString().slice(0, 10); };
+const salaryLd = (s) => (s ? { '@type': 'MonetaryAmount', currency: 'INR', value: { '@type': 'QuantitativeValue', minValue: s.min, maxValue: s.max, unitText: s.unit || 'YEAR' } } : undefined);
+const GUIDES = ['react-native-interview-questions', 'flutter-interview-questions', 'react-interview-questions', 'node-js-interview-questions', 'how-to-become-an-ai-engineer', 'how-to-become-a-product-manager', 'ui-ux-designer-portfolio-tips', 'software-developer-resume-for-freshers', 'how-to-get-a-remote-software-job-from-india', 'how-to-get-a-software-internship-in-india'];
+const DEPTS = ['Engineering', 'Design and product', 'Sales and marketing', 'Founder\u2019s team', 'Internships'];
 
 // The two lists on a role page: what the job involves and who fits it.
 function detail(role) {
@@ -102,8 +123,8 @@ function form(roleValue) {
 // ---------- Listing ----------
 function listing() {
   const url = `${SITE}/work-with-me`;
-  const title = 'Careers: Work With Nihar Ranjan Rout | Remote Jobs in India';
-  const description = 'Four full-time remote jobs in India with Nihar Ranjan Rout, founder of Creuto: Founder’s Office, LinkedIn content manager, graphic designer and video editor.';
+  const title = 'Remote Tech Jobs and Internships in India | Nihar Ranjan Rout';
+  const description = `${roles.length} remote jobs and internships in India at Creuto: React Native, Flutter, full stack, AI, QA, DevOps, design, product, marketing and sales roles.`;
   const graph = [
     { '@type': 'CollectionPage', '@id': `${url}#webpage`, url, name: 'Careers: Work With Nihar Ranjan Rout', description, isPartOf: { '@id': `${SITE}/#website` }, about: { '@id': `${SITE}/#person` } },
     crumbs([['Home', `${SITE}/`], ['Work With Me', url]]),
@@ -111,16 +132,20 @@ function listing() {
     { '@type': 'FAQPage', mainEntity: faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) },
   ];
 
-  const cards = roles.map((r, i) => `        <li>
+  const card = (r, i) => `        <li>
           <a class="wwm-rcard" href="/work-with-me/${r.slug}">
-            <span class="wwm-rcard-top" style="--tint:var(--d-${art(r.slug)[1]})" aria-hidden="true">${doodle(art(r.slug)[0])}<span class="wwm-rcard-no">0${i + 1}</span></span>
+            <span class="wwm-rcard-top" style="--tint:var(--d-${art(r.slug)[1]})" aria-hidden="true">${doodle(art(r.slug)[0])}<span class="wwm-rcard-no">${String(i + 1).padStart(2, '0')}</span></span>
             <span class="wwm-rcard-body">
               <h3>${esc(r.title)}</h3>
               <p>${esc(r.short)}</p>
-              <span class="wwm-rcard-foot"><span class="wwm-rcard-meta">Remote &middot; Full-time</span><span class="wwm-rcard-go">View role ${ARROW}</span></span>
+              <span class="wwm-rcard-foot"><span class="wwm-rcard-meta">Remote &middot; ${kind(r)}</span><span class="wwm-rcard-go">View role ${ARROW}</span></span>
             </span>
           </a>
-        </li>`).join('\n');
+        </li>`;
+  const cards = DEPTS.map((d) => roles.filter((r) => r.dept === d)).filter((list) => list.length).map((list) => `      <h3 class="wwm-dept">${esc(list[0].dept)} <span>${list.length} ${list.length === 1 ? 'role' : 'roles'}</span></h3>
+      <ul class="wwm-grid">
+${list.map(card).join('\n')}
+      </ul>`).join('\n');
 
 
   const faqHtml = faq.map(([q, a]) => `        <details class="wwm-q">
@@ -135,7 +160,7 @@ function listing() {
       <div>
         <p class="wwm-pill"><span class="wwm-dot"></span>Careers at Creuto &middot; ${roles.length} open roles</p>
         <h1>Work with me.</h1>
-        <p class="wwm-sub">Four full-time remote roles are open to people across India. Each one works directly with me, from product and operations to the content that goes out under my name.</p>
+        <p class="wwm-sub">${roles.length} remote roles and internships are open to people across India, in engineering, design and product, sales and marketing, and my own team. You work with me directly, on real products for real clients.</p>
         <div class="wwm-cta-row"><a class="wwm-btn is-primary" href="#roles">See open roles ${ARROW}</a></div>
         <div class="wwm-by">
           <img src="/assets/nihar-avatar.jpg" width="96" height="96" alt="Nihar Ranjan Rout">
@@ -151,8 +176,8 @@ function listing() {
       <ul class="wwm-perk-list">
 ${[
     ['remote', 'Remote, anywhere in India', 'Work from your own city. Every role is open to people based anywhere in India.'],
-    ['calendar', 'Full-time roles', 'All four are full-time positions, not freelance gigs or short contracts.'],
-    ['chat', 'Work directly with me', 'No layers in between: you work with me, from product and operations to what goes out under my name.'],
+    ['calendar', 'Full-time roles and internships', 'Full-time positions, not freelance gigs, plus internships for students and recent graduates.'],
+    ['chat', 'Work directly with me', 'No layers in between: you work with me and the team on real products for real clients.'],
   ].map(([d, t, p]) => `        <li><span class="wwm-perk-art" aria-hidden="true">${doodle(d)}</span><div><h3>${t}</h3><p>${p}</p></div></li>`).join('\n')}
       </ul>
     </div>
@@ -161,9 +186,7 @@ ${[
   <section class="wwm-roles" id="roles" aria-labelledby="roles-title">
     <div class="wwm-wrap">
       <h2 class="wwm-h2" id="roles-title">Open roles</h2>
-      <ul class="wwm-grid">
 ${cards}
-      </ul>
     </div>
   </section>
 
@@ -177,6 +200,15 @@ ${[
     ['call', 'I get in touch', 'Applications come to me directly. If one looks like a fit, I reach out by email or WhatsApp.'],
   ].map(([d, t, p], i) => `        <li><span class="wwm-step-art" aria-hidden="true">${doodle(d)}</span><span class="wwm-step-n">Step ${i + 1}</span><h3>${t}</h3><p>${p}</p></li>`).join('\n')}
       </ol>
+    </div>
+  </section>
+
+  <section class="wwm-steps wwm-guides" aria-labelledby="guides-title">
+    <div class="wwm-wrap">
+      <h2 class="wwm-h2" id="guides-title">Career guides</h2>
+      <ul class="wwm-cards wwm-cards-links">
+${GUIDES.map((s) => { const g = require('./blog/' + s); return `        <li class="wwm-c"><a href="/blog/${s}"><span class="wwm-c-n">Career guide</span><h3>${esc(g.shortTitle.charAt(0).toUpperCase() + g.shortTitle.slice(1))}</h3><p>${esc(g.cardDesc)}</p><span class="wwm-c-go">Read the guide</span></a></li>`; }).join('\n')}
+      </ul>
     </div>
   </section>
 
@@ -203,12 +235,14 @@ function rolePage(role) {
       '@id': `${url}#job`,
       title: role.title,
       description: html,
-      datePosted: POSTED,
-      employmentType: 'FULL_TIME',
+      datePosted: role.posted || POSTED,
+      validThrough: validThrough(role.posted || POSTED),
+      employmentType: role.type || 'FULL_TIME',
       jobLocationType: 'TELECOMMUTE',
       applicantLocationRequirements: { '@type': 'Country', name: 'India' },
       hiringOrganization: ORG,
       directApply: true,
+      ...(role.salary ? { baseSalary: salaryLd(role.salary) } : {}),
       url,
     },
     { '@type': 'WebPage', '@id': `${url}#webpage`, url, name: role.seoTitle, description, isPartOf: { '@id': `${SITE}/#website` }, about: { '@id': `${url}#job` } },
@@ -224,7 +258,7 @@ function rolePage(role) {
         <nav class="wwm-crumbs" aria-label="Breadcrumb">
           <a href="/">Home</a><span aria-hidden="true">/</span><a href="/work-with-me">Work with me</a><span aria-hidden="true">/</span><span aria-current="page">${esc(role.title)}</span>
         </nav>
-        ${chips()}
+        ${chips(role)}
         <h1 class="wwm-d-title">${esc(role.title)}</h1>
         <p class="wwm-d-sum">${esc(role.summary)}</p>
         <div class="wwm-cta-row"><a class="wwm-btn is-primary" href="#apply">Apply for this role ${ARROW}</a><a class="wwm-btn" href="/work-with-me">All open roles</a></div>
@@ -236,7 +270,7 @@ function rolePage(role) {
     <div class="wwm-rp-grid">
       <article>
         ${detail(role).replace(/\n/g, '\n        ')}
-        <p class="wwm-rp-note">This is a full-time remote role open to people based anywhere in India. Applications are sent to me directly, and I get in touch if one looks like a fit.</p>
+        <p class="wwm-rp-note">This is ${role.type === 'INTERN' ? 'a remote internship' : 'a full-time remote role'} open to people based anywhere in India. Applications are sent to me directly, and I get in touch if one looks like a fit.</p>
       </article>
       <aside class="wwm-card" id="apply" aria-labelledby="apply-title">
         <h2 class="wwm-dlg-h" id="apply-title">Apply for this role</h2>

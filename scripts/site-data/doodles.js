@@ -204,6 +204,16 @@ function doodle(name, cls = 'doodle', tone = toneOf(name)) {
 
 // ---- blog cover scenes: a main doodle and a smaller supporting one on a soft panel (480 x 300 canvas)
 const BLOG_ART = {
+  'react-native-interview-questions': ['cross-platform', 'question', 'peach'],
+  'flutter-interview-questions': ['mobile', 'question', 'sky'],
+  'react-interview-questions': ['web', 'question', 'sun'],
+  'node-js-interview-questions': ['api', 'question', 'peach'],
+  'how-to-become-an-ai-engineer': ['ai', 'roadmap', 'sky'],
+  'how-to-become-a-product-manager': ['prd', 'roadmap', 'sun'],
+  'ui-ux-designer-portfolio-tips': ['design', 'prototype', 'peach'],
+  'software-developer-resume-for-freshers': ['doc-scan', 'check', 'sky'],
+  'how-to-get-a-remote-software-job-from-india': ['remote', 'team', 'sun'],
+  'how-to-get-a-software-internship-in-india': ['education', 'rocket', 'peach'],
   'discovery-phase-in-software-development': ['roadmap', 'question', 'peach'],
   'how-to-build-a-ride-hailing-app': ['automotive', 'realtime', 'sky'],
   'how-to-build-a-dating-app': ['social', 'chat', 'peach'],

@@ -83,6 +83,10 @@
     "hash": "ce5f73ca002f57a8",
     "date": "2026-10-24"
   },
+  "blog/flutter-interview-questions/index.html": {
+    "hash": "4fae48e658fbf798",
+    "date": "2026-10-26"
+  },
   "blog/freelancer-vs-agency-for-app-development/index.html": {
     "hash": "15ebee24e2301aa7",
     "date": "2026-10-22"
@@ -102,6 +106,14 @@
   "blog/how-to-add-ai-to-an-existing-product/index.html": {
     "hash": "c25d9b19abaa27bd",
     "date": "2026-10-22"
+  },
+  "blog/how-to-become-a-product-manager/index.html": {
+    "hash": "ab3c738378cdc42f",
+    "date": "2026-10-26"
+  },
+  "blog/how-to-become-an-ai-engineer/index.html": {
+    "hash": "d943da1a670d6481",
+    "date": "2026-10-26"
   },
   "blog/how-to-build-a-dating-app/index.html": {
     "hash": "194059ca3e1ed2eb",
@@ -163,6 +175,14 @@
     "hash": "4acf8df808889a25",
     "date": "2026-10-22"
   },
+  "blog/how-to-get-a-remote-software-job-from-india/index.html": {
+    "hash": "4f285e7d7f2ff2bf",
+    "date": "2026-10-26"
+  },
+  "blog/how-to-get-a-software-internship-in-india/index.html": {
+    "hash": "5db0e1652ec46fbc",
+    "date": "2026-10-26"
+  },
   "blog/how-to-hire-app-developers-in-india/index.html": {
     "hash": "3e11f030e329c49e",
     "date": "2026-10-22"
@@ -180,8 +200,8 @@
     "date": "2026-10-22"
   },
   "blog/index.html": {
-    "hash": "eea5201eb815f847",
-    "date": "2026-10-25"
+    "hash": "5ba704ae7f3d812b",
+    "date": "2026-10-26"
   },
   "blog/inventory-management-software-development/index.html": {
     "hash": "85f161e07fa87dfe",
@@ -215,6 +235,10 @@
     "hash": "54c06118f2604b10",
     "date": "2026-10-22"
   },
+  "blog/node-js-interview-questions/index.html": {
+    "hash": "007aebacf1764c22",
+    "date": "2026-10-26"
+  },
   "blog/openai-select-partner/index.html": {
     "hash": "ce14058cf5c64415",
     "date": "2026-10-21"
@@ -224,24 +248,28 @@
     "date": "2026-10-22"
   },
   "blog/page/2/index.html": {
-    "hash": "74446a412283aefe",
-    "date": "2026-10-25"
+    "hash": "79c5f0b7ca130c00",
+    "date": "2026-10-26"
   },
   "blog/page/3/index.html": {
-    "hash": "f66018c230cbbf21",
-    "date": "2026-10-25"
+    "hash": "1a37b13eae11da32",
+    "date": "2026-10-26"
   },
   "blog/page/4/index.html": {
-    "hash": "9da98736ff6bdf6b",
-    "date": "2026-10-25"
+    "hash": "11e710d8f5242b6c",
+    "date": "2026-10-26"
   },
   "blog/page/5/index.html": {
-    "hash": "50b09dd9ca5dde80",
-    "date": "2026-10-25"
+    "hash": "c895d597df2df29d",
+    "date": "2026-10-26"
   },
   "blog/page/6/index.html": {
-    "hash": "b3a3a68ffebbcf84",
-    "date": "2026-10-25"
+    "hash": "e511d70d9a4f27a4",
+    "date": "2026-10-26"
+  },
+  "blog/page/7/index.html": {
+    "hash": "17606f881e6cc20a",
+    "date": "2026-10-26"
   },
   "blog/pragmatic-enterprise-ai-workflows/index.html": {
     "hash": "0f99ba63baebceac",
@@ -259,6 +287,14 @@
     "hash": "e6c85ec36983e599",
     "date": "2026-10-22"
   },
+  "blog/react-interview-questions/index.html": {
+    "hash": "78ac486ddcfaa091",
+    "date": "2026-10-26"
+  },
+  "blog/react-native-interview-questions/index.html": {
+    "hash": "c082d9f690f7a18d",
+    "date": "2026-10-26"
+  },
   "blog/react-native-mobile-app-playbook/index.html": {
     "hash": "cf5d72bb5e05fa54",
     "date": "2026-10-22"
@@ -274,6 +310,10 @@
   "blog/shopify-vs-custom-ecommerce-development/index.html": {
     "hash": "4523b3dd1d84cda0",
     "date": "2026-10-24"
+  },
+  "blog/software-developer-resume-for-freshers/index.html": {
+    "hash": "5445cfe1635c078d",
+    "date": "2026-10-26"
   },
   "blog/software-development-contract-checklist/index.html": {
     "hash": "7bbada5b722967f2",
@@ -292,28 +332,36 @@
     "date": "2026-10-22"
   },
   "blog/topic/ai/index.html": {
-    "hash": "78f5b422b90bd31e",
-    "date": "2026-10-25"
+    "hash": "629dfd4fad49c78a",
+    "date": "2026-10-26"
+  },
+  "blog/topic/careers/index.html": {
+    "hash": "4f0b8f206eca5b51",
+    "date": "2026-10-26"
   },
   "blog/topic/cost-and-hiring/index.html": {
-    "hash": "2b108582fcaae76c",
-    "date": "2026-10-25"
+    "hash": "4c3aac17fc5f1c52",
+    "date": "2026-10-26"
   },
   "blog/topic/industries/index.html": {
-    "hash": "27ced463575854c7",
-    "date": "2026-10-25"
+    "hash": "22a7a05485750616",
+    "date": "2026-10-26"
   },
   "blog/topic/mobile/index.html": {
-    "hash": "fe32e05d5234cd7d",
-    "date": "2026-10-25"
+    "hash": "41714088cd5287ba",
+    "date": "2026-10-26"
   },
   "blog/topic/product/index.html": {
-    "hash": "1bfe1fad2fc63591",
-    "date": "2026-10-25"
+    "hash": "909d41cf678fb34f",
+    "date": "2026-10-26"
   },
   "blog/topic/software-and-cloud/index.html": {
-    "hash": "ea23cb86a7b45e96",
-    "date": "2026-10-25"
+    "hash": "236da54741d32e02",
+    "date": "2026-10-26"
+  },
+  "blog/ui-ux-designer-portfolio-tips/index.html": {
+    "hash": "049fc242445ccd1e",
+    "date": "2026-10-26"
   },
   "blog/ui-vs-ux-design-difference/index.html": {
     "hash": "39ec7e1ad80ba828",
@@ -392,8 +440,8 @@
     "date": "2026-10-25"
   },
   "index.html": {
-    "hash": "3eb1dabc6a8adf98",
-    "date": "2026-10-25"
+    "hash": "80e6cc97011a20fa",
+    "date": "2026-10-26"
   },
   "industries/agriculture/index.html": {
     "hash": "dc6f95fac6e3b375",
@@ -859,25 +907,85 @@
     "hash": "ed122bd165f3339c",
     "date": "2026-10-25"
   },
+  "work-with-me/ai-engineer/index.html": {
+    "hash": "3fe803e92c255f99",
+    "date": "2026-10-26"
+  },
+  "work-with-me/business-analyst/index.html": {
+    "hash": "e88edeed8fa591be",
+    "date": "2026-10-26"
+  },
+  "work-with-me/business-development-executive/index.html": {
+    "hash": "506d766bed71e2eb",
+    "date": "2026-10-26"
+  },
+  "work-with-me/content-writer/index.html": {
+    "hash": "fd459848ec08e83d",
+    "date": "2026-10-26"
+  },
+  "work-with-me/devops-engineer/index.html": {
+    "hash": "8f9dacbc6c07e85f",
+    "date": "2026-10-26"
+  },
+  "work-with-me/digital-marketing-executive/index.html": {
+    "hash": "1ddbd18de3541130",
+    "date": "2026-10-26"
+  },
+  "work-with-me/digital-marketing-intern/index.html": {
+    "hash": "1338fa45b1c0a83a",
+    "date": "2026-10-26"
+  },
+  "work-with-me/flutter-developer/index.html": {
+    "hash": "c10bf29d43e2800f",
+    "date": "2026-10-26"
+  },
   "work-with-me/founders-office/index.html": {
-    "hash": "b469a9955ad1ec7d",
-    "date": "2026-10-21"
+    "hash": "a0924333c0279985",
+    "date": "2026-10-26"
+  },
+  "work-with-me/full-stack-developer/index.html": {
+    "hash": "df4e5d26fd646822",
+    "date": "2026-10-26"
   },
   "work-with-me/graphic-designer/index.html": {
-    "hash": "767784a8a88529ed",
-    "date": "2026-10-21"
+    "hash": "e3b9cdb03993801b",
+    "date": "2026-10-26"
   },
   "work-with-me/index.html": {
-    "hash": "8ae2a6ca68fd8dcd",
-    "date": "2026-10-21"
+    "hash": "9ed496fb72088db9",
+    "date": "2026-10-26"
   },
   "work-with-me/linkedin-content-manager/index.html": {
-    "hash": "5494c4d3a935efd3",
-    "date": "2026-10-21"
+    "hash": "92226576b62f3739",
+    "date": "2026-10-26"
+  },
+  "work-with-me/product-manager/index.html": {
+    "hash": "c8f0c135490fcb84",
+    "date": "2026-10-26"
+  },
+  "work-with-me/qa-engineer/index.html": {
+    "hash": "e13fc391bd370535",
+    "date": "2026-10-26"
+  },
+  "work-with-me/react-native-developer/index.html": {
+    "hash": "f5c2d3c23f494bef",
+    "date": "2026-10-26"
+  },
+  "work-with-me/software-development-intern/index.html": {
+    "hash": "171d8a4b5a1a75f9",
+    "date": "2026-10-26"
+  },
+  "work-with-me/ui-ux-design-intern/index.html": {
+    "hash": "a29a187b85a51fce",
+    "date": "2026-10-26"
+  },
+  "work-with-me/ui-ux-designer/index.html": {
+    "hash": "8324a1832d374373",
+    "date": "2026-10-26"
   },
   "work-with-me/video-editor/index.html": {
-    "hash": "f2e30b66b7aa8650",
-    "date": "2026-10-21"
+    "hash": "41a527ea400cc43b",
+    "date": "2026-10-26"
   },
   "work/custom-erp-manufacturing/index.html": {
     "hash": "cddaf28009ad6154",

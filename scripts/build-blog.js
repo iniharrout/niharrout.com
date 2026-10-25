@@ -15,6 +15,16 @@ const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const SITE = 'https://www.niharrout.com';
 const ORDER = [
+  'react-native-interview-questions',
+  'flutter-interview-questions',
+  'react-interview-questions',
+  'node-js-interview-questions',
+  'how-to-become-an-ai-engineer',
+  'how-to-become-a-product-manager',
+  'ui-ux-designer-portfolio-tips',
+  'software-developer-resume-for-freshers',
+  'how-to-get-a-remote-software-job-from-india',
+  'how-to-get-a-software-internship-in-india',
   'discovery-phase-in-software-development',
   'how-to-build-a-ride-hailing-app',
   'how-to-build-a-dating-app',
@@ -103,7 +113,7 @@ function ctaBox(c) {
   return `<div class="blog-cta-box">
   <h3>${esc(c.title)}</h3>
   <p>${esc(c.text)}</p>
-  <a href="https://calendly.com/creuto/meet" target="_blank" rel="noopener" data-book="true" class="cl-button -primary btn-book-call">${esc(c.button)} <span style="margin-left:4px;">&rarr;</span></a>
+  ${c.href ? `<a href="${c.href}" class="cl-button -primary">${esc(c.button)} <span style="margin-left:4px;">&rarr;</span></a>` : `<a href="https://calendly.com/creuto/meet" target="_blank" rel="noopener" data-book="true" class="cl-button -primary btn-book-call">${esc(c.button)} <span style="margin-left:4px;">&rarr;</span></a>`}
 </div>`;
 }
 
@@ -129,6 +139,7 @@ const TOPICS = [
   { slug: 'mobile', name: 'Mobile Apps', cats: ['Mobile Engineering', 'Mobile & Web'], title: 'Mobile App Development Guides', desc: 'React Native vs Flutter, native vs cross-platform, PWAs, app security, UPI payments and getting approved on the App Store and Google Play.' },
   { slug: 'software-and-cloud', name: 'Software & Cloud', cats: ['Web Application Development', 'Business Software', 'Enterprise ERP', 'Technology & Business', 'Cloud & DevOps'], title: 'Web, ERP, CRM and Cloud Guides', desc: 'Guides on web applications, ERP and CRM, WhatsApp Business API, legacy modernisation and choosing a cloud provider for your business.' },
   { slug: 'ai', name: 'AI', cats: ['Enterprise AI', 'Company News'], title: 'AI Guides for Business: Chatbots, RAG and Agents', desc: 'Practical guides on AI chatbots, RAG vs fine-tuning, AI agents, reducing hallucinations and generative AI use cases for business.' },
+  { slug: 'careers', name: 'Careers', cats: ['Careers'], title: 'Career Guides: Interviews, Roadmaps and Remote Jobs', desc: 'Interview questions, career roadmaps and job search guides for developers, designers, product managers and marketers in India.' },
   { slug: 'industries', name: 'Industry Guides', cats: ['Industry Guides'], title: 'Industry App Guides: Fintech, Healthcare, Delivery and More', desc: 'How to build apps for fintech, telemedicine, EdTech, real estate, food delivery, quick commerce, salons and multi-vendor marketplaces.' },
 ];
 const topicOf = (cat) => TOPICS.find((t) => t.cats.includes(cat));
@@ -293,10 +304,13 @@ ${toc.map(([id, t]) => `                <li><a href="#${id}">${esc(t)}</a></li>`
                 <button type="button" class="reader-copy" data-copy="${url}" aria-label="Copy link">${SHARE.link}<span class="reader-copy-done" role="status"></span></button>
               </div>
             </div>
-            <a class="reader-side-cta" href="https://calendly.com/creuto/meet" target="_blank" rel="noopener" data-book="true">
+${p.category === 'Careers' ? `            <a class="reader-side-cta" href="/work-with-me">
+              <strong>Remote jobs at Creuto</strong>
+              <span>See open roles &rarr;</span>
+            </a>` : `            <a class="reader-side-cta" href="https://calendly.com/creuto/meet" target="_blank" rel="noopener" data-book="true">
               <strong>Talk it through with Nihar</strong>
               <span>Free 30-minute call &rarr;</span>
-            </a>
+            </a>`}
           </div>
         </aside>
 
@@ -321,7 +335,7 @@ ${p.faq.map(([q, a], i) => `            <details class="reader-faq"${i === 0 ? '
             <h3>${esc(p.endCta.title)}</h3>
             <p>${esc(p.endCta.text)}</p>
             <div class="blog-cta-actions">
-              <a href="https://calendly.com/creuto/meet" target="_blank" rel="noopener" data-book="true" class="cl-button -primary btn-book-call">Book a free strategy call <span style="margin-left:4px;">&rarr;</span></a>
+              ${p.endCta.primary ? `<a href="${p.endCta.primary.href}" class="cl-button -primary">${esc(p.endCta.primary.label)} <span style="margin-left:4px;">&rarr;</span></a>` : `<a href="https://calendly.com/creuto/meet" target="_blank" rel="noopener" data-book="true" class="cl-button -primary btn-book-call">Book a free strategy call <span style="margin-left:4px;">&rarr;</span></a>`}
               <a href="${p.endCta.service.href}" class="blog-cta-link">${esc(p.endCta.service.label)} ${ARROW}</a>
             </div>
           </div>
