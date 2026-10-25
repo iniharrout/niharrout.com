@@ -43,9 +43,9 @@ const countries = [
   },
   {
     slug: 'united-states', card: 'Calls on your mornings, with HIPAA and SOC 2 ready builds.', code: 'us', name: 'United States', short: 'USA', adj: 'US', city: 'New York', tz: 'America/New_York', tzLabel: 'Eastern Time',
-    title: 'Software Development for US Startups | Nihar Ranjan Rout',
-    description: 'Mobile apps, web apps and AI products for US startups and companies, built by a founder-led team in India with daily overlap on US mornings.',
-    h1: 'App and software development for US startups and companies',
+    title: 'Offshore Software Development for US Startups | Nihar Ranjan Rout',
+    description: 'Offshore software and app development for US startups and companies: a founder-led team in India with overlap on your mornings. Free strategy call.',
+    h1: 'Offshore software and app development for US startups and companies',
     intro: 'Build your mobile app, web platform or AI product with a founder-led team in India. You talk to me directly, get a written plan before any code, and see working software at every milestone, with our evenings overlapping your mornings.',
     overlap: 'India is 9.5 to 10.5 hours ahead of US Eastern Time, depending on daylight saving. Our evening, roughly 6 pm to 10 pm IST, meets your morning on the East Coast, which is when we hold calls and demos. For the West Coast we agree a fixed early-morning or late-evening slot. Work continues while you sleep, so feedback you give in the afternoon is usually acted on by your next morning.',
     rules: [
@@ -72,9 +72,9 @@ const countries = [
   },
   {
     slug: 'united-kingdom', footer: false, card: 'Three to four shared hours a day, built for UK GDPR.', code: 'gb', name: 'United Kingdom', short: 'UK', adj: 'UK', city: 'London', tz: 'Europe/London', tzLabel: 'UK time',
-    title: 'Software Development for UK Businesses | Nihar Ranjan Rout',
-    description: 'Apps, web platforms and AI products for UK startups and businesses, built by a founder-led team in India with a full afternoon of overlap.',
-    h1: 'App and software development for UK businesses',
+    title: 'Offshore Software Development for UK Businesses | Nihar Ranjan Rout',
+    description: 'Offshore software and app development for UK startups and businesses: a founder-led team in India with a full afternoon of overlap. Free strategy call.',
+    h1: 'Offshore software and app development for UK businesses',
     intro: 'A founder-led product team in India for UK startups and growing businesses. Your morning and our afternoon overlap every working day, so calls, reviews and quick decisions fit into normal UK hours.',
     overlap: 'India is 4.5 hours ahead of the UK in summer and 5.5 hours ahead in winter. Your whole morning overlaps with our afternoon, which gives us three to four shared working hours every day. Most UK clients keep a short daily or twice-weekly call and handle the rest in writing.',
     rules: [
@@ -101,7 +101,7 @@ const countries = [
   },
   {
     slug: 'canada', card: 'English and French apps, built for PIPEDA and Law 25.', code: 'ca', name: 'Canada', short: 'Canada', adj: 'Canadian', city: 'Toronto', tz: 'America/Toronto', tzLabel: 'Eastern Time',
-    title: 'App Development for Canadian Startups | Nihar Ranjan Rout',
+    title: 'App Development Company for Canadian Startups | Nihar Ranjan Rout',
     description: 'Mobile apps, web platforms and AI products for Canadian startups, built by a founder-led team in India with overlap on your mornings.',
     h1: 'App and software development for Canadian startups and companies',
     intro: 'Build your product with a founder-led team in India that plans in writing, demos often and overlaps with your mornings. From Toronto to Vancouver, you work with me directly from the first call.',
@@ -130,9 +130,9 @@ const countries = [
   },
   {
     slug: 'uae', card: 'Almost a full shared day, with Arabic and English interfaces.', code: 'ae', name: 'United Arab Emirates', short: 'UAE', adj: 'UAE', city: 'Dubai', tz: 'Asia/Dubai', tzLabel: 'Gulf Standard Time',
-    title: 'Software Development for UAE Businesses | Nihar Ranjan Rout',
-    description: 'Mobile apps, web platforms and AI products for businesses in Dubai, Abu Dhabi and across the UAE, built by a founder-led team in India.',
-    h1: 'App and software development for businesses in the UAE',
+    title: 'App Development Company for Dubai and UAE | Nihar Ranjan Rout',
+    description: 'Mobile app and software development company for businesses in Dubai, Abu Dhabi and the UAE, with Arabic support and a founder-led team in India.',
+    h1: 'Mobile app and software development for businesses in Dubai and the UAE',
     intro: 'For businesses in Dubai, Abu Dhabi and across the Emirates: a founder-led team just 1.5 hours ahead, with almost a full shared working day, Arabic and English interfaces and a written plan before any code.',
     overlap: 'India is 1.5 hours ahead of the UAE all year, with no daylight saving on either side. That means almost the whole working day overlaps: calls, workshops and quick decisions happen in normal office hours for both teams. A flight from Dubai to Bhubaneswar or other Indian cities is short when in-person sessions help.',
     rules: [
@@ -159,7 +159,7 @@ const countries = [
   },
   {
     slug: 'australia', card: 'Our morning meets your afternoon, built for the APPs.', code: 'au', name: 'Australia', short: 'Australia', adj: 'Australian', city: 'Sydney', tz: 'Australia/Sydney', tzLabel: 'Sydney time',
-    title: 'Software Development for Australia | Nihar Ranjan Rout',
+    title: 'App Development Company for Australian Businesses | Nihar Ranjan Rout',
     description: 'Apps, web platforms and AI products for Australian startups and businesses, built by a founder-led team in India with overlap on your afternoons.',
     h1: 'App and software development for Australian businesses',
     intro: 'A founder-led product team in India for startups and businesses in Sydney, Melbourne, Brisbane and beyond. Our morning meets your afternoon every working day, with a written plan and working demos along the way.',
@@ -189,7 +189,7 @@ const countries = [
   {
     slug: 'new-zealand', code: 'nz', name: 'New Zealand', short: 'New Zealand', abbr: 'NZ', adj: 'New Zealand', city: 'Auckland', tz: 'Pacific/Auckland', tzLabel: 'New Zealand time',
     card: 'Our morning meets your afternoon, built for the Privacy Act 2020.',
-    title: 'Software Development for New Zealand | Nihar Ranjan Rout',
+    title: 'Software & App Development for New Zealand | Nihar Ranjan Rout',
     description: 'Mobile apps, web platforms and AI products for New Zealand startups and businesses, built by a founder-led team in India.',
     h1: 'App and software development for New Zealand businesses',
     intro: 'A founder-led product team in India for startups and businesses in Auckland, Wellington, Christchurch and across New Zealand. Our morning meets your afternoon, with a written plan first and working demos at every milestone.',
@@ -218,7 +218,7 @@ const countries = [
   },
   {
     slug: 'singapore', card: 'Five or more shared hours, PDPA-ready, with PayNow.', code: 'sg', name: 'Singapore', short: 'Singapore', adj: 'Singapore', city: 'Singapore', tz: 'Asia/Singapore', tzLabel: 'Singapore time',
-    title: 'App Development for Singapore Businesses | Nihar Ranjan Rout',
+    title: 'App Development Company for Singapore Businesses | Nihar Ranjan Rout',
     description: 'Mobile apps, web platforms and AI products for Singapore startups and SMEs, built by a founder-led team in India just 2.5 hours behind.',
     h1: 'App and software development for Singapore startups and businesses',
     intro: 'A founder-led product team in India, 2.5 hours behind Singapore, for startups, SMEs and regional businesses. Most of the working day overlaps, so calls, reviews and launches happen in normal office hours.',
@@ -247,7 +247,7 @@ const countries = [
   },
   {
     slug: 'vietnam', card: 'Almost a full shared day, with MoMo, ZaloPay and VNPay.', code: 'vn', name: 'Vietnam', short: 'Vietnam', adj: 'Vietnamese', city: 'Ho Chi Minh City', tz: 'Asia/Ho_Chi_Minh', tzLabel: 'Indochina Time',
-    title: 'App Development for Vietnam Businesses | Nihar Ranjan Rout',
+    title: 'App Development Company for Vietnam Businesses | Nihar Ranjan Rout',
     description: 'Mobile apps, web platforms and AI products for businesses in Vietnam, built by a founder-led team in India just 1.5 hours behind.',
     h1: 'App and software development for businesses in Vietnam',
     intro: 'For startups and companies in Ho Chi Minh City, Hanoi and Da Nang: a founder-led product team in India, only 1.5 hours apart, building mobile apps, web platforms and AI products with a written plan first.',

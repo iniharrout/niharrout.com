@@ -55,4 +55,33 @@ const FAMILY = {
 };
 const HUB = { title: 'Software Development Services in India | Nihar Ranjan Rout', desc: 'Software development services in India: mobile apps, web applications, custom software and ERP, AI products and DevOps from a founder-led team.' };
 
-module.exports = { SUB, FAMILY, HUB };
+// Industry pages: "<industry> app/software development company in India", whichever people search more
+// (consumer sectors lean "app", business sectors "software"). Titles stay at or under 70 characters.
+const INDUSTRY = {
+  healthcare: 'Healthcare Software Development Company in India',
+  fintech: 'Fintech App Development Company in India',
+  ecommerce: 'Ecommerce App Development Company in India',
+  logistics: 'Logistics Software Development Company in India',
+  education: 'Education App Development Company in India',
+  'real-estate': 'Real Estate Software Development Company in India',
+  'travel-hospitality': 'Travel App Development Company in India',
+  restaurant: 'Restaurant and Food App Development Company',
+  'on-demand': 'On-Demand App Development Company in India',
+  automotive: 'Automotive Software Development Company in India',
+  'electric-vehicles': 'EV Charging App Development Company in India',
+  energy: 'Energy Software Development Company in India',
+  manufacturing: 'Manufacturing Software Development Company India',
+  construction: 'Construction Software Development Company India',
+  agriculture: 'Agriculture App Development Company in India',
+  aviation: 'Aviation Software Development Company in India',
+  telecom: 'Telecom Software Development Company in India',
+  'media-entertainment': 'Media and Entertainment App Development Company',
+  'gaming-sports': 'Game App Development Company in India',
+  'social-networking': 'Social Media App Development Company in India',
+  'fitness-wellness': 'Fitness App Development Company in India',
+  events: 'Event Management App Development Company',
+  government: 'Government Software Development Company in India',
+  saas: 'SaaS Development Company in India',
+};
+
+module.exports = { SUB, FAMILY, HUB, INDUSTRY };

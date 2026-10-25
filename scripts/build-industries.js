@@ -12,6 +12,7 @@ const R = require('./site-data/render');
 const { doodle } = require('./site-data/doodles');
 const G = require('./site-data/guides');
 const approach = require('./site-data/approach');
+const KW = require('./site-data/keywords');
 
 const ROOT = path.resolve(__dirname, '..');
 const write = (rel, html) => { const f = path.join(ROOT, rel, 'index.html'); fs.mkdirSync(path.dirname(f), { recursive: true }); fs.writeFileSync(f, html); };
@@ -20,12 +21,19 @@ const subHref = (key) => `${families.find((f) => f.key === subs[key].family).pat
 // Shorter names for search-result titles (the on-page name stays in full)
 const SHORT = { fintech: 'Fintech and Banking', 'electric-vehicles': 'EV and eMobility', logistics: 'Logistics and Supply Chain', 'real-estate': 'Real Estate', government: 'Government', restaurant: 'Restaurant', 'media-entertainment': 'Media and Entertainment', education: 'Education and EdTech', 'travel-hospitality': 'Travel and Hospitality', energy: 'Energy and Utilities', events: 'Event', 'fitness-wellness': 'Fitness and Wellness', 'gaming-sports': 'Gaming and Sports', ecommerce: 'eCommerce and Retail', 'on-demand': 'On-Demand Services', 'social-networking': 'Social Networking' };
 function titleFor(i) {
+  if (KW.INDUSTRY[i.slug]) return `${KW.INDUSTRY[i.slug]} | Nihar Ranjan Rout`;
   const n = SHORT[i.slug] || i.name;
   const options = [`${n} Software Development | Nihar Ranjan Rout`, `${n} Software | Nihar Ranjan Rout`];
   return options.find((t) => t.length <= 60) || options[1];
 }
 function descFor(i) {
-  const lower = i.short.charAt(0).toLowerCase() + i.short.slice(1);
+  const lower = /^[A-Z][a-z]/.test(i.short) ? i.short.charAt(0).toLowerCase() + i.short.slice(1) : i.short;
+  if (KW.INDUSTRY[i.slug]) {
+    const kw = KW.INDUSTRY[i.slug].replace(/ Company India$/, ' Company in India');
+    const opts = [`${kw}: ${lower}, built by a founder-led team from PRD to launch. Free strategy call.`, `${kw}: ${lower}, from PRD to launch. Free strategy call.`, `${kw}: ${lower}.`];
+    const hit = opts.find((d) => d.length <= 158);
+    if (hit) return hit;
+  }
   const options = [`${i.name} software development by Nihar Ranjan Rout and Creuto: ${lower}, from PRD to launch.`, `${i.name} software development by Nihar Ranjan Rout: ${lower}, from PRD to launch.`, `${i.name} software by Nihar Ranjan Rout: ${lower}, from PRD to launch.`];
   return options.find((d) => d.length <= 155 && d.length >= 110) || options.find((d) => d.length <= 155) || options[2];
 }
@@ -48,27 +56,29 @@ const INDEX_FAQ = [
 ];
 
 function industryPage(i) {
+  const kw = KW.INDUSTRY[i.slug] && KW.INDUSTRY[i.slug].replace(/ Company India$/, ' Company in India');
+  const faq = kw ? [[`Are you ${/^[AEIOU]/.test(kw) ? 'an' : 'a'} ${kw.toLowerCase().replace('india', 'India').replace('saas', 'SaaS').replace(/^ev /, 'EV ')}?`, `Yes. Creuto is a founder-led software, mobile app and AI development company in India, headquartered in Bhubaneswar, building ${i.name.toLowerCase()} products for startups and businesses in India and abroad. You work with Nihar Ranjan Rout directly, starting with a free 30-minute call.`], ...i.faq] : i.faq;
   const url = `${SITE}/industries/${i.slug}`;
   const title = titleFor(i);
   const description = descFor(i);
   const graph = [
     { '@type': 'WebPage', '@id': `${url}#webpage`, url, name: title, description, isPartOf: { '@id': `${SITE}/#website` }, about: { '@id': `${SITE}/#person` } },
     crumbs([['Home', `${SITE}/`], ['Industries', `${SITE}/industries`], [i.name, url]]),
-    R.faqLd(i.faq),
+    R.faqLd(faq),
   ];
   const work = i.work.length ? R.section('work', `Related work`, `<ul class="wwm-cards wwm-cards-links">
 ${i.work.map((k, n) => `        <li class="wwm-c"><a href="${WORK[k].href}"><span class="wwm-c-n" aria-hidden="true">0${n + 1}</span><h3>${esc(WORK[k].title)}</h3><p>${esc(WORK[k].note)}</p><span class="wwm-c-go">Read the case study</span></a></li>`).join('\n')}
       </ul>`, 'wwm-sec-alt') : '';
   const svc = R.pills(i.services.map((k) => [subs[k].name, subHref(k)]));
   return head({ title, description, canonical: url, graph }) + `
-<main id="top">${R.hero({ crumbs: [['Home', '/'], ['Industries', '/industries'], [i.name, `/industries/${i.slug}`]], pill: 'Industry', h1: `${i.name} software development`, sub: i.intro, secondary: ['See our work', '/work'], art: i.slug })}
+<main id="top">${R.hero({ crumbs: [['Home', '/'], ['Industries', '/industries'], [i.name, `/industries/${i.slug}`]], pill: 'Industry', h1: KW.INDUSTRY[i.slug] ? KW.INDUSTRY[i.slug].replace(/ Company India$/, ' Company in India') : `${i.name} software development`, sub: i.intro, secondary: ['See our work', '/work'], art: i.slug })}
 ${R.section('build', `What we build for ${i.name}`, R.cards(i.builds))}
 ${R.section('approach', `How we approach ${i.name} projects`, R.prose(approach.industries[i.slug]), 'wwm-sec-alt')}
 ${R.section('matters', `What matters in ${i.name}`, R.cards(i.matters).replace('wwm-cards', 'wwm-cards wwm-cards-4'))}
 ${work}
 ${R.section('services', 'Services we use', `<p class="wwm-lead">The services behind most ${esc(i.name)} projects:</p>${svc}`)}
 ${R.section('process', 'How an engagement works', R.process(), 'wwm-sec-alt')}
-${R.section('faq', `Questions about ${i.name} software`, R.faqHtml(i.faq))}
+${R.section('faq', `Questions about ${i.name} software`, R.faqHtml(faq))}
 ${R.section('guides', 'Guides on this topic', R.guides(G.forIndustry(i.slug, groups.find(([, list]) => list.includes(i.slug))[0])))}
 ${R.section('related', 'Related industries', R.pills(relatedOf(i.slug).map((s) => [bySlug[s].name, `/industries/${s}`])), 'wwm-sec-alt')}
 ${R.endBand()}
@@ -78,7 +88,7 @@ ${R.endBand()}
 
 function indexPage() {
   const url = `${SITE}/industries`;
-  const title = 'Industries We Serve: 24 Sectors | Nihar Ranjan Rout';
+  const title = 'Industry Software and App Development in India | Nihar Ranjan Rout';
   const description = 'Software built around how your sector works: healthcare, fintech, retail, logistics, education, SaaS and more, by Nihar Ranjan Rout and Creuto.';
   const graph = [
     { '@type': 'CollectionPage', '@id': `${url}#webpage`, url, name: 'Industries we serve', description, isPartOf: { '@id': `${SITE}/#website` }, about: { '@id': `${SITE}/#person` } },
