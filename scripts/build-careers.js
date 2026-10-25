@@ -15,6 +15,7 @@ const ROOT = path.resolve(__dirname, '..');
 const OUT = path.join(ROOT, 'work-with-me');
 const { SITE, esc, ARROW, ORG, head, foot, crumbs } = require('./careers/shell');
 const { doodle } = require('./site-data/doodles');
+const { DETAILS, WORK, OFFER, PROCESS, PROOF } = require('./careers/details');
 
 // Doodle and card tint for each role (scripts/site-data/doodles.js).
 const ROLE_ART = {
@@ -132,20 +133,26 @@ function listing() {
     { '@type': 'FAQPage', mainEntity: faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) },
   ];
 
-  const card = (r, i) => `        <li>
-          <a class="wwm-rcard" href="/work-with-me/${r.slug}">
-            <span class="wwm-rcard-top" style="--tint:var(--d-${art(r.slug)[1]})" aria-hidden="true">${doodle(art(r.slug)[0])}<span class="wwm-rcard-no">${String(i + 1).padStart(2, '0')}</span></span>
-            <span class="wwm-rcard-body">
-              <h3>${esc(r.title)}</h3>
-              <p>${esc(r.short)}</p>
-              <span class="wwm-rcard-foot"><span class="wwm-rcard-meta">Remote &middot; ${kind(r)}</span><span class="wwm-rcard-go">View role ${ARROW}</span></span>
-            </span>
-          </a>
-        </li>`;
-  const cards = DEPTS.map((d) => roles.filter((r) => r.dept === d)).filter((list) => list.length).map((list) => `      <h3 class="wwm-dept">${esc(list[0].dept)} <span>${list.length} ${list.length === 1 ? 'role' : 'roles'}</span></h3>
-      <ul class="wwm-grid">
-${list.map(card).join('\n')}
-      </ul>`).join('\n');
+  const dslug = (d) => d.toLowerCase().replace(/[^a-z]+/g, '-').replace(/^-|-$/g, '');
+  const row = (r) => `          <li class="job-row">
+            <a class="job-link" href="/work-with-me/${r.slug}">
+              <span class="job-ico" style="--tint:var(--d-${art(r.slug)[1]})" aria-hidden="true">${doodle(art(r.slug)[0])}</span>
+              <span class="job-main"><strong class="job-title">${esc(r.title)}</strong><span class="job-sub">${esc(r.short)}</span></span>
+              <span class="job-tags"><span>Remote</span><span>India</span><span class="${r.type === 'INTERN' ? 'is-intern' : ''}">${kind(r)}</span></span>
+              <span class="job-go">Apply ${ARROW}</span>
+            </a>
+          </li>`;
+  const groups = DEPTS.map((d) => roles.filter((r) => r.dept === d)).filter((list) => list.length);
+  const filters = `<div class="job-filters" role="group" aria-label="Filter roles by team">
+        <button type="button" class="is-on" data-filter="all" aria-pressed="true">All roles <span>${roles.length}</span></button>
+${groups.map((list) => `        <button type="button" data-filter="${dslug(list[0].dept)}" aria-pressed="false">${esc(list[0].dept)} <span>${list.length}</span></button>`).join('\n')}
+      </div>`;
+  const cards = groups.map((list) => `      <div class="job-group" data-dept="${dslug(list[0].dept)}">
+        <h3 class="job-group-h">${esc(list[0].dept)} <span>${list.length} ${list.length === 1 ? 'role' : 'roles'}</span></h3>
+        <ul class="job-list">
+${list.map(row).join('\n')}
+        </ul>
+      </div>`).join('\n');
 
 
   const faqHtml = faq.map(([q, a]) => `        <details class="wwm-q">
@@ -185,8 +192,25 @@ ${[
 
   <section class="wwm-roles" id="roles" aria-labelledby="roles-title">
     <div class="wwm-wrap">
-      <h2 class="wwm-h2" id="roles-title">Open roles</h2>
+      <div class="job-head">
+        <h2 class="wwm-h2" id="roles-title">Open roles</h2>
+        <p>All roles are remote and open to people anywhere in India.</p>
+      </div>
+      ${filters}
 ${cards}
+      <script>
+        (function () {
+          var btns = document.querySelectorAll('.job-filters button');
+          var groups = document.querySelectorAll('.job-group');
+          btns.forEach(function (b) {
+            b.addEventListener('click', function () {
+              var f = b.getAttribute('data-filter');
+              btns.forEach(function (x) { var on = x === b; x.classList.toggle('is-on', on); x.setAttribute('aria-pressed', on ? 'true' : 'false'); });
+              groups.forEach(function (g) { g.hidden = f !== 'all' && g.getAttribute('data-dept') !== f; });
+            });
+          });
+        })();
+      </script>
     </div>
   </section>
 
@@ -225,67 +249,152 @@ ${faqHtml}
 }
 
 // ---------- Role pages ----------
+const fmt = (d) => new Date(d + 'T00:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+const list = (items) => `<ul class="jd-list">${items.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>`;
+function roleFaq(role) {
+  const intern = role.type === 'INTERN';
+  return [
+    [`Is the ${role.title} role remote?`, `Yes. It is fully remote and open to people based anywhere in India.`],
+    [intern ? 'Is this an internship or a full-time job?' : 'Is this a full-time role?', intern ? 'This is an internship for students and recent graduates, with real project work and regular feedback.' : 'Yes. This is a full-time position, not freelance or contract work.'],
+    ['What should I include in my application?', `Your contact details, your LinkedIn profile and ${PROOF[role.dept] || 'a link to your work'}, plus a few honest lines about why this role suits you.`],
+    ['What happens after I apply?', 'Applications come to me directly. If yours looks like a fit, I get in touch by email or WhatsApp to arrange a conversation.'],
+  ];
+}
+
 function rolePage(role) {
   const url = `${SITE}/work-with-me/${role.slug}`;
-  const description = [role.seoDescription].join('');
-  const html = `<p>${role.summary}</p><h3>What you’ll do</h3><ul>${role.does.map((t) => `<li>${t}</li>`).join('')}</ul><h3>Who I’m looking for</h3><ul>${role.looks.map((t) => `<li>${t}</li>`).join('')}</ul>`;
+  const description = role.seoDescription;
+  const d = DETAILS[role.slug] || { about: '', more: [], must: [], nice: [], skills: role.tags };
+  const posted = role.posted || POSTED;
+  const until = validThrough(posted);
+  const doesAll = [...role.does, ...(d.more || [])];
+  const skills = d.skills && d.skills.length ? d.skills : role.tags;
+  const work = WORK[role.dept] || [];
+  const faqs = roleFaq(role);
+  const guide = d.guide ? require('./blog/' + d.guide) : null;
+  const html = `<p>${esc(role.summary)}</p>${d.about ? `<p>${esc(d.about)}</p>` : ''}<h3>What you will do</h3><ul>${doesAll.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>${d.must && d.must.length ? `<h3>What you will need</h3><ul>${d.must.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}${d.nice && d.nice.length ? `<h3>Nice to have</h3><ul>${d.nice.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}<h3>About you</h3><ul>${role.looks.map((x) => `<li>${esc(x)}</li>`).join('')}</ul><h3>What we offer</h3><ul>${OFFER.map(([a, b]) => `<li>${esc(a)}: ${esc(b)}</li>`).join('')}</ul><p>This is ${role.type === 'INTERN' ? 'a remote internship' : 'a full-time remote role'} open to people anywhere in India.</p>`;
   const graph = [
     {
       '@type': 'JobPosting',
       '@id': `${url}#job`,
       title: role.title,
       description: html,
-      datePosted: role.posted || POSTED,
-      validThrough: validThrough(role.posted || POSTED),
+      datePosted: posted,
+      validThrough: until,
       employmentType: role.type || 'FULL_TIME',
       jobLocationType: 'TELECOMMUTE',
       applicantLocationRequirements: { '@type': 'Country', name: 'India' },
       hiringOrganization: ORG,
       directApply: true,
+      industry: 'Software Development',
+      occupationalCategory: role.dept,
+      responsibilities: doesAll.join('. ') + '.',
+      ...(d.must && d.must.length ? { qualifications: d.must.join('. ') + '.' } : {}),
+      skills: skills.join(', '),
+      jobBenefits: OFFER.map(([a]) => a).join(', '),
       ...(role.salary ? { baseSalary: salaryLd(role.salary) } : {}),
       url,
     },
     { '@type': 'WebPage', '@id': `${url}#webpage`, url, name: role.seoTitle, description, isPartOf: { '@id': `${SITE}/#website` }, about: { '@id': `${url}#job` } },
     crumbs([['Home', `${SITE}/`], ['Work With Me', `${SITE}/work-with-me`], [role.title, url]]),
+    { '@type': 'FAQPage', mainEntity: faqs.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) },
   ];
-  const others = roles.filter((r) => r.slug !== role.slug).map((r) => `        <li><a href="/work-with-me/${r.slug}"><span>${esc(r.title)}</span>${ARROW}</a></li>`).join('\n');
+  const sameTeam = roles.filter((r) => r.slug !== role.slug && r.dept === role.dept);
+  const others = (sameTeam.length >= 3 ? sameTeam : [...sameTeam, ...roles.filter((r) => r.slug !== role.slug && r.dept !== role.dept)]).slice(0, 6);
+  const facts = [['Team', role.dept], ['Location', 'Remote, India'], ['Type', kind(role)], ['Posted', fmt(posted)], ['Apply by', fmt(until)]];
 
   return head({ title: role.seoTitle, description, canonical: url, graph }) + `
-<main id="top">
-  <section class="wwm-rp-hero" style="--tint:var(--d-${art(role.slug)[1]})">
-    <div class="wwm-wrap wwm-rp-hero-grid">
+<main id="top" class="jd">
+  <section class="jd-hero" style="--tint:var(--d-${art(role.slug)[1]})">
+    <div class="wwm-wrap jd-hero-grid">
       <div>
         <nav class="wwm-crumbs" aria-label="Breadcrumb">
-          <a href="/">Home</a><span aria-hidden="true">/</span><a href="/work-with-me">Work with me</a><span aria-hidden="true">/</span><span aria-current="page">${esc(role.title)}</span>
+          <a href="/">Home</a><span aria-hidden="true">/</span><a href="/work-with-me">Careers</a><span aria-hidden="true">/</span><span aria-current="page">${esc(role.title)}</span>
         </nav>
-        ${chips(role)}
-        <h1 class="wwm-d-title">${esc(role.title)}</h1>
-        <p class="wwm-d-sum">${esc(role.summary)}</p>
+        <p class="jd-team">${esc(role.dept)}</p>
+        <h1 class="jd-title">${esc(role.title)}</h1>
+        <p class="jd-sum">${esc(role.summary)}</p>
+        <ul class="jd-meta"><li>Remote, India</li><li>${kind(role)}</li><li>Posted ${fmt(posted)}</li></ul>
         <div class="wwm-cta-row"><a class="wwm-btn is-primary" href="#apply">Apply for this role ${ARROW}</a><a class="wwm-btn" href="/work-with-me">All open roles</a></div>
       </div>
-      <div class="wwm-rp-art" aria-hidden="true">${doodle(art(role.slug)[0])}</div>
+      <div class="jd-art" aria-hidden="true">${doodle(art(role.slug)[0])}</div>
     </div>
   </section>
-  <div class="wwm-wrap wwm-rp">
-    <div class="wwm-rp-grid">
-      <article>
-        ${detail(role).replace(/\n/g, '\n        ')}
-        <p class="wwm-rp-note">This is ${role.type === 'INTERN' ? 'a remote internship' : 'a full-time remote role'} open to people based anywhere in India. Applications are sent to me directly, and I get in touch if one looks like a fit.</p>
-      </article>
-      <aside class="wwm-card" id="apply" aria-labelledby="apply-title">
-        <h2 class="wwm-dlg-h" id="apply-title">Apply for this role</h2>
-        <p class="wwm-dlg-sub">Your application is sent to me directly.</p>
-        ${form(role.apply).replace(/\n/g, '\n        ')}
-      </aside>
-    </div>
 
-    <section class="wwm-more" aria-labelledby="more-title">
-      <h2 class="wwm-h3" id="more-title">Other open roles</h2>
-      <ul>
-${others}
-      </ul>
-    </section>
+  <div class="wwm-wrap jd-body">
+    <article class="jd-main">
+      <section class="jd-sec">
+        <h2>About the role</h2>
+        <p>${esc(role.summary)}</p>
+        ${d.about ? `<p>${esc(d.about)}</p>` : ''}
+      </section>
+      <section class="jd-sec">
+        <h2>What you&rsquo;ll do</h2>
+        ${list(doesAll)}
+      </section>
+      ${d.must && d.must.length ? `<section class="jd-sec">
+        <h2>What you&rsquo;ll need</h2>
+        ${list(d.must)}
+      </section>` : ''}
+      ${d.nice && d.nice.length ? `<section class="jd-sec">
+        <h2>Nice to have</h2>
+        ${list(d.nice)}
+      </section>` : ''}
+      <section class="jd-sec">
+        <h2>About you</h2>
+        ${list(role.looks)}
+      </section>
+      <section class="jd-sec">
+        <h2>Skills</h2>
+        <ul class="jd-skills">${skills.map((s) => `<li>${esc(s)}</li>`).join('')}</ul>
+      </section>
+      ${work.length ? `<section class="jd-sec">
+        <h2>What you&rsquo;ll work on</h2>
+        ${list(work)}
+      </section>` : ''}
+      <section class="jd-sec">
+        <h2>What we offer</h2>
+        <ul class="jd-offer">${OFFER.map(([a, b]) => `<li><strong>${esc(a)}</strong><span>${esc(b)}</span></li>`).join('')}</ul>
+      </section>
+      <section class="jd-sec">
+        <h2>How hiring works</h2>
+        <ol class="jd-steps">${PROCESS.map(([a, b]) => `<li><strong>${esc(a)}</strong><span>${esc(b)}</span></li>`).join('')}</ol>
+      </section>
+      <section class="jd-sec jd-apply" id="apply" aria-labelledby="apply-title">
+        <h2 id="apply-title">Apply for this role</h2>
+        <p class="jd-apply-sub">Your application for the ${esc(role.title)} role is sent to me directly.</p>
+        ${form(role.apply).replace(/\n/g, '\n        ')}
+      </section>
+      <section class="jd-sec">
+        <h2>Questions about this role</h2>
+        <div class="wwm-qs">
+${faqs.map(([q, a]) => `          <details class="wwm-q"><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join('\n')}
+        </div>
+      </section>
+    </article>
+
+    <aside class="jd-side">
+      <div class="jd-card">
+        <h2>Job details</h2>
+        <dl>${facts.map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>
+        <a class="wwm-btn is-primary jd-card-btn" href="#apply">Apply for this role ${ARROW}</a>
+        <p class="jd-card-note">Applications go to Nihar Ranjan Rout directly.</p>
+      </div>
+      ${guide ? `<a class="jd-guide" href="/blog/${d.guide}"><span>Career guide</span><strong>${esc(guide.title)}</strong></a>` : ''}
+    </aside>
   </div>
+
+  <section class="jd-more" aria-labelledby="more-title">
+    <div class="wwm-wrap">
+      <h2 class="wwm-h3" id="more-title">More open roles</h2>
+      <ul class="job-list">
+${others.map((r) => `        <li class="job-row"><a class="job-link" href="/work-with-me/${r.slug}"><span class="job-ico" style="--tint:var(--d-${art(r.slug)[1]})" aria-hidden="true">${doodle(art(r.slug)[0])}</span><span class="job-main"><strong class="job-title">${esc(r.title)}</strong><span class="job-sub">${esc(r.short)}</span></span><span class="job-tags"><span>${esc(r.dept)}</span><span>${kind(r)}</span></span><span class="job-go">View ${ARROW}</span></a></li>`).join('\n')}
+      </ul>
+      <p class="jd-all"><a class="wwm-btn" href="/work-with-me">See all ${roles.length} open roles</a></p>
+    </div>
+  </section>
+
+  <div class="jd-sticky"><a class="wwm-btn is-primary" href="#apply">Apply for this role ${ARROW}</a></div>
 </main>
 ` + foot(['/assets/lead-forms.js?v=blue7']);
 }
