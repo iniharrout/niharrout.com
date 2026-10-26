@@ -12,7 +12,7 @@ const ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke
 
 const ORG = { '@type': 'Organization', '@id': `${SITE}/#organization`, name: 'Creuto', sameAs: 'https://creuto.com', logo: `${SITE}/favicon-192.png` };
 
-function head({ title, description, canonical, graph }) {
+function head({ title, description, canonical, graph, image }) {
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -40,7 +40,7 @@ function head({ title, description, canonical, graph }) {
   <meta property="og:url" content="${canonical}">
   <meta property="og:title" content="${esc(title)}">
   <meta property="og:description" content="${esc(description)}">
-  <meta property="og:image" content="${SITE}/assets/og/default.jpg">
+  <meta property="og:image" content="${image ? SITE + image : `${SITE}/assets/og/default.jpg`}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${esc(title)}">
   <meta name="twitter:description" content="${esc(description)}">

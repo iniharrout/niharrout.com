@@ -31,6 +31,7 @@ const business = (url, name, description) => ({
   parentOrganization: { '@id': `${SITE}/#organization` }, founder: { '@id': `${SITE}/#person` },
   address: { '@type': 'PostalAddress', addressLocality: 'Bhubaneswar', addressRegion: 'Odisha', addressCountry: 'IN' },
   areaServed: [{ '@type': 'City', name: 'Bhubaneswar' }, { '@type': 'State', name: 'Odisha' }, { '@type': 'Country', name: 'India' }],
+  award: 'Top Software Development Company in Odisha, GoodFirms (October 2026)',
   telephone: '+91 76088 44995', email: 'me@niharrout.com',
 });
 
@@ -45,10 +46,11 @@ const PAGES = [
   {
     slug: 'software-development-company-bhubaneswar',
     name: 'Software Development Company in Bhubaneswar',
-    title: 'Software Development Company in Bhubaneswar | Nihar Ranjan Rout',
-    description: 'Software development company in Bhubaneswar, Odisha: mobile apps, websites, ERP, CRM and AI products built by a founder-led local team. Free strategy call.',
+    title: 'Top Software Development Company in Bhubaneswar | Nihar Ranjan Rout',
+    description: 'Top software development company in Bhubaneswar, India: ranked #1 in Odisha by GoodFirms. Apps, websites, ERP and AI by a founder-led team. Free call.',
+    image: '/assets/blog/creuto-top-software-development-company-in-odisha-share.jpg',
     pill: 'Bhubaneswar, Odisha',
-    h1: 'Software Development Company in Bhubaneswar',
+    h1: 'Top Software Development Company in Bhubaneswar',
     sub: 'Creuto is a founder-led software, mobile app and AI development company headquartered in Bhubaneswar, Odisha, and ranked the top software development company in Odisha by GoodFirms. We build apps, websites, ERPs and AI products for businesses in Bhubaneswar and across India, and you work with me directly from the first call.',
     art: 'custom-software',
     sections: (r) => `
@@ -160,7 +162,7 @@ function page(p) {
     R.faqLd(p.faq),
   ];
   const trail = [['Home', '/'], ['Locations', '/locations'], ['Bhubaneswar', '/software-development-company-bhubaneswar'], ...(p.slug === 'software-development-company-bhubaneswar' ? [] : [[p.name, `/${p.slug}`]])];
-  return head({ title: p.title, description: p.description, canonical: url, graph }) + `
+  return head({ title: p.title, description: p.description, canonical: url, graph, image: p.image }) + `
 <main id="top">${R.hero({ crumbs: trail, pill: p.pill, h1: p.h1, sub: p.sub, secondary: ['See our work', '/work'], art: p.art })}
 ${p.sections(p)}
 ${R.endBand('Have a project in Bhubaneswar?', 'Tell me what you want to build. The first call is free, and we can meet in person if that helps.')}

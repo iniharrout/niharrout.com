@@ -18,7 +18,7 @@ const OLDER = require('./blog/older');
 const ROOT = path.resolve(__dirname, '..');
 const CHROME = process.env.CHROME || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
 // The announcement post keeps its own official banner.
-const KEEP = new Set(['openai-select-partner']);
+const KEEP = new Set(['openai-select-partner', 'creuto-top-software-development-company-in-odisha']);
 
 const esc = (t) => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;');
 function meta(slug) {

@@ -164,7 +164,7 @@ function page(p) {
   if (p.faq.length) toc.push(['faq', 'Frequently asked questions']);
   const body = p.body.replace('{{cta}}', ctaBox(p.cta)).replace(/<div class="blog-callout">(\s*)<h4>([\s\S]*?)<\/h4>/g, '<div class="blog-callout">$1<p class="blog-callout-title">$2</p>').replace(/<table>/g, '<div class="reader-table" tabindex="0" role="region" aria-label="Table"><table>').replace(/<\/table>/g, '</table></div>');
   const words = stripTags(p.body + ' ' + p.lead + ' ' + p.faq.map((f) => f.join(' ')).join(' ')).split(' ').length;
-  const alt = `${p.headline}: guide by Nihar Ranjan Rout`;
+  const alt = p.imageAlt || `${p.headline}: guide by Nihar Ranjan Rout`;
 
   const blogPosting = {
     '@context': 'https://schema.org',
