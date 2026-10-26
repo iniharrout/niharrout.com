@@ -15,6 +15,7 @@ const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const SITE = 'https://www.niharrout.com';
 const ORDER = [
+  'hire-development-team-in-india-from-uk',
   'react-native-interview-questions',
   'flutter-interview-questions',
   'react-interview-questions',
