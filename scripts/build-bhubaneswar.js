@@ -49,7 +49,7 @@ const PAGES = [
     description: 'Software development company in Bhubaneswar, Odisha: mobile apps, websites, ERP, CRM and AI products built by a founder-led local team. Free strategy call.',
     pill: 'Bhubaneswar, Odisha',
     h1: 'Software Development Company in Bhubaneswar',
-    sub: 'Creuto is a founder-led software, mobile app and AI development company headquartered in Bhubaneswar, Odisha. We build apps, websites, ERPs and AI products for businesses in Bhubaneswar and across India, and you work with me directly from the first call.',
+    sub: 'Creuto is a founder-led software, mobile app and AI development company headquartered in Bhubaneswar, Odisha, and ranked the top software development company in Odisha by GoodFirms. We build apps, websites, ERPs and AI products for businesses in Bhubaneswar and across India, and you work with me directly from the first call.',
     art: 'custom-software',
     sections: (r) => `
 ${R.section('services', 'What we build for Bhubaneswar businesses', linkCards([
@@ -61,9 +61,9 @@ ${R.section('services', 'What we build for Bhubaneswar businesses', linkCards([
     ['Startup MVPs', 'A first working version in about 4 weeks, starting from a clear PRD.', '/services/product-strategy-prd/mvp-development'],
   ]))}
 ${R.section('why', 'Why work with a software company based in Bhubaneswar', R.cards([
+    ['Top-ranked in Odisha', 'Ranked the top software development company in Odisha by GoodFirms, first of 74 firms reviewed in October 2026.'],
     ['Meet in person', 'Workshops, demos and launch days can happen face to face, not only on video calls.'],
     ['Founder-led', 'You speak with Nihar Ranjan Rout, the person responsible for your product, not an account manager.'],
-    ['Senior team, local costs', 'Senior engineering without big-metro agency overheads.'],
     ['Built for Odisha and India', 'Odia, Hindi and English interfaces, UPI payments and performance on budget phones.'],
   ]).replace('wwm-cards', 'wwm-cards wwm-cards-4'), 'wwm-sec-alt')}
 ${R.section('work', 'Products we have built', workCards())}
@@ -73,6 +73,7 @@ ${R.section('guides', 'Guides for planning your project', R.guides(['app-develop
 ${R.section('local', 'More from Bhubaneswar and Odisha', `${R.pills(LOCAL.filter(([, h]) => h !== '/software-development-company-bhubaneswar'))}<p class="wwm-lead" style="margin-top:20px">We also work with businesses in other Odisha cities:</p>${R.pills(ODISHA)}`)}`,
     faq: [
       ['Is Creuto a software company in Bhubaneswar?', 'Yes. Creuto is a founder-led software, mobile app and AI development company headquartered in Bhubaneswar, Odisha, working with businesses in Bhubaneswar, across India and abroad.'],
+      ['Which is the top software development company in Odisha?', 'GoodFirms reviewed 74 software development companies in Odisha as of October 2026 and ranked Creuto first, with a 4.9-star rating from verified client reviews.'],
       ['What kind of IT company is Creuto?', 'A product and engineering company: we plan, design and build mobile apps, websites, web applications, ERPs, CRMs and AI products, and keep improving them after launch. We do not resell software licences or run IT support desks.'],
       ['Can we meet you in person in Bhubaneswar?', 'Yes. For businesses in Bhubaneswar and nearby cities we can meet at Infocity, Patia or at your office for workshops, demos and launch sessions when it helps the project.'],
       ['Do you work with businesses outside Odisha?', 'Yes. We work with startups and businesses across India and in countries such as the USA, UAE, Australia and Singapore, with calls planned around their working day.'],

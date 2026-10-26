@@ -204,6 +204,7 @@ function doodle(name, cls = 'doodle', tone = toneOf(name)) {
 
 // ---- blog cover scenes: a main doodle and a smaller supporting one on a soft panel (480 x 300 canvas)
 const BLOG_ART = {
+  'creuto-top-software-development-company-in-odisha': ['growth', 'check', 'sun'],
   'hire-development-team-in-india-from-uk': ['remote', 'calendar', 'peach'],
   'react-native-interview-questions': ['cross-platform', 'question', 'peach'],
   'flutter-interview-questions': ['mobile', 'question', 'sky'],

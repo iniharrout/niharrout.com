@@ -15,6 +15,7 @@ const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const SITE = 'https://www.niharrout.com';
 const ORDER = [
+  'creuto-top-software-development-company-in-odisha',
   'hire-development-team-in-india-from-uk',
   'react-native-interview-questions',
   'flutter-interview-questions',
@@ -139,7 +140,8 @@ const TOPICS = [
   { slug: 'cost-and-hiring', name: 'Cost & Hiring', cats: ['Costs & Planning', 'Hiring a Team'], title: 'App Development Cost and Hiring Guides', desc: 'What decides software cost and timelines, how to hire developers in India and how to choose and work with a development partner.' },
   { slug: 'mobile', name: 'Mobile Apps', cats: ['Mobile Engineering', 'Mobile & Web'], title: 'Mobile App Development Guides', desc: 'React Native vs Flutter, native vs cross-platform, PWAs, app security, UPI payments and getting approved on the App Store and Google Play.' },
   { slug: 'software-and-cloud', name: 'Software & Cloud', cats: ['Web Application Development', 'Business Software', 'Enterprise ERP', 'Technology & Business', 'Cloud & DevOps'], title: 'Web, ERP, CRM and Cloud Guides', desc: 'Guides on web applications, ERP and CRM, WhatsApp Business API, legacy modernisation and choosing a cloud provider for your business.' },
-  { slug: 'ai', name: 'AI', cats: ['Enterprise AI', 'Company News'], title: 'AI Guides for Business: Chatbots, RAG and Agents', desc: 'Practical guides on AI chatbots, RAG vs fine-tuning, AI agents, reducing hallucinations and generative AI use cases for business.' },
+  { slug: 'ai', name: 'AI', cats: ['Enterprise AI'], title: 'AI Guides for Business: Chatbots, RAG and Agents', desc: 'Practical guides on AI chatbots, RAG vs fine-tuning, AI agents, reducing hallucinations and generative AI use cases for business.' },
+  { slug: 'news', name: 'Company News', cats: ['Company News'], title: 'Creuto Company News and Announcements', desc: 'News from Creuto and Nihar Ranjan Rout: rankings, partnerships and milestones from a software, mobile app and AI development company in India.' },
   { slug: 'careers', name: 'Careers', cats: ['Careers'], title: 'Career Guides: Interviews, Roadmaps and Remote Jobs', desc: 'Interview questions, career roadmaps and job search guides for developers, designers, product managers and marketers in India.' },
   { slug: 'industries', name: 'Industry Guides', cats: ['Industry Guides'], title: 'Industry App Guides: Fintech, Healthcare, Delivery and More', desc: 'How to build apps for fintech, telemedicine, EdTech, real estate, food delivery, quick commerce, salons and multi-vendor marketplaces.' },
 ];

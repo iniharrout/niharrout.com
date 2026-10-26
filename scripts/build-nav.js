@@ -195,6 +195,7 @@ const footer = `<footer class="sc-footer">
           <div class="sc-foot-badges">
             <a class="sc-badge" href="/blog/openai-select-partner"><img src="/assets/openai-symbol.png" alt="" width="20" height="20" loading="lazy" decoding="async"><span><strong>OpenAI</strong>Select Partner</span></a>
             <a class="sc-badge" href="https://clutch.co/profile/creuto" target="_blank" rel="noopener"><span class="sc-badge-star" aria-hidden="true">&#9733;</span><span><strong>5.0 on Clutch</strong>16 verified reviews</span></a>
+            <a class="sc-badge" href="/blog/creuto-top-software-development-company-in-odisha"><span class="sc-badge-star sc-badge-gf" aria-hidden="true">#1</span><span><strong>Top in Odisha</strong>GoodFirms, 2026</span></a>
           </div>
           <div class="sc-foot-social">${socialRow}</div>
         </div>

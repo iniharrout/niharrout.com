@@ -51,6 +51,10 @@
     "hash": "d9685d7f8dbf3bbd",
     "date": "2026-10-22"
   },
+  "blog/creuto-top-software-development-company-in-odisha/index.html": {
+    "hash": "6f595b8143783b31",
+    "date": "2026-10-26"
+  },
   "blog/custom-crm-vs-salesforce-hubspot-zoho/index.html": {
     "hash": "bd89b779ddc7e49c",
     "date": "2026-10-22"
@@ -204,7 +208,7 @@
     "date": "2026-10-22"
   },
   "blog/index.html": {
-    "hash": "02c9533079e430a7",
+    "hash": "7d06e30356fad36d",
     "date": "2026-10-26"
   },
   "blog/inventory-management-software-development/index.html": {
@@ -252,27 +256,27 @@
     "date": "2026-10-22"
   },
   "blog/page/2/index.html": {
-    "hash": "2aeaae56c041f4d1",
+    "hash": "f3ab52f43fbea5c8",
     "date": "2026-10-26"
   },
   "blog/page/3/index.html": {
-    "hash": "518bd27a15503798",
+    "hash": "727b0dc1bd42bdb7",
     "date": "2026-10-26"
   },
   "blog/page/4/index.html": {
-    "hash": "b3c3d3b33fc8af3a",
+    "hash": "fcb28d339077395d",
     "date": "2026-10-26"
   },
   "blog/page/5/index.html": {
-    "hash": "5ce3a3d38540cc53",
+    "hash": "a4d84ba27f58e4ad",
     "date": "2026-10-26"
   },
   "blog/page/6/index.html": {
-    "hash": "162c54e9117151fd",
+    "hash": "f7d8c90450ca9e8c",
     "date": "2026-10-26"
   },
   "blog/page/7/index.html": {
-    "hash": "bbc903a968012403",
+    "hash": "f8fa08d6855c2a7f",
     "date": "2026-10-26"
   },
   "blog/pragmatic-enterprise-ai-workflows/index.html": {
@@ -336,31 +340,35 @@
     "date": "2026-10-22"
   },
   "blog/topic/ai/index.html": {
-    "hash": "c4ec442d1490e23e",
+    "hash": "a326090179be0172",
     "date": "2026-10-26"
   },
   "blog/topic/careers/index.html": {
-    "hash": "56a393cc8e575d66",
+    "hash": "c52bc8befff2f2ad",
     "date": "2026-10-26"
   },
   "blog/topic/cost-and-hiring/index.html": {
-    "hash": "eae19c8e8a4bd950",
+    "hash": "c911b9599416a530",
     "date": "2026-10-26"
   },
   "blog/topic/industries/index.html": {
-    "hash": "a4ec7654fddc7a90",
+    "hash": "408758de72490ca5",
     "date": "2026-10-26"
   },
   "blog/topic/mobile/index.html": {
-    "hash": "1a63a5a45019af2d",
+    "hash": "556c300251d56b12",
+    "date": "2026-10-26"
+  },
+  "blog/topic/news/index.html": {
+    "hash": "15b1f36b47338133",
     "date": "2026-10-26"
   },
   "blog/topic/product/index.html": {
-    "hash": "a982807c0a07d135",
+    "hash": "96b14ff55b804195",
     "date": "2026-10-26"
   },
   "blog/topic/software-and-cloud/index.html": {
-    "hash": "72e8ab4f749ddd38",
+    "hash": "290c0433010c4140",
     "date": "2026-10-26"
   },
   "blog/ui-ux-designer-portfolio-tips/index.html": {
@@ -444,7 +452,7 @@
     "date": "2026-10-25"
   },
   "index.html": {
-    "hash": "350c12e831b664bc",
+    "hash": "bded7842eef2b2c8",
     "date": "2026-10-26"
   },
   "industries/agriculture/index.html": {
@@ -880,8 +888,8 @@
     "date": "2026-10-25"
   },
   "software-development-company-bhubaneswar/index.html": {
-    "hash": "c82caea8050afe72",
-    "date": "2026-10-25"
+    "hash": "91e727ed6319a35a",
+    "date": "2026-10-26"
   },
   "technology/index.html": {
     "hash": "b840ce2c12138ef1",

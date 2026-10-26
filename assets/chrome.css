@@ -584,3 +584,4 @@ html body:not(#_) .sc-footer li a.sc-chip { display: flex; padding: 0 14px 0 10p
   .sc-chip-long { display: none; }
   .sc-chip-abbr { display: inline; }
 }
+.sc-badge-gf { background: #e8effe; color: #1d4ed8; font-size: 10.5px; font-weight: 800; }
