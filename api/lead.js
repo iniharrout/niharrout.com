@@ -130,7 +130,9 @@ async function sendToHubSpot(lead, title, fields) {
     lead.budget && `Budget: ${lead.budget}`,
     ...Object.entries(otherExtras).map(([k, v]) => `${k.replace(/_/g, ' ')}: ${v}`)
   ].filter(Boolean).join('\n');
-  const today = new Date(); today.setUTCHours(0, 0, 0, 0);
+  // HubSpot date fields take midnight UTC of the day; use the date in India so late-evening leads get the right day.
+  const [y, m, d] = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Kolkata' }).format(new Date()).split('-').map(Number);
+  const today = new Date(Date.UTC(y, m - 1, d));
   const website = {
     website_service: lead.service,
     website_message: lead.message,
