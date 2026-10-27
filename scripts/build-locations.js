@@ -127,7 +127,6 @@ const proofStrip = () => `
         </div>`;
 
 function leadForm({ city, svc, heading, sub }) {
-  const budgets = (svc ? svc.budgets : ['Under ₹5L', '₹5L – ₹12L', '₹12L – ₹25L', 'Above ₹25L', 'Still evaluating']);
   return `
         <div class="loc-form-card" id="contact">
           <h2>${esc(heading)}</h2>
@@ -141,12 +140,6 @@ function leadForm({ city, svc, heading, sub }) {
               <div class="form-group"><label for="lf-phone">Phone</label><input class="form-input" id="lf-phone" name="phone" type="tel" autocomplete="tel"></div>
             </div>
             <div class="form-group"><label for="lf-email">Work email *</label><input class="form-input" id="lf-email" name="email" type="email" autocomplete="email" required></div>
-            <div class="form-group"><label for="lf-budget">Budget range</label>
-              <select class="form-select" id="lf-budget" name="budget">
-                <option value="">Select a range</option>
-                ${budgets.map((b) => `<option>${esc(b)}</option>`).join('\n                ')}
-              </select>
-            </div>
             <div class="form-group"><label for="lf-message">What are you building?</label><textarea class="form-textarea" id="lf-message" name="message" placeholder="Two or three lines on the problem, users and timeline."></textarea></div>
             <button type="submit" class="cl-button -primary">Get a free estimate <span>→</span></button>
             <p class="loc-form-note">Your idea is protected by an NDA. We reply within 24 hours.</p>
