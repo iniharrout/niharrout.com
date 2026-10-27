@@ -66,7 +66,7 @@ ${R.section('process', 'How an engagement works', R.process(), 'wwm-sec-alt')}
 ${R.section('faq', `Questions from ${c.adj} founders`, R.faqHtml(c.faq))}
 ${R.section('guides', 'Guides for planning your build', R.guides(c.guides.map(G.guide)), 'wwm-sec-alt')}
 ${R.section('countries', c.home ? 'Countries we build for' : 'Other countries we build for', otherPills)}
-${c.home ? R.endBand('Building something for India?', 'Tell me what you want to build. The first call is free, and you speak with me directly.') : R.endBand(`Building for the ${c.short === 'USA' ? 'US' : c.short} market?`, 'Tell me what you want to build. The first call is free, and we will pick a time that suits your time zone.')}
+${c.home ? R.endBand('Building something for India?', 'Tell me what you want to build. The first call is free, and you speak with me directly.', '', 'India') : R.endBand(`Building for the ${c.short === 'USA' ? 'US' : c.short} market?`, 'Tell me what you want to build. The first call is free, and we will pick a time that suits your time zone.', '', c.short)}
 </main>
 ` + foot();
 }

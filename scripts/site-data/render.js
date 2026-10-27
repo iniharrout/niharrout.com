@@ -71,17 +71,42 @@ ${list.map((g) => `        <li class="wwm-c"><a href="/blog/${g.slug}"><span cla
       </ul>
       <a class="wwm-founder" href="/about"><img src="/assets/nihar-avatar.jpg" width="56" height="56" alt="" loading="lazy" decoding="async"><span><strong>Who you&rsquo;ll work with: Nihar Ranjan Rout</strong>Founder &amp; CEO of Creuto. 8+ years in product, 50+ products shipped. Read the story ${ARROW}</span></a>`;
 
-const endBand = (title = 'Have a product in mind?', text = 'Tell me what you want to build. The first call is free, and you speak with me directly.') => `
-  <section class="wwm-end">
+// Closing band on generated pages: three ways to get in touch (call, WhatsApp, phone) beside a short quote form.
+// The form posts to /api/lead through assets/lead-forms.js, which also records where the visitor came from.
+const PHONE = '+917608844995';
+const PHONE_LABEL = '+91 76088 44995';
+const waLink = (service) => `https://wa.me/${PHONE.slice(1)}?text=${encodeURIComponent(`Hi Nihar, I found your website and would like a quote${service ? ' for ' + service.toLowerCase() : ''}.`)}`;
+const WA_ICON = '<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 15l-1.4 5.1 5.24-1.37A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.1.82.83-3.03-.2-.31a8.2 8.2 0 1 1 6.95 3.85Zm4.5-6.14c-.25-.12-1.46-.72-1.69-.8-.22-.08-.39-.12-.55.13-.16.24-.63.8-.78.96-.14.16-.29.18-.53.06a6.7 6.7 0 0 1-3.34-2.92c-.25-.43.25-.4.72-1.34.08-.16.04-.3-.02-.42-.06-.12-.55-1.33-.76-1.82-.2-.48-.4-.41-.55-.42h-.47a.9.9 0 0 0-.65.3 2.74 2.74 0 0 0-.86 2.04 4.76 4.76 0 0 0 1 2.53 10.9 10.9 0 0 0 4.17 3.68c1.55.67 2.16.73 2.94.61.47-.07 1.46-.6 1.66-1.17.21-.58.21-1.07.15-1.17-.06-.1-.22-.16-.47-.28Z"/></svg>';
+const endBand = (title = 'Have a product in mind?', text = 'Tell me what you want to build. The first call is free, and you speak with me directly.', service = '', city = '') => `
+  <section class="wwm-end" id="quote">
     <div class="wwm-wrap">
-      <div class="wwm-end-card">
-        <div>
+      <div class="wwm-end-card wwm-quote">
+        <div class="wwm-quote-copy">
+          <p class="wwm-quote-kicker">Free quote within 24 hours</p>
           <h2 class="wwm-h2">${esc(title)}</h2>
           <p>${esc(text)}</p>
+          <div class="wwm-quote-ways">
+            ${bookBtn('Book a free 30-minute call')}
+            <a class="wwm-btn is-wa" href="${waLink(service)}" target="_blank" rel="noopener">${WA_ICON} Chat on WhatsApp</a>
+          </div>
+          <p class="wwm-quote-call">Prefer to talk now? Call <a href="tel:${PHONE}">${PHONE_LABEL}</a></p>
         </div>
-        ${bookBtn()}
+        <form class="wwm-qform" action="/api/lead" method="POST" aria-label="Get a free quote">
+          <input type="hidden" name="service" value="${esc(service || 'Project enquiry')}">${city ? `
+          <input type="hidden" name="city" value="${esc(city)}">` : ''}
+          <div aria-hidden="true" class="wwm-hp"><label>Leave this empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+          <div class="wwm-qrow">
+            <label>Your name<input type="text" name="name" autocomplete="name" required></label>
+            <label>Phone or WhatsApp<input type="tel" name="phone" autocomplete="tel" required></label>
+          </div>
+          <label>Work email<input type="email" name="email" autocomplete="email" required></label>
+          <label>What do you want to build?<textarea name="details" rows="3" placeholder="A few lines is enough: the idea, who it is for and your timeline." required></textarea></label>
+          <button type="submit" class="wwm-btn is-primary">Get my free quote ${ARROW}</button>
+          <p class="wwm-qnote">Goes straight to Nihar. You get a reply within 24 hours.</p>
+        </form>
       </div>
     </div>
-  </section>`;
+  </section>
+  <script src="/assets/lead-forms.js?v=lf8" defer></script>`;
 
-module.exports = { BOOK, bookBtn, hero, section, cards, fits, process, prose, pills, faqHtml, faqLd, endBand, crumbsHtml, guides };
+module.exports = { PHONE, waLink, BOOK, bookBtn, hero, section, cards, fits, process, prose, pills, faqHtml, faqLd, endBand, crumbsHtml, guides };

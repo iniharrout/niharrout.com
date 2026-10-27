@@ -154,6 +154,8 @@ ${R.section('local', 'More from Bhubaneswar', R.pills([...LOCAL.filter(([, h]) =
   },
 ];
 
+const SVC = { 'software-development-company-bhubaneswar': 'Software development', 'web-development-company-bhubaneswar': 'Website design and development', 'erp-software-development-bhubaneswar': 'ERP software' };
+
 function page(p) {
   const url = `${SITE}/${p.slug}`;
   const graph = [
@@ -164,9 +166,9 @@ function page(p) {
   ];
   const trail = [['Home', '/'], ['Locations', '/locations'], ['Bhubaneswar', '/software-development-company-bhubaneswar'], ...(p.slug === 'software-development-company-bhubaneswar' ? [] : [[p.name, `/${p.slug}`]])];
   return head({ title: p.title, description: p.description, canonical: url, graph, image: p.image }) + `
-<main id="top">${R.hero({ crumbs: trail, pill: p.pill, h1: p.h1, sub: p.sub, secondary: ['See our work', '/work'], art: p.art })}
+<main id="top">${R.hero({ crumbs: trail, pill: p.pill, h1: p.h1, sub: p.sub, secondary: ['Get a free quote', '#quote'], art: p.art })}
 ${p.sections(p)}
-${R.endBand('Have a project in Bhubaneswar?', 'Tell me what you want to build. The first call is free, and we can meet in person if that helps.')}
+${R.endBand('Have a project in Bhubaneswar?', 'Tell me what you want to build. The first call is free, and we can meet in person if that helps.', SVC[p.slug], 'Bhubaneswar')}
 </main>
 ` + foot();
 }

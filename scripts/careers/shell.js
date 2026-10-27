@@ -3,7 +3,7 @@
  * header/footer markers and the closing scripts. Used by scripts/build-careers.js and scripts/build-work-index.js.
  */
 const SITE = 'https://www.niharrout.com';
-const CSS = '/assets/work-with-me.css?v=w16';
+const CSS = '/assets/work-with-me.css?v=w17';
 
 const esc = (t) => String(t).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const ld = (obj) => JSON.stringify(obj, null, 2).replace(/<\//g, '<\\/');
@@ -47,8 +47,8 @@ function head({ title, description, canonical, graph, image }) {
   <script type="application/ld+json">
 ${ld({ '@context': 'https://schema.org', '@graph': graph })}
   </script>
-  <link rel="stylesheet" href="/assets/chrome.css?v=59">
-  <script src="/assets/chrome.js?v=19" defer></script>
+  <link rel="stylesheet" href="/assets/chrome.css?v=60">
+  <script src="/assets/chrome.js?v=20" defer></script>
 </head>
 <body class="wwm">
 <!-- chrome:header -->

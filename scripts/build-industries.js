@@ -81,7 +81,7 @@ ${R.section('process', 'How an engagement works', R.process(), 'wwm-sec-alt')}
 ${R.section('faq', `Questions about ${i.name} software`, R.faqHtml(faq))}
 ${R.section('guides', 'Guides on this topic', R.guides(G.forIndustry(i.slug, groups.find(([, list]) => list.includes(i.slug))[0])))}
 ${R.section('related', 'Related industries', R.pills(relatedOf(i.slug).map((s) => [bySlug[s].name, `/industries/${s}`])), 'wwm-sec-alt')}
-${R.endBand()}
+${R.endBand(undefined, undefined, `${i.name} software`)}
 </main>
 ` + foot();
 }

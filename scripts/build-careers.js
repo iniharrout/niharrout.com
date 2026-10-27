@@ -396,7 +396,7 @@ ${others.map((r) => `        <li class="job-row"><a class="job-link" href="/work
 
   <div class="jd-sticky"><a class="wwm-btn is-primary" href="#apply">Apply for this role ${ARROW}</a></div>
 </main>
-` + foot(['/assets/lead-forms.js?v=blue7']);
+` + foot(['/assets/lead-forms.js?v=lf8']);
 }
 
 fs.mkdirSync(OUT, { recursive: true });

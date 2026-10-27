@@ -98,7 +98,7 @@ function footer() {
   <!-- /chrome:footer -->
 
   <script src="/assets/site-enhancements.js?v=blue5"></script>
-    <script src="/assets/lead-forms.js?v=blue7"></script>
+    <script src="/assets/lead-forms.js?v=lf8"></script>
 </body>
 </html>
 `;
