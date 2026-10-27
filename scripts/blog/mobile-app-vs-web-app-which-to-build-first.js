@@ -51,7 +51,7 @@ module.exports = {
   </tbody>
 </table>
 <p>
-  Notice that cost does not appear as a deciding factor. What you pay depends mostly on how many features, screens and integrations you build. For a rough estimate, use the free <a href="/tools/app-cost-calculator">app cost calculator</a> and read the <a href="/project-costs">project costs guide</a>.
+  Notice that cost does not appear as a deciding factor. What you pay depends mostly on how many features, screens and integrations you build. For a rough estimate, use the free <a href="/tools/app-cost-calculator">app timeline calculator</a> and read the <a href="/project-costs">project costs guide</a>.
 </p>
 
 <h2 id="decision-rules">Simple decision rules</h2>

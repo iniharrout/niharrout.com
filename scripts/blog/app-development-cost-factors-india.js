@@ -20,7 +20,7 @@ module.exports = {
     ["Is it cheaper to build for Android only?", "Building for one platform first can lower the first release cost. Cross-platform frameworks such as React Native and Flutter now let one codebase serve both Android and iOS, so the saving from choosing one platform is smaller than it used to be. Choose based on where your users are."],
     ["What hidden costs should I plan for?", "App store developer accounts, cloud hosting, third-party services such as SMS, maps and payment gateways, ongoing maintenance and updates for new operating system versions. Ask for these to be listed separately in the proposal."],
     ["How can I reduce app development cost without hurting quality?", "Cut the first release to the features users need to complete one core job, reuse proven services for payments, login and notifications, and agree on a fixed scope for each milestone. A clear PRD before development starts saves more money than any discount."],
-    ["How do I estimate my app budget quickly?", "Use a calculator to get a range, then have a short call with a team to turn your idea into a scoped first release. The range tells you the ballpark, the scoping call tells you what you will actually build."],
+    ["How do I estimate my app budget quickly?", "Use a calculator to check the timeline, then have a short call with a team to turn your idea into a scoped first release. The range tells you the ballpark, the scoping call tells you what you will actually build."],
   ],
   body: `
 <p>
@@ -120,7 +120,7 @@ module.exports = {
   <li><strong>After launch:</strong> ask what support costs once the warranty ends.</li>
 </ul>
 <p>
-  For a quick range, try the free <a href="/tools/app-cost-calculator">app cost calculator</a>, then compare it with real project breakdowns in our <a href="/project-costs">project costs guide</a>.
+  For a quick range, try the free <a href="/tools/app-cost-calculator">app timeline calculator</a>, then compare it with real project breakdowns in our <a href="/project-costs">project costs guide</a>.
 </p>
 `,
 };

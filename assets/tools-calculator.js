@@ -1,5 +1,6 @@
 /**
- * Mobile App Development Cost & Timeline Calculator (Multi-Step Wizard)
+ * Mobile App Development Timeline Calculator (Multi-Step Wizard)
+ * Shows delivery time and effort by phase only. Prices come in a written proposal after a free call.
  * NiharRout.com Interactive Tools Suite
  */
 
@@ -9,7 +10,6 @@
   // Base state
   const state = {
     currentStep: 1, // 1: Archetype, 2: Platform, 3: Features, 4: Design Tier
-    currency: 'INR', // 'INR' or 'USD'
     archetype: 'ecommerce',
     platforms: ['cross_platform', 'include_admin'],
     features: ['auth_social', 'payments', 'push_sms'],
@@ -25,7 +25,7 @@
       baseWeeks: 10,
       baseInrMin: 1450000,
       baseInrMax: 2250000,
-      benchmark: 'Like Amazon: Involves customer shopping app, product catalog, cart/checkout, payment gateways, order tracking, and vendor/admin inventory management. Building an enterprise Amazon costs tens of millions, but a solid, scalable production MVP with multi-vendor flows and mobile apps typically scopes between ₹18L – ₹32L+ ($22k – $40k+ USD).'
+      benchmark: 'Like Amazon: Involves customer shopping app, product catalog, cart/checkout, payment gateways, order tracking, and vendor/admin inventory management. A solid production MVP adds multi-vendor flows and mobile apps on top.'
     },
     ondemand: {
       name: 'On-Demand Service & Booking',
@@ -34,7 +34,7 @@
       baseWeeks: 11,
       baseInrMin: 1600000,
       baseInrMax: 2450000,
-      benchmark: 'Like Urban Company / Uber: Dual-sided marketplace requiring customer app, provider/agent app, real-time dispatch state machine, geolocation tracking, and dynamic slot scheduling. A production system with real-time sockets typically ranges ₹20L – ₹35L+ ($25k – $45k+ USD).'
+      benchmark: 'Like Urban Company / Uber: Dual-sided marketplace requiring customer app, provider/agent app, real-time dispatch state machine, geolocation tracking, and dynamic slot scheduling.'
     },
     healthtech: {
       name: 'HealthTech & Care Registry',
@@ -43,7 +43,7 @@
       baseWeeks: 9,
       baseInrMin: 1350000,
       baseInrMax: 2100000,
-      benchmark: 'Like Organ Registries / Healthcare Portals: Prioritizes encrypted patient records, verified donor-recipient matching logic, doctor tele-consultations, slot concurrency, and audit-logged role permissions. Production healthcare builds typically scope between ₹16L – ₹28L+ ($20k – $35k+ USD).'
+      benchmark: 'Like Organ Registries / Healthcare Portals: Prioritizes encrypted patient records, verified donor-recipient matching logic, doctor tele-consultations, slot concurrency, and audit-logged role permissions.'
     },
     b2b_saas: {
       name: 'Custom B2B SaaS & Enterprise ERP',
@@ -52,7 +52,7 @@
       baseWeeks: 10,
       baseInrMin: 1500000,
       baseInrMax: 2350000,
-      benchmark: 'Like Custom ERPs: High-throughput operational databases, custom approval workflows, multi-tenant partitioning, and offline sync for field operators. Real-world custom ERPs scope from ₹18L – ₹32L+ ($24k – $42k+ USD).'
+      benchmark: 'Like Custom ERPs: High-throughput operational databases, custom approval workflows, multi-tenant partitioning, and offline sync for field operators.'
     },
     social_chat: {
       name: 'Social, Community & Live Chat',
@@ -70,7 +70,7 @@
       baseWeeks: 6,
       baseInrMin: 750000,
       baseInrMax: 1150000,
-      benchmark: 'Fastest time-to-market: Laser-focused core loop with senior engineering and clean architecture to validate customer demand or raise funding. Typical scope ranges ₹8L – ₹14L ($10k – $18k USD).'
+      benchmark: 'Fastest time-to-market: Laser-focused core loop with senior engineering and clean architecture to validate customer demand or raise funding.'
     }
   };
 
@@ -100,19 +100,9 @@
     editorial: { mult: 1.25, label: 'High-End Editorial & Micro-interactions', weeks: 2.0 }
   };
 
-  // Currency calculations
-  const INR_TO_USD_RATE = 1 / 86;
-  const US_MARKET_FACTOR = 1.35; // Reflects US/European delivery standard benchmark
-
-  function formatCurrency(inrAmount, isMax = false) {
-    if (state.currency === 'INR') {
-      const lakhs = (inrAmount / 100000).toFixed(1);
-      return `₹${lakhs} Lakhs`;
-    } else {
-      const usdAmount = inrAmount * INR_TO_USD_RATE * US_MARKET_FACTOR;
-      const thousands = Math.round(usdAmount / 1000);
-      return `$${thousands}k USD`;
-    }
+  function formatWeeks(w) {
+    const r = Math.max(0.5, Math.round(w * 2) / 2);
+    return `~${r} ${r === 1 ? 'week' : 'weeks'}`;
   }
 
   function calculate() {
@@ -206,20 +196,10 @@
     const result = calculate();
     const arch = ARCHETYPES[state.archetype];
 
-    // Update Price Display
+    // Headline: estimated delivery time
     const priceEl = document.getElementById('calc-price-display');
     if (priceEl) {
-      priceEl.textContent = `${formatCurrency(result.minInr)} – ${formatCurrency(result.maxInr, true)}`;
-    }
-
-    // Update Standard label
-    const standardEl = document.getElementById('calc-standard-label');
-    if (standardEl) {
-      if (state.currency === 'INR') {
-        standardEl.innerHTML = '🇮🇳 <strong>Indian Standard Delivery</strong> · Full senior squad';
-      } else {
-        standardEl.innerHTML = '🇺🇸 <strong>US &amp; Global Standard</strong> · Dedicated boutique squad';
-      }
+      priceEl.textContent = `${result.weeks - 1}–${result.weeks + 1} weeks`;
     }
 
     // Update Timeline
@@ -241,11 +221,11 @@
     const bBackend = document.getElementById('breakdown-backend');
     const bDeploy = document.getElementById('breakdown-deploy');
 
-    if (bDiscovery) bDiscovery.textContent = formatCurrency(result.minInr * 0.15);
-    if (bDesign) bDesign.textContent = formatCurrency(result.minInr * 0.20);
-    if (bFrontend) bFrontend.textContent = formatCurrency(result.minInr * 0.35);
-    if (bBackend) bBackend.textContent = formatCurrency(result.minInr * 0.20);
-    if (bDeploy) bDeploy.textContent = formatCurrency(result.minInr * 0.10);
+    if (bDiscovery) bDiscovery.textContent = formatWeeks(result.weeks * 0.15);
+    if (bDesign) bDesign.textContent = formatWeeks(result.weeks * 0.20);
+    if (bFrontend) bFrontend.textContent = formatWeeks(result.weeks * 0.35);
+    if (bBackend) bBackend.textContent = formatWeeks(result.weeks * 0.20);
+    if (bDeploy) bDeploy.textContent = formatWeeks(result.weeks * 0.10);
 
     // Update Sidebar Selected Summary Pills
     const sumArch = document.getElementById('sum-arch-val');
@@ -290,17 +270,6 @@
         e.preventDefault();
         const targetStep = parseInt(this.getAttribute('data-jump-step'), 10);
         goToStep(targetStep);
-      });
-    });
-
-    // Currency Toggle
-    const currencyBtns = document.querySelectorAll('.currency-btn');
-    currencyBtns.forEach(btn => {
-      btn.addEventListener('click', function () {
-        currencyBtns.forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
-        state.currency = this.getAttribute('data-currency');
-        render();
       });
     });
 
@@ -372,14 +341,14 @@
         const res = calculate();
         const arch = ARCHETYPES[state.archetype];
         const text = [
-          `--- MOBILE APPLICATION ESTIMATE SUMMARY ---`,
+          `--- MOBILE APPLICATION TIMELINE SUMMARY ---`,
           `Application Model: ${arch.name}`,
-          `Estimated Investment: ${formatCurrency(res.minInr)} – ${formatCurrency(res.maxInr, true)} (${state.currency === 'INR' ? 'Indian Standard' : 'US/Global Standard'})`,
           `Estimated Timeline: ${res.weeks - 1} to ${res.weeks + 1} Weeks`,
           `Platforms: ${state.platforms.map(p => PLATFORM_CONFIG[p]?.label).join(' + ')}`,
           `Selected Capabilities: ${state.features.map(f => FEATURES[f]?.name).join(', ')}`,
           `Design Standard: ${DESIGN_TIERS[state.designTier].label}`,
           `Squad: 1 Product Strategist, 1 Tech Architect, 2 Mobile Devs, 1 UI/UX Designer, 1 QA Specialist`,
+          `Exact price: written proposal within 24 hours of a free call (niharrout.com/book)`,
           `Calculated via niharrout.com/tools/app-cost-calculator`
         ].join('\n');
 

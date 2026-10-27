@@ -16,7 +16,7 @@ module.exports = {
   endCta: { title: 'Ready to price a first AI feature?', text: 'Creuto is an OpenAI Select Partner. After a short call you get a clear written proposal within 24 hours, with build and running costs set out separately.', service: { href: '/services/ai-product-development/ai-development', label: 'See AI development' } },
   related: ['how-to-add-ai-to-an-existing-product', 'rag-vs-fine-tuning', 'app-development-cost-factors-india'],
   faq: [
-    ['How much does it cost to build an AI app?', 'It depends mostly on scope, the state of your data, the approach you choose and how much checking the output needs. A narrow feature on clean data costs far less than a broad assistant across many systems. Use our project cost guide and app cost calculator for a starting range, then get a quote against a written scope.'],
+    ['How much does it cost to build an AI app?', 'It depends mostly on scope, the state of your data, the approach you choose and how much checking the output needs. A narrow feature on clean data costs far less than a broad assistant across many systems. Use our project cost guide to see what drives the price and the app timeline calculator to plan timing, then get a quote against a written scope.'],
     ['Is AI more expensive to run than normal software?', 'Usually yes, because each request to a language model has a usage cost on top of normal hosting. The difference can be small or large depending on how often the feature is used, how much text each request sends and which model you pick. Plan the monthly running cost before you build.'],
     ['Is it cheaper to use an API like OpenAI or to host my own model?', 'For most businesses starting out, a hosted model through an API is cheaper and faster to launch because there is no hardware or model operations to manage. Hosting your own model can make sense at very high volume or when data rules require it. Compare both on your real usage, not on headline prices.'],
     ['Why do AI quotes from different companies vary so much?', 'Quotes often cover different things. One may include data cleanup, evaluation, guardrails and monitoring, while another covers only a prototype. Ask each team to list what is included, how they will test quality and what the monthly running cost is likely to be.'],
@@ -27,7 +27,7 @@ module.exports = {
   The first question I hear on almost every AI call is "how much will this cost?" It is a fair question, and the honest answer is that an AI feature is priced differently from a normal app screen. With ordinary software you pay mostly to build it. With AI you pay to build it, and then you pay each time someone uses it.
 </p>
 <p>
-  This guide explains what moves the price on both sides, so you can read a quote properly and avoid the two most common surprises: a pilot that grows into a much larger project, and a monthly bill nobody planned for. I will not quote numbers here because they depend on your scope. For a starting range, use our <a href="/project-costs">project cost guide</a> or the <a href="/tools/app-cost-calculator">app cost calculator</a>.
+  This guide explains what moves the price on both sides, so you can read a quote properly and avoid the two most common surprises: a pilot that grows into a much larger project, and a monthly bill nobody planned for. I will not quote numbers here because they depend on your scope. For a starting range, use our <a href="/project-costs">project cost guide</a> or the <a href="/tools/app-cost-calculator">app timeline calculator</a>.
 </p>
 
 <div class="blog-callout">

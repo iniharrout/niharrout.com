@@ -16,7 +16,7 @@ module.exports = {
   endCta: { title: 'Ready to turn a budget into a plan?', text: 'After a short call you get a clear written proposal within 24 hours, split into milestones, with build and running costs shown separately.', service: { href: '/services/product-strategy-prd/mvp-development', label: 'See MVP development' } },
   related: ['app-development-cost-factors-india', 'software-maintenance-cost-and-planning', 'fixed-price-vs-time-and-materials-software-development'],
   faq: [
-    ['How much should I budget for building an app?', 'It depends on scope, platforms, integrations and who builds it, so any single number without a scope is a guess. Start from the outcome you need and the amount you can afford to spend to reach it, then use our project cost guide and app cost calculator to check whether a first release fits.'],
+    ['How much should I budget for building an app?', 'It depends on scope, platforms, integrations and who builds it, so any single number without a scope is a guess. Start from the outcome you need and the amount you can afford to spend to reach it, then use our project cost guide and app timeline calculator to check whether a first release fits.'],
     ['How much contingency should a software budget have?', 'Keep a reserve that is separate from the quoted build price and agree in advance what it can be spent on, such as changes that come out of user testing. Projects with many integrations or unclear requirements need a larger reserve than a small, well-scoped first release.'],
     ['Should I spend my whole budget on the first version?', 'No. Spend a share on the first release and keep the rest for what you learn after launch: fixes, the features users ask for and running costs. A product that launches with no money left for iteration usually stalls.'],
     ['What costs come after the app is built?', 'Hosting, third-party services such as maps, messaging and payments, app store accounts, monitoring, security updates and ongoing improvements. Plan these as a monthly or yearly line from the start, not as a surprise after launch.'],
@@ -27,7 +27,7 @@ module.exports = {
   On almost every first call, someone asks me what their app will cost. I understand why. But the more useful question comes first: what are you willing to spend to reach a specific outcome, and over what period? Once that is clear, the rest of the conversation is about choices, not guesses.
 </p>
 <p>
-  This guide is the method I use with founders and business owners to set a software budget before they request a single quote. I will not give price ranges here because they depend on your scope. For a starting range, use our <a href="/project-costs">project cost guide</a> or the <a href="/tools/app-cost-calculator">app cost calculator</a>, then come back and shape that number into a plan.
+  This guide is the method I use with founders and business owners to set a software budget before they request a single quote. I will not give price ranges here because they depend on your scope. For a starting range, use our <a href="/project-costs">project cost guide</a> or the <a href="/tools/app-cost-calculator">app timeline calculator</a>, then come back and shape that timeline into a plan.
 </p>
 
 <div class="blog-callout">

@@ -185,7 +185,7 @@ module.exports = {
   A team cannot give you a reliable price for an idea. It can give you one for a written plan. Once the scope, flows, screens and integrations are described, each piece can be sized, grouped into milestones and agreed as a fixed scope. That is why we write the PRD and a clickable prototype first and send a proposal afterwards, rather than quoting from a short description.
 </p>
 <p>
-  If you want a rough range before the PRD exists, use the free <a href="/tools/app-cost-calculator">app cost calculator</a> and read the <a href="/project-costs">project costs guide</a>. Treat the result as a starting point and expect it to sharpen once your scope is written.
+  If you want a rough range before the PRD exists, use the free <a href="/tools/app-cost-calculator">app timeline calculator</a> and read the <a href="/project-costs">project costs guide</a>. Treat the result as a starting point and expect it to sharpen once your scope is written.
 </p>
 
 <h2 id="tools-and-tips">Tools and practical tips</h2>

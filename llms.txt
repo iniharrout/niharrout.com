@@ -136,8 +136,8 @@
 - [SkyeOne Wedding & Event Booking App: Case Study](https://www.niharrout.com/work/sky1-event-booking): One app to book a venue and every vendor around it, with no phone calls. How Creuto built the SkyeOne wedding and event booking platform.
 
 ## Costs and tools
-- [App and Software Development Cost in India 2026](https://www.niharrout.com/project-costs): Transparent cost ranges, timelines and cost drivers for ERPs, marketplaces, delivery apps and SaaS platforms, grounded in real production projects.
-- [App Development Cost Calculator 2026](https://www.niharrout.com/tools/app-cost-calculator): Estimate mobile app development cost and timeline in INR (₹ lakhs) and USD. Compare benchmarks for marketplaces, on-demand apps and startup MVPs.
+- [App and Software Development Cost in India 2026](https://www.niharrout.com/project-costs): What drives app and software development cost in India: scope, roles, integrations and timelines for ERPs, marketplaces, delivery apps and SaaS platforms.
+- [App Development Timeline Calculator 2026](https://www.niharrout.com/tools/app-cost-calculator): Estimate how long your mobile app will take to build: timeline, sprints and effort by phase for marketplaces, on-demand apps and startup MVPs.
 - [LinkedIn Text Formatter & Hook Optimizer](https://www.niharrout.com/tools/linkedin-text-formatter): Free online LinkedIn text formatter. Convert your hooks & captions into Unicode bold, italic, custom fonts, lists, and emojis with a live desktop & mobile post preview.
 - [Startup & Project Name Generator](https://www.niharrout.com/tools/startup-name-generator): Generate brandable startup and app names with keyword pinning. Anchor your seed keywords, explore 5 naming styles, check domains and save favorites.
 

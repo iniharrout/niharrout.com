@@ -122,7 +122,7 @@ module.exports = {
   </tbody>
 </table>
 <p>
-  For a rough sense of how the pieces affect budget before you talk to anyone, try our free <a href="/tools/app-cost-calculator">app cost calculator</a> and read the <a href="/project-costs">project costs guide</a>.
+  For a rough sense of how the pieces affect budget before you talk to anyone, try our free <a href="/tools/app-cost-calculator">app timeline calculator</a> and read the <a href="/project-costs">project costs guide</a>.
 </p>
 
 <h2 id="red-flags">Red flags that should end the conversation</h2>

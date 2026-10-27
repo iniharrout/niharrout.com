@@ -238,7 +238,7 @@ module.exports = [
         ],
         faqs: [
           ['Do you build marketplaces and multi-vendor platforms?', 'Yes. SkyeOne (event and vendor booking), Make My Look (beauty booking) and FlashNow (hyperlocal delivery) are marketplace-style platforms with vendor onboarding, payouts and real-time availability.'],
-          ['What does a typical B2B platform cost?', 'A first version usually falls between ₹7 lakh and ₹18 lakh, and larger multi-module systems between ₹18 lakh and ₹40 lakh or more. The detail depends on modules, integrations and scale, and we give a fixed-scope estimate after discovery.']
+          ['What does a typical B2B platform cost?', 'It depends on modules, integrations and scale. A first version costs much less than a multi-module system, so most teams start there. After a free 30-minute call you get a written, fixed-scope proposal within 24 hours, with payment tied to milestones.']
         ]
       }
     }

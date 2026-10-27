@@ -111,7 +111,7 @@ module.exports = {
 
 <h2 id="budget">Planning the budget</h2>
 <p>
-  Cost depends on scope, platforms and integrations far more than on location. To get a realistic picture before you talk to anyone, try our <a href="/tools/app-cost-calculator">app cost calculator</a> or look at <a href="/project-costs">sample project costs</a> for products like marketplaces, delivery apps and ERP systems. Then ask any partner you are considering for a written, itemised proposal so you can compare like with like.
+  Cost depends on scope, platforms and integrations far more than on location. To get a realistic picture before you talk to anyone, try our <a href="/tools/app-cost-calculator">app timeline calculator</a> or look at <a href="/project-costs">what drives project costs</a> for products like marketplaces, delivery apps and ERP systems. Then ask any partner you are considering for a written, itemised proposal so you can compare like with like.
 </p>
 
 <h2 id="red-flags">Red flags for US founders</h2>

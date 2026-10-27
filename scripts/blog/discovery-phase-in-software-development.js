@@ -131,7 +131,7 @@ module.exports = {
   <li>A budget range and a target date, even rough ones.</li>
 </ul>
 <p>
-  For a first view of budget, try the <a href="/tools/app-cost-calculator">app cost calculator</a> or look at the <a href="/project-costs">project cost breakdowns</a> before you start.
+  For a first view of budget, try the <a href="/tools/app-cost-calculator">app timeline calculator</a> or look at the <a href="/project-costs">project cost breakdowns</a> before you start.
 </p>
 
 <h2 id="creuto">How we approach it</h2>

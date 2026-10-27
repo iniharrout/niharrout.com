@@ -127,10 +127,10 @@ const resources = `        <li class="sc-item sc-has-menu">
                 <p class="sc-list-h">Learn</p>
                 ${entry('', '/blog', 'book', 'Blog &amp; Guides', 'Practical guides on MVPs, ERP, mobile and AI')}
                 ${entry('', '/project-costs', 'coin', 'Project Costs Guide', 'What production software typically costs')}
-                ${entry('', '/tools/app-cost-calculator', 'calculator', 'App Cost Calculator', 'Realistic build budgets and timelines')}
+                ${entry('', '/tools/app-cost-calculator', 'calculator', 'App Timeline Calculator', 'Realistic build timelines and effort')}
                 ${entry('', '/technology', 'cpu', 'Technology Stack', 'The tools we build with')}
               </div>
-            </div>${strip('Free tools for founders: cost calculator, name generator and more. <a class="sc-strip-link" href="/tools">Open the tools</a>')}
+            </div>${strip('Free tools for founders: timeline calculator, name generator and more. <a class="sc-strip-link" href="/tools">Open the tools</a>')}
           </div>
         </li>`;
 
@@ -201,8 +201,8 @@ const footer = `<footer class="sc-footer">
         </div>
         <div class="sc-foot-card">
           <p class="sc-foot-label">Not ready for a call?</p>
-          <h3>Estimate your app&rsquo;s cost and timeline in two minutes.</h3>
-          <p>Pick your platforms and features to see an estimated budget and timeline, then read the guides at your own pace.</p>
+          <h3>Estimate your app&rsquo;s timeline in two minutes.</h3>
+          <p>Pick your platforms and features to see an estimated timeline, then read the guides at your own pace.</p>
           <div class="sc-foot-card-row">
             <a class="sc-foot-card-btn" href="/tools/app-cost-calculator">Open the calculator ${ARR}</a>
             <a class="sc-foot-card-mail" href="/blog">Read the guides</a>
@@ -214,7 +214,7 @@ const footer = `<footer class="sc-footer">
     group('Services', [...families.map((f) => [f.path, esc(f.name)]), ['/services', 'All services']]),
     group('Popular services', [sub('custom', 'custom-erp-development'), sub('mobile', 'ios-app-development'), sub('mobile', 'android-app-development'), sub('mobile', 'react-native-app-development'), sub('startup', 'mvp-development'), sub('ai', 'ai-development')]),
     group('Industries', [...['healthcare', 'fintech', 'ecommerce', 'logistics', 'education', 'real-estate', 'manufacturing', 'saas'].map(ind), ['/industries', 'All industries']]),
-    group('Resources', [['/blog', 'Guides for founders'], ['/project-costs', 'Project costs guide'], ['/technology', 'Technology stack'], ['/b2b-software-development-for-startups', 'B2B startup playbook'], ['/tools/app-cost-calculator', 'App cost calculator'], ['/tools/startup-name-generator', 'Startup name generator'], ['/tools/linkedin-text-formatter', 'LinkedIn text formatter']]),
+    group('Resources', [['/blog', 'Guides for founders'], ['/project-costs', 'Project costs guide'], ['/technology', 'Technology stack'], ['/b2b-software-development-for-startups', 'B2B startup playbook'], ['/tools/app-cost-calculator', 'App timeline calculator'], ['/tools/startup-name-generator', 'Startup name generator'], ['/tools/linkedin-text-formatter', 'LinkedIn text formatter']]),
     group('Company', [['/about', 'About Nihar &amp; Creuto'], ['/work', 'Case studies'], ['/work-with-me', 'Careers'], ['/about/facts', 'Company fact sheet'], ['/software-development-company-bhubaneswar', 'Software company in Bhubaneswar'], ['/book', 'Book a call'], ['https://creuto.com', 'Creuto.com']]),
   ].join('')}
       </div>

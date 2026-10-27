@@ -106,7 +106,7 @@ module.exports = {
   Pick one core job and build only what it needs. Use proven services for payments, login and messaging instead of building them. Keep a list of "later" ideas so nothing is lost, but protect the first release. At <a href="https://creuto.com" target="_blank" rel="noopener">Creuto</a>, a clear scope is how we typically get a first working version to clients in about 4 weeks.
 </p>
 <p>
-  If budget is your next question, read <a href="/blog/app-development-cost-factors-india">what decides app development cost</a> or try the <a href="/tools/app-cost-calculator">app cost calculator</a>.
+  If budget is your next question, read <a href="/blog/app-development-cost-factors-india">what decides app development cost</a> or try the <a href="/tools/app-cost-calculator">app timeline calculator</a>.
 </p>
 `,
 };

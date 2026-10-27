@@ -42,7 +42,7 @@ function seoFor(key, s) {
   const faq = [
     [/company/.test(k.kw) ? `Are you ${/^([aeiou]|MVP|SEO|AI|ML)/i.test(k.kw) ? 'an' : 'a'} ${k.kw}?` : `Do you offer ${k.kw}?`, `Yes. Creuto is a founder-led software, mobile app and AI development company in India, headquartered in Bhubaneswar. We provide ${base} for startups and businesses across India and abroad, and you work with Nihar Ranjan Rout directly, starting with a free 30-minute call.`],
     ...s.faq,
-    [`How much ${/s$/.test(base) ? 'do' : 'does'} ${base} cost?`, `It depends on scope, platforms and integrations. Use the free app cost calculator for a first estimate or read the project cost breakdowns. After a free 30-minute call you get a written proposal within 24 hours.`],
+    [`How much ${/s$/.test(base) ? 'do' : 'does'} ${base} cost?`, `It depends on scope, platforms and integrations. Use the free app timeline calculator to see how long it takes, or book a call and get a written proposal within 24 hours. After a free 30-minute call you get a written proposal within 24 hours.`],
   ];
   return { title: k.title, h1: k.h1, desc, faq, k };
 }

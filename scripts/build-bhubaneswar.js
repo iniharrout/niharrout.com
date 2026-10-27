@@ -116,7 +116,7 @@ ${R.section('local', 'More from Bhubaneswar', R.pills([...LOCAL.filter(([, h]) =
       ['Do you have web designers in Bhubaneswar?', 'Yes. Our web designers and developers work from Bhubaneswar, so local businesses can meet the team, review designs together and get changes made quickly.'],
       ['Do you build ecommerce websites in Bhubaneswar?', 'Yes. We build online stores with UPI, cards and cash on delivery, GST-ready invoices and courier integrations, either on a platform like Shopify or as a custom build when you need more flexibility.'],
       ['Will my website rank on Google?', 'No one can promise rankings, but we build sites the way search engines expect: fast pages, clean structure, the right page for each service and location, and content written around what customers search for.'],
-      ['How much does a website cost?', 'It depends on the number of pages, features and integrations. Use the free cost calculator for a first estimate, or book a call and get a written proposal within 24 hours.'],
+      ['How much does a website cost?', 'It depends on the number of pages, features and integrations. Use the free timeline calculator to see how long it takes, or book a call and get a written proposal within 24 hours.'],
       ['Can you redesign our existing website?', 'Yes. We redesign and rebuild existing sites and set up redirects so you keep the search rankings you already have.'],
     ],
   },

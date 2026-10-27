@@ -16,7 +16,6 @@ module.exports = {
     titleLead: 'Mobile App Development Company in {city}',
     heroSub: 'iOS, Android, Flutter and React Native apps for {city} businesses, built by a product-led in-house team. Fixed-scope PRD, regular demos, and your code in your own GitHub from day one.',
     formType: 'Mobile App',
-    budgets: ['Under ₹5L', '₹5L – ₹12L', '₹12L – ₹25L', 'Above ₹25L', 'Still evaluating'],
     bhubaneswarPage: '/mobile-app-development-bhubaneswar',
     servicesHeading: 'Mobile app development services for {city}',
     servicesSub: 'Every layer of a shipped app, from PRD and design to store approval and post-launch support.',
@@ -58,13 +57,13 @@ module.exports = {
       ['Support & growth', 'Analytics, crash monitoring and a post-launch roadmap.']
     ],
     tiers: [
-      ['Focused MVP', '₹1.5L – ₹5L', '$2k – $6k', '4 – 8 weeks', 'One core workflow, one or two roles, cross-platform, basic admin panel.'],
-      ['Full product', '₹5L – ₹12L', '$6k – $15k', '8 – 14 weeks', 'Multiple roles, payments, integrations and a full admin dashboard.'],
-      ['Multi-role platform', '₹12L – ₹25L+', '$15k – $30k+', '3 – 6 months', 'Marketplace or delivery apps with several connected apps.']
+      ['Focused MVP', '4 – 8 weeks', 'One core workflow, one or two roles, cross-platform, basic admin panel.'],
+      ['Full product', '8 – 14 weeks', 'Multiple roles, payments, integrations and a full admin dashboard.'],
+      ['Multi-role platform', '3 – 6 months', 'Marketplace or delivery apps with several connected apps.']
     ],
     cases: ['make-my-look', 'flashnow', 'sky1-event-booking'],
     faqs: [
-      ['How much does it cost to build a mobile app in {city}?', 'A focused MVP typically costs ₹1.5 to ₹5 lakh, a full product ₹5 to ₹12 lakh, and multi-role platforms such as marketplaces or delivery apps ₹12 lakh and above. The number depends on roles, integrations and the admin back end. You receive a fixed-scope estimate after a discovery workshop, with payment tied to milestones.'],
+      ['How much does it cost to build a mobile app in {city}?', 'Cost depends on the number of user roles, integrations, payments and the admin back end. A focused MVP costs far less than a multi-role platform such as a marketplace or delivery app. After a free 30-minute call you get a written, fixed-scope proposal within 24 hours, with payment tied to milestones.'],
       ['How long does it take to launch an app?', 'A focused MVP takes 4 to 8 weeks from signed PRD to store submission. Full products take 8 to 14 weeks, and multi-role platforms 3 to 6 months. Store review adds a few days, which we plan for.'],
       ['Should we choose native or cross-platform?', 'For most startups and mid-market products, Flutter or React Native is the better choice: one team, one codebase and faster releases at lower cost. We recommend native when you need deep hardware access, heavy graphics or platform-specific features, and explain the trade-off in writing before you commit.'],
       ['Do we own the source code and IP?', 'Yes. Your code is built in repositories under your own accounts from the first sprint, and you own the custom work as each milestone is paid for. We sign an NDA before discovery, and there is no lock-in to Creuto for hosting or maintenance.'],
@@ -82,7 +81,6 @@ module.exports = {
     titleLead: 'AI Product Development Company in {city}',
     heroSub: 'Practical AI for {city} businesses: LLM assistants, document automation and agentic workflows that ship to production with measurable results, not demos.',
     formType: 'AI Product',
-    budgets: ['Under ₹5L', '₹5L – ₹10L', '₹10L – ₹25L', 'Above ₹25L', 'Still evaluating'],
     bhubaneswarPage: '/ai-product-development-bhubaneswar',
     servicesHeading: 'AI development services for {city}',
     servicesSub: 'From a two-week feasibility check to production AI features with evaluation, guardrails and cost control.',
@@ -124,13 +122,13 @@ module.exports = {
       ['Monitor & improve', 'Drift checks, prompt and model updates, then the next workflow.']
     ],
     tiers: [
-      ['Feasibility pilot', '₹5L – ₹10L', '$6k – $12k', '4 – 8 weeks', 'One workflow, real data and a clear go/no-go recommendation.'],
-      ['Production AI feature or product', '₹10L – ₹25L+', '$12k – $30k+', '3 – 5 months', 'Full build with integrations, evaluation suite and monitoring.'],
+      ['Feasibility pilot', '4 – 8 weeks', 'One workflow, real data and a clear go/no-go recommendation.'],
+      ['Production AI feature or product', '3 – 5 months', 'Full build with integrations, evaluation suite and monitoring.'],
       ['Private or enterprise deployment', 'Quoted after scoping', 'Quoted after scoping', 'Scoped per project', 'On-premise or private-cloud models with strict access control.']
     ],
     cases: ['skribe', 'custom-erp-manufacturing', 'make-my-look'],
     faqs: [
-      ['How much does AI product development cost in {city}?', 'A feasibility pilot usually costs ₹5 to ₹10 lakh and a production build ₹10 to ₹25 lakh or more, depending on integrations, data readiness and deployment needs. We agree the success metric before the pilot so the investment is judged on results.'],
+      ['How much does AI product development cost in {city}?', 'Cost depends on integrations, data readiness and deployment needs, and a feasibility pilot costs much less than a production build. We agree the success metric before the pilot so the investment is judged on results. After a free 30-minute call you get a written, fixed-scope proposal within 24 hours, with payment tied to milestones.'],
       ['How long does an AI project take?', 'A pilot takes 4 to 8 weeks. Production builds take roughly 3 to 5 months, including evaluation, guardrails and rollout.'],
       ['Do we need a lot of data to start?', 'Not usually. Many first projects start from existing documents and a few hundred labelled examples. We check data quality in the first weeks and tell you plainly if it is not ready.'],
       ['Can our data stay inside our own environment?', 'Yes. We can deploy open-source models on your private cloud or on-premise servers, or configure hosted providers for zero data retention. We explain the accuracy and cost trade-offs before you choose.'],
@@ -148,7 +146,6 @@ module.exports = {
     titleLead: 'Custom Software & ERP Company in {city}',
     heroSub: 'Custom ERP, B2B platforms and SaaS products for {city} companies that have outgrown spreadsheets and off-the-shelf tools. One system of record, built around your process.',
     formType: 'Custom Software',
-    budgets: ['Under ₹7L', '₹7L – ₹18L', '₹18L – ₹40L', 'Above ₹40L', 'Still evaluating'],
     bhubaneswarPage: '/b2b-software-development-for-startups',
     servicesHeading: 'Custom software development services for {city}',
     servicesSub: 'Business systems and products engineered for daily use by real teams, with role-based access and audit trails from day one.',
@@ -190,13 +187,13 @@ module.exports = {
       ['Support & evolution', 'Monitoring, enhancements and new modules under a plan.']
     ],
     tiers: [
-      ['Focused first version', '₹7L – ₹18L', '$8k – $22k', '8 – 14 weeks', 'One or two departments or a SaaS MVP, with roles and key integrations.'],
-      ['Multi-module platform', '₹18L – ₹40L+', '$22k – $50k+', '3 – 6 months', 'Several departments or a full B2B product with billing and portals.'],
+      ['Focused first version', '8 – 14 weeks', 'One or two departments or a SaaS MVP, with roles and key integrations.'],
+      ['Multi-module platform', '3 – 6 months', 'Several departments or a full B2B product with billing and portals.'],
       ['Dedicated squad', 'Monthly retainer', 'Monthly retainer', 'Ongoing', 'A stable in-house team for continuous development and support.']
     ],
     cases: ['custom-erp-manufacturing', 'sky1-event-booking', 'skribe'],
     faqs: [
-      ['How much does custom software cost in {city}?', 'A focused first version, such as one or two departments or a SaaS MVP, typically costs ₹7 to ₹18 lakh. Multi-module platforms run ₹18 to ₹40 lakh or more. We give a fixed-scope estimate after a discovery workshop and bill against approved milestones.'],
+      ['How much does custom software cost in {city}?', 'Cost depends on the number of departments or modules, integrations and scale. A focused first version, such as one or two departments or a SaaS MVP, costs much less than a multi-module platform. After a free 30-minute call you get a written, fixed-scope proposal within 24 hours, with payment tied to milestones.'],
       ['How long does it take to build a custom ERP or business system?', 'A first release covering one or two departments takes 8 to 14 weeks. Larger multi-department systems take 3 to 6 months, and we release module by module so your team starts using it early.'],
       ['Can it integrate with Tally, Zoho, SAP or our existing tools?', 'Yes. We integrate through APIs, database connectors or scheduled exchange, and define data flows and failure handling in the PRD. Many clients keep their accounting package and add the missing modules around it.'],
       ['Who owns the code and the data?', 'You do. Your code lives in your own accounts from day one and you own the custom work as each milestone is paid for. You also receive documentation and your data in open formats, and we sign an NDA before discovery.'],

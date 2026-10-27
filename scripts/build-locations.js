@@ -370,17 +370,15 @@ function pricingSection(c, svc) {
   return `
     <section class="loc-section -alt" id="pricing">
       <div class="wrap">
-        ${sectionHeader('Pricing', `${svc.name} cost in ${c.name}`, 'Indicative ranges based on projects we have delivered. Your fixed-scope quote follows a discovery workshop.')}
+        ${sectionHeader('Scope and timeline', `How long ${svc.nameLc} takes in ${c.name}`, 'Typical stages based on projects we have delivered. You get a written, fixed-scope proposal within 24 hours of a free call.')}
         <div class="loc-grid c3">
-          ${svc.tiers.map(([tier, inr, usd, time, desc]) => `<div class="loc-card loc-tier">
+          ${svc.tiers.map(([tier, time, desc]) => `<div class="loc-card loc-tier">
             <h3>${esc(tier)}</h3>
-            <div class="loc-price">${esc(inr)}</div>
-            <div class="loc-usd">${esc(usd)}</div>
             <span class="loc-time">${esc(time)}</span>
             <p>${esc(desc)}</p>
           </div>`).join('\n          ')}
         </div>
-        <p class="loc-note">${esc(c.costNote)} <a href="/project-costs" style="color:var(--hs-brand); font-weight:600;">See detailed cost breakdowns →</a></p>
+        <p class="loc-note">${esc(c.costNote)} <a href="/project-costs" style="color:var(--hs-brand); font-weight:600;">What drives software cost →</a></p>
       </div>
     </section>`;
 }
@@ -465,7 +463,7 @@ function buildServicePage(c, svcKey) {
             ${heroBar(svcKey === 'ai' ? 'ai' : svcKey === 'mobile' ? 'mobile' : 'software')}
             <div class="hero-ctas">
               <a href="https://calendly.com/creuto/meet" target="_blank" rel="noopener" data-book="true" class="cl-button -primary btn-book-call">Book a Free Call <span>→</span></a>
-              <a href="#pricing" class="cl-button -secondary">See pricing ↓</a>
+              <a href="#pricing" class="cl-button -secondary">See timelines ↓</a>
             </div>
             ${proofStrip()}
           </div>
@@ -532,7 +530,7 @@ function buildCityHub(c) {
           <a class="loc-card" href="${pageUrl(c, k)}">
             <h3>${esc(services[k].name)} in ${esc(c.name)}</h3>
             <p>${esc(c.services[k].angle)}</p>
-            <div class="loc-more">See scope, pricing and FAQs →</div>
+            <div class="loc-more">See scope, timelines and FAQs →</div>
           </a>`).join('');
 
   const otherCities = cities.filter((x) => x.slug !== c.slug);
@@ -560,7 +558,7 @@ function buildCityHub(c) {
 
     <section class="loc-section" id="services">
       <div class="wrap">
-        ${sectionHeader('Services', `What we build for ${c.name} organisations`, 'Choose a service for scope, pricing, use cases and FAQs specific to ' + c.name + '.')}
+        ${sectionHeader('Services', `What we build for ${c.name} organisations`, 'Choose a service for scope, timelines, use cases and FAQs specific to ' + c.name + '.')}
         <div class="loc-grid c3">${serviceCards}
         </div>
       </div>

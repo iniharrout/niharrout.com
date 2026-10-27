@@ -132,7 +132,7 @@ const FAQ = [
   ['Who is Nihar Ranjan Rout?', 'Nihar Ranjan Rout is the founder and CEO of Creuto, a software, mobile app and AI development company headquartered in Bhubaneswar, Odisha, India. Nihar has 8+ years in product leadership, has shipped 50+ products and works directly with every client, from the first call to launch.'],
   ['Is Creuto a software development company in India?', 'Yes. Creuto is a founder-led software, mobile app and AI development company in India, headquartered in Bhubaneswar. We build for startups and businesses across India and in countries such as the USA, UAE, Australia and Singapore.'],
   ['What does Creuto build?', 'Mobile apps for Android and iOS (native, React Native and Flutter), web applications and websites, custom software such as ERP and CRM systems, AI products such as chatbots, RAG assistants and agents, and the cloud and DevOps setup to run them.'],
-  ['How much does app development cost in India?', 'It depends on the features, platforms and integrations you need. Use the free app cost calculator for a first estimate or read the project cost breakdowns. After a free 30-minute call you get a written proposal within 24 hours.'],
+  ['How much does app development cost in India?', 'It depends on the features, platforms and integrations you need. Use the free app timeline calculator to see how long it takes, or book a call and get a written proposal within 24 hours. After a free 30-minute call you get a written proposal within 24 hours.'],
 ];
 const faqItem = ([q, a]) => `          <div class="faq-item-minimal" data-home-seo-faq>
             <button class="faq-question-btn" aria-expanded="false">

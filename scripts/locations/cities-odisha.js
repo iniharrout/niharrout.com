@@ -165,7 +165,7 @@ module.exports = [
           ['Record digitisation for clinics', 'Convert handwritten prescriptions and registers into structured records, with mandatory human review of every extracted field.']
         ],
         faqs: [
-          ['Is AI affordable for a small Berhampur business?', 'A focused pilot on one workflow with one measurable outcome typically starts around ₹5 lakh. We agree the success metric up front so you can stop or scale based on results.'],
+          ['Is AI affordable for a small Berhampur business?', 'Yes, if you start small. A focused pilot on one workflow with one measurable outcome keeps the first step affordable, and we agree the success metric up front so you can stop or scale based on results.'],
           ['Which AI tasks work well in regional languages today?', 'Speech-to-text and translation for Odia are usable for many tasks, while open-ended generation is weaker than in English. We test on your real content in the pilot and add human review where errors would be costly.']
         ]
       },

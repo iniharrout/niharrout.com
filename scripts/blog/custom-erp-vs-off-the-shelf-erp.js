@@ -108,7 +108,7 @@ module.exports = {
   </tbody>
 </table>
 <p>
-  For a realistic view of what a custom build involves, see the <a href="/project-costs/enterprise-erp">cost breakdown for an enterprise ERP</a>, or try the <a href="/tools/app-cost-calculator">app cost calculator</a> for a quick estimate. Our guide to <a href="/blog/software-maintenance-cost-and-planning">software maintenance costs</a> covers the ongoing side.
+  For a realistic view of what a custom build involves, see the <a href="/project-costs/enterprise-erp">cost breakdown for an enterprise ERP</a>, or try the <a href="/tools/app-cost-calculator">app timeline calculator</a> for a quick timeline estimate. Our guide to <a href="/blog/software-maintenance-cost-and-planning">software maintenance costs</a> covers the ongoing side.
 </p>
 
 <h2 id="hybrid">The hybrid option: buy the standard, build the different</h2>
