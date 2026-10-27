@@ -86,10 +86,10 @@ ${R.section('local', 'More from Bhubaneswar and Odisha', `${R.pills(LOCAL.filter
   {
     slug: 'web-development-company-bhubaneswar',
     name: 'Web Development Company in Bhubaneswar',
-    title: 'Web Development Company in Bhubaneswar | Nihar Ranjan Rout',
-    description: 'Web development and website design company in Bhubaneswar: fast, SEO-friendly business websites, ecommerce stores and web applications. Free call.',
+    title: 'Website Design & Web Development Company in Bhubaneswar | Nihar Rout',
+    description: 'Website design and web development company in Bhubaneswar: web designers building fast, SEO-friendly business websites, online stores and web apps.',
     pill: 'Bhubaneswar, Odisha',
-    h1: 'Web Development Company in Bhubaneswar',
+    h1: 'Website Design and Web Development Company in Bhubaneswar',
     sub: 'Websites, ecommerce stores and web applications for Bhubaneswar businesses, designed to load fast, rank in search and turn visitors into enquiries. Built by a founder-led team headquartered in Bhubaneswar.',
     art: 'web',
     sections: (r) => `
@@ -113,6 +113,7 @@ ${R.section('guides', 'Guides for planning your website', R.guides(['website-vs-
 ${R.section('local', 'More from Bhubaneswar', R.pills([...LOCAL.filter(([, h]) => h !== '/web-development-company-bhubaneswar'), ['Custom web development services', '/services/web-application-development/customized-web-development']]))}`,
     faq: [
       ['Are you a website design company in Bhubaneswar?', 'Yes. We design and build business websites, ecommerce stores and web applications for businesses in Bhubaneswar and across Odisha, from a team headquartered in Bhubaneswar.'],
+      ['Do you have web designers in Bhubaneswar?', 'Yes. Our web designers and developers work from Bhubaneswar, so local businesses can meet the team, review designs together and get changes made quickly.'],
       ['Do you build ecommerce websites in Bhubaneswar?', 'Yes. We build online stores with UPI, cards and cash on delivery, GST-ready invoices and courier integrations, either on a platform like Shopify or as a custom build when you need more flexibility.'],
       ['Will my website rank on Google?', 'No one can promise rankings, but we build sites the way search engines expect: fast pages, clean structure, the right page for each service and location, and content written around what customers search for.'],
       ['How much does a website cost?', 'It depends on the number of pages, features and integrations. Use the free cost calculator for a first estimate, or book a call and get a written proposal within 24 hours.'],

@@ -229,6 +229,16 @@
       "source": "/tools/url-shortener",
       "destination": "/tools",
       "permanent": true
+    },
+    {
+      "source": "/projects",
+      "destination": "/work",
+      "permanent": true
+    },
+    {
+      "source": "/projects/:path*",
+      "destination": "/work",
+      "permanent": true
     }
   ]
 }
