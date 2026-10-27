@@ -1,7 +1,7 @@
 /**
  * Serverless API Route: POST /api/lead
  * Single entry point for enquiry forms on the site. Forwards each lead to a
- * Google Chat webhook. The webhook URL lives in LEAD_WEBHOOK_URL so it is never
+ * Google Chat webhook, and client enquiries (not job applications) to HubSpot when HUBSPOT_TOKEN is set. The webhook URL lives in LEAD_WEBHOOK_URL so it is never
  * shipped to the browser. If it is not configured, or delivery fails, the
  * handler answers { ok: false, fallback: true } and the page falls back to
  * another channel (Formspree or mailto).
@@ -75,6 +75,51 @@ function escapeChatHtml(str) {
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;');
+}
+
+// HubSpot CRM: client enquiries only (never job applications). Needs HUBSPOT_TOKEN, a private app
+// token with the crm.objects.contacts.write scope, set on the host. Creates or updates the contact
+// by email and attaches a note with the enquiry, the page and where the visitor came from.
+async function sendToHubSpot(lead, title, fields) {
+  const token = process.env.HUBSPOT_TOKEN;
+  const api = (path, body) => fetch('https://api.hubapi.com' + path, {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
+    signal: AbortSignal.timeout(6000)
+  });
+  const [first, ...rest] = lead.name.split(/\s+/);
+  const base = { firstname: first || '', lastname: rest.join(' '), phone: lead.phone, city: lead.city };
+  Object.keys(base).forEach((k) => { if (!base[k]) delete base[k]; });
+  const extra = { lifecyclestage: 'lead', hs_lead_status: 'NEW' };
+
+  const save = async (withExtra) => {
+    const properties = withExtra ? { ...base, ...extra } : base;
+    if (lead.email) {
+      const r = await api('/crm/v3/objects/contacts/batch/upsert', { inputs: [{ id: lead.email.toLowerCase(), idProperty: 'email', properties }] });
+      if (!r.ok) return { ok: false, status: r.status, text: await r.text() };
+      const j = await r.json();
+      return { ok: true, id: j.results && j.results[0] && j.results[0].id };
+    }
+    const r = await api('/crm/v3/objects/contacts', { properties });
+    if (!r.ok) return { ok: false, status: r.status, text: await r.text() };
+    return { ok: true, id: (await r.json()).id };
+  };
+  // An existing customer cannot be moved back to "lead", so retry without the stage fields.
+  let saved = await save(true);
+  if (!saved.ok && saved.status === 400) saved = await save(false);
+  if (!saved.ok || !saved.id) throw new Error(`HubSpot contact failed (${saved.status}): ${String(saved.text).slice(0, 200)}`);
+
+  const rows = fields.map(([k, v]) => `<strong>${escapeChatHtml(k)}:</strong> ${escapeChatHtml(v)}`);
+  if (lead.page) rows.push(`<strong>Page:</strong> https://www.niharrout.com${escapeChatHtml(lead.page)}`);
+  const body = `<p><strong>${escapeChatHtml(title)}</strong></p><p>${rows.join('<br>')}</p>` +
+    (lead.message ? `<p>${escapeChatHtml(lead.message).replace(/\n/g, '<br>')}</p>` : '');
+  const n = await api('/crm/v3/objects/notes', {
+    properties: { hs_timestamp: new Date().toISOString(), hs_note_body: body },
+    associations: [{ to: { id: saved.id }, types: [{ associationCategory: 'HUBSPOT_DEFINED', associationTypeId: 202 }] }]
+  });
+  if (!n.ok) throw new Error(`HubSpot note failed (${n.status})`);
+  return 'hubspot';
 }
 
 async function handler(req, res) {
@@ -257,6 +302,11 @@ async function handler(req, res) {
       if (!resp.ok) throw new Error(`Google Chat webhook failed with status ${resp.status}`);
       return 'google_chat';
     })());
+  }
+
+  // Save client enquiries in HubSpot (job applications stay out of the CRM)
+  if (process.env.HUBSPOT_TOKEN && !isApplication) {
+    deliveryTasks.push(sendToHubSpot(lead, title, contactFields.filter(([k]) => k !== 'Name' && k !== 'Email' && k !== 'Phone')));
   }
 
   // Post to Slack
