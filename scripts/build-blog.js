@@ -15,6 +15,7 @@ const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const SITE = 'https://www.niharrout.com';
 const ORDER = [
+  'mistakes-founders-make-hiring-software-company',
   'mobile-app-testing-checklist',
   'how-to-set-a-software-development-budget',
   'creuto-top-software-development-company-in-odisha',
@@ -333,7 +334,7 @@ ${body}
 
 ${p.faq.length ? `          <section class="article-faq" id="faq" aria-labelledby="faq-title">
             <h2 id="faq-title">Frequently asked questions</h2>
-${p.faq.map(([q, a], i) => `            <details class="reader-faq"${i === 0 ? ' open' : ''}>\n              <summary><h3>${esc(q)}</h3></summary>\n              <p>${esc(a)}</p>\n            </details>`).join('\n')}
+${p.faq.map(([q, a, aHtml], i) => `            <details class="reader-faq"${i === 0 ? ' open' : ''}>\n              <summary><h3>${esc(q)}</h3></summary>\n              <p>${aHtml || esc(a)}</p>\n            </details>`).join('\n')}
           </section>
 ` : ''}
           <div class="blog-cta-box blog-cta-end">
