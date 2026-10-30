@@ -13,7 +13,7 @@ const { families, subs } = require('./site-data/services');
 const { doodle } = require('./site-data/doodles');
 const G = require('./site-data/guides');
 const KW = require('./site-data/keywords');
-const { industries } = require('./site-data/industries');
+const { industries, WORK } = require('./site-data/industries');
 const { SITE, ORG, esc, head, foot, crumbs } = require('./careers/shell');
 const R = require('./site-data/render');
 const approach = require('./site-data/approach');
@@ -42,9 +42,20 @@ function seoFor(key, s) {
   const faq = [
     [/company/.test(k.kw) ? `Are you ${/^([aeiou]|MVP|SEO|AI|ML)/i.test(k.kw) ? 'an' : 'a'} ${k.kw}?` : `Do you offer ${k.kw}?`, `Yes. Creuto is a founder-led software, mobile app and AI development company in India, headquartered in Bhubaneswar. We provide ${base} for startups and businesses across India and abroad, and you work with Nihar Ranjan Rout directly, starting with a free 30-minute call.`],
     ...s.faq,
-    [`How much ${/s$/.test(base) ? 'do' : 'does'} ${base} cost?`, `It depends on scope, platforms and integrations. Use the free app timeline calculator to see how long it takes, or book a call and get a written proposal within 24 hours. After a free 30-minute call you get a written proposal within 24 hours.`],
+    [`How much ${/s$/.test(base) ? 'do' : 'does'} ${base} cost?`, `It depends on scope, platforms and integrations. Use the free app timeline calculator to see how long it takes, or book a call and get a written proposal within 24 hours.`],
   ];
   return { title: k.title, h1: k.h1, desc, faq, k };
+}
+
+// Optional extra sections per service (services.js `extra`): card grids, plain technology pills or case-study cards.
+function extraSections(s) {
+  return (s.extra || []).map((x, i) => {
+    let body = '';
+    if (x.cards) body = R.cards(x.cards);
+    if (x.pills) body = `<ul class="wwm-pills wwm-plain">${x.pills.map((t) => `<li><span>${esc(t)}</span></li>`).join('')}</ul>${x.note ? `<p class="wwm-prose"><a href="${x.note[1]}">${esc(x.note[0])}</a></p>` : ''}`;
+    if (x.work) body = `<ul class="wwm-cards wwm-cards-links">\n${x.work.map((k, n) => `        <li class="wwm-c"><a href="${WORK[k].href}"><span class="wwm-c-n" aria-hidden="true">0${n + 1}</span><h3>${esc(WORK[k].title)}</h3><p>${esc(WORK[k].note)}</p><span class="wwm-c-go">Read the case study</span></a></li>`).join('\n')}\n      </ul>`;
+    return R.section(x.id, x.title, body, i % 2 ? 'wwm-sec-alt' : '');
+  }).join('\n');
 }
 
 function subPage(key) {
@@ -72,6 +83,7 @@ ${R.section('build', seo.k ? `What our ${seo.k.alt[0]} cover` : 'What we build',
 ${R.section('approach', 'How we approach ' + s.name, R.prose(approach.subs[key]), 'wwm-sec-alt')}
 ${R.section('fit', 'When this is a good fit', R.fits('A good fit when', s.fits))}
 ${R.section('process', 'How an engagement works', R.process(), 'wwm-sec-alt')}
+${extraSections(s)}
 ${R.section('related', 'Related services and industries', `<div class="wwm-rel"><div><h3>More in ${esc(fam.name)}</h3>${R.pills(related)}</div>${inds.length ? `<div><h3>Industries we build this for</h3>${R.pills(inds)}</div>` : ''}</div>`)}
 ${R.section('faq', 'Questions about ' + s.name, R.faqHtml(seo.faq))}
 ${R.section('guides', 'Guides on this topic', R.guides(G.forSub(key, fam.key)), 'wwm-sec-alt')}
