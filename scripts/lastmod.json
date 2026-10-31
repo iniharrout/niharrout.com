@@ -179,6 +179,10 @@
     "hash": "98bfe5bc1f53f343",
     "date": "2026-10-22"
   },
+  "blog/how-to-build-an-event-booking-app/index.html": {
+    "hash": "44c5c9d3f8d65a1a",
+    "date": "2026-10-31"
+  },
   "blog/how-to-choose-a-software-development-company/index.html": {
     "hash": "099f1da61bfed3e0",
     "date": "2026-10-28"
@@ -220,8 +224,8 @@
     "date": "2026-10-22"
   },
   "blog/index.html": {
-    "hash": "a060342695eded99",
-    "date": "2026-10-30"
+    "hash": "eba7a66fcbcbb390",
+    "date": "2026-10-31"
   },
   "blog/inventory-management-software-development/index.html": {
     "hash": "85f161e07fa87dfe",
@@ -276,32 +280,32 @@
     "date": "2026-10-22"
   },
   "blog/page/2/index.html": {
-    "hash": "7f61da45b51e2432",
-    "date": "2026-10-30"
+    "hash": "dc9be99d6ee6a047",
+    "date": "2026-10-31"
   },
   "blog/page/3/index.html": {
-    "hash": "0aa79a34d7385d8f",
-    "date": "2026-10-30"
+    "hash": "5157f44a1b21df0f",
+    "date": "2026-10-31"
   },
   "blog/page/4/index.html": {
-    "hash": "01fd9aeeb0de147e",
-    "date": "2026-10-30"
+    "hash": "fea10a0a81f90196",
+    "date": "2026-10-31"
   },
   "blog/page/5/index.html": {
-    "hash": "4e3281063898426b",
-    "date": "2026-10-30"
+    "hash": "3d87954a7d26ac34",
+    "date": "2026-10-31"
   },
   "blog/page/6/index.html": {
-    "hash": "9293a3c75f65516c",
-    "date": "2026-10-30"
+    "hash": "ddfcf242fe8bb1d1",
+    "date": "2026-10-31"
   },
   "blog/page/7/index.html": {
-    "hash": "2b36f7a4930a04fe",
-    "date": "2026-10-30"
+    "hash": "eea38bc60eafad8c",
+    "date": "2026-10-31"
   },
   "blog/page/8/index.html": {
-    "hash": "7c5399d93b509229",
-    "date": "2026-10-30"
+    "hash": "f9728c9097e1a380",
+    "date": "2026-10-31"
   },
   "blog/pragmatic-enterprise-ai-workflows/index.html": {
     "hash": "0f99ba63baebceac",
@@ -364,36 +368,36 @@
     "date": "2026-10-22"
   },
   "blog/topic/ai/index.html": {
-    "hash": "d04a88bc8c760fa0",
-    "date": "2026-10-30"
+    "hash": "bea6db63d8273608",
+    "date": "2026-10-31"
   },
   "blog/topic/careers/index.html": {
-    "hash": "6e4f8d96353be61f",
-    "date": "2026-10-30"
+    "hash": "2538dd95fba1465f",
+    "date": "2026-10-31"
   },
   "blog/topic/cost-and-hiring/index.html": {
-    "hash": "8f9c036468fbf5cc",
-    "date": "2026-10-30"
+    "hash": "1a38b95ac0a3b52d",
+    "date": "2026-10-31"
   },
   "blog/topic/industries/index.html": {
-    "hash": "3bac45c697f4b806",
-    "date": "2026-10-30"
+    "hash": "d64ac88dc7ea4263",
+    "date": "2026-10-31"
   },
   "blog/topic/mobile/index.html": {
-    "hash": "5763b8ac0de385c4",
-    "date": "2026-10-30"
+    "hash": "be068a51dd0650f1",
+    "date": "2026-10-31"
   },
   "blog/topic/news/index.html": {
-    "hash": "8faddbaf3a5e8b0e",
-    "date": "2026-10-30"
+    "hash": "cbdaf9df32dfae73",
+    "date": "2026-10-31"
   },
   "blog/topic/product/index.html": {
-    "hash": "f35a534e5bbc9b05",
-    "date": "2026-10-30"
+    "hash": "5ed8498abee4de19",
+    "date": "2026-10-31"
   },
   "blog/topic/software-and-cloud/index.html": {
-    "hash": "ffde38c11241b0ae",
-    "date": "2026-10-30"
+    "hash": "bb21004b9737c31a",
+    "date": "2026-10-31"
   },
   "blog/ui-ux-designer-portfolio-tips/index.html": {
     "hash": "049fc242445ccd1e",
@@ -476,8 +480,8 @@
     "date": "2026-10-28"
   },
   "index.html": {
-    "hash": "a2ee3544bf358515",
-    "date": "2026-10-30"
+    "hash": "67a6ebecca6796db",
+    "date": "2026-10-31"
   },
   "industries/agriculture/index.html": {
     "hash": "772706a76ada6391",

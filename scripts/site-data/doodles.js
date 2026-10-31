@@ -204,6 +204,7 @@ function doodle(name, cls = 'doodle', tone = toneOf(name)) {
 
 // ---- blog cover scenes: a main doodle and a smaller supporting one on a soft panel (480 x 300 canvas)
 const BLOG_ART = {
+  'how-to-build-an-event-booking-app': ['events', 'calendar', 'sky'],
   'erp-data-migration-checklist': ['erp', 'check', 'sun'],
   'how-to-choose-an-ai-development-company': ['ai', 'question', 'sky'],
   'mistakes-founders-make-hiring-software-company': ['question', 'check', 'peach'],
