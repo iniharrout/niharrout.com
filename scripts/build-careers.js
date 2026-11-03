@@ -169,6 +169,7 @@ ${list.map(row).join('\n')}
         <h1>Work with me.</h1>
         <p class="wwm-sub">${roles.length} remote roles and internships are open to people across India, in engineering, design and product, sales and marketing, and my own team. You work with me directly, on real products for real clients.</p>
         <div class="wwm-cta-row"><a class="wwm-btn is-primary" href="#roles">See open roles ${ARROW}</a></div>
+        <p class="wwm-hire-note">Looking to hire a team to build your product instead? <a href="/services">See what Creuto builds</a> or <a href="/book">book a free call</a>.</p>
         <div class="wwm-by">
           <img src="/assets/nihar-avatar.jpg" width="96" height="96" alt="Nihar Ranjan Rout">
           <span><strong>Nihar Ranjan Rout</strong>Founder &amp; CEO, Creuto</span>
@@ -381,6 +382,7 @@ ${faqs.map(([q, a]) => `          <details class="wwm-q"><summary>${esc(q)}</sum
         <p class="jd-card-note">Applications go to Nihar Ranjan Rout directly.</p>
       </div>
       ${guide ? `<a class="jd-guide" href="/blog/${d.guide}"><span>Career guide</span><strong>${esc(guide.title)}</strong></a>` : ''}
+      <a class="jd-guide jd-hire" href="/services"><span>Hiring a team instead?</span><strong>Creuto builds apps, websites, ERP and AI for businesses. See our services</strong></a>
     </aside>
   </div>
 

@@ -79,6 +79,7 @@ function subPage(key) {
     crumbs: [['Home', '/'], ['Services', '/services'], [fam.name, fam.path], [s.name, subUrl(key)]],
     pill: fam.name, h1: seo.h1, sub: s.intro, secondary: ['Get a free quote', '#quote'], art: SUB_DOODLE[key] || DOODLE[fam.key],
   })}
+${R.glance(seo.h1)}
 ${R.section('build', seo.k ? `What our ${seo.k.alt[0]} cover` : 'What we build', R.cards(s.builds))}
 ${R.section('approach', 'How we approach ' + s.name, R.prose(approach.subs[key]), 'wwm-sec-alt')}
 ${R.section('fit', 'When this is a good fit', R.fits('A good fit when', s.fits))}

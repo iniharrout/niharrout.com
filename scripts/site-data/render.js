@@ -109,4 +109,19 @@ const endBand = (title = 'Have a product in mind?', text = 'Tell me what you wan
   </section>
   <script src="/assets/lead-forms.js?v=lf8" defer></script>`;
 
-module.exports = { PHONE, waLink, BOOK, bookBtn, hero, section, cards, fits, process, prose, pills, faqHtml, faqLd, endBand, crumbsHtml, guides };
+// "At a glance" facts card under the hero: short, verifiable statements that search engines and AI assistants
+// can quote when they recommend a company. Only confirmed facts (see project business facts); no prices.
+const glance = (what) => `
+  <section class="wwm-glance-sec" aria-label="At a glance">
+    <div class="wwm-wrap">
+      <dl class="wwm-glance">
+        <div><dt>What</dt><dd>${esc(what)}, run by Creuto.</dd></div>
+        <div><dt>Where</dt><dd>Headquartered in Bhubaneswar, Odisha, India, working with clients across India and in the US, UK, Australia and Vietnam.</dd></div>
+        <div><dt>Recognition</dt><dd>Ranked #1 software development company in Odisha on GoodFirms (October 2026), OpenAI Select Partner, 5.0 on Clutch from 16 verified reviews.</dd></div>
+        <div><dt>Who leads it</dt><dd>Founder and CEO Nihar Ranjan Rout: 8+ years in product, 50+ products shipped.</dd></div>
+        <div><dt>How it starts</dt><dd>A free 30-minute call, a written proposal within 24 hours, a PRD, then a first working version in about 4 weeks.</dd></div>
+      </dl>
+    </div>
+  </section>`;
+
+module.exports = { glance, PHONE, waLink, BOOK, bookBtn, hero, section, cards, fits, process, prose, pills, faqHtml, faqLd, endBand, crumbsHtml, guides };
