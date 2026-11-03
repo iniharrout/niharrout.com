@@ -1,9 +1,9 @@
 module.exports = {
   slug: "how-to-reduce-ai-hallucinations",
-  title: "How to Reduce AI Hallucinations in Business Applications",
+  title: "How to Reduce AI Hallucinations in Business Reports and Apps",
   headline: "How to Reduce AI Hallucinations in Chatbots and Business AI Features",
   shortTitle: "Reduce AI hallucinations",
-  description: "Why AI models hallucinate and how to reduce it in business apps: grounding, retrieval, clear instructions, citations, refusal rules, checks and testing.",
+  description: "Practical ways to handle AI hallucinations in business reports and apps: grounding, retrieval, citations, refusal rules, human checks and testing.",
   keywords: ["how to reduce AI hallucinations", "AI hallucination", "LLM hallucination prevention", "grounding AI answers", "reliable AI chatbot"],
   category: "Enterprise AI",
   badge: "ENTERPRISE AI",

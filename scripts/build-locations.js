@@ -42,7 +42,7 @@ const pageUrl = (c, key) => `/locations/${c.slug}/${services[key].slug}`;
 
 /* ---------- Shared page chrome ---------- */
 
-function head({ title, description, path: urlPath, ogType = 'website', graph, noindex = false, theme = '' }) {
+function head({ title, description, path: urlPath, ogType = 'website', graph, noindex = false, follow = false, theme = '' }) {
   if (title.length > 65) warnings.push(`title >65 chars (${title.length}): ${title}`);
   if (description.length > 165) warnings.push(`description >165 chars (${description.length}): ${urlPath}`);
   const canonical = SITE + urlPath;
@@ -55,7 +55,7 @@ function head({ title, description, path: urlPath, ogType = 'website', graph, no
   <title>${esc(title)}</title>
   <meta name="description" content="${esc(description)}">
   <meta name="author" content="Nihar Ranjan Rout">
-  <meta name="robots" content="${noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large'}">
+  <meta name="robots" content="${noindex ? (follow ? 'noindex, follow' : 'noindex, nofollow') : 'index, follow, max-image-preview:large'}">
   <link rel="canonical" href="${canonical}">
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
@@ -487,7 +487,10 @@ ${relatedSection(c, svcKey)}
 ${ctaBand(`Ready to start ${svc.nameLc} in ${c.name}?`, 'Book a discovery call with Nihar. We will scope features, timeline and budget before you commit to anything.')}
   </main>
 `;
-  return head({ title, description, path: urlPath, graph, theme: svcKey === 'ai' ? 'ai' : 'demo' }) + body + footer(c);
+  // Service pages for smaller Odisha cities repeat the Bhubaneswar pages with a different city name, so they stay
+  // out of Google (noindex, links still followed) and the Bhubaneswar pages carry those searches instead.
+  const thin = c.region === 'odisha';
+  return head({ title, description, path: urlPath, graph, noindex: thin, follow: thin, theme: svcKey === 'ai' ? 'ai' : 'demo' }) + body + footer(c);
 }
 
 /* ---------- Page: city hub ---------- */

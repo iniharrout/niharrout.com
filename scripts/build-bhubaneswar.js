@@ -46,8 +46,8 @@ const PAGES = [
   {
     slug: 'software-development-company-bhubaneswar',
     name: 'Software Development Company in Bhubaneswar',
-    title: 'Top Software Development Company in Bhubaneswar | Nihar Ranjan Rout',
-    description: 'Top software development company in Bhubaneswar, India: ranked #1 in Odisha by GoodFirms. Apps, websites, ERP and AI by a founder-led team. Free call.',
+    title: 'Top Software Company in Bhubaneswar, #1 in Odisha | Creuto',
+    description: 'Software company in Bhubaneswar ranked #1 of 74 in Odisha by GoodFirms. Apps, websites, ERP and AI from a founder-led team. Free 30-minute call.',
     image: '/assets/blog/creuto-top-software-development-company-in-odisha-share.jpg',
     pill: 'Bhubaneswar, Odisha',
     h1: 'Top Software Development Company in Bhubaneswar',

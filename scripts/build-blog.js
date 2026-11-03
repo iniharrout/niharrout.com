@@ -251,7 +251,7 @@ ${p.keywords.map((k) => `  <meta property="article:tag" content="${esc(k)}">`).j
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&amp;family=Inter:wght@400;500;600;700&amp;display=swap">
   <link rel="stylesheet" href="/assets/design-system.css?v=blue9">
-  <link rel="stylesheet" href="/assets/blog-post.css?v=bp6">
+  <link rel="stylesheet" href="/assets/blog-post.css?v=bp7">
 </head>
 
 <body>
@@ -343,7 +343,7 @@ ${p.faq.length ? `          <section class="article-faq" id="faq" aria-labelledb
 ${p.faq.map(([q, a, aHtml], i) => `            <details class="reader-faq"${i === 0 ? ' open' : ''}>\n              <summary><h3>${esc(q)}</h3></summary>\n              <p>${aHtml || esc(a)}</p>\n            </details>`).join('\n')}
           </section>
 ` : ''}
-          <div class="blog-cta-box blog-cta-end">
+${p.category === 'Careers' ? `          <div class="blog-cta-box blog-cta-end">
             <h3>${esc(p.endCta.title)}</h3>
             <p>${esc(p.endCta.text)}</p>
             <div class="blog-cta-actions">
@@ -351,7 +351,30 @@ ${p.faq.map(([q, a, aHtml], i) => `            <details class="reader-faq"${i ==
               <a href="${p.endCta.service.href}" class="blog-cta-link">${esc(p.endCta.service.label)} ${ARROW}</a>
             </div>
           </div>
-
+` : `          <div class="blog-cta-box blog-cta-end blog-quote" id="quote">
+            <div class="blog-quote-copy">
+              <p class="blog-quote-kicker">Free quote within 24 hours</p>
+              <h3>${esc(p.endCta.title)}</h3>
+              <p>${esc(p.endCta.text)}</p>
+              <div class="blog-cta-actions">
+                <a href="https://calendly.com/creuto/meet" target="_blank" rel="noopener" data-book="true" class="cl-button -primary btn-book-call">Book a free 30-minute call <span style="margin-left:4px;">&rarr;</span></a>
+                <a href="https://wa.me/917608844995?text=${encodeURIComponent(`Hi Nihar, I read your guide "${p.shortTitle || p.title}" and would like to discuss a project.`)}" target="_blank" rel="noopener" class="blog-cta-link">Chat on WhatsApp ${ARROW}</a>
+              </div>
+              <p class="blog-quote-more"><a href="${p.endCta.service.href}">${esc(p.endCta.service.label)}</a></p>
+            </div>
+            <form class="blog-qform" action="/api/lead" method="POST" aria-label="Get a free quote">
+              <input type="hidden" name="service" value="${esc((() => { const t = p.endCta.service.label.replace(/^(see|explore|view|read|our|the)\s+/i, '').replace(/^(the)\s+/i, ''); return t.charAt(0).toUpperCase() + t.slice(1); })())}">
+              <div aria-hidden="true" class="blog-hp"><label>Leave this empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+              <label>Your name<input type="text" name="name" autocomplete="name" required></label>
+              <label>Phone or WhatsApp<input type="tel" name="phone" autocomplete="tel" required></label>
+              <label>Work email<input type="email" name="email" autocomplete="email" required></label>
+              <label>What do you want to build?<textarea name="details" rows="3" placeholder="A few lines is enough." required></textarea></label>
+              <button type="submit" class="cl-button -primary">Get my free quote <span style="margin-left:4px;">&rarr;</span></button>
+              <p class="blog-qnote">Goes straight to Nihar. Reply within 24 hours.</p>
+            </form>
+          </div>
+          <script src="/assets/lead-forms.js?v=lf8" defer></script>
+`}
           <div class="article-author-card">
             <img src="/assets/nihar-avatar.jpg" alt="Nihar Ranjan Rout" width="96" height="96" loading="lazy" decoding="async">
             <div>

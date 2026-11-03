@@ -224,7 +224,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&amp;family=Inter:wght@400;500;600;700&amp;display=swap">
   <link rel="stylesheet" href="/assets/design-system.css?v=blue9">
-  <link rel="stylesheet" href="/assets/blog-post.css?v=bp6">
+  <link rel="stylesheet" href="/assets/blog-post.css?v=bp7">
   <link rel="stylesheet" href="/assets/chrome.css?v=60">
   <script src="/assets/chrome.js?v=20" defer></script>
   <link rel="stylesheet" href="/assets/schedule-popup.css?v=sp3">
@@ -712,14 +712,29 @@
             </details>
           </section>
 
-          <div class="blog-cta-box blog-cta-end">
-            <h3>Planning an AI feature or product?</h3>
-            <p>Creuto is an OpenAI Select Partner. After a short call you get a clear written proposal within 24 hours, with build and running costs set out separately.</p>
-            <div class="blog-cta-actions">
-              <a href="https://calendly.com/creuto/meet" target="_blank" rel="noopener" data-book="true" class="cl-button -primary btn-book-call">Book a free strategy call <span style="margin-left:4px;">&rarr;</span></a>
-              <a href="/services/ai-product-development/ai-development" class="blog-cta-link">See AI development <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="blog-cta-box blog-cta-end blog-quote" id="quote">
+            <div class="blog-quote-copy">
+              <p class="blog-quote-kicker">Free quote within 24 hours</p>
+              <h3>Planning an AI feature or product?</h3>
+              <p>Creuto is an OpenAI Select Partner. After a short call you get a clear written proposal within 24 hours, with build and running costs set out separately.</p>
+              <div class="blog-cta-actions">
+                <a href="https://calendly.com/creuto/meet" target="_blank" rel="noopener" data-book="true" class="cl-button -primary btn-book-call">Book a free 30-minute call <span style="margin-left:4px;">&rarr;</span></a>
+                <a href="https://wa.me/917608844995?text=Hi%20Nihar%2C%20I%20read%20your%20guide%20%22Choose%20an%20AI%20company%22%20and%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener" class="blog-cta-link">Chat on WhatsApp <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+              </div>
+              <p class="blog-quote-more"><a href="/services/ai-product-development/ai-development">See AI development</a></p>
             </div>
+            <form class="blog-qform" action="/api/lead" method="POST" aria-label="Get a free quote">
+              <input type="hidden" name="service" value="AI development">
+              <div aria-hidden="true" class="blog-hp"><label>Leave this empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+              <label>Your name<input type="text" name="name" autocomplete="name" required></label>
+              <label>Phone or WhatsApp<input type="tel" name="phone" autocomplete="tel" required></label>
+              <label>Work email<input type="email" name="email" autocomplete="email" required></label>
+              <label>What do you want to build?<textarea name="details" rows="3" placeholder="A few lines is enough." required></textarea></label>
+              <button type="submit" class="cl-button -primary">Get my free quote <span style="margin-left:4px;">&rarr;</span></button>
+              <p class="blog-qnote">Goes straight to Nihar. Reply within 24 hours.</p>
+            </form>
           </div>
+          <script src="/assets/lead-forms.js?v=lf8" defer></script>
 
           <div class="article-author-card">
             <img src="/assets/nihar-avatar.jpg" alt="Nihar Ranjan Rout" width="96" height="96" loading="lazy" decoding="async">

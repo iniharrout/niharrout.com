@@ -148,3 +148,24 @@
 }
 @media (prefers-reduced-motion: reduce) { .reader-progress { display: none; } }
 @media print { .reader-progress, .reader-side, .reader-toc-mobile, .reader-related { display: none; } }
+
+/* End-of-post quote box: contact options beside a short quote form (scripts/build-blog.js) */
+.blog-quote { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px 36px; align-items: start; }
+.reader .prose .blog-quote p.blog-quote-kicker { display: inline-block; margin: 0 0 12px; padding: 5px 11px; border-radius: 999px; background: rgba(255, 255, 255, 0.14); color: #fff; font-size: 12.5px; font-weight: 600; letter-spacing: .02em; }
+.reader .prose .blog-quote p.blog-quote-more { margin: 18px 0 0; font-size: 14px; }
+.reader .prose .blog-quote p.blog-quote-more a { color: rgba(255, 255, 255, 0.85); }
+.blog-qform { display: grid; gap: 12px; padding: 20px; border-radius: 16px; background: #fff; color: #0b0d12; }
+.blog-qform label { display: grid; gap: 5px; font-size: 13.5px; font-weight: 600; color: #0b0d12; }
+.blog-qform input, .blog-qform textarea { width: 100%; box-sizing: border-box; padding: 11px 13px; border: 1px solid rgba(15, 23, 42, .18); border-radius: 10px; background: #fff; color: #0b0d12; font: 400 15px/1.4 Inter, system-ui, sans-serif; }
+.blog-qform textarea { resize: vertical; min-height: 84px; }
+.blog-qform input:focus, .blog-qform textarea:focus { outline: 2px solid #1d4ed8; outline-offset: 1px; }
+.blog-qform .cl-button { width: 100%; justify-content: center; }
+.reader .prose .blog-qform p.blog-qnote { margin: 0; font-size: 12.5px; color: #64748b; text-align: center; }
+.blog-qform + .lead-form-status, .blog-quote .lead-form-status { grid-column: 1 / -1; }
+.blog-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+@media (max-width: 860px) { .blog-quote { grid-template-columns: 1fr; } }
+.reader .prose .blog-cta-box.blog-quote, .blog-cta-box.blog-quote { text-align: left; }
+.blog-quote .blog-cta-actions { justify-content: flex-start; }
+.blog-quote .blog-qform label { text-align: left; }
+.reader .prose .blog-quote p.blog-quote-more a, .blog-quote p.blog-quote-more a { color: #c7d7fe; text-decoration: underline; text-underline-offset: 3px; }
+.reader .prose .blog-quote .blog-qform p.blog-qnote, .blog-quote .blog-qform p.blog-qnote { color: #475569; }
