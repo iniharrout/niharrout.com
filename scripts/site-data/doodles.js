@@ -204,6 +204,7 @@ function doodle(name, cls = 'doodle', tone = toneOf(name)) {
 
 // ---- blog cover scenes: a main doodle and a smaller supporting one on a soft panel (480 x 300 canvas)
 const BLOG_ART = {
+  'non-functional-requirements-checklist': ['prd', 'check', 'sky'],
   'scope-creep-in-software-projects': ['triage', 'pricing', 'peach'],
   'hire-development-team-in-india-from-australia': ['remote', 'chat', 'sun'],
   'how-to-write-a-software-rfp': ['prd', 'pricing', 'sun'],
