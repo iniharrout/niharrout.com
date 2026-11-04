@@ -78,6 +78,8 @@ const BY_SUB = {
   'ai-powered-mobile-app-development': ['how-to-add-ai-to-an-existing-product', 'how-to-build-an-ai-chatbot-for-business', 'react-native-vs-flutter'],
   'machine-learning-analytics': ['rag-vs-fine-tuning', 'generative-ai-use-cases-for-business', 'pragmatic-enterprise-ai-workflows'],
   'generative-ai': ['generative-ai-use-cases-for-business', 'how-to-reduce-ai-hallucinations', 'rag-vs-fine-tuning'],
+  'rag-development': ['rag-vs-fine-tuning', 'how-to-reduce-ai-hallucinations', 'how-to-build-an-ai-chatbot-for-business'],
+  'ai-agent-development': ['ai-agents-for-business', 'ai-voice-agents-for-business', 'pragmatic-enterprise-ai-workflows'],
   'chatgpt-solutions': ['how-to-build-an-ai-chatbot-for-business', 'how-to-reduce-ai-hallucinations', 'openai-select-partner'],
   'mvp-development': ['mvp-vs-prototype-vs-proof-of-concept', 'cost-to-build-mvp-2026', 'how-long-does-it-take-to-build-an-app'],
   'rapid-prototyping': ['mvp-vs-prototype-vs-proof-of-concept', 'ui-vs-ux-design-difference', 'how-to-validate-a-startup-idea'],

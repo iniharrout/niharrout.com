@@ -496,7 +496,7 @@
     "date": "2026-11-04"
   },
   "index.html": {
-    "hash": "ebf09e9352942939",
+    "hash": "433761b76bee088d",
     "date": "2026-11-04"
   },
   "industries/agriculture/index.html": {
@@ -763,32 +763,40 @@
     "hash": "a21012cc4f77127a",
     "date": "2026-10-28"
   },
+  "services/ai-product-development/ai-agent-development/index.html": {
+    "hash": "f222d85bb274cfb6",
+    "date": "2026-11-04"
+  },
   "services/ai-product-development/ai-consulting/index.html": {
-    "hash": "4c82e2908bd80002",
+    "hash": "33ba6fa039573d3f",
     "date": "2026-11-04"
   },
   "services/ai-product-development/ai-development/index.html": {
-    "hash": "d2a27bed81d2838a",
+    "hash": "cf413031d6bd077e",
     "date": "2026-11-04"
   },
   "services/ai-product-development/ai-powered-mobile-app-development/index.html": {
-    "hash": "e42816b7768a7828",
+    "hash": "60890608c80faf35",
     "date": "2026-11-04"
   },
   "services/ai-product-development/chatgpt-solutions/index.html": {
-    "hash": "9f8831a99f8b3543",
+    "hash": "e3a682942c0ef2c6",
     "date": "2026-11-04"
   },
   "services/ai-product-development/generative-ai/index.html": {
-    "hash": "dea31dc4e9584b09",
+    "hash": "1a4839f5ad3f6efe",
     "date": "2026-11-04"
   },
   "services/ai-product-development/index.html": {
-    "hash": "7cea3634374f317b",
-    "date": "2026-10-25"
+    "hash": "43a00ad21da86663",
+    "date": "2026-11-04"
   },
   "services/ai-product-development/machine-learning-analytics/index.html": {
-    "hash": "5b84520b208ba674",
+    "hash": "43214f5e47130ac4",
+    "date": "2026-11-04"
+  },
+  "services/ai-product-development/rag-development/index.html": {
+    "hash": "af0b920800deb56e",
     "date": "2026-11-04"
   },
   "services/custom-software-development/crm-development/index.html": {
@@ -848,8 +856,8 @@
     "date": "2026-11-04"
   },
   "services/index.html": {
-    "hash": "8acabac94be64b6c",
-    "date": "2026-10-31"
+    "hash": "b39c7fe963d8cd38",
+    "date": "2026-11-04"
   },
   "services/mobile-app-development/android-app-development/index.html": {
     "hash": "2ba12451d6b78b14",

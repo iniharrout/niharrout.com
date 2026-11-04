@@ -736,11 +736,15 @@
   </url>
   <url>
     <loc>https://www.niharrout.com/services</loc>
-    <lastmod>2026-10-31</lastmod>
+    <lastmod>2026-11-04</lastmod>
   </url>
   <url>
     <loc>https://www.niharrout.com/services/ai-product-development</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://www.niharrout.com/services/ai-product-development/ai-agent-development</loc>
+    <lastmod>2026-11-04</lastmod>
   </url>
   <url>
     <loc>https://www.niharrout.com/services/ai-product-development/ai-consulting</loc>
@@ -764,6 +768,10 @@
   </url>
   <url>
     <loc>https://www.niharrout.com/services/ai-product-development/machine-learning-analytics</loc>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://www.niharrout.com/services/ai-product-development/rag-development</loc>
     <lastmod>2026-11-04</lastmod>
   </url>
   <url>

@@ -498,6 +498,40 @@ module.exports = {
       ['How do we measure whether it works?', 'We build a test set of real questions and expected answers, and track accuracy before launch and after every change.'],
     ],
   },
+  'rag-development': {
+    features: [
+      ['Answers with sources', 'Every answer shows the document and passage it came from.'],
+      ['Hybrid search', 'Meaning-based and keyword search combined for better retrieval.'],
+      ['Many source types', 'PDFs, Word files, websites, tickets, spreadsheets and databases.'],
+      ['Permission-aware results', 'Answers respect who is allowed to read each document.'],
+      ['Freshness', 'New and changed documents picked up automatically.'],
+      ['Accuracy testing', 'A test set of real questions run before every release.'],
+    ],
+    tech: ['OpenAI', 'Python', 'Node.js', 'PostgreSQL', 'Redis', 'React', 'AWS', 'Azure'],
+    work: ['skribe'],
+    faq: [
+      ['How long does it take to build a RAG assistant?', 'A focused pilot on one set of documents can be working in a few weeks. Larger systems with many sources and permission rules take longer, and the written proposal sets out the plan.'],
+      ['Will our documents be used to train the AI model?', 'No. With RAG your documents are looked up at question time, and we use provider settings that do not train on your data.'],
+      ['What if the answer is not in our documents?', 'The assistant says so and, where useful, routes the question to a person, instead of guessing.'],
+    ],
+  },
+  'ai-agent-development': {
+    features: [
+      ['Multi-step task handling', 'Agents that plan and complete several steps, not just reply.'],
+      ['Connected to your tools', 'CRM, ERP, helpdesk, email, calendar and databases through secure APIs.'],
+      ['Human approval', 'Sign-off required for payments, deletions and other sensitive actions.'],
+      ['Guardrails and limits', 'Allowed tools, spending caps and clear stop conditions.'],
+      ['Full action log', 'A record of every step for review and audit.'],
+      ['WhatsApp and voice channels', 'Agents that work in WhatsApp chats or on phone calls where it helps.'],
+    ],
+    tech: ['OpenAI', 'Python', 'Node.js', 'PostgreSQL', 'Redis', 'React', 'AWS'],
+    work: ['skribe'],
+    faq: [
+      ['How long does it take to build an AI agent?', 'A pilot for one process can be running in a few weeks. We start narrow, measure results with your team and widen the agent\'s responsibilities step by step.'],
+      ['Can an AI agent work with our CRM or ERP?', 'Yes. We connect agents to your CRM, ERP and other systems through their APIs, with permissions limited to what the process needs.'],
+      ['What happens when the agent is unsure?', 'It stops and asks a person, following rules we agree with you, rather than guessing.'],
+    ],
+  },
   'chatgpt-solutions': {
     features: [
       ['Custom ChatGPT-style assistant', 'A branded assistant that knows your business.'],
