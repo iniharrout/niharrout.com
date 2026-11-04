@@ -15,6 +15,11 @@ const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const SITE = 'https://www.niharrout.com';
 const ORDER = [
+  'how-to-make-an-app',
+  'what-is-erp',
+  'what-is-rag-in-ai',
+  'what-is-agentic-ai',
+  'how-to-create-a-website-for-business',
   'non-functional-requirements-checklist',
   'scope-creep-in-software-projects',
   'hire-development-team-in-india-from-australia',

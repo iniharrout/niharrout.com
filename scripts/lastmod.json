@@ -199,6 +199,10 @@
     "hash": "7acbd765bf59a2ad",
     "date": "2026-11-04"
   },
+  "blog/how-to-create-a-website-for-business/index.html": {
+    "hash": "8c9db0d3e1abd658",
+    "date": "2026-11-05"
+  },
   "blog/how-to-get-a-remote-software-job-from-india/index.html": {
     "hash": "4f285e7d7f2ff2bf",
     "date": "2026-10-26"
@@ -210,6 +214,10 @@
   "blog/how-to-hire-app-developers-in-india/index.html": {
     "hash": "e5493df92b86eeb1",
     "date": "2026-11-04"
+  },
+  "blog/how-to-make-an-app/index.html": {
+    "hash": "1a4bb10ebaff0f9e",
+    "date": "2026-11-05"
   },
   "blog/how-to-reduce-ai-hallucinations/index.html": {
     "hash": "0e85e60d5c0451c8",
@@ -232,8 +240,8 @@
     "date": "2026-11-04"
   },
   "blog/index.html": {
-    "hash": "3ba216ec0b30693d",
-    "date": "2026-11-04"
+    "hash": "d125c25da203f051",
+    "date": "2026-11-05"
   },
   "blog/inventory-management-software-development/index.html": {
     "hash": "070558f6804dbf41",
@@ -292,32 +300,36 @@
     "date": "2026-11-04"
   },
   "blog/page/2/index.html": {
-    "hash": "873581e2be150dc2",
-    "date": "2026-11-04"
+    "hash": "951dd5806b47810d",
+    "date": "2026-11-05"
   },
   "blog/page/3/index.html": {
-    "hash": "3f162f2e44128d53",
-    "date": "2026-11-04"
+    "hash": "19785dbc67e9d530",
+    "date": "2026-11-05"
   },
   "blog/page/4/index.html": {
-    "hash": "051119017e3ae3db",
-    "date": "2026-11-04"
+    "hash": "66c5d8ca055917b7",
+    "date": "2026-11-05"
   },
   "blog/page/5/index.html": {
-    "hash": "556e6ce11085d6b3",
-    "date": "2026-11-04"
+    "hash": "4fa27371f84b0af2",
+    "date": "2026-11-05"
   },
   "blog/page/6/index.html": {
-    "hash": "71b62a3e8cdbe191",
-    "date": "2026-11-04"
+    "hash": "a92250fecd7133b5",
+    "date": "2026-11-05"
   },
   "blog/page/7/index.html": {
-    "hash": "b8a2e67c4a3b1a0a",
-    "date": "2026-11-04"
+    "hash": "0078a84009273be1",
+    "date": "2026-11-05"
   },
   "blog/page/8/index.html": {
-    "hash": "3635baf1144073d9",
-    "date": "2026-11-04"
+    "hash": "48054617134f359a",
+    "date": "2026-11-05"
+  },
+  "blog/page/9/index.html": {
+    "hash": "d904fd562a7245ac",
+    "date": "2026-11-05"
   },
   "blog/pragmatic-enterprise-ai-workflows/index.html": {
     "hash": "0f99ba63baebceac",
@@ -384,36 +396,36 @@
     "date": "2026-11-04"
   },
   "blog/topic/ai/index.html": {
-    "hash": "8eda5344178433d3",
-    "date": "2026-11-04"
+    "hash": "f3ac95b297d1cb96",
+    "date": "2026-11-05"
   },
   "blog/topic/careers/index.html": {
-    "hash": "f0c3c1b2559fb094",
-    "date": "2026-11-04"
+    "hash": "b835fb6bafa58917",
+    "date": "2026-11-05"
   },
   "blog/topic/cost-and-hiring/index.html": {
-    "hash": "9f7d4fcc0e6c9e8d",
-    "date": "2026-11-04"
+    "hash": "d0524356abfc35d2",
+    "date": "2026-11-05"
   },
   "blog/topic/industries/index.html": {
-    "hash": "c99540b1bb9b3ae4",
-    "date": "2026-11-04"
+    "hash": "eeb4cfdb8a43f9b8",
+    "date": "2026-11-05"
   },
   "blog/topic/mobile/index.html": {
-    "hash": "74e975f083ad6adb",
-    "date": "2026-11-04"
+    "hash": "e85d3d2905eae4fe",
+    "date": "2026-11-05"
   },
   "blog/topic/news/index.html": {
-    "hash": "cd8f91e89a639fe7",
-    "date": "2026-11-04"
+    "hash": "92810acbc1515793",
+    "date": "2026-11-05"
   },
   "blog/topic/product/index.html": {
-    "hash": "319ffb05bd22c4cb",
-    "date": "2026-11-04"
+    "hash": "ae3aa1c3a09e03e8",
+    "date": "2026-11-05"
   },
   "blog/topic/software-and-cloud/index.html": {
-    "hash": "4978b0acf6ec6af1",
-    "date": "2026-11-04"
+    "hash": "69f43b4c60a567a6",
+    "date": "2026-11-05"
   },
   "blog/ui-ux-designer-portfolio-tips/index.html": {
     "hash": "049fc242445ccd1e",
@@ -438,6 +450,18 @@
   "blog/what-is-a-prd-how-to-write-a-product-requirements-document/index.html": {
     "hash": "9b6c6c18eefa07cd",
     "date": "2026-11-04"
+  },
+  "blog/what-is-agentic-ai/index.html": {
+    "hash": "9cf46faa1c4f27dc",
+    "date": "2026-11-05"
+  },
+  "blog/what-is-erp/index.html": {
+    "hash": "2a2cc5d48e32e5ae",
+    "date": "2026-11-05"
+  },
+  "blog/what-is-rag-in-ai/index.html": {
+    "hash": "c8cb82bfaba05927",
+    "date": "2026-11-05"
   },
   "blog/whatsapp-business-api-guide/index.html": {
     "hash": "067004c39a93b591",
@@ -496,8 +520,8 @@
     "date": "2026-11-04"
   },
   "index.html": {
-    "hash": "433761b76bee088d",
-    "date": "2026-11-04"
+    "hash": "827462c84b674be7",
+    "date": "2026-11-05"
   },
   "industries/agriculture/index.html": {
     "hash": "d4cb15679c6102fd",
