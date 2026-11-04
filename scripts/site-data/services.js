@@ -51,7 +51,7 @@ const families = [
     key: 'ai', name: 'AI Engineering Services', path: '/services/ai-product-development', existing: true,
     menu: 'AI that does real work: assistants that answer from your documents, automation, analytics and generative products.',
     icon: '<path d="M11 3l1.9 4.6L17.5 9.5l-4.6 1.9L11 16l-1.9-4.6L4.5 9.5l4.6-1.9z"/><path d="M18.5 14.5l.8 1.9 1.9.8-1.9.8-.8 1.9-.8-1.9-1.9-.8 1.9-.8z"/>',
-    items: ['ai-development', 'rag-development', 'ai-agent-development', 'ai-consulting', 'ai-powered-mobile-app-development', 'machine-learning-analytics', 'generative-ai', 'chatgpt-solutions'],
+    items: ['ai-development', 'rag-development', 'ai-agent-development', 'ai-chatbot-development', 'ai-consulting', 'ai-powered-mobile-app-development', 'machine-learning-analytics', 'generative-ai', 'chatgpt-solutions'],
   },
   {
     key: 'startup', name: 'Startup Product Engineering', path: '/services/product-strategy-prd', existing: true,
@@ -635,6 +635,26 @@ const subs = {
       ['Where should we start with AI agents?', 'Start with one well-defined process with a clear success measure, run it as a pilot with human review, and expand once it proves reliable. Our guide to AI agents for business covers practical use cases.'],
     ],
     industries: ['saas', 'ecommerce', 'fintech', 'logistics'],
+  },
+  'ai-chatbot-development': {
+    family: 'ai', name: 'AI Chatbot Development', short: 'Chatbots for your website, WhatsApp and support team',
+    seoTitle: 'AI Chatbot Development Company in India | Nihar Ranjan Rout',
+    seoDesc: 'AI chatbot development company in India: website and WhatsApp chatbots that answer from your content, capture leads and hand over to your team.',
+    intro: 'A good AI chatbot answers customer questions accurately, any time of day, and knows when to pass the conversation to a person. We build chatbots for your website, WhatsApp and internal teams that answer from your own content and connect to the systems behind them.',
+    builds: [
+      ['Website chatbots', 'Answers about your products, services and policies, right on your site.'],
+      ['WhatsApp chatbots', 'Customer conversations on WhatsApp through the WhatsApp Business API.'],
+      ['Customer support bots', 'Order status, returns and common questions handled, with a handover to your team.'],
+      ['Lead capture and qualification', 'Visitors asked the right questions and passed to sales with the details filled in.'],
+      ['Internal helpdesk bots', 'Staff questions about HR, IT and policies answered from your documents.'],
+    ],
+    fits: ['Your team answers the same customer questions every day.', 'Enquiries arrive outside working hours and go cold by morning.', 'You want customers on WhatsApp to get quick, accurate replies.'],
+    faq: [
+      ['How is an AI chatbot different from a rule-based chatbot?', 'A rule-based chatbot follows fixed menus and breaks when people ask in their own words. An AI chatbot understands free text, answers from your content and can still follow rules for sensitive steps.'],
+      ['Can the chatbot answer in Hindi or other Indian languages?', 'Yes. We configure and test the chatbot in the languages your customers use, such as English, Hindi and Odia.'],
+      ['Can the chatbot hand over to a person?', 'Yes. When a question is outside its scope or the customer asks for a person, the chatbot passes the conversation, with its history, to your team.'],
+    ],
+    industries: ['ecommerce', 'education', 'healthcare', 'real-estate'],
   },
   'ai-consulting': {
     family: 'ai', name: 'AI Consulting', short: 'Find where AI genuinely pays off',

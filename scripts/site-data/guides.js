@@ -80,6 +80,7 @@ const BY_SUB = {
   'generative-ai': ['generative-ai-use-cases-for-business', 'how-to-reduce-ai-hallucinations', 'rag-vs-fine-tuning'],
   'rag-development': ['rag-vs-fine-tuning', 'how-to-reduce-ai-hallucinations', 'how-to-build-an-ai-chatbot-for-business'],
   'ai-agent-development': ['ai-agents-for-business', 'ai-voice-agents-for-business', 'pragmatic-enterprise-ai-workflows'],
+  'ai-chatbot-development': ['how-to-build-an-ai-chatbot-for-business', 'whatsapp-business-api-guide', 'how-to-reduce-ai-hallucinations'],
   'chatgpt-solutions': ['how-to-build-an-ai-chatbot-for-business', 'how-to-reduce-ai-hallucinations', 'openai-select-partner'],
   'mvp-development': ['mvp-vs-prototype-vs-proof-of-concept', 'cost-to-build-mvp-2026', 'how-long-does-it-take-to-build-an-app'],
   'rapid-prototyping': ['mvp-vs-prototype-vs-proof-of-concept', 'ui-vs-ux-design-difference', 'how-to-validate-a-startup-idea'],

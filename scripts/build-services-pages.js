@@ -219,7 +219,7 @@ const SUB_DOODLE = {
   'cloud-consulting': 'cloud', 'ci-cd-implementation': 'roadmap', 'kubernetes-implementation': 'saas', 'serverless-architecture': 'realtime',
   'cloud-cost-optimisation': 'pricing', 'infrastructure-monitoring': 'analytics',
   'ai-development': 'ai', 'ai-consulting': 'question', 'ai-powered-mobile-app-development': 'agent', 'machine-learning-analytics': 'growth',
-  'generative-ai': 'design', 'chatgpt-solutions': 'chat', 'rag-development': 'question', 'ai-agent-development': 'agent',
+  'generative-ai': 'design', 'chatgpt-solutions': 'chat', 'rag-development': 'question', 'ai-agent-development': 'agent', 'ai-chatbot-development': 'chat',
   'mvp-development': 'rocket', 'rapid-prototyping': 'prototype', 'technical-architecture': 'stack', 'investor-ready-demos': 'growth', 'post-launch-iteration': 'metrics',
 };
 const DOODLE = { custom: 'custom-software', mobile: 'mobile', web: 'web', devops: 'cloud', ai: 'ai', startup: 'rocket' };

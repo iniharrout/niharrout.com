@@ -532,6 +532,23 @@ module.exports = {
       ['What happens when the agent is unsure?', 'It stops and asks a person, following rules we agree with you, rather than guessing.'],
     ],
   },
+  'ai-chatbot-development': {
+    features: [
+      ['Answers from your content', 'Website pages, FAQs, PDFs and policies used as the source of truth.'],
+      ['WhatsApp Business API', 'Official WhatsApp integration with templates and opt-in rules.'],
+      ['Handover to people', 'Conversations passed to your team with full history when needed.'],
+      ['Lead capture to CRM', 'Names, needs and contact details sent straight to your CRM or HubSpot.'],
+      ['Order and booking lookups', 'Live answers from your order, booking or ticket system.'],
+      ['Conversation reports', 'What customers ask, what the bot answers and where it hands over.'],
+    ],
+    tech: ['OpenAI', 'Node.js', 'Python', 'PostgreSQL', 'Redis', 'React'],
+    work: ['skribe'],
+    faq: [
+      ['How long does it take to build an AI chatbot?', 'A website or WhatsApp chatbot for one set of content can be live in a few weeks. Chatbots that connect to orders, bookings or several systems take longer, and the written proposal sets out the plan.'],
+      ['Will the chatbot make up answers?', 'We reduce this by answering only from your content, showing sources where useful and routing uncertain questions to your team. Our guide on reducing AI hallucinations explains the approach.'],
+      ['Can it work on both our website and WhatsApp?', 'Yes. One chatbot can serve your website and WhatsApp, sharing the same knowledge and handover rules.'],
+    ],
+  },
   'chatgpt-solutions': {
     features: [
       ['Custom ChatGPT-style assistant', 'A branded assistant that knows your business.'],
