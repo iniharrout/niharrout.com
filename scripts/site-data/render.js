@@ -124,4 +124,31 @@ const glance = (what) => `
     </div>
   </section>`;
 
-module.exports = { glance, PHONE, waLink, BOOK, bookBtn, hero, section, cards, fits, process, prose, pills, faqHtml, faqLd, endBand, crumbsHtml, guides };
+// Lower-case a service name for use mid-sentence, keeping product names and acronyms intact.
+const KEEP_CASE = /^(iOS|Android|Flutter|React|Native|AI|ML|ERP|CRM|CMS|PWA|SEO|CI\/CD|MVP|ChatGPT|DevOps|Kubernetes|SaaS|EV|UI|UX|API|India|Google|Microsoft|AWS|Azure|OpenAI)$/;
+const lc = (name) => name.split(' ').map((w) => (KEEP_CASE.test(w) ? w : w.toLowerCase())).join(' ');
+
+const cards4 = (list) => cards(list).replace('wwm-cards', 'wwm-cards wwm-cards-4');
+// Shared sections on every service page: why Creuto, quality practices and common buyer questions.
+// Facts only (see project business facts): no prices, no invented numbers.
+const why = (name) => cards4([
+  ['Founder-led from day one', `You speak with Nihar Ranjan Rout, who scopes and leads your ${lc(name)} project, not a sales team.`],
+  ['A written plan before code', 'A proposal within 24 hours of the first call, then a PRD that fixes scope, priorities and milestones.'],
+  ['Working software early', 'A first working version in about 4 weeks, then improvements in milestones you can see and test.'],
+  ['Recognised by clients', 'Ranked #1 software development company in Odisha on GoodFirms, OpenAI Select Partner, 5.0 on Clutch from 16 verified reviews.'],
+]);
+const quality = cards([
+  ['Code review on every change', 'A second engineer reviews code before it is merged.'],
+  ['Testing before each release', 'Key flows tested on real devices and browsers, with automated checks where they pay off.'],
+  ['Security basics built in', 'Access control, encrypted connections and secrets kept out of code from the first sprint.'],
+  ['Staged releases', 'Changes go to a staging environment for your review before they reach users.'],
+  ['Documentation', 'Setup notes and decisions written down, so your team or any future team can maintain the product.'],
+  ['Support after launch', 'A 60-day warranty after launch, then an agreed plan for maintenance and new work.'],
+]);
+const commonFaq = (name) => [
+  ['Do you sign an NDA before we share our idea?', 'Yes. We sign an NDA before discovery, so you can share your idea, data and plans openly.'],
+  [`What happens after the ${lc(name)} project launches?`, 'There is a 60-day warranty after launch for fixes. After that we agree a support plan covering updates, monitoring and new features.'],
+  ['Do you work with clients outside India?', 'Yes. We work with clients across India and in the US, UK, Australia and Vietnam, with calls planned around your working day.'],
+];
+
+module.exports = { lc, why, quality, commonFaq, glance, PHONE, waLink, BOOK, bookBtn, hero, section, cards, fits, process, prose, pills, faqHtml, faqLd, endBand, crumbsHtml, guides };

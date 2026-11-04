@@ -58,6 +58,7 @@ const INDEX_FAQ = [
 function industryPage(i) {
   const kw = KW.INDUSTRY[i.slug] && KW.INDUSTRY[i.slug].replace(/ Company India$/, ' Company in India');
   const faq = kw ? [[`Are you ${/^[AEIOU]/.test(kw) ? 'an' : 'a'} ${kw.toLowerCase().replace('india', 'India').replace('saas', 'SaaS').replace(/^ev /, 'EV ')}?`, `Yes. Creuto is a founder-led software, mobile app and AI development company in India, headquartered in Bhubaneswar, building ${i.name.toLowerCase()} products for startups and businesses in India and abroad. You work with Nihar Ranjan Rout directly, starting with a free 30-minute call.`], ...i.faq] : i.faq;
+  faq.push(...R.commonFaq(`${i.name} software`));
   const url = `${SITE}/industries/${i.slug}`;
   const title = titleFor(i);
   const description = descFor(i);
@@ -72,12 +73,15 @@ ${i.work.map((k, n) => `        <li class="wwm-c"><a href="${WORK[k].href}"><spa
   const svc = R.pills(i.services.map((k) => [subs[k].name, subHref(k)]));
   return head({ title, description, canonical: url, graph }) + `
 <main id="top">${R.hero({ crumbs: [['Home', '/'], ['Industries', '/industries'], [i.name, `/industries/${i.slug}`]], pill: 'Industry', h1: KW.INDUSTRY[i.slug] ? KW.INDUSTRY[i.slug].replace(/ Company India$/, ' Company in India') : `${i.name} software development`, sub: i.intro, secondary: ['See our work', '/work'], art: i.slug })}
+${R.glance(KW.INDUSTRY[i.slug] ? KW.INDUSTRY[i.slug].replace(/ Company India$/, ' Company in India') : `${i.name} software development`)}
 ${R.section('build', `What we build for ${i.name}`, R.cards(i.builds))}
 ${R.section('approach', `How we approach ${i.name} projects`, R.prose(approach.industries[i.slug]), 'wwm-sec-alt')}
 ${R.section('matters', `What matters in ${i.name}`, R.cards(i.matters).replace('wwm-cards', 'wwm-cards wwm-cards-4'))}
 ${work}
 ${R.section('services', 'Services we use', `<p class="wwm-lead">The services behind most ${esc(i.name)} projects:</p>${svc}`)}
+${R.section('why', `Why choose Creuto for ${i.name} software`, R.why(`${i.name} software`))}
 ${R.section('process', 'How an engagement works', R.process(), 'wwm-sec-alt')}
+${R.section('quality', 'How we keep quality and security high', R.quality)}
 ${R.section('faq', `Questions about ${i.name} software`, R.faqHtml(faq))}
 ${R.section('guides', 'Guides on this topic', R.guides(G.forIndustry(i.slug, groups.find(([, list]) => list.includes(i.slug))[0])))}
 ${R.section('related', 'Related industries', R.pills(relatedOf(i.slug).map((s) => [bySlug[s].name, `/industries/${s}`])), 'wwm-sec-alt')}

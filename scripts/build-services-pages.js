@@ -17,6 +17,7 @@ const { industries, WORK } = require('./site-data/industries');
 const { SITE, ORG, esc, head, foot, crumbs } = require('./careers/shell');
 const R = require('./site-data/render');
 const approach = require('./site-data/approach');
+const DEPTH = require('./site-data/service-depth');
 
 const ROOT = path.resolve(__dirname, '..');
 const famByKey = Object.fromEntries(families.map((f) => [f.key, f]));
@@ -47,6 +48,12 @@ function seoFor(key, s) {
   return { title: k.title, h1: k.h1, desc, faq, k };
 }
 
+const WHY = R.why;
+const QUALITY = R.quality;
+const COMMON_FAQ = R.commonFaq;
+const techPills = (list) => `<ul class="wwm-pills wwm-plain">${list.map((t) => `<li><span>${esc(t)}</span></li>`).join('')}</ul><p class="wwm-prose"><a href="/technology">See the full technology stack</a></p>`;
+const workCardsFor = (keys) => `<ul class="wwm-cards wwm-cards-links">\n${keys.map((k, n) => `        <li class="wwm-c"><a href="${WORK[k].href}"><span class="wwm-c-n" aria-hidden="true">0${n + 1}</span><h3>${esc(WORK[k].title)}</h3><p>${esc(WORK[k].note)}</p><span class="wwm-c-go">Read the case study</span></a></li>`).join('\n')}\n      </ul>`;
+
 // Optional extra sections per service (services.js `extra`): card grids, plain technology pills or case-study cards.
 function extraSections(s) {
   return (s.extra || []).map((x, i) => {
@@ -62,6 +69,8 @@ function subPage(key) {
   const s = subs[key];
   const fam = famByKey[s.family];
   const seo = seoFor(key, s);
+  const depth = DEPTH[key] || {};
+  seo.faq = [...seo.faq, ...(depth.faq || []), ...COMMON_FAQ(s.name)];
   const url = `${SITE}${subUrl(key)}`;
   const siblings = fam.items.map((it) => itemOf(fam, it)).filter((it) => it.href !== subUrl(key));
   const graph = [
@@ -81,9 +90,14 @@ function subPage(key) {
   })}
 ${R.glance(seo.h1)}
 ${R.section('build', seo.k ? `What our ${seo.k.alt[0]} cover` : 'What we build', R.cards(s.builds))}
-${R.section('approach', 'How we approach ' + s.name, R.prose(approach.subs[key]), 'wwm-sec-alt')}
-${R.section('fit', 'When this is a good fit', R.fits('A good fit when', s.fits))}
+${depth.features ? R.section('features', `Key features we build into ${R.lc(s.name)} projects`, R.cards(depth.features), 'wwm-sec-alt') : ''}
+${R.section('approach', 'How we approach ' + s.name, R.prose(approach.subs[key]), depth.features ? '' : 'wwm-sec-alt')}
+${R.section('fit', 'When this is a good fit', R.fits('A good fit when', s.fits), depth.features ? 'wwm-sec-alt' : '')}
+${R.section('why', `Why choose Creuto for ${R.lc(s.name)}`, WHY(s.name))}
 ${R.section('process', 'How an engagement works', R.process(), 'wwm-sec-alt')}
+${depth.tech && depth.tech.length ? R.section('tech', `Technology we use for ${R.lc(s.name)}`, techPills(depth.tech)) : ''}
+${depth.work && depth.work.length ? R.section('work', 'Products we have built', workCardsFor(depth.work), 'wwm-sec-alt') : ''}
+${s.extra ? '' : R.section('quality', 'How we keep quality and security high', QUALITY)}
 ${extraSections(s)}
 ${R.section('related', 'Related services and industries', `<div class="wwm-rel"><div><h3>More in ${esc(fam.name)}</h3>${R.pills(related)}</div>${inds.length ? `<div><h3>Industries we build this for</h3>${R.pills(inds)}</div>` : ''}</div>`)}
 ${R.section('faq', 'Questions about ' + s.name, R.faqHtml(seo.faq))}
@@ -102,21 +116,25 @@ function familyPage(fam) {
     { '@type': 'Service', '@id': `${url}#service`, name: fam.name, serviceType: fam.name, description: p.description, url, provider: { '@id': `${SITE}/#organization` }, areaServed: 'Worldwide' },
     { '@type': 'WebPage', '@id': `${url}#webpage`, url, name: p.title, description: p.description, isPartOf: { '@id': `${SITE}/#website` }, about: { '@id': `${url}#service` } },
     crumbs([['Home', `${SITE}/`], ['Services', `${SITE}/services`], [fam.name, url]]),
-    R.faqLd(p.faq),
+    R.faqLd([...p.faq, ...R.commonFaq('DevOps and cloud')]),
   ];
   const list = fam.items.map((it) => itemOf(fam, it));
   const grid = `<ul class="wwm-cards wwm-cards-links">
 ${list.map((it, i) => `        <li class="wwm-c"><a href="${it.href}"><span class="wwm-c-n" aria-hidden="true">0${i + 1}</span><h3>${esc(it.name)}</h3><p>${esc(it.short)}</p><span class="wwm-c-go">Learn more</span></a></li>`).join('\n')}
       </ul>`;
   return head({ title: p.title, description: p.description, canonical: url, graph }) + `
-<main id="top">${R.hero({ crumbs: [['Home', '/'], ['Services', '/services'], [fam.name, fam.path]], pill: 'Service family', h1: p.h1, sub: p.lead, secondary: ['See our work', '/work'], art: DOODLE[fam.key] })}
+<main id="top">${R.hero({ crumbs: [['Home', '/'], ['Services', '/services'], [fam.name, fam.path]], pill: 'Service family', h1: p.h1, sub: p.lead, secondary: ['Get a free quote', '#quote'], art: DOODLE[fam.key] })}
+${R.glance(p.h1)}
 ${R.section('includes', 'What this covers', `<ul class="wwm-pills wwm-plain">${p.points.map((t) => `<li><span>${esc(t)}</span></li>`).join('')}</ul>`)}
 ${R.section('approach', 'How we approach DevOps and cloud', R.prose(approach.families.devops), 'wwm-sec-alt')}
 ${R.section('services', 'Services in ' + fam.name, grid)}
+${R.section('why', 'Why choose Creuto for DevOps and cloud', R.why('DevOps and cloud'))}
 ${R.section('process', 'How an engagement works', R.process(), 'wwm-sec-alt')}
-${R.section('faq', 'Questions about DevOps and cloud', R.faqHtml(p.faq))}
+${R.section('tech', 'Clouds and tools we work with', `<ul class="wwm-pills wwm-plain">${['AWS', 'Azure', 'Google Cloud', 'Docker', 'Kubernetes', 'PostgreSQL', 'Redis', 'Node.js', 'Python'].map((t) => `<li><span>${esc(t)}</span></li>`).join('')}</ul>`)}
+${R.section('quality', 'How we keep quality and security high', R.quality, 'wwm-sec-alt')}
+${R.section('faq', 'Questions about DevOps and cloud', R.faqHtml([...p.faq, ...R.commonFaq('DevOps and cloud')]))}
 ${R.section('guides', 'Guides on this topic', R.guides(G.forFamily(fam.key)), 'wwm-sec-alt')}
-${R.endBand()}
+${R.endBand(undefined, undefined, 'DevOps and cloud')}
 </main>
 ` + foot();
 }
@@ -144,6 +162,48 @@ function insertBlock(rel, block) {
   const next = html.replace(anchor, `    ${block}\n\n${anchor}`);
   if (next !== fs.readFileSync(file, 'utf8')) { fs.writeFileSync(file, next); return true; }
   return false;
+}
+
+// FAQs for the hand-written family pages that had none (web and AI pages already carry their own).
+const FAMILY_FAQ = {
+  mobile: [
+    ['What does a mobile app development company do?', 'It plans, designs, builds, tests and launches apps for Android and iOS, then keeps improving them. At Creuto that starts with a free call and a written PRD, and continues with milestone releases and support after launch.'],
+    ['Should we build native or cross-platform?', 'For most business and consumer apps, Flutter or React Native gives you Android and iOS from one codebase with lower maintenance. Native Kotlin or Swift suits apps that depend on deep device features or advanced graphics. We explain the trade-off for your app in writing.'],
+    ['How long does it take to build a mobile app?', 'A focused first working version typically takes about 4 weeks. Apps with several user roles, payments and an admin panel take longer, and the written proposal sets out the milestones.'],
+    ['How much does mobile app development cost?', 'Cost depends on the number of screens, user roles, integrations and the admin back end. After a free 30-minute call you get a written, fixed-scope proposal within 24 hours.'],
+    ['Do you publish the app on Google Play and the App Store?', 'Yes. We prepare store listings, privacy details and test accounts, submit the app and handle reviews and any rejections.'],
+    ['Do you sign an NDA?', 'Yes. We sign an NDA before discovery, so you can share your idea and plans openly.'],
+  ],
+  custom: [
+    ['What is custom software development?', 'It is software designed around how your business works, instead of adapting your work to a ready-made tool. Examples are custom ERP, CRM, internal portals and enterprise applications.'],
+    ['When is custom software better than an off-the-shelf product?', 'When your process is unusual, you need deep integration with other systems, per-user licences get expensive as you grow, or a ready-made tool forces workarounds your team fights every day.'],
+    ['How long does a custom software project take?', 'It depends on the modules and integrations. We release in stages, so the first module is in use within weeks, well before the whole system is complete.'],
+    ['How much does custom software development cost?', 'Cost depends on modules, users, integrations and data migration. After a free 30-minute call you get a written, fixed-scope proposal within 24 hours, with payment tied to milestones.'],
+    ['Can you connect the software to Tally, payment gateways or our existing systems?', 'Yes. We integrate accounting software, payment gateways, identity providers, WhatsApp and partner APIs, and agree each integration in the PRD.'],
+    ['Do you sign an NDA?', 'Yes. We sign an NDA before discovery.'],
+  ],
+  startup: [
+    ['What is an MVP?', 'An MVP, or minimum viable product, is the smallest version of your product that real users can use. It tests whether your idea works before you invest in everything else.'],
+    ['How long does it take to build an MVP?', 'A focused first working version typically takes about 4 weeks after the PRD is agreed, then we improve it in milestones based on what users do.'],
+    ['What is a PRD and why do we need one?', 'A PRD, or product requirements document, describes who the product is for, what it must do and what is out of scope. It keeps the build focused and gives every quote the same basis.'],
+    ['Can a non-technical founder work with you?', 'Yes. Most of our startup clients are non-technical founders. We explain decisions in plain language and you see working software early.'],
+    ['How much does it cost to build an MVP?', 'Cost depends on the features, platforms and integrations in version one. After a free 30-minute call you get a written proposal within 24 hours.'],
+    ['Do you sign an NDA?', 'Yes. We sign an NDA before discovery, so you can share your idea openly.'],
+  ],
+};
+function faqBlock(fam, list) {
+  const ld = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: list.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) };
+  return `<!-- sub:faq -->
+    <section class="sub-links" id="faq" aria-labelledby="sub-faq-title">
+      <div class="wrap">
+        <h2 id="sub-faq-title">Questions about ${esc(fam.name.toLowerCase())}</h2>
+        <div class="ed-faqs">
+          ${list.map(([q, a], i) => `<details class="ed-faq"${i === 0 ? ' open' : ''}><summary>${esc(q)}</summary><div class="ed-faq-a">${esc(a)}</div></details>`).join('\n          ')}
+        </div>
+      </div>
+      <script type="application/ld+json">${JSON.stringify(ld)}</script>
+    </section>
+    <!-- /sub:faq -->`;
 }
 
 // ---------- homepage services section (same data as the menu) ----------
@@ -202,6 +262,12 @@ for (const fam of families.filter((f) => f.existing)) {
   const rel = `${fam.path.slice(1)}/index.html`;
   const block = dirBlock(`${fam.name}: what we offer`, `Every service in this area has its own page, with what we build, when it fits and the questions people ask.`, [{ items: fam.items.map((it) => itemOf(fam, it)) }]);
   if (insertBlock(rel, block)) updated++;
+  if (FAMILY_FAQ[fam.key]) {
+    const file = path.join(ROOT, rel);
+    let html = fs.readFileSync(file, 'utf8').replace(/[ \t]*<!-- sub:faq -->[\s\S]*?<!-- \/sub:faq -->\n*/, '');
+    html = html.replace('    <!-- /sub:links -->', '    <!-- /sub:links -->\n\n    ' + faqBlock(fam, FAMILY_FAQ[fam.key]));
+    fs.writeFileSync(file, html);
+  }
 }
 {
   const file = path.join(ROOT, 'index.html');
