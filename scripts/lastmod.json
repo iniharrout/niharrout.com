@@ -240,7 +240,7 @@
     "date": "2026-11-04"
   },
   "blog/index.html": {
-    "hash": "d125c25da203f051",
+    "hash": "c07df759ee7623a3",
     "date": "2026-11-05"
   },
   "blog/inventory-management-software-development/index.html": {
@@ -262,6 +262,10 @@
   "blog/mistakes-founders-make-hiring-software-company/index.html": {
     "hash": "f14c5c3565f71006",
     "date": "2026-11-04"
+  },
+  "blog/mobile-app-backend-firebase-vs-custom/index.html": {
+    "hash": "16c1e82400e41bf4",
+    "date": "2026-11-05"
   },
   "blog/mobile-app-security-checklist/index.html": {
     "hash": "adef89ecd12d04eb",
@@ -300,35 +304,35 @@
     "date": "2026-11-04"
   },
   "blog/page/2/index.html": {
-    "hash": "951dd5806b47810d",
+    "hash": "592f9b686b5c51d9",
     "date": "2026-11-05"
   },
   "blog/page/3/index.html": {
-    "hash": "19785dbc67e9d530",
+    "hash": "e076b463dc34575e",
     "date": "2026-11-05"
   },
   "blog/page/4/index.html": {
-    "hash": "66c5d8ca055917b7",
+    "hash": "612f1425e1b48083",
     "date": "2026-11-05"
   },
   "blog/page/5/index.html": {
-    "hash": "4fa27371f84b0af2",
+    "hash": "10f1f20e76880c84",
     "date": "2026-11-05"
   },
   "blog/page/6/index.html": {
-    "hash": "a92250fecd7133b5",
+    "hash": "796ecdd53148806e",
     "date": "2026-11-05"
   },
   "blog/page/7/index.html": {
-    "hash": "0078a84009273be1",
+    "hash": "b0ee5099cd303454",
     "date": "2026-11-05"
   },
   "blog/page/8/index.html": {
-    "hash": "48054617134f359a",
+    "hash": "ae32175834147240",
     "date": "2026-11-05"
   },
   "blog/page/9/index.html": {
-    "hash": "d904fd562a7245ac",
+    "hash": "55141f794ba5f8b9",
     "date": "2026-11-05"
   },
   "blog/pragmatic-enterprise-ai-workflows/index.html": {
@@ -396,35 +400,35 @@
     "date": "2026-11-04"
   },
   "blog/topic/ai/index.html": {
-    "hash": "f3ac95b297d1cb96",
+    "hash": "98f6bd26b9d26491",
     "date": "2026-11-05"
   },
   "blog/topic/careers/index.html": {
-    "hash": "b835fb6bafa58917",
+    "hash": "25c06fa699e4ad8a",
     "date": "2026-11-05"
   },
   "blog/topic/cost-and-hiring/index.html": {
-    "hash": "d0524356abfc35d2",
+    "hash": "bfd5de9a97675d06",
     "date": "2026-11-05"
   },
   "blog/topic/industries/index.html": {
-    "hash": "eeb4cfdb8a43f9b8",
+    "hash": "28796ca50ea66eb1",
     "date": "2026-11-05"
   },
   "blog/topic/mobile/index.html": {
-    "hash": "e85d3d2905eae4fe",
+    "hash": "035d6dd6a488d77b",
     "date": "2026-11-05"
   },
   "blog/topic/news/index.html": {
-    "hash": "92810acbc1515793",
+    "hash": "1412d91f62d233ed",
     "date": "2026-11-05"
   },
   "blog/topic/product/index.html": {
-    "hash": "ae3aa1c3a09e03e8",
+    "hash": "ffc38179612f0b32",
     "date": "2026-11-05"
   },
   "blog/topic/software-and-cloud/index.html": {
-    "hash": "69f43b4c60a567a6",
+    "hash": "83c06c5c56377e60",
     "date": "2026-11-05"
   },
   "blog/ui-ux-designer-portfolio-tips/index.html": {
@@ -520,7 +524,7 @@
     "date": "2026-11-04"
   },
   "index.html": {
-    "hash": "827462c84b674be7",
+    "hash": "2f9ab113fe7c62c1",
     "date": "2026-11-05"
   },
   "industries/agriculture/index.html": {

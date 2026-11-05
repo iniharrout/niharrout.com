@@ -15,6 +15,7 @@ const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const SITE = 'https://www.niharrout.com';
 const ORDER = [
+  'mobile-app-backend-firebase-vs-custom',
   'how-to-make-an-app',
   'what-is-erp',
   'what-is-rag-in-ai',
