@@ -386,7 +386,7 @@ ${p.category === 'Careers' ? `          <div class="blog-cta-box blog-cta-end">
             <img src="/assets/nihar-avatar.jpg" alt="Nihar Ranjan Rout" width="96" height="96" loading="lazy" decoding="async">
             <div>
               <h4>About Nihar Ranjan Rout</h4>
-              <p>Founder &amp; CEO of Creuto. Over the past 8+ years Nihar has led product strategy and engineering for 50+ products, including mobile apps, custom ERPs and B2B platforms. Creuto is an OpenAI Select Partner. He works directly with founders to turn an idea into a clear plan and a launched product.</p>
+              <p>Founder &amp; CEO of Creuto. Over the past 8+ years Nihar has led product strategy and engineering for 120+ products, including mobile apps, custom ERPs and B2B platforms. Creuto is an OpenAI Select Partner. He works directly with founders to turn an idea into a clear plan and a launched product.</p>
               <a href="/about">More about Nihar</a> &middot; <a href="https://www.linkedin.com/in/iniharrout" target="_blank" rel="noopener">LinkedIn</a>
             </div>
           </div>

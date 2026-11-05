@@ -120,7 +120,7 @@ const resources = `        <li class="sc-item sc-has-menu">
                 <p class="sc-list-h">Company</p>
                 ${entry('', '/about', 'user', 'About Nihar &amp; Creuto', 'The founder and the company behind the work')}
                 ${entry('', '/work', 'folder', 'Case studies', 'Products we have built and shipped')}
-                ${entry('', '/work-with-me', 'briefcase', 'Careers', 'Four full-time remote roles in India')}
+                ${entry('', '/work-with-me', 'briefcase', 'Careers', 'Remote roles and internships')}
                 ${entry('', '/about/facts', 'file', 'Company fact sheet', 'Services, process and ownership in one page')}
               </div>
               <div>
@@ -195,7 +195,6 @@ const footer = `<footer class="sc-footer">
           <div class="sc-foot-badges">
             <a class="sc-badge" href="/blog/openai-select-partner"><img src="/assets/openai-symbol.png" alt="" width="20" height="20" loading="lazy" decoding="async"><span><strong>OpenAI</strong>Select Partner</span></a>
             <a class="sc-badge" href="https://clutch.co/profile/creuto" target="_blank" rel="noopener"><span class="sc-badge-star" aria-hidden="true">&#9733;</span><span><strong>5.0 on Clutch</strong>16 verified reviews</span></a>
-            <a class="sc-badge" href="/blog/creuto-top-software-development-company-in-odisha"><span class="sc-badge-star sc-badge-gf" aria-hidden="true">#1</span><span><strong>Top in Odisha</strong>GoodFirms, 2026</span></a>
           </div>
           <div class="sc-foot-social">${socialRow}</div>
         </div>
@@ -215,19 +214,20 @@ const footer = `<footer class="sc-footer">
     group('Popular services', [sub('custom', 'custom-erp-development'), sub('mobile', 'ios-app-development'), sub('mobile', 'android-app-development'), sub('mobile', 'react-native-app-development'), sub('startup', 'mvp-development'), sub('ai', 'ai-development')]),
     group('Industries', [...['healthcare', 'fintech', 'ecommerce', 'logistics', 'education', 'real-estate', 'manufacturing', 'saas'].map(ind), ['/industries', 'All industries']]),
     group('Resources', [['/blog', 'Guides for founders'], ['/project-costs', 'Project costs guide'], ['/technology', 'Technology stack'], ['/b2b-software-development-for-startups', 'B2B startup playbook'], ['/tools/app-cost-calculator', 'App timeline calculator'], ['/tools/startup-name-generator', 'Startup name generator'], ['/tools/linkedin-text-formatter', 'LinkedIn text formatter']]),
-    group('Company', [['/about', 'About Nihar &amp; Creuto'], ['/work', 'Case studies'], ['/work-with-me', 'Careers'], ['/about/facts', 'Company fact sheet'], ['/software-development-company-bhubaneswar', 'Software company in Bhubaneswar'], ['/book', 'Book a call'], ['https://creuto.com', 'Creuto.com']]),
+    group('Company', [['/about', 'About Nihar &amp; Creuto'], ['/work', 'Case studies'], ['/work-with-me', 'Careers'], ['/about/facts', 'Company fact sheet'], ['/countries', 'Countries we serve'], ['/book', 'Book a call'], ['https://creuto.com', 'Creuto.com']]),
   ].join('')}
       </div>
 
       <div class="sc-foot-places">
         <div class="sc-foot-places-copy">
           <p class="sc-foot-label">Across time zones</p>
-          <h3>One team in India, building for founders worldwide.</h3>
+          <h3>One founder-led team, building for clients worldwide.</h3>
           <p>Calls planned around your working day, wherever you are.</p>
           <a class="sc-foot-more" href="/countries">See how we work with your country ${ARR}</a>
+          <p class="sc-foot-cities">${require('./site-data/world-cities').map((c) => `<a href="/software-development-${c.slug}">${esc(c.name)}</a>`).join(' ')}</p>
         </div>
         <ul class="sc-chips">
-${countries.filter((c) => c.footer !== false).map((c) => `          <li><a class="sc-chip" href="/countries/${c.slug}" title="${esc(c.home ? 'India Standard Time' : `${c.city}, ${c.name}`)}">${flag(c.code, 'sc-chip-flag')}<strong>${c.abbr ? `<span class="sc-chip-long">${esc(c.short)}</span><span class="sc-chip-abbr">${esc(c.abbr)}</span>` : esc(c.short)}</strong><span class="sc-chip-time" data-clock data-tz="${c.tz}"></span></a></li>`).join('\n')}
+${countries.filter((c) => c.footer !== false).sort((a, b) => (a.home ? 1 : 0) - (b.home ? 1 : 0)).map((c) => `          <li><a class="sc-chip" href="/countries/${c.slug}" title="${esc(c.home ? 'India Standard Time' : `${c.city}, ${c.name}`)}">${flag(c.code, 'sc-chip-flag')}<strong>${c.abbr ? `<span class="sc-chip-long">${esc(c.short)}</span><span class="sc-chip-abbr">${esc(c.abbr)}</span>` : esc(c.short)}</strong><span class="sc-chip-time" data-clock data-tz="${c.tz}"></span></a></li>`).join('\n')}
         </ul>
       </div>
 

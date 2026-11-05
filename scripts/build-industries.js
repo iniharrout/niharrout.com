@@ -57,7 +57,7 @@ const INDEX_FAQ = [
 
 function industryPage(i) {
   const kw = KW.INDUSTRY[i.slug] && KW.INDUSTRY[i.slug].replace(/ Company India$/, ' Company in India');
-  const faq = kw ? [[`Are you ${/^[AEIOU]/.test(kw) ? 'an' : 'a'} ${kw.toLowerCase().replace('india', 'India').replace('saas', 'SaaS').replace(/^ev /, 'EV ')}?`, `Yes. Creuto is a founder-led software, mobile app and AI development company in India, headquartered in Bhubaneswar, building ${i.name.toLowerCase()} products for startups and businesses in India and abroad. You work with Nihar Ranjan Rout directly, starting with a free 30-minute call.`], ...i.faq] : i.faq;
+  const faq = kw ? [[`Are you ${/^[AEIOU]/.test(kw) ? 'an' : 'a'} ${kw.toLowerCase().replace('india', 'India').replace('saas', 'SaaS').replace(/^ev /, 'EV ')}?`, `Yes. Creuto is a founder-led software, mobile app and AI development company with its delivery team in India, building ${i.name.toLowerCase()} products for startups and enterprises in the US, UK, Australia, the UAE and India. You work with Nihar Ranjan Rout directly, starting with a free 30-minute call.`], ...i.faq] : i.faq;
   faq.push(...R.commonFaq(`${i.name} software`));
   const url = `${SITE}/industries/${i.slug}`;
   const title = titleFor(i);

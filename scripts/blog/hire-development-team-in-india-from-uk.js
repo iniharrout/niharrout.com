@@ -126,7 +126,7 @@ module.exports = {
 
 <h2 id="creuto">How we work with UK teams</h2>
 <p>
-  At <a href="https://creuto.com" target="_blank" rel="noopener">Creuto</a> I lead every engagement myself, from the first call through launch. We keep calls in your morning, write decisions down the same day, design for UK GDPR from the first screen and keep your code in your own accounts from day one. We have shipped 50+ products over 8+ years and hold a 5.0 rating on Clutch from 16 verified reviews. You can read more about <a href="/countries/united-kingdom">how we work with UK startups and businesses</a>.
+  At <a href="https://creuto.com" target="_blank" rel="noopener">Creuto</a> I lead every engagement myself, from the first call through launch. We keep calls in your morning, write decisions down the same day, design for UK GDPR from the first screen and keep your code in your own accounts from day one. We have shipped 120+ products over 8+ years and hold a 5.0 rating on Clutch from 16 verified reviews. You can read more about <a href="/countries/united-kingdom">how we work with UK startups and businesses</a>.
 </p>
 `,
 };

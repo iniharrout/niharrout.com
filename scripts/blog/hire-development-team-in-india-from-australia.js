@@ -129,7 +129,7 @@ module.exports = {
 
 <h2 id="creuto">How we work with Australian teams</h2>
 <p>
-  At <a href="https://creuto.com" target="_blank" rel="noopener">Creuto</a> I lead every engagement myself, from the first call through launch. We keep calls in your afternoon, write decisions down the same day, plan for the Australian Privacy Principles from the first screen and keep your code in your own accounts from day one. We have shipped 50+ products over 8+ years and hold a 5.0 rating on Clutch from 16 verified reviews. If you are comparing markets, our guide for <a href="/blog/hire-development-team-in-india-from-uk">UK founders hiring in India</a> covers the same ground from the other side of the world. You can read more about <a href="/countries/australia">how we work with Australian startups and businesses</a>.
+  At <a href="https://creuto.com" target="_blank" rel="noopener">Creuto</a> I lead every engagement myself, from the first call through launch. We keep calls in your afternoon, write decisions down the same day, plan for the Australian Privacy Principles from the first screen and keep your code in your own accounts from day one. We have shipped 120+ products over 8+ years and hold a 5.0 rating on Clutch from 16 verified reviews. If you are comparing markets, our guide for <a href="/blog/hire-development-team-in-india-from-uk">UK founders hiring in India</a> covers the same ground from the other side of the world. You can read more about <a href="/countries/australia">how we work with Australian startups and businesses</a>.
 </p>
 `,
 };

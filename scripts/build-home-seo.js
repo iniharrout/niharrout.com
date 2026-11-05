@@ -27,7 +27,7 @@ const industriesSection = () => `    <section class="home-ind ed-section" id="in
         <header class="ed-head">
           <p class="ed-label">Industries</p>
           <h2 class="section-title" id="industries-title">Software and app development for your industry.</h2>
-          <p>Products shaped around how your sector works, its users, rules and day-to-day operations, built by one founder-led team in India.</p>
+          <p>Products shaped around how your sector works, its users, rules and day-to-day operations, built by one founder-led team.</p>
         </header>
         <ul class="home-ind-grid">
 ${TOP.map((slug) => { const i = industries.find((x) => x.slug === slug); return `          <li><a href="/industries/${slug}"><span class="home-ind-art" aria-hidden="true">${doodle(slug)}</span><span><strong>${esc(anchor(slug))}</strong><small>${esc(i.short)}</small></span></a></li>`; }).join('\n')}
@@ -73,11 +73,11 @@ const founderSection = () => `    <section class="home-founder ed-section" id="a
         <div class="home-founder-copy">
           <p class="ed-label">About the founder</p>
           <h2 class="section-title" id="about-nihar-title">Meet Nihar Ranjan Rout, founder and CEO of Creuto.</h2>
-          <p>Nihar Ranjan Rout founded Creuto, a software, mobile app and AI development company headquartered in Bhubaneswar, Odisha. Over 8+ years in product leadership, Nihar has shipped 50+ products, from custom ERPs for manufacturers to consumer booking apps and quick commerce platforms.</p>
+          <p>Nihar Ranjan Rout founded Creuto, a software, mobile app and AI development company working with startups and enterprises in the US, UK, Australia, the UAE and India. Over 8+ years in product leadership, Nihar has shipped 120+ products, from custom ERPs for manufacturers to consumer booking apps and quick commerce platforms.</p>
           <p>Every project starts with Nihar: a free call, a written plan, and the same person accountable from the PRD to launch. Creuto is an OpenAI Select Partner and rated 5.0 on Clutch from 16 verified reviews.</p>
           <ul class="home-founder-facts">
             <li><strong>8+ years</strong><span>in product leadership</span></li>
-            <li><strong>50+</strong><span>products shipped</span></li>
+            <li><strong>120+</strong><span>products shipped</span></li>
             <li><strong>5.0</strong><span>on Clutch, 16 reviews</span></li>
             <li><strong>OpenAI</strong><span>Select Partner</span></li>
           </ul>
@@ -86,41 +86,35 @@ const founderSection = () => `    <section class="home-founder ed-section" id="a
       </div>
     </section>`;
 
-// ---- where we work: Bhubaneswar, Indian cities, countries
-const LOCAL = [
-  ['Software development company in Bhubaneswar', '/software-development-company-bhubaneswar'],
-  ['App development company in Bhubaneswar', '/mobile-app-development-bhubaneswar'],
-  ['Web development company in Bhubaneswar', '/web-development-company-bhubaneswar'],
-  ['ERP software development in Bhubaneswar', '/erp-software-development-bhubaneswar'],
-  ['AI development company in Bhubaneswar', '/ai-product-development-bhubaneswar'],
-];
-const CITIES = [['Bangalore', '/locations/bangalore'], ['Hyderabad', '/locations/hyderabad'], ['Pune', '/locations/pune'], ['Delhi NCR', '/locations/delhi-ncr'], ['Cuttack', '/locations/cuttack'], ['Rourkela', '/locations/rourkela'], ['Sambalpur', '/locations/sambalpur'], ['Berhampur', '/locations/berhampur']];
+// ---- where we work: major world cities first, then countries; Bhubaneswar pages stay as one local link
+const WORLD = require('./site-data/world-cities');
 const abroad = countries.filter((c) => !c.home && c.footer !== false);
 const locationsSection = () => `    <section class="home-where ed-section" id="where-we-work" aria-labelledby="where-title">
       <div class="wrap">
         <header class="ed-head">
           <p class="ed-label">Where we work</p>
-          <h2 class="section-title" id="where-title">A software development company in Bhubaneswar, building for India and the world.</h2>
-          <p>Headquartered in Bhubaneswar, Odisha, working with startups and businesses across India and in other countries, with calls planned around your working day.</p>
+          <h2 class="section-title" id="where-title">A software development company for startups and enterprises worldwide.</h2>
+          <p>We build for companies in North America, Europe, Australia, the Middle East and Asia, with calls planned around your working day and a founder who leads every project.</p>
         </header>
         <div class="home-where-grid">
           <div class="home-where-col">
-            <h3>Bhubaneswar, Odisha</h3>
-            <ul class="home-where-links">
-${LOCAL.map(([t, h]) => `              <li><a href="${h}">${esc(t)}</a></li>`).join('\n')}
-            </ul>
-          </div>
-          <div class="home-where-col">
-            <h3>Across India</h3>
-            <p><a href="/countries/india">Software development company in India</a>, working with businesses in:</p>
+            <h3>Major cities</h3>
             <ul class="home-where-pills">
-${CITIES.map(([t, h]) => `              <li><a href="${h}">${esc(t)}</a></li>`).join('\n')}
+${WORLD.map((c) => `              <li><a href="/software-development-${c.slug}">${esc(c.name)}</a></li>`).join('\n')}
             </ul>
           </div>
           <div class="home-where-col">
-            <h3>Worldwide</h3>
+            <h3>Countries</h3>
             <ul class="home-where-countries">
 ${abroad.map((c) => `              <li><a href="/countries/${c.slug}">${flag(c.code, 'home-flag')}<span>${esc(c.name.length > 14 ? c.short : c.name)}</span></a></li>`).join('\n')}
+            </ul>
+          </div>
+          <div class="home-where-col">
+            <h3>India</h3>
+            <p>Our delivery team is based in India, where we also work with businesses nationwide.</p>
+            <ul class="home-where-links">
+              <li><a href="/countries/india">Software development company in India</a></li>
+              <li><a href="/software-development-company-bhubaneswar">Software company in Bhubaneswar</a></li>
             </ul>
           </div>
         </div>
@@ -129,10 +123,10 @@ ${abroad.map((c) => `              <li><a href="/countries/${c.slug}">${flag(c.c
 
 // ---- keyword FAQs (added after the first question, mirrored in the FAQPage data)
 const FAQ = [
-  ['Who is Nihar Ranjan Rout?', 'Nihar Ranjan Rout is the founder and CEO of Creuto, a software, mobile app and AI development company headquartered in Bhubaneswar, Odisha, India. Nihar has 8+ years in product leadership, has shipped 50+ products and works directly with every client, from the first call to launch.'],
-  ['Is Creuto a software development company in India?', 'Yes. Creuto is a founder-led software, mobile app and AI development company in India, headquartered in Bhubaneswar. We build for startups and businesses across India and in countries such as the USA, UAE, Australia and Singapore.'],
+  ['Who is Nihar Ranjan Rout?', 'Nihar Ranjan Rout is the founder and CEO of Creuto, a software, mobile app and AI development company that builds for startups and enterprises worldwide. Nihar has 8+ years in product leadership, has shipped 120+ products and works directly with every client, from the first call to launch.'],
+  ['Which countries does Creuto work with?', 'We work with startups and enterprises in the US, UK, Canada, Australia, New Zealand, the UAE, Singapore, Vietnam and India, from cities such as New York, San Francisco, London, Toronto, Sydney and Dubai, with calls planned around each client\'s working day. Our delivery team is based in India.'],
   ['What does Creuto build?', 'Mobile apps for Android and iOS (native, React Native and Flutter), web applications and websites, custom software such as ERP and CRM systems, AI products such as chatbots, RAG assistants and agents, and the cloud and DevOps setup to run them.'],
-  ['How much does app development cost in India?', 'It depends on the features, platforms and integrations you need. Use the free app timeline calculator to see how long it takes, or book a call and get a written proposal within 24 hours. After a free 30-minute call you get a written proposal within 24 hours.'],
+  ['How much does app development cost?', 'It depends on the features, platforms and integrations you need. Use the free app timeline calculator to see how long it takes, or book a free 30-minute call and get a written proposal within 24 hours.'],
 ];
 const faqItem = ([q, a]) => `          <div class="faq-item-minimal" data-home-seo-faq>
             <button class="faq-question-btn" aria-expanded="false">

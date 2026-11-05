@@ -598,3 +598,8 @@ html body:not(#_) .sc-footer li a.sc-chip { display: flex; padding: 0 14px 0 10p
   .sc-wafab-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 }
 @media print { .sc-wafab { display: none; } }
+
+/* Footer: major world cities we build for (build-nav.js) */
+.sc-foot-cities { display: flex; flex-wrap: wrap; gap: 6px 14px; margin: 14px 0 0; font-size: 13px; }
+html body:not(#_) .sc-footer .sc-foot-cities a { display: inline; padding: 0; min-height: 0; color: inherit; opacity: .75; text-decoration: underline; text-underline-offset: 3px; }
+html body:not(#_) .sc-footer .sc-foot-cities a:hover { opacity: 1; }

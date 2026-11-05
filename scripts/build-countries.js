@@ -51,6 +51,7 @@ function countryPage(c) {
   const otherPills = `<ul class="cty-pills">${others.map((x) => `<li><a href="/countries/${x.slug}">${flag(x.code)}<span>${esc(x.name)}</span></a></li>`).join('')}</ul>`;
   return head({ title: c.title, description: c.description, canonical: url, graph }) + `
 <main id="top">${R.hero({ crumbs: [['Home', '/'], ['Countries', '/countries'], [c.name, `/countries/${c.slug}`]], pill: `${c.name} · ${c.tzLabel}`, h1: c.h1, sub: c.intro, secondary: ['See our work', '/work'], artHtml: c.home ? indiaCard(c) : clockCard(c) })}
+${(() => { const list = require('./site-data/world-cities').filter((x) => x.country === c.slug); return list.length ? R.section('cities', `Cities we build for in ${c.name}`, R.pills(list.map((x) => [`Software development for ${x.name}`, `/software-development-${x.slug}`]))) : ''; })()}
 ${R.section('why', `Why ${c.adj} teams work with us`, R.cards(c.why).replace('wwm-cards', 'wwm-cards wwm-cards-4'))}
 ${c.home ? R.section('cities', 'Working with businesses across India', `${R.prose(c.overlap)}
       ${R.pills(c.cities)}

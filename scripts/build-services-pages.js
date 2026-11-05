@@ -41,7 +41,7 @@ function seoFor(key, s) {
   const desc = options.find((d) => d.length <= 158 && d.length >= 110) || options.find((d) => d.length <= 158) || options[2];
   const base = k.alt[0];
   const faq = [
-    [/company/.test(k.kw) ? `Are you ${/^([aeiou]|MVP|SEO|AI|ML)/i.test(k.kw) ? 'an' : 'a'} ${k.kw}?` : `Do you offer ${k.kw}?`, `Yes. Creuto is a founder-led software, mobile app and AI development company in India, headquartered in Bhubaneswar. We provide ${base} for startups and businesses across India and abroad, and you work with Nihar Ranjan Rout directly, starting with a free 30-minute call.`],
+    [/company/.test(k.kw) ? `Are you ${/^([aeiou]|MVP|SEO|AI|ML)/i.test(k.kw) ? 'an' : 'a'} ${k.kw}?` : `Do you offer ${k.kw}?`, `Yes. Creuto is a founder-led software, mobile app and AI development company with its delivery team in India. We provide ${base} for startups and enterprises in the US, UK, Australia, the UAE and India, and you work with Nihar Ranjan Rout directly, starting with a free 30-minute call.`],
     ...s.faq,
     [`How much ${/s$/.test(base) ? 'do' : 'does'} ${base} cost?`, `It depends on scope, platforms and integrations. Use the free app timeline calculator to see how long it takes, or book a call and get a written proposal within 24 hours.`],
   ];
@@ -242,7 +242,7 @@ function homeServices() {
         <header class="ed-head">
           <p class="ed-label">Services</p>
           <h2 class="section-title">Software, mobile app and AI development services.</h2>
-          <p>Six areas of work for startups and businesses in India and abroad, one process: a clear PRD first, then an in-house team builds it and keeps improving it.</p>
+          <p>Six areas of work for startups and enterprises worldwide, one process: a clear PRD first, then an in-house team builds it and keeps improving it.</p>
         </header>
 
         <div class="bento-services-grid">

@@ -121,7 +121,7 @@ const breadcrumbs = (trail) => `
 const proofStrip = () => `
         <div class="loc-proof" aria-label="Track record">
           <div><strong>8+</strong><span>years in product management</span></div>
-          <div><strong>50+</strong><span>products shipped</span></div>
+          <div><strong>120+</strong><span>products shipped</span></div>
           <div><strong>In-house</strong><span>engineering team</span></div>
           <div><strong>Day 1</strong><span>code in your own GitHub</span></div>
         </div>`;

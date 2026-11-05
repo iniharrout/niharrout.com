@@ -167,7 +167,7 @@ function page(p) {
   const trail = [['Home', '/'], ['Locations', '/locations'], ['Bhubaneswar', '/software-development-company-bhubaneswar'], ...(p.slug === 'software-development-company-bhubaneswar' ? [] : [[p.name, `/${p.slug}`]])];
   return head({ title: p.title, description: p.description, canonical: url, graph, image: p.image }) + `
 <main id="top">${R.hero({ crumbs: trail, pill: p.pill, h1: p.h1, sub: p.sub, secondary: ['Get a free quote', '#quote'], art: p.art })}
-${R.glance(p.h1)}
+${R.glance(p.h1, true)}
 ${p.sections(p)}
 ${R.endBand('Have a project in Bhubaneswar?', 'Tell me what you want to build. The first call is free, and we can meet in person if that helps.', SVC[p.slug], 'Bhubaneswar')}
 </main>

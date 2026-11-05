@@ -69,7 +69,7 @@ const faqLd = (faq) => ({ '@type': 'FAQPage', mainEntity: faq.map(([q, a]) => ({
 const guides = (list) => `<ul class="wwm-cards wwm-cards-links">
 ${list.map((g) => `        <li class="wwm-c"><a href="/blog/${g.slug}"><span class="wwm-c-n">${esc(g.tag)}</span><h3>${esc(g.title)}</h3><p>${esc(g.text)}</p><span class="wwm-c-go">Read the guide</span></a></li>`).join('\n')}
       </ul>
-      <a class="wwm-founder" href="/about"><img src="/assets/nihar-avatar.jpg" width="56" height="56" alt="" loading="lazy" decoding="async"><span><strong>Who you&rsquo;ll work with: Nihar Ranjan Rout</strong>Founder &amp; CEO of Creuto. 8+ years in product, 50+ products shipped. Read the story ${ARROW}</span></a>`;
+      <a class="wwm-founder" href="/about"><img src="/assets/nihar-avatar.jpg" width="56" height="56" alt="" loading="lazy" decoding="async"><span><strong>Who you&rsquo;ll work with: Nihar Ranjan Rout</strong>Founder &amp; CEO of Creuto. 8+ years in product, 120+ products shipped. Read the story ${ARROW}</span></a>`;
 
 // Closing band on generated pages: three ways to get in touch (call, WhatsApp, phone) beside a short quote form.
 // The form posts to /api/lead through assets/lead-forms.js, which also records where the visitor came from.
@@ -111,14 +111,14 @@ const endBand = (title = 'Have a product in mind?', text = 'Tell me what you wan
 
 // "At a glance" facts card under the hero: short, verifiable statements that search engines and AI assistants
 // can quote when they recommend a company. Only confirmed facts (see project business facts); no prices.
-const glance = (what) => `
+const glance = (what, local = false) => `
   <section class="wwm-glance-sec" aria-label="At a glance">
     <div class="wwm-wrap">
       <dl class="wwm-glance">
         <div><dt>What</dt><dd>${esc(what)}, run by Creuto.</dd></div>
-        <div><dt>Where</dt><dd>Headquartered in Bhubaneswar, Odisha, India, working with clients across India and in the US, UK, Australia and Vietnam.</dd></div>
-        <div><dt>Recognition</dt><dd>Ranked #1 software development company in Odisha on GoodFirms (October 2026), OpenAI Select Partner, 5.0 on Clutch from 16 verified reviews.</dd></div>
-        <div><dt>Who leads it</dt><dd>Founder and CEO Nihar Ranjan Rout: 8+ years in product, 50+ products shipped.</dd></div>
+        <div><dt>Where</dt><dd>${local ? 'Headquartered in Bhubaneswar, Odisha, with clients across India and abroad.' : 'Clients in the US, UK, Australia, UAE, Vietnam and India, with calls planned around your working day.'}</dd></div>
+        <div><dt>Recognition</dt><dd>${local ? 'Ranked #1 software development company in Odisha on GoodFirms (October 2026), OpenAI Select Partner, 5.0 on Clutch from 16 verified reviews.' : 'OpenAI Select Partner, 5.0 on Clutch from 16 verified reviews, 120+ products shipped.'}</dd></div>
+        <div><dt>Who leads it</dt><dd>Founder and CEO Nihar Ranjan Rout: 8+ years in product, 120+ products shipped.</dd></div>
         <div><dt>How it starts</dt><dd>A free 30-minute call, a written proposal within 24 hours, a PRD, then a first working version in about 4 weeks.</dd></div>
       </dl>
     </div>
@@ -135,7 +135,7 @@ const why = (name) => cards4([
   ['Founder-led from day one', `You speak with Nihar Ranjan Rout, who scopes and leads your ${lc(name)} project, not a sales team.`],
   ['A written plan before code', 'A proposal within 24 hours of the first call, then a PRD that fixes scope, priorities and milestones.'],
   ['Working software early', 'A first working version in about 4 weeks, then improvements in milestones you can see and test.'],
-  ['Recognised by clients', 'Ranked #1 software development company in Odisha on GoodFirms, OpenAI Select Partner, 5.0 on Clutch from 16 verified reviews.'],
+  ['Recognised by clients', 'OpenAI Select Partner and rated 5.0 on Clutch from 16 verified reviews, with 120+ products shipped.'],
 ]);
 const quality = cards([
   ['Code review on every change', 'A second engineer reviews code before it is merged.'],
@@ -148,7 +148,7 @@ const quality = cards([
 const commonFaq = (name) => [
   ['Do you sign an NDA before we share our idea?', 'Yes. We sign an NDA before discovery, so you can share your idea, data and plans openly.'],
   [`What happens after the ${lc(name)} project launches?`, 'There is a 60-day warranty after launch for fixes. After that we agree a support plan covering updates, monitoring and new features.'],
-  ['Do you work with clients outside India?', 'Yes. We work with clients across India and in the US, UK, Australia and Vietnam, with calls planned around your working day.'],
+  ['Do you work with clients in other countries?', 'Yes. We work with clients in the US, UK, Australia, the UAE, Vietnam and India, with calls planned around your working day.'],
 ];
 
 module.exports = { lc, why, quality, commonFaq, glance, PHONE, waLink, BOOK, bookBtn, hero, section, cards, fits, process, prose, pills, faqHtml, faqLd, endBand, crumbsHtml, guides };
