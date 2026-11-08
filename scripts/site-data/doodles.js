@@ -204,6 +204,7 @@ function doodle(name, cls = 'doodle', tone = toneOf(name)) {
 
 // ---- blog cover scenes: a main doodle and a smaller supporting one on a soft panel (480 x 300 canvas)
 const BLOG_ART = {
+  'app-admin-panel-development': ['dashboard', 'access', 'sun'],
   'switch-software-development-company-mid-project': ['team', 'check', 'peach'],
   'how-to-build-a-home-services-app': ['on-demand', 'calendar', 'sun'],
   'mobile-app-backend-firebase-vs-custom': ['api', 'realtime', 'sky'],
