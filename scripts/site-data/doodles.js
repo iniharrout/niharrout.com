@@ -204,6 +204,11 @@ function doodle(name, cls = 'doodle', tone = toneOf(name)) {
 
 // ---- blog cover scenes: a main doodle and a smaller supporting one on a soft panel (480 x 300 canvas)
 const BLOG_ART = {
+  'offshore-software-development': ['remote', 'calendar', 'sky'],
+  'dedicated-development-team': ['team', 'roadmap', 'peach'],
+  'staff-augmentation-vs-managed-services-vs-dedicated-team': ['team', 'question', 'sun'],
+  'nearshore-vs-offshore-vs-onshore-software-development': ['remote', 'chat', 'peach'],
+  'how-to-outsource-software-development': ['roadmap', 'check', 'sky'],
   'erp-implementation-timeline': ['erp', 'roadmap', 'sky'],
   'software-development-estimates-explained': ['pricing', 'question', 'sun'],
   'hire-development-team-in-india-from-canada': ['remote', 'access', 'sky'],

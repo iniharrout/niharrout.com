@@ -15,6 +15,11 @@ const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const SITE = 'https://www.niharrout.com';
 const ORDER = [
+  'offshore-software-development',
+  'dedicated-development-team',
+  'staff-augmentation-vs-managed-services-vs-dedicated-team',
+  'nearshore-vs-offshore-vs-onshore-software-development',
+  'how-to-outsource-software-development',
   'erp-implementation-timeline',
   'software-development-estimates-explained',
   'hire-development-team-in-india-from-canada',

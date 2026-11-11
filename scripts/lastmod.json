@@ -67,6 +67,10 @@
     "hash": "7dd587f33f0e419a",
     "date": "2026-11-05"
   },
+  "blog/dedicated-development-team/index.html": {
+    "hash": "b642c3102268b51a",
+    "date": "2026-11-11"
+  },
   "blog/discovery-phase-in-software-development/index.html": {
     "hash": "b24093c5f42480cc",
     "date": "2026-11-05"
@@ -235,6 +239,10 @@
     "hash": "e1c8240ecca9b0ed",
     "date": "2026-11-05"
   },
+  "blog/how-to-outsource-software-development/index.html": {
+    "hash": "63ad05a1f20ca463",
+    "date": "2026-11-11"
+  },
   "blog/how-to-reduce-ai-hallucinations/index.html": {
     "hash": "51b16481bf92ae79",
     "date": "2026-11-05"
@@ -256,7 +264,7 @@
     "date": "2026-11-05"
   },
   "blog/index.html": {
-    "hash": "aff78844f07bd1fe",
+    "hash": "c914cbb9578510f1",
     "date": "2026-11-11"
   },
   "blog/inventory-management-software-development/index.html": {
@@ -303,6 +311,10 @@
     "hash": "08734e1c8688fc42",
     "date": "2026-11-05"
   },
+  "blog/nearshore-vs-offshore-vs-onshore-software-development/index.html": {
+    "hash": "8acb3e538b1de645",
+    "date": "2026-11-11"
+  },
   "blog/node-js-interview-questions/index.html": {
     "hash": "982cba1257784384",
     "date": "2026-11-05"
@@ -310,6 +322,10 @@
   "blog/non-functional-requirements-checklist/index.html": {
     "hash": "d72a11c7e0cfaec2",
     "date": "2026-11-05"
+  },
+  "blog/offshore-software-development/index.html": {
+    "hash": "d99422c39b242e5a",
+    "date": "2026-11-11"
   },
   "blog/openai-select-partner/index.html": {
     "hash": "ce14058cf5c64415",
@@ -319,36 +335,40 @@
     "hash": "2c8931fa68a4e609",
     "date": "2026-11-05"
   },
+  "blog/page/10/index.html": {
+    "hash": "fd4844f996c5f763",
+    "date": "2026-11-11"
+  },
   "blog/page/2/index.html": {
-    "hash": "81dcb6c5a2a4330d",
+    "hash": "08976d8e5edbc5dc",
     "date": "2026-11-11"
   },
   "blog/page/3/index.html": {
-    "hash": "57c4ff8434998b0d",
+    "hash": "1b630097e759981d",
     "date": "2026-11-11"
   },
   "blog/page/4/index.html": {
-    "hash": "9f1efb95c6fdf111",
+    "hash": "c7485cf7e39e16ff",
     "date": "2026-11-11"
   },
   "blog/page/5/index.html": {
-    "hash": "d50a1c23808ac916",
+    "hash": "9d9f7f1a2e2f0f85",
     "date": "2026-11-11"
   },
   "blog/page/6/index.html": {
-    "hash": "6309e697d9cf16f2",
+    "hash": "b20f4bb2e48c26dd",
     "date": "2026-11-11"
   },
   "blog/page/7/index.html": {
-    "hash": "79214208208ad934",
+    "hash": "31db3c684b82c252",
     "date": "2026-11-11"
   },
   "blog/page/8/index.html": {
-    "hash": "20fa54767415152b",
+    "hash": "985c87d00e7d3460",
     "date": "2026-11-11"
   },
   "blog/page/9/index.html": {
-    "hash": "dc8bde3e91fbe63f",
+    "hash": "c9b661112a6599f3",
     "date": "2026-11-11"
   },
   "blog/pragmatic-enterprise-ai-workflows/index.html": {
@@ -411,6 +431,10 @@
     "hash": "5caed50f530a6880",
     "date": "2026-11-05"
   },
+  "blog/staff-augmentation-vs-managed-services-vs-dedicated-team/index.html": {
+    "hash": "76f60f7c1fc87b91",
+    "date": "2026-11-11"
+  },
   "blog/switch-software-development-company-mid-project/index.html": {
     "hash": "6013de54c9ba34b9",
     "date": "2026-11-07"
@@ -424,35 +448,35 @@
     "date": "2026-11-05"
   },
   "blog/topic/ai/index.html": {
-    "hash": "c17904eecfb517bd",
+    "hash": "2f67d8972b524bf7",
     "date": "2026-11-11"
   },
   "blog/topic/careers/index.html": {
-    "hash": "ef152994e3c033af",
+    "hash": "a64f19481b66732b",
     "date": "2026-11-11"
   },
   "blog/topic/cost-and-hiring/index.html": {
-    "hash": "cc7a6b93aa31bf74",
+    "hash": "89eb8f47fa7a0b6f",
     "date": "2026-11-11"
   },
   "blog/topic/industries/index.html": {
-    "hash": "53e3e0274b3de685",
+    "hash": "1968779a0f0cfe71",
     "date": "2026-11-11"
   },
   "blog/topic/mobile/index.html": {
-    "hash": "430a81c365c0f952",
+    "hash": "99e80bcbd2dd535a",
     "date": "2026-11-11"
   },
   "blog/topic/news/index.html": {
-    "hash": "f57e47a4d5339c3f",
+    "hash": "dcc4112a0c89dfda",
     "date": "2026-11-11"
   },
   "blog/topic/product/index.html": {
-    "hash": "5cc16a81fa158fb6",
+    "hash": "2dd915bf1835ce61",
     "date": "2026-11-11"
   },
   "blog/topic/software-and-cloud/index.html": {
-    "hash": "bcd1212d6ab0d98f",
+    "hash": "932b74d88c7768d1",
     "date": "2026-11-11"
   },
   "blog/ui-ux-designer-portfolio-tips/index.html": {
@@ -548,7 +572,7 @@
     "date": "2026-11-05"
   },
   "index.html": {
-    "hash": "6104cc4f81e3a9f7",
+    "hash": "899065b704a957c5",
     "date": "2026-11-11"
   },
   "industries/agriculture/index.html": {
