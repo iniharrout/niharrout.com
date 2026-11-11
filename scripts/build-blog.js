@@ -15,6 +15,7 @@ const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const SITE = 'https://www.niharrout.com';
 const ORDER = [
+  'erp-implementation-timeline',
   'software-development-estimates-explained',
   'hire-development-team-in-india-from-canada',
   'app-admin-panel-development',
