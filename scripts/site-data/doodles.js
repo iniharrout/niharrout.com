@@ -204,6 +204,7 @@ function doodle(name, cls = 'doodle', tone = toneOf(name)) {
 
 // ---- blog cover scenes: a main doodle and a smaller supporting one on a soft panel (480 x 300 canvas)
 const BLOG_ART = {
+  'ai-proof-of-concept': ['prototype', 'ai', 'sky'],
   'offshore-software-development': ['remote', 'calendar', 'sky'],
   'dedicated-development-team': ['team', 'roadmap', 'peach'],
   'staff-augmentation-vs-managed-services-vs-dedicated-team': ['team', 'question', 'sun'],
