@@ -11,6 +11,14 @@ module.exports = [
     intro: 'New York companies move fast and expect polished products. We build mobile apps, web platforms and AI products for startups and enterprises in New York, with a founder who leads every project and calls in your morning.',
     angle: 'New York buyers often work with tight launch dates, strict security reviews and investors watching progress. We plan around that: a written plan within 24 hours of the first call, a PRD before code, working software early and documentation your security team can review.',
     hours: 'India is 9.5 to 10.5 hours ahead of New York, depending on daylight saving. Our evening meets your morning, so calls and demos happen between about 8 am and 11 am Eastern, and work continues while you sleep. Feedback you send in the afternoon is usually acted on by your next morning.',
+    uses: [
+      ['Trading and fintech dashboards', 'Real-time portfolio, payments and compliance dashboards for financial teams.'],
+      ['Media and publishing apps', 'Subscription content apps with paywalls, push alerts and offline reading.'],
+      ['Retail and D2C commerce', 'Mobile shopping apps with loyalty, Apple Pay and store pickup.'],
+      ['Healthcare scheduling', 'Patient booking and telehealth tools designed for HIPAA safeguards.'],
+      ['Real estate platforms', 'Listing, tenant and property management portals for brokers and landlords.'],
+      ['B2B SaaS products', 'Multi-tenant SaaS with roles, billing and SOC 2-ready controls.'],
+    ],
     faq: [
       ['Do you have an office in New York?', 'No. We work with New York companies remotely from India, with calls in your morning and a founder who stays involved from the first call to launch.'],
       ['Can we pay in US dollars and sign a US-style contract?', 'Yes. We invoice in US dollars, work under a written agreement with milestones, and sign an NDA before discovery.'],
@@ -23,6 +31,14 @@ module.exports = [
     intro: 'San Francisco and Bay Area startups need to ship quickly and keep burn under control. We build MVPs, SaaS products and AI features for San Francisco founders, led directly by our founder and built by an in-house team in India.',
     angle: 'Bay Area founders usually come to us to extend runway: a senior, founder-led team that turns a PRD into a working first version in about 4 weeks, then keeps shipping in milestones while the core team focuses on customers and fundraising.',
     hours: 'India is 12.5 to 13.5 hours ahead of San Francisco. We agree a fixed daily slot, usually your late afternoon or early evening, which is our early morning. Because our days are opposite, work progresses overnight and you wake up to updates.',
+    uses: [
+      ['AI-first MVPs', 'Products built around RAG assistants, agents and copilots on OpenAI models.'],
+      ['B2B SaaS platforms', 'Multi-tenant products with usage billing, SSO and admin consoles.'],
+      ['Developer tools', 'Dashboards, APIs and SDKs for technical buyers.'],
+      ['Fintech products', 'Payments, expense and lending tools with careful compliance design.'],
+      ['Health and wellness apps', 'Coaching and care apps with wearables and HealthKit data.'],
+      ['Marketplace apps', 'Two-sided products with payments, reviews and trust features.'],
+    ],
     faq: [
       ['How do you handle the time difference with the West Coast?', 'We agree one fixed overlap slot each day, usually your late afternoon, and share written updates so decisions never wait a full day.'],
       ['Can you build AI products with OpenAI models?', 'Yes. Creuto is an OpenAI Select Partner, and we build RAG assistants, AI agents and chatbots, choosing other models when they suit a task better.'],
@@ -35,6 +51,14 @@ module.exports = [
     intro: 'Los Angeles brands, creators and startups need apps and platforms that look great and handle real traffic. We design and build mobile apps, ecommerce platforms and booking products for Los Angeles companies, with the founder leading every project.',
     angle: 'Consumer products in Los Angeles live or die on design and speed. We prototype first so you can test with real users, build with Flutter or React Native for both app stores, and set up analytics from day one so the next release is based on what people actually do.',
     hours: 'India is 12.5 to 13.5 hours ahead of Los Angeles. We meet at a fixed daily time, usually your late afternoon, and send written progress updates, so work moves forward overnight.',
+    uses: [
+      ['Creator and media apps', 'Video, audio and community apps with subscriptions and in-app purchases.'],
+      ['Ecommerce and fashion brands', 'Mobile stores with lookbooks, drops and loyalty programmes.'],
+      ['Fitness and wellness apps', 'Class booking, coaching and progress tracking apps.'],
+      ['Event and ticketing platforms', 'Ticketing, vendor booking and on-site check-in tools.'],
+      ['Real estate apps', 'Listing, viewing and agent tools for a busy property market.'],
+      ['Beauty and salon booking', 'On-demand booking apps like the Make My Look platform we built.'],
+    ],
     faq: [
       ['Do you build consumer apps for both iPhone and Android?', 'Yes. We build native or cross-platform apps with Flutter and React Native and handle App Store and Google Play submission.'],
       ['Can you build an ecommerce or booking platform?', 'Yes. We have built event and vendor booking, quick commerce and on-demand beauty booking platforms, with payments, vendor tools and admin panels.'],
@@ -47,6 +71,14 @@ module.exports = [
     intro: 'Chicago businesses in logistics, manufacturing and financial services need software that fits real operations. We build custom ERP, logistics platforms, portals and mobile apps for Chicago companies, led by our founder from the first call.',
     angle: 'Operations-heavy companies rarely want a big-bang switch. We roll out custom software one module at a time, run it alongside your current process, connect it to the systems you already use and train the people who use it every day.',
     hours: 'India is 10.5 to 11.5 hours ahead of Chicago. Calls usually happen in your early morning, our evening, and progress updates arrive before your working day starts.',
+    uses: [
+      ['Logistics and fleet platforms', 'Dispatch, tracking and proof-of-delivery apps for carriers and shippers.'],
+      ['Manufacturing ERP', 'Production, inventory and quality modules built around your plant.'],
+      ['Insurance and finance portals', 'Customer and agent portals with document workflows.'],
+      ['Healthcare operations tools', 'Scheduling, staffing and internal tools for clinics and hospitals.'],
+      ['Wholesale ordering apps', 'B2B ordering apps for distributors and their retail customers.'],
+      ['Field service apps', 'Offline-first apps for technicians, inspections and work orders.'],
+    ],
     faq: [
       ['Can you build a custom ERP or logistics system?', 'Yes. We build inventory, production, dispatch and fleet systems, and integrate them with accounting, ERP and partner APIs.'],
       ['Will the new system work with our existing tools?', 'Yes. We plan integrations in the PRD and connect to your current software through APIs rather than forcing a full replacement.'],
@@ -59,6 +91,14 @@ module.exports = [
     intro: 'Austin startups and growing software companies need product engineering that keeps pace with their roadmap. We build SaaS products, MVPs and AI features for Austin teams, with a founder who leads every engagement.',
     angle: 'For Austin startups we often act as the product engineering team behind the founders: scoping the smallest valuable version, building it in about 4 weeks and continuing in milestones, so the company can grow without a large hiring round.',
     hours: 'India is 10.5 to 11.5 hours ahead of Austin. We meet in your early morning, our evening, and you receive written updates before your day starts.',
+    uses: [
+      ['SaaS MVPs', 'First versions of B2B and B2C SaaS products, built in milestones.'],
+      ['AI features for existing products', 'Assistants, search and automation added to products already in market.'],
+      ['Energy and climate software', 'Monitoring, billing and field tools for energy companies.'],
+      ['Health tech products', 'Patient and provider apps designed for HIPAA safeguards.'],
+      ['Real estate and proptech', 'Property, leasing and investor platforms.'],
+      ['Internal tools for scale-ups', 'Admin panels and dashboards that replace spreadsheets.'],
+    ],
     faq: [
       ['Can you build our MVP and keep developing it after launch?', 'Yes. We build the first version, then continue in planned milestones based on what users do, or hand over to your team with documentation.'],
       ['Do you build multi-tenant SaaS?', 'Yes. We build SaaS products with roles, billing, multi-tenant data separation and admin tools.'],
@@ -71,6 +111,14 @@ module.exports = [
     intro: 'London companies need software that is secure, well documented and ready for scrutiny. We build mobile apps, web platforms and AI products for London startups and enterprises, with UK working hours covered every day.',
     angle: 'London has one of the largest fintech and B2B software markets in the world, and buyers expect UK GDPR compliance, accessibility and clear documentation. We design for those from the first sprint and support your security and compliance reviews.',
     hours: 'India is 4.5 to 5.5 hours ahead of London, so our afternoon overlaps with your morning. Most of your working day is shared with ours, which makes daily calls and quick decisions easy.',
+    uses: [
+      ['Fintech and open banking apps', 'Payment, savings and lending apps designed for FCA and UK GDPR requirements.'],
+      ['Retail and ecommerce', 'Mobile commerce with Apple Pay, Google Pay and loyalty programmes.'],
+      ['Health and care platforms', 'Booking and care-coordination tools designed for UK data protection.'],
+      ['Property and lettings portals', 'Landlord, tenant and agent platforms.'],
+      ['B2B SaaS for professional services', 'Client portals, workflow and document tools for agencies and consultancies.'],
+      ['Media and publishing', 'Subscription content apps and editorial tools.'],
+    ],
     faq: [
       ['Do you work during UK hours?', 'Yes. Our afternoon overlaps with the London morning every working day, so calls, reviews and quick questions fit easily.'],
       ['Can you build to UK GDPR requirements?', 'Yes. We design consent, data access, retention and deletion into the product and support your data protection review.'],
@@ -83,6 +131,14 @@ module.exports = [
     intro: 'Toronto startups and enterprises need product teams that understand privacy and scale. We build mobile apps, SaaS platforms and AI products for Toronto companies, led by our founder with calls in your morning.',
     angle: 'Canadian buyers expect privacy built in, under PIPEDA and provincial rules, and products that work in English and French where needed. We plan for both, and keep you involved through a written plan, a PRD and working software at every milestone.',
     hours: 'India is 9.5 to 10.5 hours ahead of Toronto. Our evening meets your morning for calls and demos, and work continues overnight so updates are waiting when you start the day.',
+    uses: [
+      ['Fintech and insurance apps', 'Customer apps and portals designed for Canadian privacy rules.'],
+      ['AI products', 'RAG assistants and AI agents for support and operations teams.'],
+      ['Health platforms', 'Clinic booking and patient engagement apps.'],
+      ['Proptech platforms', 'Listing, leasing and property management software.'],
+      ['Bilingual consumer apps', 'English and French apps with content managed in both languages.'],
+      ['B2B SaaS', 'Multi-tenant products with billing and admin tools.'],
+    ],
     faq: [
       ['Can you build products that meet Canadian privacy rules?', 'Yes. We design for PIPEDA and provincial privacy requirements with consent, access controls and data handling agreed in the PRD.'],
       ['Can the app support English and French?', 'Yes. We build multilingual interfaces from the start, so adding French content does not require a rebuild.'],
@@ -95,6 +151,14 @@ module.exports = [
     intro: 'Sydney businesses need reliable apps and platforms without the cost of a large local agency. We build mobile apps, web platforms and AI products for Sydney startups and companies, with the founder leading every project.',
     angle: 'Australian buyers expect privacy under the Privacy Act, accessible design and products that work across iPhone and Android. We plan for those in the PRD and show working software early, so you see progress rather than reports.',
     hours: 'Sydney is 4.5 to 5.5 hours ahead of India, depending on daylight saving. Our morning overlaps with your afternoon, giving several shared working hours every day for calls and reviews.',
+    uses: [
+      ['Fintech and payments', 'Customer apps and portals designed for the Australian Privacy Act.'],
+      ['Ecommerce and retail', 'Mobile stores with Afterpay-style flows, loyalty and click and collect.'],
+      ['Health and allied health booking', 'Practitioner booking and patient engagement apps.'],
+      ['Property and real estate', 'Listing, inspection booking and property management tools.'],
+      ['Education platforms', 'Learning apps and portals for schools and training providers.'],
+      ['Trades and field service', 'Quoting, scheduling and job tracking apps for tradies.'],
+    ],
     faq: [
       ['How many working hours overlap with Sydney?', 'Several hours each working day: our morning overlaps with your afternoon, which is enough for calls, reviews and quick decisions.'],
       ['Can you build to the Australian Privacy Act?', 'Yes. We design consent, data access and secure storage into the product and support your privacy review.'],
@@ -107,6 +171,14 @@ module.exports = [
     intro: 'Melbourne companies in education, healthcare, retail and logistics need software that fits how they work. We build mobile apps, custom platforms and AI products for Melbourne businesses, led by our founder from the first call.',
     angle: 'Many Melbourne teams come to us with a process that has outgrown spreadsheets or an off-the-shelf tool. We map the workflow with the people who use it, build in stages and keep the system easy to extend as the business grows.',
     hours: 'Melbourne is 4.5 to 5.5 hours ahead of India. Our morning overlaps with your afternoon each working day, which keeps calls and decisions on the same day.',
+    uses: [
+      ['Education and training', 'Learning platforms and student portals for colleges and training providers.'],
+      ['Healthcare tools', 'Booking, telehealth and internal tools for clinics.'],
+      ['Retail and hospitality', 'Ordering, loyalty and booking apps for cafes, restaurants and stores.'],
+      ['Logistics and warehousing', 'Tracking, dispatch and warehouse apps.'],
+      ['Events and venues', 'Ticketing, vendor and venue booking platforms.'],
+      ['Spreadsheet replacement systems', 'Custom operations software for growing businesses.'],
+    ],
     faq: [
       ['Do you build education or healthcare platforms?', 'Yes. We build learning platforms, booking and patient tools, and internal systems, designed for the privacy rules that apply.'],
       ['Can you replace our spreadsheets with a custom system?', 'Yes. We start with the most painful process, build it as a first module and add others in stages.'],
@@ -119,6 +191,14 @@ module.exports = [
     intro: 'Dubai businesses need apps and platforms that work in English and Arabic and scale with fast growth. We build mobile apps, booking and marketplace platforms and AI products for Dubai companies, with almost the same working day as yours.',
     angle: 'Dubai buyers often need bilingual interfaces, right-to-left Arabic layouts, local payment options and quick launches. We plan these in the PRD and build with frameworks that handle both languages cleanly on iPhone and Android.',
     hours: 'India is only 1.5 hours ahead of Dubai, so almost the whole working day is shared. Calls, reviews and quick questions happen in real time.',
+    uses: [
+      ['Real estate platforms', 'Bilingual listing, off-plan sales and property management apps.'],
+      ['Logistics and delivery', 'Last-mile delivery, fleet and warehouse apps.'],
+      ['Tourism and hospitality', 'Booking, concierge and guest experience apps.'],
+      ['Retail and quick commerce', 'Mobile stores and fast delivery apps like FlashNow.'],
+      ['Fintech and payments', 'Wallets and payment apps designed for UAE requirements.'],
+      ['On-demand services', 'Home services, beauty and booking marketplaces in Arabic and English.'],
+    ],
     faq: [
       ['Can you build apps in Arabic and English?', 'Yes. We build bilingual apps with proper right-to-left Arabic layouts and content managed for both languages.'],
       ['Do you work during UAE business hours?', 'Yes. With only 1.5 hours between us, our working days overlap almost completely.'],

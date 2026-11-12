@@ -15,7 +15,7 @@ const families = [
     key: 'custom', name: 'Custom Software Development', path: '/services/custom-software-development', existing: true,
     menu: 'Your business is unique, and your software should be too. ERP, CRM and internal systems built around how you work.',
     icon: '<path d="M8 6l-5 6 5 6M16 6l5 6-5 6"/>',
-    items: ['custom-erp-development', { name: 'Web App Development', href: '/services/web-application-development', short: 'Portals, dashboards and real-time web products' }, 'crm-development', { name: 'MVP Development', href: '/services/product-strategy-prd/mvp-development', short: 'A first working version, built to learn from' }, 'enterprise-application-development', 'software-consulting', 'legacy-application-modernization', 'ecommerce-solutions'],
+    items: ['custom-erp-development', { name: 'Web App Development', href: '/services/web-application-development', short: 'Portals, dashboards and real-time web products' }, 'crm-development', { name: 'MVP Development', href: '/services/product-strategy-prd/mvp-development', short: 'A first working version, built to learn from' }, 'enterprise-application-development', 'api-development', 'software-consulting', 'legacy-application-modernization', 'ecommerce-solutions'],
   },
   {
     key: 'mobile', name: 'Mobile App Development', path: '/services/mobile-app-development', existing: true,
@@ -147,6 +147,26 @@ const subs = {
       ['Do you sign an NDA before discovery?', 'Yes. We sign an NDA before discovery, and you own the code and accounts from the first sprint.'],
     ],
     industries: ['manufacturing', 'fintech', 'healthcare', 'logistics', 'ecommerce', 'education', 'government', 'energy'],
+  },
+  'api-development': {
+    family: 'custom', name: 'API Development', short: 'Custom APIs and integrations that connect your systems',
+    seoTitle: 'Custom API Development Company | Nihar Ranjan Rout',
+    seoDesc: 'Custom API development and integration services: secure REST and GraphQL APIs that connect your apps, ERP, CRM, payments and partners.',
+    intro: 'APIs are how your apps, systems and partners talk to each other. We design and build custom REST and GraphQL APIs, and integrate third-party ones, so data moves securely between your mobile apps, web platforms, ERP, CRM and payment providers.',
+    builds: [
+      ['Custom REST and GraphQL APIs', 'Well-designed APIs for your mobile apps, web apps and partners, with clear documentation.'],
+      ['Third-party API integration', 'Payments, maps, messaging, accounting, logistics and AI services connected to your product.'],
+      ['ERP and CRM integration', 'Orders, customers, stock and invoices kept in sync between your systems.'],
+      ['Public and partner APIs', 'APIs that customers and partners can build on, with keys, limits and versioning.'],
+      ['API modernisation', 'Old or fragile APIs rebuilt, documented and made faster without breaking existing apps.'],
+    ],
+    fits: ['Your systems do not talk to each other and data is copied by hand.', 'Your mobile or web app needs a reliable back end.', 'Partners or customers want to connect to your platform.'],
+    faq: [
+      ['REST or GraphQL?', 'REST is simple and widely supported, and suits most integrations. GraphQL suits apps that need flexible queries across many related objects. We recommend one based on your clients and data, and explain why.'],
+      ['How do you secure APIs?', 'With authentication such as OAuth 2.0 or API keys, role-based access, encryption in transit, input validation, rate limiting and logging of sensitive actions.'],
+      ['Will you document the API?', 'Yes. We provide OpenAPI documentation and examples, so your team and partners can integrate without guesswork.'],
+    ],
+    industries: ['fintech', 'ecommerce', 'logistics', 'saas'],
   },
   'software-consulting': {
     family: 'custom', name: 'Software Consulting Services', short: 'Independent advice before you build or buy',

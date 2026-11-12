@@ -48,6 +48,23 @@ module.exports = {
     work: [],
     faq: [],
   },
+  'api-development': {
+    features: [
+      ['OpenAPI documentation', 'Clear, versioned documentation with examples for every endpoint.'],
+      ['Authentication and access', 'OAuth 2.0, API keys, scopes and role-based permissions.'],
+      ['Rate limiting and quotas', 'Protection from abuse and fair use for partners.'],
+      ['Webhooks and events', 'Real-time notifications to other systems when something changes.'],
+      ['Monitoring and logs', 'Response times, errors and usage tracked so issues are caught early.'],
+      ['Backward-compatible versioning', 'New features without breaking apps that already use the API.'],
+    ],
+    tech: ['Node.js', 'Python', 'Java', 'GraphQL', 'PostgreSQL', 'Redis', 'Docker', 'AWS', 'Azure'],
+    work: ['skribe', 'erp'],
+    faq: [
+      ['Can you integrate payment gateways and UPI?', 'Yes. We integrate payment gateways, UPI, cards and wallets, including webhooks for payment status and refunds.'],
+      ['Can you connect our ERP or Tally to other systems?', 'Yes. We build integration layers that sync orders, invoices, stock and customers between your ERP or accounting software and other tools.'],
+      ['How long does an API project take?', 'A focused API or integration can be working in a few weeks. Larger platforms with many integrations take longer, and the written proposal sets out the milestones.'],
+    ],
+  },
   'software-consulting': {
     features: [
       ['Build or buy review', 'An honest view of whether to build, buy or combine both for your need.'],

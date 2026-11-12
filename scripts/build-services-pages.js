@@ -18,6 +18,8 @@ const { SITE, ORG, esc, head, foot, crumbs } = require('./careers/shell');
 const R = require('./site-data/render');
 const approach = require('./site-data/approach');
 const DEPTH = require('./site-data/service-depth');
+const WORLD = require('./site-data/world-cities');
+const cityPills = () => R.pills(WORLD.map((c) => [c.name, `/software-development-${c.slug}`]));
 
 const ROOT = path.resolve(__dirname, '..');
 const famByKey = Object.fromEntries(families.map((f) => [f.key, f]));
@@ -99,6 +101,7 @@ ${depth.tech && depth.tech.length ? R.section('tech', `Technology we use for ${R
 ${depth.work && depth.work.length ? R.section('work', 'Products we have built', workCardsFor(depth.work), 'wwm-sec-alt') : ''}
 ${s.extra ? '' : R.section('quality', 'How we keep quality and security high', QUALITY)}
 ${extraSections(s)}
+${R.section('cities', `${s.name} for companies worldwide`, `<p class="wwm-lead">We build ${esc(R.lc(s.name))} for startups and enterprises in these cities, with calls planned around their working day:</p>${cityPills()}`)}
 ${R.section('related', 'Related services and industries', `<div class="wwm-rel"><div><h3>More in ${esc(fam.name)}</h3>${R.pills(related)}</div>${inds.length ? `<div><h3>Industries we build this for</h3>${R.pills(inds)}</div>` : ''}</div>`)}
 ${R.section('faq', 'Questions about ' + s.name, R.faqHtml(seo.faq))}
 ${R.section('guides', 'Guides on this topic', R.guides(G.forSub(key, fam.key)), 'wwm-sec-alt')}
@@ -210,7 +213,7 @@ function faqBlock(fam, list) {
 // Doodle drawn for each family (scripts/site-data/doodles.js).
 // Doodle for each sub-service hero; anything not listed uses its family's doodle.
 const SUB_DOODLE = {
-  'custom-erp-development': 'erp', 'crm-development': 'portal', 'enterprise-application-development': 'dashboard', 'software-consulting': 'question',
+  'custom-erp-development': 'erp', 'crm-development': 'portal', 'enterprise-application-development': 'dashboard', 'api-development': 'api', 'software-consulting': 'question',
   'legacy-application-modernization': 'legacy', 'ecommerce-solutions': 'ecommerce',
   'android-app-development': 'android', 'ios-app-development': 'ios', 'react-native-app-development': 'cross-platform', 'flutter-app-development': 'layers',
   'mobile-app-qa-testing': 'check', 'mobile-app-modernization': 'offline-sync',

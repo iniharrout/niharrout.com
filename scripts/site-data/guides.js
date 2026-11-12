@@ -52,6 +52,7 @@ const BY_SUB = {
   'custom-erp-development': ['erp-vs-crm-difference', 'why-custom-erp-implementations-fail', 'legacy-software-modernization-guide'],
   'crm-development': ['custom-crm-vs-salesforce-hubspot-zoho', 'whatsapp-business-api-guide', 'erp-vs-crm-difference'],
   'enterprise-application-development': ['web-application-development-build-vs-buy', 'how-to-choose-a-tech-stack-for-your-startup', 'software-maintenance-cost-and-planning'],
+  'api-development': ['upi-payment-integration-for-apps', 'whatsapp-business-api-guide', 'non-functional-requirements-checklist'],
   'software-consulting': ['how-to-choose-a-software-development-company', 'freelancer-vs-agency-for-app-development', 'agile-vs-waterfall-software-development'],
   'legacy-application-modernization': ['legacy-software-modernization-guide', 'why-custom-erp-implementations-fail', 'aws-vs-azure-vs-google-cloud-for-startups'],
   'ecommerce-solutions': ['how-to-build-a-multi-vendor-marketplace-app', 'upi-payment-integration-for-apps', 'how-to-build-a-quick-commerce-app'],

@@ -44,19 +44,19 @@ const SERVICES = (c) => [
 const linkCards = (list) => `<ul class="wwm-cards wwm-cards-links">
 ${list.map(([t, d, href], n) => `        <li class="wwm-c"><a href="${href}"><span class="wwm-c-n" aria-hidden="true">0${n + 1}</span><h3>${esc(t)}</h3><p>${esc(d)}</p><span class="wwm-c-go">Learn more</span></a></li>`).join('\n')}
       </ul>`;
-const workCards = () => linkCards(['skyone', 'flash', 'mml', 'erp'].map((k) => [WORK[k].title, WORK[k].note, WORK[k].href]));
+const WORK_FOR = { 'new-york': ['skyone', 'erp'], 'san-francisco': ['skribe', 'flash'], 'los-angeles': ['mml', 'skyone'], chicago: ['erp', 'flash'], austin: ['skribe', 'erp'], london: ['skyone', 'skribe'], toronto: ['skribe', 'mml'], sydney: ['mml', 'flash'], melbourne: ['erp', 'skyone'], dubai: ['flash', 'skyone'] };
+const workCards = (c) => linkCards((WORK_FOR[c.slug] || ['skyone', 'flash']).map((k) => [WORK[k].title, WORK[k].note, WORK[k].href]));
 
 function cityPage(c) {
   const country = bySlug[c.country];
   const url = `${SITE}${urlOf(c)}`;
-  const title = `Software & App Development for ${c.name} Companies | Creuto`;
-  const description = `Mobile app, web and AI development for ${c.name} startups and enterprises: a founder-led team with calls in ${c.tzLabel}, 120+ products shipped. Free call.`;
-  const h1 = `Software and App Development for ${c.name} Companies`;
+  const title = `Mobile App Development Company for ${c.name} Businesses | Creuto`;
+  const description = `Mobile app and software development company for ${c.name} startups and enterprises: iOS, Android, web and AI, with calls in ${c.tzLabel}. Free call.`;
+  const h1 = `Mobile App and Software Development Company for ${c.name} Businesses`;
   const faq = [
     [`Do you build software for companies in ${c.name}?`, `Yes. Creuto builds mobile apps, web platforms, custom software and AI products for startups and enterprises in ${c.name}, working remotely with calls planned around ${c.tzLabel}.`],
     ...c.faq,
     [`How do ${c.name} projects start?`, 'Book a free 30-minute call with Nihar Ranjan Rout. If we are a good fit, you receive a written proposal within 24 hours, then a PRD and the first milestone.'],
-    ...R.commonFaq('software'),
   ];
   const graph = [
     { '@type': 'WebPage', '@id': `${url}#webpage`, url, name: title, description, isPartOf: { '@id': `${SITE}/#website` }, about: { '@id': `${url}#service` } },
@@ -67,17 +67,16 @@ function cityPage(c) {
   const others = CITIES.filter((x) => x.slug !== c.slug);
   return head({ title, description, canonical: url, graph }) + `
 <main id="top">${R.hero({ crumbs: [['Home', '/'], ['Countries', '/countries'], [country.name, `/countries/${country.slug}`], [c.name, urlOf(c)]], pill: `${c.name} · ${c.tzLabel}`, h1, sub: c.intro, secondary: ['Get a free quote', '#quote'], artHtml: clockCard(c) })}
-${R.glance(`Software, mobile app and AI development for ${c.name} companies`)}
-${R.section('services', `What we build for ${c.name} companies`, linkCards(SERVICES(c)))}
-${R.section('approach', `How we work with ${c.name} teams`, R.prose(c.angle), 'wwm-sec-alt')}
-${R.section('hours', `Working hours with ${c.name}`, R.prose(c.hours))}
-${R.section('industries', `Industries we build for in ${c.name}`, R.pills(c.industries), 'wwm-sec-alt')}
+${R.section('uses', `Apps and software we build for ${c.name} businesses`, R.cards(c.uses))}
+${R.section('services', `Services for ${c.name} companies`, R.pills(SERVICES(c).map(([t, , h]) => [t, h])), 'wwm-sec-alt')}
+${R.section('approach', `How we work with ${c.name} teams`, R.prose(c.angle))}
+${R.section('hours', `Working hours with ${c.name}`, R.prose(c.hours), 'wwm-sec-alt')}
+${R.section('industries', `Industries we build for in ${c.name}`, R.pills(c.industries))}
 ${R.section('rules', `Built for ${country.short || country.name} rules and users`, `${R.cards(country.rules).replace('wwm-cards', 'wwm-cards wwm-cards-4')}
       <p class="wwm-lead cty-pay"><strong>Payments we integrate:</strong> ${esc(country.payments)}</p>
       <p class="cty-note">We design for these requirements and support your review; your legal and compliance advisers confirm what applies to your business.</p>`)}
-${R.section('why', `Why ${c.name} companies choose Creuto`, R.why('software'), 'wwm-sec-alt')}
 ${R.section('process', 'How an engagement works', R.process())}
-${R.section('work', 'Products we have built', workCards(), 'wwm-sec-alt')}
+${R.section('work', 'Products we have built', workCards(c), 'wwm-sec-alt')}
 ${R.section('faq', `Questions from ${c.name} companies`, R.faqHtml(faq))}
 ${R.section('more', 'Other cities and countries we build for', `${R.pills(others.map((x) => [x.name, urlOf(x)]))}
       <p class="cty-note"><a href="/countries/${country.slug}">Software development for ${esc(country.name)}</a> · <a href="/countries">All countries</a></p>`, 'wwm-sec-alt')}
