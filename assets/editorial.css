@@ -2181,3 +2181,13 @@ body.page-home .home-flag { flex: none; width: 21px; height: 14px; border-radius
   body.page-home .home-where-col:last-child { grid-column: auto; }
   body.page-home .home-where-countries { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+
+/* Homepage "Hire developers" block (build-home-seo.js region "hire") */
+body.page-home .home-hire { padding: 80px 0; border-top: 1px solid var(--line); }
+body.page-home .home-hire-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 28px 0 0; padding: 0; list-style: none; }
+body.page-home .home-hire-grid a { display: flex; flex-direction: column; gap: 6px; height: 100%; padding: 22px 24px; border: 1px solid var(--line); border-radius: 18px; background: #fff; color: var(--ink); text-decoration: none; transition: border-color .2s, transform .2s; }
+body.page-home .home-hire-grid a:hover { border-color: var(--accent); transform: translateY(-2px); }
+body.page-home .home-hire-grid strong { font-size: 17px; }
+body.page-home .home-hire-grid small { font-size: 14px; color: var(--ink-2, #475569); line-height: 1.5; }
+body.page-home .home-hire .home-where-pills { margin-top: 22px; }
+@media (max-width: 900px) { body.page-home .home-hire { padding: 56px 0; } body.page-home .home-hire-grid { grid-template-columns: 1fr; } }

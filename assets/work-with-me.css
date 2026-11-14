@@ -495,3 +495,14 @@ html.wwm-lock { overflow: hidden; }
 .wwm-hire-note { margin-top: 18px; font-size: 14.5px; color: var(--ink-2); }
 .wwm-hire-note a { color: var(--accent); font-weight: 600; }
 .jd-hire { background: var(--accent-tint); border-color: transparent; }
+
+/* Reviews page quotes (build-trust-pages.js) */
+.rv-quotes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.rv-quote { display: flex; flex-direction: column; gap: 14px; }
+.rv-stars { color: #f59e0b; letter-spacing: 2px; font-size: 15px; }
+.rv-quote blockquote { margin: 0; }
+.rv-quote blockquote p { margin: 0; font-size: 16.5px; line-height: 1.6; color: var(--ink); }
+.rv-who { margin: auto 0 0; display: flex; flex-direction: column; font-size: 14px; }
+.rv-who span { color: var(--ink-3); }
+.rv-quote .wwm-c-go { text-decoration: none; }
+@media (max-width: 760px) { .rv-quotes { grid-template-columns: 1fr; } }

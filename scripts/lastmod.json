@@ -635,8 +635,12 @@
     "hash": "afd67333faf0917d",
     "date": "2026-11-14"
   },
+  "how-we-work/index.html": {
+    "hash": "a20f8f3bf2360ecf",
+    "date": "2026-11-14"
+  },
   "index.html": {
-    "hash": "4ef70fb9e5a35639",
+    "hash": "3601853c9f70f27b",
     "date": "2026-11-14"
   },
   "industries/agriculture/index.html": {
@@ -906,6 +910,10 @@
   "project-costs/two-sided-service-marketplace/index.html": {
     "hash": "a21012cc4f77127a",
     "date": "2026-10-28"
+  },
+  "reviews/index.html": {
+    "hash": "1863616809cb4aa5",
+    "date": "2026-11-14"
   },
   "services/ai-product-development/ai-agent-development/index.html": {
     "hash": "b687e318082fdfa2",

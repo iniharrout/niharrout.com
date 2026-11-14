@@ -139,6 +139,29 @@ const faqItem = ([q, a]) => `          <div class="faq-item-minimal" data-home-s
           </div>
 `;
 
+
+// ---- hire developers block: links to the /hire pages for buyers ready to add developers
+const hireSection = () => {
+  const { roles, models, offshore } = require('./site-data/hire');
+  const cards = [...models, offshore].map((m) => `          <li><a href="${m === offshore ? '/' + m.slug : '/hire/' + m.slug}"><strong>${esc(m.h1)}</strong><small>${esc(m === offshore ? 'A founder-led team in India for companies in the US, UK, Australia and the UAE.' : m.intro.split('. ')[0] + '.')}</small></a></li>`).join('\n');
+  return `    <section class="home-hire ed-section" id="hire" aria-labelledby="hire-title">
+      <div class="wrap">
+        <header class="ed-head">
+          <p class="ed-label">Hire developers</p>
+          <h2 class="section-title" id="hire-title">Need developers on your team?</h2>
+          <p>Add mobile, web, backend and AI engineers to your product, or hire a complete dedicated team, with code in your accounts and calls planned around your working day.</p>
+        </header>
+        <ul class="home-hire-grid">
+${cards}
+        </ul>
+        <ul class="home-where-pills">
+${roles.map((r) => `          <li><a href="/hire/${r.slug}">${esc(r.h1)}</a></li>`).join('\n')}
+        </ul>
+        <p class="home-more"><a href="/hire" class="link-arrow">All hiring options <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
+      </div>
+    </section>`;
+};
+
 // ---- write
 let html = fs.readFileSync(FILE, 'utf8');
 function region(name, content, beforeMarker) {
@@ -150,6 +173,7 @@ function region(name, content, beforeMarker) {
   const lineStart = html.lastIndexOf('\n', at) + 1;
   html = html.slice(0, lineStart) + block + '\n' + html.slice(lineStart);
 }
+region('hire', hireSection(), '<!-- home:industries -->');
 region('industries', industriesSection(), '<section class="portfolio-section ed-section" id="portfolio">');
 region('technology', techSection(), '<section class="portfolio-section ed-section" id="portfolio">');
 region('founder', founderSection(), '<section class="fit" id="fit"');
