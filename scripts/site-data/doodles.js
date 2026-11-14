@@ -204,6 +204,11 @@ function doodle(name, cls = 'doodle', tone = toneOf(name)) {
 
 // ---- blog cover scenes: a main doodle and a smaller supporting one on a soft panel (480 x 300 canvas)
 const BLOG_ART = {
+  'offshore-development-center': ['team', 'remote', 'sun'],
+  'managing-remote-development-team-across-time-zones': ['remote', 'calendar', 'peach'],
+  'how-to-evaluate-llm-features': ['check', 'ai', 'sky'],
+  'ai-security-risks-prompt-injection': ['guardrails', 'agent', 'sun'],
+  'how-to-choose-an-llm-for-your-product': ['ai', 'question', 'peach'],
   'how-to-build-a-job-portal': ['portal', 'team', 'sky'],
   'srs-vs-prd': ['prd', 'question', 'peach'],
   'ai-proof-of-concept': ['prototype', 'ai', 'sky'],
