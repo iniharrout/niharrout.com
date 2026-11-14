@@ -14,7 +14,7 @@ module.exports = {
   lead: "Outsourcing software development can get your product built faster and with a stronger team than you could hire alone. It goes wrong when the scope is vague, the partner is chosen on price and nobody reviews real progress. This guide walks through the steps that keep you in control from the first brief to launch.",
   cardDesc: "When to outsource, choosing a model and partner, writing the brief, contracts and IP, managing delivery across time zones and the warning signs to act on.",
   cta: { title: "Planning to outsource a build?", text: "Book a free 30-minute call with Nihar. We review your idea and tell you what to outsource, how to scope it and what a first milestone should include.", button: "Book a free 30-minute call" },
-  endCta: { title: "Looking for a partner you can trust?", text: "Creuto is a founder-led team building mobile apps, web platforms and AI products for companies in the US, UK, Australia and the UAE.", service: { href: "/services", label: "See our services" } },
+  endCta: { title: "Looking for a partner you can trust?", text: "Creuto is a founder-led team building mobile apps, web platforms and AI products for companies in the US, UK, Australia and the UAE.", service: { href: "/hire", label: "See ways to hire developers" } },
   related: ["offshore-software-development", "how-to-write-a-software-rfp", "software-development-contract-checklist"],
   faq: [
     ["What does it mean to outsource software development?", "It means hiring an external company or team to design, build, test or maintain software for you, instead of doing it with employees. The team can be in your country or abroad."],

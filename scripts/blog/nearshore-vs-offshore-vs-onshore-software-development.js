@@ -14,7 +14,7 @@ module.exports = {
   lead: "Onshore means your software team is in your own country, nearshore means a nearby country, and offshore means a distant one. The real differences are time-zone overlap, cost, talent depth and how you communicate. No single option suits everyone; the right choice depends on your product and how you like to work.",
   cardDesc: "Onshore, nearshore and offshore compared on time zones, cost drivers, talent, communication and risk, with examples and a simple way to choose.",
   cta: { title: "Weighing onshore against offshore?", text: "Book a free 30-minute call. We look at your product, team and time zone and give you an honest recommendation, with a written plan within 24 hours.", button: "Book a free 30-minute call" },
-  endCta: { title: "Considering an offshore team in India?", text: "Creuto is a founder-led team working with companies in the US, UK, Australia and the UAE, with calls planned around your working day.", service: { href: "/countries", label: "See the countries we work with" } },
+  endCta: { title: "Considering an offshore team in India?", text: "Creuto is a founder-led team working with companies in the US, UK, Australia and the UAE, with calls planned around your working day.", service: { href: "/offshore-software-development-company", label: "See our offshore development team" } },
   related: ["offshore-software-development", "dedicated-development-team", "outsourcing-software-development-to-india"],
   faq: [
     ["What is the difference between nearshore and offshore?", "Nearshore teams are in a nearby country with little time difference, such as Mexico for a US company. Offshore teams are in a distant country with a larger time difference, such as India for a US or UK company."],

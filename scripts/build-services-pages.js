@@ -19,6 +19,8 @@ const R = require('./site-data/render');
 const approach = require('./site-data/approach');
 const DEPTH = require('./site-data/service-depth');
 const WORLD = require('./site-data/world-cities');
+const HIRE_FOR = { 'flutter-app-development': 'flutter-developers', 'react-native-app-development': 'react-native-developers', 'android-app-development': 'android-developers', 'ios-app-development': 'ios-developers', 'api-development': 'python-developers', 'customized-web-development': 'react-developers', 'mvp-development': 'full-stack-developers', 'rag-development': 'ai-developers', 'ai-agent-development': 'ai-developers', 'ai-chatbot-development': 'ai-developers' };
+const hireNote = (key) => { const h = HIRE_FOR[key]; if (!h) return ''; const r = require('./site-data/hire').roles.find((x) => x.slug === h); return `<p class="cty-note">Need developers to join your own team instead? <a href="/hire/${h}">${esc(r.h1)}</a> · <a href="/hire/dedicated-development-team">Dedicated team</a> · <a href="/hire">All hiring options</a></p>`; };
 const cityPills = () => R.pills(WORLD.map((c) => [c.name, `/software-development-${c.slug}`]));
 
 const ROOT = path.resolve(__dirname, '..');
@@ -101,7 +103,7 @@ ${depth.tech && depth.tech.length ? R.section('tech', `Technology we use for ${R
 ${depth.work && depth.work.length ? R.section('work', 'Products we have built', workCardsFor(depth.work), 'wwm-sec-alt') : ''}
 ${s.extra ? '' : R.section('quality', 'How we keep quality and security high', QUALITY)}
 ${extraSections(s)}
-${R.section('cities', `${s.name} for companies worldwide`, `<p class="wwm-lead">We build ${esc(R.lc(s.name))} for startups and enterprises in these cities, with calls planned around their working day:</p>${cityPills()}`)}
+${R.section('cities', `${s.name} for companies worldwide`, `<p class="wwm-lead">We build ${esc(R.lc(s.name))} for startups and enterprises in these cities, with calls planned around their working day:</p>${cityPills()}${hireNote(key)}`)}
 ${R.section('related', 'Related services and industries', `<div class="wwm-rel"><div><h3>More in ${esc(fam.name)}</h3>${R.pills(related)}</div>${inds.length ? `<div><h3>Industries we build this for</h3>${R.pills(inds)}</div>` : ''}</div>`)}
 ${R.section('faq', 'Questions about ' + s.name, R.faqHtml(seo.faq))}
 ${R.section('guides', 'Guides on this topic', R.guides(G.forSub(key, fam.key)), 'wwm-sec-alt')}

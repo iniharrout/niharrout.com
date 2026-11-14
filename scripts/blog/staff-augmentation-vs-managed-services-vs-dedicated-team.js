@@ -14,7 +14,7 @@ module.exports = {
   lead: "Staff augmentation adds outside engineers to your own team. Managed services hand a whole function or outcome to a partner. A dedicated team sits in between: a full team that works only on your product while the partner manages the people. The right choice depends on how much you want to manage yourself.",
   cardDesc: "What staff augmentation, managed services and dedicated teams mean, who manages what, pros, cons, costs and a simple way to choose.",
   cta: { title: "Not sure which model fits?", text: "Book a free 30-minute call. We look at your team, roadmap and budget and recommend the model that fits, even if it is not with us.", button: "Book a free 30-minute call" },
-  endCta: { title: "Need engineers or a full team?", text: "Creuto provides engineers who join your team and complete dedicated teams for mobile, web, SaaS and AI products.", service: { href: "/services", label: "See our services" } },
+  endCta: { title: "Need engineers or a full team?", text: "Creuto provides engineers who join your team and complete dedicated teams for mobile, web, SaaS and AI products.", service: { href: "/hire/staff-augmentation", label: "See our staff augmentation services" } },
   related: ["dedicated-development-team", "offshore-software-development", "freelancer-vs-agency-for-app-development"],
   faq: [
     ["What is staff augmentation in simple terms?", "It is hiring skilled people from an outside company to work inside your team for a period of time. They follow your processes and your managers direct their work, while the partner handles their employment."],
