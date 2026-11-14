@@ -44,7 +44,7 @@ const SERVICES = (c) => [
 const linkCards = (list) => `<ul class="wwm-cards wwm-cards-links">
 ${list.map(([t, d, href], n) => `        <li class="wwm-c"><a href="${href}"><span class="wwm-c-n" aria-hidden="true">0${n + 1}</span><h3>${esc(t)}</h3><p>${esc(d)}</p><span class="wwm-c-go">Learn more</span></a></li>`).join('\n')}
       </ul>`;
-const WORK_FOR = { 'new-york': ['skyone', 'erp'], 'san-francisco': ['skribe', 'flash'], 'los-angeles': ['mml', 'skyone'], chicago: ['erp', 'flash'], austin: ['skribe', 'erp'], london: ['skyone', 'skribe'], toronto: ['skribe', 'mml'], sydney: ['mml', 'flash'], melbourne: ['erp', 'skyone'], dubai: ['flash', 'skyone'] };
+const WORK_FOR = { 'new-york': ['skyone', 'erp'], 'san-francisco': ['skribe', 'flash'], 'los-angeles': ['mml', 'skyone'], chicago: ['erp', 'flash'], austin: ['skribe', 'erp'], london: ['skyone', 'skribe'], toronto: ['skribe', 'mml'], sydney: ['mml', 'flash'], melbourne: ['erp', 'skyone'], dubai: ['flash', 'skyone'], boston: ['skribe', 'mml'], seattle: ['skribe', 'flash'], miami: ['skyone', 'mml'], manchester: ['erp', 'mml'], brisbane: ['erp', 'flash'], perth: ['erp', 'skyone'], 'abu-dhabi': ['skyone', 'skribe'], riyadh: ['flash', 'erp'], singapore: ['skribe', 'flash'] };
 const workCards = (c) => linkCards((WORK_FOR[c.slug] || ['skyone', 'flash']).map((k) => [WORK[k].title, WORK[k].note, WORK[k].href]));
 
 function cityPage(c) {

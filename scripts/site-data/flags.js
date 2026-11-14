@@ -22,6 +22,7 @@ const BODY = {
   ae: `<rect width="90" height="20" fill="#00732F"/><rect y="20" width="90" height="20" fill="#fff"/><rect y="40" width="90" height="20" fill="#000"/><rect width="24" height="60" fill="#FF0000"/>`,
   au: `<rect width="90" height="60" fill="#012169"/>${UNION(45, 30)}${star(22.5, 45, 7)}${star(68, 46, 4)}${star(60, 30, 4)}${star(68, 12, 4)}${star(77, 25, 4)}`,
   sg: `<rect width="90" height="30" fill="#EF3340"/><rect y="30" width="90" height="30" fill="#fff"/><circle cx="20" cy="15" r="9" fill="#fff"/><circle cx="24" cy="15" r="9" fill="#EF3340"/>${star(30, 9, 2.2)}${star(36, 13, 2.2)}${star(34, 20, 2.2)}${star(26, 20, 2.2)}${star(24, 13, 2.2)}`,
+  sa: `<rect width="90" height="60" fill="#006C35"/><rect x="24" y="20" width="42" height="6" rx="3" fill="#fff"/><rect x="22" y="38" width="46" height="3" fill="#fff"/><rect x="62" y="35" width="3" height="9" fill="#fff"/>`,
   vn: `<rect width="90" height="60" fill="#DA251D"/>${star(45, 31, 17, '#FFFF00')}`,
   nz: `<rect width="90" height="60" fill="#012169"/>${UNION(45, 30)}${[[68, 46, 5.2], [60, 27, 4.4], [77, 23, 4.4], [68, 11, 4.4]].map(([x, y, r]) => star(x, y, r + 1.4) + star(x, y, r, '#C8102E')).join('')}`,
 };
