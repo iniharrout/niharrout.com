@@ -15,6 +15,7 @@ const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const SITE = 'https://www.niharrout.com';
 const ORDER = [
+  'rebuild-or-update-your-app',
   'how-to-choose-an-llm-for-your-product',
   'ai-security-risks-prompt-injection',
   'how-to-evaluate-llm-features',
