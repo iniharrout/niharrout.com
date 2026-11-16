@@ -220,6 +220,7 @@ const BLOG_ART = {
   'how-to-outsource-software-development': ['roadmap', 'check', 'sky'],
   'erp-implementation-timeline': ['erp', 'roadmap', 'sky'],
   'software-development-estimates-explained': ['pricing', 'question', 'sun'],
+  'hire-development-team-in-india-from-uae': ['remote', 'chat', 'peach'],
   'hire-development-team-in-india-from-canada': ['remote', 'access', 'sky'],
   'app-admin-panel-development': ['dashboard', 'access', 'sun'],
   'switch-software-development-company-mid-project': ['team', 'check', 'peach'],
