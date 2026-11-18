@@ -271,6 +271,10 @@
     "hash": "51b16481bf92ae79",
     "date": "2026-11-05"
   },
+  "blog/how-to-reduce-app-development-cost/index.html": {
+    "hash": "b234cedc9f1189d4",
+    "date": "2026-11-18"
+  },
   "blog/how-to-review-a-software-development-proposal/index.html": {
     "hash": "7dccdbd53ea974d4",
     "date": "2026-11-17"
@@ -292,8 +296,8 @@
     "date": "2026-11-05"
   },
   "blog/index.html": {
-    "hash": "2995674190511942",
-    "date": "2026-11-17"
+    "hash": "977d007739d5a6d4",
+    "date": "2026-11-18"
   },
   "blog/inventory-management-software-development/index.html": {
     "hash": "4b91873086aa7e8c",
@@ -372,40 +376,44 @@
     "date": "2026-11-05"
   },
   "blog/page/10/index.html": {
-    "hash": "1e3d3eb5665dc0c0",
-    "date": "2026-11-17"
+    "hash": "81a96c8cb3c193cf",
+    "date": "2026-11-18"
+  },
+  "blog/page/11/index.html": {
+    "hash": "d1c926812d050453",
+    "date": "2026-11-18"
   },
   "blog/page/2/index.html": {
-    "hash": "f5a203e35e4113a5",
-    "date": "2026-11-17"
+    "hash": "ae2abfafb95a85d5",
+    "date": "2026-11-18"
   },
   "blog/page/3/index.html": {
-    "hash": "cbaf076425ad75d0",
-    "date": "2026-11-17"
+    "hash": "eecfa844df3f1a3a",
+    "date": "2026-11-18"
   },
   "blog/page/4/index.html": {
-    "hash": "6578a79aafb01f1c",
-    "date": "2026-11-17"
+    "hash": "8aeb64f4af207025",
+    "date": "2026-11-18"
   },
   "blog/page/5/index.html": {
-    "hash": "ff5799232c6f4312",
-    "date": "2026-11-17"
+    "hash": "166573670483bb81",
+    "date": "2026-11-18"
   },
   "blog/page/6/index.html": {
-    "hash": "b5909fd02574d8e3",
-    "date": "2026-11-17"
+    "hash": "75f53d2cf74799b6",
+    "date": "2026-11-18"
   },
   "blog/page/7/index.html": {
-    "hash": "63a08542e2aef4c3",
-    "date": "2026-11-17"
+    "hash": "49d43d1fea649de9",
+    "date": "2026-11-18"
   },
   "blog/page/8/index.html": {
-    "hash": "42f645f1898ced43",
-    "date": "2026-11-17"
+    "hash": "aeed035b36a8ad82",
+    "date": "2026-11-18"
   },
   "blog/page/9/index.html": {
-    "hash": "a45b6ae7224229db",
-    "date": "2026-11-17"
+    "hash": "72a55c7aae9a85ef",
+    "date": "2026-11-18"
   },
   "blog/pragmatic-enterprise-ai-workflows/index.html": {
     "hash": "0f99ba63baebceac",
@@ -492,36 +500,36 @@
     "date": "2026-11-05"
   },
   "blog/topic/ai/index.html": {
-    "hash": "dc5807f54ee08895",
-    "date": "2026-11-17"
+    "hash": "ecfb4aeb5b6637b1",
+    "date": "2026-11-18"
   },
   "blog/topic/careers/index.html": {
-    "hash": "a71a96c06d175e67",
-    "date": "2026-11-17"
+    "hash": "779a328ae1c517d1",
+    "date": "2026-11-18"
   },
   "blog/topic/cost-and-hiring/index.html": {
-    "hash": "c42ed13277aa0e2d",
-    "date": "2026-11-17"
+    "hash": "a0ffb68cc5532dac",
+    "date": "2026-11-18"
   },
   "blog/topic/industries/index.html": {
-    "hash": "d0f987ac2e7ff1cd",
-    "date": "2026-11-17"
+    "hash": "87fa5c87ddb3ca8a",
+    "date": "2026-11-18"
   },
   "blog/topic/mobile/index.html": {
-    "hash": "df91051189508a31",
-    "date": "2026-11-17"
+    "hash": "9d863fdaae2ecb8b",
+    "date": "2026-11-18"
   },
   "blog/topic/news/index.html": {
-    "hash": "e761f9f519e75974",
-    "date": "2026-11-17"
+    "hash": "622cfc69bb7fc405",
+    "date": "2026-11-18"
   },
   "blog/topic/product/index.html": {
-    "hash": "c079dcc64a09e5e6",
-    "date": "2026-11-17"
+    "hash": "55d312198d4bf0be",
+    "date": "2026-11-18"
   },
   "blog/topic/software-and-cloud/index.html": {
-    "hash": "bb3648c5204ed685",
-    "date": "2026-11-17"
+    "hash": "e6312f420d84a974",
+    "date": "2026-11-18"
   },
   "blog/ui-ux-designer-portfolio-tips/index.html": {
     "hash": "04ce8fc3d0bd24a8",
@@ -672,8 +680,8 @@
     "date": "2026-11-14"
   },
   "index.html": {
-    "hash": "2b216b0cdc441fa6",
-    "date": "2026-11-17"
+    "hash": "e49854e1b471fd94",
+    "date": "2026-11-18"
   },
   "industries/agriculture/index.html": {
     "hash": "8a3bd5cbe6537709",
