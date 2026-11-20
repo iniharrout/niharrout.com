@@ -200,6 +200,7 @@
 - [What Is RAG in AI? Simple Explanation With Examples](https://www.niharrout.com/blog/what-is-rag-in-ai): What is RAG in AI? Retrieval-augmented generation explained in simple terms: how it works step by step, real examples, benefits, limits and how to build one.
 - [WhatsApp Business API: A Practical Guide for Businesses](https://www.niharrout.com/blog/whatsapp-business-api-guide): What the WhatsApp Business API (WhatsApp Business Platform) is, how it differs from the app, templates, opt-in, CRM integration and chatbot use cases.
 - [Why Custom ERP Implementations Fail, and the Fix](https://www.niharrout.com/blog/why-custom-erp-implementations-fail): Why multi-department ERP projects stall, how to replace spreadsheets, and the architecture playbook for low-risk ERP cutovers. By Nihar Ranjan Rout.
+- [Wireframes vs Mockups vs Prototypes: What You Need](https://www.niharrout.com/blog/wireframe-vs-mockup-vs-prototype): Wireframes, mockups and clickable prototypes explained for founders: what each shows, when to make one, what to pay for and what to give your developers.
 
 ## Case studies
 - [Custom ERP for Manufacturing: Case Study](https://www.niharrout.com/work/custom-erp-manufacturing): Replaced four disconnected departments with one real-time system of record. How Creuto built a custom ERP for manufacturing operations.

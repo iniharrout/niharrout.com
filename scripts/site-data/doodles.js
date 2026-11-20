@@ -204,6 +204,7 @@ function doodle(name, cls = 'doodle', tone = toneOf(name)) {
 
 // ---- blog cover scenes: a main doodle and a smaller supporting one on a soft panel (480 x 300 canvas)
 const BLOG_ART = {
+  'wireframe-vs-mockup-vs-prototype': ['prototype', 'design', 'sky'],
   'how-to-reduce-app-development-cost': ['pricing', 'rocket', 'sun'],
   'how-to-review-a-software-development-proposal': ['doc-scan', 'pricing', 'peach'],
   'rebuild-or-update-your-app': ['legacy', 'mobile', 'sky'],
