@@ -8,7 +8,8 @@
 const fs = require('fs');
 const path = require('path');
 const { SITE, esc, ARROW, head, foot, crumbs } = require('./careers/shell');
-const { industries } = require('./site-data/industries');
+const R = require('./site-data/render');
+const G = require('./site-data/guides');
 
 const ROOT = path.resolve(__dirname, '..');
 const projects = new Function(`${fs.readFileSync(path.join(ROOT, 'assets/work-data.js'), 'utf8')}; return portfolioProjects;`)();
@@ -56,14 +57,8 @@ ${cards}
     </div>
   </section>
 
-  <section class="wwm-sec wwm-sec-alt" aria-labelledby="how-title">
-    <div class="wwm-wrap">
-      <h2 class="wwm-h2" id="how-title">How the case studies are written</h2>
-      <p class="wwm-prose">Each one follows the same shape: the problem the client had, the decision that mattered, how the product was built and what changed afterwards. Where a client asked us not to name them, we say so rather than invent a name. If a project is close to what you want to build, mention it on the call and I will walk you through how it was done.</p>
-      <h3 class="wwm-rel-h">Browse by industry</h3>
-      <ul class="wwm-pills">${['manufacturing', 'events', 'travel-hospitality', 'fitness-wellness', 'on-demand', 'ecommerce', 'logistics', 'saas'].map((slug) => { const i = industries.find((x) => x.slug === slug); return `<li><a href="/industries/${slug}">${esc(i.name)}</a></li>`; }).join('')}</ul>
-    </div>
-  </section>
+${R.section('process', 'How every one of these projects ran', R.process(), 'wwm-sec-alt')}
+${R.section('guides', 'Planning something similar?', R.guides(['how-long-does-it-take-to-build-an-app', 'app-development-cost-factors-india', 'how-to-choose-a-software-development-company'].map(G.guide)))}
 
   <section class="wwm-end">
     <div class="wwm-wrap">
@@ -72,7 +67,7 @@ ${cards}
           <h2 class="wwm-h2">Have a product in mind?</h2>
           <p>Tell me what you want to build. The first call is free and takes 30 minutes.</p>
         </div>
-        <a class="wwm-btn is-primary" href="https://calendar.app.google/HJ4ctVHEXLjUxCzp6" target="_blank" rel="noopener" data-book="true">Book a free strategy call ${ARROW}</a>
+        <a class="wwm-btn is-primary" href="https://calendly.com/creuto/meet" target="_blank" rel="noopener" data-book="true">Book a free strategy call ${ARROW}</a>
       </div>
     </div>
   </section>

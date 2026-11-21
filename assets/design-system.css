@@ -1,41 +1,20 @@
 /**
  * NiharRout.com - Official Design System Architecture (2025/2026)
- * Brand: Authentic HubSpot Precision + Excited.agency Editorial Portfolio Aesthetics
  * Palette: Emerald (#1d4ed8), Warm Porcelain (#f3f4f6),
  *          Warm Alabaster (#f3f4f6), Pure White (#ffffff), Deep Charcoal (#18181a)
  * Typography: Modern Geometric Sans + Clean Editorial Serif
  */
 
 /* ================= 1. FONTS & TYPOGRAPHY ================= */
-@font-face {
-  font-family: "HubSpot Sans";
-  font-weight: 300 400;
-  font-display: swap;
-  src: url("https://www.hubspot.com/hubfs/assets/hs-components/v4/fonts/hubspot-2025/HubSpotSans-Book.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "HubSpot Sans";
-  font-weight: 500 600;
-  font-display: swap;
-  src: url("https://www.hubspot.com/hubfs/assets/hs-components/v4/fonts/hubspot-2025/HubSpotSans-Medium.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "HubSpot Serif";
-  font-weight: 400 500;
-  font-display: swap;
-  src: url("https://www.hubspot.com/hubfs/assets/hs-components/v4/fonts/hubspot-2025/HubSpotSerif-Book.woff2") format("woff2");
-}
-
 /* Fallback & Web Fonts */
 
 /* ================= 2. DESIGN TOKENS ================= */
 :root {
   /* Typography */
-  --font-display: 'HubSpot Serif', 'Fraunces', Georgia, serif;
-  --font-body: 'HubSpot Sans', 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  /* Labels, tags and small numbers use the body sans; true monospace is kept only for the product mock-ups (hero-demo.css, blueprint.css). */
+  --font-mono: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
   /* Palette */
   --hs-brand: #1d4ed8;
@@ -2129,7 +2108,7 @@ p {
   margin: 36px 0;
 }
 
-.blog-callout h4 {
+.blog-callout h4, .blog-callout .blog-callout-title {
   color: var(--hs-brand);
   font-size: 17px;
   font-weight: 700;
@@ -2145,7 +2124,7 @@ p {
 
 /* High-Converting In-Article CTA */
 .blog-cta-box {
-  background: #2D3E50;
+  background: #0b0d12;
   color: #ffffff;
   border-radius: 20px;
   padding: 40px 36px;
@@ -2153,14 +2132,14 @@ p {
   text-align: center;
 }
 
-.blog-cta-box h3 {
+.blog-cta-box h3, .ed-page .blog-cta-box h3 {
   font-family: var(--font-display);
   font-size: 26px;
   color: #ffffff;
   margin-bottom: 14px;
 }
 
-.blog-cta-box p {
+.blog-cta-box p, .ed-page .blog-cta-box p {
   color: #CBD5E1;
   font-size: 16px;
   line-height: 1.6;

@@ -112,7 +112,7 @@ module.exports = {
   <li><strong>Review between milestones.</strong> You can adjust the next one using what you learned, through a simple change process.</li>
 </ol>
 <p>
-  This is how we work at Creuto: fixed milestones tied to agreed deliverables, so you never face surprise hourly billing, and you can steer between stages. For a rough sense of budget before you talk to anyone, try the free <a href="/tools/app-cost-calculator">app cost calculator</a> and read the <a href="/project-costs">project costs guide</a>.
+  This is how we work at Creuto: fixed milestones tied to agreed deliverables, so you never face surprise hourly billing, and you can steer between stages. For a rough sense of budget before you talk to anyone, try the free <a href="/tools/app-cost-calculator">app timeline calculator</a> and read the <a href="/project-costs">project costs guide</a>.
 </p>
 
 <h2 id="example">A worked example of milestones</h2>

@@ -44,7 +44,7 @@ const NATIONAL = { mobile: '/services/mobile-app-development', ai: '/services/ai
 
 /* ---------- Shared page chrome ---------- */
 
-function head({ title, description, path: urlPath, ogType = 'website', graph, noindex = false, theme = '' }) {
+function head({ title, description, path: urlPath, ogType = 'website', graph, noindex = false, follow = false, theme = '' }) {
   if (title.length > 65) warnings.push(`title >65 chars (${title.length}): ${title}`);
   if (description.length > 165) warnings.push(`description >165 chars (${description.length}): ${urlPath}`);
   const canonical = SITE + urlPath;
@@ -57,7 +57,7 @@ function head({ title, description, path: urlPath, ogType = 'website', graph, no
   <title>${esc(title)}</title>
   <meta name="description" content="${esc(description)}">
   <meta name="author" content="Nihar Ranjan Rout">
-  <meta name="robots" content="${noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large'}">
+  <meta name="robots" content="${noindex ? (follow ? 'noindex, follow' : 'noindex, nofollow') : 'index, follow, max-image-preview:large'}">
   <link rel="canonical" href="${canonical}">
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
@@ -79,9 +79,9 @@ function head({ title, description, path: urlPath, ogType = 'website', graph, no
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap">
-  <link rel="stylesheet" href="/assets/design-system.css?v=blue5">
-  <link rel="stylesheet" href="/assets/location-pages.css?v=blue4">${theme ? '\n  <link rel="stylesheet" href="/assets/hero-demo.css?v=hd7">' : ''}${theme === 'ai' ? '\n  <link rel="stylesheet" href="/assets/ai-theme.css?v=ai7">' : ''}
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&amp;family=Inter:wght@400;500;600;700&amp;display=swap">
+  <link rel="stylesheet" href="/assets/design-system.css?v=blue9">
+  <link rel="stylesheet" href="/assets/location-pages.css?v=blue4">${theme ? '\n  <link rel="stylesheet" href="/assets/hero-demo.css?v=hd8">' : ''}${theme === 'ai' ? '\n  <link rel="stylesheet" href="/assets/ai-theme.css?v=ai8">' : ''}
 
 </head>
 
@@ -100,7 +100,7 @@ function footer() {
   <!-- /chrome:footer -->
 
   <script src="/assets/site-enhancements.js?v=blue5"></script>
-    <script src="/assets/lead-forms.js?v=blue7"></script>
+    <script src="/assets/lead-forms.js?v=lf8"></script>
 </body>
 </html>
 `;
@@ -123,13 +123,12 @@ const breadcrumbs = (trail) => `
 const proofStrip = () => `
         <div class="loc-proof" aria-label="Track record">
           <div><strong>8+</strong><span>years in product management</span></div>
-          <div><strong>50+</strong><span>products shipped</span></div>
+          <div><strong>120+</strong><span>products shipped</span></div>
           <div><strong>In-house</strong><span>engineering team</span></div>
           <div><strong>Day 1</strong><span>code in your own GitHub</span></div>
         </div>`;
 
 function leadForm({ city, svc, heading, sub }) {
-  const budgets = (svc ? svc.budgets : ['Under ₹5L', '₹5L – ₹12L', '₹12L – ₹25L', 'Above ₹25L', 'Still evaluating']);
   return `
         <div class="loc-form-card" id="contact">
           <h2>${esc(heading)}</h2>
@@ -143,12 +142,6 @@ function leadForm({ city, svc, heading, sub }) {
               <div class="form-group"><label for="lf-phone">Phone</label><input class="form-input" id="lf-phone" name="phone" type="tel" autocomplete="tel"></div>
             </div>
             <div class="form-group"><label for="lf-email">Work email *</label><input class="form-input" id="lf-email" name="email" type="email" autocomplete="email" required></div>
-            <div class="form-group"><label for="lf-budget">Budget range</label>
-              <select class="form-select" id="lf-budget" name="budget">
-                <option value="">Select a range</option>
-                ${budgets.map((b) => `<option>${esc(b)}</option>`).join('\n                ')}
-              </select>
-            </div>
             <div class="form-group"><label for="lf-message">What are you building?</label><textarea class="form-textarea" id="lf-message" name="message" placeholder="Two or three lines on the problem, users and timeline."></textarea></div>
             <button type="submit" class="cl-button -primary">Get a free estimate <span>→</span></button>
             <p class="loc-form-note">Your idea is protected by an NDA. We reply within 24 hours.</p>
@@ -162,7 +155,7 @@ const inlineCta = (title, sub) => `
       <div class="wrap">
         <div class="loc-card" style="flex-direction:row; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; padding:28px 32px;">
           <div><h3 style="font-size:20px; margin-bottom:6px;">${esc(title)}</h3><p>${esc(sub)}</p></div>
-          <a href="https://calendar.app.google/HJ4ctVHEXLjUxCzp6" target="_blank" rel="noopener" data-book="true" class="cl-button -primary btn-book-call">Book a free call <span>→</span></a>
+          <a href="https://calendly.com/creuto/meet" target="_blank" rel="noopener" data-book="true" class="cl-button -primary btn-book-call">Book a free call <span>→</span></a>
         </div>
       </div>
     </section>`;
@@ -173,7 +166,7 @@ const ctaBand = (title, sub) => `
         <h2>${esc(title)}</h2>
         <p>${esc(sub)}</p>
         <div class="hero-ctas">
-          <a href="https://calendar.app.google/HJ4ctVHEXLjUxCzp6" target="_blank" rel="noopener" data-book="true" class="cl-button -primary btn-book-call">Book a Discovery Call <span>→</span></a>
+          <a href="https://calendly.com/creuto/meet" target="_blank" rel="noopener" data-book="true" class="cl-button -primary btn-book-call">Book a Discovery Call <span>→</span></a>
           <a href="mailto:me@niharrout.com" class="cl-button -secondary">Email me@niharrout.com</a>
         </div>
       </div>
@@ -303,8 +296,8 @@ function portfolioSection(c, svc) {
 
 const TESTIMONIALS = [
   ['Before Creuto, every department was running on its own disconnected spreadsheet. Nihar locked down our operational requirements in the PRD, and his team delivered a unified system that gave our management team real-time visibility for the first time.', 'Operations Director', 'Large-Scale Manufacturing Enterprise'],
-  ['Nihar is that rare breed of product leader who understands business levers just as well as software architecture. He stopped us from wasting budget on features our customers didn\'t want and delivered our marketplace ahead of our launch schedule.', 'Co-Founder', 'SkyOne Event Booking Marketplace'],
-  ['Finding an engineering team that doesn\'t disappear or cut corners is rare. Creuto\'s in-house squad was disciplined, delivered bi-weekly demos like clockwork, and launched our mobile apps cleanly to the App Store and Google Play.', 'Founder & CEO', 'Make My Look Beauty Platform']
+  ['Nihar is that rare breed of product leader who understands business levers just as well as software architecture. He stopped us from wasting budget on features our customers didn\'t want and delivered our marketplace ahead of our launch schedule.', 'Co-Founder', 'SkyeOne Event Booking Marketplace'],
+  ['Finding an engineering team that doesn\'t disappear or cut corners is rare. Creuto\'s in-house squad was disciplined … and launched our mobile apps cleanly to the App Store and Google Play.', 'Founder & CEO', 'Make My Look Beauty Platform']
 ];
 
 function testimonialsSection(c, svcKey) {
@@ -379,17 +372,15 @@ function pricingSection(c, svc) {
   return `
     <section class="loc-section -alt" id="pricing">
       <div class="wrap">
-        ${sectionHeader('Pricing', `${svc.name} cost in ${c.name}`, 'Indicative ranges based on projects we have delivered. Your fixed-scope quote follows a discovery workshop.')}
+        ${sectionHeader('Scope and timeline', `How long ${svc.nameLc} takes in ${c.name}`, 'Typical stages based on projects we have delivered. You get a written, fixed-scope proposal within 24 hours of a free call.')}
         <div class="loc-grid c3">
-          ${svc.tiers.map(([tier, inr, usd, time, desc]) => `<div class="loc-card loc-tier">
+          ${svc.tiers.map(([tier, time, desc]) => `<div class="loc-card loc-tier">
             <h3>${esc(tier)}</h3>
-            <div class="loc-price">${esc(inr)}</div>
-            <div class="loc-usd">${esc(usd)}</div>
             <span class="loc-time">${esc(time)}</span>
             <p>${esc(desc)}</p>
           </div>`).join('\n          ')}
         </div>
-        <p class="loc-note">${esc(c.costNote)} <a href="/project-costs" style="color:var(--hs-brand); font-weight:600;">See detailed cost breakdowns →</a></p>
+        <p class="loc-note">${esc(c.costNote)} <a href="/project-costs" style="color:var(--hs-brand); font-weight:600;">What drives software cost →</a></p>
       </div>
     </section>`;
 }
@@ -473,8 +464,8 @@ function buildServicePage(c, svcKey) {
             <p class="hero-sub">${esc(fill(svc.heroSub, c))}</p>
             ${heroBar(svcKey === 'ai' ? 'ai' : svcKey === 'mobile' ? 'mobile' : 'software')}
             <div class="hero-ctas">
-              <a href="https://calendar.app.google/HJ4ctVHEXLjUxCzp6" target="_blank" rel="noopener" data-book="true" class="cl-button -primary btn-book-call">Book a Free Call <span>→</span></a>
-              <a href="#pricing" class="cl-button -secondary">See pricing ↓</a>
+              <a href="https://calendly.com/creuto/meet" target="_blank" rel="noopener" data-book="true" class="cl-button -primary btn-book-call">Book a Free Call <span>→</span></a>
+              <a href="#pricing" class="cl-button -secondary">See timelines ↓</a>
             </div>
             ${proofStrip()}
           </div>
@@ -498,7 +489,10 @@ ${relatedSection(c, svcKey)}
 ${ctaBand(`Ready to start ${svc.nameLc} in ${c.name}?`, 'Book a discovery call with Nihar. We will scope features, timeline and budget before you commit to anything.')}
   </main>
 `;
-  return head({ title, description, path: urlPath, graph, theme: svcKey === 'ai' ? 'ai' : 'demo' }) + body + footer(c);
+  // Service pages for smaller Odisha cities repeat the Bhubaneswar pages with a different city name, so they stay
+  // out of Google (noindex, links still followed) and the Bhubaneswar pages carry those searches instead.
+  const thin = c.region === 'odisha';
+  return head({ title, description, path: urlPath, graph, noindex: thin, follow: thin, theme: svcKey === 'ai' ? 'ai' : 'demo' }) + body + footer(c);
 }
 
 /* ---------- Page: city hub ---------- */
@@ -509,14 +503,16 @@ function buildCityHub(c) {
   const repSvcKey = SERVICE_KEYS[cities.indexOf(c) % SERVICE_KEYS.length];
   const repSvc = services[repSvcKey];
   const trail = [['Home', '/'], ['Locations', '/locations'], [c.name, urlPath]];
-  const title = `Software, App & AI Development in ${c.name} | Nihar Ranjan Rout`;
-  const description = `Mobile app, AI product and custom software development for ${c.name} businesses. Founder-led Creuto team, fixed-scope PRDs, code in your own GitHub. Free discovery call.`;
+  const title = `App & Software Development Company in ${c.name} | Nihar Ranjan Rout`;
+  const description = `Mobile app and software development company for ${c.name} businesses: Android, iOS, web, ERP and AI products by a founder-led team. Free strategy call.`;
 
   const faqs = [
     [`Do you have an office in ${c.name}?`, `No. Creuto is based in Bhubaneswar, Odisha, and serves ${c.name} clients remotely with regular demos and shared test environments. We travel to ${c.name} for workshops and launches when in-person time is valuable, and quote any travel costs separately and up front.`],
     ...SERVICE_KEYS.map((k) => [fill(services[k].faqs[0][0], c), fill(services[k].faqs[0][1], c)]),
     c.services.mobile.faqs[0],
-    c.services.ai.faqs[0]
+    c.services.ai.faqs[0],
+    [`Can you work as our app development company for a ${c.name} business?`, `Yes. We work as a founder-led mobile app and software development team for ${c.name} startups and businesses: Android, iOS, React Native and Flutter apps, web applications, ERPs and AI products, with a written proposal within 24 hours of a free call.`],
+    [`How do I choose a software development company in ${c.name}?`, `Look for a written scope before any quote, working software at every milestone, code in your own accounts from day one, and the chance to speak with the person responsible for your product. Our guide on choosing a software development company lists the questions to ask.`],
   ];
 
   const graph = [
@@ -538,7 +534,7 @@ function buildCityHub(c) {
           <a class="loc-card" href="${NATIONAL[k]}">
             <h3>${esc(services[k].name)} in ${esc(c.name)}</h3>
             <p>${esc(c.services[k].angle)}</p>
-            <div class="loc-more">Read about the service →</div>
+            <div class="loc-more">See scope, timelines and FAQs →</div>
           </a>`).join('');
 
   const otherCities = cities.filter((x) => x.slug !== c.slug);
@@ -551,10 +547,10 @@ function buildCityHub(c) {
           <div>
             ${breadcrumbs(trail)}
             <div class="hs-eyebrow"><span class="dot"></span>${esc(c.eyebrow)}</div>
-            <h1>Software, Mobile App &amp; AI Development in ${esc(c.name)}</h1>
+            <h1>Mobile App &amp; Software Development Company in ${esc(c.name)}</h1>
             <p class="hero-sub">${esc(c.overview)}</p>
             <div class="hero-ctas">
-              <a href="https://calendar.app.google/HJ4ctVHEXLjUxCzp6" target="_blank" rel="noopener" data-book="true" class="cl-button -primary btn-book-call">Book a Free Call <span>→</span></a>
+              <a href="https://calendly.com/creuto/meet" target="_blank" rel="noopener" data-book="true" class="cl-button -primary btn-book-call">Book a Free Call <span>→</span></a>
               <a href="#services" class="cl-button -secondary">Explore services ↓</a>
             </div>
             ${proofStrip()}
@@ -566,7 +562,7 @@ function buildCityHub(c) {
 
     <section class="loc-section" id="services">
       <div class="wrap">
-        ${sectionHeader('Services', `What we build for ${c.name} organisations`, 'Choose a service for scope, pricing, use cases and FAQs specific to ' + c.name + '.')}
+        ${sectionHeader('Services', `What we build for ${c.name} organisations`, 'Choose a service for scope, timelines, use cases and FAQs specific to ' + c.name + '.')}
         <div class="loc-grid c3">${serviceCards}
         </div>
       </div>
@@ -628,7 +624,7 @@ ${ctaBand(`Building something in ${c.name}?`, 'Book a discovery call with Nihar.
 function buildIndex() {
   const urlPath = '/locations';
   const trail = [['Home', '/'], ['Locations', urlPath]];
-  const title = 'Software, App & AI Development Across India | Nihar Ranjan Rout';
+  const title = 'Software & App Development Across India | Nihar Ranjan Rout';
   const description = 'Creuto builds mobile apps, AI products and custom software for businesses across Odisha and India’s metros. Founder-led, fixed-scope, remote-first from Bhubaneswar.';
   const graph = [
     organizationSchema(),
@@ -663,7 +659,7 @@ function buildIndex() {
           <h1>Software, Mobile App &amp; AI Development Across India</h1>
           <p class="hero-sub">Creuto is a founder-led product and engineering team based in Bhubaneswar. We build mobile apps, AI products and custom software for businesses across Odisha and India’s major metros, working remotely in your time zone and visiting for the moments that matter.</p>
           <div class="hero-ctas">
-            <a href="https://calendar.app.google/HJ4ctVHEXLjUxCzp6" target="_blank" rel="noopener" data-book="true" class="cl-button -primary btn-book-call">Book a Free Call <span>→</span></a>
+            <a href="https://calendly.com/creuto/meet" target="_blank" rel="noopener" data-book="true" class="cl-button -primary btn-book-call">Book a Free Call <span>→</span></a>
             <a href="#odisha" class="cl-button -secondary">Browse locations ↓</a>
           </div>
         </div>
@@ -675,7 +671,13 @@ function buildIndex() {
       <div class="wrap">
         ${sectionHeader('Home base', 'Bhubaneswar, Odisha', 'Where our team works. Meet us in person at Infocity, Patia or across the city.')}
         <div class="loc-grid c3">
-          ${SERVICE_KEYS.map((k) => `<a class="loc-card" href="${services[k].bhubaneswarPage}"><h3>${esc(services[k].name)} in Bhubaneswar</h3><p>${esc(services[k].servicesSub)}</p><div class="loc-more">View the Bhubaneswar page →</div></a>`).join('\n          ')}
+          ${[
+            ['Software development company in Bhubaneswar', 'Apps, websites, ERP and AI products from a founder-led team based in the city.', '/software-development-company-bhubaneswar'],
+            ['App development company in Bhubaneswar', 'Android, iOS, React Native and Flutter apps from PRD to launch.', '/mobile-app-development-bhubaneswar'],
+            ['Web development company in Bhubaneswar', 'Fast, SEO-friendly websites, ecommerce stores and web apps.', '/web-development-company-bhubaneswar'],
+            ['ERP software development in Bhubaneswar', 'Custom ERP for manufacturing, distribution and retail in Odisha.', '/erp-software-development-bhubaneswar'],
+            ['AI development company in Bhubaneswar', 'Chatbots, assistants and AI features built on your own data.', '/ai-product-development-bhubaneswar'],
+          ].map(([h, p, href]) => `<a class="loc-card" href="${href}"><h3>${esc(h)}</h3><p>${esc(p)}</p><div class="loc-more">View the page →</div></a>`).join('\n          ')}
         </div>
       </div>
     </section>
@@ -740,7 +742,7 @@ function buildReference() {
 
   const html = head({
     title: 'Location pages: link reference | Nihar Ranjan Rout',
-    description: 'Internal reference listing every location landing page URL.',
+    description: 'Internal reference page listing every city and service location landing page URL on niharrout.com.',
     path: urlPath,
     noindex: true
   }) + `${header()}
@@ -834,20 +836,18 @@ function buildThankYou() {
 
   return head({
     title: 'Thank you | Nihar Ranjan Rout',
-    description: 'Your enquiry has been received. Nihar will reply within 24 hours.',
+    description: 'Thank you, your enquiry has been received. Nihar Ranjan Rout reads every message personally and replies within 24 hours.',
     path: '/thank-you',
     noindex: true
   }) + `${header()}
   <main id="top">
     <section class="ty-hero">
       <div class="wrap">
-        <div class="ty-icon" aria-hidden="true">
-          <svg viewBox="0 0 52 52" width="52" height="52"><circle cx="26" cy="26" r="25" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15 27l8 8 15-17" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
+        <div class="ty-icon doodle-slot" data-doodle="check" aria-hidden="true"></div>
         <h1 id="ty-title">Thank you</h1>
         <p class="hero-sub" id="ty-sub">We have received your enquiry. Nihar will reply within 24 hours.</p>
         <div class="hero-ctas" style="justify-content:center;">
-          <a href="https://calendar.app.google/HJ4ctVHEXLjUxCzp6" target="_blank" rel="noopener" data-book="true" class="cl-button -primary btn-book-call">Book a call now <span>→</span></a>
+          <a href="https://calendly.com/creuto/meet" target="_blank" rel="noopener" data-book="true" class="cl-button -primary btn-book-call">Book a call now <span>→</span></a>
           <a href="/" class="cl-button -secondary">Back to home</a>
         </div>
       </div>

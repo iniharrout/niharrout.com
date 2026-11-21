@@ -10,7 +10,7 @@
 
 const WORK = {
   erp: { href: '/work/custom-erp-manufacturing', title: 'Custom ERP for manufacturing operations', note: 'Four departments moved onto one real-time system.' },
-  skyone: { href: '/work/sky1-event-booking', title: 'SkyOne: wedding and event booking platform', note: 'One booking flow for a venue and every vendor around it.' },
+  skyone: { href: '/work/sky1-event-booking', title: 'SkyeOne: wedding and event booking platform', note: 'One booking flow for a venue and every vendor around it.' },
   mml: { href: '/work/make-my-look', title: 'Make My Look: on-demand beauty and salon booking', note: 'An offline beauty market taken online for customers and salons.' },
   flash: { href: '/work/flashnow', title: 'FlashNow: quick commerce built on local shops', note: 'Fast delivery powered by neighbourhood stores, not warehouses.' },
   skribe: { href: '/work/skribe', title: 'Skribe: one chat layer across team tools', note: 'Team chat that connects Google Chat, Workspace and Microsoft 365.' },

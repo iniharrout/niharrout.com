@@ -3,8 +3,9 @@
  * Markup uses the wwm- classes in assets/work-with-me.css.
  */
 const { esc, ARROW } = require('../careers/shell');
+const { doodle } = require('./doodles');
 
-const BOOK = 'https://calendar.app.google/HJ4ctVHEXLjUxCzp6';
+const BOOK = 'https://calendly.com/creuto/meet';
 const bookBtn = (label = 'Book a free strategy call', cls = 'is-primary') =>
   `<a class="wwm-btn ${cls}" href="${BOOK}" target="_blank" rel="noopener" data-book="true">${esc(label)} ${ARROW}</a>`;
 
@@ -12,14 +13,21 @@ const crumbsHtml = (items) => `<nav class="wwm-crumbs" aria-label="Breadcrumb">
       ${items.map(([label, href], i) => (i === items.length - 1 ? `<span aria-current="page">${esc(label)}</span>` : `<a href="${href}">${esc(label)}</a><span aria-hidden="true">/</span>`)).join('')}
     </nav>`;
 
-const hero = ({ crumbs, pill, h1, sub, secondary }) => `
-  <section class="wwm-hero wwm-hero-page">
+// `art` names a doodle (scripts/site-data/doodles.js) drawn beside the heading.
+const hero = ({ crumbs, pill, h1, sub, secondary, art, artHtml }) => `
+  <section class="wwm-hero wwm-hero-page${art || artHtml ? ' has-art' : ''}">
     <div class="wwm-wrap">
       ${crumbsHtml(crumbs)}
-      <p class="wwm-pill"><span class="wwm-dot"></span>${esc(pill)}</p>
-      <h1>${esc(h1)}</h1>
-      <p class="wwm-sub">${esc(sub)}</p>
-      <div class="wwm-cta-row">${bookBtn()}${secondary ? `<a class="wwm-btn" href="${secondary[1]}">${esc(secondary[0])}</a>` : ''}</div>
+      <div class="wwm-hero-grid">
+        <div>
+          <p class="wwm-pill"><span class="wwm-dot"></span>${esc(pill)}</p>
+          <h1>${esc(h1)}</h1>
+          <p class="wwm-sub">${esc(sub)}</p>
+          <div class="wwm-cta-row">${bookBtn()}${secondary ? `<a class="wwm-btn" href="${secondary[1]}">${esc(secondary[0])}</a>` : ''}</div>
+        </div>${art ? `
+        <div class="wwm-hero-art">${doodle(art)}</div>` : ''}${artHtml ? `
+        <div class="wwm-hero-art wwm-hero-art-html">${artHtml}</div>` : ''}
+      </div>
     </div>
   </section>`;
 
@@ -56,17 +64,91 @@ ${faq.map(([q, a]) => `        <details class="wwm-q"><summary>${esc(q)}</summar
       </div>`;
 const faqLd = (faq) => ({ '@type': 'FAQPage', mainEntity: faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) });
 
-const endBand = (title = 'Have a product in mind?', text = 'Tell me what you want to build. The first call is free, and you speak with me directly.') => `
-  <section class="wwm-end">
+// Three guide cards and a link to the founder page: internal links that help search engines find
+// and value the guides and About page (see scripts/site-data/guides.js for which guides go where).
+const guides = (list) => `<ul class="wwm-cards wwm-cards-links">
+${list.map((g) => `        <li class="wwm-c"><a href="/blog/${g.slug}"><span class="wwm-c-n">${esc(g.tag)}</span><h3>${esc(g.title)}</h3><p>${esc(g.text)}</p><span class="wwm-c-go">Read the guide</span></a></li>`).join('\n')}
+      </ul>
+      <a class="wwm-founder" href="/about"><img src="/assets/nihar-avatar.jpg" width="56" height="56" alt="" loading="lazy" decoding="async"><span><strong>Who you&rsquo;ll work with: Nihar Ranjan Rout</strong>Founder &amp; CEO of Creuto. 8+ years in product, 120+ products shipped. Read the story ${ARROW}</span></a>`;
+
+// Closing band on generated pages: three ways to get in touch (call, WhatsApp, phone) beside a short quote form.
+// The form posts to /api/lead through assets/lead-forms.js, which also records where the visitor came from.
+const PHONE = '+917608844995';
+const PHONE_LABEL = '+91 76088 44995';
+const waLink = (service) => `https://wa.me/${PHONE.slice(1)}?text=${encodeURIComponent(`Hi Nihar, I found your website and would like a quote${service ? ' for ' + service.toLowerCase() : ''}.`)}`;
+const WA_ICON = '<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 15l-1.4 5.1 5.24-1.37A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.1.82.83-3.03-.2-.31a8.2 8.2 0 1 1 6.95 3.85Zm4.5-6.14c-.25-.12-1.46-.72-1.69-.8-.22-.08-.39-.12-.55.13-.16.24-.63.8-.78.96-.14.16-.29.18-.53.06a6.7 6.7 0 0 1-3.34-2.92c-.25-.43.25-.4.72-1.34.08-.16.04-.3-.02-.42-.06-.12-.55-1.33-.76-1.82-.2-.48-.4-.41-.55-.42h-.47a.9.9 0 0 0-.65.3 2.74 2.74 0 0 0-.86 2.04 4.76 4.76 0 0 0 1 2.53 10.9 10.9 0 0 0 4.17 3.68c1.55.67 2.16.73 2.94.61.47-.07 1.46-.6 1.66-1.17.21-.58.21-1.07.15-1.17-.06-.1-.22-.16-.47-.28Z"/></svg>';
+const endBand = (title = 'Have a product in mind?', text = 'Tell me what you want to build. The first call is free, and you speak with me directly.', service = '', city = '') => `
+  <section class="wwm-end" id="quote">
     <div class="wwm-wrap">
-      <div class="wwm-end-card">
-        <div>
+      <div class="wwm-end-card wwm-quote">
+        <div class="wwm-quote-copy">
+          <p class="wwm-quote-kicker">Free quote within 24 hours</p>
           <h2 class="wwm-h2">${esc(title)}</h2>
           <p>${esc(text)}</p>
+          <div class="wwm-quote-ways">
+            ${bookBtn('Book a free 30-minute call')}
+            <a class="wwm-btn is-wa" href="${waLink(service)}" target="_blank" rel="noopener">${WA_ICON} Chat on WhatsApp</a>
+          </div>
+          <p class="wwm-quote-call">Prefer to talk now? Call <a href="tel:${PHONE}">${PHONE_LABEL}</a></p>
         </div>
-        ${bookBtn()}
+        <form class="wwm-qform" action="/api/lead" method="POST" aria-label="Get a free quote">
+          <input type="hidden" name="service" value="${esc(service || 'Project enquiry')}">${city ? `
+          <input type="hidden" name="city" value="${esc(city)}">` : ''}
+          <div aria-hidden="true" class="wwm-hp"><label>Leave this empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+          <div class="wwm-qrow">
+            <label>Your name<input type="text" name="name" autocomplete="name" required></label>
+            <label>Phone or WhatsApp<input type="tel" name="phone" autocomplete="tel" required></label>
+          </div>
+          <label>Work email<input type="email" name="email" autocomplete="email" required></label>
+          <label>What do you want to build?<textarea name="details" rows="3" placeholder="A few lines is enough: the idea, who it is for and your timeline." required></textarea></label>
+          <button type="submit" class="wwm-btn is-primary">Get my free quote ${ARROW}</button>
+          <p class="wwm-qnote">Goes straight to Nihar. You get a reply within 24 hours.</p>
+        </form>
       </div>
+    </div>
+  </section>
+  <script src="/assets/lead-forms.js?v=lf8" defer></script>`;
+
+// "At a glance" facts card under the hero: short, verifiable statements that search engines and AI assistants
+// can quote when they recommend a company. Only confirmed facts (see project business facts); no prices.
+const glance = (what, local = false) => `
+  <section class="wwm-glance-sec" aria-label="At a glance">
+    <div class="wwm-wrap">
+      <dl class="wwm-glance">
+        <div><dt>What</dt><dd>${esc(what)}, run by Creuto.</dd></div>
+        <div><dt>Where</dt><dd>${local ? 'Headquartered in Bhubaneswar, Odisha, with clients across India and abroad.' : 'Clients in the US, UK, Australia, UAE, Vietnam and India, with calls planned around your working day.'}</dd></div>
+        <div><dt>Recognition</dt><dd>${local ? 'Ranked #1 software development company in Odisha on GoodFirms (October 2026), OpenAI Select Partner, 5.0 on Clutch from 16 verified reviews.' : 'OpenAI Select Partner, 5.0 on Clutch from 16 verified reviews, 120+ products shipped.'}</dd></div>
+        <div><dt>Who leads it</dt><dd>Founder and CEO Nihar Ranjan Rout: 8+ years in product, 120+ products shipped.</dd></div>
+        <div><dt>How it starts</dt><dd>A free 30-minute call, a written proposal within 24 hours, a PRD, then a first working version in about 4 weeks.</dd></div>
+      </dl>
     </div>
   </section>`;
 
-module.exports = { BOOK, bookBtn, hero, section, cards, fits, process, prose, pills, faqHtml, faqLd, endBand, crumbsHtml };
+// Lower-case a service name for use mid-sentence, keeping product names and acronyms intact.
+const KEEP_CASE = /^(iOS|Android|Flutter|React|Native|AI|ML|ERP|CRM|CMS|PWA|SEO|CI\/CD|MVP|ChatGPT|DevOps|Kubernetes|SaaS|EV|UI|UX|API|India|Google|Microsoft|AWS|Azure|OpenAI)$/;
+const lc = (name) => name.split(' ').map((w) => (KEEP_CASE.test(w) ? w : w.toLowerCase())).join(' ');
+
+const cards4 = (list) => cards(list).replace('wwm-cards', 'wwm-cards wwm-cards-4');
+// Shared sections on every service page: why Creuto, quality practices and common buyer questions.
+// Facts only (see project business facts): no prices, no invented numbers.
+const why = (name) => cards4([
+  ['Founder-led from day one', `You speak with Nihar Ranjan Rout, who scopes and leads your ${lc(name)} project, not a sales team.`],
+  ['A written plan before code', 'A proposal within 24 hours of the first call, then a PRD that fixes scope, priorities and milestones.'],
+  ['Working software early', 'A first working version in about 4 weeks, then improvements in milestones you can see and test.'],
+  ['Recognised by clients', 'OpenAI Select Partner and rated 5.0 on Clutch from 16 verified reviews, with 120+ products shipped.'],
+]);
+const quality = cards([
+  ['Code review on every change', 'A second engineer reviews code before it is merged.'],
+  ['Testing before each release', 'Key flows tested on real devices and browsers, with automated checks where they pay off.'],
+  ['Security basics built in', 'Access control, encrypted connections and secrets kept out of code from the first sprint.'],
+  ['Staged releases', 'Changes go to a staging environment for your review before they reach users.'],
+  ['Documentation', 'Setup notes and decisions written down, so your team or any future team can maintain the product.'],
+  ['Support after launch', 'A 60-day warranty after launch, then an agreed plan for maintenance and new work.'],
+]);
+const commonFaq = (name) => [
+  ['Do you sign an NDA before we share our idea?', 'Yes. We sign an NDA before discovery, so you can share your idea, data and plans openly.'],
+  [`What happens after the ${lc(name)} project launches?`, 'There is a 60-day warranty after launch for fixes. After that we agree a support plan covering updates, monitoring and new features.'],
+  ['Do you work with clients in other countries?', 'Yes. We work with clients in the US, UK, Australia, the UAE, Vietnam and India, with calls planned around your working day.'],
+];
+
+module.exports = { lc, why, quality, commonFaq, glance, PHONE, waLink, BOOK, bookBtn, hero, section, cards, fits, process, prose, pills, faqHtml, faqLd, endBand, crumbsHtml, guides };

@@ -1,5 +1,5 @@
 /**
- * Book a Call pop-up. Every Book a Call button is a plain link to the Google Calendar appointment page (it works
+ * Book a Call pop-up. Every Book a Call button is a plain link to the Calendly booking page (it works
  * with no JavaScript and opens in a new tab). With JavaScript, this script opens that same booking page inside a
  * pop-up instead (a bottom sheet on phones), so visitors stay on the site. The calendar only loads when the
  * pop-up opens, so it costs nothing on page load.
@@ -7,8 +7,8 @@
 (function () {
   'use strict';
 
-  var SHORT = 'https://calendar.app.google/HJ4ctVHEXLjUxCzp6';
-  var EMBED = 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ2_xXGxvkoPUq-EZu-9OFN59ehyVyKzMM5OMnc0RXBdI3W7EqVJnmpc_v7Zu2nkjmJhMjTI-YqN?gv=true';
+  var SHORT = 'https://calendly.com/creuto/meet';
+  var EMBED = 'https://calendly.com/creuto/meet?embed_type=Inline&embed_domain=www.niharrout.com&hide_gdpr_banner=1&primary_color=1d4ed8';
   var dlg = null;
 
   function build() {
@@ -32,9 +32,8 @@
     var body = dlg.querySelector('.sp-body');
     if (!body.querySelector('iframe')) {
       var f = document.createElement('iframe');
-      f.title = 'Book a call with Nihar: Google Calendar appointment page';
+      f.title = 'Book a call with Nihar: Calendly booking page';
       f.src = EMBED;
-      f.setAttribute('allow', 'payment');
       f.addEventListener('load', function () { var l = body.querySelector('.sp-loading'); if (l) l.remove(); });
       body.appendChild(f);
     }

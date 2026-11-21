@@ -140,9 +140,11 @@
       // mega menus list dozens of links; the phone menu shows only the top level (families, industries) and the "all" link
       var mobileLinks = menu.classList.contains('sc-mega') ? menu.querySelectorAll('a.sc-fam, a.sc-ind, a.sc-menu-all') : menu.querySelectorAll('a');
       mobileLinks.forEach(function (a) {
+        if (a.closest('.sc-mega-strip')) return; // the desktop promo strip is not repeated in the phone menu
         var copy = a.cloneNode(true);
-        var famName = a.querySelector('.sc-fam-t');
-        if (famName) copy.textContent = famName.textContent;
+        // desktop entries carry an icon and a description; the phone menu shows just the name
+        var name = a.querySelector('.sc-fam-t') || a.querySelector('.sc-entry-t strong');
+        if (name) copy.textContent = name.textContent;
         if (a.classList.contains('sc-menu-all')) copy.className = 'sc-acc-all';
         inner.appendChild(copy);
       });
@@ -186,6 +188,8 @@
   // Contact-button tracking: which button was tapped and where. Sends to /api/track (a no-op until
   // CLICK_WEBHOOK_URL is set on the host) and also to dataLayer / gtag / plausible if one is ever added.
   function whereOnPage(el) {
+    if (el.classList.contains('sc-wafab')) return 'floating button';
+    if (el.closest('#quote')) return 'quote section';
     if (el.closest('#sc-drawer')) return 'mobile menu';
     if (el.closest('.sc-header')) return 'nav';
     if (el.closest('.sc-footer')) return 'footer';
@@ -203,7 +207,7 @@
     var name = null;
     if (href.indexOf('tel:') === 0) name = 'call';
     else if (href.indexOf('wa.me') !== -1) name = 'whatsapp';
-    else if (link.hasAttribute('data-book') || href.indexOf('calendar.app.google') !== -1) name = 'book_call';
+    else if (link.hasAttribute('data-book') || href.indexOf('calendly.com/') !== -1) name = 'book_call';
     else if (href.indexOf('mailto:') === 0) name = 'email';
     if (!name) return;
     var where = whereOnPage(link);
@@ -217,9 +221,81 @@
     } catch (e) { /* tracking must never get in the way of the click */ }
   }, true);
 
+  // Where this visitor first came from (search engine, LinkedIn, an ad, ...), kept in this browser for 90 days.
+  // Nothing is sent anywhere: assets/lead-forms.js adds it to an enquiry only when the visitor submits a form.
+  (function rememberSource() {
+    try {
+      var KEY = 'nr-src';
+      var q = new URLSearchParams(location.search);
+      var host = '';
+      try { host = document.referrer ? new URL(document.referrer).hostname.replace(/^www\./, '') : ''; } catch (e) {}
+      var campaign = q.get('utm_source') || q.get('gclid') || q.get('fbclid');
+      var saved = JSON.parse(localStorage.getItem(KEY) || 'null');
+      var fresh = saved && Date.now() - saved.ts < 90 * 864e5;
+      if (!campaign && (fresh || /(^|\.)niharrout\.com$/.test(host))) return;
+      var source = 'Direct or bookmark';
+      var RULES = [[/google\./, 'Google search'], [/bing\.com/, 'Bing search'], [/duckduckgo/, 'DuckDuckGo'], [/yahoo\./, 'Yahoo search'],
+        [/chatgpt\.com|openai\.com/, 'ChatGPT'], [/perplexity/, 'Perplexity'], [/gemini\.google|bard\.google/, 'Gemini'], [/claude\.ai/, 'Claude'],
+        [/linkedin|lnkd\.in/, 'LinkedIn'], [/facebook|fb\.com|instagram/, 'Facebook or Instagram'], [/(^|\.)x\.com|t\.co$|twitter/, 'X (Twitter)'],
+        [/clutch\.co/, 'Clutch'], [/goodfirms/, 'GoodFirms'], [/creuto\.com/, 'creuto.com'], [/whatsapp/, 'WhatsApp'], [/github/, 'GitHub']];
+      if (host) {
+        source = 'Website: ' + host;
+        for (var i = 0; i < RULES.length; i++) if (RULES[i][0].test(host)) { source = RULES[i][1]; break; }
+      }
+      if (q.get('gclid')) source = 'Google Ads';
+      else if (q.get('utm_source')) source = q.get('utm_source') + (q.get('utm_medium') ? ' / ' + q.get('utm_medium') : '');
+      localStorage.setItem(KEY, JSON.stringify({ source: source, landing: location.pathname, campaign: q.get('utm_campaign') || '', ts: Date.now() }));
+    } catch (e) { /* storage blocked: enquiries simply arrive without a source */ }
+  })();
+
+  // Floating WhatsApp button, shown once the visitor scrolls. Not on careers, booking or thank-you pages.
+  (function whatsappButton() {
+    if (/^\/(work-with-me|thank-you|book|offline|preview)(\/|$)/.test(location.pathname) || document.querySelector('[data-no-wa], .sc-wafab')) return;
+    var h1 = document.querySelector('h1');
+    var topic = h1 ? h1.textContent.replace(/\s+/g, ' ').trim().slice(0, 90) : document.title;
+    var text = 'Hi Nihar, I found your website (' + topic + ') and would like to discuss a project.';
+    var a = document.createElement('a');
+    a.className = 'sc-wafab';
+    a.href = 'https://wa.me/917608844995?text=' + encodeURIComponent(text);
+    a.target = '_blank';
+    a.rel = 'noopener';
+    a.setAttribute('aria-label', 'Chat with Nihar on WhatsApp');
+    a.innerHTML = '<svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" fill="currentColor"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 15l-1.4 5.1 5.24-1.37A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.1.82.83-3.03-.2-.31a8.2 8.2 0 1 1 6.95 3.85Zm4.5-6.14c-.25-.12-1.46-.72-1.69-.8-.22-.08-.39-.12-.55.13-.16.24-.63.8-.78.96-.14.16-.29.18-.53.06a6.7 6.7 0 0 1-3.34-2.92c-.25-.43.25-.4.72-1.34.08-.16.04-.3-.02-.42-.06-.12-.55-1.33-.76-1.82-.2-.48-.4-.41-.55-.42h-.47a.9.9 0 0 0-.65.3 2.74 2.74 0 0 0-.86 2.04 4.76 4.76 0 0 0 1 2.53 10.9 10.9 0 0 0 4.17 3.68c1.55.67 2.16.73 2.94.61.47-.07 1.46-.6 1.66-1.17.21-.58.21-1.07.15-1.17-.06-.1-.22-.16-.47-.28Z"/></svg><span class="sc-wafab-label">Chat on WhatsApp</span>';
+    document.body.appendChild(a);
+    function toggle() { a.classList.toggle('is-on', window.scrollY > 320); }
+    toggle();
+    window.addEventListener('scroll', toggle, { passive: true });
+  })();
+
   document.querySelectorAll('[data-year]').forEach(function (el) {
     el.textContent = new Date().getFullYear();
   });
+
+  // live local times (footer country cards, country pages): [data-clock data-tz] shows the time there,
+  // [data-clock-diff data-tz] the gap to India (data-short gives "IST +1:30", otherwise a sentence)
+  var clocks = document.querySelectorAll('[data-clock]');
+  var diffs = document.querySelectorAll('[data-clock-diff]');
+  function offsetMin(tz, d) {
+    return Math.round((new Date(d.toLocaleString('en-US', { timeZone: tz })) - new Date(d.toLocaleString('en-US', { timeZone: 'UTC' }))) / 60000);
+  }
+  function span(m) { var h = Math.floor(m / 60), r = m % 60; return h + (r ? ':' + (r < 10 ? '0' : '') + r : '') ; }
+  function words(m) { var h = Math.floor(m / 60), r = m % 60; return (h ? h + (h === 1 ? ' hour' : ' hours') : '') + (r ? (h ? ' ' : '') + r + ' minutes' : ''); }
+  function tick() {
+    var now = new Date();
+    clocks.forEach(function (el) {
+      try { el.textContent = now.toLocaleTimeString('en-US', { timeZone: el.getAttribute('data-tz'), hour: 'numeric', minute: '2-digit' }); } catch (e) { /* unknown zone: keep the label */ }
+    });
+    diffs.forEach(function (el) {
+      var tz = el.getAttribute('data-tz'), m;
+      try { m = offsetMin(tz, now) - offsetMin('Asia/Kolkata', now); } catch (e) { return; }
+      if (el.hasAttribute('data-short')) {
+        el.textContent = m === 0 ? 'Home' : 'IST ' + (m > 0 ? '+' : '\u2212') + span(Math.abs(m));
+      } else {
+        el.textContent = m === 0 ? 'Same time as India' : 'India is ' + words(Math.abs(m)) + (m > 0 ? ' behind' : ' ahead') + ' right now';
+      }
+    });
+  }
+  if (clocks.length || diffs.length) { tick(); setInterval(tick, 30000); }
 })();
 
 /**

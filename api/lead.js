@@ -1,7 +1,7 @@
 /**
  * Serverless API Route: POST /api/lead
  * Single entry point for enquiry forms on the site. Forwards each lead to a
- * Google Chat webhook. The webhook URL lives in LEAD_WEBHOOK_URL so it is never
+ * Google Chat webhook, and client enquiries (not job applications) to HubSpot when HUBSPOT_TOKEN is set. The webhook URL lives in LEAD_WEBHOOK_URL so it is never
  * shipped to the browser. If it is not configured, or delivery fails, the
  * handler answers { ok: false, fallback: true } and the page falls back to
  * another channel (Formspree or mailto).
@@ -75,6 +75,114 @@ function escapeChatHtml(str) {
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;');
+}
+
+// HubSpot CRM: client enquiries only (never job applications). Needs HUBSPOT_TOKEN, a service key with
+// crm.objects.contacts.read/write and crm.schemas.contacts.read/write, set on the host. Creates or updates
+// the contact by email, fills the "Website enquiry" fields shown on the contact record, and attaches a note
+// with the full enquiry so earlier enquiries from the same person stay in the timeline.
+const HS_GROUP = { name: 'website_enquiry', label: 'Website enquiry', displayOrder: 0 };
+const HS_FIELDS = [
+  ['website_service', 'Website: service asked about', 'text'],
+  ['website_message', 'Website: message', 'textarea'],
+  ['website_lead_source', 'Website: lead source', 'text'],
+  ['website_enquiry_page', 'Website: page of enquiry', 'text'],
+  ['website_first_page', 'Website: first page visited', 'text'],
+  ['website_enquiry_details', 'Website: other details', 'textarea'],
+  ['website_enquiry_date', 'Website: last enquiry date', 'date'],
+];
+let hsSchemaReady = null;
+
+function hsApi(method, path, body) {
+  return fetch('https://api.hubapi.com' + path, {
+    method,
+    headers: { Authorization: `Bearer ${process.env.HUBSPOT_TOKEN}`, 'Content-Type': 'application/json' },
+    body: body ? JSON.stringify(body) : undefined,
+    signal: AbortSignal.timeout(6000)
+  });
+}
+
+// Creates the "Website enquiry" group and fields once (409 = already there). Resolves true when the fields can be used.
+function ensureHubSpotFields() {
+  if (!hsSchemaReady) {
+    hsSchemaReady = (async () => {
+      const g = await hsApi('POST', '/crm/v3/properties/contacts/groups', HS_GROUP);
+      if (!g.ok && g.status !== 409) throw new Error(`group ${g.status}`);
+      const results = await Promise.all(HS_FIELDS.map(([name, label, kind]) => hsApi('POST', '/crm/v3/properties/contacts', {
+        name, label, groupName: HS_GROUP.name,
+        type: kind === 'date' ? 'date' : 'string',
+        fieldType: kind === 'date' ? 'date' : kind === 'textarea' ? 'textarea' : 'text'
+      })));
+      const bad = results.find((r) => !r.ok && r.status !== 409);
+      if (bad) throw new Error(`field ${bad.status}`);
+      return true;
+    })().catch((err) => { console.error('[HubSpot fields]', err.message); hsSchemaReady = null; return false; });
+  }
+  return hsSchemaReady;
+}
+
+async function sendToHubSpot(lead, title, fields) {
+  const fieldsReady = await ensureHubSpotFields();
+  const [first, ...rest] = lead.name.split(/\s+/);
+  const base = { firstname: first || '', lastname: rest.join(' '), phone: lead.phone, city: lead.city };
+  const { source, first_page: firstPage, ...otherExtras } = lead.extras;
+  const details = [
+    lead.budget && `Budget: ${lead.budget}`,
+    ...Object.entries(otherExtras).map(([k, v]) => `${k.replace(/_/g, ' ')}: ${v}`)
+  ].filter(Boolean).join('\n');
+  // HubSpot date fields take midnight UTC of the day; use the date in India so late-evening leads get the right day.
+  const [y, m, d] = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Kolkata' }).format(new Date()).split('-').map(Number);
+  const today = new Date(Date.UTC(y, m - 1, d));
+  const website = {
+    website_service: lead.service,
+    website_message: lead.message,
+    website_lead_source: source || 'Direct or unknown',
+    website_enquiry_page: lead.page ? `https://www.niharrout.com${lead.page}` : '',
+    website_first_page: firstPage ? `https://www.niharrout.com${firstPage}` : '',
+    website_enquiry_details: details,
+    website_enquiry_date: String(today.getTime())
+  };
+  const clean = (o) => { Object.keys(o).forEach((k) => { if (!o[k]) delete o[k]; }); return o; };
+  clean(base); clean(website);
+  const stage = { lifecyclestage: 'lead', hs_lead_status: 'NEW' };
+
+  const save = async (properties) => {
+    if (lead.email) {
+      const r = await hsApi('POST', '/crm/v3/objects/contacts/batch/upsert', { inputs: [{ id: lead.email.toLowerCase(), idProperty: 'email', properties }] });
+      if (!r.ok) return { ok: false, status: r.status, text: await r.text() };
+      const j = await r.json();
+      return { ok: true, id: j.results && j.results[0] && j.results[0].id };
+    }
+    const r = await hsApi('POST', '/crm/v3/objects/contacts', { properties });
+    if (!r.ok) return { ok: false, status: r.status, text: await r.text() };
+    return { ok: true, id: (await r.json()).id };
+  };
+  // Try everything first; an existing customer cannot be moved back to "lead", and the website fields may be
+  // missing if they could not be created, so fall back step by step rather than lose the lead.
+  const attempts = [
+    fieldsReady && { ...base, ...website, ...stage },
+    fieldsReady && { ...base, ...website },
+    { ...base, ...stage },
+    base
+  ].filter(Boolean);
+  let saved;
+  for (const props of attempts) {
+    saved = await save(props);
+    if (saved.ok || saved.status !== 400) break;
+    console.error('[HubSpot contact retry]', String(saved.text).slice(0, 200));
+  }
+  if (!saved.ok || !saved.id) throw new Error(`HubSpot contact failed (${saved.status}): ${String(saved.text).slice(0, 200)}`);
+
+  const rows = fields.map(([k, v]) => `<strong>${escapeChatHtml(k)}:</strong> ${escapeChatHtml(v)}`);
+  if (lead.page) rows.push(`<strong>Page:</strong> https://www.niharrout.com${escapeChatHtml(lead.page)}`);
+  const body = `<p><strong>${escapeChatHtml(title)}</strong></p><p>${rows.join('<br>')}</p>` +
+    (lead.message ? `<p><strong>Message:</strong><br>${escapeChatHtml(lead.message).replace(/\n/g, '<br>')}</p>` : '');
+  const n = await hsApi('POST', '/crm/v3/objects/notes', {
+    properties: { hs_timestamp: new Date().toISOString(), hs_note_body: body },
+    associations: [{ to: { id: saved.id }, types: [{ associationCategory: 'HUBSPOT_DEFINED', associationTypeId: 202 }] }]
+  });
+  if (!n.ok) throw new Error(`HubSpot note failed (${n.status})`);
+  return 'hubspot';
 }
 
 async function handler(req, res) {
@@ -257,6 +365,11 @@ async function handler(req, res) {
       if (!resp.ok) throw new Error(`Google Chat webhook failed with status ${resp.status}`);
       return 'google_chat';
     })());
+  }
+
+  // Save client enquiries in HubSpot (job applications stay out of the CRM)
+  if (process.env.HUBSPOT_TOKEN && !isApplication) {
+    deliveryTasks.push(sendToHubSpot(lead, title, contactFields.filter(([k]) => k !== 'Name' && k !== 'Email' && k !== 'Phone')));
   }
 
   // Post to Slack

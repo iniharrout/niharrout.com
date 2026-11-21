@@ -25,6 +25,15 @@ function initLeadForms() {
     Object.keys(data).forEach(function (key) {
       if (!CORE[key] && !IGNORED[key] && data[key]) extras[key] = data[key];
     });
+    // Where the visitor first came from, saved by assets/chrome.js (search engine, LinkedIn, an ad, ...).
+    try {
+      var src = JSON.parse(localStorage.getItem('nr-src') || 'null');
+      if (src) {
+        if (src.source) extras.source = src.source;
+        if (src.landing && src.landing !== window.location.pathname) extras.first_page = src.landing;
+        if (src.campaign) extras.campaign = src.campaign;
+      }
+    } catch (e) { /* storage blocked */ }
     var service = data.service || data.service_interest || data.project_type || '';
     if (!service && form.id === 'startupLeadForm') service = 'B2B Software for Startups';
     return {
@@ -137,6 +146,11 @@ function initLeadForms() {
             if (done) { done.hidden = false; done.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
             return;
           }
+          try {
+            var leadEvent = { lead_type: 'form', service: lead.service, source: lead.extras.source || 'unknown' };
+            if (window.dataLayer) window.dataLayer.push(Object.assign({ event: 'generate_lead', page_path: location.pathname }, leadEvent));
+            if (typeof window.gtag === 'function') window.gtag('event', 'generate_lead', leadEvent);
+          } catch (e) { /* tracking must never block the thank-you page */ }
           goToThankYou(lead);
           return;
         }
