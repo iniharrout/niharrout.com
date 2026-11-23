@@ -132,6 +132,37 @@ const ORDER = [
   'does-your-business-need-software',
   'the-essential-ingredients-for-a-successful-product-launch-by-nihar-ranjan-rout',
   'investing-in-technology-a-smart-strategy-for-business-growth',
+  // company lists: shown under /blog/topic/top-companies, kept out of the main feed and the homepage
+  'top-software-development-companies-in-india',
+  'top-custom-software-development-companies-in-india',
+  'top-product-engineering-companies-in-india-for-startups',
+  'top-mvp-development-companies-in-india',
+  'top-enterprise-software-development-companies-in-india',
+  'top-mobile-app-development-companies-in-india',
+  'top-flutter-app-development-companies-in-india',
+  'top-react-native-app-development-companies-in-india',
+  'top-ios-app-development-companies-in-india',
+  'top-android-app-development-companies-in-india',
+  'top-ai-development-companies-in-india',
+  'top-generative-ai-development-companies-in-india',
+  'top-ai-chatbot-development-companies-in-india',
+  'top-ai-agent-development-companies',
+  'top-machine-learning-development-companies-in-india',
+  'top-web-application-development-companies-in-india',
+  'top-erp-software-development-companies-in-india',
+  'top-crm-development-companies-in-india',
+  'top-saas-development-companies-in-india',
+  'top-ecommerce-development-companies-in-india',
+  'top-software-development-companies-in-the-world',
+  'top-offshore-software-development-companies-in-india',
+  'top-software-outsourcing-companies-for-us-and-uk-startups',
+  'top-staff-augmentation-companies-for-software-teams',
+  'top-dedicated-development-team-providers-in-india',
+  'top-fintech-app-development-companies-in-india',
+  'top-healthcare-software-development-companies',
+  'top-edtech-app-development-companies-in-india',
+  'top-logistics-software-development-companies-in-india',
+  'top-on-demand-app-development-companies-in-india',
 ];
 const posts = ORDER.map((slug) => require(path.join(__dirname, 'blog', slug + '.js')));
 
@@ -182,6 +213,7 @@ const TOPICS = [
   { slug: 'mobile', name: 'Mobile Apps', cats: ['Mobile Engineering', 'Mobile & Web'], title: 'Mobile App Development Guides', desc: 'React Native vs Flutter, native vs cross-platform, PWAs, app security, UPI payments and getting approved on the App Store and Google Play.' },
   { slug: 'software-and-cloud', name: 'Software & Cloud', cats: ['Web Application Development', 'Business Software', 'Enterprise ERP', 'Technology & Business', 'Cloud & DevOps'], title: 'Web, ERP, CRM and Cloud Guides', desc: 'Guides on web applications, ERP and CRM, WhatsApp Business API, legacy modernisation and choosing a cloud provider for your business.' },
   { slug: 'ai', name: 'AI', cats: ['Enterprise AI'], title: 'AI Guides for Business: Chatbots, RAG and Agents', desc: 'Practical guides on AI chatbots, RAG vs fine-tuning, AI agents, reducing hallucinations and generative AI use cases for business.' },
+  { slug: 'top-companies', name: 'Top Companies', cats: ['Top Companies'], title: 'Top Software, App and AI Development Companies: Lists for Buyers', desc: 'Disclosed, fact-checked lists of software, mobile app, AI, ERP and industry development companies in India and worldwide, with what each says it does and how to choose.' },
   { slug: 'news', name: 'Company News', cats: ['Company News'], title: 'Creuto Company News and Announcements', desc: 'News from Creuto and Nihar Ranjan Rout: rankings, partnerships and milestones from a software, mobile app and AI development company in India.' },
   { slug: 'careers', name: 'Careers', cats: ['Careers'], title: 'Career Guides: Interviews, Roadmaps and Remote Jobs', desc: 'Interview questions, career roadmaps and job search guides for developers, designers, product managers and marketers in India.' },
   { slug: 'industries', name: 'Industry Guides', cats: ['Industry Guides'], title: 'Industry App Guides: Fintech, Healthcare, Delivery and More', desc: 'How to build apps for fintech, telemedicine, EdTech, real estate, food delivery, quick commerce, salons and multi-vendor marketplaces.' },
@@ -495,7 +527,7 @@ function oldCard(slug, o) {
         </a>`;
 }
 const entries = [
-  ...posts.map((p, i) => ({ slug: p.slug, title: p.title, date: p.published, cat: p.category, html: indexCard(p), i })),
+  ...posts.map((p, i) => ({ slug: p.slug, title: p.title, date: p.published, cat: p.category, html: indexCard(p), i, topicOnly: !!p.topicOnly })),
   ...Object.entries(OLD).map(([s, o], i) => ({ slug: s, title: o.title, date: o.date, cat: o.tag, html: oldCard(s, o), i: 1000 + i })),
 ].sort((a, b) => (b.date.localeCompare(a.date)) || (a.i - b.i));
 for (const e of entries) if (!topicOf(e.cat)) throw new Error('no topic for category ' + e.cat);
@@ -504,7 +536,8 @@ const indexFile = path.join(ROOT, 'blog/index.html');
 // strip anything a previous build set for page 1, so the file is a clean template
 let template = fs.readFileSync(indexFile, 'utf8');
 const pageUrl = (n) => (n === 1 ? '/blog' : `/blog/page/${n}`);
-const totalPages = Math.ceil(entries.length / PER_PAGE);
+const visible = entries.filter((e) => !e.topicOnly);
+const totalPages = Math.ceil(visible.length / PER_PAGE);
 
 function setHead(html, { title, desc, url }) {
   const a = esc(title), d = esc(desc);
@@ -521,7 +554,7 @@ function setHead(html, { title, desc, url }) {
 function filters(active) {
   const link = (href, label, on) => on ? `<a href="${href}" class="blog-filter-btn active" aria-current="page">${label}</a>` : `<a href="${href}" class="blog-filter-btn">${label}</a>`;
   return `        <nav class="blog-filter-bar" aria-label="Guide topics">
-          ${link('/blog', `All guides (${entries.length})`, active === 'all')}
+          ${link('/blog', `All guides (${visible.length})`, active === 'all')}
 ${TOPICS.map((t) => `          ${link(`/blog/topic/${t.slug}`, `${esc(t.name)} (${entries.filter((e) => topicOf(e.cat) === t).length})`, active === t.slug)}`).join('\n')}
         </nav>`;
 }
@@ -568,7 +601,7 @@ fs.rmSync(path.join(ROOT, 'blog/topic'), { recursive: true, force: true });
 
 const INTRO = 'Plain-English playbooks on app and software costs, MVPs, mobile apps, ERP and CRM, AI and industry products, written for founders and operators who value execution over fluff.';
 for (let n = 1; n <= totalPages; n++) {
-  const list = entries.slice((n - 1) * PER_PAGE, n * PER_PAGE);
+  const list = visible.slice((n - 1) * PER_PAGE, n * PER_PAGE);
   const rels = (n > 1 ? `  <link rel="prev" href="${SITE}${pageUrl(n - 1)}">\n` : '') + (n < totalPages ? `  <link rel="next" href="${SITE}${pageUrl(n + 1)}">\n` : '');
   writePage(pageUrl(n), renderList({
     list,
@@ -603,7 +636,7 @@ for (const t of TOPICS) {
 const homeFile = path.join(ROOT, 'index.html');
 let home = fs.readFileSync(homeFile, 'utf8');
 home = replaceRegion(home, 'blog:home', '      ' + homeBlock());
-home = home.replace(/Explore all (?:guides &amp; playbooks|\d+ guides)/, `Explore all ${entries.length} guides`);
+home = home.replace(/Explore all (?:guides &amp; playbooks|\d+ guides)/, `Explore all ${visible.length} guides`);
 home = home.replace(/<p class="sec-sub">Plain-English guides on hiring a software team[^<]*<\/p>/, '<p class="sec-sub">Plain-English guides on app costs, MVPs, mobile and web, ERP and CRM, AI and industry products, written for founders and operators.</p>');
 fs.writeFileSync(homeFile, home);
 

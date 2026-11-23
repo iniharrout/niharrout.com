@@ -345,4 +345,38 @@ function scene(slug, cls = 'doodle-scene') {
     `<g>${spark(52, 60, 9)}${spark(430, 52, 8)}${star(440, 250, 11)}</g></svg>`;
 }
 
+// ---- 'top companies' lists
+Object.assign(BLOG_ART, {
+  'top-software-development-companies-in-india': ['custom-software', 'team', 'sky'],
+  'top-custom-software-development-companies-in-india': ['custom-software', 'erp', 'peach'],
+  'top-product-engineering-companies-in-india-for-startups': ['rocket', 'stack', 'sun'],
+  'top-mvp-development-companies-in-india': ['prototype', 'rocket', 'sky'],
+  'top-enterprise-software-development-companies-in-india': ['custom-software', 'cloud', 'sun'],
+  'top-mobile-app-development-companies-in-india': ['mobile', 'ios', 'sky'],
+  'top-flutter-app-development-companies-in-india': ['cross-platform', 'mobile', 'sun'],
+  'top-react-native-app-development-companies-in-india': ['cross-platform', 'web', 'sky'],
+  'top-ios-app-development-companies-in-india': ['ios', 'mobile', 'peach'],
+  'top-android-app-development-companies-in-india': ['android', 'mobile', 'sun'],
+  'top-ai-development-companies-in-india': ['ai', 'agent', 'sky'],
+  'top-generative-ai-development-companies-in-india': ['ai', 'tuning', 'peach'],
+  'top-ai-chatbot-development-companies-in-india': ['chat', 'ai', 'sky'],
+  'top-ai-agent-development-companies': ['agent', 'ai', 'sun'],
+  'top-machine-learning-development-companies-in-india': ['analytics', 'ai', 'peach'],
+  'top-web-application-development-companies-in-india': ['web', 'dashboard', 'sky'],
+  'top-erp-software-development-companies-in-india': ['erp', 'dashboard', 'peach'],
+  'top-crm-development-companies-in-india': ['saas', 'dashboard', 'sky'],
+  'top-saas-development-companies-in-india': ['saas', 'cloud', 'sun'],
+  'top-ecommerce-development-companies-in-india': ['ecommerce', 'mobile', 'peach'],
+  'top-software-development-companies-in-the-world': ['custom-software', 'remote', 'sky'],
+  'top-offshore-software-development-companies-in-india': ['remote', 'team', 'sun'],
+  'top-software-outsourcing-companies-for-us-and-uk-startups': ['remote', 'rocket', 'peach'],
+  'top-staff-augmentation-companies-for-software-teams': ['team', 'remote', 'sky'],
+  'top-dedicated-development-team-providers-in-india': ['team', 'stack', 'peach'],
+  'top-fintech-app-development-companies-in-india': ['finance', 'mobile', 'sky'],
+  'top-healthcare-software-development-companies': ['healthcare', 'dashboard', 'peach'],
+  'top-edtech-app-development-companies-in-india': ['education', 'mobile', 'sun'],
+  'top-logistics-software-development-companies-in-india': ['logistics', 'dashboard', 'sky'],
+  'top-on-demand-app-development-companies-in-india': ['on-demand', 'mobile', 'peach'],
+});
+
 module.exports = { doodle, has, scene, BLOG_ART, TONES, names: Object.keys(D), D };

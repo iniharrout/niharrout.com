@@ -300,8 +300,8 @@
     "date": "2026-11-22"
   },
   "blog/index.html": {
-    "hash": "c3ce2726cde64f55",
-    "date": "2026-11-22"
+    "hash": "6b7d9f26884df6f5",
+    "date": "2026-11-23"
   },
   "blog/inventory-management-software-development/index.html": {
     "hash": "4b91873086aa7e8c",
@@ -380,44 +380,44 @@
     "date": "2026-11-22"
   },
   "blog/page/10/index.html": {
-    "hash": "1b479e98a7d7699e",
-    "date": "2026-11-22"
+    "hash": "8f5e53837b60fcc1",
+    "date": "2026-11-23"
   },
   "blog/page/11/index.html": {
-    "hash": "6f8407b8f49ec426",
-    "date": "2026-11-22"
+    "hash": "a421d65b9115e7fd",
+    "date": "2026-11-23"
   },
   "blog/page/2/index.html": {
-    "hash": "21db03eed57f6d4c",
-    "date": "2026-11-22"
+    "hash": "3b727473e65dcca3",
+    "date": "2026-11-23"
   },
   "blog/page/3/index.html": {
-    "hash": "296e3f5b0e7c0b7c",
-    "date": "2026-11-22"
+    "hash": "88357a9ad1cb2973",
+    "date": "2026-11-23"
   },
   "blog/page/4/index.html": {
-    "hash": "2194bc3db7da3c1c",
-    "date": "2026-11-22"
+    "hash": "b52a921b816c3f0f",
+    "date": "2026-11-23"
   },
   "blog/page/5/index.html": {
-    "hash": "25ac69ff87b8b75b",
-    "date": "2026-11-22"
+    "hash": "8ccfe3ad9f1b20d4",
+    "date": "2026-11-23"
   },
   "blog/page/6/index.html": {
-    "hash": "5cba37d2bfbb687e",
-    "date": "2026-11-22"
+    "hash": "300b8e75ee943b06",
+    "date": "2026-11-23"
   },
   "blog/page/7/index.html": {
-    "hash": "bb0d2bd002337711",
-    "date": "2026-11-22"
+    "hash": "1d0c07945e00cd94",
+    "date": "2026-11-23"
   },
   "blog/page/8/index.html": {
-    "hash": "061fbb9c0599ca0d",
-    "date": "2026-11-22"
+    "hash": "58e6cedfab2599e3",
+    "date": "2026-11-23"
   },
   "blog/page/9/index.html": {
-    "hash": "039afef6daa9577e",
-    "date": "2026-11-22"
+    "hash": "d7c211c5574299ef",
+    "date": "2026-11-23"
   },
   "blog/pragmatic-enterprise-ai-workflows/index.html": {
     "hash": "0f99ba63baebceac",
@@ -503,37 +503,161 @@
     "hash": "a05b7a177ac4b463",
     "date": "2026-11-22"
   },
+  "blog/top-ai-agent-development-companies/index.html": {
+    "hash": "a891114916dea674",
+    "date": "2026-11-23"
+  },
+  "blog/top-ai-chatbot-development-companies-in-india/index.html": {
+    "hash": "aa163676ccaccb6d",
+    "date": "2026-11-23"
+  },
+  "blog/top-ai-development-companies-in-india/index.html": {
+    "hash": "0538a3796212dcb5",
+    "date": "2026-11-23"
+  },
+  "blog/top-android-app-development-companies-in-india/index.html": {
+    "hash": "638c1cdab4613e4b",
+    "date": "2026-11-23"
+  },
+  "blog/top-crm-development-companies-in-india/index.html": {
+    "hash": "b8dbe33b1f43c254",
+    "date": "2026-11-23"
+  },
+  "blog/top-custom-software-development-companies-in-india/index.html": {
+    "hash": "281ca2b8d7c69649",
+    "date": "2026-11-23"
+  },
+  "blog/top-dedicated-development-team-providers-in-india/index.html": {
+    "hash": "71124e3f0fdfe6e6",
+    "date": "2026-11-23"
+  },
+  "blog/top-ecommerce-development-companies-in-india/index.html": {
+    "hash": "15d678d0a9d2ace5",
+    "date": "2026-11-23"
+  },
+  "blog/top-edtech-app-development-companies-in-india/index.html": {
+    "hash": "ffee65a3d0825e9b",
+    "date": "2026-11-23"
+  },
+  "blog/top-enterprise-software-development-companies-in-india/index.html": {
+    "hash": "c9e2c7f81219cc11",
+    "date": "2026-11-23"
+  },
+  "blog/top-erp-software-development-companies-in-india/index.html": {
+    "hash": "a7d52764d3e04213",
+    "date": "2026-11-23"
+  },
+  "blog/top-fintech-app-development-companies-in-india/index.html": {
+    "hash": "cf7169abc20c3520",
+    "date": "2026-11-23"
+  },
+  "blog/top-flutter-app-development-companies-in-india/index.html": {
+    "hash": "2897a1de44cfaea9",
+    "date": "2026-11-23"
+  },
+  "blog/top-generative-ai-development-companies-in-india/index.html": {
+    "hash": "e275a67ad33f1ba5",
+    "date": "2026-11-23"
+  },
+  "blog/top-healthcare-software-development-companies/index.html": {
+    "hash": "280824cef6e1449f",
+    "date": "2026-11-23"
+  },
+  "blog/top-ios-app-development-companies-in-india/index.html": {
+    "hash": "23927712dc915c55",
+    "date": "2026-11-23"
+  },
+  "blog/top-logistics-software-development-companies-in-india/index.html": {
+    "hash": "4fddebe7197feca8",
+    "date": "2026-11-23"
+  },
+  "blog/top-machine-learning-development-companies-in-india/index.html": {
+    "hash": "111637273ce5882c",
+    "date": "2026-11-23"
+  },
+  "blog/top-mobile-app-development-companies-in-india/index.html": {
+    "hash": "30ba0bf7d97566a5",
+    "date": "2026-11-23"
+  },
+  "blog/top-mvp-development-companies-in-india/index.html": {
+    "hash": "e202b8571bd05cfb",
+    "date": "2026-11-23"
+  },
+  "blog/top-offshore-software-development-companies-in-india/index.html": {
+    "hash": "173b61bfcc82498b",
+    "date": "2026-11-23"
+  },
+  "blog/top-on-demand-app-development-companies-in-india/index.html": {
+    "hash": "7ce08bda28df8db4",
+    "date": "2026-11-23"
+  },
+  "blog/top-product-engineering-companies-in-india-for-startups/index.html": {
+    "hash": "2362a426acc50d9e",
+    "date": "2026-11-23"
+  },
+  "blog/top-react-native-app-development-companies-in-india/index.html": {
+    "hash": "2fa12d157bdd827d",
+    "date": "2026-11-23"
+  },
+  "blog/top-saas-development-companies-in-india/index.html": {
+    "hash": "3c43d94386a27f04",
+    "date": "2026-11-23"
+  },
+  "blog/top-software-development-companies-in-india/index.html": {
+    "hash": "a3e1efbc9c382b3e",
+    "date": "2026-11-23"
+  },
+  "blog/top-software-development-companies-in-the-world/index.html": {
+    "hash": "678dc9f89b39f52c",
+    "date": "2026-11-23"
+  },
+  "blog/top-software-outsourcing-companies-for-us-and-uk-startups/index.html": {
+    "hash": "76f2b71abaef5d20",
+    "date": "2026-11-23"
+  },
+  "blog/top-staff-augmentation-companies-for-software-teams/index.html": {
+    "hash": "77d39a108271ce09",
+    "date": "2026-11-23"
+  },
+  "blog/top-web-application-development-companies-in-india/index.html": {
+    "hash": "1b22fe0e7185a5a9",
+    "date": "2026-11-23"
+  },
   "blog/topic/ai/index.html": {
-    "hash": "50e06f8419c53b25",
-    "date": "2026-11-22"
+    "hash": "46138e47b5b09162",
+    "date": "2026-11-23"
   },
   "blog/topic/careers/index.html": {
-    "hash": "b09ae7e1965f5fee",
-    "date": "2026-11-22"
+    "hash": "128ef4067fa04576",
+    "date": "2026-11-23"
   },
   "blog/topic/cost-and-hiring/index.html": {
-    "hash": "2c65ed1aaeddb767",
-    "date": "2026-11-22"
+    "hash": "a6b63eabf92792a4",
+    "date": "2026-11-23"
   },
   "blog/topic/industries/index.html": {
-    "hash": "e4df2e5d43e3e0c9",
-    "date": "2026-11-22"
+    "hash": "4b8b0e927e4b2023",
+    "date": "2026-11-23"
   },
   "blog/topic/mobile/index.html": {
-    "hash": "04ea9ddfa7798758",
-    "date": "2026-11-22"
+    "hash": "7caed0a8bec85920",
+    "date": "2026-11-23"
   },
   "blog/topic/news/index.html": {
-    "hash": "da44d90a1a9b3105",
-    "date": "2026-11-22"
+    "hash": "01947ef7764980bd",
+    "date": "2026-11-23"
   },
   "blog/topic/product/index.html": {
-    "hash": "9b3124a3e0db7600",
-    "date": "2026-11-22"
+    "hash": "96b889d9aede8b0c",
+    "date": "2026-11-23"
   },
   "blog/topic/software-and-cloud/index.html": {
-    "hash": "347431f96262d7d9",
-    "date": "2026-11-22"
+    "hash": "23b2cba8d08b3d32",
+    "date": "2026-11-23"
+  },
+  "blog/topic/top-companies/index.html": {
+    "hash": "05e0a41d0e7c361f",
+    "date": "2026-11-23"
   },
   "blog/ui-ux-designer-portfolio-tips/index.html": {
     "hash": "04ce8fc3d0bd24a8",
