@@ -2,7 +2,7 @@
  * The 30 "top companies" lists. scripts/blog/_toplist.js turns each entry into a guide module.
  *
  * need  = capability keys (see companies.js) of which every picked company must have at least one; null = general list.
- * picks = company keys in the order shown after Creuto, which is always first and always disclosed.
+ * picks = company keys in the order shown after Creuto, which is always first.
  * crFit = what Creuto honestly offers for this topic (HTML). Say plainly when we have no published case study.
  * Do not put prices, ranks, review counts or awards for other companies in here; those come from companies.js.
  */
@@ -14,12 +14,12 @@ add({
   slug: 'top-software-development-companies-in-india',
   title: 'Top Software Development Companies in India (2026)',
   short: 'Top software companies in India',
-  desc: 'A disclosed, fact-checked list of software development companies in India for 2026, with what each says it does, size and focus, and how to shortlist one.',
+  desc: 'A fact-checked list of software development companies in India for 2026, with what each says it does, size and focus, and how to shortlist one.',
   kw: ['top software development companies in India', 'software development company in India', 'top software company India 2026', 'custom software development India', 'IT outsourcing India'],
   art: ['custom-software', 'team', 'sky'],
   need: null,
   picks: ['talentica', 'geekyants', 'simform', 'mindfire', 'openxcell', 'radixweb', 'tatvasoft', 'successive', 'hyperlink', 'rootquotient'],
-  lead: 'India has thousands of software companies, and almost every list of them is written by one of them. This one is too, and we say so. It covers mid-size and product-focused firms that build software for other businesses, with only facts the companies publish about themselves.',
+  lead: 'India has thousands of software companies, and choosing one is hard when every website claims the same thing. This list covers mid-size and product-focused firms that build software for other businesses, using only facts the companies publish about themselves.',
   who: 'This list suits founders and operations leaders who want a custom product built, not a large IT services contract. If you need a 10,000-person programme, read our list of enterprise software companies in India instead.',
   matters: [
     ['Who writes the code', 'Ask who will work on your project, whether they are employees, and whether any work goes to other companies. Size figures on a website say little about the team assigned to you.'],
@@ -47,7 +47,7 @@ add({
   art: ['custom-software', 'erp', 'peach'],
   need: ['erp', 'crm', 'enterprise'],
   picks: ['radixweb', 'successive', 'simform', 'infobeans', 'cygnet', 'openxcell', 'tatvasoft', 'rootquotient'],
-  lead: 'Custom software is built around how your business already works: its approvals, reports, customers and rules. That is different from configuring a product you license. This list names Indian companies whose own pages mention ERP, CRM or enterprise applications, and discloses that we publish it.',
+  lead: 'Custom software is built around how your business already works: its approvals, reports, customers and rules. That is different from configuring a product you license. This list names Indian companies whose own pages mention ERP, CRM or enterprise applications.',
   who: 'It suits operations and finance leaders replacing spreadsheets, a legacy system or a patchwork of tools, and founders who need business software no off-the-shelf product covers.',
   matters: [
     ['Process before code', 'A good team spends time mapping your workflows and writes a requirements document before building. Ask to see an example.'],
@@ -75,7 +75,7 @@ add({
   art: ['rocket', 'stack', 'sun'],
   need: ['mvp', 'saas', 'enterprise'],
   picks: ['talentica', 'geekyants', 'radixweb', 'successive', 'openxcell', 'tatvasoft', 'rootquotient', 'simform', 'mindinventory', 'cygnet'],
-  lead: 'A startup needs a different partner from an enterprise. Speed, a small senior team and honest advice on what not to build matter more than a long list of certifications. This list names Indian firms whose own pages mention startups, SaaS or product engineering, and we disclose that Creuto publishes it.',
+  lead: 'A startup needs a different partner from an enterprise. Speed, a small senior team and honest advice on what not to build matter more than a long list of certifications. This list names Indian firms whose own pages mention startups, SaaS or product engineering.',
   who: 'It suits first-time and repeat founders choosing a team to build version one, and product leaders at funded companies adding engineering capacity.',
   matters: [
     ['Product thinking', 'Does the team challenge your feature list or just build it? Good partners cut scope to reach users sooner.'],
@@ -103,7 +103,7 @@ add({
   art: ['prototype', 'rocket', 'sky'],
   need: ['mvp'],
   picks: ['mindinventory', 'quytech', 'hiddenbrains', 'riaxe', 'mindfire', 'successive', 'geekyants', 'radixweb', 'talentica', 'tatvasoft'],
-  lead: 'An MVP is the smallest version of your product that tests whether people want it. The right partner helps you decide what to leave out. This list names Indian companies that mention MVPs or startups on their own pages, and we disclose that Creuto publishes it.',
+  lead: 'An MVP is the smallest version of your product that tests whether people want it. The right partner helps you decide what to leave out. This list names Indian companies that mention MVPs or startups on their own pages.',
   who: 'It suits founders with an idea or early prototype who want a first working version in months, not a year.',
   matters: [
     ['Scope discipline', 'Ask how they decide what goes into version one. A team that agrees to everything will blow your budget.'],
@@ -131,7 +131,7 @@ add({
   art: ['custom-software', 'cloud', 'sun'],
   need: ['enterprise'],
   picks: ['tcs', 'infosys', 'wipro', 'hcltech', 'techm', 'ltim', 'mphasis', 'persistent', 'cognizant', 'infobeans'],
-  lead: 'Enterprise work in India is dominated by a handful of very large IT services firms. This list names them with facts from Wikipedia and company sites. Creuto is much smaller, we say that plainly, and we list ourselves first only because we publish the list.',
+  lead: 'Enterprise work in India is dominated by a handful of very large IT services firms. This list names them with facts from Wikipedia and company sites. Creuto is a much smaller, founder-led team.',
   who: 'It suits large organisations buying multi-year programmes, and smaller teams who want to know where the biggest names sit before deciding they need a smaller partner.',
   matters: [
     ['Fit with your size', 'A very large firm may assign a small project to a junior team. Ask where your project sits in their priorities and who leads it.'],
@@ -160,7 +160,7 @@ add({
   art: ['mobile', 'ios', 'sky'],
   need: ['ios', 'android', 'flutter', 'rn'],
   picks: ['mindinventory', 'techugo', 'konstant', 'ninehertz', 'spaceo', 'hyperlink', 'geekyants', 'radixweb', 'tatvasoft', 'quytech'],
-  lead: 'Choosing an app company is hard because every site claims thousands of apps and perfect reviews. This list uses what each company states on its own pages, shows where those pages disagree and discloses that Creuto publishes it.',
+  lead: 'Choosing an app company is hard because every site claims thousands of apps and perfect reviews. This list uses what each company states on its own pages, and notes where those pages disagree.',
   who: 'It suits founders and businesses planning a first app or rebuilding an existing one for iOS, Android or both.',
   matters: [
     ['Platform choice', 'Ask them to recommend iOS, Android, Flutter or React Native for your case and explain why. A single default answer is a warning sign.'],
@@ -188,7 +188,7 @@ add({
   art: ['cross-platform', 'mobile', 'sun'],
   need: ['flutter'],
   picks: ['geekyants', 'mindinventory', 'konstant', 'ninehertz', 'techugo', 'hyperlink', 'hiddenbrains'],
-  lead: 'Flutter lets one team build apps for iOS and Android from a single codebase. That can cut cost and time, but only if the team knows Flutter well. This list names Indian companies whose own pages mention Flutter, and discloses that Creuto publishes it.',
+  lead: 'Flutter lets one team build apps for iOS and Android from a single codebase. That can cut cost and time, but only if the team knows Flutter well. This list names Indian companies whose own pages mention Flutter.',
   who: 'It suits founders who want one codebase for both platforms and teams moving an existing app to Flutter.',
   matters: [
     ['Production Flutter apps', 'Ask for live Flutter apps in the stores, not demos, and for what was hard about them.'],
@@ -216,7 +216,7 @@ add({
   art: ['cross-platform', 'web', 'sky'],
   need: ['rn'],
   picks: ['dianapps', 'radixweb', 'quytech', 'tatvasoft', 'spaceo', 'hiddenbrains'],
-  lead: 'React Native builds iOS and Android apps with JavaScript and React, which suits teams that already work in that ecosystem. This list names Indian companies whose own pages mention React Native, and discloses that Creuto publishes it.',
+  lead: 'React Native builds iOS and Android apps with JavaScript and React, which suits teams that already work in that ecosystem. This list names Indian companies whose own pages mention React Native.',
   who: 'It suits web teams extending to mobile, and founders who want one codebase for iOS and Android.',
   matters: [
     ['Shipped apps', 'Ask for live React Native apps and how they handle performance on lower-end Android phones.'],
@@ -244,7 +244,7 @@ add({
   art: ['ios', 'mobile', 'peach'],
   need: ['ios'],
   picks: ['techugo', 'konstant', 'successive', 'dianapps', 'hiddenbrains', 'radixweb', 'geekyants', 'mindinventory'],
-  lead: 'An iPhone app has to pass App Store review, follow Apple’s design rules and feel at home on the device. This list names Indian companies whose own pages mention iOS development, and discloses that Creuto publishes it.',
+  lead: 'An iPhone app has to pass App Store review, follow Apple’s design rules and feel at home on the device. This list names Indian companies whose own pages mention iOS development.',
   who: 'It suits founders whose first users are on iPhone, and teams adding an iOS app to an existing Android or web product.',
   matters: [
     ['App Store record', 'Ask for apps live on the App Store and how they handle review rejections and privacy declarations.'],
@@ -272,7 +272,7 @@ add({
   art: ['android', 'mobile', 'sun'],
   need: ['android'],
   picks: ['spaceo', 'tatvasoft', 'quytech', 'ninehertz', 'mindinventory', 'hiddenbrains', 'techugo', 'konstant'],
-  lead: 'Android runs on thousands of device models, many of them modest phones, and India is an Android-first market for most consumer products. This list names Indian companies whose own pages mention Android development, and discloses that Creuto publishes it.',
+  lead: 'Android runs on thousands of device models, many of them modest phones, and India is an Android-first market for most consumer products. This list names Indian companies whose own pages mention Android development.',
   who: 'It suits founders building for Indian consumers, field teams and emerging markets, where Android is usually the first platform.',
   matters: [
     ['Low-end devices', 'Ask how they test performance and battery use on budget phones and slow networks.'],
@@ -301,7 +301,7 @@ add({
   art: ['ai', 'agent', 'sky'],
   need: ['ai'],
   picks: ['fractal', 'tredence', 'quytech', 'dianapps', 'talentica', 'simform', 'persistent', 'mindinventory', 'geekyants', 'openxcell'],
-  lead: 'Every software company now says it does AI, so the claim alone tells you little. This list names firms with a presence in India whose own pages describe AI work, shows what they say about themselves and discloses that Creuto publishes it.',
+  lead: 'Every software company now says it does AI, so the claim alone tells you little. This list names firms with a presence in India whose own pages describe AI work, and shows what they say about themselves.',
   who: 'It suits businesses adding AI to a product or process, and teams comparing analytics-led firms with product-led ones.',
   matters: [
     ['A real use case', 'Ask them to describe a past AI project, the data it used and the measured result. Vague answers mean little production experience.'],
@@ -329,7 +329,7 @@ add({
   art: ['ai', 'tuning', 'peach'],
   need: ['genai'],
   picks: ['talentica', 'quytech', 'dianapps', 'openxcell', 'mindinventory', 'spaceo', 'ninehertz', 'fractal', 'quantiphi', 'c5i'],
-  lead: 'Generative AI projects fail more often from weak evaluation and unclear use cases than from weak models. This list names companies with an India presence that mention generative AI or LLMs on their own pages, and discloses that Creuto publishes it.',
+  lead: 'Generative AI projects fail more often from weak evaluation and unclear use cases than from weak models. This list names companies with an India presence that mention generative AI or LLMs on their own pages.',
   who: 'It suits teams planning chatbots, document tools, content workflows or copilots inside their products.',
   matters: [
     ['Use case clarity', 'Ask which task the model does, how success is measured and what happens when it is wrong.'],
@@ -357,7 +357,7 @@ add({
   art: ['chat', 'ai', 'sky'],
   need: ['chatbot', 'agents'],
   picks: ['yellowai', 'haptik', 'koreai', 'gupshup', 'quytech', 'dianapps', 'mindinventory', 'ninehertz', 'spaceo', 'riaxe'],
-  lead: 'You can license a chatbot platform or have a team build one for you. This list covers both: conversational AI platforms with roots or teams in India, and development companies whose pages mention chatbots. We say which is which, and disclose that Creuto publishes the list.',
+  lead: 'You can license a chatbot platform or have a team build one for you. This list covers both: conversational AI platforms with roots or teams in India, and development companies whose pages mention chatbots, with each one labelled.',
   who: 'It suits businesses automating customer support, lead capture or internal help, including on WhatsApp.',
   matters: [
     ['Platform or custom build', 'A platform is faster to start, while a custom build fits unusual workflows. Ask what you can change later in each case.'],
@@ -385,7 +385,7 @@ add({
   art: ['agent', 'ai', 'sun'],
   need: ['agents'],
   picks: ['talentica', 'quantiphi', 'affine', 'fractal', 'tredence', 'c5i', 'koreai', 'yellowai', 'quytech', 'dianapps'],
-  lead: 'An AI agent plans steps and uses tools, which makes it more useful and more risky than a chatbot. This list names companies with an India presence whose own pages mention agentic AI, and discloses that Creuto publishes it.',
+  lead: 'An AI agent plans steps and uses tools, which makes it more useful and more risky than a chatbot. This list names companies with an India presence whose own pages mention agentic AI.',
   who: 'It suits teams automating multi-step work such as research, support resolution or back-office tasks.',
   matters: [
     ['Permissions', 'Ask what the agent is allowed to do on its own and what needs approval. Limit access to what it needs.'],
@@ -413,7 +413,7 @@ add({
   art: ['analytics', 'ai', 'peach'],
   need: ['ai'],
   picks: ['latentview', 'gramener', 'affine', 'quantiphi', 'c5i', 'mindfire', 'fractal', 'tredence'],
-  lead: 'Machine learning succeeds on clean data and a clear business question, not on algorithms alone. This list names data and ML firms with an India presence from their own pages, and discloses that Creuto publishes it.',
+  lead: 'Machine learning succeeds on clean data and a clear business question, not on algorithms alone. This list names data and ML firms with an India presence from their own pages.',
   who: 'It suits businesses with data to learn from, such as demand forecasting, churn or fraud, and teams moving models from notebooks into production.',
   matters: [
     ['Data readiness', 'Ask what data they need, how much and how they assess its quality before starting.'],
@@ -442,7 +442,7 @@ add({
   art: ['web', 'dashboard', 'sky'],
   need: null,
   picks: ['tatvasoft', 'spaceo', 'konstant', 'ninehertz', 'dianapps', 'hyperlink', 'openxcell', 'radixweb', 'webandcrafts', 'riaxe'],
-  lead: 'A web application is software used in a browser, such as a customer portal, dashboard or booking platform. It is different from a brochure website. This list names Indian companies whose own pages describe web or custom application work, and discloses that Creuto publishes it.',
+  lead: 'A web application is software used in a browser, such as a customer portal, dashboard or booking platform. It is different from a brochure website. This list names Indian companies whose own pages describe web or custom application work.',
   who: 'It suits businesses building portals, internal tools and SaaS products on the web.',
   matters: [
     ['Architecture', 'Ask how the app will scale, how it is structured and how data is stored and backed up.'],
@@ -470,7 +470,7 @@ add({
   art: ['erp', 'dashboard', 'peach'],
   need: ['erp'],
   picks: ['openxcell', 'tatvasoft', 'riaxe', 'cygnet', 'hiddenbrains', 'spaceo', 'techugo', 'dianapps', 'persistent', 'ramco'],
-  lead: 'An ERP ties finance, inventory, sales and operations together. Some firms build custom ERPs, some implement licensed products, and Ramco sells its own. This list names companies whose own pages mention ERP, says which are which and discloses that Creuto publishes it.',
+  lead: 'An ERP ties finance, inventory, sales and operations together. Some firms build custom ERPs, some implement licensed products, and Ramco sells its own. This list names companies whose own pages mention ERP, says which are which.',
   who: 'It suits manufacturers, distributors and growing businesses replacing spreadsheets or outgrown software.',
   matters: [
     ['Custom or licensed', 'Ask whether they build, implement or both, and which option fits your processes better.'],
@@ -498,7 +498,7 @@ add({
   art: ['saas', 'dashboard', 'sky'],
   need: ['crm'],
   picks: ['openxcell', 'tatvasoft', 'radixweb', 'riaxe', 'hiddenbrains', 'spaceo', 'techugo', 'ninehertz', 'dianapps', 'quytech'],
-  lead: 'A CRM holds your customers, deals and conversations. You can configure a product such as Salesforce, HubSpot or Zoho, or build one around your own sales process. This list names Indian companies whose own pages mention CRM, and discloses that Creuto publishes it.',
+  lead: 'A CRM holds your customers, deals and conversations. You can configure a product such as Salesforce, HubSpot or Zoho, or build one around your own sales process. This list names Indian companies whose own pages mention CRM.',
   who: 'It suits sales-led businesses with an unusual process, and teams outgrowing the CRM they bought.',
   matters: [
     ['Build or configure', 'Ask which they recommend for your process and why. A good partner does not always sell a build.'],
@@ -526,7 +526,7 @@ add({
   art: ['saas', 'cloud', 'sun'],
   need: ['saas'],
   picks: ['talentica', 'openxcell', 'radixweb', 'cygnet', 'mindinventory', 'successive', 'spaceo', 'techugo', 'ninehertz', 'quytech'],
-  lead: 'A SaaS product is more than an app: it needs accounts, plans, billing, admin tools and the ability to serve many customers safely. This list names Indian companies whose own pages mention SaaS, and discloses that Creuto publishes it.',
+  lead: 'A SaaS product is more than an app: it needs accounts, plans, billing, admin tools and the ability to serve many customers safely. This list names Indian companies whose own pages mention SaaS.',
   who: 'It suits founders building subscription software and companies turning an internal tool into a product.',
   matters: [
     ['Multi-tenancy', 'Ask how customer data is separated and how the system scales as customers grow.'],
@@ -554,7 +554,7 @@ add({
   art: ['ecommerce', 'mobile', 'peach'],
   need: ['ecom'],
   picks: ['webandcrafts', 'geekyants', 'simform', 'radixweb', 'tatvasoft', 'hyperlink', 'konstant', 'ninehertz', 'spaceo', 'riaxe'],
-  lead: 'An online store can be a hosted platform with a theme or a custom build. The right choice depends on how unusual your catalogue, pricing and fulfilment are. This list names Indian companies whose own pages mention eCommerce, and discloses that Creuto publishes it.',
+  lead: 'An online store can be a hosted platform with a theme or a custom build. The right choice depends on how unusual your catalogue, pricing and fulfilment are. This list names Indian companies whose own pages mention eCommerce.',
   who: 'It suits brands launching or rebuilding a store, and marketplaces that outgrow a standard platform.',
   matters: [
     ['Platform fit', 'Ask whether a hosted platform would do. A partner who only recommends custom builds may not be neutral.'],
@@ -583,7 +583,7 @@ add({
   art: ['custom-software', 'remote', 'sky'],
   need: null,
   picks: ['thoughtworks', 'globant', 'endava', 'nagarro', 'netguru', 'stxnext', 'intellias', 'vention', 'sciencesoft', 'itransition', 'tcs', 'infosys'],
-  lead: 'Software companies are everywhere, and size does not measure fit. This list gathers well-known firms from several countries using Wikipedia and company websites. We were not paid by any of them, and we list Creuto first only because we publish the list.',
+  lead: 'Software companies are everywhere, and size does not measure fit. This list gathers well-known firms from several countries using Wikipedia and company websites.',
   who: 'It suits buyers who want to see the landscape before deciding between a global firm, a regional specialist and a founder-led team.',
   matters: [
     ['Location and overlap', 'Ask how many hours overlap with your team and how handovers work across time zones.'],
@@ -595,7 +595,7 @@ add({
     ['Which is the largest software development company?', 'By employee count in Wikipedia, firms such as Tata Consultancy Services are among the largest. Size does not measure fit.'],
     ['Should I hire a global firm or a regional one?', 'Global firms offer scale and process. Regional and founder-led teams offer closer attention for smaller projects.'],
     ['How do I compare firms from different countries?', 'Compare team, process, contract and references. Hourly rates alone are misleading.'],
-    ['Are these rankings paid?', 'No. The order after Creuto is by topic fit, not by payment, and no company paid to appear.'],
+    ['How were these companies chosen?', 'We include companies whose own websites name this kind of work, and we describe each one using only what those sites state. Details were checked on 23 November 2026.'],
   ],
   crFit: '<p>Creuto is a small, founder-led team in India that works with clients abroad. We are not comparable in scale to the global firms below, and for many projects that is the point: the founder leads your call and your build. See our <a href="/offshore-software-development-company">offshore software development</a> page.</p>',
   crLinks: [['/offshore-software-development-company', 'Offshore software development']],
@@ -611,7 +611,7 @@ add({
   art: ['remote', 'team', 'sun'],
   need: null,
   picks: ['talentica', 'simform', 'openxcell', 'radixweb', 'tatvasoft', 'successive', 'mindfire', 'quytech', 'cygnet', 'hyperlink'],
-  lead: 'Offshore development means a team in another country builds your product. India is a common choice for US, UK, European and Australian companies. This list names Indian firms, several with offices abroad, and discloses that Creuto publishes it.',
+  lead: 'Offshore development means a team in another country builds your product. India is a common choice for US, UK, European and Australian companies. This list names Indian firms, several with offices abroad.',
   who: 'It suits companies abroad adding engineering capacity or building a first product without hiring locally.',
   matters: [
     ['Time overlap', 'Agree overlap hours and how daily updates work, so time zones do not slow decisions.'],
@@ -639,7 +639,7 @@ add({
   art: ['remote', 'rocket', 'peach'],
   need: null,
   picks: ['netguru', 'stxnext', 'intellias', 'vention', 'innowise', 'endava', 'talentica', 'geekyants', 'radixweb'],
-  lead: 'Startups in the US and UK outsource to teams in Europe and Asia for speed and cost. This list mixes European, American and Indian firms, using Wikipedia and company websites, and discloses that Creuto publishes it.',
+  lead: 'Startups in the US and UK outsource to teams in Europe and Asia for speed and cost. This list mixes European, American and Indian firms, using Wikipedia and company websites.',
   who: 'It suits founders and product leaders in the US and UK choosing where to place a build.',
   matters: [
     ['Time zone', 'European teams overlap with the UK and part of the US day, while India overlaps with a few hours. Ask how each works for you.'],
@@ -667,7 +667,7 @@ add({
   art: ['team', 'remote', 'sky'],
   need: ['staffaug'],
   picks: ['quytech', 'ninehertz', 'hiddenbrains', 'dianapps', 'innowise', 'toptal', 'andela'],
-  lead: 'Staff augmentation adds engineers to your team while you manage the work. This list names firms and platforms that offer it, with facts from their own sites or Wikipedia, and discloses that Creuto publishes it. Only seven of the firms we checked name staff augmentation explicitly.',
+  lead: 'Staff augmentation adds engineers to your team while you manage the work. This list names firms and platforms that offer it, with facts from their own sites or Wikipedia. Only seven of the firms we checked name staff augmentation explicitly.',
   who: 'It suits companies that already have product management and engineering leadership and need extra hands.',
   matters: [
     ['Who manages the work', 'With augmentation you direct the work. Ask what management support you get and what you must supply.'],
@@ -695,7 +695,7 @@ add({
   art: ['team', 'stack', 'peach'],
   need: ['dedicated'],
   picks: ['openxcell', 'riaxe', 'mindinventory', 'radixweb', 'cygnet', 'konstant', 'quytech', 'tatvasoft', 'dianapps', 'spaceo', 'vention'],
-  lead: 'A dedicated team is a group of engineers working only on your product, managed day to day with you but employed by the vendor. This list names companies that mention dedicated teams or developer hiring on their own pages, and discloses that Creuto publishes it.',
+  lead: 'A dedicated team is a group of engineers working only on your product, managed day to day with you but employed by the vendor. This list names companies that mention dedicated teams or developer hiring on their own pages.',
   who: 'It suits companies with a long roadmap who want continuity without recruiting.',
   matters: [
     ['Team composition', 'Ask which roles are included, such as developers, QA and a lead, and who manages them.'],
@@ -724,7 +724,7 @@ add({
   art: ['finance', 'mobile', 'sky'],
   need: ['fintech'],
   picks: ['geekyants', 'simform', 'radixweb', 'cygnet', 'rootquotient', 'mindinventory', 'tatvasoft', 'successive', 'openxcell', 'spaceo'],
-  lead: 'Fintech products handle money and personal data, so compliance and security shape the build from day one. This list names companies whose own pages mention fintech or financial services, and discloses that Creuto publishes it.',
+  lead: 'Fintech products handle money and personal data, so compliance and security shape the build from day one. This list names companies whose own pages mention fintech or financial services.',
   who: 'It suits founders building payments, lending, wallets or wealth apps, and banks digitising services.',
   matters: [
     ['Regulation', 'Ask which rules apply to your product, such as RBI guidelines, KYC and data protection, and how they design for them.'],
@@ -752,7 +752,7 @@ add({
   art: ['healthcare', 'dashboard', 'peach'],
   need: ['health'],
   picks: ['sciencesoft', 'mindinventory', 'simform', 'mindfire', 'openxcell', 'radixweb', 'geekyants', 'quytech', 'tatvasoft', 'persistent'],
-  lead: 'Healthcare software handles sensitive data and often connects to hospital systems, so privacy and integration matter more than in most apps. This list names companies whose own pages mention healthcare, and discloses that Creuto publishes it.',
+  lead: 'Healthcare software handles sensitive data and often connects to hospital systems, so privacy and integration matter more than in most apps. This list names companies whose own pages mention healthcare.',
   who: 'It suits clinics, hospitals and health startups building patient apps, telemedicine, hospital management or analytics.',
   matters: [
     ['Privacy and consent', 'Ask how patient data is protected, who can see it and how consent is recorded.'],
@@ -780,7 +780,7 @@ add({
   art: ['education', 'mobile', 'sun'],
   need: ['edtech'],
   picks: ['geekyants', 'mindfire', 'radixweb', 'mindinventory', 'techugo', 'konstant', 'ninehertz', 'rootquotient', 'riaxe', 'hiddenbrains'],
-  lead: 'An EdTech product combines content, video, assessments and progress tracking, and often has sharp peaks in use around exams. This list names companies whose own pages mention education or e-learning, and discloses that Creuto publishes it.',
+  lead: 'An EdTech product combines content, video, assessments and progress tracking, and often has sharp peaks in use around exams. This list names companies whose own pages mention education or e-learning.',
   who: 'It suits founders and institutions building learning apps, LMS platforms and school systems.',
   matters: [
     ['Video and content delivery', 'Ask how video is streamed, protected and made to work on weak networks.'],
@@ -808,7 +808,7 @@ add({
   art: ['logistics', 'dashboard', 'sky'],
   need: ['logistics'],
   picks: ['simform', 'ramco', 'mindfire', 'radixweb', 'tatvasoft', 'mindinventory', 'konstant', 'successive', 'riaxe', 'gramener'],
-  lead: 'Logistics software depends on live data from vehicles, warehouses and partners, and on integrations with other systems. This list names companies whose own pages mention logistics or supply chain, and discloses that Creuto publishes it.',
+  lead: 'Logistics software depends on live data from vehicles, warehouses and partners, and on integrations with other systems. This list names companies whose own pages mention logistics or supply chain.',
   who: 'It suits transport companies, 3PLs, distributors and retailers building tracking, fleet, warehouse or delivery software.',
   matters: [
     ['Live tracking', 'Ask how location data is collected, stored and shown, including how battery use is controlled.'],
@@ -836,7 +836,7 @@ add({
   art: ['on-demand', 'mobile', 'peach'],
   need: ['ondemand'],
   picks: ['techugo', 'konstant', 'ninehertz', 'spaceo', 'dianapps'],
-  lead: 'On-demand products connect customers, providers and delivery partners in real time. Orders, dispatch, tracking and payments all have to work together. Only five of the development companies we checked name on-demand or food delivery work on their own pages, and we disclose that Creuto publishes this list.',
+  lead: 'On-demand products connect customers, providers and delivery partners in real time. Orders, dispatch, tracking and payments all have to work together. Only five of the development companies we checked name on-demand or food delivery work on their own pages.',
   who: 'It suits founders building food, grocery, home services or delivery marketplaces.',
   matters: [
     ['Three apps, one system', 'Most on-demand products need customer, provider and admin apps that share one backend. Ask how they plan it.'],

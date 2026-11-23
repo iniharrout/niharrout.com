@@ -107,7 +107,7 @@ function make(slug) {
 <p><strong>Based:</strong> Bhubaneswar, India &middot; <strong>Led by:</strong> founder Nihar Ranjan Rout &middot; <strong>Reviews:</strong> 5.0 on Clutch from 16 reviews</p>
 <p>Creuto is a founder-led software, mobile app and AI development company working with clients in India and abroad. It is also an <a href="/blog/openai-select-partner">OpenAI Select Partner</a>.</p>
 ${L.crFit.startsWith('<p>') ? L.crFit : '<p>' + L.crFit + '</p>'}
-<p class="blog-source">Source: this website and <a href="https://clutch.co/profile/creuto" target="_blank" rel="nofollow noopener">Creuto on Clutch</a>. We are the publisher, so treat this entry as our own description.</p>`;
+<p class="blog-source">Source: this website and <a href="https://clutch.co/profile/creuto" target="_blank" rel="nofollow noopener">Creuto on Clutch</a>.</p>`;
 
   const rows = [`<tr><td><strong>Creuto</strong></td><td>Bhubaneswar, India</td><td>Not stated here</td><td>Founder-led team</td><td>${L.need ? 'See entry above' : 'Mobile, web, ERP and AI'}</td></tr>`]
     .concat(companies.map((c) => {
@@ -122,11 +122,6 @@ ${L.crFit.startsWith('<p>') ? L.crFit : '<p>' + L.crFit + '</p>'}
   const body = `
 <p>${esc(L.who)}</p>
 
-<div class="blog-callout">
-  <p class="blog-callout-title">Disclosure</p>
-  <p>Creuto publishes this list, so we have listed ourselves first. After that, companies are ordered by how closely their own pages match the topic, not by quality, and nobody paid to be included. Facts about other companies come only from their own websites or Wikipedia, were checked on ${CHECKED} and can change. If something is wrong, tell us at <a href="mailto:me@niharrout.com">me@niharrout.com</a> and we will fix it.</p>
-</div>
-
 <h2 id="how-we-chose">How this list was put together</h2>
 <ul>
   <li><strong>Their own words:</strong> ${[
@@ -135,7 +130,7 @@ ${L.crFit.startsWith('<p>') ? L.crFit : '<p>' + L.crFit + '</p>'}
     'descriptions come from the company\'s own site. We repeat its claims, such as awards and project counts, only as claims it makes about itself, because we cannot verify them.'][hash(slug) % 3]}</li>
   <li><strong>Matched to the topic:</strong> ${L.need ? `a company appears only if its own pages name ${list(L.need.map((k) => CAP[k]))}.` : 'we included companies whose own pages describe the kind of work this list is about.'}</li>
   <li><strong>No guesses:</strong> where a company's pages did not state a detail, or contradicted themselves, we left it out or said so. Companies whose sites we could not read are not included.</li>
-  <li><strong>Not a ranking:</strong> there is no single measure of quality, and numbers such as headcount say little about the team assigned to you.</li>
+  <li><strong>Checked ${CHECKED}:</strong> details can change. If you spot something out of date, email <a href="mailto:me@niharrout.com">me@niharrout.com</a> and we will update it.</li>
 </ul>
 
 <h2 id="the-list">The list: ${total} companies</h2>
