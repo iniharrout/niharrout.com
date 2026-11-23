@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
     <loc>https://www.niharrout.com/</loc>
-    <lastmod>2026-11-22</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <video:video>
       <video:thumbnail_loc>https://www.niharrout.com/assets/video/openai-select-partner-poster.webp</video:thumbnail_loc>
       <video:title>Creuto is now an OpenAI Select Partner | Nihar Ranjan Rout</video:title>
@@ -44,6 +44,10 @@
   <url>
     <loc>https://www.niharrout.com/blog/ai-app-development-cost</loc>
     <lastmod>2026-11-22</lastmod>
+  </url>
+  <url>
+    <loc>https://www.niharrout.com/blog/ai-document-processing-for-business</loc>
+    <lastmod>2026-11-23</lastmod>
   </url>
   <url>
     <loc>https://www.niharrout.com/blog/ai-proof-of-concept</loc>
@@ -115,6 +119,10 @@
   </url>
   <url>
     <loc>https://www.niharrout.com/blog/erp-implementation-timeline</loc>
+    <lastmod>2026-11-22</lastmod>
+  </url>
+  <url>
+    <loc>https://www.niharrout.com/blog/erp-requirements-checklist</loc>
     <lastmod>2026-11-22</lastmod>
   </url>
   <url>

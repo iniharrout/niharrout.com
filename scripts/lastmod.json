@@ -27,6 +27,10 @@
     "hash": "f9bc2895846a0ff4",
     "date": "2026-11-22"
   },
+  "blog/ai-document-processing-for-business/index.html": {
+    "hash": "f6f653a88b9c2b31",
+    "date": "2026-11-23"
+  },
   "blog/ai-proof-of-concept/index.html": {
     "hash": "57a6b38aef3118c3",
     "date": "2026-11-22"
@@ -97,6 +101,10 @@
   },
   "blog/erp-implementation-timeline/index.html": {
     "hash": "bd4362ed6e7d1173",
+    "date": "2026-11-22"
+  },
+  "blog/erp-requirements-checklist/index.html": {
+    "hash": "796ac32300b9f762",
     "date": "2026-11-22"
   },
   "blog/erp-vs-crm-difference/index.html": {
@@ -300,7 +308,7 @@
     "date": "2026-11-22"
   },
   "blog/index.html": {
-    "hash": "6b7d9f26884df6f5",
+    "hash": "09b2a5328ad30357",
     "date": "2026-11-23"
   },
   "blog/inventory-management-software-development/index.html": {
@@ -380,43 +388,43 @@
     "date": "2026-11-22"
   },
   "blog/page/10/index.html": {
-    "hash": "8f5e53837b60fcc1",
+    "hash": "2d37442773c7e0b0",
     "date": "2026-11-23"
   },
   "blog/page/11/index.html": {
-    "hash": "a421d65b9115e7fd",
+    "hash": "dc00963c7860a5d3",
     "date": "2026-11-23"
   },
   "blog/page/2/index.html": {
-    "hash": "3b727473e65dcca3",
+    "hash": "7b39e66a42a4003b",
     "date": "2026-11-23"
   },
   "blog/page/3/index.html": {
-    "hash": "88357a9ad1cb2973",
+    "hash": "8b405e7063dcd064",
     "date": "2026-11-23"
   },
   "blog/page/4/index.html": {
-    "hash": "b52a921b816c3f0f",
+    "hash": "1d692d31d89cb6d0",
     "date": "2026-11-23"
   },
   "blog/page/5/index.html": {
-    "hash": "8ccfe3ad9f1b20d4",
+    "hash": "edbf28907698b554",
     "date": "2026-11-23"
   },
   "blog/page/6/index.html": {
-    "hash": "300b8e75ee943b06",
+    "hash": "9442ee22ca5f15fd",
     "date": "2026-11-23"
   },
   "blog/page/7/index.html": {
-    "hash": "1d0c07945e00cd94",
+    "hash": "ca4be5fa718269c6",
     "date": "2026-11-23"
   },
   "blog/page/8/index.html": {
-    "hash": "58e6cedfab2599e3",
+    "hash": "bf940cdc8852d0e1",
     "date": "2026-11-23"
   },
   "blog/page/9/index.html": {
-    "hash": "d7c211c5574299ef",
+    "hash": "ac3af235d9232446",
     "date": "2026-11-23"
   },
   "blog/pragmatic-enterprise-ai-workflows/index.html": {
@@ -624,39 +632,39 @@
     "date": "2026-11-23"
   },
   "blog/topic/ai/index.html": {
-    "hash": "46138e47b5b09162",
+    "hash": "8e72c15c05dc339a",
     "date": "2026-11-23"
   },
   "blog/topic/careers/index.html": {
-    "hash": "128ef4067fa04576",
+    "hash": "dd279ae26c737cd2",
     "date": "2026-11-23"
   },
   "blog/topic/cost-and-hiring/index.html": {
-    "hash": "a6b63eabf92792a4",
+    "hash": "6c3314f9ae8d7efb",
     "date": "2026-11-23"
   },
   "blog/topic/industries/index.html": {
-    "hash": "4b8b0e927e4b2023",
+    "hash": "5a9c1fc9020a62d0",
     "date": "2026-11-23"
   },
   "blog/topic/mobile/index.html": {
-    "hash": "7caed0a8bec85920",
+    "hash": "a67a25bd07c64bd6",
     "date": "2026-11-23"
   },
   "blog/topic/news/index.html": {
-    "hash": "01947ef7764980bd",
+    "hash": "8d2b4fcc4bff2ce0",
     "date": "2026-11-23"
   },
   "blog/topic/product/index.html": {
-    "hash": "96b889d9aede8b0c",
+    "hash": "cb062da1564d0fc5",
     "date": "2026-11-23"
   },
   "blog/topic/software-and-cloud/index.html": {
-    "hash": "23b2cba8d08b3d32",
+    "hash": "b743c018497c2403",
     "date": "2026-11-23"
   },
   "blog/topic/top-companies/index.html": {
-    "hash": "05e0a41d0e7c361f",
+    "hash": "d39093d4790b8fe2",
     "date": "2026-11-23"
   },
   "blog/ui-ux-designer-portfolio-tips/index.html": {
@@ -812,8 +820,8 @@
     "date": "2026-11-22"
   },
   "index.html": {
-    "hash": "b227a6e322302fc1",
-    "date": "2026-11-22"
+    "hash": "f70093fb382d470e",
+    "date": "2026-11-23"
   },
   "industries/agriculture/index.html": {
     "hash": "8a3bd5cbe6537709",
