@@ -3,8 +3,8 @@
  * Builds the location landing pages:
  *   /locations                           index of all locations
  *   /locations/<city>                    city hub (links to the three service pages)
- *   (no city x service pages: they were a city-swapped template and Google would not index them, so they are not
- *    generated and /locations/<city>/<service> is redirected to the hub in vercel.json)
+ *   /locations/<city>/<service>          only for LOCAL_PAGE_CITIES x LOCAL_PAGE_SERVICES (mobile and software for four
+ *                                        Odisha cities); every other city x service URL redirects to the hub in vercel.json
  *   /location                            internal link reference (noindex)
  *   /thank-you                           shown after any enquiry form (noindex)
  * Then run `node scripts/build-chrome.js` (shared header/footer) and `node scripts/build-sitemap.js`.
@@ -39,7 +39,12 @@ const fill = (text, city) => String(text).replace(/\{city\}/g, city.name);
 const jsonLd = (obj) => `<script type="application/ld+json">\n${JSON.stringify(obj, null, 2).replace(/</g, '\\u003c')}\n  </script>`;
 
 const cityUrl = (c) => `/locations/${c.slug}`;
-const pageUrl = (c, key) => `/locations/${c.slug}/${services[key].slug}`; // only used to remove the retired pages
+const pageUrl = (c, key) => `/locations/${c.slug}/${services[key].slug}`;
+// City x service pages exist only for these cities and services. They are written from each city's own data (local
+// angle, example builds, FAQs and scenario) and are kept to a short list so every page can say something of its own.
+const LOCAL_PAGE_CITIES = ['rourkela', 'cuttack', 'sambalpur', 'berhampur'];
+const LOCAL_PAGE_SERVICES = ['mobile', 'software'];
+const hasLocalPage = (c, key) => LOCAL_PAGE_CITIES.includes(c.slug) && LOCAL_PAGE_SERVICES.includes(key);
 const NATIONAL = { mobile: '/services/mobile-app-development', ai: '/services/ai-product-development', software: '/services/custom-software-development' };
 
 /* ---------- Shared page chrome ---------- */
@@ -150,16 +155,6 @@ function leadForm({ city, svc, heading, sub }) {
         </div>`;
 }
 
-const inlineCta = (title, sub) => `
-    <section class="loc-section" style="padding:56px 0;">
-      <div class="wrap">
-        <div class="loc-card" style="flex-direction:row; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; padding:28px 32px;">
-          <div><h3 style="font-size:20px; margin-bottom:6px;">${esc(title)}</h3><p>${esc(sub)}</p></div>
-          <a href="https://calendly.com/creuto/meet" target="_blank" rel="noopener" data-book="true" class="cl-button -primary btn-book-call">Book a free call <span>→</span></a>
-        </div>
-      </div>
-    </section>`;
-
 const ctaBand = (title, sub) => `
     <section class="loc-cta" id="book">
       <div class="wrap">
@@ -214,45 +209,6 @@ const areaServed = (c) => ({
 });
 
 /* ---------- Section builders (service pages) ---------- */
-
-function servicesSection(c, svc) {
-  return `
-    <section class="loc-section" id="services">
-      <div class="wrap">
-        ${sectionHeader('What we build', fill(svc.servicesHeading, c), svc.servicesSub)}
-        <div class="loc-grid c4">
-          ${svc.services.map(([t, d]) => `<div class="loc-card"><h3>${esc(t)}</h3><p>${esc(fill(d, c))}</p></div>`).join('\n          ')}
-        </div>
-      </div>
-    </section>`;
-}
-
-function localSection(c, svc, cs) {
-  return `
-    <section class="loc-section -alt" id="local">
-      <div class="wrap">
-        <div class="loc-local">
-          <div>
-            <div class="hs-eyebrow"><span class="dot"></span>${esc(c.eyebrow)}</div>
-            <h2>Why ${esc(c.name)} businesses choose Creuto for ${esc(svc.nameLc)}</h2>
-            <p>${esc(c.overview)}</p>
-            <p>${esc(cs.angle)}</p>
-            <div class="loc-subhead">Business districts and hubs in ${esc(c.name)}</div>
-            <ul class="loc-chips">${c.areas.map((a) => `<li>${esc(a)}</li>`).join('')}</ul>
-          </div>
-          <aside class="loc-facts">
-            <h3>How we work with ${esc(c.name)} teams</h3>
-            <dl>
-              <dt>Distance and logistics</dt><dd>${esc(c.distance)}</dd>
-              <dt>Delivery model</dt><dd>${esc(c.delivery)}</dd>
-              <dt>Commercials</dt><dd>${esc(c.costNote)}</dd>
-              <dt>Local ecosystem</dt><dd>${esc(c.ecosystem.join(' · '))}</dd>
-            </dl>
-          </aside>
-        </div>
-      </div>
-    </section>`;
-}
 
 function scenarioSection(c, svcKey) {
   const [title, body] = scenarios[c.slug][svcKey];
@@ -314,90 +270,20 @@ function testimonialsSection(c, svcKey) {
     </section>`;
 }
 
-function industriesSection(c, svc, cs) {
-  return `
-    <section class="loc-section" id="industries">
-      <div class="wrap">
-        ${sectionHeader('Industries', `${svc.label[0].toUpperCase() + svc.label.slice(1)} solutions for ${c.name}’s leading industries`, `Where ${svc.nameLc} pays back fastest for ${c.name} organisations.`)}
-        <div class="loc-grid c4">
-          ${c.sectors.map(([t, d]) => `<div class="loc-card"><h3>${esc(t)}</h3><p>${esc(d)}</p></div>`).join('\n          ')}
-        </div>
-        <div class="loc-subhead" style="margin-top:44px;">What we would build first in ${esc(c.name)}</div>
-        <div class="loc-grid c3">
-          ${cs.cases.map(([t, d], i) => `<div class="loc-card"><span class="loc-num">0${i + 1}</span><h3>${esc(t)}</h3><p>${esc(d)}</p></div>`).join('\n          ')}
-        </div>
-        <div class="loc-subhead" style="margin-top:44px;">Other industries we serve</div>
-        <ul class="loc-chips -soft">${svc.industries.map((i) => `<li>${esc(i)}</li>`).join('')}</ul>
-      </div>
-    </section>`;
-}
-
-function complianceSection(c, svc) {
-  return `
-    <section class="loc-section -alt" id="compliance">
-      <div class="wrap">
-        ${sectionHeader('Security & compliance', svc.complianceHeading, `Standards and regulations we design for when delivering to ${c.name} organisations.`)}
-        <div class="loc-list c2">
-          ${svc.compliance.map(([t, d]) => `<div class="loc-row"><span class="loc-tick">✓</span><div><h3>${esc(t)}</h3><p>${esc(d)}</p></div></div>`).join('\n          ')}
-        </div>
-      </div>
-    </section>`;
-}
-
-function stackSection(c, svc) {
-  return `
-    <section class="loc-section -alt" id="stack">
-      <div class="wrap">
-        ${sectionHeader('Tech stack', `Technology behind our ${svc.label} work`, 'We choose tools for your latency, security and scale needs, not for fashion.')}
-        <div class="loc-stack">
-          ${svc.stack.map(([t, d]) => `<div><h3>${esc(t)}</h3><p>${esc(d)}</p></div>`).join('\n          ')}
-        </div>
-      </div>
-    </section>`;
-}
-
-function processSection(c, svc) {
-  return `
-    <section class="loc-section" id="process">
-      <div class="wrap">
-        ${sectionHeader('How we work', `Our ${svc.process.length}-step process for ${c.name} clients`, 'Transparent milestones from the first workshop to launch and beyond.')}
-        <div class="loc-steps">
-          ${svc.process.map(([t, d]) => `<div><h3>${esc(t)}</h3><p>${esc(d)}</p></div>`).join('\n          ')}
-        </div>
-      </div>
-    </section>`;
-}
-
-function pricingSection(c, svc) {
-  return `
-    <section class="loc-section -alt" id="pricing">
-      <div class="wrap">
-        ${sectionHeader('Scope and timeline', `How long ${svc.nameLc} takes in ${c.name}`, 'Typical stages based on projects we have delivered. You get a written, fixed-scope proposal within 24 hours of a free call.')}
-        <div class="loc-grid c3">
-          ${svc.tiers.map(([tier, time, desc]) => `<div class="loc-card loc-tier">
-            <h3>${esc(tier)}</h3>
-            <span class="loc-time">${esc(time)}</span>
-            <p>${esc(desc)}</p>
-          </div>`).join('\n          ')}
-        </div>
-        <p class="loc-note">${esc(c.costNote)} <a href="/project-costs" style="color:var(--hs-brand); font-weight:600;">What drives software cost →</a></p>
-      </div>
-    </section>`;
-}
-
 function relatedSection(c, svcKey) {
   const svc = services[svcKey];
-  const others = SERVICE_KEYS.filter((k) => k !== svcKey);
-  const sameServiceOtherCities = cities.filter((x) => x.slug !== c.slug);
+  const otherSvcKey = LOCAL_PAGE_SERVICES.find((k) => k !== svcKey);
+  const sameServiceOtherCities = cities.filter((x) => x.slug !== c.slug && hasLocalPage(x, svcKey));
   return `
     <section class="loc-section" id="related">
       <div class="wrap">
         <div class="loc-related">
           <div>
-            <h3>More services in ${esc(c.name)}</h3>
+            <h3>More in ${esc(c.name)}</h3>
             <ul class="loc-links">
-              ${others.map((k) => `<li><a href="${pageUrl(c, k)}">${esc(services[k].name)} in ${esc(c.name)}</a></li>`).join('\n              ')}
+              <li><a href="${pageUrl(c, otherSvcKey)}">${esc(services[otherSvcKey].name)} in ${esc(c.name)}</a></li>
               <li><a href="${cityUrl(c)}">All services in ${esc(c.name)}</a></li>
+              <li><a href="${NATIONAL[svcKey]}">${esc(svc.name)}: full scope, stack and timelines</a></li>
             </ul>
           </div>
           <div>
@@ -421,10 +307,10 @@ function buildServicePage(c, svcKey) {
   const fullUrl = SITE + urlPath;
   const trail = [['Home', '/'], ['Locations', '/locations'], [c.name, cityUrl(c)], [svc.name, urlPath]];
   const title = `${fill(svc.titleLead, c)} | Nihar Ranjan Rout`;
-  const description = `${svc.name} for ${c.name} businesses: fixed-scope PRD, in-house engineers, code in your own GitHub. Free call with the founder.`;
+  const description = `${svc.name} for ${c.name} businesses by a founder-led team. Free 30-minute call, written proposal within 24 hours.`;
 
   const faqs = [
-    [fill(svc.faqs[0][0], c), `${fill(svc.faqs[0][1], c)} ${c.costNote}`],
+    [fill(svc.faqs[0][0], c), fill(svc.faqs[0][1], c)],
     [fill(svc.faqs[1][0], c), fill(svc.faqs[1][1], c)],
     ...cs.faqs,
     [`Do you have an office in ${c.name}?`, `No. Creuto is based in Bhubaneswar, Odisha, and serves ${c.name} clients remotely. ${c.distance}. Travel for workshops and launches is planned around milestones and quoted separately up front.`],
@@ -441,12 +327,7 @@ function buildServicePage(c, svcKey) {
       description,
       url: fullUrl,
       provider: { '@id': `${SITE}/#organization` },
-      areaServed: areaServed(c),
-      hasOfferCatalog: {
-        '@type': 'OfferCatalog',
-        name: `${svc.name} services`,
-        itemListElement: svc.services.map(([t]) => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name: t } }))
-      }
+      areaServed: areaServed(c)
     },
     breadcrumbSchema(trail),
     faqSchema(faqs)
@@ -461,11 +342,11 @@ function buildServicePage(c, svcKey) {
             ${breadcrumbs(trail)}
             <div class="hs-eyebrow"><span class="dot"></span>${esc(c.eyebrow)}</div>
             <h1>${esc(fill(svc.h1, c))}</h1>
-            <p class="hero-sub">${esc(fill(svc.heroSub, c))}</p>
+            <p class="hero-sub">${esc(cs.angle)}</p>
             ${heroBar(svcKey === 'ai' ? 'ai' : svcKey === 'mobile' ? 'mobile' : 'software')}
             <div class="hero-ctas">
               <a href="https://calendly.com/creuto/meet" target="_blank" rel="noopener" data-book="true" class="cl-button -primary btn-book-call">Book a Free Call <span>→</span></a>
-              <a href="#pricing" class="cl-button -secondary">See timelines ↓</a>
+              <a href="#build-first" class="cl-button -secondary">What we would build first ↓</a>
             </div>
             ${proofStrip()}
           </div>
@@ -473,26 +354,45 @@ function buildServicePage(c, svcKey) {
         </div>
       </div>
     </section>
-${servicesSection(c, svc)}
-${localSection(c, svc, cs)}
+
+    <section class="loc-section" id="build-first">
+      <div class="wrap">
+        ${sectionHeader(`${svc.short} in ${c.name}`, `What we would build first in ${c.name}`, `Starting points for ${svc.nameLc} that fit how ${c.name} businesses already work.`)}
+        <div class="loc-grid c3">
+          ${cs.cases.map(([t, d], i) => `<div class="loc-card"><span class="loc-num">0${i + 1}</span><h3>${esc(t)}</h3><p>${esc(d)}</p></div>`).join('\n          ')}
+        </div>
+      </div>
+    </section>
 ${scenarioSection(c, svcKey)}
+
+    <section class="loc-section -alt" id="local">
+      <div class="wrap">
+        <div class="loc-local">
+          <div>
+            <h2>Working with ${esc(c.name)} teams</h2>
+            <p>${esc(c.overview)}</p>
+            <div class="loc-subhead">Business districts and hubs in ${esc(c.name)}</div>
+            <ul class="loc-chips">${c.areas.map((a) => `<li>${esc(a)}</li>`).join('')}</ul>
+          </div>
+          <aside class="loc-facts">
+            <h3>How we work with ${esc(c.name)} teams</h3>
+            <dl>
+              <dt>Distance and logistics</dt><dd>${esc(c.distance)}</dd>
+              <dt>Delivery model</dt><dd>${esc(c.delivery)}</dd>
+              <dt>Commercials</dt><dd>${esc(c.costNote)}</dd>
+              <dt>Local ecosystem</dt><dd>${esc(c.ecosystem.join(' · '))}</dd>
+            </dl>
+          </aside>
+        </div>
+      </div>
+    </section>
 ${portfolioSection(c, svc)}
-${inlineCta(`Planning ${svc.nameLc} in ${c.name}?`, 'Get a scoped estimate and a candid view on what to build first.')}
-${testimonialsSection(c, svcKey)}
-${industriesSection(c, svc, cs)}
-${complianceSection(c, svc)}
-${stackSection(c, svc)}
-${processSection(c, svc)}
-${pricingSection(c, svc)}
 ${faqSection(faqs, { heading: `${svc.name} in ${c.name}: common questions`, sub: 'Costs, timelines, ownership and how we work with teams in ' + c.name + '.' })}
 ${relatedSection(c, svcKey)}
-${ctaBand(`Ready to start ${svc.nameLc} in ${c.name}?`, 'Book a discovery call with Nihar. We will scope features, timeline and budget before you commit to anything.')}
+${ctaBand(`Planning ${svc.nameLc} in ${c.name}?`, 'Book a discovery call with Nihar. We will scope features, timeline and budget before you commit to anything.')}
   </main>
 `;
-  // Service pages for smaller Odisha cities repeat the Bhubaneswar pages with a different city name, so they stay
-  // out of Google (noindex, links still followed) and the Bhubaneswar pages carry those searches instead.
-  const thin = c.region === 'odisha';
-  return head({ title, description, path: urlPath, graph, noindex: thin, follow: thin, theme: svcKey === 'ai' ? 'ai' : 'demo' }) + body + footer(c);
+  return head({ title, description, path: urlPath, graph, theme: svcKey === 'ai' ? 'ai' : 'demo' }) + body + footer(c);
 }
 
 /* ---------- Page: city hub ---------- */
@@ -530,8 +430,9 @@ function buildCityHub(c) {
     faqSchema(faqs)
   ];
 
+  const svcHref = (k) => (hasLocalPage(c, k) ? pageUrl(c, k) : NATIONAL[k]);
   const serviceCards = SERVICE_KEYS.map((k) => `
-          <a class="loc-card" href="${NATIONAL[k]}">
+          <a class="loc-card" href="${svcHref(k)}">
             <h3>${esc(services[k].name)} in ${esc(c.name)}</h3>
             <p>${esc(c.services[k].angle)}</p>
             <div class="loc-more">See scope, timelines and FAQs →</div>
@@ -601,7 +502,7 @@ ${faqSection(faqs, { heading: `${c.name}: common questions`, sub: `How we work w
         <div class="loc-related">
           <div>
             <h3>Services in ${esc(c.name)}</h3>
-            <ul class="loc-links">${SERVICE_KEYS.map((k) => `<li><a href="${NATIONAL[k]}">${esc(services[k].name)}</a></li>`).join('')}</ul>
+            <ul class="loc-links">${SERVICE_KEYS.map((k) => `<li><a href="${svcHref(k)}">${esc(services[k].name)}</a></li>`).join('')}</ul>
           </div>
           <div>
             <h3>Other locations</h3>
@@ -725,7 +626,7 @@ function buildReference() {
             <tr data-search="${esc((c.name + ' ' + c.state + ' ' + c.region).toLowerCase())}">
               <th scope="row"><strong>${esc(c.name)}</strong><span>${esc(c.state)}</span></th>
               <td>${link(cityUrl(c), cityUrl(c), c.name, 'hub')}</td>
-              ${SERVICE_KEYS.map(() => `<td><span class="ref-muted">merged into hub</span></td>`).join('\n              ')}
+              ${SERVICE_KEYS.map((k) => (hasLocalPage(c, k) ? `<td>${link(pageUrl(c, k), pageUrl(c, k), c.name, services[k].slug)}</td>` : `<td><span class="ref-muted">merged into hub</span></td>`)).join('\n              ')}
             </tr>`).join('');
 
   const bhubaneswar = `
@@ -737,7 +638,8 @@ function buildReference() {
 
   const allUrls = [
     '/locations',
-    ...cities.map((c) => cityUrl(c))
+    ...cities.map((c) => cityUrl(c)),
+    ...cities.flatMap((c) => SERVICE_KEYS.filter((k) => hasLocalPage(c, k)).map((k) => pageUrl(c, k)))
   ].map(abs);
 
   const html = head({
@@ -912,9 +814,14 @@ function main() {
   for (const c of cities) {
     write(`locations/${c.slug}/index.html`, buildCityHub(c));
     count += 1;
-    // retired: city x service pages (see the header note). Remove any left over from earlier builds.
     for (const key of SERVICE_KEYS) {
-      fs.rmSync(path.join(ROOT, `locations/${c.slug}/${services[key].slug}`), { recursive: true, force: true });
+      if (hasLocalPage(c, key)) {
+        write(`locations/${c.slug}/${services[key].slug}/index.html`, buildServicePage(c, key));
+        count += 1;
+      } else {
+        // not a local page: remove any copy left over from earlier builds
+        fs.rmSync(path.join(ROOT, `locations/${c.slug}/${services[key].slug}`), { recursive: true, force: true });
+      }
     }
   }
 

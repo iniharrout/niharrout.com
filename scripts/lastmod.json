@@ -927,13 +927,29 @@
     "hash": "ef4229c95b8b1879",
     "date": "2026-11-22"
   },
+  "locations/berhampur/custom-software-development/index.html": {
+    "hash": "d96aa559f4e75f68",
+    "date": "2026-11-26"
+  },
   "locations/berhampur/index.html": {
-    "hash": "7ea5f8b274f97334",
-    "date": "2026-11-22"
+    "hash": "5f73d19bee32b0e9",
+    "date": "2026-11-26"
+  },
+  "locations/berhampur/mobile-app-development/index.html": {
+    "hash": "a6eb074379ccd21d",
+    "date": "2026-11-26"
+  },
+  "locations/cuttack/custom-software-development/index.html": {
+    "hash": "703db3d9024ed97f",
+    "date": "2026-11-26"
   },
   "locations/cuttack/index.html": {
-    "hash": "1d2b1da787f96784",
-    "date": "2026-11-22"
+    "hash": "561c9cb26ed9379c",
+    "date": "2026-11-26"
+  },
+  "locations/cuttack/mobile-app-development/index.html": {
+    "hash": "a9b9462d0cdaade9",
+    "date": "2026-11-26"
   },
   "locations/delhi-ncr/index.html": {
     "hash": "45da09d3f2d16770",
@@ -951,13 +967,29 @@
     "hash": "08b12a88c528e642",
     "date": "2026-11-22"
   },
+  "locations/rourkela/custom-software-development/index.html": {
+    "hash": "85354873e30ab68c",
+    "date": "2026-11-26"
+  },
   "locations/rourkela/index.html": {
-    "hash": "2c9d3340d2f4b22a",
-    "date": "2026-11-22"
+    "hash": "fd187434e895bdf4",
+    "date": "2026-11-26"
+  },
+  "locations/rourkela/mobile-app-development/index.html": {
+    "hash": "ed1d893c99730640",
+    "date": "2026-11-26"
+  },
+  "locations/sambalpur/custom-software-development/index.html": {
+    "hash": "0c91dbd9da33bf0c",
+    "date": "2026-11-26"
   },
   "locations/sambalpur/index.html": {
-    "hash": "80834f754ca1e09e",
-    "date": "2026-11-22"
+    "hash": "976044d1618f53bc",
+    "date": "2026-11-26"
+  },
+  "locations/sambalpur/mobile-app-development/index.html": {
+    "hash": "409ac79c35ad3f89",
+    "date": "2026-11-26"
   },
   "mobile-app-development-bhubaneswar/index.html": {
     "hash": "6a796d35cc32317f",

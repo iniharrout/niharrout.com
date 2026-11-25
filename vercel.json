@@ -295,7 +295,7 @@
       "permanent": true
     },
     {
-      "source": "/locations/:city/mobile-app-development",
+      "source": "/locations/:city(bangalore|hyderabad|pune|delhi-ncr)/mobile-app-development",
       "destination": "/locations/:city",
       "permanent": true
     },
@@ -305,7 +305,7 @@
       "permanent": true
     },
     {
-      "source": "/locations/:city/custom-software-development",
+      "source": "/locations/:city(bangalore|hyderabad|pune|delhi-ncr)/custom-software-development",
       "destination": "/locations/:city",
       "permanent": true
     }
