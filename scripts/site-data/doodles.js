@@ -204,6 +204,7 @@ function doodle(name, cls = 'doodle', tone = toneOf(name)) {
 
 // ---- blog cover scenes: a main doodle and a smaller supporting one on a soft panel (480 x 300 canvas)
 const BLOG_ART = {
+  'who-owns-the-code-when-you-hire-a-developer': ['access', 'check', 'sky'],
   'in-app-purchases-and-app-store-fees': ['pricing', 'mobile', 'peach'],
   'ai-document-processing-for-business': ['doc-scan', 'ai', 'sun'],
   'erp-requirements-checklist': ['erp', 'prd', 'sun'],
