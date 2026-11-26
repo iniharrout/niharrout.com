@@ -15,6 +15,9 @@ const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const SITE = 'https://www.niharrout.com';
 const ORDER = [
+  'who-owns-the-code-when-you-hire-a-developer',
+  'hire-development-team-in-india-from-singapore',
+  'in-app-purchases-and-app-store-fees',
   'ai-document-processing-for-business', 'erp-requirements-checklist',
   'how-to-build-a-school-management-system',
   'wireframe-vs-mockup-vs-prototype',

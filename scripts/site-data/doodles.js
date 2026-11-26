@@ -204,6 +204,8 @@ function doodle(name, cls = 'doodle', tone = toneOf(name)) {
 
 // ---- blog cover scenes: a main doodle and a smaller supporting one on a soft panel (480 x 300 canvas)
 const BLOG_ART = {
+  'who-owns-the-code-when-you-hire-a-developer': ['access', 'check', 'sky'],
+  'in-app-purchases-and-app-store-fees': ['pricing', 'mobile', 'peach'],
   'ai-document-processing-for-business': ['doc-scan', 'ai', 'sun'],
   'erp-requirements-checklist': ['erp', 'prd', 'sun'],
   'how-to-build-a-school-management-system': ['education', 'dashboard', 'peach'],
@@ -227,6 +229,7 @@ const BLOG_ART = {
   'erp-implementation-timeline': ['erp', 'roadmap', 'sky'],
   'software-development-estimates-explained': ['pricing', 'question', 'sun'],
   'hire-development-team-in-india-from-uae': ['remote', 'chat', 'peach'],
+  'hire-development-team-in-india-from-singapore': ['remote', 'calendar', 'sun'],
   'hire-development-team-in-india-from-canada': ['remote', 'access', 'sky'],
   'app-admin-panel-development': ['dashboard', 'access', 'sun'],
   'switch-software-development-company-mid-project': ['team', 'check', 'peach'],
