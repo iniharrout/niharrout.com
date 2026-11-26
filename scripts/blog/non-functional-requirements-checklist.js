@@ -34,6 +34,10 @@ module.exports = {
   </p>
 </div>
 
+<p>
+  <strong>Free tool:</strong> the <a href="/tools/software-rfp-generator">software RFP generator</a> turns a few answers into a request for proposal you can copy or download.
+</p>
+
 <h2 id="what">What non-functional requirements are</h2>
 <p>
   Functional requirements describe what the product does: sign up, book a slot, pay, get a receipt. You usually capture them as <a href="/blog/how-to-write-user-stories">user stories</a> in your <a href="/blog/what-is-a-prd-how-to-write-a-product-requirements-document">PRD</a>.

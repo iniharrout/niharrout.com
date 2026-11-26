@@ -1,14 +1,15 @@
 module.exports = {
   slug: "how-long-does-it-take-to-build-an-app",
-  title: "How Long Does It Take to Build an App? Phase by Phase",
+  title: "How Long Does It Take to Make an App? Timeline by Phase",
   headline: "How Long Does It Take to Build an App? A Realistic Timeline, Phase by Phase",
   shortTitle: "How long to build an app",
-  description: "A realistic app development timeline: discovery, design, build, testing and store review, what slows projects down and how to ship a first version sooner.",
+  description: "How long it takes to make an app: a focused first version about 4 to 8 weeks, fuller products 8 to 14 weeks, platforms 3 to 6 months. Phases explained.",
   keywords: ["how long does it take to build an app", "app development timeline", "mobile app development time", "app project phases", "time to launch an app"],
   category: "Costs & Planning",
   badge: "TIMELINES",
   readMinutes: 8,
   published: "2026-10-22",
+  updated: "2026-11-27",
   icon: "doc",
   lead: "The honest answer to \"how long does an app take?\" is that it depends on what you put in the first release. The useful answer is a timeline broken into phases, with the decisions that make each phase faster or slower. That is what this guide gives you.",
   cardDesc: "A phase-by-phase app timeline from discovery to store review, the things that slow projects down and how to get a first version in front of users sooner.",
@@ -33,6 +34,19 @@ module.exports = {
     Time is spent on decisions, not just code. The faster you make clear decisions about scope and rules, the faster the app ships.
   </p>
 </div>
+
+<h2 id="short-answer">The short answer</h2>
+<table>
+  <thead><tr><th>What you are building</th><th>Typical time</th></tr></thead>
+  <tbody>
+    <tr><td>Focused first version: one core workflow, one or two roles</td><td>4 to 8 weeks</td></tr>
+    <tr><td>Full product: several roles, payments, integrations, admin dashboard</td><td>8 to 14 weeks</td></tr>
+    <tr><td>Multi-role platform, such as a marketplace or delivery service</td><td>3 to 6 months</td></tr>
+  </tbody>
+</table>
+<p>
+  These are the ranges we plan with, counted from an agreed scope to store submission. Add time for store review. For a figure based on your own features, use the <a href="/tools/app-cost-calculator">app timeline calculator</a>.
+</p>
 
 <h2 id="discovery">Phase 1: Discovery and scope</h2>
 <p>

@@ -352,6 +352,8 @@ function scene(slug, cls = 'doodle-scene') {
 
 // ---- 'top companies' lists
 Object.assign(BLOG_ART, {
+  'google-play-and-app-store-requirements-2026': ['android', 'ios', 'sky'],
+  'upi-collect-removed-what-to-use-instead': ['finance', 'mobile', 'peach'],
   'top-software-development-companies-in-india': ['custom-software', 'team', 'sky'],
   'top-custom-software-development-companies-in-india': ['custom-software', 'erp', 'peach'],
   'top-product-engineering-companies-in-india-for-startups': ['rocket', 'stack', 'sun'],

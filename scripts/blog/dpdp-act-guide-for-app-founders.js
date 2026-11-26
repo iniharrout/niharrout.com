@@ -9,6 +9,7 @@ module.exports = {
   badge: "DATA PROTECTION",
   readMinutes: 8,
   published: "2026-10-22",
+  updated: "2026-11-27",
   icon: "doc",
   lead: "India's Digital Personal Data Protection Act, 2023 sets rules for how digital personal data is collected, used and protected. If your app or SaaS product handles personal data of people in India, it shapes what you build: consent, notices, user rights and security. This guide explains the practical parts for founders. It is not legal advice.",
   cardDesc: "What India's DPDP Act means for app and SaaS products in plain English: consent, notices, user rights, security and the features to build in.",
@@ -33,6 +34,22 @@ module.exports = {
     The Act and related rules are published by the <a href="https://www.meity.gov.in/" target="_blank" rel="noopener">Ministry of Electronics and Information Technology (MeitY)</a>. Check the latest official text and take legal advice for your specific product.
   </p>
 </div>
+
+<h2 id="timeline">When the obligations apply</h2>
+<p>
+  The law is being brought in by stages, under the notifications issued in November 2025:
+</p>
+<table>
+  <thead><tr><th>Date</th><th>Stage</th></tr></thead>
+  <tbody>
+    <tr><td>13 November 2025</td><td>Rules notified; provisions setting up the Data Protection Board start</td></tr>
+    <tr><td>13 November 2026</td><td>Consent Manager provisions start</td></tr>
+    <tr><td>13 May 2027</td><td>Most duties for businesses that handle personal data start</td></tr>
+  </tbody>
+</table>
+<p>
+  So for most app owners the working deadline is 13 May 2027. A shorter timetable for large "significant data fiduciaries" was reported as a proposal in January 2026; I have not seen it notified. Confirm dates against the Gazette notifications or your lawyer before you plan around them.
+</p>
 
 <h2 id="what-it-covers">What the Act covers</h2>
 <p>

@@ -38,6 +38,10 @@ module.exports = {
   </p>
 </div>
 
+<p>
+  <strong>Free tool:</strong> the <a href="/tools/software-rfp-generator">software RFP generator</a> turns a few answers into a request for proposal you can copy or download.
+</p>
+
 <h2 id="goals">1. Business goals and the problem you are solving</h2>
 <p>
   Start with why, in plain words. An ERP that exists to cut stock-outs is designed differently from one that exists to close the books faster. Write three to five goals and how you would know each one is met.

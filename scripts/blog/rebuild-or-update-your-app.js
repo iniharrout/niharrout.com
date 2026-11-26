@@ -37,6 +37,10 @@ module.exports = {
   </p>
 </div>
 
+<p>
+  If your update is blocked, start with the <a href="/blog/google-play-and-app-store-requirements-2026">2026 store requirements checklist</a>.
+</p>
+
 <h2 id="signs">Warning signs your app needs serious work</h2>
 <p>Not every sign means a rebuild. Sort what you see into these groups:</p>
 <ul>

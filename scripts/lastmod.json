@@ -16,8 +16,8 @@
     "date": "2026-11-22"
   },
   "blog/agile-vs-waterfall-software-development/index.html": {
-    "hash": "c01c102aa9ca2f8e",
-    "date": "2026-11-22"
+    "hash": "efa170f269039593",
+    "date": "2026-11-27"
   },
   "blog/ai-agents-for-business/index.html": {
     "hash": "a4e8120d08b49d87",
@@ -52,8 +52,8 @@
     "date": "2026-11-22"
   },
   "blog/app-store-and-google-play-approval-guide/index.html": {
-    "hash": "b769650c32806860",
-    "date": "2026-11-22"
+    "hash": "4aa2ee70ea098f7c",
+    "date": "2026-11-27"
   },
   "blog/app-store-optimization-guide/index.html": {
     "hash": "eb8c884e9e34f458",
@@ -92,8 +92,8 @@
     "date": "2026-11-22"
   },
   "blog/dpdp-act-guide-for-app-founders/index.html": {
-    "hash": "cedd4b6304761d6d",
-    "date": "2026-11-22"
+    "hash": "edba98de3ac46059",
+    "date": "2026-11-27"
   },
   "blog/erp-data-migration-checklist/index.html": {
     "hash": "aa6b0fff73061e53",
@@ -104,8 +104,8 @@
     "date": "2026-11-22"
   },
   "blog/erp-requirements-checklist/index.html": {
-    "hash": "796ac32300b9f762",
-    "date": "2026-11-22"
+    "hash": "0c97f83931e20e73",
+    "date": "2026-11-27"
   },
   "blog/erp-vs-crm-difference/index.html": {
     "hash": "826ab9141fd95c32",
@@ -130,6 +130,10 @@
   "blog/generative-ai-use-cases-for-business/index.html": {
     "hash": "da27d7d10df6d4ff",
     "date": "2026-11-22"
+  },
+  "blog/google-play-and-app-store-requirements-2026/index.html": {
+    "hash": "49d22dc0d655b88a",
+    "date": "2026-11-27"
   },
   "blog/hire-development-team-in-india-from-australia/index.html": {
     "hash": "86f186850525ff69",
@@ -156,8 +160,8 @@
     "date": "2026-11-22"
   },
   "blog/how-long-does-it-take-to-build-an-app/index.html": {
-    "hash": "91ee8712b2963e01",
-    "date": "2026-11-22"
+    "hash": "0b304fc97f86927f",
+    "date": "2026-11-27"
   },
   "blog/how-to-add-ai-to-an-existing-product/index.html": {
     "hash": "9f51516b037b6e3e",
@@ -176,20 +180,20 @@
     "date": "2026-11-22"
   },
   "blog/how-to-build-a-fintech-app-in-india/index.html": {
-    "hash": "d6601237e6fe2f44",
-    "date": "2026-11-22"
+    "hash": "d0b5d149da66a7b5",
+    "date": "2026-11-27"
   },
   "blog/how-to-build-a-fitness-app/index.html": {
     "hash": "674639812537fc63",
     "date": "2026-11-22"
   },
   "blog/how-to-build-a-food-delivery-app/index.html": {
-    "hash": "af58dbdfe8f3631a",
-    "date": "2026-11-22"
+    "hash": "01d9e2f63e582880",
+    "date": "2026-11-27"
   },
   "blog/how-to-build-a-home-services-app/index.html": {
-    "hash": "83b9b61be7a2a41f",
-    "date": "2026-11-22"
+    "hash": "e936c19d2d976731",
+    "date": "2026-11-27"
   },
   "blog/how-to-build-a-hospital-management-system/index.html": {
     "hash": "cd009cd2651b1f0b",
@@ -212,8 +216,8 @@
     "date": "2026-11-22"
   },
   "blog/how-to-build-a-ride-hailing-app/index.html": {
-    "hash": "0eca695a29d70946",
-    "date": "2026-11-22"
+    "hash": "c0eae591cd9e05e5",
+    "date": "2026-11-27"
   },
   "blog/how-to-build-a-saas-product/index.html": {
     "hash": "e2a3aa5398764f1f",
@@ -236,8 +240,8 @@
     "date": "2026-11-22"
   },
   "blog/how-to-build-an-event-booking-app/index.html": {
-    "hash": "7436cc9dfb000aa7",
-    "date": "2026-11-22"
+    "hash": "208742fdaed3a2a6",
+    "date": "2026-11-27"
   },
   "blog/how-to-choose-a-software-development-company/index.html": {
     "hash": "8eb3fc927e8085ba",
@@ -276,8 +280,8 @@
     "date": "2026-11-22"
   },
   "blog/how-to-make-an-app/index.html": {
-    "hash": "e1c8240ecca9b0ed",
-    "date": "2026-11-22"
+    "hash": "079d208e13d5eede",
+    "date": "2026-11-27"
   },
   "blog/how-to-outsource-software-development/index.html": {
     "hash": "994cac5b4b4b0ad0",
@@ -292,8 +296,8 @@
     "date": "2026-11-22"
   },
   "blog/how-to-review-a-software-development-proposal/index.html": {
-    "hash": "7dccdbd53ea974d4",
-    "date": "2026-11-22"
+    "hash": "7b743878be3fb313",
+    "date": "2026-11-27"
   },
   "blog/how-to-set-a-software-development-budget/index.html": {
     "hash": "75da76d614b70fe2",
@@ -304,20 +308,20 @@
     "date": "2026-11-22"
   },
   "blog/how-to-write-a-software-rfp/index.html": {
-    "hash": "a6664da9ce692951",
-    "date": "2026-11-22"
+    "hash": "62e5cd12302d319a",
+    "date": "2026-11-27"
   },
   "blog/how-to-write-user-stories/index.html": {
     "hash": "3c75f9db57d54c9c",
     "date": "2026-11-22"
   },
   "blog/in-app-purchases-and-app-store-fees/index.html": {
-    "hash": "8abe2c138ca1175d",
-    "date": "2026-11-24"
+    "hash": "c97ee17ef6d99a74",
+    "date": "2026-11-27"
   },
   "blog/index.html": {
-    "hash": "51f403071116d3e8",
-    "date": "2026-11-26"
+    "hash": "173e022e5a114b6a",
+    "date": "2026-11-27"
   },
   "blog/inventory-management-software-development/index.html": {
     "hash": "4b91873086aa7e8c",
@@ -352,8 +356,8 @@
     "date": "2026-11-22"
   },
   "blog/mobile-app-testing-checklist/index.html": {
-    "hash": "c12f1909ebb0dcd8",
-    "date": "2026-11-22"
+    "hash": "a4b77786b174a8c8",
+    "date": "2026-11-27"
   },
   "blog/mobile-app-vs-web-app-which-to-build-first/index.html": {
     "hash": "1a8b80238d275cb8",
@@ -376,8 +380,8 @@
     "date": "2026-11-22"
   },
   "blog/non-functional-requirements-checklist/index.html": {
-    "hash": "d72a11c7e0cfaec2",
-    "date": "2026-11-22"
+    "hash": "d14a4593f74a9828",
+    "date": "2026-11-27"
   },
   "blog/offshore-development-center/index.html": {
     "hash": "f47459b31733b906",
@@ -396,44 +400,44 @@
     "date": "2026-11-22"
   },
   "blog/page/10/index.html": {
-    "hash": "805d2554403bbb35",
-    "date": "2026-11-26"
+    "hash": "207bbff3dc8f1bd5",
+    "date": "2026-11-27"
   },
   "blog/page/11/index.html": {
-    "hash": "e2a81bdf1c813140",
-    "date": "2026-11-26"
+    "hash": "d0f36561254130f2",
+    "date": "2026-11-27"
   },
   "blog/page/2/index.html": {
-    "hash": "4d18514585b26f42",
-    "date": "2026-11-26"
+    "hash": "9d303b5f692e9e27",
+    "date": "2026-11-27"
   },
   "blog/page/3/index.html": {
-    "hash": "40618428eaab06a8",
-    "date": "2026-11-26"
+    "hash": "9567419bd4b9b7fa",
+    "date": "2026-11-27"
   },
   "blog/page/4/index.html": {
-    "hash": "9cf28bf889201c95",
-    "date": "2026-11-26"
+    "hash": "391505f0c0d64ad7",
+    "date": "2026-11-27"
   },
   "blog/page/5/index.html": {
-    "hash": "953a1504787486c3",
-    "date": "2026-11-26"
+    "hash": "0bfda88e468c6399",
+    "date": "2026-11-27"
   },
   "blog/page/6/index.html": {
-    "hash": "fedbe828256f4484",
-    "date": "2026-11-26"
+    "hash": "3cea77b69e7755d9",
+    "date": "2026-11-27"
   },
   "blog/page/7/index.html": {
-    "hash": "82db6de735e39afd",
-    "date": "2026-11-26"
+    "hash": "8a72658b428704c9",
+    "date": "2026-11-27"
   },
   "blog/page/8/index.html": {
-    "hash": "63c23e0237b42c18",
-    "date": "2026-11-26"
+    "hash": "ef883f6a16315403",
+    "date": "2026-11-27"
   },
   "blog/page/9/index.html": {
-    "hash": "5a1e95b44f23bf58",
-    "date": "2026-11-26"
+    "hash": "f264242c0e0e9770",
+    "date": "2026-11-27"
   },
   "blog/pragmatic-enterprise-ai-workflows/index.html": {
     "hash": "0f99ba63baebceac",
@@ -468,8 +472,8 @@
     "date": "2026-11-22"
   },
   "blog/rebuild-or-update-your-app/index.html": {
-    "hash": "bdc7b4e047bbe693",
-    "date": "2026-11-22"
+    "hash": "ab961f5f40b316aa",
+    "date": "2026-11-27"
   },
   "blog/salon-booking-app-development/index.html": {
     "hash": "1bffdbe4a031b328",
@@ -480,8 +484,8 @@
     "date": "2026-11-22"
   },
   "blog/shopify-vs-custom-ecommerce-development/index.html": {
-    "hash": "d194a79d317d6823",
-    "date": "2026-11-22"
+    "hash": "9b1898d481d87b70",
+    "date": "2026-11-27"
   },
   "blog/software-developer-resume-for-freshers/index.html": {
     "hash": "69025a312b8a5894",
@@ -492,8 +496,8 @@
     "date": "2026-11-22"
   },
   "blog/software-development-estimates-explained/index.html": {
-    "hash": "c51a89f593b4b328",
-    "date": "2026-11-22"
+    "hash": "6f4464c4ea55cb26",
+    "date": "2026-11-27"
   },
   "blog/software-maintenance-cost-and-planning/index.html": {
     "hash": "5caed50f530a6880",
@@ -548,8 +552,8 @@
     "date": "2026-11-23"
   },
   "blog/top-ecommerce-development-companies-in-india/index.html": {
-    "hash": "4ca8b823b7eca80a",
-    "date": "2026-11-23"
+    "hash": "fb331751b8c2f246",
+    "date": "2026-11-27"
   },
   "blog/top-edtech-app-development-companies-in-india/index.html": {
     "hash": "4208746ab360005d",
@@ -564,8 +568,8 @@
     "date": "2026-11-23"
   },
   "blog/top-fintech-app-development-companies-in-india/index.html": {
-    "hash": "5cc92610109003bf",
-    "date": "2026-11-23"
+    "hash": "5de378bb700585fe",
+    "date": "2026-11-27"
   },
   "blog/top-flutter-app-development-companies-in-india/index.html": {
     "hash": "153548bebe30955b",
@@ -592,8 +596,8 @@
     "date": "2026-11-23"
   },
   "blog/top-mobile-app-development-companies-in-india/index.html": {
-    "hash": "c3fddcb84c279108",
-    "date": "2026-11-23"
+    "hash": "08b95569d0c9ddbe",
+    "date": "2026-11-27"
   },
   "blog/top-mvp-development-companies-in-india/index.html": {
     "hash": "e1c18ae8ab99e7b1",
@@ -640,40 +644,40 @@
     "date": "2026-11-23"
   },
   "blog/topic/ai/index.html": {
-    "hash": "554f7a5031ccc58c",
-    "date": "2026-11-26"
+    "hash": "b7fc3fe70e3f301a",
+    "date": "2026-11-27"
   },
   "blog/topic/careers/index.html": {
-    "hash": "01c36842e56acd5e",
-    "date": "2026-11-26"
+    "hash": "8c81932b5abb1c11",
+    "date": "2026-11-27"
   },
   "blog/topic/cost-and-hiring/index.html": {
-    "hash": "f34a64277f1e4b5a",
-    "date": "2026-11-26"
+    "hash": "d440c038ae778a7d",
+    "date": "2026-11-27"
   },
   "blog/topic/industries/index.html": {
-    "hash": "2f8a608195614fc9",
-    "date": "2026-11-26"
+    "hash": "095eb48207bc9e4e",
+    "date": "2026-11-27"
   },
   "blog/topic/mobile/index.html": {
-    "hash": "07b7f5e8cd810a10",
-    "date": "2026-11-26"
+    "hash": "c47134af2e945fa4",
+    "date": "2026-11-27"
   },
   "blog/topic/news/index.html": {
-    "hash": "a5177ba4ace42c03",
-    "date": "2026-11-26"
+    "hash": "45a227af2dfbc327",
+    "date": "2026-11-27"
   },
   "blog/topic/product/index.html": {
-    "hash": "b56ad643b2bc1276",
-    "date": "2026-11-26"
+    "hash": "4e7471eadb12898a",
+    "date": "2026-11-27"
   },
   "blog/topic/software-and-cloud/index.html": {
-    "hash": "2117ade2bd16a098",
-    "date": "2026-11-26"
+    "hash": "6aa4e5df4e468f4c",
+    "date": "2026-11-27"
   },
   "blog/topic/top-companies/index.html": {
-    "hash": "78010806ae3e2d4c",
-    "date": "2026-11-26"
+    "hash": "924eef48a69516cf",
+    "date": "2026-11-27"
   },
   "blog/ui-ux-designer-portfolio-tips/index.html": {
     "hash": "04ce8fc3d0bd24a8",
@@ -683,9 +687,13 @@
     "hash": "7e72a74e3c05bea9",
     "date": "2026-11-22"
   },
+  "blog/upi-collect-removed-what-to-use-instead/index.html": {
+    "hash": "e5ef018868d964ec",
+    "date": "2026-11-27"
+  },
   "blog/upi-payment-integration-for-apps/index.html": {
-    "hash": "16fb875801d68203",
-    "date": "2026-11-22"
+    "hash": "09e86ec2c88fb222",
+    "date": "2026-11-27"
   },
   "blog/web-application-development-build-vs-buy/index.html": {
     "hash": "b7fe17f42ef87fc1",
@@ -696,8 +704,8 @@
     "date": "2026-11-22"
   },
   "blog/what-is-a-prd-how-to-write-a-product-requirements-document/index.html": {
-    "hash": "00cbe1dee0ac3184",
-    "date": "2026-11-22"
+    "hash": "c3b0d31816771ccd",
+    "date": "2026-11-27"
   },
   "blog/what-is-agentic-ai/index.html": {
     "hash": "3f482d789ad2df2c",
@@ -732,8 +740,8 @@
     "date": "2026-11-22"
   },
   "countries/australia/index.html": {
-    "hash": "9d257a2160f8ebbb",
-    "date": "2026-11-22"
+    "hash": "8f98e5469baa2330",
+    "date": "2026-11-27"
   },
   "countries/canada/index.html": {
     "hash": "b7c11c93e792d97f",
@@ -756,8 +764,8 @@
     "date": "2026-11-22"
   },
   "countries/singapore/index.html": {
-    "hash": "898a35a7810cd31e",
-    "date": "2026-11-22"
+    "hash": "073de3d007c9896a",
+    "date": "2026-11-27"
   },
   "countries/uae/index.html": {
     "hash": "57c0857e9659621c",
@@ -832,8 +840,8 @@
     "date": "2026-11-22"
   },
   "index.html": {
-    "hash": "0c6bb0277aa4a71f",
-    "date": "2026-11-26"
+    "hash": "7eed50aeea14814a",
+    "date": "2026-11-27"
   },
   "industries/agriculture/index.html": {
     "hash": "8a3bd5cbe6537709",
@@ -852,8 +860,8 @@
     "date": "2026-11-22"
   },
   "industries/ecommerce/index.html": {
-    "hash": "f3295e4fa3de2b23",
-    "date": "2026-11-22"
+    "hash": "ab51ac0b2be3bcc1",
+    "date": "2026-11-27"
   },
   "industries/education/index.html": {
     "hash": "866368793df2f66c",
@@ -868,12 +876,12 @@
     "date": "2026-11-22"
   },
   "industries/events/index.html": {
-    "hash": "eaaab80dc78fe3d6",
-    "date": "2026-11-22"
+    "hash": "c95291eb63daafc6",
+    "date": "2026-11-27"
   },
   "industries/fintech/index.html": {
-    "hash": "3413c1e6b4a50c91",
-    "date": "2026-11-22"
+    "hash": "15ea3ffc62d64de3",
+    "date": "2026-11-27"
   },
   "industries/fitness-wellness/index.html": {
     "hash": "f3e18dd2ab965f94",
@@ -916,8 +924,8 @@
     "date": "2026-11-22"
   },
   "industries/restaurant/index.html": {
-    "hash": "548dd339f910e1da",
-    "date": "2026-11-22"
+    "hash": "ab51341f8812f878",
+    "date": "2026-11-27"
   },
   "industries/saas/index.html": {
     "hash": "1c913af58581aba2",
@@ -932,8 +940,8 @@
     "date": "2026-11-22"
   },
   "industries/travel-hospitality/index.html": {
-    "hash": "fb24fcb710fe826c",
-    "date": "2026-11-22"
+    "hash": "b43c0f8152f95db8",
+    "date": "2026-11-27"
   },
   "locations/bangalore/index.html": {
     "hash": "ef4229c95b8b1879",
@@ -1084,8 +1092,8 @@
     "date": "2026-11-22"
   },
   "services/custom-software-development/api-development/index.html": {
-    "hash": "9cb3850554e169cd",
-    "date": "2026-11-22"
+    "hash": "53a9960bc520bf13",
+    "date": "2026-11-27"
   },
   "services/custom-software-development/crm-development/index.html": {
     "hash": "6d45f0ebe049ccda",
@@ -1096,8 +1104,8 @@
     "date": "2026-11-22"
   },
   "services/custom-software-development/ecommerce-solutions/index.html": {
-    "hash": "eb0c50cb3401fc29",
-    "date": "2026-11-22"
+    "hash": "e4e6ad5617fe4d41",
+    "date": "2026-11-27"
   },
   "services/custom-software-development/enterprise-application-development/index.html": {
     "hash": "aaf4e9a4376e0dc2",
@@ -1184,8 +1192,8 @@
     "date": "2026-11-22"
   },
   "services/product-strategy-prd/mvp-development/index.html": {
-    "hash": "6810a0827342cbf3",
-    "date": "2026-11-22"
+    "hash": "f8cf36e79d063fba",
+    "date": "2026-11-27"
   },
   "services/product-strategy-prd/post-launch-iteration/index.html": {
     "hash": "2a8e1bb7163de610",
@@ -1248,8 +1256,8 @@
     "date": "2026-11-22"
   },
   "software-development-company-bhubaneswar/index.html": {
-    "hash": "77d88387fd4b0f05",
-    "date": "2026-11-22"
+    "hash": "34662b0b46596d67",
+    "date": "2026-11-27"
   },
   "software-development-dubai/index.html": {
     "hash": "2a7018c480140e0f",
@@ -1320,16 +1328,20 @@
     "date": "2026-11-22"
   },
   "tools/index.html": {
-    "hash": "b8575bfcd562ec80",
-    "date": "2026-11-22"
+    "hash": "31f5e539159e9251",
+    "date": "2026-11-27"
   },
   "tools/linkedin-text-formatter/index.html": {
     "hash": "4b513384291997df",
     "date": "2026-11-22"
   },
+  "tools/software-rfp-generator/index.html": {
+    "hash": "1b1f67d03f25714e",
+    "date": "2026-11-27"
+  },
   "tools/startup-name-generator/index.html": {
-    "hash": "b3fdf3e8f3943c63",
-    "date": "2026-10-18"
+    "hash": "4cb892686ce19335",
+    "date": "2026-11-27"
   },
   "web-development-company-bhubaneswar/index.html": {
     "hash": "7a3aaa5d3a643298",
@@ -1424,8 +1436,8 @@
     "date": "2026-11-22"
   },
   "work/index.html": {
-    "hash": "56c97bd8cc9a3061",
-    "date": "2026-11-22"
+    "hash": "dce9c9540297d75b",
+    "date": "2026-11-27"
   },
   "work/make-my-look/index.html": {
     "hash": "a1ec7b831c80eefd",

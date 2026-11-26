@@ -30,6 +30,10 @@ module.exports = {
   In this guide I explain what a PRD is, how it differs from a BRD, the ten sections I put in every one, and the mistakes that make a PRD useless. It is based on more than eight years of leading product work, and it is written so you can draft your own before you ever speak to a development company.
 </p>
 
+<p>
+  <strong>Free tool:</strong> the <a href="/tools/software-rfp-generator">software RFP generator</a> turns a few answers into a request for proposal you can copy or download.
+</p>
+
 <h2 id="what-is-a-prd">What is a PRD?</h2>
 <p>
   A PRD, or product requirements document, is a written description of what a product must do, who it is for and how you will know it works. It turns a general idea such as "an app for booking dog walkers" into specific, testable statements: who books, what they see, what happens when a walker cancels, what is not part of the first release.

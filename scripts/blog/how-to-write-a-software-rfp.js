@@ -45,6 +45,10 @@ module.exports = {
   A good RFP closes those gaps before anyone estimates. It does not need to answer every question. It needs to answer the questions that change the size of the project, and to say clearly which ones are still open.
 </p>
 
+<p>
+  <strong>Free tool:</strong> the <a href="/tools/software-rfp-generator">software RFP generator</a> turns a few answers into a request for proposal you can copy or download.
+</p>
+
 <h2 id="what-to-include">What to include: a section-by-section outline</h2>
 <p>
   Use these sections as your template. Short, plain answers are fine.

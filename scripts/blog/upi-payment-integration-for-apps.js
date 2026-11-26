@@ -3,15 +3,16 @@ module.exports = {
   title: "UPI Payment Integration for Apps and Websites: A Guide",
   headline: "UPI Payment Integration for Apps and Websites: How It Works and What to Test",
   shortTitle: "UPI payment integration",
-  description: "How UPI payment integration works in apps and websites: intent, collect and QR flows, payment gateways, autopay, refunds and the cases you must test.",
+  description: "How to integrate UPI payments in a website or app: intent and QR flows, payment gateways, server confirmation, autopay, refunds and the cases to test.",
   keywords: ["UPI payment integration", "UPI integration in app", "UPI payment gateway", "UPI intent flow", "UPI autopay integration"],
   category: "Mobile Engineering",
   badge: "MOBILE ENGINEERING",
   readMinutes: 8,
   published: "2026-10-22",
+  updated: "2026-11-27",
   icon: "doc",
   lead: "UPI is how most people in India pay inside apps and on websites. Integrating it is usually done through a payment gateway, but the details matter: which flow you use, how you confirm payment and how you handle the cases where something goes wrong.",
-  cardDesc: "UPI intent, collect and QR flows, payment gateways, autopay, refunds and the edge cases to test before launch.",
+  cardDesc: "UPI intent and QR flows for websites and apps, payment gateways, autopay, refunds and the edge cases to test.",
   cta: { title: "Adding payments to your product?", text: "Book a free 30-minute call. We will help you choose a payment flow and plan the edge cases.", button: "Book a free 30-minute call" },
   endCta: { title: "Need reliable payments in your app?", text: "We integrate UPI, cards, subscriptions and split payments, with server-side checks and proper reconciliation.", service: { href: "/services/custom-software-development/ecommerce-solutions", label: "See e-commerce solutions" } },
   related: ["how-to-build-a-fintech-app-in-india", "mobile-app-security-checklist", "how-to-build-a-food-delivery-app"],
@@ -40,12 +41,25 @@ module.exports = {
   <tbody>
     <tr><td>Intent</td><td>Opens the user's UPI app to approve</td><td>Mobile apps and mobile web</td></tr>
     <tr><td>QR code</td><td>User scans a dynamic QR with any UPI app</td><td>Desktop checkout, counters, invoices</td></tr>
-    <tr><td>Collect request</td><td>User enters a UPI ID and approves a request</td><td>Some web checkouts; check current gateway support</td></tr>
+    <tr><td>Collect request</td><td>User enters a UPI ID and approves a request</td><td>Withdrawn for most merchants from 28 February 2026. See <a href="/blog/upi-collect-removed-what-to-use-instead">what replaces it</a></td></tr>
     <tr><td>Autopay</td><td>A recurring mandate approved once</td><td>Subscriptions and instalments</td></tr>
   </tbody>
 </table>
 <p>
   <a href="https://www.npci.org.in/what-we-do/upi/product-overview" target="_blank" rel="noopener">NPCI's UPI overview</a> explains the underlying system. Rules evolve, so check your gateway's current documentation for supported flows.
+</p>
+
+<h2 id="website">How to integrate UPI on a website</h2>
+<ol>
+  <li>Open a merchant account with a payment gateway and complete its business verification.</li>
+  <li>Build and test with the gateway's test keys before you switch to live keys.</li>
+  <li>When the customer checks out, have your server create the order and the amount. Never trust an amount sent by the browser.</li>
+  <li>Open the gateway's checkout on your page. On desktop it should show a UPI QR code; on a phone it should hand off to a UPI app.</li>
+  <li>Add a webhook endpoint on your server, verify its signature and mark the order paid only from that confirmation.</li>
+  <li>Show a clear pending state while you wait, and a way to retry if the payment fails.</li>
+</ol>
+<p>
+  On a ready-made platform such as Shopify or WooCommerce, the gateway's official plugin covers most of this. A custom website or app needs the server steps above.
 </p>
 
 <h2 id="gateway">Choosing a payment gateway</h2>

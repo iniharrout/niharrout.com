@@ -34,6 +34,10 @@ module.exports = {
   </p>
 </div>
 
+<p>
+  <strong>New:</strong> the <a href="/blog/google-play-and-app-store-requirements-2026">2026 Google Play and App Store requirements checklist</a> covers the target API and SDK rules now in force.
+</p>
+
 <h2 id="common-rejections">Common rejection reasons</h2>
 <ul>
   <li><strong>Crashes and bugs:</strong> anything that breaks during review.</li>

@@ -15,6 +15,8 @@ const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const SITE = 'https://www.niharrout.com';
 const ORDER = [
+  'google-play-and-app-store-requirements-2026',
+  'upi-collect-removed-what-to-use-instead',
   'who-owns-the-code-when-you-hire-a-developer',
   'hire-development-team-in-india-from-singapore',
   'in-app-purchases-and-app-store-fees',
@@ -253,7 +255,7 @@ function page(p) {
     author: { '@type': 'Person', '@id': `${SITE}/#person`, name: 'Nihar Ranjan Rout', jobTitle: 'Founder & CEO, Creuto', url: `${SITE}/about`, sameAs: ['https://www.linkedin.com/in/iniharrout', 'https://x.com/iniharrout', 'https://github.com/iniharrout'] },
     publisher: { '@type': 'Organization', name: 'Creuto', url: 'https://creuto.com', logo: { '@type': 'ImageObject', url: `${SITE}/assets/nihar.jpg` } },
     datePublished: p.published,
-    dateModified: p.published,
+    dateModified: p.updated || p.published,
     articleSection: p.category,
     keywords: p.keywords.join(', '),
     wordCount: words,
@@ -301,7 +303,7 @@ function page(p) {
   <meta property="og:image" content="${image}">
   <meta property="og:image:alt" content="${esc(alt)}">
   <meta property="article:published_time" content="${p.published}">
-  <meta property="article:modified_time" content="${p.published}">
+  <meta property="article:modified_time" content="${p.updated || p.published}">
   <meta property="article:author" content="${SITE}/about">
   <meta property="article:section" content="${esc(p.category)}">
 ${p.keywords.map((k) => `  <meta property="article:tag" content="${esc(k)}">`).join('\n')}

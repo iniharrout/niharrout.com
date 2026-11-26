@@ -37,6 +37,10 @@ module.exports = {
   </p>
 </div>
 
+<p>
+  <strong>Free tool:</strong> the <a href="/tools/software-rfp-generator">software RFP generator</a> turns a few answers into a request for proposal you can copy or download.
+</p>
+
 <h2 id="understanding">1. Does it show they understood the problem?</h2>
 <p>
   A good proposal opens by restating your goal in its own words: who the users are, what job the software does for them and what success looks like. If this section is generic or copied from a template, the rest of the plan was probably built on guesses.
